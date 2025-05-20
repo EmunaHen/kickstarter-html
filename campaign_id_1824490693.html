@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RUNK2.0：Mini Power bank|Find My|NFC|3-IN-1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+    
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/048/928/362/e74c5a1c9e70e56bd2fb6bf067d6ef24_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1744800402&width=560&sig=9DWJhvj5M%2FgM3bj29xnuk54OxDwHlkIOGumuMc0L2P4%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>RUNK2.0：Mini Power bank|Find My|NFC|3-IN-1</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Mini Power bank +NFC+Built-in Find My|Apple Find My/Android Find My Device |3000mAh|72g|Portable|Comes with charging cable|EDC|20W</p>
+            <p><strong>Created by:</strong> ?</p>
+            <p><strong>? backers</strong> pledged ?</p>
+            <p><strong>Last updated:</strong> May 16, 2025</p>
+            
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48754674">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/754/674/ea81f142f8af3f3820ab2d10606af39c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743578565&amp;width=680&amp;sig=q9DHPSuRb98bUO91MGl9QIGwPnasFdnONF2jHI43xz8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48940944">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/940/944/3dcbe98b86a45e4595f065428eb17d76_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744882582&amp;width=680&amp;sig=DT5aaIs%2BagkO5NnYnod4bYAEYTjV9Kek%2B6devmjJBl4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Are there moments in life that make you feel broken?</span><br/> When you're out and about, your mobile phone is running out of battery and you don't have a charger with you.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48869216">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/869/216/04c102f866c31d47e2bcfe4425c3e2de_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744365570&amp;width=680&amp;sig=6E5mrGWemh1vwBe2HkAxaYMJo%2F%2F%2BHoPyyhpBhB%2FwqXY%3D" src="https://i.kickstarter.com/assets/048/869/216/04c102f866c31d47e2bcfe4425c3e2de_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744365570&amp;width=680&amp;sig=vedSwpOPihF%2BfLThYSK4ilLblhGNugwvQ4SkzMoRx6w%3D"/>
+</figure>
+</div>
+<p>Keys, wallet, headphones, you remembered to bring them, but you can't find them in your pockets.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828084">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/084/2da2e480d803b93c93e56b5b97163de1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744111843&amp;width=680&amp;sig=gHZE98bzJwz4rQY3yLSz2KFOichpVRmzN%2Bl1wRsawvM%3D" src="https://i.kickstarter.com/assets/048/828/084/2da2e480d803b93c93e56b5b97163de1_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744111843&amp;width=680&amp;sig=4Mixbcm7HFsEfTWamde6UzR5Dl4w1pvdNlIniYcriYk%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">This time, we've brought you RUNK 2.0, an on-the-go device that truly understands you.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828124">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/124/b65a6af83faeac1944d023a19585e05e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744112128&amp;width=680&amp;sig=5dnn2GgurQU3%2FatQ6pImTfFx%2FH0kz%2FDFr1cclSWFzGg%3D" src="https://i.kickstarter.com/assets/048/828/124/b65a6af83faeac1944d023a19585e05e_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744112128&amp;width=680&amp;sig=MLs0xLN74vRrbuPu52nODcw71vy1ccDtnVmD8lglny0%3D"/>
+</figure>
+</div>
+<p><br/>▶It is an ultimate portable fast charging source that refuels your devices anytime, anywhere.</p><p>▶It is even a smart tracking device, so you never have to worry about leaving your important items behind.</p><p>▶It is a universal key with a built-in NFC chip that can replace an access card or serve as your electronic postcard.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48707659">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/707/659/df8c8cae2d5c4ac108a60365bbe99e17_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743248228&amp;width=680&amp;sig=uAzzNq6puj6ljsKaxpSHHlE%2BnVSPl1pFChMELvlcINc%3D"/>
+</figure>
+</div>
+<p><span class="bold">Newly upgraded with five new colourways to meet individual needs.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828157">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/157/9f283cf87dc28cee20d3df0232e2b0f1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744112420&amp;width=680&amp;sig=%2B9tfWsgRs35CmRRSZ7UMCP0IXrfqvwDkdqhEk9FUizM%3D" src="https://i.kickstarter.com/assets/048/828/157/9f283cf87dc28cee20d3df0232e2b0f1_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744112420&amp;width=680&amp;sig=BXmkj7RkiaSghvAPXg0UPS5mCeln3cvamiwkkvmfRWQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48754912">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/754/912/57adf8c26a0806a96383aa6096e1a683_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743579943&amp;width=680&amp;sig=uuk2JkX24FEXxhJ1rTi%2B88RPLAmq60himAJaZLZhMZ0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:POWER-BANK"><span class="bold">POWER BANK</span></h3><h4 class="page-anchor" id="h:-Charge-and-go-with-ease-and-refuse-to-feel-weighted-down-">
+<br/>Charge and go with ease and refuse to feel weighted down!</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828164">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/164/29c88637c6d61560bc77f229819295f3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744112453&amp;width=680&amp;sig=t9QgX5UpyVK7S7%2BkLn1Q4dQ1vD%2FJOjjm2dtNECY3FRo%3D" src="https://i.kickstarter.com/assets/048/828/164/29c88637c6d61560bc77f229819295f3_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744112453&amp;width=680&amp;sig=09hVnSB8p4mJa96tYKOfJVnfQIOLjrvuutO0qa0fWsk%3D"/>
+</figure>
+</div>
+<p><br/>Most of the rechargeables on the market are competing for bigger batteries and longer range, while ignoring the real need - do you really need to carry around a big, heavy charger every day?</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828166">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/166/ac5e4cedb6c9862addbeb3b6a1bbfb22_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744112462&amp;width=680&amp;sig=FlshDh8D3TIgQqi6OV1IdXScG321sY%2FqJ5hHllQpVbQ%3D" src="https://i.kickstarter.com/assets/048/828/166/ac5e4cedb6c9862addbeb3b6a1bbfb22_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744112462&amp;width=680&amp;sig=Uo%2FjKCEZymHjLOiG46aK%2BrZMQlotmTOHJdl0Hi5Arhk%3D"/>
+</figure>
+</div>
+<p><br/>RUNK 2.0 continues the ultimate portability concept of 1.0. It is as small as a car key, so it can easily fit in your pocket, hang on your keychain, or even carry it in your wallet without any stress.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828235">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/235/477042377be92e87829bb946ad039f51_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744112881&amp;width=680&amp;sig=kKauHGdc3D9CBcVTzi%2FXhKa2a6TD1PYbI1IvwihVgkU%3D" src="https://i.kickstarter.com/assets/048/828/235/477042377be92e87829bb946ad039f51_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744112881&amp;width=680&amp;sig=99LBR75mZJv2opLP2dtJwlQkLeTP19AWEazWASUrWW0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48869218">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/869/218/8b22ed01a3aad3f1eccc5986076cb2fc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744365581&amp;width=680&amp;sig=eAFJZtLWWAff6m%2Fe10vkAZbbfHUnWWR%2BFItL8FOZyc0%3D" src="https://i.kickstarter.com/assets/048/869/218/8b22ed01a3aad3f1eccc5986076cb2fc_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744365581&amp;width=680&amp;sig=vvoBKOsBsztvoMOouyY9pXYNFiVj8L4oWFHJrsVjS8E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48707670">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/707/670/f9d5249420b6e705495e8da08a5aa932_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743248355&amp;width=680&amp;sig=bi9MsgVyRGqCCjYA6tKxwTmlWvSy5vlxf4OYPzrlOtI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48756002">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/756/002/c6cde1e4ef75fb47071773060f2181f5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743586732&amp;width=680&amp;sig=NjjB99S6SO%2Bpfegoj5GGeysL8swtYPNyZc%2F%2BM6GLyG4%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">RUNK 2.0 doesn't make you dependent on it, it just happens to be there when it counts! </span></p><p>Whether you're travelling every day or on the go, you can easily carry and charge your device wherever you go. We also offer different interface options so you can choose the right interface for your mobile phone.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828343">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/343/877be7446b8cee530f5c3715bbd0b5e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744113500&amp;width=680&amp;sig=%2FQbQ9OnIcPOZlwuk0ZgkW9GYuE8dUMCsjEN3qEJzqrE%3D" src="https://i.kickstarter.com/assets/048/828/343/877be7446b8cee530f5c3715bbd0b5e5_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744113500&amp;width=680&amp;sig=Nn6x6cZzNd0irKcT3%2FGyG1HkquauHqr0KcMH152%2FajU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Different-types-of-charging-ports"><span class="bold">Different types of charging ports</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48707678">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/707/678/79f73ca08f805501dd2cab50c7246808_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743248454&amp;width=680&amp;sig=Ta2WGX1HWR3ppyoTnmXszRUPZ2kIarnpgyDxv5oMqeU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48708102">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/708/102/2b356ee8dcc0a6eaffd0278b2bbb2481_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743253164&amp;width=680&amp;sig=TEzdU615TcMR5A%2ByIDwTPbGl2ki1LuTIBd42Yu%2BMY3s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48754973">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/754/973/5b1fe15db75463cb47285883dd58194d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743580473&amp;width=680&amp;sig=bUkY6cz3%2BzgdgrgpQDiAeCn6yQlEzP8LYSdvNU3Dvc4%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:FIND-MY"><span class="bold">FIND MY</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828493">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/493/b4603d6f45e9295e2711e2f244338701_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744114226&amp;width=680&amp;sig=GU6gEjWpaKc9FdARxr8Mxn2qm8GlYmDDxr3Q5RKCYrc%3D" src="https://i.kickstarter.com/assets/048/828/493/b4603d6f45e9295e2711e2f244338701_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744114226&amp;width=680&amp;sig=Sls48Kdmxj0MxfwngxtYFcNNh2ikng0puCdiUpEvgdo%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Keys, earphones, wallet ...... Are those small carry-on items missing when it's most urgent?</span></p><p>RUNK 2.0 is not just a rechargeable treasure this time, it's also your guardian on the go.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48567647">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/567/647/9c60b16bde2f1b52baf74bd92fefbb41_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742297325&amp;width=680&amp;sig=XCcDFr0z50vP145%2FpdeqL36RWUH8%2F2SMMuGjeNx4qEg%3D"/>
+</figure>
+</div>
+<p><br/>RUNK 2.0 supports Apple Find My &amp; Android Find My Device, after binding your mobile phone, you can always see its location on the map.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48707831">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/707/831/19058ab72d05c75628ce10bd65cb6a95_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743249897&amp;width=680&amp;sig=hdrEs5Bs%2FVd3dxyxhg4p15qvLU0ug2F06KG0YlBYs8c%3D"/>
+</figure>
+</div>
+<p><br/>Turn on your mobile phone, tap on the navigation, and you'll be able to follow the route to find out exactly where it is.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828576">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/576/ab3632fdf099028a255163c564eff60f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744114714&amp;width=680&amp;sig=k%2BoeTLOlXGNh909sjWgdPLND%2F6hPSmhcNmDR%2FqlNDaI%3D" src="https://i.kickstarter.com/assets/048/828/576/ab3632fdf099028a255163c564eff60f_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744114714&amp;width=680&amp;sig=mvDS5pua%2FHx82momfBWIQgDgi9TQ0GNoSbGhSy6KpAw%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">One-touch ringing, hidden in even the smallest corners.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828631">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/631/70db9fd02985ef0250e768c592d42f3e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744114996&amp;width=680&amp;sig=%2FguFiNUqX6PThC6KHfhLO0SWhKOJHFRz%2Bu8qGbW0hXU%3D" src="https://i.kickstarter.com/assets/048/828/631/70db9fd02985ef0250e768c592d42f3e_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744114996&amp;width=680&amp;sig=lyGHyQ5Am3g416NYloy6gU%2BIAFkkC3toyc23viHw38g%3D"/>
+</figure>
+</div>
+<p><br/>If it's hiding in a sofa crevice, under a car seat, or tucked away deep in your bag, you can let RUNK 2.0 emit a loud beep to easily find its exact location!</p><p><span class="bold">From now on, your life is more organised and important items are never lost!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48654219">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/654/219/6df4c17dc8814f2db7b989d2f62aa29f_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742904927&amp;width=680&amp;sig=BcFXNlOnEcsfJs1q4ydpC9nyP9bssNr9HGish0FN1kk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755115">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/115/f2920dec75be6554202c2c4bf7b9908b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743581470&amp;width=680&amp;sig=vxJi0YtqaMlD5sHHMlf4nMFZ6vnaIr6Zqa1WGYIvua4%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:NFC"><span class="bold">NFC</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48708126">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/708/126/443711dff218c3a697b7b2c316c3c843_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743253452&amp;width=680&amp;sig=N3C%2BLh9gBMtH%2BCZyTLvuHvx8d5wLCT5xLZvRRmXqDiM%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">RUNK 2.0 continues to retain the NFC function to make your digital life smarter:</span><br/>Connect at the touch of a button: easy data connectivity and information sharing.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828672">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/672/a75799960fde4a8c7a54188aa0ee985c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744115160&amp;width=680&amp;sig=rE77sMgBV6AOLmK8V%2FzhIFXHmi2QmUfDUO%2Bd3kN0Uko%3D" src="https://i.kickstarter.com/assets/048/828/672/a75799960fde4a8c7a54188aa0ee985c_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744115160&amp;width=680&amp;sig=IVXrC2i1zPIifmuMhgB7n4LVCFKVpLA%2Brxvtn0zwvh8%3D"/>
+</figure>
+</div>
+<p><br/>Intelligent identification: adapted to NFC access control system, more convenient to open the door by swiping the card.<br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828698">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/698/49e06fee0c9745fc807e1a475e95307e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744115353&amp;width=680&amp;sig=7UPD37YYYsvNaJiROeknbPHq8Y%2Bh8kDgvpYEICOF4Dk%3D" src="https://i.kickstarter.com/assets/048/828/698/49e06fee0c9745fc807e1a475e95307e_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744115353&amp;width=680&amp;sig=9ww4Cd2J8ULhl%2BVn0xyL4qQ7GJCAd6KZNrsNVM3ibUE%3D"/>
+</figure>
+</div>
+<p><span class="bold">A little NFC unlocks infinite possibilities!</span><br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48828753">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/828/753/97935dfe53321431d1a1f65f5edb39d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744115722&amp;width=680&amp;sig=e3ij4hUxJeugT4m2jWm2ju71MMFTpyxEJSQVD7JtFaM%3D" src="https://i.kickstarter.com/assets/048/828/753/97935dfe53321431d1a1f65f5edb39d5_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744115722&amp;width=680&amp;sig=wS%2Fqjpao3TvEwP5YFNlV8tTE7thZB0jSonUkgNZfoDo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755158">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/158/6983c89ef39928a8abf78c608c20c91f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743581779&amp;width=680&amp;sig=hYTGBTd2rAW9lSOFuiiA1aZWP4l%2Bcz1S8bNRiJt8MF4%3D"/>
+</figure>
+</div>
+<p><br/>True EDC gear isn't just about power, it's also about durability, and the RUNK 2.0 is made of rugged metal with TR material for strength and lightness, ensuring reliability and durability every time you use it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48653191">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/653/191/039c1c26e07b9bf3f02f5b4e4146fae8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742899743&amp;width=680&amp;sig=REubEKou8Rhnx0o3qZev4KYGdPGQl7Wk58XLUmFWIFs%3D" src="https://i.kickstarter.com/assets/048/653/191/039c1c26e07b9bf3f02f5b4e4146fae8_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742899743&amp;width=680&amp;sig=X3%2Fdc%2FF3X3GZTv7FQXp91jWLLh382MQlz3okvX2wMM8%3D"/>
+</figure>
+</div>
+<p><br/>💎 Sturdy and durable: impact and abrasion resistant, stands up to daily knocks.</p><p>🔗 METAL HANGING MOUTH: Easily hang it on keychain, backpack zip, belt loop, carry it with you and use it at any time.</p><p>🎨 Stylish design: highly technological multi-faceted cut-out shape, every detail is extremely well thought out.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48708127">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/708/127/619b6c4329785c48c77f02296a3f65b0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743253482&amp;width=680&amp;sig=I1MrJykwL9AMTcWPFxjMt75E9FksKiJuP%2FVY6E5%2BD7M%3D"/>
+</figure>
+</div>
+<p>Unleash your personality with seven new colourways!</p><p><br/><span class="bold">🔹 Technology, sturdiness, and portability - the perfect combination of all three - allows you to unleash your energy anytime, anywhere!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48684006">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/684/006/75398d14c5ada83446f6a3542152563d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743080752&amp;width=680&amp;sig=OBChWibJoouGhfXJtUHp6VJZRpmumgU%2FS5FbeP89Tkc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48707123">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/707/123/c41e8c2522fed8cbc42a8a30c00576ff_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743241618&amp;width=680&amp;sig=6wbNEN5F6rYtwnL47GM61CoYLCXL0uezPTuF%2BYjYaEE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755193">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/193/f3cefecb0d12facc5dfb99947cd9a1b6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743582008&amp;width=680&amp;sig=Bqb%2FLciqnbmAWRq9eWIQQ3Wi2Ll1VCG6FGmpERr7kEQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48707891">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/707/891/35ba460337c5e5054c546f35fe32cfa9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743250724&amp;width=680&amp;sig=ikCuDx57oGLlNVq1OsxuX%2BlbsPYqyMbPlc7DcGWNBbQ%3D"/>
+</figure>
+</div>
+<p>Despite its compact appearance, the RUNK2.0 is equipped with high-quality polymer batteries and an internal multi-safety protection system to ensure a safe and reliable charging process. Whether it's overcharging, over-discharging, short-circuiting or over-current, we have the proper protection mechanism to protect you and your device. Therefore, you can use it with peace of mind and enjoy the convenience of charging.</p><p>Whether you are on an outdoor adventure, a business trip, or a daily commute, RUNK 2.0 allows you to charge with peace of mind and no more anxiety!</p><p><span class="bold">RUNK 2.0: Smart charging on the go, technology upgraded!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755267">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/267/44fc3c874cea107ad11f95ae5b845f0c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743582544&amp;width=680&amp;sig=XWpWkvqTQw69I1qBbC9%2BjzXz4KFIzq%2BNoRZ6lb27KfM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48666405">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/666/405/0bc1c6fa1e6737c4425420897f264c3c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742975701&amp;width=680&amp;sig=gUspWp4HIJHilOHZCaJZPiAE4EdosNyNBd0M0k0y9CE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755399">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/399/f4979b494fa25c70144f64febd37e039_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743583305&amp;width=680&amp;sig=x31U%2FbsTC8MPjnJDAnfYqz%2FSCgK3n9MKXFs8TuNVnuE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755437">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/437/8126c5ec3816fd7caae2a4000ecebc9e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743583608&amp;width=680&amp;sig=uLJOvKvEF3jgkrYE%2Be8Kd6NqH19lLdAy8s8Khkb9SBg%3D"/>
+</figure>
+</div>
+<p><span class="bold">Suitable charging cable type and colour will be selected in the survey.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755495">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/495/84f3bef47e224681959ab6905a8873ad_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743584000&amp;width=680&amp;sig=%2Fekc4OwiQORhUBHfCZjS97XjCsYQSjrp89UzbGOtPlY%3D"/>
+</figure>
+</div>
+<p>To make your RUNK2.0 experience even better, we offer a titanium carabiner and leather travel pouch as well as a shoulder strap charging cable as ADD ON options.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48707921">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/707/921/052b64bbc149cd717ee7ccab75f3cbbd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743251223&amp;width=680&amp;sig=Y2lagqwtEJOceKM0y0uiM%2Bjtqo1DOtDSoZzpX%2BG6aHQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48707945">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/707/945/198977b0634b91c9d892062ce947bfd3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743251599&amp;width=680&amp;sig=PyRtCqAq5GcRD9DkOGVYgcUO4A9e698MH55Kge99Uf8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48928421">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/928/421/7cb297a631ad759a7927a5c404f88926_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744800819&amp;width=680&amp;sig=kpYr25V2ZIM90KhlF1tbqULwu2ek3t63MBHuWs0Vi2g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755558">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/558/53cfa557844f04b25081dec2af283bbb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743584380&amp;width=680&amp;sig=L0x9yHatfp2Wk%2B4ILaCEfpKL6ntFhbprbBIArZd78T8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48697791">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/697/791/0b1ddfb11769aca3330cf9367891df9e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743166346&amp;width=680&amp;sig=l4Mz%2B82c%2FLCQjHUa4cm%2BrMqHFkSrhLPnAhnPxrDm9lU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755627">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/627/06ac3982d2feb5751a9af0125b6258f4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743584610&amp;width=680&amp;sig=XYDp2344DdSrbIbGSqgrSwVGZU9Mz6qMq1IbrCBC7Mk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48706840">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/706/840/4ea94ea5ee7120fea823b91e630f9ce2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743237055&amp;width=680&amp;sig=sqSWF3aRGSk2RIoLJE7XxoYhHpJh838IKCldOl%2FNH8U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48706851">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/706/851/67d542d2dd7c2fb883cd18d4fddea090_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743237185&amp;width=680&amp;sig=ZTQTeMoN4D9skbiLIL0tI3eCuwu%2BTrqswRWkkcV8XBA%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Functional-Testing">Functional Testing</h4>
+
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755702">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/702/8653b80c0af400360bfa18ac5e2933db_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743584917&amp;width=680&amp;sig=DWRrhJudqSCP9hmrTDTf6tBoT9LKcxnHNyUmEd32zgM%3D"/>
+</figure>
+</div>
+<p>RUNKER INC is a new brand under MATION INC, we have been committed to the development of electronic products. Currently we have a mature design and development team to ensure the high quality and cost-effective products. We are committed to integrating technology into life and creating a more convenient and comfortable world for everyone, every family and organisation. Go green and create the future together.</p><p>Previously our razor series products (RUNK, MECH ONE, MOTOR-ZERO, MOTOR-ZERO2.0, MOTOR-ZERO3.0) launched a crowdfunding campaign on kickstarter, which we delivered on time and received a lot of positive feedback. We remain absolutely confident that RUNK2.0 will be delivered on time!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48706949">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/706/949/8b175d3823ae316c7775113767c2d082_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743238600&amp;width=680&amp;sig=SRBuLx%2FpDXVO6rF0%2F9VoVK3Z9ebJs29RsY6s%2F6ea0%2FQ%3D" src="https://i.kickstarter.com/assets/048/706/949/8b175d3823ae316c7775113767c2d082_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743238600&amp;width=680&amp;sig=wugxvhrVaXaon9uhCypzY8L7I6YmwsA8GbcUaCl%2Fj4A%3D"/>
+</figure>
+</div>
+<p>Join us to keep your devices fully charged, to stop losing your important items, to eliminate the need to carry cumbersome keys, to share your business cards, and to keep your life energised.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48755753">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/755/753/5b0cd0c10ae0f67c88c035bbd0ea4817_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743585295&amp;width=680&amp;sig=Uu3FZB%2Blx8qlTL2%2BjOncmNAhfjhTX%2Bm6%2B4FiUbIy4To%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48756770">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/756/770/a989cd3266ae846856918ab6dd2dc4d9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743591194&amp;width=680&amp;sig=FFoLUcMDCrwlrYKKqzTWMSuH%2FoR3LRTZcKlXA%2B1bHPI%3D"/>
+</figure>
+</div>
+<a href="http://jellop.com/?utm_source=RUNK20" rel="noopener" target="_blank"><div class="template asset" contenteditable="false" data-alt-text="" data-caption="This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them." data-id="48878841">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/878/841/307d470266ba82957f827a73c8b0c123_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744445146&amp;width=680&amp;sig=vqneBqsicdnPDkBfXuBkuMXY2WwCvD2yEFboF9zXmxA%3D" src="https://i.kickstarter.com/assets/048/878/841/307d470266ba82957f827a73c8b0c123_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744445146&amp;width=680&amp;sig=1U9Az18gZSNjEbQHLgMPBYQw%2FQTNFMl3L6UDsoUV49A%3D"/>
+<figcaption class="px2">This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them.</figcaption>
+</figure>
+</div>
+</a><a href="https://www.backerhive.com" rel="noopener" target="_blank"><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48911590">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/911/590/f64926cb24934e8474dfca4468d21161_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744704887&amp;width=680&amp;sig=hf%2BMBBfnzbLgdYittJV88X0WgZ0xOpQ4%2FJ3sFzl7LgM%3D"/>
+</figure>
+</div>
+</a><a href="http://www.backerviews.com" rel="noopener" target="_blank"><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48911617">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/911/617/54781de5c0e9a9ee87c9f5c58f7dff5b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744705114&amp;width=680&amp;sig=EXvMkjy8%2BZ0SlECb%2FMuJ%2BBqkfZ6cqqYMOpzu40JvO%2FI%3D"/>
+</figure>
+</div>
+</a><a href="https://www.backerrock.com/" rel="noopener" target="_blank"><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48911820">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/911/820/606b1d956c133645b3f4975cd07d9f88_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744706212&amp;width=680&amp;sig=X0x0cU2KdnB5Dkypeo%2BvONvGzL68ai%2FnZs4j2da8CoY%3D"/>
+</figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48911857">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/911/857/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744706386&amp;width=680&amp;sig=i4seIX6mLjg9yFn8zoHZfcI2YuBuGA2rqQT%2FM%2FKlYzY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48911858">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/911/858/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744706390&amp;width=680&amp;sig=Na5EUdxFRqlOlz5K7gEfygzRGWySLr1ks3db%2F4ss9P4%3D"/>
+</figure>
+</div>
+<a href="http://www.backerlead.net" rel="noopener" target="_blank"></a><a href="https://kickstartech.com/" rel="noopener" target="_blank"><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48926138">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/926/138/6538e83f9ff37276e48829b47f6e018d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744789514&amp;width=680&amp;sig=%2BfdO%2FtIT8dd4D%2BU7kaqybrdPJP4SHrk4B907ZmlJh0o%3D"/>
+</figure>
+</div>
+</a><a href="http://www.backerfeed.com" rel="noopener" target="_blank"></a><a href="https://backercrew.com/submit?utm_source=ks_refer" rel="noopener" target="_blank"><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992677">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/992/677/c8f110d736c9ea39f38630c1d956b7b3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745304907&amp;width=680&amp;sig=QjIESg3kCKky6URLUMtwivX5yxdLQi71R14Uwna92aw%3D"/>
+</figure>
+</div>
+</a><a href="https://igadgetshub.com" rel="noopener" target="_blank"><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992782">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/992/782/9995326b99f2f766638839f7c100e0f5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745305678&amp;width=680&amp;sig=8vrz9huvbRB7pv0GTZS4pNRxpDxBUolZvSnoDptkq%2F0%3D" src="https://i.kickstarter.com/assets/048/992/782/9995326b99f2f766638839f7c100e0f5_original.gif?anim=false&amp;fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745305678&amp;width=680&amp;sig=Orro6ZYRAJJhKFLRO5lEUaHXq3EvfhRlqdW73JK9D9I%3D"/>
+</figure>
+</div>
+</a></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We have developed beautiful prototypes that are ready for production and are fully prepared. Thanks to our previous production experience with RUNK, we have a complete/reliable supply chain system to ensure smooth production and on-time delivery. Therefore, no problems are expected in terms of production and delivery.</p><a class="ksr-green-700 bold type-16" href="/help/hc/sections/115001107133" target="_blank">Learn about accountability on Kickstarter</a></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><a class="bold link-blue type-16" href="/projects/runker/runk20//faqs"><span>Check out the FAQ</span></a></div></div><div id="report-this-project"><a class="kds-button kds-button" data-rac="" data-variant="outlined" href="/login?then=%2Fprojects%2Frunker%2Frunk20#report-this-project" id="report-this-project-button">Report this project to Kickstarter</a></div></div>
+    </div>
+</body>
+</html>
