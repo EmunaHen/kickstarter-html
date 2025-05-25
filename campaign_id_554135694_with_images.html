@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi Shelf - 3D Printing STL Files</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/055/149/23a5f7d75e7f3846c81b3686b919b39b_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1745711284&width=560&sig=qqQXHTV9cWbatzlElJFIHM5SPIg2LwOE4FvAL%2Fd%2FUng%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Multi Shelf - 3D Printing STL Files</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">The next generation shelving system - print and assemble 101 STL files.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,680</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49055226">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Story">Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/055/226/fb5017ae8f49306234055e2021b930c8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745712446&amp;width=680&amp;sig=DjIiylR12HOjDqhkKWdBa8752nxkxwm0Y5SoUzvZpWE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Hi-Makers">Hi Makers</h4><h4 class="page-anchor" id="h:-The-story-behind-Multi-Shelf-from-the-idea-to-the-3D-printed-shelving-system">💡The story behind Multi Shelf - from the idea to the 3D-printed shelving system</h4><p>Hello!</p><p>I'm Maik, 50 years old, from Germany - tinkerer, developer and creative mind behind this project.</p><p>About a year ago, I discovered my passion for constructive 3D printing solutions. What started as an experiment in the workshop quickly developed into a real mission: to design things that are practical, functional and stylish at the same time - and that you can't buy off the shelf.</p><p>One of my biggest goals was to develop a shelving system that is as flexible as everyday life itself. A system that can be adapted, extended and changed at any time - without tools, without frustration, simply well thought out.</p><p><span class="bold">Multi Shelf</span> was born:<br/>A minimalist shelving system that is made to measure using 3D printing and integrates perfectly into any home, office or workshop. Whether a small corner or a large wall - Multi Shelf grows with your ideas!</p><p>🧠 <span class="bold">Why Kickstarter?</span><br/>With your support, I want to take the next step: realize even more creative, everyday 3D projects. Because I already have more ideas in my head - and on my sketches - that are just waiting to become reality.</p><p>Any support will not only go towards the further development of this shelving system, but also towards the development of new solutions that make everyday life smarter, more flexible and a little easier.</p><p>🤝 Become part of the idea - support Multi Shelf and join me on my journey from tinkerer to problem solver for your home!</p><p>You will only receive the STL files, not a physical product.</p><p>Your Maik from MaDeg Art</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49054967">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/054/967/a6a01ff9843dc734bd52bd1c5da87e70_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745709790&amp;width=680&amp;sig=aHA1ufNiXDZqF3StMkOTkdv69H3HtUAmGnz4n1XcqJE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48941358">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/941/358/ed2759e24233b2971ed5ea172cb90895_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744885362&amp;width=680&amp;sig=MtEnEht43ubiDrCbPxNkDlYm7JIOz0G9uxkhlezldOo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49055257">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sketches">Sketches</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/055/257/6e5e5eaa195613eb031459e6428a1466_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745712859&amp;width=680&amp;sig=RAOFypyMDMB%2FzBrsFnMROm9AnjUPcIGea5cgnjdQyuc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48991289">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/991/289/e901c741fa376b49d6371dfee1419ef1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745294442&amp;width=680&amp;sig=4OvW40tAkc2bzuxVLcIqdeGPbn7Tn9QKu6W9M6FsRwI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48991263">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/991/263/fce11155660fe9774e61ac18024cb2db_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745294260&amp;width=680&amp;sig=MPCABeTLNolFyo1CFa6GjT3qTNQdMfMtYfv3NZig8dc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48991264">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/991/264/5aaa0cddd5f9d9db1fb6e43303f653b9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745294260&amp;width=680&amp;sig=eL5w9KaxQyJHz4A%2B6PBlA9lsIsq9P2eoUxTbDIexT7U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49055227">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Video-Clip">Video Clip</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/055/227/311ccc7a47a785a0fb3314fd1c145d76_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745712470&amp;width=680&amp;sig=7kphg%2BXg8QJregWHXZGvA6ID8D1QWhs2c1KAb08LNlM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49055234">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Ideas">Ideas</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/055/234/753b6a797231e916178a240b95909494_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745712591&amp;width=680&amp;sig=V4llugN8zjDyGZh034EtC9NjJOJE1v9RzRfTMeykIZM%3D"/>
+</figure>
+</div>
+<p>It doesn't matter if you want to fill a small niche of 10 cm/3.94 inch or if you have a wall that is 15 m/591 inch long and 5 m/197 inch high. With my modular shelving system you could realize everything according to your ideas, if it is possible.</p><p>These are just examples, but larger projects are also possible. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48991311">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/991/311/fd0320898a93c87e39991c0180a24519_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745294542&amp;width=680&amp;sig=gm8fUUUvui3fINdfqkgroMdNAbm28OAZlp%2BTq%2BtK9sk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48991372">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/991/372/a032b376570dbc66c02f49c8064274be_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745295030&amp;width=680&amp;sig=pQ10IcRVPoRbVY9pAcRu6CMBgfMdkstz5xyill1bmJk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48941363">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/941/363/94a282a65999e806d8d57c9b53df975e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744885425&amp;width=680&amp;sig=moo2xOAiNaeD8IUdkvXlr6N7sNxeUzxcz5rNobTjYj4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48927690">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/927/690/143c43a1bb2042168666fabbc9a3d391_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744797274&amp;width=680&amp;sig=DeF4N%2BG6jfET2s4ZUtdPc6oTu%2FLj55hdPltLpR202Uc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48927691">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/927/691/69e117e27e281fae9c0ad84fac81db20_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744797274&amp;width=680&amp;sig=wNbJHWyQUnqStbWKNUa58WxkUJDCweAb8J%2FsEkgj9tU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48941373">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/941/373/d943ab1534be26720809adb2bb429ecc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744885508&amp;width=680&amp;sig=dUL0YgS8elrEFK%2BQFynUC5YeBfruXUTdy9M9WwgZotY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48991391">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/991/391/bdb6e433b165b45a095e1d86d0b87831_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745295236&amp;width=680&amp;sig=6RYUwlr4tTCQQvAsBYGcXMV9wreGEnbdRC44scKBWU4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48941376">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/941/376/7cb0f581e2cf7e745c22eb7f33f6c868_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744885544&amp;width=680&amp;sig=u%2FVq57OsOxJ0M7Noq6qU3RpqfY15xDZqnT7FEfm9sOs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48927749">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/927/749/04d111b58446ffb859c59eff6f58eb59_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744797547&amp;width=680&amp;sig=ABmzXBU9cSEjmHSPa9%2FsH0jHWg8lgLVXV7ueAh6%2Fk1A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48927748">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/927/748/4243a497ced11da43c35139246e58a88_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744797547&amp;width=680&amp;sig=Ul72f4YjiTXdL7yeCl4JXh1xToGsLSrc17ehPURugNM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48941156">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/941/156/5d1daf9dfc2d1895a1cd5d44bfb9100c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744883916&amp;width=680&amp;sig=vpntICxtgMEK3imkYb%2FkqjaEfY7MB8tPH%2BgXnS7ugKw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49055238">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Practical-Use">Practical Use</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/055/238/5d4d11d7c9f5aa346e80f7e255fd9858_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745712670&amp;width=680&amp;sig=OVBInieYGOkv9qJfyzQM4GkSQntGPl7t2YgXBI1%2FpH8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48941382">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/941/382/8b39f64229cf7f13d27c85a5df0e4270_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744885625&amp;width=680&amp;sig=OtAmlYspIgI1UR37%2BTwwF%2FaChy097d3nVKBJJK0vF04%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48927851">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/927/851/3f545e4989d573e3cf56f704d3bb4a05_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744797802&amp;width=680&amp;sig=yiWGwvOJYVM42I5sre4%2FLsLuX8e3u3OqJpfzrqGi%2F40%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48927857">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/927/857/a6ea874d1ddad864a1049162517496bd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744797809&amp;width=680&amp;sig=G%2FRNUFT0LipAQyO005NaBrxMyEuKPIwZ6ZV3pLlmKLw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49071235">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Goals">Goals</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/071/235/9673f4b4ab392e920df51f545ac5df80_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745844987&amp;width=680&amp;sig=W%2FFOWVgh2DRQLlzVQe6h0zKeKojc7xL%2FgrEKHl%2Fkiik%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49151261">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/151/261/043421943f38d6c56081ba02e524839e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746383979&amp;width=680&amp;sig=6%2FwmVrxHYLDzyVKnArnBH6YmoPKuZ2lgyVSX8S97Ejc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49151262">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/151/262/a842f723a210e8c98d943a1bbc630adf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746383985&amp;width=680&amp;sig=PAzEF3OyfMaf7emEpRRwfskhViga%2F8yWAh89n%2F7DAUw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49151263">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/151/263/bdc806950da7fe726019e5144c18e6ba_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746383990&amp;width=680&amp;sig=JdiZnXLDJqUqZrDK1HLEq6yLvAywBTWPNDecuNmq5i0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49151264">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/151/264/0c8e507d306cb5eade62867351ef7c7c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746384001&amp;width=680&amp;sig=6pBKkLXigMyQmxmmgvF1LP9%2B9e69NSqi1%2B403HrOrhc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49151267">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/151/267/214dd7542646a894f4421b5d8e975a4a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746384008&amp;width=680&amp;sig=m0WR8yYzIjyM8JYJZo5eSCUV3SwYtxnGw3pLRB51%2F2Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49151268">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/151/268/4c25c5b0fe75d0a737f70fd8c8a4bcb6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746384014&amp;width=680&amp;sig=s3N3rTDBVapCw6FQoAcwfmJRhnwpHXdH0SY7cJpw1yY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49151270">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/151/270/5d3c128f647345a07e88a6a430887e7a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746384019&amp;width=680&amp;sig=m2fLKs8SY1XFOSTqu8PUPfvugLrdTAatZE1jgARFKec%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49151271">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/151/271/5b75a54cc4ca44fa50a5b792e2e8e85e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746384026&amp;width=680&amp;sig=NkigTLwwm6tx7jV39CYfIR1IOV1VeNyizUeEH%2F5p60o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49151275">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/151/275/5d6f796e69b85bd6feb0baaf37329bf8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746384032&amp;width=680&amp;sig=4kFsfbsPFOJfQz65jKWIIcVBJ63hRRYrA1Dy00wvrUs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49151277">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/151/277/209637d4f532255cd21bfaba432c5d89_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746384040&amp;width=680&amp;sig=QVciSoZLuSIt7WBpjtBYZRRngGvKc7PYhnVGTIhMNXY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49109151">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Download-Files">Download Files</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/109/151/c687b8d50d7aebb26cfb63e73ba71489_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746047358&amp;width=680&amp;sig=Kq6fasEu16ygjPvJhZV8kHWQxnyGPCLuLQvwkj%2BwR1k%3D"/>
+</figure>
+</div>
+<p>Hi Makers</p><p>Here is some information on how the files will be sent.</p><p>Since these are STL files for printing in the 3D printer, the whole thing will be done via a link to my site where the files are located. You will not need to register.</p><p>The download will be activated approx. 30 days after successful support of my project and every supporter will receive the link by e-mail. This is how long Kickstarter and its payment processor usually take, but it can also be quicker.</p><p>If the full report from Kickstarter is ready earlier, the download will also be available earlier. I will inform you immediately.</p><p>Best regards</p><p>Maik</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">No risks or challenges! 
+
+All models have been tested and printed and will be shipped to backers no later than four weeks after the end of the campaign, once we have received the final list of backers from Kickstarter. However, experience shows that this happens earlier.
+
+All models are finished and ready to ship.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Durable PLA material</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">The material can be shredded and reused as new filament</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZimaBoard 2 - Hack Out New Rules</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/084/961/9af859b6054b743a200384c7c13fc115_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1745924758&width=560&sig=E683l8rBEiq8kXZGEDt8mqhWAlY%2FE081pUCNeodszPQ%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>ZimaBoard 2 - Hack Out New Rules</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Hyper Performance Single-board Sever｜Mini NAS｜Home server | Self-hosted | Software Router | Local AI | Cluster and More</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 50,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div>
+<h3 class="page-anchor" id="h:Meet-ZimaBoard-2"><span class="bold">Meet ZimaBoard 2</span></h3>
+<div>
+<div class="ace-line old-record-id-QuCrdx9s9oAz0bxZCzecG8vbnFc">Four years ago, we launched ZimaBoard 1 on Kickstarter with the support of 1,880 backers, kicking off our journey into home servers.Since then, CasaOS, ZimaOS, ZimaBlade, and ZimaCube have evolved with the help of our growing community.</div>
+<div class="ace-line old-record-id-B9NTdEX39oQjw2xnMlQcKfVynjC"><span class="bold">Now, we proudly present——ZimaBoard 2</span></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48995646">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/995/646/07ef6fd3581199c3c485bb8dfe940459_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745322324&amp;width=680&amp;sig=8Jp5aWUD7ovpI%2FuM%2BAlX%2FSElDkvI%2F2BhrdLqYJ8hR4M%3D"/>
+</figure>
+</div>
+</div>
+<div>
+<h3 class="page-anchor" id="h:Board-Beyond"><span class="bold">Board. Beyond</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48995647">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/995/647/b23ad40d76ea572dc6eaef8300bcdd87_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745322327&amp;width=680&amp;sig=AxYoObsYgt0dO%2BxKmvoi9g5W6Kk76GZdUlg0dupaWB0%3D"/>
+</figure>
+</div>
+<div><div><div class="ace-line old-record-id-KK22dKSvPorselx0Iq3cMUKOngg">The all-new <span class="bold">Intel N150 processor</span> unleashes ZimaBoard 2 with explosive hyper performance. Compared to its predecessor, ZimaBoard 2 delivers CPU processing power up to <span class="bold">3 times faster</span>. Armed with next-gen <span class="bold">DDR5</span> <span class="bold">memory</span>, soaring<span class="bold"> up to 16GB</span>, these upgrades supercharge multitasking and deliver lightning-fast response speeds, making ZimaBoard 2 an unstoppable force against any challenge.</div></div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48995650">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/995/650/a7841868af6c688303869ff5682d1325_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745322332&amp;width=680&amp;sig=v8mUgTDyxvbhy4kQzmtUKL3aam%2FTxEO1AkM%2FmaEL4s4%3D"/>
+</figure>
+</div>
+<div>
+<div><div class="ace-line old-record-id-PDZ4dxUREonQpzxJbCSciEZMnRI">ZimaBoard 2 retains the renowned <span class="bold">versatile interface</span> design of ZimaBoard 1, effortlessly adapting to various scenarios. The newly upgraded <span class="bold">PCIe 3.0 interface</span> and <span class="bold">dual 2.5G Ethernet ports</span> unlock greater hardware expansion possibilities and ultra-fast data transfer experiences. The new <span class="bold">MiniDP 1.4</span> interface delivers vibrant 4K visuals for your movies, while the classic <span class="bold">dual SATA interfaces</span> allow ZimaBoard 2 to easily expand storage capacity.</div></div>
+<h3 class="page-anchor" id="h:Mini-NAS"><span class="bold">Mini NAS</span></h3>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48995652">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/995/652/54ae9103baf5ee9440fcd974d40a8ad8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745322351&amp;width=680&amp;sig=UXc31WLEWk9nLdjjMh36XFo%2BT0sSHh%2FMkjfgrSIGzdQ%3D"/>
+</figure>
+</div>
+<div><div><div>
+<div><div class="ace-line old-record-id-Sm2AdchU7ov19UxOETccA9ponXf">Don't let its size fool you. With just a cable and a drive, ZimaBoard 2 becomes your <span class="bold">Mini NAS</span>. Its <span class="bold">palm-sized</span> form is perfectly paired with an elegant <span class="bold">fanless silent design</span>, freeing you from the bulk and noise of traditional NAS hardware. Coupled with the pre-installed <span class="bold">ZimaOS</span>, it delivers an <span class="bold">extremely friendly</span> personal cloud experience, far surpassing conventional NAS systems.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48996853">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/996/853/c9af51b389d6a3af878168f4f6ae450e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745327913&amp;width=680&amp;sig=Fcq79JGgoYRwWHj0eb%2FTtaGTyOXnMPFXKkhlx%2B8Tb64%3D"/>
+</figure>
+</div>
+</div></div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48913991">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/913/991/201da636cb8be1d57851ed0d107ac554_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744718063&amp;width=680&amp;sig=PGsPaSTN2BvZA4ZPiM0P25QhBcwFAfJujdI7dQfPSmo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-ZimaOS">- ZimaOS</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48995653">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/995/653/539b0dec6dc11565281ef150deeeebcf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745322353&amp;width=680&amp;sig=AKlDknlGNUHmCYcAodku0c8HL1lOFwuvQu2LGf8FriI%3D"/>
+</figure>
+</div>
+<div>
+<h3 class="page-anchor" id="h:-Data-Centralized">- Data Centralized</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48995656">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/995/656/c25407f27789a1aecb103f5e9f4e1a72_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745322354&amp;width=680&amp;sig=0XfTl%2B4I1mmdxAnDt%2FZbcrUPAtIQTp3BRUTXSJM6wgk%3D"/>
+</figure>
+</div>
+<div>
+<div><div class="ace-line old-record-id-U2ZudrevboA7qXxuriecEPSTnME">
+<span class="bold">Files,</span> your <span class="bold">data all-in-one hub</span>, effortlessly gathers your scattered data into one place. From important files on a USB drive to travel photos in Dropbox or creative assets on a Samba LAN device, you can import everything into Files with a single click. <span class="bold">Simple and efficient.</span>
+</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48995659">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/995/659/180ceed1d01a99f1da3a11daf0595ec5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745322358&amp;width=680&amp;sig=vjejm3K8cSkTjJeRaeCdZmlJ8%2B6gEgcYYMizT9%2B6EbE%3D"/>
+</figure>
+</div>
+</div>
+<div>
+<h3 class="page-anchor" id="h:-High-speed-Backup">- High-speed Backup</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48995660">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/995/660/b7ff7b783ec82c721a60f2b3ed680fc9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745322363&amp;width=680&amp;sig=an3MvdqxlrnuYKtf9Z9x1rg%2BKrMruxDnlz8hg%2FLKAKE%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-TeSvdF1DZoTLgWx4RMAcYjf0nne">
+<span class="bold">Fast, fast, fast backup</span>. Zima Client makes saving your creative projects and photo libraries <span class="bold">blazingly quick</span>. You’re at your desk editing a 10GB 4K asset on your desktop when you’re suddenly called to a meeting in the conference room. Just click to backup, and your work is safely backed up to your laptop at speeds <span class="bold">up to 280MB/s in a Samba environment</span>. Trust me, by the time you reach the meeting room, your files are <span class="bold">securely backed up across devices</span>.</div>
+</div>
+<div>
+<h3 class="page-anchor" id="h:-Massive-Storage">- Massive Storage</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49009932">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/009/932/57fb68ddb3efe43e6e637f61e1c9ee64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745407147&amp;width=680&amp;sig=g%2FzyRSNow8an6WtHEF2DNXp03CmcuAUJFyNFrAkfz4I%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-GBtddcsBQoGx3vxhYiXcRWjLnAc">
+<span class="bold">A home for the things you love</span>. With ZimaBoard 2, you not only get a massive <span class="bold">36TB capacity</span> but also ZimaOS-powered <span class="bold">RAID creation</span>. So you can build a truly personal digital content library, storing every 4K Star Wars and Marvel movie with ease. Plus, RAID protection means no worries even if a drive fails.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48996271">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/996/271/5574edf1cca110eeedf61f88a57faefd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745325231&amp;width=680&amp;sig=1s0woaV6sFxqxogYBv3KLKMIhMuFmykvVu6eDJZrzcY%3D"/>
+</figure>
+</div>
+</div>
+<div>
+<div><h3 class="page-anchor" id="h:Omnipotent-Home-Server"><span class="bold">Omnipotent Home Server</span></h3></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992844">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/992/844/f97e20dc269d83329139669b7a337120_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745306129&amp;width=680&amp;sig=Y2AH3Ulo5YeRpXzKAmRmpWPovHcPvBw7CXzimWjbSXA%3D"/>
+</figure>
+</div>
+<div>
+<div>
+<div><div class="ace-line old-record-id-Mqf3drQLioTUrRxjXlTcWEQcnid">Thanks to the <span class="bold">rich</span> <span class="bold">ZimaOS app ecosystem</span>, ZimaBoard 2 transforms into an Omnipotent Home Server. With <span class="bold">hundreds of apps</span> <span class="bold">available</span> in the ZimaOS App Store, it meets all your personalized needs.</div></div>
+</div>
+<h3 class="page-anchor" id="h:-Home-is-Theater">- Home is Theater</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992846">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/992/846/6b147a4e53bd4a9cb1b211c0f456f0d0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745306132&amp;width=680&amp;sig=vde4ZogcMu7jAYHNScDMEmJXjXcVMvqgbvtN%2FXGxSlE%3D"/>
+</figure>
+</div>
+<div>
+<div><div class="ace-line old-record-id-F4Eidhq5FoaElbx7DnrcT0Jcnde">
+<span class="bold">Your next movie doesn’t need the cinema</span>. With ZimaBoard 2 running <span class="bold">Plex or Jellyfin</span>, your living room transforms into a <span class="bold">private home theater</span>. Picture a cozy weekend night, family gathered, as ZimaBoard 2’s ample memory and blazing-fast network speed support deliver <span class="bold">4K blockbusters</span> to your TV without a hitch. From epic action to timeless classics, every movie streams flawlessly, turning your evenings into unforgettable cinematic experiences.</div></div>
+</div>
+<div>
+<h3 class="page-anchor" id="h:-Smart-Home-United">- Smart Home United</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992951">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/992/951/95d7823ea1cba18bf6069a80f42678de_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745306675&amp;width=680&amp;sig=WRjlIB74UcDjLhKhz13fqgsfJIsAbnMp8Be%2FH9fMFA8%3D"/>
+</figure>
+</div>
+<div>
+<div><div class="ace-line old-record-id-P7GWddBvjo19Tyx62GCcGQ6onbd">ZimaBoard 2, with <span class="bold">Home Assistant</span>, becomes the <span class="bold">smart home brain</span>. From a single interface, you effortlessly control devices across different brands, setting rules for seamless automation. Just one word or one tap, and your home syncs perfectly—lights, thermostats, and sensors working together. With <span class="bold">self-hosted control</span>, your smart home stays private, secure, and entirely yours.</div></div>
+</div>
+<div>
+<h3 class="page-anchor" id="h:-AI-Home-Sentinel">- AI Home Sentinel</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992952">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/992/952/ce1b89c1224bec723e49f79559334e7a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745306681&amp;width=680&amp;sig=TEiFa%2Ft1E%2BweJb0Fo2I2Two8RZXcjHK7905DhbafyOg%3D"/>
+</figure>
+</div>
+<div>
+<div><div><div class="ace-line old-record-id-E5TLdebgBojhlZxmT7scSdvTnqd">How can a smart home lack an <span class="bold">AI-powered security</span> system? Pair ZimaBoard 2 with an RTX 3060 to unleash robust computing power for the Qwen Multimodal Local Model on Ollama, and with Frigate, transform your home cameras into vigilant sentinels. Define monitored personnel types to filter false alerts and receive detailed daily event descriptions. <span class="bold">All local, no leaks, full privacy.</span>
+</div></div></div>
+</div>
+</div>
+<div>
+<div><h3 class="page-anchor" id="h:Master-Your-Network"><span class="bold">Master Your Network</span></h3></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992953">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/992/953/36058cc5d1409c2d2d0beb31eb15fdf8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745306686&amp;width=680&amp;sig=aBOojDASGKXFGIUrxVNC%2BpRnE8rSZJGElromSoONjC4%3D"/>
+</figure>
+</div>
+</div>
+<div><div>
+<div>
+<div class="ace-line old-record-id-WNgQdKp30o4QC9x9hvBcnhRynhe">ZimaBoard 2, as a <span class="bold">soft router</span> with dual 2.5G ports, lets you master your network with <span class="bold">ultra-low latency</span> and <span class="bold">rock-solid stability</span>. With such mastery, <span class="bold">set up VPNs</span>, <span class="bold">configure firewalls, monitor traffic flow</span>, and <span class="bold">block ads</span> for a streamlined experience. Enjoy an ultra-fast, ultra-secure, and private network you master.</div>
+<h3 class="page-anchor" id="h:-Ironclad-Digital-Fortress">- Ironclad Digital Fortress</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992960">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/992/960/24560f4665ace1672c1b41ca28578af7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745306708&amp;width=680&amp;sig=AoDvwEHhWBzMul6Qm4W%2FW3tDn14w9tuYCvj0NKuyd7w%3D"/>
+</figure>
+</div>
+<div><div><div><div class="ace-line old-record-id-VTbddFbjooI8shxNYgUc0vhRnud">Secure your network with ZimaBoard 2 running soft router systems, fueled by<span class="bold"> VPN encryption</span> and <span class="bold">firewall protection</span>. Running <span class="bold">OpenWrt or pfSense</span>, it delivers <span class="bold">private connections and robust threat defense.</span> In a café, you adjust your smart home lights via OpenWrt’s encrypted VPN, while pfSense detects a hacker’s connection attempt, instantly blocked by the firewall. Stay protected with a private, impregnable network you master.</div></div></div></div>
+</div>
+<h3 class="page-anchor" id="h:-Unmask-Your-Data">- Unmask Your Data</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992957">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/992/957/c301c2a7fed45e608692db737c27441a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745306700&amp;width=680&amp;sig=C%2B3pg0%2B%2F7WxgQqAqJ3t%2Bwe2kz3Ak5rq%2BNIbaZWApF1c%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-TlSJd1VtQoyJ8ZxjTTBc7dQenSe">ZimaBoard 2, as a <span class="bold">gateway</span>, unlocks <span class="bold">privacy insight</span> through traffic monitoring. With <span class="bold">MITM proxy</span> and <span class="bold">Wireshark</span>, it decrypts HTTPS to reveal hidden device behaviors. It’s midnight, your smart speaker’s LED flashes suspiciously, but ZimaBoard 2’s dual 2.5G ports catch rogue uploads in real time, letting you analyze and block them with ease. <span class="bold">Enjoy a secure, transparent network you secure.</span>
+</div>
+<div>
+<h3 class="page-anchor" id="h:Build-Your-Board"><span class="bold">Build Your Board</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48993292">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/993/292/78600a8587b2ad6501ca4f61ca337df8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745308670&amp;width=680&amp;sig=BJQd2WOD4CdnOKhTLm%2FmPchtfOEsx3B2Sa6WAx2BTYQ%3D" src="https://i.kickstarter.com/assets/048/993/292/78600a8587b2ad6501ca4f61ca337df8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745308670&amp;width=680&amp;sig=BJQd2WOD4CdnOKhTLm%2FmPchtfOEsx3B2Sa6WAx2BTYQ%3D"/>
+</figure>
+</div>
+<div>
+<div><div><div class="ace-line old-record-id-CCKtdLa0noctnyxZt5aciFmHnyd">Pioneer bold innovations with ZimaBoard 2’s PCIe 3.0 <span class="bold">expandability</span>, unleashing <span class="bold">endless possibilities</span>. Add network cards or GPUs to craft intelligent gateways or AI-driven systems. In your workshop, you can add a netcard to build <span class="bold">a 6-port gateway for traffic mastery</span> or <span class="bold">slot in a GPU for AI edge computing to monitor anomalies</span>. Pioneer your digital frontier with limitless creative freedom.</div></div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48938752">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/938/752/1d9e58851be47da6c7ad813c8b2680ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744866910&amp;width=680&amp;sig=78q8MKN6qOi2WXLX%2FWw2%2FZN9MAcCq7DmZfqMmQ1%2BOkw%3D" src="https://i.kickstarter.com/assets/048/938/752/1d9e58851be47da6c7ad813c8b2680ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744866910&amp;width=680&amp;sig=78q8MKN6qOi2WXLX%2FWw2%2FZN9MAcCq7DmZfqMmQ1%2BOkw%3D"/>
+</figure>
+</div>
+<div>
+<h3 class="page-anchor" id="h:-Cluster-Scalability-Vanguard">- Cluster Scalability Vanguard</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48970017">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/970/017/6dbec6ed90760ec2d98c9cb7ca8145d4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745124306&amp;width=680&amp;sig=KhQ9IEWXz%2Bb38Wu9e5HUG%2Fi75gsMvQEvOgVcgklqoy8%3D" src="https://i.kickstarter.com/assets/048/970/017/6dbec6ed90760ec2d98c9cb7ca8145d4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745124306&amp;width=680&amp;sig=KhQ9IEWXz%2Bb38Wu9e5HUG%2Fi75gsMvQEvOgVcgklqoy8%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-GA7UdgBFpo10WaxQfP1cGzIinRf">Engineer hardcore clusters with ZimaBoard 2, igniting extreme <span class="bold">cluster scalability</span>. Connect multiple boards to drive distributed services or load-balanced tasks. In your lab, you link ZimaBoards 2 to run a <span class="bold">microservice</span> <span class="bold">cluster</span>, hosting a personal cloud and website, seamlessly resilient to node failures. Unleash scalable power with unmatched cluster resilience.</div>
+<span></span>
+</div>
+<div>
+<h3 class="page-anchor" id="h:-Local-AI-Lab">- Local AI Lab</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992978">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/992/978/5636ac7629a9b288d4333e10bcbff31f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745306785&amp;width=680&amp;sig=1Jud4vgoZjtYYmtQsYjYJ9FX8PZIQEkCgaqAguNBOgE%3D"/>
+</figure>
+</div>
+<p>Through <span class="bold">local AI frameworks</span>, ZimaBoard 2 unleashes the potential of <span class="bold">local AI experiments</span>, using PCIe 3.0 to add GPUs for powering <span class="bold">local multimodal models</span> in vibrant, innovative projects. For example, running Qwen models via Ollama lets you generate stunning images, build voice-activated assistants, or create multimodal content. <span class="bold">Local computing</span> delivers robust performance for complex AI projects while <span class="bold">ensuring data privacy</span>, <span class="bold">empowering your creativity</span>.</p>
+</div>
+<h3 class="page-anchor" id="h:Community"><span class="bold">Community</span></h3>
+<div><h3 class="page-anchor" id="h:-Their-Works-Gallery">-Their Works Gallery</h3></div>
+<div>
+<div><div><div class="ace-line old-record-id-NR3Xd538zovXEix1pvVckmlpnhg">Now let’s take a look at how our community has been playing with ZimaBoard 1, co-creating all sorts of fun setups. From a quirky ZimaBoard Toaster!? to an impressive supercluster, these ideas were born from shared creativity in our Discord and forums. Dive into their creations below and join the community to explore even more ZimaBoard 2 possibilities together.</div></div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48941159">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/941/159/9322037edfb75f6c845f90936972a8de_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744883926&amp;width=680&amp;sig=8Y%2BWjT9HlSoa%2B48mwrvsQj%2BTM31caZ02ddMjEDuT%2Bcs%3D"/>
+</figure>
+</div>
+</div>
+<div>
+<div><h3 class="page-anchor" id="h:-Co-Creative-Driven">- Co-Creative Driven</h3></div>
+<div class="ace-line old-record-id-FF5tdBGH3o6ZVBxlMUIc9GnVnxc">Our <span class="bold">co-creative community</span> thrives through vibrant <span class="bold">user stories</span>, uniting to shape Zima’s future. Born from Kickstarter, users and we have grown a Discord community of <span class="bold">over 20,000 members</span>, with GitHub and forums in tow. Across these spaces, users suggest features that our team swiftly refines, newbies swap tips with peers over casual chats, and tinkerers dive into lively debates, <span class="bold">enabling millions of CasaOS installations, 300,000+ ZimaOS GitHub downloads, and a thriving Zima ecosystem.</span> Their voices say Zima makes life more fun, reinforcing our commitment to co-creation.</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48998334">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/998/334/f5ab2a9e016da7939ce856055cd27714_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745334566&amp;width=680&amp;sig=7wdikz%2B%2Bj%2FbTILXfZepqieBHR%2FfJ7nZSvw3ksLy2ldU%3D"/>
+</figure>
+</div>
+<div>
+<h3 class="page-anchor" id="h:Specs">Specs</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48996197">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/996/197/1680c5cc9751b23fb1d60f0fa2f8a8f2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745324934&amp;width=680&amp;sig=SkjzMpwjaPiseL8vUeyVqqi3zq2sD0%2B96c1H4eHYdyk%3D"/>
+</figure>
+</div>
+<div>
+<h3 class="page-anchor" id="h:Rewards">Rewards</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992991">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/992/991/652fa5cb1381a703c67bbfd329b733c7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745306829&amp;width=680&amp;sig=vP4UXxM6dP%2Fjdv1meJZ90vlbjoDg%2B3GUiZupof41aq0%3D"/>
+</figure>
+</div>
+<div>
+<h3 class="page-anchor" id="h:Schedule">Schedule</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49007416">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/007/416/94bddc8ad85f25eb7d2fd23105594dde_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745392759&amp;width=680&amp;sig=uh7v%2BH1DZq%2FAZG5zGeym92n2SeJboWVK2U7lqpfrgRc%3D"/>
+</figure>
+</div>
+<div>
+<h3 class="page-anchor" id="h:About-us">About us</h3>
+<div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48993001">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/993/001/328a685ba2f135df942403f951186a2d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745306844&amp;width=680&amp;sig=1z2RgtJBbDcyvotAoAtyMt587jliuFjb2UUYjwtEdV8%3D"/>
+</figure>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We’re beyond excited to launch ZimaBoard 2! With the success of our Zima series on Kickstarter, we’re confident that ZimaBoard 2 will be delivered to every backer in its finest form, on time.
+
+That said, global tariff uncertainties, challenges in sourcing chips on a large scale, and the use of custom parts could impact our timeline. We’ve proactively increased investments in our supply chain and are working tirelessly to minimize these risks.
+
+With regular updates and transparent progress reports, we’ll keep every backer informed every step of the way. We’re fully prepared to tackle any challenges and are committed to delivering a product that lives up to your support and enthusiasm!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The aluminum heatsink is extremely durable and can be used for years to come. It's detachable, so even if you fry your ZimaBoard 2(please don't) you can re-use the heatsink.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">ZimaBoard 2’s packaging is made from 100% recyclable materials, designed to minimize environmental impact. Through eco-conscious design, we contribute to a sustainable future.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">In recent years, the surge in digital waste has become a global challenge, inspiring the core mission of ZimaBoard: to streamline digital devices and reduce waste from the source.
+
+Our production facilities adhere to stringent ISO and BSCI certifications, committing to robust social and environmental responsibilities.
+
+By optimizing the supply chain and minimizing transportation distances between material suppliers and factories, we significantly cut carbon emissions, contributing to a sustainable future.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
