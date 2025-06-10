@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The BG-1: Angle Indexing Bevel Gauge</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/028/464/bfa71c1b92a71ce4c0db86d4baa5e3ac_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1745516112&width=560&sig=SLzj%2BCbNwKtN3nBAEyU3qEqj%2BssM95BJyknTFI1yL38%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>The BG-1: Angle Indexing Bevel Gauge</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Reinventing the traditional bevel gauge with a patent-pending design for quick, precise, and consistent angle settings.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 15,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264760">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-the-BG-1-Bevel-Gauge">Meet the BG-1 Bevel Gauge</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/760/d4ddf27c0d9f074e212126a256e1207e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161095&amp;width=680&amp;sig=ZU4rD%2B4RzJ61FRgcUOB9CJ7JpjKNy6BjIDOqKKxwTs4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Introducing our first product—the BG-1 Indexing Bevel Gauge.</span> This isn’t just another bevel gauge; it’s a leap forward in layout tool technology. Whether you’re setting up a complex miter or refining a simple angle, the BG-1 is engineered to deliver <span class="bold">consistent, accurate, and repeatable</span> results every single time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption='Illustration of each "indexing"/"positive locking" angle position; every 15° from 90°, as well as 22.5° and 67.5° positions.' data-id="48983078">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/983/078/d1f2051785830adc31ff3538062ac6e1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745246969&amp;width=680&amp;sig=N1OoFOBytRqUs%2F%2BF4EyVq9jlFqWuAqu2Rn56QzoVGs4%3D"/>
+<figcaption class="px2">Illustration of each "indexing"/"positive locking" angle position; every 15° from 90°, as well as 22.5° and 67.5° positions.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48983081">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/983/081/79ecf60a61cea7c88d2bcbf1da1348cb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745247015&amp;width=680&amp;sig=tF7lE8PS8It9gw8cpPNd4bW6tdJkPMRFrk6PSihrVk4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:What-Makes-the-BG-1-Special-"><span class="bold">What Makes the BG-1 Special?</span></h4><ol>
+<li>
+<span class="bold">Patent-Pending Indexing Mechanism</span><br/>Effortlessly set common angles with positive locks from 15° to 165° in precise 15° increments—including 22.5°, 67.5°, 112.5°, and 157.5°. <span class="bold">No more guesswork</span> or chasing down protractors.</li>
+<li>
+<span class="bold">Independent Blade &amp; Angle Locking</span><br/>Independent locking mechanisms allow you to <span class="bold">adjust the blade length or angle separately</span>, giving you complete control to extend, retract, or set <span class="bold">without disrupting your settings</span>. Total control —no compromises.</li>
+<li>
+<span class="bold">Retractable Kickstand</span><br/>Keep the blade flat against your work surface for <span class="bold">stability </span>and <span class="bold">enhanced control</span>. It’s like having an extra hand to hold everything in place, it ensures your bevel gauge <span class="bold">stays exactly where you need it</span>.</li>
+<li>
+<span class="bold">Angle Indicator Markings &amp; Vernier Scale</span><br/>Adjust angles precisely with the dial face featuring 1° increments and dial them in <span class="bold">down to 0.1°</span> with our <span class="bold">built-in Vernier scale</span>. Confidently set any angle with unmatched precision for your most demanding projects.</li>
+<li>
+<span class="bold">Premium Materials</span><br/>Crafted from <span class="bold">aerospace-grade</span> 6061-T651 aluminum, 304 stainless steel components, and a <span class="bold">440C Stainless Steel blade</span>, the BG-1 is built to last for generations.</li>
+</ol><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48821443">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/821/443/c017cdba03bcfad4beee07fec302d33e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744064809&amp;width=680&amp;sig=KCK5tQ6bhEGXYVRS41mfUqGiiT0m12pfdzksVAHiQO8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264784">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-We-Created-the-BG-1">Why We Created the BG-1</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/784/6617e197116f951eb1939529413ea92f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161232&amp;width=680&amp;sig=V8IV4Y%2B%2BsbEqSlIV4s1tzbsgFo14hwXIUWGcI6AAky4%3D"/>
+</figure>
+</div>
+<p>Traditional bevel gauges rely on friction locks and external tools—like protractors or sine blocks—to set and layout angles. As woodworking enthusiasts, we found that process clunky and time-consuming, especially when dealing with a laying out bunch of miter cuts. Inspired by the <span class="bold">dividing heads</span> used in rotary tables and <span class="bold">indexing detents</span> used in motorsports, we reimagined the bevel gauge to include a <span class="bold">patent-pending positive locking indexing mechanism</span> right inside the tool.</p><p>The result? <span class="bold">Faster setup, more accurate angles, and less downtime.</span> By fusing motorsports engineering and workshop know-how, we’ve elevated a simple but essential tool into something that feels premium, purposeful, and precise.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264794">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Who-is-the-BG-1-For-">Who is the BG-1 For?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/794/80f2c21d73d059cf857daeea8aa80b48_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161306&amp;width=680&amp;sig=zCC9pqOuQ8iPrA22%2FwiJBP%2FLjo%2FuIjFebZkgI9Z7SOo%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">Professional Woodworkers</span> needing reliable, efficient tools that keep up with daily workshop demands.</li>
+<li>
+<span class="bold">Serious Hobbyists</span> looking to upgrade their precision game and achieve professional-level results.</li>
+<li>
+<span class="bold">DIY Enthusiasts</span> who appreciate the satisfaction of working with top-tier tools that blend innovation with artistry.</li>
+</ul><p>If you <span class="bold">value accuracy, durability, and reliability</span>, the BG-1 Bevel Gauge will quickly become a go-to tool in your shop.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264810">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Using-the-BG-1-is-Simple">Using the BG-1 is Simple</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/810/8469e6a13e23be2559e5e2fbf807da08_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161396&amp;width=680&amp;sig=85u2rRWtjGuAZarLKJEgfsJEdC23slvDkVAfw92jHzo%3D"/>
+</figure>
+</div>
+<p>The BG-1 is simple to use whether you're setting the BG-1 to a positive locking indexed angle, or any angle. </p><h4 class="page-anchor" id="h:Setting-the-BG-1-to-a-Positive-Locking-Indexed-Angle">Setting the BG-1 to a Positive Locking Indexed Angle</h4><p>Effortlessly set common angles with positive locks from 15° to 165° in precise 15° increments—including 22.5°, 67.5°, 112.5°, and 157.5°.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48884970">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/884/970/023c229ddd1c7f8dcd4f31b431fdca42_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744499526&amp;width=680&amp;sig=Fey%2Fi4Sad1bv1IoRTePgm%2FwY%2Fo7i8qqvUi2fVsVk0rE%3D" src="https://i.kickstarter.com/assets/048/884/970/023c229ddd1c7f8dcd4f31b431fdca42_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744499526&amp;width=680&amp;sig=Fey%2Fi4Sad1bv1IoRTePgm%2FwY%2Fo7i8qqvUi2fVsVk0rE%3D"/>
+</figure>
+</div>
+<ol>
+<li>Unlock the cam lock on the rear of the BG-1.</li>
+<li>Pull down the detent release button.</li>
+<li>Rotate the blade angle to an indexed position.</li>
+<li>Release/push the button up to lock into the positive lock of the indexed angle.</li>
+<li>Lock the cam lock on the rear of the BG-1 to lock the angle in place.</li>
+</ol><h4 class="page-anchor" id="h:Setting-the-BG-1-to-Any-Angle">Setting the BG-1 to Any Angle</h4><p>The only difference when setting an angle that isn't indexed, is that you don't push the positive locking button back into place. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48884977">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/884/977/3ab1316204977b168083b95ccf10be3e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744499648&amp;width=680&amp;sig=ykQXVTKT3xcD%2FZuAOOWXPEyhuTR4H1UcPDZJvBTaF5Y%3D" src="https://i.kickstarter.com/assets/048/884/977/3ab1316204977b168083b95ccf10be3e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744499648&amp;width=680&amp;sig=ykQXVTKT3xcD%2FZuAOOWXPEyhuTR4H1UcPDZJvBTaF5Y%3D"/>
+</figure>
+</div>
+<ol>
+<li>Unlock the cam lock on the rear of the BG-1.</li>
+<li>Pull down the detent button.</li>
+<li>Rotate the blade angle to the desired angle.</li>
+<li>Lock the cam lock on the rear of the BG-1 to lock the angle in place.</li>
+</ol><h4 class="page-anchor" id="h:Adjust-Blade-Length">Adjust Blade Length</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48891904">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/891/904/90ec0e03584515c061a4fe7bb344921e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744573108&amp;width=680&amp;sig=lTTAf%2B36DLIoQgSY8YE70qyJLhNUVOOFLCRDzmnmn%2BI%3D" src="https://i.kickstarter.com/assets/048/891/904/90ec0e03584515c061a4fe7bb344921e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744573108&amp;width=680&amp;sig=lTTAf%2B36DLIoQgSY8YE70qyJLhNUVOOFLCRDzmnmn%2BI%3D"/>
+</figure>
+</div>
+<ul>
+<li>Turn the blade lock knob counterclockwise.</li>
+<li>Move the blade to the desired length.</li>
+<li>Turn the blade lock knob clockwise.</li>
+</ul><h4 class="page-anchor" id="h:Open-the-Kickstand">Open the Kickstand</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48891918">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/891/918/092628ca7ab82d7263c2e256cf67d3d7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744573166&amp;width=680&amp;sig=BSzluyp6gzG0QZuPPprmE8R8SCbU%2BgegwBZFJVQuzYQ%3D" src="https://i.kickstarter.com/assets/048/891/918/092628ca7ab82d7263c2e256cf67d3d7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744573166&amp;width=680&amp;sig=BSzluyp6gzG0QZuPPprmE8R8SCbU%2BgegwBZFJVQuzYQ%3D"/>
+</figure>
+</div>
+<ul><li>Open the kickstand either direction using the "switch" lever.</li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264813">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:BG-1-Specs">BG-1 Specs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/813/abf0f758213c2ba56f7db1afc4c85767_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161455&amp;width=680&amp;sig=iWcO7kSC%2B7zYXA1vvZxfjEUQi2B5tH0vg1Hr7Eqt50A%3D"/>
+</figure>
+</div>
+<p>The BG-1 is engineered to last generations, made from <span class="bold">aerospace-grade materials</span> like 6061-T651 aluminum, 304 Stainless Steel, and a 440C Stainless Steel blade. <span class="bold">No plastic parts here!</span> All the aluminum is Type II anodized and the blade is made of 440C Stainless Steel for <span class="bold">corrosion resistance and durability</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48255293">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/255/293/afa437fec29673e98abba921cef3ae5a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740088523&amp;width=680&amp;sig=AJxdOeL42a6WomGVmxXbnR6QM%2FumI6Ffui9SGcxQusE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264819">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Prototyping-Process">Prototyping Process</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/819/458885789eaf82fc2321214ea35f76ad_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161500&amp;width=680&amp;sig=KVSYAoNx3VhDR9Oh1MGwy%2BGsWpStJo7qG45eB5BQcrk%3D"/>
+</figure>
+</div>
+<p>The journey from concept to creation has been exciting and meticulous. We’ve taken every step with care to <span class="bold">ensure the BG-1 is well-engineered </span>and crafted.</p><h4 class="page-anchor" id="h:The-Idea"><span class="bold">The Idea</span></h4><p>Traditional bevel gauges often require a friction lock and additional tools to set specific angles. We were determined to eliminate this constant back-and-forth. Drawing inspiration from <span class="bold">dividing heads</span> on rotary tables and <span class="bold">detent mechanisms </span>used in motorsports, we envisioned a bevel gauge that <span class="bold">indexes the most common angles directly—reducing setup time and frustration.</span></p><h4 class="page-anchor" id="h:Sketches"><span class="bold">Sketches</span></h4><p>From the initial idea, we began sketching out the features we wanted to include in the BG-1. Notably, our patent-pending design features an indexing mechanism that uses a detent wheel and pin to lock in the most common angles used by woodworkers.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Initial Concept Sketches of the BG-1" data-id="47976499">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/976/499/fa3ed71a59800e837f059cb6f521aaac_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1738014520&amp;width=680&amp;sig=4%2BW1%2BbGNFzRxef0r0JNi794y%2BAcUj%2FzLef2cIvgojB0%3D"/>
+<figcaption class="px2">Initial Concept Sketches of the BG-1</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Rough Concept for the Patent-Pending Indexing Mechanism Design" data-id="47976480">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/976/480/b1e527027d1a8ac6c51eb8be094717a3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1738014361&amp;width=680&amp;sig=0RWWMT%2Bj%2BlKhweA2SkrzhzBvDOM%2FeUPkOCjlgG92BoA%3D"/>
+<figcaption class="px2">Rough Concept for the Patent-Pending Indexing Mechanism Design</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:3D-Modeling"><span class="bold">3D Modeling</span></h4><p>We created detailed 3D models, allowing us to visualize the BG-1 in full detail and indexing mechanism functionality. This step was crucial for optimizing handle <span class="bold">ergonomics</span> to the <span class="bold">indexing mechanism</span> geometry, ensuring that every element of the design was optimized for both form and function.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47988146">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/047/988/146/eb762fbafc6992188aa025c57e7a3c4a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1738097960&amp;width=680&amp;sig=rI43hXb%2B8q8ZwRS2gnStbDKG0qI4hijoxPgcTB3QwpA%3D" src="https://i.kickstarter.com/assets/047/988/146/eb762fbafc6992188aa025c57e7a3c4a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1738097960&amp;width=680&amp;sig=rI43hXb%2B8q8ZwRS2gnStbDKG0qI4hijoxPgcTB3QwpA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Patent Pending Indexing Mechanism Functionality" data-id="48185763">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/185/763/514ebe90feb0b7a171df6a542697ae6a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1739563821&amp;width=680&amp;sig=jXOhPQfJx9gy1lN0RZCm5YSWbwwvortohxSiNZKECJQ%3D" src="https://i.kickstarter.com/assets/048/185/763/514ebe90feb0b7a171df6a542697ae6a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1739563821&amp;width=680&amp;sig=jXOhPQfJx9gy1lN0RZCm5YSWbwwvortohxSiNZKECJQ%3D"/>
+<figcaption class="px2">Patent Pending Indexing Mechanism Functionality</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:3D-Printing"><span class="bold">3D Printing</span></h4><p>Using 3D printing technology, we created multiple prototypes for physical testing and functional validation. <span class="bold">User feedback was invaluable</span>, guiding us to make further improvements. Each round of feedback helped refine the indexing mechanism, ergonomics, and user experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48185781">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/185/781/ab940fd64f600bb8a13b05d444ccd738_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1739563896&amp;width=680&amp;sig=kP0z9UD3i2rTZ2%2Bw%2Foj%2BzgV0nLam0Jvy%2FOY37WO1SEs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48185782">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/185/782/38db656a40b13f389609a343fdaa25f2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1739563903&amp;width=680&amp;sig=TFwZvHgGW0PzcnY9krtJVmfyHOTPwns6LoXmjRIZvbE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48185789">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/185/789/69007bae90bb6880597dc2264589504c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1739563917&amp;width=680&amp;sig=C6UZSRmTcnExPZAu5ODn37jf1xeHCkGj024j%2BGS5D4I%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Test-Revise-Iterate"><span class="bold">Test, Revise, Iterate</span></h4><p>We tested <span class="bold">dozens</span> of detent wheel designs, adjusting each notch’s shape for precision and fine-tuning the actuator button until it <span class="bold">felt natural and intuitive</span>. After <span class="bold">rigorous testing</span>, prototyping, and <span class="bold">countless refinements</span>, we’re confident that our final design <span class="bold">redefines</span> the traditional bevel gauge.</p><h4 class="page-anchor" id="h:Production-Prototype"><span class="bold">Production Prototype</span></h4><p>Once we were satisfied with the final design, we manufactured prototypes from the <span class="bold">actual production materials</span>—aerospace-grade 6061-T651 aluminum, 304 stainless steel, and a 440C stainless steel blade.  This phase allowed us to inspect quality standards across multiple manufacturers and ensure our product meets—and exceeds—Quantis Tool Works’ exacting requirements.</p><p>During this phase, we meticulously refined the indexing and detent mechanism to deliver unwavering precision and <span class="bold">eliminate any slack</span> in the angle-setting process, ensuring every adjustment <span class="bold">feels rock-solid</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48255091">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/255/091/921060634961c6c292f0eb95cd579006_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1740086684&amp;width=680&amp;sig=kBvsVmFSKIdNmWmCWviCKEikf271FWLjc5uau73Nwjw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48255093">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/255/093/e9491c415b36654fbecd9c53230065ba_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1740086693&amp;width=680&amp;sig=Kfzjtlxv3BczxcSB%2FiOUaB6iir%2F%2By8IA%2Fix3UjiZnnU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Final-Testing"><span class="bold">Final Testing</span></h4><p>Once we had real pre-production samples of the final design, the samples were sent out to hobbyists and professionals in the industry to provide additional feedback and validate the final design was ready for launch.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48820351">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/820/351/9ea14638e422667e67cd212b516a0fad_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744058367&amp;width=680&amp;sig=vazz9OO25goqHx7qSXoKpLAtSDc1gIr4XGN2vuwBkTs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48821453">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/821/453/569b2d180d7730ec1bc9e6c1b7560de3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744064907&amp;width=680&amp;sig=dHSIT6aR67QFqI5JVy9YXQtWzdLu%2FUpTSD2lqtUm4%2Fk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48821459">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/821/459/748811b2be7da323fde9d3b2275e78b9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744064944&amp;width=680&amp;sig=DEtk8KXn7CQYRdQcI3l2SUoqCPW1IS8T81GvveUvwic%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48820348">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/820/348/99801155a9c4a1f61b76ba707a010ad0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744058355&amp;width=680&amp;sig=N8yo5PkApwuBIBm4PRq7RpKiDLHMsSf%2FyePfJ41wHh0%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Our-Product-Development-Process"><span class="bold">Our Product Development Process</span></h4><p><img class="image" data-id="48413908" src="https://i.kickstarter.com/assets/048/413/908/1806361f80050d7af878eb88d5681344_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741214747&amp;width=680&amp;sig=gPjZdhc5syCs%2FgpaxdDImHEHyAxISk%2FspwjQXDSc97U%3D"/>Each Quantis Tool Works product undergoes a <span class="bold">rigorous, multi-stage development cycle</span> designed to refine every detail before launch. From initial <span class="bold">product ideation</span> and <span class="bold">3D print prototyping</span> to <span class="bold">machine tooling</span> and <span class="bold">final field tests</span>, every phase focuses on ensuring we meet the <span class="bold">exacting quality standards</span> our customers and brand demand. By continually <span class="bold">revising and iterating</span>, we create tools that blend <span class="bold">engineering excellence</span> and <span class="bold">workshop practicality</span>—so you can trust that every Quantis tool is built to perform at the highest level, project after project.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48610545">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:From-Blueprint-to-Bench">From Blueprint to Bench</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/610/545/733cdf5e0b67e46708088f56a4b5369c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742565312&amp;width=680&amp;sig=5kUvWx494sgMQY94kp7OW%2BY%2FU%2FBjPkxKlyaE0THKUhU%3D"/>
+</figure>
+</div>
+<p>While our design and engineering teams are based in the United States—and handle final assembly, calibration, and final quality checks here—our <span class="bold">BG-1</span> is meticulously manufactured by our trusted production partners in Asia. We’ve carefully vetted these facilities for their proven track record of precision-driven manufacturing for customers such as BMW, Boeing, and Ericsson. By harnessing state-of-the-art <span class="bold">3-axis and 5-axis CNC mills</span> and <span class="bold">CNC lathes</span>, our partners consistently meets the rigorous tolerances essential to our vision of unwavering accuracy.</p><p>To ensure every BG-1 meets Quantis Tool Works’ exacting standards, we implement strict quality controls and inspections at multiple stages—from raw material intake through to final assembly and final testing in the U.S. Our close collaboration with our partners, combined with our final assembly stateside, allows us to maintain efficient timelines and a hands-on approach to feedback and refinements. The result is a tool that exemplifies our unwavering commitment to reliability, consistency, and <span class="bold">The Art of Precision™</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49016175">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/016/175/12ae24121ee87d1af7e8ef652fcd3cbc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745438142&amp;width=680&amp;sig=DEQt4i%2BppTdP552LG6xqfJMY4eWYp541J%2BMY2XvEhx8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49016176">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/016/176/bc56e8c74c6fd32706652451c9a05bfc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745438155&amp;width=680&amp;sig=pBfRaTc9VyfuZsAdNCgxsLepq%2B4Jwtw0yQ1%2FOlTQnp4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49016177">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/016/177/1e9c6d7d3286d47c1eb63d235fffdd97_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745438159&amp;width=680&amp;sig=DchjWLiIlAw%2FTOR9FBJC7PPfsFoSkKA9tNtv8PcUZEA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49016179">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/016/179/d463745e06d3ad472b6d656e6b990f94_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745438167&amp;width=680&amp;sig=tbx5J9vf2qdZpXhQXxOs51awujTFJrJA5nmxtwZ6U%2Fs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49016182">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/016/182/3e6af1bb7dca83d8b4acd1138777f54b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745438177&amp;width=680&amp;sig=2X3jP2jqRhLjj%2BcxwKkkl%2FR6ESdQHEvc%2FaBhD0hW1UY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264853">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/853/7816342ce5a800081e29afe508504a53_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161659&amp;width=680&amp;sig=zBwP9knCRO%2F4AqmouqVbYfhLs%2FVYjWJZiNuXhbAl3oE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49274951">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/274/951/6321b55dbbea2f3a52557a43bf900feb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747227318&amp;width=680&amp;sig=yOazwSW7T3LPuRXtvcuY6zLb3ZqeHEfEUThWIIzC2FU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Shipping-Duty-Costs">Shipping &amp; Duty Costs</h4><p>We're happy to ship the BG-1 anywhere in the world. If your country isn't listed, please let us know so we can get a custom quote for your country. </p><p>Shipping costs may seem high, but please know that the <span class="bold">shipping costs include duties prepaid, so you don't have to worry about any hidden fees or surprises. </span></p><h4 class="page-anchor" id="h:Bulk-Orders-Do-you-want-more-than-2x-BG-1-Indexing-Bevel-Gauges-">Bulk Orders - Do you want more than 2x BG-1 Indexing Bevel Gauges?</h4><p>If you're interested in <span class="bold">buying more than (2) BG-1 Indexing Bevel Gauges</span>, please let us know and we will create a custom reward with a <span class="bold">special discount just for you</span>, along with a shipping quote for the bulk order. Drop us a message and we'll be happy to set you up.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264865">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Quantis-Tool-Works">About Quantis Tool Works</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/865/3418bea4082b08f941c0bae9ab9da2ee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161703&amp;width=680&amp;sig=%2BaIzqTR6GJPhYeEBjXpk4YgCrHX4bxNulRpuG3y4M7Q%3D"/>
+</figure>
+</div>
+<p>At Quantis Tool Works we believe that, craftsmanship is more than a skill—it’s <span class="bold">The Art of Precision™</span>.</p><p>Quantis Tool Works was founded to meet a gap in the market for precision tools that promote efficiency and offer innovative solutions to common woodworking challenges. We blend <span class="bold">cutting-edge engineering</span> with <span class="bold">timeless design</span> to create tools that embody unrivaled accuracy.</p><h4 class="page-anchor" id="h:Precision-From-the-Track-to-the-Workbench"><span class="bold">Precision: From the Track to the Workbench</span></h4><p>Our design philosophy is inspired by the high-stakes world of motorsports—where precision is everything. From racetrack to workbench, <span class="bold">precision is in our DNA</span>.</p><p>We blend <span class="bold">innovative engineering</span> with the timeless artistry of woodworking— incorporating <span class="bold">motorsport-inspired features</span> like lightweighting pockets to reduce weight while maintaining strength.</p><p>Our founder and head of engineering and former motorsports engineer, Mike Lawrence, brings motorsports expertise that informs every aspect of tool design—from weight optimization and structural integrity to rigorous standards for each tool we create. After all, whether it’s on the track or at the bench, <span class="bold">perfection demands precision</span>.</p><p><span class="bold">Founder Profile</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48610637">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/610/637/f443aafbc2d59ef5a9edabf3799ea8e0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742565787&amp;width=680&amp;sig=N9e9zADvf4zp7B%2BJCElTU02djk4KpnckS%2Ff%2F%2BrhFOko%3D"/>
+</figure>
+</div>
+<p>Mike Lawrence is the Founder and CEO of Quantis Tool Works, combining over 15 years of strategic consulting and operational optimization with a motorsports-engineering background. Before launching Quantis, he advised global clients across energy, environmental services, and logistics sectors—leading complex initiatives to streamline operations, capture new revenue, and unlock synergies through mergers and acquisitions.</p><p>In addition to his consulting credentials, Mike’s motorsports engineering experience informs Quantis’ meticulous, performance-driven design philosophy. He approaches each woodworking tool with the same dedication to precision, innovation, and continuous iteration that defines professional motorsports, ensuring that Quantis delivers tools optimized for performance and durability.</p><h4 class="page-anchor" id="h:Informal-Advisory-Board">Informal Advisory Board</h4><p>While Quantis does not maintain a formal advisory board, it relies on a network of advisors, woodworking professionals, and engineering colleagues for input on:</p><ul>
+<li>
+<span class="bold">Tool Usability &amp; Ergonomics:</span> Experienced woodworkers provide real-world feedback, ensuring each tool addresses practical needs in workshop environments.</li>
+<li>
+<span class="bold">Manufacturing Feasibility:</span> Engineering peers and CNC specialists advise on design improvements, cost-saving measures, and production efficiencies.</li>
+<li>
+<span class="bold">Growth &amp; Marketing:</span> Entrepreneurial connections offer occasional guidance on Kickstarter strategies, influencer outreach, strategic growth, business strategy, and potential partnerships.</li>
+</ul><p>This informal network helps Quantis refine product designs, better anticipate market trends, and maintain a nimble, feedback-driven development process.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264876">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Kickstarter-">Why Kickstarter?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/876/220cdc5bb02198c28238c2b2d3786d19_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161746&amp;width=680&amp;sig=zCH9sT6fXw6ziaTMprL6k%2ByW4jtXwgjRLOJIRALoAH4%3D"/>
+</figure>
+</div>
+<p>Bringing the BG-1 Bevel Gauge from prototype to production involves significant tooling, high-quality materials, and rigorous testing. By launching on Kickstarter, we’re inviting a community of makers, woodworkers, and innovators to join us in shaping the next generation of precision tools.</p><p><span class="bold">When you back this campaign, you will:</span></p><ul>
+<li>
+<span class="bold">Secure Early-Bird Pricing</span> that helps offset production costs while rewarding our earliest supporters.</li>
+<li>
+<span class="bold">Influence Future Development</span> through feedback and collaboration, ensuring the BG-1 (and our upcoming products) meet real-world workshop needs. (We want your comments and feedback!)</li>
+<li>
+<span class="bold">Help Us Scale</span> responsibly—your pledges enable us to invest in robust manufacturing processes and maintain strict quality control.</li>
+</ul><p>We believe Kickstarter is the perfect platform to connect with passionate backers who share our vision for innovation, craftsmanship, and The Art of Precision™. Your support not only helps fund the BG-1’s first production run but also sets the stage for future tools that continue to push the boundaries of what’s possible in woodworking.</p><h4 class="page-anchor" id="h:Your-Support-Matters"><span class="bold">Your Support Matters</span></h4><p>Every pledge moves us one step closer to launching full production and getting the BG-1 Bevel Gauge into workshops around the world. Backing our campaign <span class="bold">isn’t just about buying a tool—it’s about investing in a vision</span> of innovation, elevated craftsmanship, and The Art of Precision™.</p><h4 class="page-anchor" id="h:Thank-You-Kickstarter-Community-"><span class="bold">Thank You, Kickstarter Community!</span></h4><p>We’re incredibly excited to share the BG-1 Bevel Gauge with you. Your support helps transform woodworking workshops everywhere, giving makers the accuracy they need to push their craft further. Together, we can elevate woodworking craftsmanship, making it more precise—and more enjoyable—than ever before.</p><p><span class="bold">Back the BG-1 Bevel Gauge today and be among the first to experience the next evolution in woodworking precision.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264887">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/887/7a25778e54be11f6a776bd4974ac0420_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161795&amp;width=680&amp;sig=Mjk3Htpy2qLLIn5ng2PBa4Huc0aQLUKgBZ6tOTEudyo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48186142">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/186/142/f0d74ccf1a00ba4af6b1eaa9d0d1d962_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1739566392&amp;width=680&amp;sig=fpd0Yg9yscoIcbMyoX11TugbUpzd9mUzcZIM5wnC618%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48264894">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Warranty-Returns">Warranty &amp; Returns</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/264/894/eff100236e34324f8e4ed06cc66bec94_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740161848&amp;width=680&amp;sig=P1387cMzZFcm3CePQWhT1qKnK3MotTQm6acLgvb7cNE%3D"/>
+</figure>
+</div>
+<p>At Quantis, we stand by the quality of every tool we deliver. The BG-1 Bevel Gauge comes with a <span class="bold">1-year warranty</span> that covers manufacturing defects. Normal wear and tear isn’t covered, but rest assured: made from <span class="bold">durable aerospace-grade materials</span>, this gauge is built to last generations.</p><p>Because your pledges fund tooling and manufacturing costs (and offered at a <span class="bold">significant discount</span>), we <span class="bold">cannot accept returns or refunds</span>. However, if you encounter any issues within that first year, we’ll do everything we can to make it right.</p><h3 class="page-anchor" id="h:Press-Kit">Press Kit</h3><p>Our Press Kit is available on Google Drive: <span>https://drive.google.com/drive/folders/1R63XhjFxTYIoEMe2MxXCqixwoJWly-GA?usp=sharing</span></p><p>Please feel free to reach out to us for additional assets. </p><h4 class="page-anchor" id="h:As-Seen-On">As Seen On</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49078048">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/078/048/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745880442&amp;width=680&amp;sig=2LiiSAdmmAgkeS7cT0MUWuDIZzKL1jp2PAWiW6c2Mto%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49079256">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/079/256/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745889570&amp;width=680&amp;sig=c735ag3Q7JjZYRnPgWneCtDo8sDtUl2MRpmgrXPCxks%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">64%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Manufacturing</div><div class="m0 type-16 text-nowrap">50%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Research &amp; Development</div><div class="m0 type-16 text-nowrap">11%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Assembly</div><div class="m0 type-16 text-nowrap">3%</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">18%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">8%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">5%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">5%</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Fulfilling</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">10%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Shipping</div><div class="m0 type-16 text-nowrap">6%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Packaging</div><div class="m0 type-16 text-nowrap">4%</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Funding</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">8%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Advertising/Marketing</div><div class="m0 type-16 text-nowrap">8%</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated April 26, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We’re not looking to be a one-off company—we’re building a recognizable brand rooted in innovation, precision and long-term trust. That’s why delivering on our promises is our top priority.
+
+With over 15+ years of business operations experience (from startups to Fortune 500 companies), risk management is second nature to us. We’re prepared for everything from manufacturing cost increases and lead time delays to fulfillment logistics.
+
+If hiccups arise, we’ll communicate with our backers every step of the way. Your support is an investment in our shared vision, and we’re committed to delivering quality and transparency throughout this journey.
+
+Business &amp; Operations Experience: Our team has over 15 years of experience managing everything from startups to Fortune 500 companies. Risk management and scenario planning are second nature to us.
+
+Production &amp; Fulfillment: High demand or unexpected challenges can cause delays. Our experience collaborating with machine shops and logistics partners enables us to proactively handle manufacturing risks. We’ve carefully chosen manufacturing partners, built contingencies for potential delays or cost fluctuations, and are prepared to respond swiftly to any unforeseen challenges. We’ll keep our backers in the loop, addressing any issues quickly and doing our best to meet (or beat) our fulfillment timelines.
+
+Communication &amp; Transparency: We believe transparency is key to maintaining a strong relationship with our backers. We promise regular updates and prompt responses to any concerns. Our team is dedicated to ensuring you’re informed every step of the way.
+
+By backing Quantis Tool Works, you support an innovative product and help shape a brand dedicated to The Art of Precision™. We value your trust and are fully committed to delivering a high-quality tool on time. Thank you for believing in us.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Using aerospace-grade materials and stainless-steel components means the BG-1 is built to endure. A tool that lasts for generations reduces waste in the long run.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Our planned shipping box will do double as protective storage case, cutting down on disposable packaging.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">We optimize shipping routes, use eco-friendly packaging materials, and partner with logistics providers who share our commitment to environmental stewardship.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

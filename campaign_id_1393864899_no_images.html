@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Real-Time Network to Reconnect Communities</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <div style="width: 60%;"></div>
+
+        <div class="sidebar">
+            <h2>A Real-Time Network to Reconnect Communities</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Reconnect communities with real-time opportunities. No followers, no filters—just real people, real life, real connections with Wudcha!</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:BRINGING-COMMUNITIES-BACK-TOGETHER"><span class="bold">BRINGING COMMUNITIES BACK TOGETHER</span></h3><p>Imagine a world where connection isn’t measured in likes, followers, or algorithms. A world where you can instantly reach the people around you, whether you need help setting up an event, finding volunteers, or just sharing an extra meal. <br/><br/>That’s <span class="bold">Wudcha:</span> a real-time opportunity network designed to reconnect society and revive local communities.</p><p><span class="bold">Wudcha</span> isn’t another social media app. It’s a utility, a tool as natural as sending a text, but instead of reaching just one friend, you can reach your entire town in an instant. No filters. No fees. No barriers.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48766676">
+<figure class="image">
+
+</figure>
+</div>
+<h3 class="page-anchor" id="h:WHY-WE-NEED-WUDCHA"><span class="bold">WHY WE NEED WUDCHA</span></h3><p>Right now, people are struggling to be seen. Businesses spend thousands just to reach customers across the street. In 2024 alone, over <span class="bold">$255 billion</span> was spent on digital ads, yet organic reach continues to decline. Meanwhile, social media platforms control the conversation, making human connection harder than ever.</p><p>Small towns are being left behind. People feel lonelier, more isolated, and disconnected from their own communities. <span class="bold">Wudcha </span>changes that. With <span class="bold">Wudcha</span>, anyone can post real-time opportunities whether it's a job, an event, or a last-minute invite and the people nearby can respond immediately.</p><p>No followers. No algorithms. Just real people, real life, real opportunities.</p><h4 class="page-anchor" id="h:Wudcha-bridges-this-Business-Connection-Gap-by-helping-businesses-and-communities-connect-instantly-when-they-need-each-other-most-">Wudcha bridges this Business Connection Gap by helping businesses and communities connect instantly, when they need each other most.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49030373">
+<figure class="image">
+
+</figure>
+</div>
+<h3 class="page-anchor" id="h:JOIN-THE-MOVEMENT"><span class="bold">JOIN THE MOVEMENT</span></h3><p>We’ve already built street teams across the U.S., South America, and Italy. Cities like Brewton, Alabama, are working with us to test the beta version. Now, we need you to help us take Wudcha to the next level.</p><p>With your support, we’ll finalize our app, expand our street teams, host live beta events, and empower communities around the world.</p><p><span class="bold">Backers gets exclusive perks, including:</span></p><ul>
+<li>Early access to the platform</li>
+<li>VIP status</li>
+<li>Lifetime discounts</li>
+<li>Founder’s badges</li>
+<li>Limited-edition <span class="text-italic"><span class="bold">Wudcha</span></span> merchandise</li>
+</ul><p>And for our most committed supporters? VIP Gold access for life.</p><h4 class="page-anchor" id="h:Here-s-what-we-ve-already-accomplished-and-where-we-re-headed-next-">Here's what we've already accomplished and where we're headed next.</h4><ol>
+<li>
+<span class="bold">Street Teams Formed: </span>7 teams across U.S., Italy, Germany, Argentina, and South America.</li>
+<li>
+<span class="bold">Local Goverment Support:</span> letter of support received from Brewton, Alabama, with a $10m headquarters proposal submitted.</li>
+<li>
+<span class="bold">App Development:</span> Fully functional MVP scheduled for completion by the end of may 2025.</li>
+<li>
+<span class="bold">Beta Testing Scheduled:</span> Live beta events begin June-July 2025 across multiple regions.</li>
+<li>
+<span class="bold">Early partnerships:</span> Dozens of businesses and organizations have expressed interest in participating once the app launches. </li>
+<li>
+<span class="bold">Marketing Launch Plan:</span> Full-scale marketing campaign, including commercials and influencer endorsements, prepared for January 2026. </li>
+</ol><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49030385">
+<figure class="image">
+
+</figure>
+</div>
+<p>"Learn more about Wudcha and follow our journey at Wudcha.com"</p><h3 class="page-anchor" id="h:OUR-KICKSTARTER-GOAL"><span class="bold">OUR KICKSTARTER GOAL</span></h3><p>Our initial goal of <span class="bold">$10,000</span> will allow us to conduct our first beta test and cover several months of server hosting, laying the foundation for <span class="bold">Wudcha’s</span> launch and early growth. This milestone helps us build momentum and demonstrate proof of concept for the broader vision ahead.</p><p>As we reach higher stretch goals, we’ll expand internationally, support our street teams, upgrade infrastructure, and ensure long-term sustainability for the platform.</p><p><span class="bold">Stretch Goals:</span></p><ul>
+<li>
+<span class="bold">$30,000:</span> Launch full beta test in Italy, including street team funding and event coordination.</li>
+<li>
+<span class="bold">$50,000:</span> Launch full beta test in South America with multilingual support and regional leaders.</li>
+<li>
+<span class="bold">$100,000:</span> Strengthen infrastructure, open VIP access, and expand U.S. beta tests.</li>
+<li>
+<span class="bold">$200,000:</span> Increase marketing, improve features, and onboard dedicated developers.</li>
+<li>
+<span class="bold">$350,000:</span> Fund street teams, global awareness campaigns, and regional launch events.</li>
+<li>
+<span class="bold">$500,000:</span> Fully onboard our global team, ensure long-term operations, and secure funding for future updates and platform stability.<br/> </li>
+</ul><h4 class="page-anchor" id="h:Where-your-Support-Goes-">Where your Support Goes: </h4><p>Every contribution directly fuels Wudcha's growth. Here's a clear breakdown of how the funds will be used at each stage.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49030400">
+<figure class="image">
+
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Here-s-a-clear-look-at-our-growth"><span class="bold">Here's a clear look at our growth</span></h3><p><br/>We believe in transparency and showing our backers exactly where Wudcha is headed. This roadmap outlines our plans from today through future expansions, so you know what to expect and how your support fuels our growth. <br/><br/><br/></p><p>With your help, this roadmap becomes a reality. Every milestone represents more than just growth, it means more local businesses thriving, more communities reconnected, and more opportunities for everyone, everywhere.<br/><br/>"Early Access for beta testers and backers will open in June 2025. We'll keep all backers updated as we move closer to launch."</p><p><br/><span class="bold">Looking Ahead:</span></p><p>We aren't stopping at connecting communities and businesses. In future phases, we'll roll out additional features like a payroll system for freelancers and small businessess, and even a taxi service that integrates directly with the app, continuing our mission to simplify local connections and empower users globally.<br/><br/></p><p>These future additions will ensure Wudcha continues evolving to meet real-world needs, making local connections and everyday opportunities easier and more accessible than ever.</p><h3 class="page-anchor" id="h:Why-Wudcha-Stands-Out-from-the-Crowd"><span class="bold">Why Wudcha Stands Out from the Crowd</span></h3><p>This chart highlights key differences between <span class="bold">Wudcha</span> and other platforms, showing how our features are designed to help businesses and people connect in real time.<br/><br/></p><p>While other platforms serve narrow purposes, whether it's connecting only businesses, hosting classified ads, or encouraging endless scrolling, <span class="bold">Wudcha</span> is designed to meet all real-time needs in one space.<br/><br/>Our platform bridges the gap left by social media, job boards, and event sites by providing a <span class="bold">clutter-free, ad-free, algorithm-free experience</span> where <span class="bold">every post matters equally</span>. Whether you're seeking customers, collaborators, last-minute gigs, or community events, <span class="bold">Wudcha</span> delivers instant connections <span class="bold">without barriers</span>.</p><p>This chart highlights how <span class="bold">Wudcha's real-time opportunity network </span>stands apart, bringing together the <span class="bold">best of multiple worlds</span>, business outreach, personal networking, live events, and local services, all in one place. </p><h3 class="page-anchor" id="h:How-Wudcha-Works-Behind-the-Scenes"><span class="bold">How Wudcha Works Behind the Scenes</span></h3><p><span class="bold">Work in progress: </span></p>
+<h4 class="page-anchor" id="h:-1-Business-Posting-Views-">
+<span class="bold">1. Business Posting Views</span><br/> </h4><p>Local businesses can share real-time updates on what’s happening at their location, whether it’s a job opening, DJ night, trivia tournament, or lunch special. These posts appear directly on the <span class="bold">Wudcha</span> map, making them visible to nearby users without relying on social media algorithms.</p><p>Each listing includes a title, date, time, and address. Nearby users can quickly respond using buttons like “I’m Interested” or “Need More Info” giving businesses instant feedback on how many people might show up or follow through. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48856998">
+<figure class="image">
+
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-2-EVENT-POSTING-VIEW-">
+<span class="bold">2. EVENT POSTING VIEW</span><br/> </h4><p><span class="bold">Wudcha</span> makes it easy for anyone to share what’s happening in their community. Whether you’re hosting an open mic, running a small food drive, or starting a game night, you can post the details in seconds.</p><p>Event posts show up on the map at their exact location, so people nearby can instantly see what’s happening and respond. With quick-action buttons like “I’m Interested” and “Need More Info,” you’ll know who’s engaging without needing followers or ads.</p><p><span class="bold">Maximize Last-Minute Opportunities with Flash Alerts</span></p><p>When an event is about to begin, timing is everything. That's why <span class="bold">Wudcha</span> introduces a unique feature to boost visibility right when it matters most.</p><p><span class="bold">Here's how it works</span>: </p><p>An <span class="bold">hour before any event starts</span>, the event icon on the <span class="bold">Wudcha map</span> begins to <span class="bold">flash</span>, catching the attention of nearby users. This helps drive last-minute interest, bringing in more foot traffic and giving event hosts a final push of exposure.</p><p>This ensures events don't just sit quietly on a calendar, they become active,<span class="bold"> real-time opportunities</span>. Whether it's a live band starting soon, a pop-up sale, or a volunteer need, <span class="bold">Wudcha</span> helps ensure people notice and can act.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48859629">
+<figure class="image">
+
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-3-Customizing-Your-Posts-Boosting-Visibility-">
+<br/><span class="bold">3. Customizing Your Posts &amp; Boosting Visibility</span>
+</h4><p>Wudcha gives users complete control over how their posts look and feel. Whether you're promoting a local concert, hosting a trivia night, or announcing a flash sale, you can upload custom images that represent your event or opportunity, making each post stand out on the map and in the feed. </p><p>For businesses and individuals looking to miximize their reach, <span class="bold">boost options</span> are available. With features like the <span class="bold">Early Wing</span>, you can send out advance notifications to neary users, helping your post get noticed exactly when it matters most</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49040973">
+<figure class="image">
+
+</figure>
+</div>
+<p><br/>Boost duration include:</p><ol>
+<li>
+<span class="bold">3-Hour Boost</span> - Ideal for last-minute promotions and flash events.</li>
+<li>
+<span class="bold">8-Hour Boost </span>- Perfect for afternoon or evening activities.</li>
+<li>
+<span class="bold">10-Hour Boost </span>- Great for fullday visibiliity</li>
+</ol><p>These boosts help ensure your event or offer gets seen by the right audience at the right time, without relying on algorithms or expensive ad campaigns. </p><h4 class="page-anchor" id="h:4-UPCOMING-LOCAL-EVENTS"><span class="bold">4. UPCOMING LOCAL EVENTS</span></h4><p><span class="text-italic"><span class="bold">Upcoming Events on Wudcha</span></span></p><p><span class="bold">Wudcha’s</span> Upcoming Events section lets users see what’s happening in their area days or even weeks in advance. Whether it’s a local job opportunity, a community project, a concert, or a volunteer event, people can scroll through the calendar and plan ahead.</p><p>Each listing shows the date, time, and type of event making it easy for users to stay informed, get involved, and support what’s going on around them. It’s not just about real-time posts it’s about staying connected to your community before things even happen.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48857055">
+<figure class="image">
+
+</figure>
+</div>
+<h4 class="page-anchor" id="h:5-UPCOMING-EVENTS-MESSAGING-TOOLS"><span class="bold">5. UPCOMING EVENTS &amp; MESSAGING TOOLS</span></h4><p>Some events require planning like catering gigs, fundraisers, or anything that needs a headcount ahead of time.</p><p><span class="bold">Wudcha’s</span> Upcoming Events view lets organizers schedule in advance and shows how many days are left until each event. When a user taps “I’m Interested,” they’re automatically added to a private chat thread with the event host.</p><p>This allows for easy communication, coordination, and confirmation without exchanging personal contact info or relying on outside messaging apps.</p><p>Whether you're prepping for a last-minute pop-up or a large-scale event, <span class="bold">Wudcha</span> keeps everything organized and direct.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48857067">
+<figure class="image">
+
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-6-Earning-Badges-Building-Connections-">
+<span class="bold">6. Earning Badges &amp; Building Connections</span><br/> </h4><p>Wudcha rewards engagement. As users connect with businesses, attend events, or support others, they earn points and unlock badges. These badges aren't just cosmetic, they reflect real participation and contribution to the community.</p><p>Even Kickstarter backers will receieve special Founder Badges and early access perks, proudly displayed on their profiles. Whether you're attending your first local event or helping a business reach new customers, every action counts toward building your level, unlocking exclusive rewards and recognition along the way.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49040655">
+<figure class="image">
+
+</figure>
+</div>
+<p>This incentive system helps keep the platform thriving while rewarding those who help shape its success.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49040647">
+<figure class="image">
+
+</figure>
+</div>
+<h3 class="page-anchor" id="h:ROBERT-AMACKER-FOUNDER-BIO"><span class="bold">ROBERT AMACKER- FOUNDER BIO</span></h3><p>With over 2<span class="bold">3 years of experience in event organizing</span>, from military retreats to music festivals and community outreach programs, Robert has dedicated his life to bringing people together. His leadership spans <span class="bold">international projects</span> across the U.S., Italy, and the Philippines.</p><p>Inspired by seeing how disconnected communities and businesses have become, Robert has created Wudcha as a tool to <span class="bold">help people reconnect and thrive</span>. His mission is simple: to build a platform that empowers <span class="bold">local connections</span> and revitalizes <span class="bold">community engagement</span>.<br/><br/><span class="bold">Wudcha</span>: join us in fixing what social media broke.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49041592">
+<figure class="image">
+
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49041638">
+<figure class="image">
+
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As with any new platform, Wudcha faces challenges such as scaling user adoption, managing unexpected technical bugs, and maintaining server reliability during peak traffic. While we’ve outlined a clear budget and delivery roadmap, unforeseen delays could occur. We’re mitigating this by working with a vetted developer, preparing extensive beta tests, and setting realistic stretch goals. We also understand that building a user base takes time, so we’re launching with a strong local focus and expanding outward.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>We plan to integrate AI as a temporary moderation tool to automatically detect spam, inappropriate content, or suspicious behavior. This system will help us maintain a safe and clean environment during the early stages of the app, until we’re able to scale and bring on a full customer service moderation team.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
