@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Polyfloss - Recycling plastic like cotton-candy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/623/808/75d0635579ae7025d9141707060c0eb5_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749571372&width=560&sig=jXTJ4hpXbhMpHJEwi5stEIJbLa%2FqRr1thSGHddoGvbY%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Polyfloss - Recycling plastic like cotton-candy</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Unleash your creativity with plastic waste, anywhere you are.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 92,157</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49394220">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/394/220/60fbea46584714c825b6e0a54430c3e0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747995739&amp;width=680&amp;sig=om6qW%2BPhpPY9DeLiD3g9t2RFi1U1FefKkMMc%2Fl52T6s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559544">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Overview">Overview</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/544/b1f9817a29f7cd91676816f37904c438_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128801&amp;width=680&amp;sig=xnpM58VMDRw88RUWz6TOkcblasODbOkGW8lS0aSFxcs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49545782">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/545/782/e5d681c8cd6ed627c4698caa98341880_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749045140&amp;width=680&amp;sig=guSTVnzvDL9DRBEx0c1DyxyxQEHzDvpS3c49%2BnnVbkw%3D" src="https://i.kickstarter.com/assets/049/545/782/e5d681c8cd6ed627c4698caa98341880_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749045140&amp;width=680&amp;sig=guSTVnzvDL9DRBEx0c1DyxyxQEHzDvpS3c49%2BnnVbkw%3D"/>
+</figure>
+</div>
+<p>Introducing our brand-new <span class="bold">mini Polyfloss machine</span> — a compact, powerful tool that transforms plastic waste into soft, versatile fibers, using a process inspired by <span class="bold">cotton candy</span>. These fibers can be used in a wide range of applications: <span class="bold">textiles, packaging, DIY projects, branding materials, interior design, and even construction</span>.</p><p>Whether you’re a <span class="bold">maker, textile artist, teacher, designer or DIY enthusiast</span>, the Polyfloss opens up a world of local recycling possibilities — right where you are.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49216844">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/216/844/76806bc37ee60e6fe9981bb1f55f70af_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746805386&amp;width=680&amp;sig=6y5a6y99jN55l01GN5V6l5adgCCNNXuvCoVQuSFXgiY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49602816">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/602/816/3ba030e52a06ad2742b0902b573d4bb0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749462104&amp;width=680&amp;sig=jpOcCWoVlkUL56P5k0OU3G1EdLdMrYOdTnIdnaZyCcw%3D" src="https://i.kickstarter.com/assets/049/602/816/3ba030e52a06ad2742b0902b573d4bb0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749462104&amp;width=680&amp;sig=jpOcCWoVlkUL56P5k0OU3G1EdLdMrYOdTnIdnaZyCcw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49512712">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/512/712/76eda85fd47ffd00fb8ffbee43cd9c53_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748860701&amp;width=680&amp;sig=%2Bt%2FeCSVAeR0%2FWeKO4BKI6NfkebfVQxn23z094nxtjhI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559549">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-can-you-do-with-Polyfloss-">What can you do with Polyfloss ?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/549/3ed7c6e394ec502b28dd2e8a4b2e87f5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128817&amp;width=680&amp;sig=h0WbF%2FmYorqCrnV4HfXCp8W5YlPmyjuG9Xq2yVdReeg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:You-re-part-of-a-creative-textile-community-"><span class="bold">You’re part of a creative textile community?</span></h4><p>Maybe you’re in a <span class="bold">textile school, craft collective, or design studio</span>. You already know how to spin, weave, knit, or braid — now imagine doing all that with <span class="bold">plastic fibers made from your own local waste</span>! With the <span class="bold">Polyfloss machine</span>, you can recycle shampoo and water bottles, food and medecine packaging for example — and turn them into <span class="bold">usable threads</span> or stuffing for your projects. </p><p><span class="text-italic">Waste becomes a resource - unleash your craft.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49526795">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/526/795/dd01b8fcf9d72201e5fdb50ee6f92941_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748943997&amp;width=680&amp;sig=07NB9XF0mAZq57ye%2BtugGoo6ZN70unRVjhyXo%2FQs2ck%3D" src="https://i.kickstarter.com/assets/049/526/795/dd01b8fcf9d72201e5fdb50ee6f92941_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748943997&amp;width=680&amp;sig=07NB9XF0mAZq57ye%2BtugGoo6ZN70unRVjhyXo%2FQs2ck%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49526803">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/526/803/40ee67578ae6ceaf1fd0fa615daf8400_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748944046&amp;width=680&amp;sig=fSi3hy8q%2FAzgwyCdtlpazkNzQzTgRwQ6stpv3RXS6%2B0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49526812">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/526/812/af4e4da91245abddabdb673c214dd614_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748944062&amp;width=680&amp;sig=db21CO4%2FRmmMPEBVo%2BpVmxhno1PMsyp202KV%2BLEI4wI%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:You-re-a-maker-or-part-of-a-FabLab-"><span class="bold">You’re a maker or part of a FabLab?</span></h4><p>Every FabLab has that drawer full of <span class="bold">failed 3D prints and leftover plastic scraps</span>, right? With Polyfloss, you can recycle them into soft fibers, perfect for <span class="bold">packaging</span> fragile objects or fill cushions, sleeping bags or your beloved down jacket. But maybe most importantly: <span class="bold">you can iron the fibers and create sheets</span>, which can then serve in your laser cutter to create merch, logos, engravings or any creative project. No more buying expensive plastic sheets for your FabLab community!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49526847">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/526/847/ebbcb210ce8e81b70cdf4d4c601d59b0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748944150&amp;width=680&amp;sig=mBCv4FBJdeZH5M0tDF8iflnpP08Y4Dm5VKXXisgrXBM%3D" src="https://i.kickstarter.com/assets/049/526/847/ebbcb210ce8e81b70cdf4d4c601d59b0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748944150&amp;width=680&amp;sig=mBCv4FBJdeZH5M0tDF8iflnpP08Y4Dm5VKXXisgrXBM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49526852">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/526/852/2bfa39768ff55bc050d98aaa82c0d88c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748944163&amp;width=680&amp;sig=DmRSK5YNJ0G5nfsYiNiXRqlcy4hjtYR012%2FWbJlf%2BXg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Already-into-plastic-recycling-"><span class="bold">Already into plastic recycling?</span></h4><p>In that case, the Polyfloss is the perfect add-on. It lets you recycle plastics that are often ignored (like PET or PETG) and expand your range of materials and techniques. But, even better, it can match your existing equipment to create new products! Build <span class="bold">insulating panels</span> by pressing the fibers in your panel sheet machine, or use an oven to create lightweight and insulating bricks, boxes or products —<span class="bold"> pressed Polyfloss becomes a great alternative to Expanded Polystyrene (EPS)</span>, one of the most polluting plastics. </p><p><span class="text-italic">Polyfloss doesn’t replace your tools — it multiplies what you can do with them.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49526868">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/526/868/68073c923407a29f5eebc5a00ebdba3a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748944246&amp;width=680&amp;sig=HCXvvRStdcWhrB0PLJ4Evv922sAatJ%2F6hGB08R%2Fhs4Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49526876">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/526/876/b95c47d0ebfdaadcad130abfb5e46ce8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748944267&amp;width=680&amp;sig=8aO6P6n2D3KDxg3iK4qvQmmGDE7tnVV74phz6x%2BHqpU%3D" src="https://i.kickstarter.com/assets/049/526/876/b95c47d0ebfdaadcad130abfb5e46ce8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748944267&amp;width=680&amp;sig=8aO6P6n2D3KDxg3iK4qvQmmGDE7tnVV74phz6x%2BHqpU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559551">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-technology">The technology</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/551/5986e241c5263c825809633def2122ed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128834&amp;width=680&amp;sig=Nwf7xT3s7Lfvk%2BSxtW5lZUcnYOoXWkED%2BAdqo5uGmN4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:How-does-it-work-"><span class="bold">How does it work?</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369824">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/824/50e2187c3a175bb35d247b38a816beb8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747847078&amp;width=680&amp;sig=w3aw%2FJ1OMtuKUEvrxtrG0iVyyRTAB8e5tmBRAqXxebE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347898">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/898/1d1a58ed6316929953794cc80159479a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747734367&amp;width=680&amp;sig=KiUcOCCj%2FpIp3uXcIfcRn4KWsE7C6rN2xhrINu0sBMs%3D"/>
+</figure>
+</div>
+<p> The plastic arrives hot, under pressure, in the head, with a controllable pace. The spinning head has a precision slit under its perimeter, and the plastic is spun by centrifugation into thin fibers. The fibers, just created, are blown with cold air to first elongate them and also cool them for collection. They can then be collected on a grid, in a bag or with a rotational collector to directly create yarns. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347590">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/347/590/809db8439bf40bfd0b02da557f94d093_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747732851&amp;width=680&amp;sig=R4BHs%2FarfoqE1LMngiSndPvF6EchYyKosYACTQuQkPE%3D" src="https://i.kickstarter.com/assets/049/347/590/809db8439bf40bfd0b02da557f94d093_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747732851&amp;width=680&amp;sig=R4BHs%2FarfoqE1LMngiSndPvF6EchYyKosYACTQuQkPE%3D"/>
+</figure>
+</div>
+<p>Each plastic needs its own set of temperatures and rotational speeds, as they each have different melting points and viscosities. But the control of the machine has been made super simple with a full in-house developed software and a tactile tablet to pre-program everything. <span class="bold">Once the right parameters are set, you just have to press play!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49382964">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/382/964/5465c39277e1a6a7afa8d63eb47be2a6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747925764&amp;width=680&amp;sig=uubIAuvEu3QLy0MyU5UgcsMCMlBEkR93p1PqiWglSpU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Machine-and-installation-specs"><span class="bold">Machine and installation specs</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49602388">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/602/388/2836a8ac9cb4299556f64c90715dec11_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749460086&amp;width=680&amp;sig=GMaIxnRctxyOQ4fAn5vu5cPwv2yy77dxQ%2BwIrHjwb6Q%3D"/>
+</figure>
+</div>
+<p><span class="bold">Installation needs: </span>Sturdy table, well ventiled area or extraction, PPE protections, Safe plugs and electrical installation.</p><p><span class="bold">Ventilation requirements:</span><br/>The polyfloss machine must be used in a well ventilated area to limit exposures to potential gazes and fumes.We recommend at least 20 ACH (Air Change per Hour).<br/>If used indoors, you should make sure to use a suitable fan.<br/><span class="text-italic">Check our FAQ for more information and how to choose your extractor fan.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49617728">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/617/728/0bee99bcd527d2c313806af59d775435_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749544710&amp;width=680&amp;sig=f3zN32JaCGKl0DoPtksD9Hq33bvl5hNWR1BvZ%2F4xXsI%3D"/>
+</figure>
+</div>
+<p>The machine produces 1kg of polyfloss per hour.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559558">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-plastics-can-you-use-">What plastics can you use ?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/558/59c121d1fa49c16ad4d862547df66d93_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128848&amp;width=680&amp;sig=i1Gjd5TUMZa8hFaFz%2BsG3mzX213S9X%2B%2BCllMUcUJft0%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Which-waste-Which-Fibers-"><span class="bold">Which waste? Which Fibers? </span></h4><p>The mini-Polyfloss machine accepts several plastics: </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49545345">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/545/345/f4039205141158fcffec98d5640dfa55_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749042995&amp;width=680&amp;sig=%2BEUwPRKR4KBt7pcuujAY2B4LqUR4g0hgG8rb3kN%2BLM4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49545363">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/545/363/cd5602d69027d3cca18fd58d7a0bf4cf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749043096&amp;width=680&amp;sig=Pu2O8upuRtWx0pFQFyEcL68BOeLmAwgQCR6F88sBJTE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49545379">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/545/379/5ee97e651e5637ef785a60dc5ed6f55f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749043176&amp;width=680&amp;sig=GnIqDqSNYmRb2DYlFEor2LjdRFKCRycFezjfLB6dQeE%3D"/>
+</figure>
+</div>
+<p><span class="bold">Now, other plastics create fibers too:</span> HDPE, PLA, Nylon... But we haven't had time to test them thoroughly so we don't want to give you too much hope there. And most importantly, anything with Styrene (PS, ABS) or Chlore (PVC) can be extremely harmful when melted - it create gazes which will stay in your lung forever if you breath them - and we don't want anyone to get hurt. We'll continue testing new plastics, define the right parameters and extend the range of waste you can use during and after the campaign. Check our social medias and youtube channel for updates !</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559561">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Tackling-plastic-waste-locally">Tackling plastic waste locally</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/561/1953a387009f033adb44439771766d35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128859&amp;width=680&amp;sig=tzfCouiGfnQByV0Bz4Ighxr2UJnXHseUd6bZ%2BLvCoE8%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:The-Plastic-issue"><span class="bold">The Plastic issue</span></h4><p>We all know it — <span class="bold">plastic pollution is one of the biggest environmental crises of our time</span>. Not 10% of plastic waste is recycled globally, while the production of virgin plastic keeps increasing every year. Hundreds of millions of tons of plastic are still ending up in <span class="bold">our rivers, oceans, and soil</span>, threatening entire ecosystems and communities. Meanwhile, large-scale industrial recycling can’t keep up — and often ignores small or mixed plastics. <span class="bold">It’s time to act differently. </span>With the <span class="bold">Polyfloss machine</span>, you can take action <span class="bold">right where you are</span>, turning local waste into valuable materials and helping build <span class="bold">small-scale circular economies</span> in your own neighborhood.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559644">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/644/2d52601d697ceca0dc80434b105c7f23_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749129217&amp;width=680&amp;sig=FN4r3HYqrO5lC22KfWPNml1NpghndOyUDTGEEOBxWX4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Why-cotton-candy-"><span class="bold">Why cotton-candy? </span></h4><p>Our machine turns plastic into fibers —<span class="bold"> but why fibers?</span> While it’s already possible to make bricks, sheets, or panels out of recycled plastic on a small scale (see our friends from<span>MAD Plastics</span>!), panels or bricks are already widely available with other materials like wood, ceramics or metal. <span class="bold">Fiber, on the other hand, is where plastic can truly shine. </span>By spinning waste plastic into fibers, we unlock new ways to reuse plastic through familiar techniques — such as: textile crafts, molding and shaping to replace Expanded Polystyrene applications or even ironing to create flexible sheets. </p><p><span class="bold">This opens up creative, low-tech, and accessible recycling paths that anyone can use — whether you’re a crafter, a designer, a student or a maker.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49350868">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/350/868/499e278648a42c727724d41e75082ca6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747750368&amp;width=680&amp;sig=Lh6%2FGav%2F4NG%2BnBiD9rlzKu%2BPXBTEO76U08mxM%2BZE4%2Fw%3D" src="https://i.kickstarter.com/assets/049/350/868/499e278648a42c727724d41e75082ca6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747750368&amp;width=680&amp;sig=Lh6%2FGav%2F4NG%2BnBiD9rlzKu%2BPXBTEO76U08mxM%2BZE4%2Fw%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:An-acclaimed-and-proven-innovation"><span class="bold">An acclaimed and proven innovation</span></h4><p>We have been developing this technology for about 15 years now, and we've received support from many organisations. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559677">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/677/6a3b01396513223ec95f7880e87e4129_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749129355&amp;width=680&amp;sig=XuUJ%2F1E%2Bq%2F63ydO6pzGxCOeohWGs%2FUEv%2BQyCGCnV6rg%3D"/>
+</figure>
+</div>
+<p>We've also been featured in many media and travelled around the globe with our machines. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542902">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/902/6408ae069b42867d09380571f45c0f3a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749031086&amp;width=680&amp;sig=yW1Vby8JfCgKk3lL5SEUsaQKOqp8nMFmIFdss41QGko%3D"/>
+</figure>
+</div>
+<p>The bigger version of this machine has been developed together with NGOs to be used in humanitarian contexts. It's been deployed and used intensively in different recycling projects, in Asia, Africa or the Middle-East for the last 5 years. This experience allowed us to test it, improve it and implement all necessary changes for long runs and complex environments. It is now fully operational (TRL9, for the connaisseurs ;), and the mini version is just the same, but smaller!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49382874">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/382/874/7b0a90bae3bffb7d5be95d59ed31ea93_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747925239&amp;width=680&amp;sig=sse6JjHkzvoUEwpt6dW0uofc1C0oRyBhhOPFGIneVrE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559540">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Warranty">Warranty</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/540/32ee9716bda405a96c4d4526578ad89e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128778&amp;width=680&amp;sig=Cu2sxsuZih5uwmWcWPQZEYeag2Uz13O%2BDTqTkWGiWC0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49560191">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/560/191/5a6987bdcc62dbaa42af6fbfd7140b25_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749131620&amp;width=680&amp;sig=%2BJU164SBGcXkJMHaBsuTkCOzn9lMhk5DVMeyuK4rpDQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:1-Year-Warranty"><span class="bold">1-Year Warranty</span></h4><p>We stand behind the quality of the Mini Polyfloss Machine. </p><p>Each unit comes with a one-year warranty covering any defects in materials or workmanship under normal use. If your machine experiences any issues within the first year, we will repair or replace it free of charge.<br/>This warranty does not cover damage caused by misuse, accidents, unauthorized modifications, or normal wear and tear. To make a warranty claim, simply contact us with your order details and a description of the issue.<br/><span class="bold">We want you to feel confident in your purchase and are committed to providing excellent support throughout your experience with the Mini Polyfloss Machine.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559565">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Pledges-Rewards">Pledges &amp; Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/565/8c7bdecf88d5a1908961b27593d5a76e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128872&amp;width=680&amp;sig=WsSuGyIYYQQmodT1O7zZrERTv8%2FzKeWdEQ3OP3kTWrw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49545571">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/545/571/e6e8a7fcc76ffec06b662e89304e1e97_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749044258&amp;width=680&amp;sig=wPXazDN%2FdKF2LjbratSEgqNi%2BDSK4RUzrHSKZKk%2BGbQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">Pay in Full : </span>Make a single full payment now.<br/><span class="bold">Pledge Over Time :</span> Split your pledge into three equal payments.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49545573">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/545/573/03f9844a5fb25e21f78e2c96937d4ceb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749044266&amp;width=680&amp;sig=FHIDy9T8bBnPjrYXpvmUDyjrNcHa8myeV4nteXtem7w%3D"/>
+</figure>
+</div>
+<p><span class="bold">Shipping and customs costs not included</span>, they will be collected afterwards. The shipping information is collected after the campaign ends. </p><h4 class="page-anchor" id="h:The-Rewards-"><span class="bold">The Rewards :</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49617498">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/617/498/ce9f2c3fc76712b860f78c5fe63f5f2e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749543329&amp;width=680&amp;sig=%2B9c5EI%2BybzgordygMHFFxYKENMG%2BRICBc84F3H9f6mo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559572">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Machine-development">Machine development</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/572/9c5576ada67d817ad1f3f8f5a34c2020_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128891&amp;width=680&amp;sig=SYgHxaK3X4xN0js2vGFQgwiyKWjHDdfGLNDRYkIDGkk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Design-to-cost"><span class="bold">Design to cost</span></h4><p>We've designed this machine to make the Polyfloss technology accessible (compared to our bigger machines: retail price 18.000€). So the whole R&amp;D has been conducted within a "design-to-cost" process, to make sure we could stay within a final price (outside of kickstarter) of 6000€. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49547534">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/547/534/cbb98afdb0203cf236db110c68a884d2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749054015&amp;width=680&amp;sig=h%2FMug5Nlv8sij4f7GwbaGK%2FtyIsMEGkN1uXBGq6UfCc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559575">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Who-are-we-">Who are we ?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/575/a8c419a69c9d857dcc1e2f48f0033afb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128901&amp;width=680&amp;sig=v0P7iDlx205Yf5V7VLNOswys8Fw6TKkrOcQrj2paB8s%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Makers-inventors-entrepreneurs-for-change"><span class="bold">Makers, inventors, entrepreneurs for change</span></h4><p>We are a <span class="bold">collective of designers, engineers, entrepreneurs and researchers</span> working at the intersection of <span class="bold">ecology, local empowerment, and innovation</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49393286">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/393/286/c310fb1dc68fbc7e67fec1568408df96_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747990313&amp;width=680&amp;sig=O0hPTKwIUGo2M%2BWmxAVe%2Bj94d%2FvHqKEQxas%2BRsFOrBk%3D"/>
+</figure>
+</div>
+<p>The founding team initially met at Imperial College London and Royal College of Art in London, at the<span>Innovation Design Engineering</span> program back in 2011. We had this idea to create foam out of plastic waste there, and thought of candyfloss. Between 2012 and 2018, Polyfloss was mostly an idea concretized in prototypes: we were doing workshops, exhibitions and talks.</p><p><span class="bold">In 2019, everything changed. </span>We partnered with several NGOs who were looking for ways to recycle plastics in humanitarian settings. The idea was getting real, actually helping people where it mattered most. We developed new machines, and installed our first pilots in Gaziantep, near the Syrian border (see below for more infos). We then continued with projects in Nepal, France, Norway and are about to go to Sudan for the UN. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49547761">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/547/761/a0e57dc99a4ec49e2e9a4fa4c9df58f3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749055169&amp;width=680&amp;sig=iTL9LvrRn7vl425q2f7H8p8WZUdkm4OUbC1cqXu%2BIZI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Building on that, we created our company in 2022, and started growing the team.</span> Karl joined us as an apprentice in engineering and maintenance, Carla on UX/UI and graphic design, Fred on production management and engineering, Elisa on sales and marketing, and recently Zouhair for community management and social networks. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348302">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/348/302/6a33d5594713ab4872693c6b1ada4b67_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747736539&amp;width=680&amp;sig=saYYcV%2BKmQtn0D236z4X8tMi44tOYdeiH1mVnpXMO58%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559580">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-work-with-NGOs">Our work with NGOs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/580/8140da6bd537dbbd00da08f6423ea41b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128916&amp;width=680&amp;sig=9VdNWaqGwWnXDYfI0h5Fm4l77mkIygZvf9OMKBIN9Z4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Focus-on-Humanitarian-aid-and-development-initiatives"><span class="bold">Focus on Humanitarian aid and development initiatives</span></h4><p><span class="bold">Since 2019, we've been developing and delivering the technology to NGOs, through a partnership called "</span><span>Waste For Warmth</span><span class="bold">". </span>The idea is threefold: reduce plastic waste in humanitarian contexts, provide capacity and support livelihood programs locally, and fabricate first necessity materials and products. We partnered with <span>Engineers Without Borders - Norway</span>, <span>Field Ready Turkey</span>, and the Shelter Research Unit of the ICRC (<span>The International Red Cross and Red Crescent Movement</span>), and received important support from the Humanitarian Innovation Fund from <span>Innovation Norway</span>. </p><p>Through that program, we could finance the installation and setup of a machine in Gaziantep, at the Syrian border, and transform more than 1ton of waste into insulation for shelters in Syria. The difference of temperature, between an insulated shelter and a non insulated one, could reach nearly 10°C !</p>
+<p>We then continued with several projects in Nepal, together with <span>FabLab Nepal</span>, <span>Response Innovation Lab Nepal</span>, <span>World Vision International Nepal</span> and the <span>Green Decision Lab</span>. 3 big machines are now in different areas of Nepal and they've insulated schools and public buildings locally. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49526983">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/526/983/11e6364fd406c6f1cd9532c78b0e8e4b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748945026&amp;width=680&amp;sig=9FeIINPleCinMCRxmexOK8T9NcwLkL8HuPaJkhzfnnE%3D"/>
+</figure>
+</div>
+<p>More recently, we've concluded a purchase order from a UN peacekeeping operation in Sudan (<span>UNISFA</span>) and <span>UNOPS</span> to recycle plastics in the camp. The machine arrived on site, we're waiting for the approval to fly there and set up the factory!</p><p>As you can imagine, giving this machine to people who need it most is at the heart of our mission. <span class="bold">This is why we decided to create a reward to finance machines to be donated to our partner NGOs</span>: Engineers Without Border, Response Innovation Labs, and Field Ready, who are all doing an amazing job in transforming humanitarian aid and supporting local communities with tools and techniques. <span class="bold">Please help them by backing us! We will select the best-case operations, and donate the machines - at the conditions of reporting on their use and the quantity of plastic recycled. We'll share all these news with you regularly. </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49602369">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Trusted-by">Trusted by</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/602/369/a47a475d17491a7fe77456fcabfbc78b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749459999&amp;width=680&amp;sig=5ewy04MQ0BHLccfAbkgXpUbbgD9LJvxMghSG1dvSc5w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542956">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/956/139100d244355140169b22dc8afec6aa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749031307&amp;width=680&amp;sig=J%2BTqg2abZwLE0XRDluJ4YWOHl6BYteHBAd78O8h0SnY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559588">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Production">Production</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/588/cadc8a359149f2abc86c436c2258aaef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128936&amp;width=680&amp;sig=UNtME0GimYHgZ308sVZZr9xXcIoAjg2pzbfA0huFazw%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Production-details-"><span class="bold">Production details </span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559605">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/605/def0309cc6bd0be78a7f69319d912a71_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749129026&amp;width=680&amp;sig=0PrAsEn9k0vvcqNSYTaqi9K5IZYtoW4LHAFX1B3Tnl4%3D"/>
+</figure>
+</div>
+<p>Our machine is ready to be produced! The main technological component (the rotating head) has been extensively used for the last 2 years and has been improved to withstand long production runs. We just have a few updates finalize: on the software, improve the program and add some features of data logging and maintenance capacities. On the hardware, add some features for the certification requirements. This should take <span class="bold">about 2 months of work</span>. </p><p>We have <span class="bold">secured our supply chain</span>, with most of the parts being produced or supplied from Europe. The precise machining of the stainless steel and bronze elements are done by a French company, specialized in aeronautics and Formula 1 fabrication! Electronics are all off-the-shelf international suppliers, sheetmetal and 3D Prints are done in Italy. Only the extrusion screw and motors are ordered directly from China. </p><h4 class="page-anchor" id="h:Lead-time"><span class="bold">Lead time</span></h4><p>Our lead times mostly depend on the <span class="bold">certification process</span>, which is mandatory for exporting in most countries, like the US, Brazil or China. This process, done by an independent body, can take up to 6 months. In parallel, we'll be ordering all the main parts of the machine to our suppliers, leaving time for assembly, quality tests and packing. We'll also produce all the support videos, setup and maintenance guides.  </p><h4 class="page-anchor" id="h:Thank-you-"><span class="bold">Thank you !</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49619501">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/619/501/651f35947d62fe97f4211ec179a0dc64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749553684&amp;width=680&amp;sig=yGIbATbJBNJEzYN3EZXd8eTWjocuasBPV1%2BRt9WOKog%3D"/>
+</figure>
+</div>
+<p>We’d like to thank all the people who took part in the Polyfloss adventure in the past : Joel Trotter, Clara Martini, Elisa Seban, Cecile Xu, Jude Zantain, Ramzi Naffah, Steven Akoun, Cristobal Alvarez . Also a big thank to our partners and supports in the humanitarian aid : Nima Nemati Said and Marianne Nilsen Sturmair from Engineers Without Borders Norway, our Nepalese friends Arnav Bhadra, Utsav Kharel, Samip Sidgel, Pallab Shrestha, and the amazing team of Field Ready Turkey : Emad Nasher, Zakaria Alsamou. Also our financial supports : the humanitarian innovation fund from Innovation Norway (Emilie Skigvang, Therese Uppstrom), BPI (Jean-François Jung), Réseau Initiative Seine-Saint-Denis (Nicole Lozano), Ademe (Mohamedou Ba), ENS (Virginia Branco, James Auger) and SATT Paris Saclay (Odile Laine). Most importantly, all the people who advised us along the way : Andrew Lamb, Matt Ferrel, Gauthier Nadaud, Brice Thibault, Baptiste Fradin, Marjory Wachtel, Manon Perrodin, Matt Bachelor, Holly Mikesell, Peter Childs, Miles Pennington, Sofiane Ammar, Jérémie Blache. And of course, our families and friends !</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">On the technology side, the last big step we have to overcome is certification. Although we have already done it for other technologies in the past, this certification might lead to minor changes in the technology and parts, which might lead to additional production costs. We'll make sure to keep a "design to cost" approach and decide on the most relevant changes when needed. 
+
+Another challenge we face relates to current international business instability. Like all businesses working in hardware today, the fluctuating taxes and tariffs adds risks on the final prices and capacities to deliver. This is why we haven't included import taxes and delivery prices in the kickstarter, as it would have been too risky to bet on those over the next 6 months. We truly hope that those tariffs between the EU, the US, China and the rest of the world will have settled by then.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Our machines are meant to last, but most importantly they are not designed as black boxes. The machine can be opened, every part can be replaced and repaired.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Involved in plastic recycling, we don't want to produce more waste! Our packaging will be exclusively done through wood and cardboard - and plastics which can be directly recycled in the Polyfloss machine.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">Everywhere its possible, we'll use boat and train shipping.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

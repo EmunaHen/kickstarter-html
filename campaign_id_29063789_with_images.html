@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>153040.WIN: The Advanced Scoreboard for Padel Players</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/282/596/329afef66e983b04dceb413f4fdcb5e5_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747266971&width=560&sig=s6fpEfZ4tAP3Q7A6byPb8Z%2FSHm26EbfIuXmhQdyyUsE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>153040.WIN: The Advanced Scoreboard for Padel Players</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Improve your Performance in Padel | Boost your Focus on the Game | Stop Asking "What's the score?"</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 8,653</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49258165">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Introducing">Introducing</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/258/165/dbb3c5315d8f73163a0d3adf0d7f242f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747131465&amp;width=680&amp;sig=sOzV4e5vbAegsSXInBR4jpbhsycVj66R2FSY%2BdhOykk%3D"/>
+</figure>
+</div>
+<p>Take your padel experience to the next level with the <span class="bold">153040.WIN The Advanced Scoreboard</span> — the innovative solution designed to streamline scoring, enhance gameplay, and elevate your focus. Forget distracting score disputes and relying on memory to track points. This smart, net-mounted scoreboard puts you back in control with precision, portability, and convenience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49146202">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/146/202/79070b29f31dd9851960b4dc17a2d318_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746339687&amp;width=680&amp;sig=Z%2BiZicDx7%2Fb%2Bnf8db6NXOyJ9QyrjmVNqLhS6Rcj3mOw%3D"/>
+</figure>
+</div>
+<p>Whether you're a seasoned player or just getting into the game, the 153040.WIN Advanced Scoreboard helps you maximize your potential and keep your eyes firmly on the ball.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49147276">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/147/276/7db3cc0292b7a7fdf27182ec781ccd8f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746352951&amp;width=680&amp;sig=JaNwKJ27lgmT7q6svLTPa5E4Rr4gmxE1laP%2FSdFpNrI%3D" src="https://i.kickstarter.com/assets/049/147/276/7db3cc0292b7a7fdf27182ec781ccd8f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746352951&amp;width=680&amp;sig=JaNwKJ27lgmT7q6svLTPa5E4Rr4gmxE1laP%2FSdFpNrI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49271692">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Advanced-Features">Advanced Features</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/271/692/a4c6e6970a32a9141a54e4401fe37272_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747209131&amp;width=680&amp;sig=VW%2BVpH2oIUvxUrjo%2Ff6my4YzUpI2Z1ZHkWmBtp%2Fj3HI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266270">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/270/5ed1cab816db968bd6acb02a6e529107_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747171058&amp;width=680&amp;sig=wxIC9wdUpsdiTPORbj%2FlUcx2LybxxqSthRExYXvW2J0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266297">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Take-it-with-you-everywhere">Take it with you everywhere</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/297/db5ac43580152ea4884b10704124f87d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747171185&amp;width=680&amp;sig=cnFxLxli87f3DNDpd5D2fPcq3PdQuSSbkgaDMz%2F5k1o%3D"/>
+</figure>
+</div>
+<p>Its lightweight design ensures <span class="bold">effortless portability</span>, while the stylish and practical protective case means you can carry it with ease and confidence. <span class="bold">Whether you're heading</span> to your local padel court or traveling to a tournament.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49147255">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/147/255/a8bd45ce32d792cf71a6e98d5c62d74a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746352650&amp;width=680&amp;sig=7JFEc21KPzOfXMWBCwzGfdpwgd8a4Kyi3uJkJ%2BhY2AE%3D" src="https://i.kickstarter.com/assets/049/147/255/a8bd45ce32d792cf71a6e98d5c62d74a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746352650&amp;width=680&amp;sig=7JFEc21KPzOfXMWBCwzGfdpwgd8a4Kyi3uJkJ%2BhY2AE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266307">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Score-visible-to-all">Score visible to all</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/307/81b638c6b9517a00d6efd8acddadb6d8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747171239&amp;width=680&amp;sig=LB019poIZjr3kl4IcZUFdXIQ77Z3DG1i%2BDj25CaXtqQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">Bright LED digits</span> make it easy for every player to follow the match in real time. No more asking, “What’s the score?” — <span class="bold">it’s right there for everyone.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49265657">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/265/657/6f2e940e91094aa93c06735e0012ad7b_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747167657&amp;width=680&amp;sig=DsYgzSJjUzfO7j2n%2BfIKRkd1TKs1J%2Bt6rME59G53S24%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266315">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Net-Attached-and-Portable">Net-Attached and Portable</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/315/6cbed269523474ffdf17f8cf48a7272a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747171278&amp;width=680&amp;sig=AJvVPNrceiP1ikZQCoIp97pdC4sAO39vZdijqnN%2Fl9o%3D"/>
+</figure>
+</div>
+<p>Mounts directly to the padel court net with <span class="bold">secure hooks</span>. No need for walls or extra stands — just hook, switch on, and play. Compact and travel-ready.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49147266">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/147/266/7c6cc85a4b853a12b7dad9234c77939a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746352818&amp;width=680&amp;sig=mloeA8rdAuXBlIwLVPQ2fpW%2B9pIIqEHLX1PgeAVIQI0%3D" src="https://i.kickstarter.com/assets/049/147/266/7c6cc85a4b853a12b7dad9234c77939a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746352818&amp;width=680&amp;sig=mloeA8rdAuXBlIwLVPQ2fpW%2B9pIIqEHLX1PgeAVIQI0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266327">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Who-s-serving-">Who's serving?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/327/7defd395240f695aa82988206f39f820_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747171331&amp;width=680&amp;sig=Z%2F4ZPWxTk8vFBnEBf%2BrtfDHfj61kEBSHFBH8ra0wsSo%3D"/>
+</figure>
+</div>
+<p><span class="bold">How many times have you asked that?</span> At the start of each new game, the Scorekeeper's blue light indicator clearly shows whose turn it is to serve. <span class="bold">No more confusion</span>, just smooth, uninterrupted play.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49147313">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/147/313/90280158cd32b74b9e0411baa3ee6bb8_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746353370&amp;width=680&amp;sig=5GckScAgJOVuAh2s98beMQsqnSK0Ng30XPRoegX6yoo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266341">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:View-Match-Scores-with-Ease">View Match Scores with Ease</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/341/cd1f13ec77c12aebfe69c93e8e8a76c4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747171449&amp;width=680&amp;sig=lOZ9AVB2afzTp7Q38my1%2BERNKG5GFkCguqHyn6hnIv0%3D"/>
+</figure>
+</div>
+<p>A <span class="bold">dedicated button</span> on the wristband lets you check the results of <span class="bold">previous matches </span>and then seamlessly return to the <span class="bold">current game</span>. Stay informed and focused without missing a beat.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49147260">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/147/260/63c95e7e3ff2abb547aa46e939d0683d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746352715&amp;width=680&amp;sig=Sc%2F%2BNJ%2FgnjMusKA87dGrq4ZPcNemfcXcnktcub0Ip4g%3D" src="https://i.kickstarter.com/assets/049/147/260/63c95e7e3ff2abb547aa46e939d0683d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746352715&amp;width=680&amp;sig=Sc%2F%2BNJ%2FgnjMusKA87dGrq4ZPcNemfcXcnktcub0Ip4g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266352">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Score-Updated-with-a-Click">Score Updated with a Click</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/352/7779ba3e900d5daa4996b0e1b4bd9ef1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747171482&amp;width=680&amp;sig=wY2ojNVJnQZREXhlmA9Q0yxQV7mWCTZYI%2BFAH%2BPwDoA%3D"/>
+</figure>
+</div>
+<p>With every point scored, simply <span class="bold">press a button on the dedicated wristband to update the score.</span> One player updates the score for everyone, ensuring a smooth and efficient game experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49179537">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/179/537/811ea738be09eebcbc65ec2d23c177f2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746561937&amp;width=680&amp;sig=BKfsL0sEQBvJljRdqjBifFTTufWcqXl7nPiv4n%2B6%2B2w%3D" src="https://i.kickstarter.com/assets/049/179/537/811ea738be09eebcbc65ec2d23c177f2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746561937&amp;width=680&amp;sig=BKfsL0sEQBvJljRdqjBifFTTufWcqXl7nPiv4n%2B6%2B2w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266369">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Built-in-Wristband-Command">Built-in Wristband Command</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/369/a7e81d95c472248a3348fc38dcb0f203_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747171567&amp;width=680&amp;sig=B9BrJX9QA1bUnQF9x937KiIfo36wmhUphchcal%2Bpvrs%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Your-personal-controller-always-within-reach-">Your personal controller, always within reach.</h4><p>The wristband command is securely stored in a built-in compartment on the scoreboard. The wristband bracelet is easily removable from the command and is <span class="bold">machine washable</span>, ensuring it stays clean and hygienic between uses. For optimal hygiene, we recommend keeping the wristband bracelet as a personal item.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49147285">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/147/285/1293ec9cfc1623ed0f6cfdcacb2d94e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746353053&amp;width=680&amp;sig=Y08qvYQJXQHbzyM8lP2MDwpX0FvKj4o5SsRNHWg2WvI%3D" src="https://i.kickstarter.com/assets/049/147/285/1293ec9cfc1623ed0f6cfdcacb2d94e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746353053&amp;width=680&amp;sig=Y08qvYQJXQHbzyM8lP2MDwpX0FvKj4o5SsRNHWg2WvI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266379">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Choose-the-Game-Type-You-Want">Choose the Game Type You Want</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/379/4c22b71d541a832c6918fc543ec8ca78_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747171612&amp;width=680&amp;sig=%2FV1eeJHUDBSHx0EP3im2fppL7UMMZ4BczFyxu91vqP4%3D"/>
+</figure>
+</div>
+<p>The <span class="bold">P</span> Programming button, on the back of the scoreboard, allows you to select the type of Padel game, such as with or without Killer Point, and other modes.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49147269">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/147/269/72525f26c9817d54c6837d6c2ee9d540_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746352830&amp;width=680&amp;sig=tWKNjCy4uvqtPXqLKdKB1BgSLWhmR9iv1iJ2dmDc%2BiE%3D" src="https://i.kickstarter.com/assets/049/147/269/72525f26c9817d54c6837d6c2ee9d540_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746352830&amp;width=680&amp;sig=tWKNjCy4uvqtPXqLKdKB1BgSLWhmR9iv1iJ2dmDc%2BiE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266387">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rechargeable-Batteries">Rechargeable Batteries</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/387/c366022795ad65f729b3754373729678_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747171642&amp;width=680&amp;sig=jM5fjN7Zyep8w9eX2O5r47bZQQt0ZskY4hx975sDTKY%3D"/>
+</figure>
+</div>
+<p>The internal batteries are rechargeable via a USB-C port. Enjoy up to 8 hours of playtime when playing indoors, where the LED brightness is automatically minimized.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49292011">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Wristband-Command">Wristband Command</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/292/011/ca49bbce961d857290f2ae3eb2b4f024_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747328981&amp;width=680&amp;sig=nKmBAcaBQOha1AtnvFlLUt3%2Fm%2B5GBWjjP3GSTNGf7Qw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Master-the-Match-with-4-Simple-Buttons"><span class="bold">Master the Match with 4 Simple Buttons</span></h3><p>The wristband controller is the heart of effortless gameplay, giving players full control without disrupting the flow of the match. Designed with simplicity and precision in mind, the four-button layout offers powerful functionality:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266206">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/206/2c62e69ad2cd8afef0e30c2a6d1414a2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747170662&amp;width=680&amp;sig=vuvstdGRqC0aZFGk5YVHMTWGItUN1gH3NtEdV6AbOGw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266251">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:See-Why-We-re-the-Smarter-Choice-">See Why We’re the Smarter Choice </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/251/f586c53689d749c95589af34eb496d78_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747170892&amp;width=680&amp;sig=iNZsP4NoWm%2F4u9cshnFfF2axvYlk9D1h89BgEkqR7SY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49371066">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/371/066/7f3b0d9eac1ec2ded29138245f582673_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747852529&amp;width=680&amp;sig=9XLzwui4u51xxjidxTdrcvlz1mY7BkFTKHoBWQ%2B2ss4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266230">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-To-Use">How To Use</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/230/bbfe487025e0271974566c90e45745db_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747170796&amp;width=680&amp;sig=3LaAcaGb40ug3Fr9J6qfj2K7NKjjgJDtO2ye6wEypnY%3D"/>
+</figure>
+</div>
+<p><span class="bold">Set up in seconds, play without interruptions.</span><br/>With just a quick mount, a simple setup, and a tap on your wristband, the 153040.WIN Scorekeeper is ready to enhance your padel match — no hassle, no confusion.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49371177">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/371/177/e112afadc61868be4436a66ceeb647ae_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747853060&amp;width=680&amp;sig=5ZwwjFXhqaPyd0Hr5ONoSqGLZ2Gx3wlEQb1FGnl5h7c%3D" src="https://i.kickstarter.com/assets/049/371/177/e112afadc61868be4436a66ceeb647ae_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747853060&amp;width=680&amp;sig=5ZwwjFXhqaPyd0Hr5ONoSqGLZ2Gx3wlEQb1FGnl5h7c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266174">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Key-Benefits-">Key Benefits:</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/174/93960cf2f5a5a1ec5b18d6e3395856f8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747170493&amp;width=680&amp;sig=b0Phak7KOpWH6WWEpUaZLiJO63batBnjYIKqnrekUTs%3D"/>
+</figure>
+</div>
+<p>With the 153040.WIN Advanced Scoreboard, you're not just keeping score — you're enhancing every aspect of your game. Take command, lead with clarity, and elevate your padel matches today.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49229598">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/229/598/13b01fc070eb8df665df0f23804b4a4b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746915569&amp;width=680&amp;sig=x9LC83i%2FbfZ9VfmVJrOHY%2Bw1D2zDJqWG1JMdhHmXUXQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266165">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-do-our-Beta-Testers-say-">What do our Beta Testers say?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/165/4c1fc9609a323887b4718faf157eefc3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747170454&amp;width=680&amp;sig=HKQgTL1GrGngQ9uXNL83fncdwXAnoncRgWGBuh2udNs%3D"/>
+</figure>
+</div>
+<p>Starting from November 2024 we have involved some Beta Testers in Italy to try our <span class="bold">advanced scoreboard</span> during their Padel matches. Here is what they say:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49142154">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/142/154/4e64f99aca3050b4c455cee67d524d20_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746300039&amp;width=680&amp;sig=zTam5Vm7PPRo8BzQNw4CbXvDrNHKxKiPUZNY2lh3taQ%3D" src="https://i.kickstarter.com/assets/049/142/154/4e64f99aca3050b4c455cee67d524d20_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746300039&amp;width=680&amp;sig=zTam5Vm7PPRo8BzQNw4CbXvDrNHKxKiPUZNY2lh3taQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266138">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-included-">What's included?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/138/841c4aec8b8d9a5d171bc6fa5ec0e4f7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747170383&amp;width=680&amp;sig=Bsnts3yVIIOZJKBVLCwXVgpe5zQk61DYoRqKYCzQdhI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49265709">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/265/709/ea07eddee34816d4097a9f1516744165_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747167857&amp;width=680&amp;sig=lQDVxudv66%2FpkvhsoPy1t6VThw7nm2ViShwU%2FajH70o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266125">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Features-and-Technical-Aspects">Features and Technical Aspects</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/125/f2bff869eb018963bf47ecb91890cd09_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747170301&amp;width=680&amp;sig=Go3%2B4fcTZzC8TEQXPhMVuQUzyIV7lrsNbndaP5QLvXg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49371163">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/371/163/17f960672a1cf8e151ea8305d1ccf4b7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747852983&amp;width=680&amp;sig=WSVQDqBAEgMi%2B8CwD1MJMS78al9IMiTFLyw6D5YL3Cw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49264871">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/264/871/ed05871edcdbc9f2ccbce7e57e073e8c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747163102&amp;width=680&amp;sig=TrWRIkanWq1PlPxZl8GKvTyMvKtvFjOmVOCtBEaURjY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266091">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/091/d99ba1a5cb6c962cca9cb29bb5586267_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747170154&amp;width=680&amp;sig=hxTqYZuP30%2FCjVmft0bTAYocwKzGTpIfdQy7bz11MXY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Timeline with target delivery on Oct-Nov 2025" data-caption="" data-id="49443717">
+<figure class="image">
+<img alt="Timeline with target delivery on Oct-Nov 2025" class="fit" src="https://i.kickstarter.com/assets/049/443/717/e8131bd7113d95d478d353fd04b9345e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748372968&amp;width=680&amp;sig=Fi%2F9XpKInhABCtGv1cezshR6Aij9DW%2FygmFT20LGVFs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49556539">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/556/539/b308e2c16cfdf15f52c9255b39bbdf2f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749109954&amp;width=680&amp;sig=Z1Ht6JuNFAN5EE9Gj9nvYfvIyrHaiCV1jax1i41wIVM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49556543">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/556/543/497ae0abdfef86fd4307351f1e7b377b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749109983&amp;width=680&amp;sig=zWAVbwXLVMufsFD3qkrDJH4TxTQ2R0jp%2B%2FkXG08D1Cs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266081">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/081/e994dc417354d80ffa4ba4e76c1cc56a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747170110&amp;width=680&amp;sig=hs8UhIMvV1ImnboTK2B2rxM3tf8CO1LrFKnHpDe0r2Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49373255">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/373/255/3ab8200d272dae20fdae1652cbed8c26_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747863835&amp;width=680&amp;sig=SAqLU2%2FWksVCFMD%2FRK4wwl5E0NVMXd5uvJc3TaDZxR8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49371472">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Cost-VAT-and-Tariff">Shipping Cost, VAT and Tariff</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/371/472/c1cbea55937022fb112d8beb30ebe4d8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747854441&amp;width=680&amp;sig=TUAzz0S2X3pyAe6AjdKdcSwm02KnfJcNtAklTnxhnFI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49379060">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/379/060/f4761feed57d7ce208ba8553ddd08ad6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747904979&amp;width=680&amp;sig=GYbI6WJgJPplSrKLNBbUF6GjxbXtXdtLfzOlEItsVvs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266064">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-story">Our story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/064/93a144b428a0bf7286e6c7f4a7220c0e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747169997&amp;width=680&amp;sig=MPKgFxJcivCH8cexCRENlOjGOPkHcqgJ9S3nqKHXrrI%3D"/>
+</figure>
+</div>
+<p>It all started with a poorly played match. As often happens, I had signed up for this competitive match without knowing any of the players I would be playing with. After winning the first set, during the second set, there was a dispute over the score.</p><p>My partner and I were sure we were right, but due to the insistence of one of the opponents, we decided to let it go, for the sake of peace, and accepted what the opponents claimed. Unfortunately, we were truly convinced we were right and got nervous. From that moment on, we started playing poorly and lost the next two sets.</p><p>Once I got home, reflecting on what had happened, I told myself that this wouldn’t have happened if we had a scoreboard that could be updated remotely and visible to everyone.</p><p>So, I started browsing the Internet to find a device that did what I had in mind. I found several, but none met all my desires:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49179318">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/179/318/be295e4979b4223ec095956f8ef086dc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746560718&amp;width=680&amp;sig=D2rDKm866%2FGVUcbjNY6U1TO2NFps4nxHgkSiwy0nlE0%3D" src="https://i.kickstarter.com/assets/049/179/318/be295e4979b4223ec095956f8ef086dc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746560718&amp;width=680&amp;sig=D2rDKm866%2FGVUcbjNY6U1TO2NFps4nxHgkSiwy0nlE0%3D"/>
+</figure>
+</div>
+<p>Well, disappointed by the search results, I decided to create what I needed myself. And here is the <span class="bold">patents</span> and the result: <span class="bold">153040.WIN</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49294165">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/294/165/9811a17eb5109550d84ce260c828a64a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747340304&amp;width=680&amp;sig=kFMRubo3i5XGRed72nfiJzmWWO143lRTVupFfVAJTZg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49266069">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Prototype">Prototype</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/266/069/c264a6539906d2324991f1a35dcc563d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747170014&amp;width=680&amp;sig=LMWs6SY%2F6BWjHT8qcIvr8UxYWIQLTkBUIghESEQf2KM%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:PROTOTYPE-PHASE-0"><span class="bold">PROTOTYPE PHASE 0</span></h4><p>In <span class="bold">January 2024</span>, I had a <span class="bold">working device</span> ready and took it to a first Padel match. <span class="bold">It was a success!</span> The device did <span class="bold">exactly what I was looking for</span>.</p><ul>
+<li>It was hung outside the field, near the goal.</li>
+<li>It updated the score <span class="bold">wirelessly with a wristband</span> worn during the game.</li>
+<li>It was <span class="bold">visible by all players</span>.</li>
+<li>It told you <span class="bold">who should serve</span> at the start of each match.</li>
+</ul><p><span class="bold">People started asking where to buy the device</span>, and I was sorry not to be able to say something.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49228600">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/228/600/e7b787accd23865587f00d64b1210492_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746906161&amp;width=680&amp;sig=4cSfTWHRAmPabC9IXePo3GJIW4o3HktoQI8VlBH6Ceo%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:PROTOTYPE-PHASE-1"><span class="bold">PROTOTYPE PHASE 1</span></h4><p>At that point, I started to consider <span class="bold">producing the device</span>, and I made a <span class="bold">more industrialized prototype</span>—<span class="bold">Prototype #1</span>.</p><p>It was still full of wires and manual cabling but not like the first one, which was <span class="bold">handmade piece by piece</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49228609">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/228/609/236e66788cf987aa5024d72855ddd2b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746906195&amp;width=680&amp;sig=mjSaWvyOX5x3JXIenLrMQt9fFAoF1fJqlSGXjQDA3OQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:PROTOTYPE-PHASE-2-and-3"><span class="bold">PROTOTYPE PHASE 2 and 3</span></h4><p>Then I needed to <span class="bold">reduce the wiring</span> and created <span class="bold">Prototype #2</span>.</p><p>It was also time to <span class="bold">find a name for the device</span>.<br/>Since it displays points in a padel match (15, 30, 40, win), the most natural name was:<br/><span class="bold">15 30 40 dot WIN</span> — which is also the <span class="bold">website address</span>: <span>153040.win</span></p><p>At the same time, while using it, other needs emerged:</p><ul>
+<li><span class="bold">Different ways to count points with advantages</span></li>
+<li>
+<span class="bold">Choose between:</span><br/>– 2 advantages and a Golden Point<br/>– Indefinite advantages until one wins with two consecutive points</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49228616">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/228/616/6e0127d492b04d116619971a1c412c18_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746906326&amp;width=680&amp;sig=%2B%2Bf53nfV6gE4mz8IVgJt937PLqAeiaNdvWnhAHu%2B%2FjA%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:PROTOTYPE-PHASE-4"><span class="bold">PROTOTYPE PHASE 4</span></h4><p>So I built <span class="bold">Prototype #4</span>, improving <span class="bold">memory and user programmability</span>.</p><p>But the world is not only about hardware and software.<br/>You also need <span class="bold">mechanical design</span> to hold everything, and mechanics has its constraints.</p><p>That’s why we built <span class="bold">Prototype #5</span>, which was used to build the <span class="bold">first batch of devices for beta testers</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49228620">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/228/620/17372ee69cd4717ee63d26546e0b4d6c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746906380&amp;width=680&amp;sig=7KXnFl%2BoViWTdxVF0CUSlekFhOKfxM89q%2B67%2FHfsCj0%3D"/>
+</figure>
+</div>
+<p>And finally, here is how one of the latest prototypes works:</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49265972">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-the-team">Meet the team</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/265/972/801a05cb6048f49b83face7645d73f01_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747169432&amp;width=680&amp;sig=nCxHiFXx%2B8J4HvyyPnIFVFQ1Fv69MWHxAkm2rDp9TgI%3D"/>
+</figure>
+</div>
+<p>Backed by decades of tech innovation and fresh business insight, our team blends experience and passion to bring 153040.win to life. Together, we're building the future of padel scoring.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49373250">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/373/250/33daf5cb5cfae47b329258a55ff2927a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747863795&amp;width=680&amp;sig=JDsZLFkV6Pca06iK8jjrtWZeE3HDiU%2BB9w7FjgM0xyI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49265987">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Join-Us-on-This-Journey">Join Us on This Journey</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/265/987/5e4e62a67ae1998b18f043c18fd85948_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747169511&amp;width=680&amp;sig=dwjqEBuo8JeG0MMN%2FCGgvAlnfSuat%2Bpfa1maXblQZhA%3D"/>
+</figure>
+</div>
+<p>Be part of the innovation that's changing the way padel is played. Experience the <span class="bold">153040.win difference</span> — where performance, clarity, and simplicity meet.</p><p>Your support means everything to us. If you have questions, feedback, or need assistance, we’re just a click away.</p><span></span><span></span><span></span><span></span><p>Let’s elevate every point — together.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">MANUFACTURING:
+We have a trusted manufacturer lined up and will have quality assurance personnel on-site during production. That said, manufacturing delays can still happen — whether it’s an unexpected backlog, holiday-related slowdowns, or a quality control issue. If anything arises, we’ll communicate immediately. Our top priority is product quality, followed closely by timely delivery.
+
+FULFILLMENT:
+Unpredictable situations can arise — from missed supplier deadlines and customs delays to lost shipments or global events affecting logistics. To mitigate this, we’re working with an experienced logistics partner and will maintain clear, transparent communication throughout the process.
+
+PRODUCT IMAGERY VS. FINAL UNITS:
+Please note that the final industrially manufactured units may differ slightly from the prototypes and images shown on this page. While the functionality, materials, and core design will remain consistent, small adjustments may be made to improve durability, manufacturability, or user experience.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">To enhance the product's durability, we added a protective case designed to protect the scoreboard from impacts during user transportation.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">With a strong focus on environmental responsibility, we have chosen an ISO 14001-certified facility for the production of the 153040.WIN system.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

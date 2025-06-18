@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sushi Board - Modular DIY IoT & STEM</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/048/731/345/d563b42113e92693685fde9a30d532d9_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1743443678&width=560&sig=UncAvn6Jk7HMR%2Fe9snUlHYjlxe3tUk4LSvF6XpHSG9o%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Sushi Board - Modular DIY IoT & STEM</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">ESP32-based modular hardware-software system for general-purpose IoT, suitable for STEM education and real-world applications.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 449</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>50 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Sushi-Board-framework">Sushi Board &amp; framework</h3><p>Sushi Board is an <span class="bold">ESP32-based programmable modular embedded system</span> for general-purpose IoT, suitable for <span class="bold">STEM education</span> and <span class="bold">real-world applications</span>.</p><ul>
+<li>
+<span class="bold">100% based on widely available commercial modules</span>, making it cost-effective and easy to source.</li>
+<li>
+<span class="bold">Powered by </span>the <span class="bold">Sushi firmware framework</span>, which provides a <span class="bold">complete environment integrating system management and MicroPython</span>.</li>
+<li>Programmable even <span class="bold">without a PC</span>, using a smartphone or tablet via a <span class="bold">web interface</span>.</li>
+</ul><p>With <span class="bold">Sushi Board and Framework</span>, you can focus on your <span class="bold">application development</span> without getting lost in low-level system details. <span class="bold">Advanced users</span> can still flash their own firmware, as the board is based on <span class="bold">ESP32-DevKitC</span> module.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49013669">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/013/669/d0126b80fae29afe37a7ccad6d3ffb05_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745425234&amp;width=680&amp;sig=uyWTYS%2BDwpp7Q%2FS2Awgm46LlQJ7XGtIeeR9PDZhumNs%3D" src="https://i.kickstarter.com/assets/049/013/669/d0126b80fae29afe37a7ccad6d3ffb05_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745425234&amp;width=680&amp;sig=uyWTYS%2BDwpp7Q%2FS2Awgm46LlQJ7XGtIeeR9PDZhumNs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48384444">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/384/444/8eda8994bb3f7000d4ea014844e3f3af_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741042680&amp;width=680&amp;sig=F%2B6TL%2BftQDAA4rB4kXtgHYz%2Bch2BWSxZJIDiC9xr0hU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48384441">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/384/441/07f7de00c2ea81b7f4ab222f31602e1b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741042663&amp;width=680&amp;sig=PAb55zIl2pARJnMmWIglklAeSdWsWPa62PvuGIbBw4s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48412793">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/412/793/20fd981141e751063ef31c69d56060ec_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741208457&amp;width=680&amp;sig=O%2BrW2yIXaUN%2BuYuQEgDsC2q4Vzo%2F1QX1VUBW6EG8rOY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47419797">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/419/797/7fedf496b8143afeb85ef87d3ebeb150_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1732740702&amp;width=680&amp;sig=NyJeb5MI6xvPqQ0jay97yupmnCQtQR47XV0godPkcqM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Project-workflow"><span class="bold">Project workflow</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48541002">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/541/002/d8489e8f37ea730acacefe668b547716_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742114389&amp;width=680&amp;sig=bfz%2BQj9zRUNMKbqg%2FbXj%2FJgMIN6O0G%2B2UfFRctLiCSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48541004">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/541/004/dba20f0580bec966fe787864397a40bd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742114408&amp;width=680&amp;sig=%2BVledtUFUswA%2FdMsJDrO5NY1VOejNdU1dmKQL9BTTeU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48541005">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/541/005/3810bc4ee725da606cf4db53b3c3b36e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742114416&amp;width=680&amp;sig=TJ7CjaaXeiq5s9lUPPXIqKJ9KXIEJQP4NtCs7rVrAUk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48541007">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/541/007/7263a3082645551dc1470a225fc91841_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742114422&amp;width=680&amp;sig=jdgoo%2Bc0CYiAZDWQl9RA7yEM7eiMNeQOCheIoHYd%2FSA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Description"><span class="bold">Description</span></h3><p>If you enjoy DIY electronics and coding, you've likely experimented with various boards and modules. When it’s time to build something practical and polished, connecting everything cleanly can be a challenge. Sushi Board simplifies this by helping you integrate modules into a neat, functional setup, ideal for IoT projects.</p><h4 class="page-anchor" id="h:For-MAKERs"><span class="bold">For MAKERs</span></h4><ul>
+<li>A carrier board that <span class="bold">connect all the essential components needed to create a complete IoT unit</span>, suitable for various applications, minimizing the complexity of assembling different components and boards<span class="bold"> without requiring extensive soldering or wiring.</span>
+</li>
+<li>Only the CPU is mandatory; then you simply plug in the modules you need for your specific purposes.</li>
+</ul><h4 class="page-anchor" id="h:For-students-and-educational-purposes"><span class="bold">For students and educational purposes</span></h4><ul>
+<li>Sushi Board offers a <span class="bold">modular system that can be shared across multiple projects</span>, from simple setups to more complex, real-world systems. </li>
+<li>It’s not just for desk experiments; you can <span class="bold">build something practical and functional</span>.</li>
+<li>You can <span class="bold">choose the level of knowledge that suits you best</span>. An Arduino-style, high-level approach works well for beginners and hobbyists, but if you're interested in programming and aim to become a professional, you'll need to dive deeper into how things work behind the scenes. The Sushi Board documentation gives you the flexibility to decide your learning path.</li>
+<li>A set of <span class="bold">step-by-step software examples </span>is provided, not just for basic tasks like ‘blinking a LED,’ but for full-scale, real-world applications, all based on the same core hardware connected to the Sushi Board.</li>
+</ul><p>The plan is to develop a <span class="bold">series of educational projects covering various IoT applications, </span>using the same core software-hardware offered by the Sushi."</p><p>We need your help to make this project start ❤️.</p><h4 class="page-anchor" id="h:Advantages"><span class="bold">Advantages</span></h4><ul>
+<li>
+<span class="bold">Based on ESP32</span> SoC: a reliable choice in the IoT field. You have access to a powerful ecosystem with numerous resources available online.</li>
+<li>
+<span class="bold">100% based on very common commercial modules</span> widely available online for Arduino and DIY electronics projects. Sushi board just help you connect them all together.</li>
+<li>You can code with your favourite compiler :<span class="bold"> Arduino, microPython (even without a PC), Scratch, ESP-IDF, etc. </span>
+</li>
+<li>
+<span class="bold">Open source hardware</span>: both the CPU module and the Sushi Board come with wiring diagrams provided.</li>
+</ul><h4 class="page-anchor" id="h:Applications"><span class="bold">Applications</span></h4><ul>
+<li>Home automation systems</li>
+<li>IoT central units</li>
+<li>Alarm systems</li>
+<li>Domotics servers</li>
+<li>Remote monitoring and data sampling systems (example weather centrals)</li>
+<li>Local and remote devices control (by local user interface, web interface, modem interface)</li>
+</ul><h3 class="page-anchor" id="h:Hardware-features"><span class="bold">Hardware features</span></h3><p>All the ingredients that are needed for a myriad of applications:</p><ul>
+<li>ESP32-DevKitC V4</li>
+<li>16x digital GPIN </li>
+<li>2x Relay OUT (10A 250V AC)</li>
+<li>5x digital direct GPIO, 1 x GPO , 2 x GPI (LEDs, extra UART, etc.) </li>
+<li>Physical keyboard</li>
+<li>OLED Display </li>
+<li>Connectivity: Wi-Fi, Bluetooth, modem 2G/3G/4G, UART, I2C</li>
+<li>Power supply modes: 5V (USB adapter or wired) ; Battery only ; 5V + backup battery (for when grid power is missing)</li>
+<li>Backup battery</li>
+<li>Power status and battery level acquisition </li>
+<li>Buzzer for audio alerts</li>
+<li>Temperature sensor</li>
+<li>Size: 90x110 mm (both carrier and TOP boards)</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47308078">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/047/308/078/b896cb39dc2b6d0bd4a3230a2ec49775_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1731875324&amp;width=680&amp;sig=oOJ%2FbUcnPaOrk03y%2BN%2BBY%2F1CcFzTAi4kE84FJrUYpfI%3D" src="https://i.kickstarter.com/assets/047/308/078/b896cb39dc2b6d0bd4a3230a2ec49775_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1731875324&amp;width=680&amp;sig=oOJ%2FbUcnPaOrk03y%2BN%2BBY%2F1CcFzTAi4kE84FJrUYpfI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Sushi-framework-software-features"><span class="bold">Sushi framework software features</span></h3><p><span class="bold">Sushi firmware framework</span>, provides a <span class="bold">complete environment integrating system management and MicroPython</span>. It simplifies development:</p><ol>
+<li>
+<span class="bold">Hardware management</span>: Wi-Fi, LCD, keyboard, modem, I/O expansion, relays, power detection, battery level, buzzer.</li>
+<li>
+<span class="bold">Software features</span>: System management via <span class="bold">web UI</span> (network and system settings, logs, status etc.) and <span class="bold">physical interface</span> for on-device menus.</li>
+<li>
+<span class="bold">embedded MicroPython environment</span>: Users can run their own scripts freely, while built-in libraries provide optional system management features.</li>
+<li>
+<span class="bold">Embedded high-level MicroPython libraries</span> for rapid access to hardware and software functions (custom menus, web pages, I/O expansion, SMS, HTTP requests, etc.).</li>
+</ol><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48412812">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/412/812/20fd981141e751063ef31c69d56060ec_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741208542&amp;width=680&amp;sig=UrHHXX667Y4cOB9J3JCUQ0NyBhvJCVLSbutQnvJhJYg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48763918">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/763/918/550b4f0568e1e9f49a0c83b7d675f660_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743628242&amp;width=680&amp;sig=FLiegxuV93CcSzTuF9v%2BIpUbEwmC1MeoL9Z%2FVGzH8LY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48763919">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/763/919/0ea6fa903603d1f805ee1095f3cee666_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743628248&amp;width=680&amp;sig=puhAioNAFcUI5S6VCakBQ%2FagPCYcczep%2FLCbXIWi91I%3D"/>
+</figure>
+</div>
+<p>The <span class="bold">Sushi firmware framework manages all the essential components</span>, which, regardless of the specific application, are typically present in an IoT system:</p><ul>
+<li>physical interface management (keyboard, display, status LEDs)</li>
+<li>wireless connection as client or access point</li>
+<li>driver for all hardware components present on the board (io-expander, modem, etc)</li>
+<li>web interface (web server and user interface)</li>
+<li>modular menu management for physical interface</li>
+<li>high level API for a lot of typical functions you need: http requests, SMS, GSM calls, web server extension, I2C communication... </li>
+</ul><p>This software framework can be useful for students and for makers to accelerate projects by using solid, tested building blocks to manage core functions letting focus on the <span class="bold">application development</span> without getting lost in low-level system details.</p><p> <span class="bold">Advanced users</span> can obviusly still flash their own firmware without using the embedded framework.</p><p>For more details see even the section "project workflow".</p><h3 class="page-anchor" id="h:Resources"><span class="bold">Resources</span></h3><ul>
+<li><span>Espressif ESP32-DevKitC V4 user guide</span></li>
+<li><span>Espressif modules</span></li>
+<li><span>Sushi board on Instagram</span></li>
+<li><span>MicroPython project</span></li>
+</ul><h3 class="page-anchor" id="h:Detailed-hardware-features"><span class="bold">Detailed hardware features</span></h3><p><span class="bold">SoC</span></p><ul>
+<li>"ESP32-DevKitC V4" module details: <span>https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html</span>
+</li>
+<li>MCU: ESP32 WROVER/WROOM</li>
+<li>EPROM: 4/8M</li>
+<li>PSRAM: 4M (WROVER)</li>
+</ul><p><span class="bold">ONBOARD SOCKETS</span></p><p>To every socket on Sushi board can be connected an add-on module that work for a specific function. Except the ESP32 micro module all the other modules are optional, depending on your specific application.</p><ul>
+<li>MCU module with ESP32 [ESP32-DevKitC V4 module]</li>
+<li>16bit IoExpander module (digital inputs extension) [PCF8575 IO Expander module]</li>
+<li>OLED display  [SSD1306 128X64 OLED module]</li>
+<li>2x relais output [Wemos D1 mini relais module]</li>
+<li>Buzzer (for strongs alert beeps) [2 pin buzzer module]</li>
+<li>Keyboard [4 buttons membrane keypad]</li>
+<li>Battery [2x18650 Li Ion battery module]</li>
+<li>Modem LTE [SIM7672G module, supports worldwide LTE(4G) bands]</li>
+</ul><p><span class="bold">CONNECTIVITY</span></p><ul>
+<li>WIFI 802.11 b/g/n:  client (the board connects to an existing network) or access point (the board create it's own wireless network)</li>
+<li>Bluetooth: v4.2 BR/EDR and BLE</li>
+<li>Modem: GSM[2G]/LTE[4G]. SMS, http connections, etc.</li>
+<li>UART</li>
+<li>I2C BUS </li>
+</ul><p><span class="bold">POWER</span></p><ul>
+<li>5V power supply + backup battery</li>
+<li>Battery only</li>
+<li>5V power supply only</li>
+</ul><p><span class="bold">INPUT &amp; OUTPUT</span></p><ul>
+<li>16x digital inputs</li>
+<li>2x relais output</li>
+<li>3x digital output for diagnostic and status LED</li>
+</ul><p><span class="bold">INTEGRATED SENSORS</span></p><ul>
+<li>Cabled DS18B20 temperature sensor [default is wired DS18B20]</li>
+<li>Battery level reading (ADC input)</li>
+<li>Grid power OFF detection (digital input)</li>
+</ul><p><span class="bold">INTERFACE</span></p><ul>
+<li>membrane keyboard (default 4 buttons)</li>
+<li>OLED display (default OLED SSD1306)</li>
+</ul><p><span class="bold">ONBOARD CONNECTORS</span></p><p>The connectors let plug the wiring to the system elements that are external to the Sushi board. You can solder both <span class="bold">JST-XH2.54 </span>or <span class="bold">KF2EDG 2.54</span> connectors.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="46400784">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/046/400/784/0f2cdc64e163db2a876105a6bcab79d2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1725918509&amp;width=680&amp;sig=Qne0Eb8hFBeOELXU7sozNBI%2FKQxCSCfG0%2FSW%2BtOwoZk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="46400788">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/046/400/788/d52806a70d60d3594fc3b44ef748b465_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1725918525&amp;width=680&amp;sig=LpW2MfQzZax%2F7L7PvtbBagF%2BeP04H4H8X8DxSpuokXE%3D"/>
+</figure>
+</div>
+<ul>
+<li>Power supply input (5V)</li>
+<li>Backup battery signals</li>
+<li>ON/OFF button</li>
+<li>5x digital direct GPIO, 1 x GPO , 2 x GPI (LEDs, extra UART, etc.) </li>
+<li>External temperature sensor</li>
+<li>16x general purposes digital inputs</li>
+</ul><p><span class="bold">GENERAL PURPOSE ONBOARD HEADERS</span></p><p>The general purpose (GP) headers let add other elements/interfaces by  the classic Dupont or similar connectors and wires.</p><ul>
+<li>External status LEDs</li>
+<li>UART</li>
+<li>Power supply (5V, 3.3V, GND)</li>
+<li>I2C BUS</li>
+<li>2x 4 pin GP HUB (plug all pin together)</li>
+<li>1x GP ADC</li>
+<li>1x GP pull-up</li>
+<li>1x GP pull-down</li>
+<li>1x GP resistor</li>
+</ul><p><span class="bold">DIMENSIONS</span></p><ul><li>90x110 mm (both carrier and TOP boards)</li></ul><h3 class="page-anchor" id="h:Projects-and-pictures">Projects and pictures</h3><h4 class="page-anchor" id="h:Just-the-base-and-top-optional-PCBs"><span class="bold">Just the base and top (optional) PCBs</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="unmounted Sushi board carrier (right) and TOP (left) " data-id="47038492">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/038/492/c78af117718a275b92b6bdb57d916755_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1729954252&amp;width=680&amp;sig=p8VAUX%2BAkjWtBq7l5B9E%2BJS76J9l9l4A2qfjHJGrulU%3D"/>
+<figcaption class="px2">unmounted Sushi board carrier (right) and TOP (left) </figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Carrier board CAD rendering" data-id="46431319">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/046/431/319/a62c0f9de0b4201e589c7fd5b0968430_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1726086834&amp;width=680&amp;sig=EmDuHvmVpqpmzU2prKR1lyohpcOtEo1tMUcKl9xFuZk%3D"/>
+<figcaption class="px2">Carrier board CAD rendering</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:SANDWICH-configuration"><span class="bold">SANDWICH configuration</span></h4><p>This configuration is useful during development and testing on the desk.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="mounted board in sandwich configuration, attached to the PC for programming" data-id="46431373">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/046/431/373/82a7c9d2e89a18fd4259359a307ab5e5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1726087139&amp;width=680&amp;sig=YsROt0BF5DlwxbPgCulMZ06P%2B6wgrB34w7x3EzuYFMg%3D"/>
+<figcaption class="px2">mounted board in sandwich configuration, attached to the PC for programming</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:SOME-REAL-APPLICATION"><span class="bold">SOME REAL APPLICATION</span></h4><p>This is a Sushi board mounted in a junction box and installed inside an electrical panel. It functions as a <span class="bold">weather data acquisition center</span>, reading data from external sensors and sending it to the cloud via GSM. The same hardware can also serve as the central unit of an <span class="bold">alarm system</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="The case is made from a standard electrical junction box. There is a cut in the cover that stays hidden behind the top Sushi board, so the closed box looks neat even if the homemade cut isn't perfect." data-id="47038632">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/038/632/6b9689b9b5b0a6f3338b650bfb3a8b98_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1729955191&amp;width=680&amp;sig=TUv78WDQE4Eq%2FmTQngAFGsEPBt%2BA9hGPg0lIHSeC5bo%3D"/>
+<figcaption class="px2">The case is made from a standard electrical junction box. There is a cut in the cover that stays hidden behind the top Sushi board, so the closed box looks neat even if the homemade cut isn't perfect.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="The wiring inside the case" data-id="47038592">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/038/592/1f394ef71cb83101c7cdbbb5aa895c94_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1729954912&amp;width=680&amp;sig=pwnMoGYdNhipM6SAizHiOZ3nLOydf2k7kV1RdYeP%2Bdk%3D"/>
+<figcaption class="px2">The wiring inside the case</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-Sushi-board-">Why Sushi board ?</h3><p>If you bought several boards online, conducted numerous experiments, and learned how to do many things regardless of your goals or skill level, there will likely come a moment when you think, "Okay, now I'd like to try building something real and useful, something that works for me or my home, and that I can show to my friends."<br/>This is where a lot of new challenges arise: how do you put all the pieces together? You have several modules that perform different functions, and you need to connect them, maybe even place everything inside a box to use somewhere...<br/>Many challenges will emerge. <br/>Sure, you could use a matrix board, connect the modules with jumper wires and solder joints, which works fine for testing or building a small prototype, but this approach is often tedious and results in something rather unsightly.<br/>This is where the Sushi Board comes in, helping you connect everything in a while, fitting it all into a box with all the typical components of an IoT control center.</p><p>The name "Sushi board" comes from the idea that, like sushi—a traditional Japanese specialty—the Sushi board is composed of various ingredients (the modules) that can be added or customized based on your preferences.</p><h3 class="page-anchor" id="h:Shipping-details">Shipping details</h3><h4 class="page-anchor" id="h:Estimated-shipping-costs-for-KITs"><span class="bold">Estimated shipping costs for KITs</span></h4><ul>
+<li>United States of America, Austria, Belgium, Bulgaria, Cyprus, Croatia, Denmark, Estonia, Finland, France, Germany, Great Britain, Greece, Ireland, Iceland, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Czech Republic, Romania, San Marino, Slovakia, Slovenia, Spain, Vatican City, Sweden, Switzerland, Hungary, Italy :  <span class="bold">9$</span>
+</li>
+<li> Canada, China, South Korea, United Arab Emirates, Japan, Hong Kong, Israel,  Turkey : <span class="bold">14$</span>
+</li>
+<li>Australia, New Zealand : <span class="bold">16$</span>
+</li>
+<li>Rest of the world <span class="bold">29$</span>
+</li>
+</ul><h4 class="page-anchor" id="h:Estimated-shipping-costs-for-PCB-only"><span class="bold">Estimated shipping costs for PCB only</span></h4><ul>
+<li>
+<span class="bold">United States and Europe</span>: <br/>United States of America, Austria, Belgium, Bulgaria, Cyprus, Croatia, Denmark, Estonia, Finland, France, Germany, Great Britain, Greece, Ireland, Iceland, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Czech Republic, Romania, San Marino, Slovakia, Slovenia, Spain, Vatican City, Sweden, Switzerland, Hungary, Italy :  <span class="bold">9$</span>
+</li>
+<li>
+<span class="bold">Others Europe &amp; North Africa:</span><br/>Albania, Andorra, Azores, Belarus, Bosnia and Herzegovina, Canary Islands, Ceuta,  Faroe Islands,  Gibraltar, Greece, Guernsey, Jersey, Liechtenstein, North Macedonia, Isle of Man - Great Britain EU, Melilla, Moldova, Monaco, Montenegro, Norway, Russia, Serbia, Turkey, Ukraine, Algeria, Egypt, Jordan, Israel, Lebanon, Libya, Morocco, Tunisia: <span class="bold">11 $</span>
+</li>
+<li>
+<span class="bold">Africa:</span><br/>Angola, Ascension Island (UK), Benin, Botswana, Burkina Faso, Burundi, Cameroon, Cape Verde, Chad, Comoros, Republic of the Congo, Ivory Coast, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Djibouti, Guinea, Guinea-Bissau, Equatorial Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte, Mozambique, Namibia, Niger, Nigeria, Central African Republic, Democratic Republic of the Congo, Réunion (Islands), Rwanda, Saint Helena (Island), São Tomé and Príncipe, Senegal, Seychelles, Sierra Leone, South Africa, Sudan, South Sudan, Eswatini (Swaziland), Tanzania, British Indian Ocean Territory, Togo, Tristan da Cunha, Uganda, Zambia, Zimbabwe :<span class="bold">13$</span>
+</li>
+<li>
+<span class="bold">Americas &amp; Caribbean:</span><br/>Anguilla, Antigua &amp; Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize, Bermuda, Bolivia, Bonaire (Dutch Antilles), Brazil, Canada, Cayman Islands, Chile, Colombia, Costa Rica, Cuba, Curaçao, Dominica, Ecuador, El Salvador, Falkland Islands, Jamaica, Grenada, Greenland, Guadeloupe, Guantanamo Bay, Guatemala, Guyana, French Guiana, Haiti, Honduras, Martinique, Mexico, Montserrat, Nicaragua, Panama, Paraguay, Peru, Puerto Rico, Dominican Republic, Saba (Dutch Antilles), Saint Barthelemy (St. Barth), Saint Eustatius (Dutch Antilles), Saint Kitts, Saint Lucia, Saint Pierre &amp; Miquelon, Saint Vincent &amp; the Grenadines, British Samoa, Sint Maarten, South Georgia &amp; the South Sandwich Islands,  Suriname, Trinidad &amp; Tobago, Turks and Caicos Islands, Uruguay, Venezuela, Virgin Islands (British), Virgin Islands (USA) - (St. Thomas &amp; St. Croix) :<span class="bold">13$</span>
+</li>
+<li>
+<span class="bold">Asia &amp; Middle East:</span><br/>Afghanistan, Saudi Arabia, Armenia, Azerbaijan, Bahrain, Bangladesh, Bhutan, Brunei, Cambodia, China, North Korea (Democratic Republic), South Korea, United Arab Emirates, Philippines, Georgia, Japan, Hong Kong, India, Indonesia, Iran, Iraq, Kazakhstan, Kyrgyzstan, Kuwait, Laos, Macau, Maldives, Malaysia, Mongolia, Myanmar (Burma), Nepal, Oman, Pakistan, Qatar, Singapore, Sri Lanka, Tajikistan, Taiwan, Thailand, Timor-Leste (East Timor), Turkmenistan, Uzbekistan, Vietnam: <span class="bold">13$</span>
+</li>
+<li>
+<span class="bold">Oceania:</span><br/>Australia, Cook Islands, Fiji Islands, Guam, Kiribati, Marshall Islands, Micronesia (Caroline Islands), Nauru, Niue, Norfolk Island, New Caledonia, New Zealand, Palau, Papua New Guinea, Pitcairn Islands, French Polynesia, Saipan (Mariana Islands), Solomon Islands, American Samoa, Scattered Islands, French Southern and Antarctic Lands, Tokelau, Tonga, Tuvalu, Vanuatu, Wake Island, Wallis &amp; Futuna Islands: <span class="bold">15$</span>
+</li>
+</ul><p>* PRICES DO NOT INCLUDE IMPORT COSTS and NATIONAL TAXES/VAT</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">There are several risks associated with this campaign that backers should be aware of:
+
+Timely Delivery of Rewards: One of the primary risks involves meeting the established timelines for delivering rewards. Delays may occur due to issues with suppliers. However, we have identified multiple suppliers for most materials, which helps mitigate this risk.
+
+Logistics Management: Another aspect to consider is the logistics of managing deliveries to various parts of the world. To address this challenge, we plan to partner with industry professionals to ensure efficient handling of shipments in the event that the campaign is successful.
+
+We are committed to transparency and will keep our backers informed throughout the process.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The Sushi board is designed to be a cross-application product, making it highly likely to be used over time for various experiments.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">The box in which the board is delivered contains all the modules that can be used in various experiments. It will continue to serve as storage for any unused modules and cabling from specific experiments.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">The materials used are lead-free and do not contain any chemical substances that may be harmful to people, animals or the environment.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

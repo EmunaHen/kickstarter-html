@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Robera Neo Smarter Golf Cart with AI Vision & GPS Navigation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/381/962/b33badb83fba73c1362abe433e9c9b8c_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747921534&width=560&sig=dXf2ddiWjx3XOTRobxcXKLLOhDoVZo9%2FaMKW9BLgCDQ%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Robera Neo Smarter Golf Cart with AI Vision & GPS Navigation</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Al Vision Auto Follow | GPS Navigation | Smart Obstacle Avoidance | IPX5 Waterproof | Lightweight Design | Swing Analysis</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49376325">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/376/325/730f0c89177fa38075d08b815e2d5180_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747885758&amp;width=680&amp;sig=XrF%2BKfnQVNlue2icty15OYJuvv3WPRj5ONjG9zfajeQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287642">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-Your-New-Golf-Companion">Meet Your New Golf Companion</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/642/659c20c6a8885ef256caf083734c1e3a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304718&amp;width=680&amp;sig=7rc6th3yEEXqkPNEG%2F16z3%2FPphLWrNnd9gn10AwGH%2BY%3D"/>
+</figure>
+</div>
+<p>Introducing Robera NEO, a smart, <span class="bold">AI-powered golf cart</span> designed to elevate every aspect of your game. With advanced <span class="bold">3D vision</span> and <span class="bold">GPS mapping</span>, it anticipates your every need and streamlines your course experience through<span class="bold"> real-time obstacle avoidance</span> and <span class="bold">dynamic route planning</span>—all wrapped in a robust yet <span class="bold">lightweight design.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347819">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/347/819/84b8eda9956123abab8ca4d50cf4e1f9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733820&amp;width=680&amp;sig=TFab%2FwRxZEFV06t2rQ3PtwrhuuqfoaJ9Tqey1f4iQzU%3D" src="https://i.kickstarter.com/assets/049/347/819/84b8eda9956123abab8ca4d50cf4e1f9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733820&amp;width=680&amp;sig=TFab%2FwRxZEFV06t2rQ3PtwrhuuqfoaJ9Tqey1f4iQzU%3D"/>
+</figure>
+</div>
+<p>Choose the version that suits your game: <span class="bold">the app-only NEO Vision</span>, or the <span class="bold">feature-rich NEO Tablet</span>. Wherever and however you play, Robera brings the future of golf to your fingertips. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287723">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Demo-Video">Demo Video</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/723/1f6b67e3e5e3ba32c4734873b74f273d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747305073&amp;width=680&amp;sig=nXFNKDRc2qgpKL2bllWkDXsn8Hu1d5FecjZSjj1gMZc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346587">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Feature-on">Feature on</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/587/481db115bab31fb4259959275a8f047c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747727058&amp;width=680&amp;sig=csPrAweSzJfSgz2wgbnKD12qQZifLG49jkzHBsCYyMA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346582">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/582/daddf554628e41082ce64c052a64c53c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747727042&amp;width=680&amp;sig=K480YKecM4txsLyd5n%2ByN6mz4m0A9X3WwF7SOq7wdXg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287655">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Smart-Follow-Gesture-Cointrol">Smart Follow &amp; Gesture Cointrol</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/655/eed6d283384de4b0338fcc547ad32cf5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304766&amp;width=680&amp;sig=EpTlNc%2Fn4a10RKriqDbsASevNV6ZxVrq0ENsHuH8%2BhQ%3D"/>
+</figure>
+</div>
+<p>With a state-of-the-art <span class="bold">3D vision system</span>, Robera NEO accurately <span class="bold">recognizes your movements and follows you</span> seamlessly. The intuitive<span class="bold"> gesture control </span>lets you simply wave your hand to activate or deactivate the Follow-Me mode, keeping your focus on perfecting that swing.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287657">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/287/657/5b7fe0e9018f71f2a5e2319d4b4b6ae9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304770&amp;width=680&amp;sig=mUVjmOSJjzRuWhv5Uf2r1LbBQnMFcDDppO%2BadkOPSb8%3D" src="https://i.kickstarter.com/assets/049/287/657/5b7fe0e9018f71f2a5e2319d4b4b6ae9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304770&amp;width=680&amp;sig=mUVjmOSJjzRuWhv5Uf2r1LbBQnMFcDDppO%2BadkOPSb8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348557">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Multi-Frequency-GNSS-GPS-Galileo-GLONASS-">Multi-Frequency GNSS (GPS/Galileo/GLONASS)</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/348/557/452d5716cb649bffc93b99761f2d8017_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747738182&amp;width=680&amp;sig=Njn%2BtyBuTcQTfZnK%2B45MmQVZGxaxUeuomvcnJouPEXQ%3D"/>
+</figure>
+</div>
+<p>Robust navigation comes easy with our <span class="bold">Multi-frequency GNSS (GPS/Galileo/GLONASS)</span>. Access over <span class="bold">40,000 up-to-date GPS maps </span>and steer the cart either by<span class="bold"> tapping your destination</span> or issuing <span class="bold">clear voice commands</span>. This flexibility ensures that the cart arrives ahead of you, ready when you get to your target.</p><p><span class="text-italic">*Robera NEO’s consumer version navigates within one fairway at a time. Cross-fairway travel requires users to manually set routes in custom map mode and ensure path safety.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49360457">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/360/457/f3fcf93fc9606f3c3061e30bf1da5802_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747795842&amp;width=680&amp;sig=MvXIZms29%2FBFoINbJRY9EXGXieC5FujjX6YlEPkoSGk%3D" src="https://i.kickstarter.com/assets/049/360/457/f3fcf93fc9606f3c3061e30bf1da5802_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747795842&amp;width=680&amp;sig=MvXIZms29%2FBFoINbJRY9EXGXieC5FujjX6YlEPkoSGk%3D"/>
+</figure>
+</div>
+<p>The Robera Neo golf cart offers core functions like<span class="bold"> smart follow, cruise control, remote operation, and easy push</span> right out of the box. For advanced features such as <span class="bold">smart navigation, voice commands, course maps, and swing replays,</span> connect via the app or tablet. All modes are fully customizable to fit your playing style.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287661">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Intellegent-Obstacle-Avoidance">Intellegent Obstacle Avoidance</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/661/fd84d051d11f8511ad69025b14e079ef_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304781&amp;width=680&amp;sig=RvIP5qldLHIZe9Bj%2FBANqfe%2BkQPxCE5kOcsE156niUU%3D"/>
+</figure>
+</div>
+<p>Robera NEO integrates <span class="bold">visual recognition</span> with <span class="bold">precise GPS data</span> to detect obstacles in real-time. It automatically charts a course around hazards—such as <span class="bold">trees, bunkers, or water features</span>—ensuring a smooth ride from tee to green.</p><p>By combining visual recognition with GPS navigation, Robera NEO ensures a smooth and precise journey every time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347824">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/347/824/f3a2d6d157418623e57f381e32773383_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733848&amp;width=680&amp;sig=S6pQks1fofP0scFCrvuZM7Qd4QpbWaehp2%2F3klScd0E%3D" src="https://i.kickstarter.com/assets/049/347/824/f3a2d6d157418623e57f381e32773383_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733848&amp;width=680&amp;sig=S6pQks1fofP0scFCrvuZM7Qd4QpbWaehp2%2F3klScd0E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348692">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Dynamic-Path-Planning">Dynamic Path Planning</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/348/692/888bcf8b448dd3cc2339739b1c661a69_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747738861&amp;width=680&amp;sig=AeW8kUwQnH9j8o%2FP6PzPi%2Fp13spJ%2Fk%2F%2BcEwmkyPoID0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347825">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/347/825/4f7acb6222538ff4051b6ac5c4b76a18_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733867&amp;width=680&amp;sig=c8oqP7Dc8W9KbMO7pA594DEhyzmFO46LuceZZrRbdKk%3D" src="https://i.kickstarter.com/assets/049/347/825/4f7acb6222538ff4051b6ac5c4b76a18_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733867&amp;width=680&amp;sig=c8oqP7Dc8W9KbMO7pA594DEhyzmFO46LuceZZrRbdKk%3D"/>
+</figure>
+</div>
+<p>Plan your next move effortlessly. Once your ball is hit, mark its new location on the built-in GPS map and let Robera NEO calculate the <span class="bold">most efficient, battery-saving route</span> to join you—<span class="bold">saving up to 33% of battery power</span> while optimizing your route.</p><p><span class="text-italic">*The Robera Neo consumer version currently supports navigation within a single fairway; the RTK-equipped commercial version supports full-course navigation.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287674">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/287/674/cc48a07be75d93e2edf29743349e361b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304877&amp;width=680&amp;sig=TqA7RObfx%2FdtR7LBpAOs14t2kzDaBNL2OW6DH5rBUHg%3D" src="https://i.kickstarter.com/assets/049/287/674/cc48a07be75d93e2edf29743349e361b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304877&amp;width=680&amp;sig=TqA7RObfx%2FdtR7LBpAOs14t2kzDaBNL2OW6DH5rBUHg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287675">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Remote-Summon">Remote Summon</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/675/be8901be7ee5c227914b1584197a9963_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304878&amp;width=680&amp;sig=EPbKPMnpEZELx1C1C67%2FWmTWaPNo3FfcwqIQutmbw6Q%3D"/>
+</figure>
+</div>
+<p>Don't lose time searching for your cart. With a <span class="bold">one-button remote summon</span> feature, Robera NEO can be called from a distance of <span class="bold">up to 100 meters</span>, navigating through even complex terrain to meet you quickly.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287677">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/287/677/9ea1aff4e6acc53ea065eeb883b5cb76_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304885&amp;width=680&amp;sig=Auy%2Blu4FMoZy216j9vjXxT0us6EeEnT%2FslRwxffVkvo%3D" src="https://i.kickstarter.com/assets/049/287/677/9ea1aff4e6acc53ea065eeb883b5cb76_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304885&amp;width=680&amp;sig=Auy%2Blu4FMoZy216j9vjXxT0us6EeEnT%2FslRwxffVkvo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287686">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:High-Performance-Climbing">High-Performance Climbing</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/686/0f8acdcc312d905f38a8a57a6a48b859_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304911&amp;width=680&amp;sig=K676isFiDJll2B461xD9Lbr4fF9pf5gmuzQq%2B3Qtcqs%3D"/>
+</figure>
+</div>
+<p>No slope is too steep. Robera NEO’s high-performance capabilities allow it to ascend inclines of <span class="bold">up to 25°</span>, ensuring that you can rely on consistent performance, whether you're playing on a hilly course or navigating challenging terrain.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346179">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/179/12aa111f3398cf423c99924893631369_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724276&amp;width=680&amp;sig=ALF%2FXkIUwjshcv%2BR6QUiSqVYqyzwZk%2F8JUL32Yso2ig%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287688">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/287/688/d0c769cc5e87eab4e30d7143372e6e49_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304914&amp;width=680&amp;sig=AavdCPyvPGqqdF%2F1gGqj%2F9TbUc%2Bny3R7p1HLFaJoY5g%3D" src="https://i.kickstarter.com/assets/049/287/688/d0c769cc5e87eab4e30d7143372e6e49_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304914&amp;width=680&amp;sig=AavdCPyvPGqqdF%2F1gGqj%2F9TbUc%2Bny3R7p1HLFaJoY5g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287678">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Robust-Lightweight-Design">Robust &amp; Lightweight Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/678/84fc1c3a720da7275d88d77674005734_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304885&amp;width=680&amp;sig=WCKQrmy4vDlQVi1Cd1UQwEkftG9VIQ%2F%2FhG07fT6gjSk%3D"/>
+</figure>
+</div>
+<p>Experience unparalleled portability without compromising durability. Designed with a sleek, compact form and featuring an <span class="bold">IPX5 waterproof rating</span>, Robera NEO (including its battery) weighs <span class="bold">less than 15kg</span>, making it easy to carry, store, and maneuver under any weather conditions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49380027">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/380/027/7f473904be5d2fdfa335ff6de9b770b4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747910347&amp;width=680&amp;sig=3TU4xciA%2BN5zQlQyRolFe0scDA%2B%2Bm%2BuqBgmL0puMGeI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287683">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/287/683/fc154427dc30ea61d024c1d950c00074_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304903&amp;width=680&amp;sig=%2Bjl0IM0IAEhn1VXmguEW9ouGtzoST%2Fsd%2B7ko2u9aqTM%3D" src="https://i.kickstarter.com/assets/049/287/683/fc154427dc30ea61d024c1d950c00074_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304903&amp;width=680&amp;sig=%2Bjl0IM0IAEhn1VXmguEW9ouGtzoST%2Fsd%2B7ko2u9aqTM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287684">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/287/684/562d5de7cf8590b9c63b039e02ce84e6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304907&amp;width=680&amp;sig=qqvvEktiFMTEv84B4Cu%2BXfbTCevIp67Ai4ng7b0w7Rk%3D" src="https://i.kickstarter.com/assets/049/287/684/562d5de7cf8590b9c63b039e02ce84e6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304907&amp;width=680&amp;sig=qqvvEktiFMTEv84B4Cu%2BXfbTCevIp67Ai4ng7b0w7Rk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287689">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Massive-Battery-Capacity">Massive Battery Capacity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/689/cd5432f3d8976d7fe8505d5289b34f95_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304918&amp;width=680&amp;sig=ocz81QHtzYrFYhLPpPfmPDSGYtlk24d7DrgQb9%2BhcAc%3D"/>
+</figure>
+</div>
+<p>Keep playing longer with our advanced battery system. The removable battery offers a capacity of <span class="bold">288Wh</span>, powering up to <span class="bold">27 holes per charge</span>. Plus, with <span class="bold">100W fast charging</span>, you'll spend less time waiting and more time enjoying your game.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287690">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/690/aad8307667adcef2c97eb132911a9b27_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304923&amp;width=680&amp;sig=ZU4%2FRoZXyppk%2Bzv0lC3VfXz5oqzlDTGOLUtA72OO4Pw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348551">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Robera-Neo-Vision-Smart-App">Robera Neo Vision: Smart App</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/348/551/8376142eb1aa28651f07a2fbd8738219_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747738142&amp;width=680&amp;sig=th7vYgWpj1eBXza%2BrVxiSwptW1iFXPeRjfkessGKEvc%3D"/>
+</figure>
+</div>
+<p>For the everyday golfer, Robera NEO Vision offers consumer-focused versions with <span class="bold">smart app</span>. The dedicated Robera app facilitates real-time equipment binding and notifications on both<span class="bold"> IOS and Android platform</span>, while providing <span class="bold">OTA updates</span> to continuously optimize performance. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49360466">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/360/466/6779931c35e029a521d4b55d21696ef0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747795863&amp;width=680&amp;sig=X5vFS%2FrHX82VAMWYe3uayEJjQMRMbhVw%2BG1WmTWCWBE%3D" src="https://i.kickstarter.com/assets/049/360/466/6779931c35e029a521d4b55d21696ef0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747795863&amp;width=680&amp;sig=X5vFS%2FrHX82VAMWYe3uayEJjQMRMbhVw%2BG1WmTWCWBE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347771">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Robera-Neo-Tablet-Swing-Analysis">Robera Neo Tablet: Swing Analysis</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/771/e959f9ffd7d6b63d308f74c59a730e0d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733642&amp;width=680&amp;sig=uyFhd%2Bya5KeA2K6bAS9qdAwhc2Cb2O9ypMzart9wwjE%3D"/>
+</figure>
+</div>
+<p>For enhanced on-course feedback, the Robera NEO golf cart features a built-in camera for <span class="bold">swing analysis</span> with frame-by-frame rewind and an <span class="bold">high-def touchscreen</span> for exceptional visibility and smooth control.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287696">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/287/696/ef8f3f1dfd2ab13a536b34e7a93e73b8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304948&amp;width=680&amp;sig=KyL5leXkVWD6e42X7Umt8z%2BEt%2BKDZpwMSS48d583khQ%3D" src="https://i.kickstarter.com/assets/049/287/696/ef8f3f1dfd2ab13a536b34e7a93e73b8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304948&amp;width=680&amp;sig=KyL5leXkVWD6e42X7Umt8z%2BEt%2BKDZpwMSS48d583khQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287697">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Vision-Robera-Neo-Drive-Full-Course-Management">Our Vision: Robera Neo Drive - Full Course Management</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/697/55aff46f2f37e9ea259243d7f6b07274_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304949&amp;width=680&amp;sig=PxZxghK50Eyvq2W2vBwj8rfIzslw4UPPvBMYwUfFuuU%3D"/>
+</figure>
+</div>
+<p>For commercial applications, Robera NEO delivers a robust management solution with its NEO Drive version. Equipped with <span class="bold">RTK and advanced visual technologies</span>, it offers precise <span class="bold">full-course navigation</span>. A web-based fleet management system enables real-time cart monitoring, remote dispatching, virtual fencing to designate restricted areas, and one-button summon—optimizing efficiency and elevating the modern golf course experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287698">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/698/ae95213d2bbad69f80f08213701d6022_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747304952&amp;width=680&amp;sig=hxsAXLLZVUOepVg3iiUh6VNzjCBy%2BpyTZ9qIOnHqgwE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49380868">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/380/868/7000748c221db99c000792e39c403454_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747915708&amp;width=680&amp;sig=kPTiilXwux9iObYF8JE1owELdgwkTopbhRZglCgQzcg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346644">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Choose-Robera-Neo">Why Choose Robera Neo</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/644/e23f01f5d7428031cfcbc1a2a9705dfd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747727446&amp;width=680&amp;sig=26yXqBqFngYKHSjMt7sqSd%2Bj2gJpG9%2Fh2akeLj1HOnE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346150">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-box">What's in the box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/150/48418b1ffa54b7435ef0487dd0728cf5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724167&amp;width=680&amp;sig=LIFspfYkeOvRjOWkJ6QmcblFeiy7VYqgbEcElWTBDtQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49376527">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/376/527/b7a328f57da2c220482a7e7448ddc765_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747887506&amp;width=680&amp;sig=d10e%2F6F98Wx5Q%2B6l0V%2BsD4i5GID8CWuQ4pbR2zJgJxM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347792">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Choose-Your-Robera-Neo-Package">Choose Your Robera Neo Package</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/792/b6bc82768f696660916d239c5cb736cf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733721&amp;width=680&amp;sig=LfI8t6QAKmkfH2zyeo%2BoRMc%2F69Qb36esXsYO2O07Nyo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347053">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/053/cbded923d9cbbecf446d050cd73b9100_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747729822&amp;width=680&amp;sig=YWMJbRiCp2rNLMwuZntORRBc1iAhraohgGdaJPIIR4w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49380154">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/380/154/b8ed71bc1f0b468ba0770450fe28a6fd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747911102&amp;width=680&amp;sig=J06FKxZ3JAX6tbOQjeyB5sZ6wbKRNKK8dFjIbBF2mBY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49527458">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goal">Stretch Goal</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/527/458/48d378c5f9ed53568c4805644b69886b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748948284&amp;width=680&amp;sig=LpswYnyTO1R0jwjOPNKhkcXhRUo6G%2FxWhNcj%2FwzLYiI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49527461">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/527/461/c67e06d15e0c8448394e04ebd5b82831_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748948291&amp;width=680&amp;sig=YfkRQlQMlfoN7ip%2BVxa8IZSfY97cF6d1kaZJq%2F8%2F6Vw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49378829">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/378/829/3c62fc517c17d17fcbbafe221ade37d3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747903621&amp;width=680&amp;sig=QYsdLByz4LtFxr%2BuwM3FWusi%2FA31PA6zQfOLmJZFlHU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49361986">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/361/986/709ba25749990f1a4906dbfa5a3ad150_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747806647&amp;width=680&amp;sig=f7KyTxo%2FC9Adk9QuOGoRQ%2FD0MxeLBb2rTXflIKvVU0s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49379073">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/379/073/ae42cb7037b32c6be63fab6cfa249938_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747905076&amp;width=680&amp;sig=6QFJoVhmzasvBDIBExduq5EyzyDVrt7mJOevsgAFzYM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49378800">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/378/800/ae6631e57835f0b29b6e6a44367b2690_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747903441&amp;width=680&amp;sig=VWSnJO8n4wOy3FkpU3DJImREKrzaaBb7v5FpO%2Fya5KM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49361983">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Test-Videos-of-Robera-Golf-Carts">Test Videos of Robera Golf Carts</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/361/983/fa2e9434b7ae8652ce1a574db45b6b02_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747806620&amp;width=680&amp;sig=myDD88yGLZzBAdGYMiDHCYByEOF1EUPDxWYjyUfYzWE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346641">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Production-Update">Production Update</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/641/50ece761cc4aeb0b78f5699c84cd19d3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747727433&amp;width=680&amp;sig=Xps8T9KXfoofGcS41vDLh3WVZN5leueRLsPfphO%2BSgI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347815">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/815/40c6c8f6c2fac6053c41ee1ff17ac3dc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733793&amp;width=680&amp;sig=cG5ToBmzMyj8uNar2eIL2D8oiYnCDHXK24n4NYjFLiE%3D"/>
+</figure>
+</div>
+<p>Good news! We've successfully completed <span class="bold">mold production in April</span> and have moved through the testing phases. Key materials like our<span class="bold"> algorithm boards, battery cells, and cameras have already been procured</span>. The remaining materials, including tires and motors, are expected to be <span class="bold">fully stocked by mid-June.</span></p><p>We're fully on track to<span class="bold"> kick off mass production in July</span>, and we'll <span class="bold">start shipping units out in July too</span>. Our aim is for all Robera NEO users to<span class="bold"> have their carts by September or October.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346175">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/175/39a4590dd0c0d8526568b52e557486d9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724248&amp;width=680&amp;sig=w86xOCRlHZ8v1z5Bgg7uOnQLJbDwStV9lv4WuC12aS4%3D"/>
+</figure>
+</div>
+<p>Our campaign ends soon on June 23rd, and we process all orders on a first-come, first-served basis. Place your order quickly to receive your product sooner and <span class="bold">take advantage of Kickstarter's best prices</span> before the campaign wraps up!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347812">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/812/6c4045459f22e1e2774569568a10f293_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733780&amp;width=680&amp;sig=O7Pa4tcQpriND3%2Fl08IFKoj3kwAdcM9W7f2iYdtYvsY%3D"/>
+</figure>
+</div>
+<p>We understand that this delivery timeframe might fall at the end of the golfing season in many regions. To ensure everyone gets the most value, your <span class="bold">warranty will now officially begin when you receive your Robera NEO. </span>This guarantees everyone enjoys an extended coverage period, perfectly timed for when you start using your new cart!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346815">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/815/7dc9200f55d7fa0d308061f8ef3ed674_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747728383&amp;width=680&amp;sig=WCM9EwRJ61QhYXDQEgQqEx%2Fxx0c6SWjT0RphiHZJEWw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346161">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:2-Year-Warranty">2-Year Warranty</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/161/66beb3447010547c552a1686f20a0c27_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724198&amp;width=680&amp;sig=4m57XcoFB2dk2e%2B4iiMAD7MtixdAPBCdFsvWKno2bJo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346163">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/163/ef19891f2d191e66e5b46e8111c1a1fd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724200&amp;width=680&amp;sig=vo%2BgA5w8QfaUKm%2B26XFWy%2F1wFMMuWSAmzQMtTk2AQFE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346165">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/165/c354427f913d2306dd7d161e68b3cce7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724208&amp;width=680&amp;sig=bZrgR1Yyt9gk5RHlhDkIQQcBuDxHmM%2B%2Bjs1bL8Cb8y8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346168">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Team-Story">Team Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/168/a7d3e55795abe494dc6aaef6447ff774_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724216&amp;width=680&amp;sig=a89n3UAdOENPzoFOAAOJ6rLUtn3g5FjBMxj6t%2F1UhhE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346169">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/169/2f576bd3d16234999b86e8efd14009ed_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724217&amp;width=680&amp;sig=F3rD4cotseeShK0iy8LEZWQvQyn9senpKN8nI9DupdU%3D"/>
+</figure>
+</div>
+<p>Robera, created by passionate golfers and high-tech enthusiasts, is a force empowering golfers, a light on their journey, and a bridge between tradition and modern tech. It aims to be a catalyst for skill strengthening, a companion for superior adventures, and a pioneer for a new golf era. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346171">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/171/aa71c85c371fa83c3758e832a3c4914a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724225&amp;width=680&amp;sig=2Pu2Edh%2B9BfdxYyHCU7BVciHwRB3oWOX50zZ00oY%2Bb8%3D"/>
+</figure>
+</div>
+<p>Leading the future of golf with innovative robot solutions by combining cutting-edge technology for every player.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346172">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/172/6e53384988b7feac50ede36d2cd52575_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724231&amp;width=680&amp;sig=E0qMRAqNzJRR0Fy%2Fyq2tj4AgGI8pyGUAMtonCgtH3KA%3D"/>
+</figure>
+</div>
+<p>Focusing on cutting-edge low-speed unmanned driving technology, we integrate our own visual perception, obstacle avoidance, and motion control systems. Through advanced color deep learning and robust hardware design, alongside powerful perception algorithms and efficient control, we create smart solutions for a more convenient and effortless life.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346174">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/174/01c5c0dc2211698ccaad2e837cc61f83_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724233&amp;width=680&amp;sig=FuC7hF%2BDTli3oVQw51%2BjZ93PRoD4S%2FFuP6q%2FWI0DWBg%3D"/>
+</figure>
+</div>
+<p>Enhancing the experience of golf enthusiasts by integrating smart AI technology, enabling players to fully embrace the joy in a innovative way.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346665">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/665/65c84599dbe2d85ba66b7eb6f5510f27_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747727514&amp;width=680&amp;sig=koFlVkMqdPg8eOIH94Zu9YwkMYYvwQ2gI9Y%2FKah6SNs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346662">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/662/54dc7ab4d88c09aa249abd1aa52f23c0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747727505&amp;width=680&amp;sig=lBosXioN93iPEeFp4tJt8CyinLoy2mCrMyZkb557cGs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346599">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/599/f27bd085a5d07cab4f109375d4a1fe54_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747727121&amp;width=680&amp;sig=332WTfjsqyUBTSFcUvEbzyzBh1MQRuXGuSCRsoa0fus%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49298838">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Contact">Contact</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/298/838/3f058f42aeec8024654ab3d8063ff29e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747375675&amp;width=680&amp;sig=ThBgktYYEHA%2BfGYpOKp9g%2FmlAQCERJu0Uqqnjersw7I%3D"/>
+</figure>
+</div>
+<span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49298842">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/298/842/a71097cfef174dcc76e2242b8e3686cc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747375690&amp;width=680&amp;sig=XJn%2F2ZI2qSkJ6xyWAafxfoxKEBvpjnjXOPZmWaSnv4g%3D"/>
+</figure>
+</div>
+<span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">1. Continuous R&amp;D: Robera values the thoughts and opinions of our backers. As we gather more and more feedbacks from our community, we are continuously adding more features and updates to our product, some may even involve software and hardware changes. We have a strong development team with passionate engineers, and we guarantee that when you receive your Robera, it will have the best performance and the latest features on board.
+
+2. Manufacturing Delays: Delays in the manufacturing process could occur due to unforeseen circumstances, such as component shortages or production issues. To mitigate this risk, we have backup suppliers and built extra time into our production timeline.
+
+3. Quality Control: Ensuring consistent quality across all Robera is a priority. We have implemented a rigorous quality control system with multiple inspection stages and close collaboration with our manufacturing partners.
+
+4. Shipping and Fulfillment: Complex logistics, including accurate cost estimation, customs procedures, and potential transit delays, may pose challenges. We have partnered with experienced logistics providers and will maintain regular communication with backers.
+
+5. Regulatory Compliance: We have conducted extensive research to comply with regulations and safety standards. Unforeseen regulatory challenges may arise, but we will work closely with regulatory bodies to resolve them.
+
+6. Scalability: Higher demand than projected could pose challenges in scaling up production. We have conducted capacity planning and established strong relationships with our manufacturing partners to address increased demand.
+
+We are committed to delivering high-quality Robera to our backers, and we will be transparent, proactive, and keep our backers informed throughout the process.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Our product highlights AI-related features. The Vision Auto Follow is based on AI vision recognition. Additionally, our newly added AI smart features — including intelligent navigation, voice guidance, online mapping, and shot playback — are unlocked when connecting to our detachable, rugged outdoor tablet or through the mobile app (with most features available via the app as well).</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

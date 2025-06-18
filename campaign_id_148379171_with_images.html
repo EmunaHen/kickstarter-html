@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZEN75: The First Low-Profile Keyboard with Ceramic Keycaps</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/420/377/f01229229ffbd8ae4f3ee6c53aadedd9_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1748232114&width=560&sig=eiEcPu2iZzNtS0L0judXWs2rl5WmgqozYKON2%2FfsyoM%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>ZEN75: The First Low-Profile Keyboard with Ceramic Keycaps</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Ceramic Keycap | Gasket Mount | Tri-Mode Connectivity | Hot-Swappable | QMK/VIA Support | For Mac and Windows | Enhanced RGB</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 6,370</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331184">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/184/26413fad29fe3815e53b4e4e7951a6ec_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643332&amp;width=680&amp;sig=oNCTx6KeRU3jPH%2BLUzM9Fzq2Lvr826XBboANYQEQTIg%3D"/>
+</figure>
+</div>
+<div>Cerakey's ZEN75 is a big step into the world of low-profile mechanical keyboards, offering a typing experience that blends minimal aesthetics with deep and satisfying acoustics.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49330974">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Zen-at-Your-Fingertips">Zen at Your Fingertips</h3>
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/330/974/8e582a49e8082c32d384f0cab8fff053_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747642163&amp;width=680&amp;sig=RRcBVZEm002ot8%2BSj2gCppY%2BvuNOeCUdbeUHKWXT%2BoY%3D" src="https://i.kickstarter.com/assets/049/330/974/8e582a49e8082c32d384f0cab8fff053_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747642163&amp;width=680&amp;sig=RRcBVZEm002ot8%2BSj2gCppY%2BvuNOeCUdbeUHKWXT%2BoY%3D"/>
+</figure>
+</div>
+<div>The ZEN75 is a compact 75% keyboard with ceramic keycaps and durable PC stems. Its gasket mount reduces vibrations, enhancing the deep, pure sound of each keystroke. Combined with Gateron Low Profile linear switches, it offers smooth, consistent typing. Whether for work or play, the ZEN75 delivers a premium feel and amazing sound in a sleek design.<br/> </div><div class="segment-assistant-actions"><div class="segment-assistant-actions-content">
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49345848">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hands-On-Reviews">Hands On Reviews</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/345/848/60216b45b5def4b77b16b253582859c4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747721955&amp;width=680&amp;sig=7gToEGJHDkujY2W25uDmVlOWOr3XuY1R76m2DsTUrXI%3D"/>
+</figure>
+</div>
+</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344341">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-Ceramic-Keycaps-Redefine-Every-Keystroke">How Ceramic Keycaps  Redefine Every Keystroke</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/344/341/19126561b26f5a3042076364f85ccd70_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747709863&amp;width=680&amp;sig=sMQu3MIoyKkke%2F3QQPB6hYC5UbRoYQDLNbVNXwOC770%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331213">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Deeply-Satisfying-Acoustics">Deeply &amp; Satisfying Acoustics</h3>
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/331/213/ecd722407712260dbb7ba96abc430a0d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643452&amp;width=680&amp;sig=abKPWFwdOcsclodfxx0RS%2BWWKYbqqALnB%2F8D8iaoZ0M%3D" src="https://i.kickstarter.com/assets/049/331/213/ecd722407712260dbb7ba96abc430a0d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643452&amp;width=680&amp;sig=abKPWFwdOcsclodfxx0RS%2BWWKYbqqALnB%2F8D8iaoZ0M%3D"/>
+</figure>
+</div>
+<p>ZEN75 delivers a unique typing experience with its ceramic keycaps, producing a deep, resonant sound that is both satisfying and pleasant to the ear.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347779">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Silky-Smooth-And-Cool-Touch">Silky Smooth And Cool Touch</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/779/9ba82206cc923886e897e92d378ec2c2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733683&amp;width=680&amp;sig=%2BOOmLjYtXdjbvL5uzkeq8fvLYuT5tqm5F9agwycXNsE%3D"/>
+</figure>
+</div>
+<p>Our ceramic keycaps integrate advanced glazing techniques with the inherent properties of ceramic materials. This combination results in a silky smooth texture and a naturally cool touch, significantly enhancing your tactile comfort.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331222">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Enhanced-Backlight-and-Sidelight">Enhanced Backlight and Sidelight</h3>
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/331/222/f5001fe15538883f89b4be6632c3f419_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643477&amp;width=680&amp;sig=2914dyTJSmRcjFcooYdiIUi12bL2KDm3h3hAnwU1kLU%3D" src="https://i.kickstarter.com/assets/049/331/222/f5001fe15538883f89b4be6632c3f419_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643477&amp;width=680&amp;sig=2914dyTJSmRcjFcooYdiIUi12bL2KDm3h3hAnwU1kLU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332836">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/332/836/0ad4d468d6a91389cee04ac361472b1f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747651236&amp;width=680&amp;sig=v6Q9%2BZ4LxRsCtAcigF7NWg%2FyQQ9zj5ckJdsCcZu2Fos%3D" src="https://i.kickstarter.com/assets/049/332/836/0ad4d468d6a91389cee04ac361472b1f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747651236&amp;width=680&amp;sig=v6Q9%2BZ4LxRsCtAcigF7NWg%2FyQQ9zj5ckJdsCcZu2Fos%3D"/>
+</figure>
+</div>
+<div>Ceramic's superior light transmittance enables bright, vivid RGB illumination on the Zen75. With over 40 color effects and adjustable intensity, you can effortlessly set your preferred lighting mode to match your mood.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331201">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Impact-Resistant-Built-to-Last">Impact-Resistant, Built to Last</h3>
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/331/201/82ca4d54a13f99478bda0734c4385ad4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643405&amp;width=680&amp;sig=IALV5X2lvgQgeSwBnoVUJODVfgoFvUoE%2Bqjp1Sj5KPQ%3D" src="https://i.kickstarter.com/assets/049/331/201/82ca4d54a13f99478bda0734c4385ad4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643405&amp;width=680&amp;sig=IALV5X2lvgQgeSwBnoVUJODVfgoFvUoE%2Bqjp1Sj5KPQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344881">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/344/881/be867462ec2415cc06e4491aeee8a2e1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747713580&amp;width=680&amp;sig=3nV9G6FbRKKvlhffcrGz9N2KYjRXOOe5WbT8fGRIUZQ%3D" src="https://i.kickstarter.com/assets/049/344/881/be867462ec2415cc06e4491aeee8a2e1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747713580&amp;width=680&amp;sig=3nV9G6FbRKKvlhffcrGz9N2KYjRXOOe5WbT8fGRIUZQ%3D"/>
+</figure>
+</div>
+<p>Made from industrial-grade alumina ceramic, the Zen75 ceramic keycaps are durable, impact-resistant, and resistant to oil, stains, and dust, ensuring long-lasting freshness.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331224">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Plastic-Stem-for-Enhanced-Compatibility">Plastic Stem for Enhanced Compatibility</h3>
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/331/224/c1fb3ca52718f9154b718422fab39181_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643481&amp;width=680&amp;sig=WCsUOirUBCnz%2F9OpI2%2Bg11LTpZMKKIGmotorvuRUeNU%3D" src="https://i.kickstarter.com/assets/049/331/224/c1fb3ca52718f9154b718422fab39181_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643481&amp;width=680&amp;sig=WCsUOirUBCnz%2F9OpI2%2Bg11LTpZMKKIGmotorvuRUeNU%3D"/>
+</figure>
+</div>
+<p>The low-profile ceramic keycaps come with a durable plastic stem design, ensuring optimal compatibility with low-profile switches and enhanced stability.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331359">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/359/55ff34b962fb73a3783f511fa8982e53_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643941&amp;width=680&amp;sig=YMCjsHlSaY09DA5iEGnWQkchgj8HTcvywesPs0zZWyk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331360">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Gasket-Mount">Gasket Mount</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/360/8dafe256a2b1e2cc176402f81a1dd671_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643948&amp;width=680&amp;sig=cne%2F6RzWa9dpagoZ%2BxwNefx3%2FbpJjwwO9BJnrPQPtGI%3D"/>
+</figure>
+</div>
+<div>The Zen75 uses a gasket mount structure with a PC plate, IXPE, and Poron foam isolating switch vibrations while enhancing keystroke smoothness, delivering a smoother and comfortable typing experience.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49343864">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Gateron-Switches-RED-2-0">Gateron Switches RED 2.0</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/343/864/e90ab4663711235a19acf6c674ba414a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747706943&amp;width=680&amp;sig=OyrXn1j%2BXwnyBvkzKtGcCAR040AwZu57TC74E6cl5yM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331398">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/398/07d87adb45687ce7907a7806fd99fe7a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747644084&amp;width=680&amp;sig=WKwBv73FjeiH0cGW%2FuVMuLng3JXnlWTigo2YAss8laQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331447">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hot-Swappable">Hot Swappable</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/447/163c002180ba8f2090684f4b8fd6acdb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747644346&amp;width=680&amp;sig=LS0oVSLoQCOJG5SyN9zzvaLg2XmXrrXhKnA5b%2FemrN0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49167835">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/167/835/209b95a2910a43cac7ea28c211b52cf6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746499953&amp;width=680&amp;sig=sS5j4DpOCYKz1MVRFB%2B5PQd5rKbyKNeMyooIny%2Fx7C8%3D" src="https://i.kickstarter.com/assets/049/167/835/209b95a2910a43cac7ea28c211b52cf6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746499953&amp;width=680&amp;sig=sS5j4DpOCYKz1MVRFB%2B5PQd5rKbyKNeMyooIny%2Fx7C8%3D"/>
+</figure>
+</div>
+<p>The ZEN75's full hot-swappable design lets you replace switches easily and customize your typing experience to meet your personal preferences.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332083">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Elegant-Dual-Material-Design">Elegant Dual-Material Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/083/50eac51065c908b7e494cb59cfcac496_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647077&amp;width=680&amp;sig=UohU0C2Sj5nj2I%2FGyWvrZaN7h3te4ev3D9J9Gbsily8%3D"/>
+</figure>
+</div>
+<div>The ZEN75 features a dual-material construction with a sleek aluminum top case and a transparent PC base, seamlessly combining durability and modern aesthetics.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347290">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/290/2c662199dca87bb895137f93a1a3a124_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747731123&amp;width=680&amp;sig=Gev18O1Lx5yR8N%2FI%2FEVyn7sGaP6FdmJsyUWRVRh66vE%3D"/>
+</figure>
+</div>
+<p>The ZEN75 has a dual-angle adjustable kickstand (5.5°and 7.6°), which is ergonomically designed to enhance comfort and boost productivity.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331471">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/471/99424b6cb4d0e07906b629ca0ba8aa1b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747644405&amp;width=680&amp;sig=s5uMVQCc2J%2B4MsjaRh1qFWMEVWlXeqlkbuA43Pq58UE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331473">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Tri-Mode-Connectivity">Tri-Mode Connectivity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/473/1d947c58822ed1b493e2ed30d4a26586_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747644414&amp;width=680&amp;sig=QZ9vABgXR2%2BRjnMifPpLsXoNvjSra45jQV4fZLdzcco%3D"/>
+</figure>
+</div>
+<p>Seamlessly transition between ​USB-C Wired (Type-C), ​2.4GHz Wireless, and ​Bluetooth 5.0 via its ​tri-mode switch button.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331475">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/475/21f404a03acf4a8daf755f6802646d99_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747644418&amp;width=680&amp;sig=KiT3%2Be58KOv%2FP1R9rsrdk7aczlaS5QeOkjg5zjeR7W8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331582">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/582/eb3b7d8caf09fe3a0d819da72e468840_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747644694&amp;width=680&amp;sig=tTdZ9ewlcjnfvRSgqMRUgatC1IYfxRnzYfmPbyYiiek%3D"/>
+</figure>
+</div>
+<div>ZEN75 seamlessly integrates with Windows, Mac, iOS, and Android. Effortlessly switch between phones, tablets, and computers for a flawless multi-device experience.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344300">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/344/300/b348c100d41c6f03f09afceb114771c8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747709629&amp;width=680&amp;sig=fyxcnVplIN2Q5VfbLXUcRU2THQnulJow1Yypbt22hEg%3D" src="https://i.kickstarter.com/assets/049/344/300/b348c100d41c6f03f09afceb114771c8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747709629&amp;width=680&amp;sig=fyxcnVplIN2Q5VfbLXUcRU2THQnulJow1Yypbt22hEg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331585">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Mac-Windows-Compatibility">Mac &amp; Windows Compatibility</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/585/b437dce5d5db614f44f873e64481b680_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747644699&amp;width=680&amp;sig=vnlLcPO7jyv15lMwmLj2Hmwy0Iw5NhbqVEtDLtUnimo%3D"/>
+</figure>
+</div>
+<div>Experience the seamless multi-device compatibility with quick, effective, and stable connections designed for your ease.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344305">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/344/305/a7c8efd6cc165cfcf055c2c1fb4a563a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747709657&amp;width=680&amp;sig=vaKN%2FAHwlp%2Ba9722TitWZCoXfXV1WmapqqsK2GFRdAs%3D" src="https://i.kickstarter.com/assets/049/344/305/a7c8efd6cc165cfcf055c2c1fb4a563a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747709657&amp;width=680&amp;sig=vaKN%2FAHwlp%2Ba9722TitWZCoXfXV1WmapqqsK2GFRdAs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331506">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:QMK-VIA-Full-Key-Programming">QMK/VIA Full-Key Programming</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/506/e44c739e2926f5119fdd95387c8ef95b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747644490&amp;width=680&amp;sig=J3mEnEJNyrOkvNFTj1x%2Bl4lyZKuVKVy%2BKnpd2sVaIl8%3D"/>
+</figure>
+</div>
+<div>Unlock the total command of your ZEN75 via QMK/VIA, enabling full key remapping, dynamic function layers, backlight customization, and creating macro/shortcut commands.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332366">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Fast-Responsive-Always-Ready">Fast, Responsive &amp; Always Ready</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/366/a409a0b772e71eeeb4fb71d580998174_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747648504&amp;width=680&amp;sig=34UV2Pp8nLHevxRq2BelOWh8US6PFVdPzaPKu3Cph6Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331655">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/655/fdeb2ca4baeedbc8d213a11506f26de3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747644979&amp;width=680&amp;sig=aXslowlqm30sAXInxrYa06INuNVp%2FKRgUH5EIM4Afxg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331800">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-In-The-Box">What's In The Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/800/26a45b44ed97ce1a658503f7ff335ce4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747645679&amp;width=680&amp;sig=Ouai2DUegb83alfgKTvHSaZG3Dc6PccskL3%2BgkDUHkE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49333122">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/333/122/a07ba7ea25bde5f454dafb6eb4be8c68_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747652629&amp;width=680&amp;sig=vA1D9AcqiEA7Lk9aevM96fesS%2FFPw%2BWpJdpWyXT4sQQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344074">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-On">Add-On</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/344/074/043d966f4d7111abebc110f6da277f15_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747708157&amp;width=680&amp;sig=0VWP56DwVGSbyToTATXQbYqOlfU2rdM7zUyQS%2FufELk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332214">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Story">Our Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/214/06ae78a09d6a4ac4b40638f86f3fc0cb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747647646&amp;width=680&amp;sig=%2Fc9GUA%2FjzdcUGu3vlP7fcdN6sEtHk7gGsN2ZYRJ5%2Fzk%3D"/>
+</figure>
+</div>
+<p>CERAKEY was born from a passion for keyboards and a vision to redefine their potential. Recognizing the limitations of plastic, our team of enthusiasts turned to ceramics, leveraging their unique properties to create a new standard in typing. </p><p>In 2022, our first ceramic keycap set on Kickstarter became the most-funded keycap project ever, praised for its unique texture and sound. This success inspired our community and led to more innovations, like the Blue and White Ceramic Keycaps, Lacquered Ceramic Keycaps, and the Panda Keyboard, all of which were highly acclaimed.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348209">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/348/209/ca53eb334bc8367a73c2bc475eb1c172_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747736112&amp;width=680&amp;sig=%2F%2FAwUJ76OIHpI0ppWUHkJlRA1BAdYa0RsZjN6hm2EQ8%3D"/>
+</figure>
+</div>
+<p>Inspired by our success, we embarked on a new challenge: ZEN75, the world's first low-profile mechanical keyboard with ceramic keycaps. This keyboard is a testament to our commitment to innovation, combining sleek design with the enduring quality and rich acoustics of ceramic. </p><span></span><span>Follow Us</span><span></span><span></span><span></span><span></span><span></span><div class="segment-content-box"><div class="markdown-container"><div class="markdown"><div class="segment-content-box"><div class="markdown-container"><div class="markdown">
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347287">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/287/41a39b875d585d48caa2afac92880285_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747731105&amp;width=680&amp;sig=Qpgt4qOA5rgtlcADTC4YUEGF0bDu2efVQGsrQjkv7BQ%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49200650">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/200/650/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746699346&amp;width=680&amp;sig=40NDiWE1p4tnM284J8NoKoX5QtOGomx4f1iZr3vxiVk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49200700">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/200/700/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746699742&amp;width=680&amp;sig=ESN0jl5Z8PLArUvJuI9mMiD3sQSmeCd3nYtqDeULRjw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346210">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/210/c8f110d736c9ea39f38630c1d956b7b3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747724479&amp;width=680&amp;sig=bwEDfs%2FLnkEMdmUdKIVlBquZ6ztQbr7G4JBwJH9lZMw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49464221">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/464/221/13a4d80cb339d18b9d3970c93f012f98_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748488828&amp;width=680&amp;sig=yQgVju4jYlp7WsxJtpYrfLmzEb9eDfXK%2By1nBRdBW%2FY%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">There are always some risks when putting a new product into mass production, but we have years of experience and existing resources of material suppliers and factories.
+
+Logistics has also been a massive part of the whole process, we have experienced export team members to help us with the on-time, reliable shipments, and the whole process also has been proved in our daily order delivery.
+
+In short, we are highly confident that this product will be delivered to you on time and you’re going to love it.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

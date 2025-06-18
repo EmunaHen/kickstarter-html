@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Photo/Video Hybrid Zoom Digital Camera With Triple-Lens</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/272/807/3f3d6dffa1d890f9e12a7bce8fc81e3d_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747214656&width=560&sig=YxAvAM8wPnH4MaTay65Mk5LS%2F%2B%2FGWKU9P4zOIdvmAv0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>The Photo/Video Hybrid Zoom Digital Camera With Triple-Lens</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Triple-Lens System | 12X Hybrid Zoom/Fixed focus, instant capture | 64MP & 5K | Multi-Shooting Modes | 1300mAh Long-Lasting Battery</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,790</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>39 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49286936">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/286/936/6bb3df20dcbda2bf5eedf014ca98c02f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747300295&amp;width=680&amp;sig=ZJeI%2FEksna6t%2FbNUhdm4sSS1hkijKbiRdbpG30q7pBs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49288133">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/288/133/58f8aebbe58b4257cb723ade88cc262a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747308039&amp;width=680&amp;sig=Y013L%2FLcZGa7VWpBVjA58k17Ki%2BfN%2FSOH0of1%2BvRrvU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238809">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/809/ec8726d5b395a3d64c1d44128fe97891_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016741&amp;width=680&amp;sig=HWdZnKfqnngSk4GwQY871635af2vFTX6gSy2klsH%2FUg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49256777">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/256/777/cd1cef0ccc910523d27b6aa997e31955_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747125184&amp;width=680&amp;sig=NW2tcwXRv0mLv1PqkSq3WRWKBBLSTAggs%2BaMMat43FU%3D"/>
+</figure>
+</div>
+<p>Ever feel like your camera just can’t keep up?At present, zoom cameras are relatively bulky, but our zoom cameras have wide-angle and zoom functions, and can also be compact and lightweight. </p><p>Missing the moment because of slow focus, limited zoom, or blurry distant shots?Fast-moving subjects and complex scenes shouldn’t mean compromised. </p><p>Meet the Amkov F3B — a revolutionary Triple-Lens Photo/Video Hybrid Zoom Digital Camera designed for creators, travelers, and photography enthusiasts.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238779">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/779/85a57aa110f1f70a6a5c8e9327e7bd4e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016554&amp;width=680&amp;sig=5FdiE3GEswZfFDmhVS7S%2FJsqmuTpaFf2mrNIli1B%2BK4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49253201">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/253/201/7359e864f3f8845edfb57ef4187c42a1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747101607&amp;width=680&amp;sig=8xJJYTxdvU7DRW692JPsCQgSsnnuKcgdAJYxzBSVEvM%3D"/>
+</figure>
+</div>
+<p>It’s built to transform your shooting experience across the board.<br/>Capture everyday moments with ease or shoot high-quality telephoto videos with precision — it offers unmatched versatility across a wide range of shooting scenarios, turning every moment into a masterpiece.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49258801">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/258/801/0d8de45635efb87e50a82bf905799b42_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747134633&amp;width=680&amp;sig=%2FvSJ3FR8robzobYVwYm4FNiSc8CFQnP%2BdYi4ROHqFks%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238826">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/826/a949bba1fb7c0e8ed2ee8194f83079b3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016866&amp;width=680&amp;sig=%2Bssax0YvKCgSpe6McCpGtzqrcWObcSPHNhrZGESW4l8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48937829">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/937/829/19aae65bd10902453fdf5f75306411aa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744859551&amp;width=680&amp;sig=lg0%2BpBrS%2FtP56D0VF86ckOpeBLUOOgZWYrnMDabyg8k%3D" src="https://i.kickstarter.com/assets/048/937/829/19aae65bd10902453fdf5f75306411aa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744859551&amp;width=680&amp;sig=lg0%2BpBrS%2FtP56D0VF86ckOpeBLUOOgZWYrnMDabyg8k%3D"/>
+</figure>
+</div>
+<p>The Amkov F3B digital camera revolutionizes imaging with its cutting-edge triple-lens collaborative system. Seamlessly integrating wide-angle, mid-focus, and telephoto lenses, it offers extraordinary versatility for capturing every shot, whether in dynamic urban environments or expansive outdoor vistas. Each lens is meticulously engineered for optimal performance, ensuring your shots are rich in clarity, depth, and detail—no matter the setting. With a stackable lens design, ultra-thin body, and ultimate portability, it’s easy to take anywhere and use effortlessly.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239258">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/258/a0e3e7257fa9f5a36c0b9a4af03cb7e4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747019878&amp;width=680&amp;sig=MMOGfymPae6IRgHcMZgjFgZ0l%2B%2BbEPHlEt0zYHkIH44%3D"/>
+</figure>
+</div>
+<p>The wide-angle lens, equipped with a Sony 1/2.8" CMOS sensor and 12MP resolution, delivers exceptional image quality. Enhanced by a 64MP oversampling process, it combines low-resolution images into one high-resolution shot, improving sharpness and detail. With a 76.4° field of view, 2X digital zoom, and 5cm autofocus, it captures wide scenes and close-ups with remarkable clarity and precision</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239259">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/259/4f4f9c8cc3e5d619b2a4f7565eb556df_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747019883&amp;width=680&amp;sig=lZyCEpewctLnjlJT1CHzVb1yVxmijcaUKdwNb1zmLU8%3D"/>
+</figure>
+</div>
+<p>Optimized for portraiture, the mid-focus lens features a 41° field of view, ideal for subjects 3 meters away. Its design brings subjects into sharp relief while subtly blurring the background, offering a natural bokeh effect that enhances facial details. Whether capturing fleeting expressions or dynamic poses, this lens excels in delivering razor-sharp clarity and exquisite tonal richness.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239260">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/260/0e8911eef8bd97490940478409eac76d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747019887&amp;width=680&amp;sig=7YY9EbJQYBAiCtdNpEniEV1DlOPb3SEvcczmIq6Dg1M%3D"/>
+</figure>
+</div>
+<p>The telephoto lens, with its 19° narrow field of view, is engineered for precision in long-range photography. Perfect for subjects over 7 meters away, it brings distant scenes into sharp focus, maintaining exceptional clarity even at a distance. The 3X digital zoom further enhances flexibility, allowing you to magnify distant subjects effortlessly. Ideal for landscapes, architecture, or action shots, this lens ensures every frame is rich in detail, from the furthest points of the frame to the finest nuances.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239232">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/239/232/be213b1a8a5826d25c5f273cfa2b1245_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747019723&amp;width=680&amp;sig=0IvMXMwTmBxM0QDy2RvbjvS7pHPhQ%2FpbkkwxnxWNGXQ%3D" src="https://i.kickstarter.com/assets/049/239/232/be213b1a8a5826d25c5f273cfa2b1245_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747019723&amp;width=680&amp;sig=0IvMXMwTmBxM0QDy2RvbjvS7pHPhQ%2FpbkkwxnxWNGXQ%3D"/>
+</figure>
+</div>
+<p>From close-ups to distant views, the Amkov F3B’s triple-lens system ensures effortless mastery across any subject, capturing every moment with exceptional precision.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239028">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/028/aaa10bf202a740fb823452b89d96aa73_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747018187&amp;width=680&amp;sig=%2FnwwJ%2Bs7kj2HmjsphMvePyG6azcofj1DK5cGdLX4s8c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49223848">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/223/848/2c9598aae448007864da67d5c019badd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746868898&amp;width=680&amp;sig=uHsIVcPZIGej9DgPVyzkjTNDHWzWaqASrWtSD2yF2Tc%3D" src="https://i.kickstarter.com/assets/049/223/848/2c9598aae448007864da67d5c019badd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746868898&amp;width=680&amp;sig=uHsIVcPZIGej9DgPVyzkjTNDHWzWaqASrWtSD2yF2Tc%3D"/>
+</figure>
+</div>
+<p>The Amkov F3B’s 12X hybrid zoom combines 4x optical and 3x digital zoom, delivering seamless flexibility without lens swaps. Effortlessly transition from wide shots to close-ups or bring distant subjects into focus with speed and precision.<br/>4x Optical Zoom: Crisp, high-quality images with zero loss of detail.<br/>3x Digital Zoom: Enhanced flexibility for capturing distant subjects with ease.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239405">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/405/1db45650fed94d4ac847bcda6c048923_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021418&amp;width=680&amp;sig=EzQvfgDVhT7BjfUuDowZ1scsA0GR0dubI0n2mGgxyqc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49253104">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/253/104/92c3dba65f06a45ca6deccf23c3d0eb6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747100939&amp;width=680&amp;sig=NGsPpmLwqPX6zZQKdh9PiQvedqTSLKMiP2ajfIdsXZk%3D"/>
+</figure>
+</div>
+<p>Support for 5K at 30FPS video recording delivers sharp, detailed footage, perfect for Vlogs, short films, and professional video production. The built-in high-quality microphone and speakers ensure precise audio-visual synchronization, capturing every subtle sound detail.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49253107">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/253/107/3de55cb297d4d2e798e99f1d7b30d1f9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747100951&amp;width=680&amp;sig=ZeOX9fj1z%2FZveAcA59iTyrOZJZaFBvCwxYWBVJu%2Bhq0%3D"/>
+</figure>
+</div>
+<p>Capture every intricate detail with 64MP resolution, delivering natural, true-to-life color and light performance for breathtaking still images.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239409">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/409/1c8ddecffbad5e2d38f2e1d969566960_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021458&amp;width=680&amp;sig=ZkIizmXYFRn2tTutsDKDwwUdOFEr1s3SDnmS00fcSIY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49224001">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/224/001/482423a6c7c66491e5e08763d264984e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870143&amp;width=680&amp;sig=bI1nSzxo0QWjX74DH27pcEVKfVBr03xkxkrRwoHNBvg%3D" src="https://i.kickstarter.com/assets/049/224/001/482423a6c7c66491e5e08763d264984e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870143&amp;width=680&amp;sig=bI1nSzxo0QWjX74DH27pcEVKfVBr03xkxkrRwoHNBvg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239488">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/488/7705999a6b0a69a75443719fb113e30d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747022002&amp;width=680&amp;sig=OSy8PbO2eWFFy07WotHkEPYuKEC%2FjVFiZISRNJedQYM%3D"/>
+</figure>
+</div>
+<p>Compressing the gradual passage of time—like sunrises, sunsets, or drifting clouds—into a few seconds, capturing the mesmerizing flow of nature's transformations.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49224032">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/224/032/f4615fe260d0094cb793daf6125440e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870249&amp;width=680&amp;sig=jxAfgvdKwyYFXIr7OsDM1a%2BGbG16orysT5G%2F%2Bz70icU%3D" src="https://i.kickstarter.com/assets/049/224/032/f4615fe260d0094cb793daf6125440e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870249&amp;width=680&amp;sig=jxAfgvdKwyYFXIr7OsDM1a%2BGbG16orysT5G%2F%2Bz70icU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239492">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/492/faa099fb26f8ef3e18c588aa9495f17e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747022023&amp;width=680&amp;sig=SwGr3Rtlv4kpyiOjMvw4Uikx9iLYNMjNctkq60A5VEo%3D"/>
+</figure>
+</div>
+<p>Freezing each frame of high-speed motion, revealing the intricate details of movement and creating a captivating, immersive experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49224018">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/224/018/6701694236ab27ac088127ff9324b5dd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870231&amp;width=680&amp;sig=n4GwkJiVxa9n%2BtluEC3ex3fEUzSiPka2JaRZdYvPA4o%3D" src="https://i.kickstarter.com/assets/049/224/018/6701694236ab27ac088127ff9324b5dd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870231&amp;width=680&amp;sig=n4GwkJiVxa9n%2BtluEC3ex3fEUzSiPka2JaRZdYvPA4o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239506">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/506/3f1501d92c9c36de80894ef913be3241_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747022094&amp;width=680&amp;sig=Dx9MU8JcZmd16dDWL%2FgPttpYfF5v10VM5DiKoauYRXE%3D"/>
+</figure>
+</div>
+<p>Continuously shooting at high speed, ensuring no moment is missed, and every action and expression in fast-paced scenes is flawlessly preserved.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49224029">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/224/029/361fabdf86ceeabad7cfe726dff81434_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870245&amp;width=680&amp;sig=LHZEfR9chi%2BqZQLw%2FU6f%2Fq%2B49VtG4ATmoTF%2BJmUw58w%3D" src="https://i.kickstarter.com/assets/049/224/029/361fabdf86ceeabad7cfe726dff81434_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870245&amp;width=680&amp;sig=LHZEfR9chi%2BqZQLw%2FU6f%2Fq%2B49VtG4ATmoTF%2BJmUw58w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239498">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/498/9f8e27c2b26f539d333bc9d9015c3c94_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747022057&amp;width=680&amp;sig=YUOPWg68Tahxjt2RC4UuaK1W7BlXUlWDyE%2FBo1YheXw%3D"/>
+</figure>
+</div>
+<p>Built-in countdown for easy selfies or group photos, providing ample time to perfect your pose and adjust for the shot.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239422">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/422/b9d727941ff880ecdc10ae127890f48b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021582&amp;width=680&amp;sig=XWNvGxq1GeWDhlyZwUDt7lMViUUronotl5PiavZQIM4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48938074">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/938/074/e391d76cc89f29e961282a98f4bfd9d0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744860869&amp;width=680&amp;sig=PDyXf79XO4bzv1PEoPRZJOfcTclXEj10BlpKwvRFI7U%3D" src="https://i.kickstarter.com/assets/048/938/074/e391d76cc89f29e961282a98f4bfd9d0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744860869&amp;width=680&amp;sig=PDyXf79XO4bzv1PEoPRZJOfcTclXEj10BlpKwvRFI7U%3D"/>
+</figure>
+</div>
+<p>The F3B is equipped with advanced manual controls to adapt seamlessly to any shooting environment. Adjustable ISO lets you fine-tune exposure for varying lighting conditions, while ±3 EV exposure compensation ensures balanced brightness in complex scenes. Multiple white balance modes provide true-to-life color reproduction, accurately capturing the mood of every moment. Anti-flicker technology further enhances image stability—ideal for fast-paced shooting and professional-grade video production.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239424">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/424/f62b2a091d6a3d30aa86204dbaf5ae5d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021600&amp;width=680&amp;sig=RCUFuvQRAc4ugLnyaRAtafzA2txD%2F9CkltxeUJtaMRw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49224047">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/224/047/2294e381cd78485a5c9fec6401ffebcd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870384&amp;width=680&amp;sig=mkoHyf428bn1uPbyAinNWNg%2BWUmHsJIhiMlHDApjfc8%3D" src="https://i.kickstarter.com/assets/049/224/047/2294e381cd78485a5c9fec6401ffebcd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870384&amp;width=680&amp;sig=mkoHyf428bn1uPbyAinNWNg%2BWUmHsJIhiMlHDApjfc8%3D"/>
+</figure>
+</div>
+<p>The Amkov F3B camera features a 2.8" IPS screen (640×480 resolution) for clear, detailed viewing. With responsive buttons for smooth navigation, every interaction is intuitive and effortless.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239425">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/425/c94d0e6e72e489dc178594c981c8a796_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021615&amp;width=680&amp;sig=m6DeFJxYspysChXFCXGszyEkcG772ZfAcTiZjrm2d8g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239462">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/462/e8049e94925372fefca5d301b373b08c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021802&amp;width=680&amp;sig=gU91KeskhnTSCt6q68pBtD8rRqPgmol1awWmR7%2BNPBA%3D"/>
+</figure>
+</div>
+<p>The Amkov F3B is equipped with a high-performance NP-40 professional battery (1300mAh), combined with advanced Type-C fast charging, reaching a full charge in just 2–3 hours. Enjoy up to 2 hours of continuous snap shooting and up to 1.5 hours of video recording on a single charge. </p><p>This perfect balance of long-lasting battery life and rapid recharging ensures uninterrupted power for extended shooting sessions. Whether on location or during intensive projects, the F3B keeps creators focused on their vision — not their battery.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49240352">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/240/352/b74405f150dc2f1f9d1ad50278c2496d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747031550&amp;width=680&amp;sig=SdC9PQ2rKM41Rxj%2FIwOYnN%2BrdGLKN1pfNznDJgGP8ro%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49255772">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/255/772/d4cd87ce7a2ff0cb8c9552f64eba3d14_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747119907&amp;width=680&amp;sig=sRTsfw6dE58O74E3vVDEWJ3wTmlvNMDcWCb9yqxRwsk%3D"/>
+</figure>
+</div>
+<p>The Amkov F3B offers up to 128GB of expandable Micro SD storage, delivering ample space for high-definition photos and videos. Its vast capacity lets creators focus entirely on their craft, free from the concern of storage shortages. Perfect for long shoots and managing high-resolution content, it meets the rigorous demands of professional photographers and videographers, ensuring smooth, uninterrupted work.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239428">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/428/c4c2bf7beb50530c472a0a9b5e1c8250_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021627&amp;width=680&amp;sig=yxw6eopQN6zJCotXKnEyip0prY7RU%2FjTEi0vH6xoztk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48937922">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/937/922/e8751d3d582ac04ddc89510cb3196386_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744860143&amp;width=680&amp;sig=Y196r7IHjnjkUNUx1Rt23R0Vcc6rv%2FtzaIVkziOWbGA%3D" src="https://i.kickstarter.com/assets/048/937/922/e8751d3d582ac04ddc89510cb3196386_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744860143&amp;width=680&amp;sig=Y196r7IHjnjkUNUx1Rt23R0Vcc6rv%2FtzaIVkziOWbGA%3D"/>
+</figure>
+</div>
+<p><span class="bold">Wireless Control:</span> Remotely operate the camera via the app, easily switching between shutter and lens settings — perfect for selfies and group shots.<br/><span class="bold">Real-Time View:</span> The app displays the camera’s view in real-time, enabling precise composition and ensuring every shot is flawless.<br/><span class="bold">Auto Sync &amp; One-Touch Sharing:</span> Photos and videos are automatically synced to your phone without the need for cables. Quickly manage your content and share it effortlessly across social platforms, allowing you to instantly share your creative moments with friends.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239432">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/432/0dc44f878c0c041cf02b75eff25465db_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021644&amp;width=680&amp;sig=CfgC16JiK4B0ysUrkqzDdEjXVujyr5A886EQ6TPox54%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49224084">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/224/084/e7119bbab557b051ea70e4ab1dc66fa2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870592&amp;width=680&amp;sig=qYVtLWepwQDyIzk%2FGKwSmwwCzHa95g8a1KSvhlUdaIg%3D"/>
+</figure>
+</div>
+<p>The Amkov digital camera is compact and lightweight, weighing just 176g, making it easy to carry without adding any burden, even during extended use. Accompanied by a wrist strap and a protective cloth pouch, it ensures safe handling and extra protection against scratches or damage. Whether traveling, shooting daily moments, or creating on the go, you can effortlessly store it in a bag or purse, always ready to capture the perfect shot.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239435">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/435/9eec4f1bb9d29abcd066934563b79002_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021653&amp;width=680&amp;sig=Z6N%2Fs3e793ViEjzUXsKS7mt1uHQp5m04JdTwaZX0IDE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49256172">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/256/172/722ac2a3c55911adaac14145285a4c2c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747122292&amp;width=680&amp;sig=RQEQisi5Qs8NQa9GoGiIA%2FryS1DLjUWfVMhCdGr35AY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49240220">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/240/220/2418af28d00697e2854335559c5e0646_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747029990&amp;width=680&amp;sig=LW6MYkQRofhf4Yrhd40Y%2FlkgIAFEBS89KA7grwI5aCY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49240322">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/240/322/e933a3cf1dff3c037db959f355775c93_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747031169&amp;width=680&amp;sig=MB8htCikzG8ySUlzcUyLuZBD5dMVajOIZWsY%2FNeLNsc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239438">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/438/88749a143c4cc22f7c3d905d0a11800b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021658&amp;width=680&amp;sig=ZJjauLQW6ZQWwDZCPA52EOv%2BBkjPVah8dTkE7d36OCI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49224094">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/224/094/03bf9ff0721a49b33c1056c996cb209c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870615&amp;width=680&amp;sig=LtL9xCTTZAhV5rHq1jRH0EYKPUQbZevZgSgS2SEWh8Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239439">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/439/5710a04dd99a3dd62ab704d216372e92_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021668&amp;width=680&amp;sig=%2FqQOHy90UsQs79hrroksCcmFVTCc08HkECNI%2Fkpq5no%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49240085">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/240/085/846637f1d97c6bd3458040f8d141fc27_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747028706&amp;width=680&amp;sig=CqQLlalXWn31trAAfYjHjYFgTeYHchy9KOZkB%2FuZGE8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49254154">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/254/154/e6cac1eee222806666e0f47eda06d619_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747107587&amp;width=680&amp;sig=jMqi76%2B5V5ER4DwakAs%2BK0INsNpBExUwMOFWk00dK9s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49254311">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/254/311/d297994e40611ce6cbbc83453cff48ec_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747108709&amp;width=680&amp;sig=V3t%2FcLziKd0SstizvuF9fJGGssK861CaM74bvK5dl28%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239441">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/441/a33bbe48f4e8e152d1b4c9ffb7819f7c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021684&amp;width=680&amp;sig=D0JZBBo5Dyb9EAo8WmyuMrhjktctn3wSMpJCE7twEdk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49256069">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/256/069/a0dbfe3500c544f1d031ad80282b4ec2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747121724&amp;width=680&amp;sig=hgzUsklGwjOJQfJ78hhV%2BxcMYH6tlS8n2Jpvz1pdC78%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239444">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/444/ba9df1a428d8b8ec9fba231192a1a14a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021694&amp;width=680&amp;sig=YdA9lv11VRMn367C03plG%2BX77gFjRryrE5eiCILiilI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239448">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/448/27637a519321e8ade8338c2df4971aa0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021712&amp;width=680&amp;sig=sjjesxYM7V%2ByMQ0DGYKa5clLt8W45HlTJ82y2nuw8dc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49224138">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/224/138/eedfe0feee41e225e684e3a6b8c2360f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746870876&amp;width=680&amp;sig=MbDRUvnRjXX49femy6CZfaXFnj23y67AeDJF7qgL9nU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49257029">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/257/029/438a2f84f7a3ed5d396dedcce7b7ddb7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747126179&amp;width=680&amp;sig=EDWopLEWiApHTsQgQiGqspLGdZmlu%2BzzxBmGlfK9GPw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49257132">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/257/132/aa63ce78a68737f728b194e02b6d65ca_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747126437&amp;width=680&amp;sig=z%2BCMVkcK89W3CYE1yezJXsNULNGnZTFDYrOfSLpMyUI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49239450">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/239/450/ede2cd95cf9db9a134910caf14ade334_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747021722&amp;width=680&amp;sig=kU6d6iNQMdaq21ZCW1ZZSQurhtByF5uRQQTRBmIeEoo%3D"/>
+</figure>
+</div>
+<p>At <span class="bold">Amkov</span>, we are dedicated to redefining the art of photography and videography through cutting-edge technology and exceptional craftsmanship. Our mission is to empower creators, photographers, and content professionals with tools that combine innovation, performance, and elegance. Each of our products is meticulously engineered to deliver unrivaled precision, versatility, and ease of use, enabling you to capture your world with unparalleled clarity and creativity. With a commitment to excellence, Amkov continues to lead the way in providing seamless, intuitive solutions for visual storytelling, wherever inspiration strikes.</p><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We will work with a top-notch courier company to offer reliable and fast international delivery. And our service team is in place to personally handle every backer’s questions and make sure all backers can receive their orders without any issues.
+
+We assure you that we are all making great efforts to produce a marvelous product that not only arrives on time but is of optimum quality.If any delays were to happen due to these unexpected circumstances, we would definitely keep our backers updated and provide support along the way.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

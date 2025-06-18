@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lightweight Bicycle Pump with a 3-Mode Taillight Function</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/467/366/54d485f3867f132fba2f569e32b53562_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1748511295&width=560&sig=Z1sY30IiCILGtVLS6G%2FauQmur8C1zlDOJ2l4L5kc6N0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Lightweight Bicycle Pump with a 3-Mode Taillight Function</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Up to 130 PSI｜0-100 PSI in 70s ｜2 Full Tires ｜130g Only｜3 Taillight Mode ｜ LED Display</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49468062">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/468/062/42f00155c6c0302b908cd893b808753e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748515923&amp;width=680&amp;sig=jir7IMy%2FClV87pdsTEMot4%2F%2Fki%2B9AZRuP0tlJWbQFBA%3D"/>
+</figure>
+</div>
+<p>Tiny Tire Pump 200 is Flextail's brand new top-tier product. <span class="bold">Packing robust performance into a compact design</span>, this game-changer meets all your cycling inflation needs. </p><p>At the same time, <span class="bold">we creatively put the taillight function into the bicycle pump</span>, which not only protects you from accidents, but also ensures your safety when riding at night. Truly become your riding companion.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49453224">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/453/224/9eddbce21469c43fea4f175a3464841c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748429456&amp;width=680&amp;sig=1YT%2BjFf0VV04Z8s76AZdfvasK3mKqPtfHXCezS79Qg4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450693">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/693/94fffa14a0fe1781327bd565256d4240_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748415862&amp;width=680&amp;sig=6za6gQSfE8NN3HO%2Fnu9cngQ8g8HaDdXyPuw6HvLqw9g%3D"/>
+</figure>
+</div>
+<p>Ever had a flat tire in the middle of nowhere? Sure, you can use a manual pump or CO2 pump - but it often ends up being too much trouble, too inconvenient, or just plain exhausting.Now, <span class="bold">these problems have all been solved.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448288">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/448/288/bd787d2c4195f4ce7de0d7a5f7e8c2ae_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748400061&amp;width=680&amp;sig=pLnJ%2BtFZ8OS3jsa0IxV8w0FGaqN97Go2Li0GBc6m%2FJQ%3D"/>
+</figure>
+</div>
+<p>With Tiny Tire Pump 200, all you need to do is just<span class="bold"> take out the pump, click, and let it inflate — no effort, no stress.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450697">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/697/9f287e4daaa0861e1b5d013042ea161c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748415900&amp;width=680&amp;sig=5iDJwS%2BBsupPxa6X4O51UANHR8T7Vx6GEyuf3nnd6%2BE%3D"/>
+</figure>
+</div>
+<p>Stop counting seconds. The Tiny Tire Pump flies through inflation at double speed. <span class="bold">Your tires are pumped before you even notice.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465742">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/465/742/61127dda476b3f04cc43ea1c8c1c57d7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748501949&amp;width=680&amp;sig=2zyiWW9neWNREeGKCxYtoPZTz6WCabv9tL6ynvK%2BPMI%3D" src="https://i.kickstarter.com/assets/049/465/742/61127dda476b3f04cc43ea1c8c1c57d7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748501949&amp;width=680&amp;sig=2zyiWW9neWNREeGKCxYtoPZTz6WCabv9tL6ynvK%2BPMI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450700">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/700/7566893d20d6a6705aa86ca71001df31_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748415916&amp;width=680&amp;sig=O5ugOIEqfr2Q7n%2BbHXJq8bTUcdkESklw1H9yyOGHTwE%3D"/>
+</figure>
+</div>
+<p>We have conducted <span class="bold">comprehensive tests on different tire models</span>, <span class="bold">optimized the air pump's performance under both low and high pressure conditions,</span> ensuring you have the best experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49453227">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/453/227/044a00da72622916b6a6c7c52eb0eed5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748429475&amp;width=680&amp;sig=CZ9TJoU%2F4RuGWQxK03zg7KODVQre4Pr43g3doMqaIOc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450704">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/704/2cb248830f9cb76fc0be282332516c2b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748415939&amp;width=680&amp;sig=sthTAGl7jZKfayzw8TUd9Iamf4gxdhj%2F3sDCxFp3iOY%3D"/>
+</figure>
+</div>
+<p>While others struggle with the basics, Flextail leads with <span class="bold">10 years of expertise and exclusive high-pressure piston pump tech</span>—something only a few brands in the world can claim.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448292">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/448/292/49c9ab93be54f786fed994f0e7372363_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748400062&amp;width=680&amp;sig=Yk2wCXYT6rmu9keH%2B66DetJ3jL%2Fgtrw8bfdTH33Kf30%3D"/>
+</figure>
+</div>
+<p>Powered by a precision brushless motor and a short-stroke, large-bore piston, the <span class="bold">Tiny Tire Pump 200 can hit 130 PSI</span>. Less friction, more efficiency, and way fewer breakdowns—this is pro-level inflation, built to perform.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450709">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/709/7ecd3c2097651a3ceaefa91f2bcd7cda_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748415958&amp;width=680&amp;sig=KuVJkZuQAw0KVlN6lUTgjLEevND08YBKWSjUaEIsZ5M%3D"/>
+</figure>
+</div>
+<p>With the <span class="bold">product's LED digital display screen</span> and many thoughtful features, you can <span class="bold">control tire pressure more accurately </span>and enjoy a <span class="bold">more professional and easier inflation experience.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49453232">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/453/232/198f44f13c780f81926e7efba8a01450_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748429514&amp;width=680&amp;sig=lQeo4%2Ba7rf9cNBEDO5169TJZ30mY0RziUbNoBTiOwa0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450713">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/713/ee2f8763b9662f06e28190d0f0c40753_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748415968&amp;width=680&amp;sig=7Q%2FMNVJJxilRjtEAt83C%2FHWwZY4nNF1B8pYCPqhIfow%3D"/>
+</figure>
+</div>
+<p>In addition to the above functions, we hope that Tiny Tire Pump 200 can provide you with more help and support. Therefore, we innovated in the structure of the product and integrated the <span class="bold">taillight function into the pump</span>. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49453251">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/453/251/c1d1dd39e8dc537c693c647137f34f81_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748429620&amp;width=680&amp;sig=S9pgwTi5BjrvD3%2BQidhUIVDg0TLC6kdEqKe%2FDUSFA4A%3D"/>
+</figure>
+</div>
+<p>From then on, <span class="bold">carrying the pump is no longer a burden, but makes it your riding companion.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450715">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/715/84461a82df5bed1c74eda16668ac620f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748415978&amp;width=680&amp;sig=iGU5cwmk6pq9OVGReKPTZeXzcNsvNMFB8biVAq%2BVS8o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49453258">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/453/258/7b9b4073516cbe0f0b8d985cfddbe365_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748429643&amp;width=680&amp;sig=BFff3nGQlOUeDdir6Y%2BkL2xFj0YJuaHW%2Barm03%2Bbzlw%3D"/>
+</figure>
+</div>
+<p>Taillights are important accessories for riding users, so we have put a lot of effort into them. <span class="bold">3 light modes and up to 12 hours of battery life</span> make your night riding safer.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448393">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/448/393/8872a591e890bba8526e7e194e5908f2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748400492&amp;width=680&amp;sig=h%2FNcHDMiBnnIA3FcHViHuSlJoCCYrhCY5x%2BRqPslZaA%3D" src="https://i.kickstarter.com/assets/049/448/393/8872a591e890bba8526e7e194e5908f2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748400492&amp;width=680&amp;sig=h%2FNcHDMiBnnIA3FcHViHuSlJoCCYrhCY5x%2BRqPslZaA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49453262">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/453/262/3caf01678263929ee84077f563c648a7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748429656&amp;width=680&amp;sig=a7oOASK1esnGgR3zjcfhcOmP3IxLOty7A6YYhHmbn4U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49467512">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/467/512/9020399c02f3dc417bf5aa976dd42798_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748512186&amp;width=680&amp;sig=%2BBzoVl%2FDPef7Ifq7zsjQU4aFH3xZs1l6i0jfIoR5zeE%3D" src="https://i.kickstarter.com/assets/049/467/512/9020399c02f3dc417bf5aa976dd42798_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748512186&amp;width=680&amp;sig=%2BBzoVl%2FDPef7Ifq7zsjQU4aFH3xZs1l6i0jfIoR5zeE%3D"/>
+</figure>
+</div>
+<p><span class="bold">There is no need to worry about the tail light function consuming too much battery power. </span>Even if you use the tail light function for 4-6 hours, it only consumes half the battery of the Tiny Tire Pump 200, which is still enough to help you deal with emergencies.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465422">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/422/55f4bdc7a767c9eb877ff6805ba2152b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748499686&amp;width=680&amp;sig=19nBglyVzhRXcf%2F1PnkUVD2sjDK1MpJsYhKxuerh%2B7E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450718">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/718/d20f207721d9693579bcf74f8841d6d1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748415992&amp;width=680&amp;sig=QSfVaWEey8nyHJfkAqAnSywpO56BGp32N0RCcp7SslI%3D"/>
+</figure>
+</div>
+<p>Despite its powerful performance and rich features, <span class="bold">we have successfully reduced the weight of the Tiny Tire Pump 200 to an astonishing 130g. </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49453307">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/453/307/4ba6e6b3216d88d68ec31b375eabe3fe_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748429826&amp;width=680&amp;sig=J1Ju2eShksTDBsZpa1T1flatQ4vv9SUJcVsNKnK%2BTyg%3D"/>
+</figure>
+</div>
+<p>Considering that you can replace the existing traditional tire pump and tail light combination with it, you have the opportunity to <span class="bold">reduce the weight by up to 60%.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450719">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/719/22bece7cc62084fa1f937179129710c5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416006&amp;width=680&amp;sig=f8iqHvgX3fd04Lv7WGhi2AMcaQao9CDsmdY9WEE8Uv0%3D"/>
+</figure>
+</div>
+<p>In addition to weight, how to carry it is also an important issue. We have designed and included an adapter, allowing it to be <span class="bold">directly installed on your seat tube, no longer occupying any additional space.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450721">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/450/721/30b9f51a0d26a7c109a0bfc1112254af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416017&amp;width=680&amp;sig=5i%2BAGofI0wd2Z2WGhlP1Kx3xY%2F29dF6JzaSLmN35woU%3D" src="https://i.kickstarter.com/assets/049/450/721/30b9f51a0d26a7c109a0bfc1112254af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416017&amp;width=680&amp;sig=5i%2BAGofI0wd2Z2WGhlP1Kx3xY%2F29dF6JzaSLmN35woU%3D"/>
+</figure>
+</div>
+<p>The compact size of the Tiny Tire Pump 200 allows you to <span class="bold">put it in almost any pocket without barely feeling its presence.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449713">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/713/48ed488a539b2bd4b27346b685b0390b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748409475&amp;width=680&amp;sig=OQyE2GJmwBbHAyYy1Sp3Z372Tp2qjGGXPu%2FTkplmVjk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450723">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/723/55645d5a5be3151eac4549be7088a085_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416030&amp;width=680&amp;sig=j1miKGsn94rNmlCO40N2wjlX26PJMYnmNZBBxqq%2FWVM%3D"/>
+</figure>
+</div>
+<p>Though compact and lightweight, the <span class="bold">Tiny Tire Pump 200 is tough enough to work in harsh environments </span>with its IPX4 waterproof rating, so whether you're on a hot summer road trip or a rainy night's ride, it's ready to accompany you.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448708">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/448/708/86ac5056c28ff67ec6c9b4a74497ef69_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748402691&amp;width=680&amp;sig=SQ%2F6Q%2BnK1bRnP4AiKpqbRx6oiO%2Fmf9BiP27a9Rm1kPc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450724">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/724/5b015a80e68260632b308db9611d3f43_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416039&amp;width=680&amp;sig=erQAjOPGTmch47Ak4rojJJGMsRgs6ziiXdrn1f4QzOo%3D"/>
+</figure>
+</div>
+<p>The stable use of the product is crucial, especially in emergency situations, where you need reliable equipment. Unlike other brands' portable air pumps, which always face a high failure rate and significant performance degradation, our product <span class="bold">boasts excellent stability, which is why we have confidence in offering a 2-year warranty.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49464257">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/464/257/95cfe9ae08d4d343d419fec7d5191dcb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748489066&amp;width=680&amp;sig=9r7voNomDG4md6sk5HBVcobYfblLrI%2BRbHXekK029gc%3D"/>
+</figure>
+</div>
+<p>High temps kill performance. The Tiny Tire Pump 200 uses a unique centrifugal cooling system to circulate heat away— <span class="bold">protecting core parts and ensuring stable, long-lasting use.</span>This is why we are confident in the performance and stability.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49467945">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/467/945/8c37fc5306f134b98c95eb821dc81106_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748514904&amp;width=680&amp;sig=MAYjYgFMwgowhiQfrACsFk91lFj65tyTCN4rpb5JYHQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450728">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/728/c1c2ae1d00b1fca5a76ec6d2567f965d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416053&amp;width=680&amp;sig=xEkkgb6CVGoAWqGTQD27MHQ%2F0vvFtbHGEYiKlXYbaBU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449721">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/721/75d4d39fb028c588b78f82727f57f183_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748409529&amp;width=680&amp;sig=0%2B5yu6NXifxll%2BiFyRii0Xa3S1XeGrVM3Q%2F52SBXKjA%3D"/>
+</figure>
+</div>
+<p>During the development process, <span class="bold">we have conducted 50 + tests on the products, just to make the products meet our stringent quality and stability standards</span>, so that you can use them with confidence.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448944">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/448/944/9cdc7f84ed0374468d584471d58b777a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748403946&amp;width=680&amp;sig=TWQoN5ZMSwugl29xMLLoevjXOlnZmv0vtx4T2qXJBa0%3D" src="https://i.kickstarter.com/assets/049/448/944/9cdc7f84ed0374468d584471d58b777a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748403946&amp;width=680&amp;sig=TWQoN5ZMSwugl29xMLLoevjXOlnZmv0vtx4T2qXJBa0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465360">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/465/360/3246af8b7801dae5f4a7fb4d16bdf536_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748498888&amp;width=680&amp;sig=of6kDjmdbBcCSHjw4H9ozyS5zzx6sAxtVn8F8%2FIR%2FdY%3D" src="https://i.kickstarter.com/assets/049/465/360/3246af8b7801dae5f4a7fb4d16bdf536_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748498888&amp;width=680&amp;sig=of6kDjmdbBcCSHjw4H9ozyS5zzx6sAxtVn8F8%2FIR%2FdY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448946">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/448/946/f67654be3b084b70d892ac3a4b91dc9e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748403951&amp;width=680&amp;sig=yi1hLiiVOnsdcfkYQjMysfbdBjHauPic%2Btqhy5ns4Ss%3D" src="https://i.kickstarter.com/assets/049/448/946/f67654be3b084b70d892ac3a4b91dc9e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748403951&amp;width=680&amp;sig=yi1hLiiVOnsdcfkYQjMysfbdBjHauPic%2Btqhy5ns4Ss%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448948">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/448/948/f798f0dbbe2a680e5816446235e080ed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748403963&amp;width=680&amp;sig=ITvlAAiErEt8ovltK4QvAWkVdnaJS36bk87ltDiqO20%3D" src="https://i.kickstarter.com/assets/049/448/948/f798f0dbbe2a680e5816446235e080ed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748403963&amp;width=680&amp;sig=ITvlAAiErEt8ovltK4QvAWkVdnaJS36bk87ltDiqO20%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450730">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/730/4ce00b16fb896ffac9f48fdbe54dc5f1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416069&amp;width=680&amp;sig=eeLhar2cvLVZouZrkRiB6OVd4K83oax9D%2BwwVLcgIVY%3D"/>
+</figure>
+</div>
+<p>Our premium battery module is the core of its high performance. <span class="bold">High-density battery for compact size, low power loss, and long-lasting, stable performance.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450735">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/735/898d22457f97f25a82fdef6395ce143a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416081&amp;width=680&amp;sig=11Td6Zn%2F9O2T25i4r3XKmRhwWZG6ayDO8mfW8mzYCig%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450739">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/739/97e3a07ad3332b36dab13f5c859c9ada_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416089&amp;width=680&amp;sig=w7bi6j7IZvrysojKPv3Jf9rr4HdMX%2FIl4JUNocHh8iA%3D"/>
+</figure>
+</div>
+<p>To celebrate the launch of the Tiny Tire Pump 200, we’re kicking things off with a special treat— free shipping to over 40 countries!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465426">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/426/7b654857704803d456e471d6b9cb4310_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748499745&amp;width=680&amp;sig=l9mbvVURoJLF%2Fm99w%2FgOYfS2kM%2B%2BJt1RfWIjGGzRLxg%3D"/>
+</figure>
+</div>
+<p>We will make every effort to provide the best experience for our users, but if there is a significant change in tariffs policies at the time of shipment or other unforeseen circumstances, we may have to charge additional logistics fees</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450745">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/745/dc3c57fb2c7a43e59284688f5470758f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416106&amp;width=680&amp;sig=ivRK%2BZZLb6DWgammdJ9BBDPTWA9a6m%2BFyiPJKhNuXEs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49453317">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/453/317/a2e3f6db78ac1e092804fedaf11aa091_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748429906&amp;width=680&amp;sig=vbw97jvj08JTHRgxYPKv0qNLBZDuBVQN%2Bdd3bLp6w04%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450750">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/750/bcd4bda60fa7232dadf120db8c5b6aa7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416122&amp;width=680&amp;sig=VkjJDLo%2BFnIIEnP29WlHFgnTYG7lLxPfDQxC85Iqq04%3D"/>
+</figure>
+</div>
+<p>In addition to the Tiny Tire Pump 200, we also offer an opportunity for you to <span class="bold">purchase products loved by many consumers at a discounted price.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450752">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/752/d285ff6ef3f6ac77465d2838426484ee_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416134&amp;width=680&amp;sig=JYNExZSRk9G00q8tmi8EGsvEtUqVTFXsVN3E%2FWUdGLg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465423">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/423/5e2e2d7a46d20f80e5f2b8ef0dbeaca7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748499700&amp;width=680&amp;sig=ipCjd1nMedTH6Vd6yD2wTuC6%2Fg%2F3Flq9Gnj3vC3RfGg%3D"/>
+</figure>
+</div>
+<p>There's another surprise, we will provide another chance for you to purchase our newly crowdfunded product at a discounted price: <span>Tiny Shower Bag &amp; Bucket.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465494">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/494/fd64c478ea6b71f938e441a5579ed31c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500137&amp;width=680&amp;sig=50IyNu79s4lTbfSSK4%2FwFAvt6xS4nFEIdEwpNwhvmzs%3D"/>
+</figure>
+</div>
+<p>Our sleek 20 L (5 Gallons) pack hides a built‑in electric pump and shower head—no extra parts, no awkward hoses. Just fill it, press one button, and unleash a steady, high‑pressure stream that replaces manual or foot‑powered setups. Road trips, back‑country camps, or beach days—get a quick, powerful rinse anywhere.<span>You can learn more from here：Tiny Shower Bucket &amp; Bag: Your On-the-go Shower Station</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450757">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/757/84b389c64b1214f6361ca939142dc41d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748416165&amp;width=680&amp;sig=FyiSfSB0Wrlx7q1N5fX1DmI3FUE4w0JQIMYdRvPZK94%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465417">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/417/ed935907e701ca20cf7f9023d5e0f967_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748499659&amp;width=680&amp;sig=jqyWpSXj69M5nWq0iZEWseOnT1%2FR1fXsVhtffOu8c3s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450980">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/980/4e3e0b40616207a051a5ed2984b04030_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748417447&amp;width=680&amp;sig=%2B%2Fw2rlqsrMu%2BiEtH6YkI6GrLRaecFRFsVsQBDxQWMjk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450977">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/977/652e32ac53b58229c02420d4ad162a81_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748417425&amp;width=680&amp;sig=lZar9hixin5B8dgE%2FiCEP1s%2BF%2Fj60dQO7e9W%2FRlvYqY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450984">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/984/da7a59629a87b0defcb11d9308c7b2b6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748417464&amp;width=680&amp;sig=kQDiy0lUbDb1WkWeWiPAnQf8%2Bwzg1MwBT4A%2FC041R8w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450987">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/987/4582929d724f506f7e656e23232ed176_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748417477&amp;width=680&amp;sig=9ZkP1slVwBODCpbEVqAg1D%2FYg2Tf6gMypCd9NNxs0V0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49467956">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/467/956/c865cbe626855074e3576c714c8d7534_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748514960&amp;width=680&amp;sig=ZhpWNKTWHFShmswr9M8p8rizQSPY57d9NUkOLy%2FJpDw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49467950">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/467/950/ac5e66d7e152743a294929dc980b41eb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748514921&amp;width=680&amp;sig=cBdkLxdDXXBjKuW1dtyjOB1AY%2FYb7YDGQC%2Fszkx17NM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465149">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/149/8c0934a64c11d917dd8eafe3256b7548_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748497202&amp;width=680&amp;sig=sFDhikH6hhVXrVbQhiSPwKr2JV79Lz307PiO4rU%2BGk0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49465514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/465/514/1d6d1a2e0c14e9957e467cf9810c802d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748500281&amp;width=680&amp;sig=2zqHv7itQwlO5nCyMknTyRKoE50b0Tv0MTP%2FnguS%2FSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449645">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/645/b80c333a8a455df6cba175667edc9f62_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748408941&amp;width=680&amp;sig=9l7caK9yJNM%2BTYpfP7GN8SEXujay%2BtuOAbuaCeZeVSk%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><p><span>This project is boosted by BackerCrew</span></p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Like any crowdfunding venture, there are inherent risks and challenges we need to acknowledge. However, our robust experience in production fuels our confidence in being able to circumvent unexpected issues during the manufacturing process.
+
+In the launch of any new product, it's only natural to encounter surprises along the way. One of the unique aspects of Kickstarter is the invitation it extends to backers to become a part of this creative process, giving you an insider's view into the intricacies of product development and manufacturing.
+
+During the final stages of development and manufacturing, we commit to maintaining open lines of communication, offering regular updates to keep you informed and involved. We truly appreciate your support and understanding as we embark on this journey together, and we strive to ensure your satisfaction with the final product.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

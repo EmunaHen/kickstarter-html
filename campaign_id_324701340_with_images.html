@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YASHICA FX-D: Your First Digital Film Simulation Camera</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/439/626/a46f442ccb1b9dedf7f3ebb9605af7a7_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1748354776&width=560&sig=V3y8vkYHbaPaDNEkogubHdpaUzQrTcCFmmU%2FUainVhA%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>YASHICA FX-D: Your First Digital Film Simulation Camera</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Analog Dreams, Digital Wings: A Digital Rebirth of Classic Photography</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 4,993</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>34 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:The-price-will-increase-in">The price will increase in</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49558241">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/558/241/08a04552de7cd86beb88145599bbfb42_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749119624&amp;width=680&amp;sig=KYsP%2BSMQnPvDua%2FkwohWoUrH0swWtmk6hG7QNwXm47c%3D" src="https://i.kickstarter.com/assets/049/558/241/08a04552de7cd86beb88145599bbfb42_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749119624&amp;width=680&amp;sig=KYsP%2BSMQnPvDua%2FkwohWoUrH0swWtmk6hG7QNwXm47c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49568752">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/568/752/5ddfad05a1b3bedf14ffefffeed5820f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749179320&amp;width=680&amp;sig=zB%2FKb73ibOSKW2QAMdalnOFyBb8FYT5LuFISuyJD8vY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633222">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/222/f296c2635a9735d6b02b396413a47e3d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749625753&amp;width=680&amp;sig=Dh3EkfdCXjZpN%2Fubg9T5iIOYz9YnDg1sscDCMH%2BH8WA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49568714">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/568/714/9c6673ba05cd8c52639e683d983ea987_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749179074&amp;width=680&amp;sig=t%2BDFo%2FpQqMehSjfIiVKvspCTtGzDE1EAQv4o5E6ZoVs%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Introducing-the-FX-D-Your-First-Digital-Film-Simulation-Camera"><span class="bold">Introducing the FX-D: Your First Digital Film Simulation Camera</span></h3><p>Proudly introducing our latest camera: YASHICA FX-D. Perhaps you've never had the pleasure of shooting with film, or maybe you're just getting started with digital cameras and the art of photography itself. That's precisely why you're here to discover Your First Digital Film Simulation Camera!</p><p>FX-D stands for <span class="text-italic">Film Experience Digital,</span> precisely capturing a genuine <span class="text-italic">Film Experience </span>delivered through a <span class="text-italic">Digital</span> platform. Unlike other film or digital cameras, YASHICA FX-D uniquely bridges both worlds. It offers the convenience of digital capture while bringing the soulful aesthetic of film to your fingertips through in-camera film simulations.</p><div class="template asset" contenteditable="false" data-alt-text="One Camera, Two Worlds." data-caption="" data-id="49434360">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:One-Camera-Two-Worlds-">One Camera, Two Worlds.</h3>
+<img alt="One Camera, Two Worlds." class="fit" src="https://i.kickstarter.com/assets/049/434/360/2f597bd4745033a99f01a7736b1af8e0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328181&amp;width=680&amp;sig=siJ%2Fh%2BmR1JNaBxJf%2BErVtcB2tTD9k7PiiInvYUZb5T4%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="49439364" src="https://i.kickstarter.com/assets/049/439/364/b0d4fe14608eeac7330ba0f991fd4c25_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353679&amp;width=2480&amp;sig=anuW11o4ybpUqiq%2BxJD%2BM7NUxVsUt2eVeXutK8Q5t6E%3D"/>Since 1949, the soul of YASHICA has lived in every captured moment.</p><p>In the past, embracing both film and digital meant carrying two cameras and managing distinct workflows. But now, YASHICA FX-D offers a unified solution.</p><p>Inspired by the legendary YASHICA FX-3, YASHICA FX-D achieves a remarkable duality by expertly blending both film simulation and digital photography into a single camera. Every element is designed for a truly immersive photographic journey. This perfect integration means you no longer have to compromise. </p><p>It's an invitation to a more mindful and emotional photographic journey. It encourages you to pause, to reflect, and to deepen your connection with the stories your photos tell.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633226">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/226/fa54097db23dd3c87e7ebc0e76f0ed0d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749625769&amp;width=680&amp;sig=zIPs%2FLUQEVQDSwLf%2FcH83FqSr5uWFqNYH20XqpuRZiM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49434379">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/434/379/866d3b395ebd1fb62ca919108f400728_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748328269&amp;width=680&amp;sig=vPzKxuhiE%2FiKb0RX65xhT2MSLL0gankkBro4AGaHLuM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49468985">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/468/985/6e7b6c81bed893e8b305e807f1279609_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748521431&amp;width=680&amp;sig=468PI8k8eqT5J8417Pr3cuqmFxAPn%2Bjv5AdFPoowTtE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49468934">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/468/934/4928ca536555bfd27ec0e117cd7b61e2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748521120&amp;width=680&amp;sig=UVyUqaSWDCcEYM%2Bx9ijj6plY9WODoQSYTcPcysQ9FJY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Analog-Soul-Film-Simulation-Mode"><span class="bold">Analog Soul: Film Simulation Mode</span></h3><p>At YASHICA, our legacy in film photography stretches back to the 1950s, and we've continued that journey by launching new film cameras in recent years. This passion for analog aesthetics culminates in YASHICA FX-D's Film Simulation Mode. </p><p>Here, you'll discover how YASHICA FX-D allows you to infuse your digital images with our built-in film simulations and your own custom recipes.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633232">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/232/721f9bbf9b56fc29c37afc9492f8ff2c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749625783&amp;width=680&amp;sig=Pb4k31GSTESlf7RxpberHD0kKHMY%2FuheKgEUlUlZp7Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439340">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/340/96fc9128c2015f89f4c06b925ea8313e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353603&amp;width=680&amp;sig=CQ0k%2FVrOjbKEagyCfkmXcBk3h83SuMwec4r4svX0uVc%3D" src="https://i.kickstarter.com/assets/049/439/340/96fc9128c2015f89f4c06b925ea8313e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353603&amp;width=680&amp;sig=CQ0k%2FVrOjbKEagyCfkmXcBk3h83SuMwec4r4svX0uVc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49469002">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:6-Timeless-Film-Simulations">6 Timeless Film Simulations</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/469/002/fc900d68a52a4709b03d1597e9374b21_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748521572&amp;width=680&amp;sig=bmPPcXK2fOyyMlZr%2Fkq%2FK7ej4tCo4V7tPum5AVzcwbU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49620104">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/620/104/5a54807c665162e8fa77c8748e554010_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749556590&amp;width=680&amp;sig=EaDswrIaRebGDYn9MmKSQ53xrYUkNX05NzPvkuGCDhs%3D"/>
+</figure>
+</div>
+<p>Photos taken with FX-D 100. </p><p>*Remarks: Images are for reference only and may be updated periodically. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649130">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/130/55d1626666a6434000a18afba02d2b9a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749722967&amp;width=680&amp;sig=%2FYAi3EGqAgEdgB0uoSiJIrv12sstl0vpuJttMUOXyiE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649131">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/131/069039dce9f573515d280514c2560ad5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749722977&amp;width=680&amp;sig=II%2BYzd8TRzepHEB8kv98G7I0bnE7Grm9o8yMNBSY5Gg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649134">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/134/83663fcd059ef2a0fe2a481dd2b51df5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749722994&amp;width=680&amp;sig=fyO2njPG6CqBWbvjW5qDgDLdr3FrNN7P0Qob9AAt4Yw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649135">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/135/8b70466f005a58092701001a563af802_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749723000&amp;width=680&amp;sig=vDJ58NBRlauiI8DvxcbxlkZmUllzZIXMRaY%2FxZIyHYQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649140">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/140/b779cd222d4bd42459c773a3858260f6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749723015&amp;width=680&amp;sig=YzkucFRySAvqQTqIcxgIz0JIQ5ovyLAba2IEQX8%2Fm0k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649145">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/145/ea6893f536d74b3e8d55affcc4d18c21_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749723027&amp;width=680&amp;sig=pYqhvJUY%2B6Zc%2Ff93LjbmfLHMSw4WvV8%2BMK%2BOExZNRLE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Film Advance Lever: Your invitation to slow down" data-caption="" data-id="49434390">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Film-Advance-Lever-An-Invitation-to-Slow-Down">Film Advance Lever: An Invitation to Slow Down</h3>
+<img alt="Film Advance Lever: Your invitation to slow down" class="fit" src="https://i.kickstarter.com/assets/049/434/390/21c228b41cca9978822fc41034d87ece_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328355&amp;width=680&amp;sig=2RGmWiRfmQ88fcQZPBZ6Ff6dDJe5mIQayPnu1pMwKYw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49434191">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/434/191/27553d39280869e046fab409fb7e3bb5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748327042&amp;width=680&amp;sig=qe69%2FKvepKLSmsbEQdm2Bd5yo7Lkc3ZhovP4%2FyNeICw%3D" src="https://i.kickstarter.com/assets/049/434/191/27553d39280869e046fab409fb7e3bb5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748327042&amp;width=680&amp;sig=qe69%2FKvepKLSmsbEQdm2Bd5yo7Lkc3ZhovP4%2FyNeICw%3D"/>
+</figure>
+</div>
+<p>The film advance lever is an active part of your YASHICA FX-D creative workflow. </p><p>In Film Simulation Mode, after every single shot you capture, you will need to fully wind the film advance lever: guide the lever ahead until it reaches its stop and you hear a soft click. Without this winding action, the shutter will not release for your next shot.</p><p>By reintroducing this classic analog motion, FX-D invites you to <span class="bold">slow down and be truly present in the moment.</span> Each pull of the lever transforms fosters a deeper connection with your subject and the scene before you. It's a subtle yet powerful reminder to pause before every shot, which significantly enhances the unique "film experience" at the very heart of this innovative digital camera.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649230">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/230/0d72af39a81bb5f53fe4d12c8f60afcb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749723456&amp;width=680&amp;sig=QUOqAYxyMuGoXC3PTmnzhw53rHP6UmOuAjmApdejNq0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49434245">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/434/245/51525354b6465c4852f145633a0da76f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748327402&amp;width=680&amp;sig=GtqrxDZKbBjloBApevD65q4DEVs7rkJekUwhiWd8khE%3D"/>
+</figure>
+</div>
+<p>Conveniently located on the left side of the camera body, a dedicated film simulationdial allows you to effortlessly switch between the film simulations. A simple rotation of the dial is all it takes to instantly change the character of your images.</p><p>But the creative journey doesn't end there.</p><p>YASHICA FX-D empowers your creativity beyond its pre-set film simulations by saving your own customized film recipes. You are encouraged to fine-tune various settings to your heart's content, including grain, white balance shift, saturation, contrast, sharpness and hue.</p><p>Once you've perfected your signature aesthetic, you can easily save it as a custom recipe directly in the camera. This ensures your personalized styles are always ready for immediate recall, maintaining a consistent look across your work.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649171">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/171/6437c5ea03bfb873637a6bffff1ebafd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749723170&amp;width=680&amp;sig=Qu9eFdRR9LAywf57fWOaOnDDg0J%2FHGGRxXs8agmSxFg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439380">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/380/2a41c8b11cb9c7066065ff2be0f25617_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353724&amp;width=680&amp;sig=MVgHHPrn2w3tpLLdS6s60fw7%2BYJ3KRFLfuH1jhI%2F5VU%3D"/>
+</figure>
+</div>
+<p>While YASHICA FX-D celebrates the art of film, its digital mode ensures you also have the uncompromised speed and convenience of modern photography at your fingertips.</p><p>In Digital Mode, capture swiftly and effortlessly with instant shooting. This shooting mode is perfect for those moments when you need quick reactions, or when you prefer the straightforward workflow of digital photography. </p><p>Located at the right side of the camera’s top plate, you will find a Mode dial that allows you to switch between various digital shooting options, such as Manual (M) and Program (P), so you can select the ideal setting for your shot. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Photos taken with FX-D 300." data-id="49438716">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/716/74db3176ff2197517df039afcd5f8cf5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748350950&amp;width=680&amp;sig=87gNXWFC61xxu5LRhhk%2FIdRuGTWF3crnMYGQTq7aYWA%3D"/>
+<figcaption class="px2">Photos taken with FX-D 300.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649166">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/166/bac358287f314dc2f93cdf4a0107e46a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749723115&amp;width=680&amp;sig=YFUG3ovkQ%2BEizHw2GFk%2FnwiB5%2BXv1AtA5ZTqzmccTxQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649168">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-the-FX-D-Family">Meet the FX-D Family</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/168/a1e38931ebd90eb967028e9dd0249d6d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749723137&amp;width=680&amp;sig=X4LvwmyCGcFlyXyV0GDV3cAmf5BTYAxQflHsTIkdZE8%3D"/>
+</figure>
+</div>
+<p>YASHICA FX-D series offers 3 camera models perfectly suited for every photographer. You can always find one that best fits your needs and style:</p><p><span class="bold">FX-D 100</span> — Compact, intuitive, and powered by a 13MP sensor. Ideal for everyday creators who want the charm of analog with the speed of digital, all at a competitive price. Available in the classic silver &amp; black combination.</p><p><span class="bold">FX-D 300</span> — 50MP high-resolution, built for professionals who demand detail, dynamic range, and flexibility in post-production. Available in a silver &amp; black combination.</p><p><span class="bold">FX-D S300</span> — 50MP high-resolution with an EVF, built for professionals who look for a complete and immersive digital-analog-simulated camera experience. Its camera body comes in an elegant, sleek, full black design.</p><p>Regardless of which FX-D model you choose, each camera offers you the full, integrated analog-digital experience. You will always gain the power of one camera, featuring two distinct shooting modes, to tell your story creatively without compromising.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49568721">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/568/721/659455816dba30753c193c419b960fb4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749179114&amp;width=680&amp;sig=zDDHXzoOTpUlMm7rwLC4tS%2F7eDyEHNmc29t%2FqP0%2FHso%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49481989">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/481/989/fdef1cb24b7ab746918e4e4087defc75_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748598754&amp;width=680&amp;sig=69tonhMpRZvXeGb3GN105ApDoUBrsedSzE9IJRbUhOE%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Introducing-the-YASHICA-FX-D-S300-with-Electric-Viewfinder-EVF-"><span class="bold">Introducing the YASHICA FX-D S300 with Electric Viewfinder (EVF)</span></h3><p>From day one, our YASHICA journey has been about <span class="bold">co-creation</span>: building cameras FOR and WITH our backers community.  After receiving overwhelming interest and thoughtful feedback from backers, we’re proud to introduce a new model born from that dialogue: YASHICA FX-D S300, now featuring an electronic viewfinder (EVF).<br/><img class="image" data-id="49481987" src="https://i.kickstarter.com/assets/049/481/987/2bd73b479435397b9902b310b5856e49_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748598741&amp;width=1201&amp;sig=2DU8UedAi9zhA05gVIRvJXe8sb9j%2B%2F3uX2w%2BZRVM4Ec%3D"/></p><p>In fact, incorporating an EVF was a key consideration at the earliest stages of our design. However, a high-quality EVF significantly increases the cost of production. Therefore, on FX-D 100 and 300, we prioritized what we believed would bring the most value to the widest audience, while always keeping the door open to evolve.</p><p>Now, the addition of the EVF in FX-D S300 is a sensory enhancement that embodies the very soul of analog photography. As you raise the camera to your eye, the LCD screen turns off and you can have a more focused connection with your subject through the EVF. You’re immersed in the present and the story you are about to tell.</p><p>The birth of YASHICA FX-D S300 is a celebration of our community’s voice. It wouldn’t exist without your contribution!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49482272">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/482/272/fa96dd2e458f0eec6b4d846d1955c3a5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748600728&amp;width=680&amp;sig=Des%2FhqrWhrzcmcRe%2FFcbxE7mCa%2BZMQjpjlDv9wnDcrQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49482576">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/482/576/8813ea2d889951db9109f90a25c5951d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748603132&amp;width=680&amp;sig=Rw0gwX%2B9HttWiUvkkRDE4WRqeoLD%2FUWkSOO098g2QIc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Mastering-Every-Detail"><span class="bold">Mastering Every Detail</span></h3><p>YASHICA FX-D is engineered to empower your vision with confidence.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49572518">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/572/518/06e073c0440150017143bf4dcac576aa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749205498&amp;width=680&amp;sig=5nvYvZ9G028sm23lRElbnD5GbDnRja3C8sg0a5Jdfzs%3D"/>
+</figure>
+</div>
+<p><span class="bold">Optical Image Stabilization (OIS)</span> – Available on FX-D 300 and S300.</p><p><span class="bold">Digital Image Stabilization (DIS)</span> – Available on FX-D 100.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49434255">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/434/255/323ad484f2a0f9ba5f84660414f0ee80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748327445&amp;width=680&amp;sig=jB262Qi3m1EmoKf1xEcMTshqJQrgyGQBHRVrsNZK3yA%3D"/>
+</figure>
+</div>
+<p>*Image captured with FX-D 100</p><p><span class="bold">Manual Focus (MF) </span>– Available on FX-D 100 only.</p><p><span class="bold">Autofocus (AF) </span>– Available on all FX-D models.</p><p><span class="bold">Real-Time Autofocus (RTAF) </span>– Available on FX-D 300 and S300.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49434266">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/434/266/ad1ffa80b841d587889d536d187077c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748327485&amp;width=680&amp;sig=eDl26bBTN7tIpXZee95rPAioguWw%2Bo2jyxvBzngYm28%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">4x Digital Zoom &amp; 3x Optical Zoom </span>on FX-D 100 only.</p><p><span class="bold">4x Digital Zoom (in Film Simulation Mode) / 2.5x Digital Zoom (in Digital Mode) </span>on FX-D 300 and S300.</p><div class="template asset" contenteditable="false" data-alt-text="180° Flip Screen for Perfect Self-Portraits" data-caption="" data-id="49435011">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:180-Flip-Screen-for-Perfect-Self-Portraits">180° Flip Screen for Perfect Self-Portraits</h3>
+<img alt="180° Flip Screen for Perfect Self-Portraits" class="fit" src="https://i.kickstarter.com/assets/049/435/011/e232f020fd5d74462d5f48a4419f9d40_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748331795&amp;width=680&amp;sig=aToncbUWcmJB4s1YVx0RBFjweDAxKNlPrVSgbcV97vA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49434271">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/434/271/ad3b2f17e82e157ee7167b4c89b3a3e9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748327509&amp;width=680&amp;sig=WmK5v9dYsHG28DFQXJ%2BjFbULoJHreFW8LZMM1J7hkE0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Stay Connected with the YASHICA App" data-caption="" data-id="49434441">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stay-Connected-with-the-YASHICA-App">Stay Connected with the YASHICA App</h3>
+<img alt="Stay Connected with the YASHICA App" class="fit" src="https://i.kickstarter.com/assets/049/434/441/a14de7acbe10a27effed68995428559e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328600&amp;width=680&amp;sig=JyNqsaeiYDO9dhNxcfuq1FWP47yCZ6PzuyicvWeHxb0%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Share-Your-Timeless-Images">Share Your Timeless Images</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49568727">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/568/727/b1bb1b56fea81fa02d3d568e103a2a3b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749179134&amp;width=680&amp;sig=uRSsy9cVCaWZZmNzEQHI6pDApqJ8uYfdLlxh%2Bydwlpk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649220">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/220/eab567f3a9ea86fc8be966db5783f605_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749723419&amp;width=680&amp;sig=NqYccd7cTG4F5Lm%2FEk52d5myQ2jgnqePXjSammx%2FBwI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438714">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/714/bcaad782c55e7c6ccf97201f7c95e2a4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748350937&amp;width=680&amp;sig=hiKZN5rdlCr21X9bS32zwPbtplkttBPKnS85tLeFjW0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49440018">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goal">Stretch Goal</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/440/018/fe957f1b8160d0cb4630287c5fa0dabd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748356605&amp;width=680&amp;sig=prcVvQS69y%2Fj6p7hJ6fnjZQXSHVB8JMOU3JDsP5C8zE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49635854">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/635/854/31da4b29138deef1e9399123a8f86259_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749639871&amp;width=680&amp;sig=IMYgaGm2xxYKmADQMeg%2Fbm5IlBlbEjyu66PF271jFnM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Specifications" data-caption="" data-id="49434457">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="Specifications" class="fit" src="https://i.kickstarter.com/assets/049/434/457/01cd2e9e596cb78293b76ae3b685631f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328654&amp;width=680&amp;sig=7TG3U%2B1op6JSNO55yWap3zKPhtQGsLziBiITrts6wvA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49649652">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/649/652/d8146f7fbff972123b7962b1d73eaa6d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749726351&amp;width=680&amp;sig=P9vyPSbyQGf8BnYeoJElYHU0zJ8lGLImYQnBoKlp0us%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49568729">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/568/729/8e304e5d7cc843781ca1e270e85862d2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749179152&amp;width=680&amp;sig=mevKcqbKmCinrx26XV9yxsxRpmYmBbwtKTsownl7wo4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49602168">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/602/168/820d2c4abe2f46f6ca2c797d5aa671a1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749458892&amp;width=680&amp;sig=RiH4z92JMKs999KYO0L%2FVclwXoNhXOPGWsBIjTH%2FLnc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49602169">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/602/169/06a14f46e94183ac54acdedc82e20a9b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749458894&amp;width=680&amp;sig=RGo%2FIe5haKG4HgpaNwRxmlSYJD7e1xf9LVfVL074XkM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49572541">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/572/541/588911bc6b13381817ff1dfb8b042d40_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749205572&amp;width=680&amp;sig=7Mvhpbf7xqJOTwgeeC9H7U00JF3ICrNzQm2Vad6zWKo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49572926">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/572/926/d7a9e540a8ea9a4941f55e7bc6bc8673_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749208706&amp;width=680&amp;sig=bDFNFeNRpaJbyZ%2Bj3xw4V4Z4PApT3GCJPs9j4RaChww%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Rewards" data-caption="" data-id="49434464">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="Rewards" class="fit" src="https://i.kickstarter.com/assets/049/434/464/ae53ba93478222bc4dd40ae4d85d8a72_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328671&amp;width=680&amp;sig=mR8NMzijVOoVT37YPat0BwaA6J8tgEu%2BylT1%2FJftTmM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49568730">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/568/730/25670364bc2967f31cff85b8a5b54192_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749179173&amp;width=680&amp;sig=K12YphikJACWrM31xlINUv1zjcl26rrte%2BDhPNZzAsY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49568731">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/568/731/bf2b04a955c7865eb1712e6a2939d052_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749179182&amp;width=680&amp;sig=dU1w9YN0WbcNqaoPCYSU%2FYbVw4NTWhNoJkwvaBbM1lY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438024">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/024/4b1ab4e2b47f24b4fed24d325e8088d5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748347700&amp;width=680&amp;sig=X6%2F%2B3YUFatKcPvAYvcdpLjZIBZ700fKYC61zmkWHl0E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49571458">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/571/458/5cbe67948d1ee26fd0e2f0afdc659c64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749199434&amp;width=680&amp;sig=ZT483bfiaTVg3XvU%2B3tgFYk950xWFaML6fh7yN6CueA%3D"/>
+</figure>
+</div>
+<p>*All rates are for reference only and are subjected to change. We will be sharing the shipping details and information with you. </p><div class="template asset" contenteditable="false" data-alt-text="What's In The Box" data-caption="" data-id="49434465">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-In-The-Box">What's In The Box</h3>
+<img alt="What's In The Box" class="fit" src="https://i.kickstarter.com/assets/049/434/465/b727d0793792a864be4f2a20613efb49_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328673&amp;width=680&amp;sig=B46MwrhxvtM5dvjSejjLfTTPq5KNGJni8OmxbfLsZJY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49539523">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/539/523/f25183a3f9148fdd5303a07acabbc612_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749009854&amp;width=680&amp;sig=3M4CPt2il%2F%2FhtoQNPB%2BTKMPV%2FQB4%2Fua0r6ZUt9VnReY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Add-ons" data-caption="" data-id="49434467">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-ons">Add-ons</h3>
+<img alt="Add-ons" class="fit" src="https://i.kickstarter.com/assets/049/434/467/cd34ab1ce74e6c20668730ebf539f4f3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328684&amp;width=680&amp;sig=rYnK8VoGWIUEe5Pp2Vwxe5IGSoilfeh910BdFQb8QOY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438684">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/684/7265ec6179b6685bdce46480395d8258_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748350769&amp;width=680&amp;sig=%2FhEtrqbMguqaNIwEhUiyjbSH%2F1dguFQ%2B%2BPLtnXRcyqg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633592">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/592/c1cdda9f9066bd7bb605fe8b583d2e1d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749627758&amp;width=680&amp;sig=LIP6LxQnEuiwQR%2F0T%2FaEt8BGu1riGof97BNI2L1brvk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Timeline" data-caption="" data-id="49434473">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="Timeline" class="fit" src="https://i.kickstarter.com/assets/049/434/473/b1f777e046bbc7c4eb8c56b128b6003e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328733&amp;width=680&amp;sig=amLRYr6%2Fui5WxqO8Hz95uz1qkveI1mReC%2BG1L4yTQ5Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49482261">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/482/261/6723907c8b2acaff900243fa6d328cbe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748600644&amp;width=680&amp;sig=CbbnDjdrkX%2BHf9Lo2LakjpbPpu2sq67gRybZuT%2F2JFQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="About YASHICA" data-caption="" data-id="49434046">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-YASHICA">About YASHICA</h3>
+<img alt="About YASHICA" class="fit" src="https://i.kickstarter.com/assets/049/434/046/d6562e10b48927ccb9b1bba15b9eb34e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748326500&amp;width=680&amp;sig=lGdmUdn%2BLqR2NPHzf%2Bau61dlkH9ElxUvxZtYg0I6t2U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438721">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/721/017a5073c6babbf22cad3f053003f300_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748350983&amp;width=680&amp;sig=8CkFkfHlzb4jdUygA%2FN2rfGTyI8omKxQfEbX8ER9ups%3D"/>
+</figure>
+</div>
+<p>YASHICA was founded in 1949 in Japan. With the sales of 5 million YASHICA Electro 35 film cameras in the 1970s, YASHICA has been playing a vital role in the analog photography world.</p><p>In 2017, YASHICA introduced the game-changing YASHICA Y35 Camera. Its ground-breaking, world-first digiFilm system revolutionized the film camera industry by bridging the gap between tradition and technology. The innovation was launched globally through a crowdfunding campaign and became the highest-funded project in Asia, both in terms of amount raised and the number of backers.</p><p>YASHICA continues to push the boundaries of innovation by expanding its product range. The brand ventured into the world of night vision with the launch of two groundbreaking night vision goggles, YASHICA Vision and YASHICA Explorer, featuring cutting-edge patented technology that paved the way for YASHICA’s success.</p><p>International brands like Miu Miu, Supreme, Jägermeister, and Sanrio are captivated by YASHICA. Together, they created unique, trendsetting collaboration products that further enhanced YASHICA’s global presence.</p><p>YASHICA has reached new heights by reinventing film and digital photography for a new generation and building a loyal community of passionate photographers. We are committed to driving a new wave of innovation while honoring our rich legacy in photography. Additionally, we strive to create affordable cameras and make photography accessible to everyone — empowering more people to tell their stories through timeless imagery.</p><p>Create Memories, Capture Moments with YASHICA.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49437700">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/437/700/adec0dd2a1d21077073d60b3235fe33a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748345803&amp;width=680&amp;sig=s4YcpzTWSFDwJB3ib8S%2F%2F2xkUe5y4ASL5uI0xJiBTjE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49437793">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/437/793/fd3aec12919bf545bfd3d1cacfb4fee8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748346301&amp;width=680&amp;sig=elpVsi%2ByLtXm5MDKcVTgRbtldO69Ak1vC6%2BKARaPi34%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Sketches" data-caption="" data-id="49434475">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sketches">Sketches</h3>
+<img alt="Sketches" class="fit" src="https://i.kickstarter.com/assets/049/434/475/c2131c5dff273c99bdf231ff6e7f66f8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328739&amp;width=680&amp;sig=VZUZkWv%2BvlYwlhJ6s0FwUPLDmkLbspMQ6%2Bi2wxxrOV0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49434956">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/434/956/f5fcd28351a8e1abfb4fa48f419e53e8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748331458&amp;width=680&amp;sig=tLs2j4ScfepgWI3dM6GvaWmCYL5opNcEeEwUKiWKEh0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49571236">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/571/236/e9384c54ef8a3fbb7c0064e98fb26f84_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749198183&amp;width=680&amp;sig=gZlhPMxLP%2FUi8DYOWCLSTq2fapb4WjY5RLpQOipm%2Fns%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Follow YASHICA" data-caption="" data-id="49434486">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Follow-YASHICA">Follow YASHICA</h3>
+<img alt="Follow YASHICA" class="fit" src="https://i.kickstarter.com/assets/049/434/486/8f3be1f05664547a3c14d004de77e1a5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328785&amp;width=680&amp;sig=BPLi%2BbzUUgcN9T7FweYONhLvtlX3NhLhDgg3gfa5lgs%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49543515">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/543/515/a2f2c456f8c1856d14ca79f2b6e82e0b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749033994&amp;width=680&amp;sig=SjQ%2B3FC0qhoLGNCrTZc2%2BfgCOHK7vut%2BkI1gd9GXXjU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Media-Kit-Link-">Media Kit Link:</h4><p><span>https://drive.google.com/drive/folders/1HtK0vPzUUX845F8U4ukCWeSt-2dwIbfp?usp=sharing</span></p><div class="template asset" contenteditable="false" data-alt-text="HOW DO I BACK A PROJECT ON KICKSTARTER?" data-caption="" data-id="49434488">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:HOW-DO-I-BACK-A-PROJECT-ON-KICKSTARTER-">HOW DO I BACK A PROJECT ON KICKSTARTER?</h3>
+<img alt="HOW DO I BACK A PROJECT ON KICKSTARTER?" class="fit" src="https://i.kickstarter.com/assets/049/434/488/013d069b1be1858187167646e9f965dd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748328795&amp;width=680&amp;sig=B7Uy5msA%2BhSdZDbumIVkG2IavU78d6urWJxafirSQqw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49436591">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/436/591/77c08491a50309bbd9536840c4457e29_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748339911&amp;width=680&amp;sig=4eVTQHuGYdQdtUKvn433KpmnmMT%2BEYI4u5D45VGr%2BFQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439389">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/389/b9ad0be3d459a829d244e364c3c8832b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353754&amp;width=680&amp;sig=ntCURoxDlhWi8ieIV0t8HISCEtp32Pmk6tl34y0Lplc%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">While we've meticulously developed the YASHICA FX-D series to deliver exceptional quality at its price point, there are inherent risks in bringing a new product to market. Here are some potential challenges and our strategies for mitigation:
+
+Manufacturing Delays: Unforeseen delays can occur due to supply chain issues or production complications. To minimize these risks, we will work closely with our manufacturing partners and implement strict quality control measures. We’re committed to keeping our backers informed with regular updates throughout the process.
+
+Shipping and Logistics: Global shipping can pose challenges, particularly during unpredictable times. We have strategically planned for multiple shipping methods and partnered with reliable logistics providers to ensure timely delivery to our backers.
+
+Technological Integration: The YASHICA FX-D incorporates innovation in bringing a new camera to life. While we have conducted rigorous testing, unexpected software or hardware issues may arise. We promise to communicate any technical challenges promptly and provide solutions as they develop.
+
+We deeply value your support and confidence in us. Rest assured, we will work tirelessly to overcome any challenges and deliver the YASHICA FX-D Cameras on schedule.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The Yashica FX-D, features a design built to endure over time. Its solid construction, with a mix of durable plastic and metal components, ensures that it can withstand regular use while remaining lightweight.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

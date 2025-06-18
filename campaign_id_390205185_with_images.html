@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AeroDry 2.0: Fully 3D-Printable Modular Filament Dryer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/468/457/92e2f962137b3dcc435ae8c90b61f0b2_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1748518233&width=560&sig=5FmW86b8vPBkBvRXZWuz%2FSGLG6jx8ZpJ895HwnLvC%2Fw%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>AeroDry 2.0: Fully 3D-Printable Modular Filament Dryer</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">An Fully 3D-Printable Filament Dryer that adapts to your needs—Dry and Store 1kg, 3kg, and 5kg Spools with a Modular Stackable Design.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,800</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49590724">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/590/724/312d9ab158648561b5071a4ec01be336_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749358056&amp;width=680&amp;sig=%2Fp2%2FL0omoMskAXo0nj3dhBy5QngE32FYNhuSJdSEL4Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49468671">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/468/671/a49bc9ecd931874615bc36b58046535f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748519653&amp;width=680&amp;sig=oH0XG4lVqLt81ZXlM9j1NMkgNj5hgVMeEdVY2JePff4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49471290">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/471/290/a52ff7830bc2752656339767a03e1f44_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748533119&amp;width=680&amp;sig=e3qcPBag5wyXau75D0IEp2eLS450pXmIStutGOyj%2FEs%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:What-is-AeroDry-2-0-"><span class="bold">What is AeroDry 2.0?</span></h3><p>AeroDry 2.0 is a fully 3D-printable, modular filament dryer and storage system designed for anyone who wants to protect their 3D printing filament from moisture — and print without interruptions.</p><p>Built from the ground up for practicality, AeroDry 2.0 is more than just a drying box. It’s an expandable, stackable system that can dry and store multiple filament spools — from standard 1kg all the way up to industrial 5kg rolls. Whether you're a hobbyist, a professional maker, or running a full print farm, AeroDry 2.0 scales with your needs.</p><p>Every part of AeroDry 2.0 has been thoughtfully designed to make filament management simple, efficient, and customizable. You 3D print the chambers yourself, bolt them together using our screw-lock system (no tools or metal fasteners needed), and use easily available components like a PTC heater, digital controller, and blower fans to get professional-level drying performance — without expensive equipment or proprietary parts.</p><p>You can keep it compact for your desktop setup, or build it tall to dry and store up to 12 spools (or more) without using extra floor space. It’s a solution you can grow over time, tailored exactly to your setup — all while keeping your filament dry, protected, and ready to feed directly into your printer through built-in outlets.</p><h3 class="page-anchor" id="h:How-It-Works"><span class="bold">How It Works</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49470756">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/470/756/f4b06529bfbfc82572e51491fc0c9adb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748530775&amp;width=680&amp;sig=7ud00CP6y4R8z32VCliuxpFDk40K%2FbEDolSPSXuazTk%3D"/>
+</figure>
+</div>
+<p>AeroDry 2.0 is designed to work right out of your 3D printer’s ecosystem — no complicated wiring, no proprietary parts, and no guesswork. It combines smart airflow, targeted heat, and stackable chambers to ensure your filament stays dry and print-ready at all times.</p><p>At the base of AeroDry 2.0 is a powerful heating unit that uses<span class="bold"> PTC ceramic heaters</span> combined with<span class="bold"> high-speed blower fans</span>. These fans force the heated air vertically through the entire chamber stack, creating a consistent upward airflow that circulates heat evenly to every spool — even in tall, multi-level setups.</p><p>Each chamber acts as a sealed drying zone, complete with its own built-in hygrometer that lets you monitor humidity levels in real time. The chambers are 3D-printed and bolt together using our unique screw-lock system, so you can scale the entire unit based on your storage needs. Whether you want one chamber for three 1kg spools or a tower for 5kg industrial rolls, you can build it exactly how you want.</p><p>The system includes a digital temperature controller  that lets you precisely set the drying temperature, and a programmable timer that allows you to schedule automatic drying sessions throughout the week — even when you're not around.</p><p>Best of all, each filament chamber comes with a direct-feed outlet, so you can dry and print at the same time — without ever removing the filament from the system. Just feed it straight into your 3D printer, spool by spool.</p><h3 class="page-anchor" id="h:Why-Choose-AeroDry-2-0-"><span class="bold">Why Choose AeroDry 2.0?</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49471305">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/471/305/85737ac5fa910dd952c5c7e303fc50d2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748533173&amp;width=680&amp;sig=UWcDxHHyuuoS1NRK7XCIj9L8vg0lrQ8K%2F5uoNOKX9DA%3D"/>
+</figure>
+</div>
+<p>If you’ve ever dealt with failed prints, stringy messes, or inconsistent layers — you already know how much damage a little moisture can do to your filament. But most drying solutions are either too expensive, too bulky, or just not made for how we actually use our printers.</p><p>That’s why we built AeroDry 2.0 — a solution that fits <span class="text-italic">your</span> workflow, <span class="text-italic">your</span> setup, and the kind of real-world problems we face as 3D printing enthusiasts.</p><p>Most commercial filament dryers store just one spool at a time. AeroDry 2.0? It lets you dry and store as many spools as you want — 1kg, 3kg, even a full 5kg spool — thanks to its vertical, modular design that stacks up like magic and saves desk space while doing it.</p><p>But beyond the features, AeroDry 2.0 taps into something deeper — the <span class="bold">DIY spirit</span>.</p><p>We love making things. We take pride in printing solutions better than what’s available off the shelf. AeroDry 2.0 isn’t just a tool — it’s a project. It’s something you’ll build, customize, and feel proud to use every time it hums to life beside your printer.</p><p>No Arduino programming. No complex wiring. Just your 3D printer, basic electronics, and that maker mindset that brings it all together. You print the parts, bolt the chambers together, plug it in — and you’re drying like a pro.</p><h3 class="page-anchor" id="h:What-s-Different-in-AeroDry-2-0-"><span class="bold">What’s Different in AeroDry 2.0?</span></h3><p>From the ground up, every decision in AeroDry 2.0 was made to solve real-world problems the first version couldn't — not because it wasn't good, but because the bar needed to be set higher. So we went back to the drawing board and made it modular, expandable, and more efficient in every way.</p><h4 class="page-anchor" id="h:Here-s-what-makes-AeroDry-2-0-stand-apart-"><span class="bold">Here’s what makes AeroDry 2.0 stand apart:</span></h4><ul><li><span class="bold">Stackable Vertical Tower Design</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49590682">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/590/682/e1d5add2ee953e346f79d31365dc216a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357548&amp;width=680&amp;sig=x2C8v94y1Cd63NqeFZPGrkEfeYVkCDHiZh%2BVmnhSPwA%3D" src="https://i.kickstarter.com/assets/049/590/682/e1d5add2ee953e346f79d31365dc216a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357548&amp;width=680&amp;sig=x2C8v94y1Cd63NqeFZPGrkEfeYVkCDHiZh%2BVmnhSPwA%3D"/>
+</figure>
+</div>
+<p><br/>AeroDry 2.0 is designed to grow with your filament collection. Need to dry three 1kg spools? Add a 1kg chamber. Got two 3kg rolls or even a 5kg industrial spool? Add the larger 3kg chamber. Stack them together like building blocks — bolt them tight with 3D printed screws — and build a tower that fits your exact needs.</p><ul><li><span class="bold">Fully 3D Printable Construction</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49590698">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/590/698/038d6df096ff9260cfd39f1d145b080a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357778&amp;width=680&amp;sig=i%2FW2BIuBSJ4QEOgxc5nCbvLeLI5gNAs2o6GR57aKJBs%3D" src="https://i.kickstarter.com/assets/049/590/698/038d6df096ff9260cfd39f1d145b080a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357778&amp;width=680&amp;sig=i%2FW2BIuBSJ4QEOgxc5nCbvLeLI5gNAs2o6GR57aKJBs%3D"/>
+</figure>
+</div>
+<p><br/>You print everything — even the bolts. No hunting for special fasteners. No expensive proprietary parts. Just your printer and the files. Everything locks in with satisfying precision, and the result feels as solid as any factory-made product.</p><ul><li><span class="bold">Built-In Direct Feeding System</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49590701">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/590/701/c7c3efbeab9f2d5fb2720fffa1d32106_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357797&amp;width=680&amp;sig=yWcxO0kXhNksakfVWlCOA2pOH8auP3%2FOTzxjCeSJH68%3D" src="https://i.kickstarter.com/assets/049/590/701/c7c3efbeab9f2d5fb2720fffa1d32106_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357797&amp;width=680&amp;sig=yWcxO0kXhNksakfVWlCOA2pOH8auP3%2FOTzxjCeSJH68%3D"/>
+</figure>
+</div>
+<p><br/>Each chamber includes dedicated filament feed-through holes, so you can keep your spools sealed while printing. No need to take them out — just feed directly from AeroDry into your printer. It’s cleaner, safer, and keeps your filament dry during every print job.</p><ul><li><span class="bold">Powerful Blower-Based Heating</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49590706">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/590/706/7c3bca97ac7c852c12aa652cbad09bf4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357877&amp;width=680&amp;sig=blnRshy%2BU3fsoMugR73rHEFLooKko%2BAleq%2BeT4YUKcg%3D" src="https://i.kickstarter.com/assets/049/590/706/7c3bca97ac7c852c12aa652cbad09bf4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357877&amp;width=680&amp;sig=blnRshy%2BU3fsoMugR73rHEFLooKko%2BAleq%2BeT4YUKcg%3D"/>
+</figure>
+</div>
+<p><br/>With dual 120mm blower fans and PTC ceramic heaters, AeroDry 2.0 moves hot air efficiently from the bottom upward — circulating warmth across every stack. No cold spots. No uneven drying. Just even, reliable performance.</p><ul><li><span class="bold">Smart Temperature &amp; Timer Control</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49590708">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/590/708/8f1bdc93545a7ed0638d54a65d9bc294_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357884&amp;width=680&amp;sig=jGX%2FuoJUvawkw3ighHsTDBH02AhtEXoZWa%2Fe8Zs6qC4%3D" src="https://i.kickstarter.com/assets/049/590/708/8f1bdc93545a7ed0638d54a65d9bc294_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357884&amp;width=680&amp;sig=jGX%2FuoJUvawkw3ighHsTDBH02AhtEXoZWa%2Fe8Zs6qC4%3D"/>
+</figure>
+</div>
+<p><br/>Set your preferred drying temperature and duration using the built-in digital controller. Want to dry overnight at a low temp? Or blast tough spools at higher heat for a couple hours? You’re in full control.</p><ul><li><span class="bold">Magnetic Door System</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49590709">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/590/709/e871b285d37081707dc96c69d62e8b07_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357906&amp;width=680&amp;sig=E5LL7ROhG2S92ohulBXVnW1L03JTrJZB2OzkYmCKBVw%3D" src="https://i.kickstarter.com/assets/049/590/709/e871b285d37081707dc96c69d62e8b07_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357906&amp;width=680&amp;sig=E5LL7ROhG2S92ohulBXVnW1L03JTrJZB2OzkYmCKBVw%3D"/>
+</figure>
+</div>
+<p><br/>Each chamber door shuts tightly with built-in magnets — no fiddly latches or screws. It seals in heat and keeps dust out while letting you access spools instantly.</p><ul><li><span class="bold">Top Handle for Easy Carrying\</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49590713">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/590/713/a893c0dd857194aa9e66ac48f58ea1ed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357924&amp;width=680&amp;sig=%2BDtwYbPDJmwvL3xwYQW%2B7WZJFHxZEgCilXasD0qK8%2Fw%3D" src="https://i.kickstarter.com/assets/049/590/713/a893c0dd857194aa9e66ac48f58ea1ed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749357924&amp;width=680&amp;sig=%2BDtwYbPDJmwvL3xwYQW%2B7WZJFHxZEgCilXasD0qK8%2Fw%3D"/>
+</figure>
+</div>
+<p><br/>Move it with ease, even fully loaded. AeroDry 2.0 comes with a strong, 3D printed top handle that makes it easy to lift and relocate your setup whenever you need.</p><p>Every improvement in AeroDry 2.0 came from feedback, failure, and field use. It’s a product that’s been tested by real makers, shaped by the 3D printing community, and built to perform.</p><h3 class="page-anchor" id="h:Key-Features-of-AeroDry-2-0"><span class="bold">Key Features of AeroDry 2.0</span></h3><p>AeroDry 2.0 is packed with features designed from the ground up to make filament drying easier, more modular, and actually fun to build. Everything has been carefully thought out to work together, and it’s meant for people like us — who love printing, tinkering, and making things better than what’s already out there.</p><h4 class="page-anchor" id="h:Modular-Stackable-System"><span class="bold">Modular &amp; Stackable System</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49460175">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/460/175/73152161bb0d97fb051d226d812fd7de_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748462826&amp;width=680&amp;sig=6bncKZVtwpkwFQ0CVpv2%2B05rgd%2FvHGtcIukU3NmCXTs%3D"/>
+</figure>
+</div>
+<p>One of the most practical features — you can stack AeroDry as tall as you need. It starts with a base unit that contains the electronics, then you just add chambers on top using a simple bolt-together method. The chambers lock together firmly, and you can mix and match between different sizes depending on what filaments you store. You’re never limited — whether you’ve got three 1kg spools or a big 5kg spool, you can make the system work for you.</p><h4 class="page-anchor" id="h:Fully-3D-Printable-Even-the-Fasteners"><span class="bold">Fully 3D Printable — Even the Fasteners</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49460118">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/460/118/1d9937a32257acf53e208830a97010bf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748462612&amp;width=680&amp;sig=%2FadfOMP7YleX6jBfLC91Yxx5LpgRe3iwDvWM2MNUo%2Bo%3D"/>
+</figure>
+</div>
+<p>AeroDry 2.0 is designed to be almost entirely 3D printed. That includes even the bolts that connect the chambers. There’s no need for external screws, special fittings, or tools. Just print, slot, and twist them in. It keeps things simple and truly DIY, and makes the whole system feel like it belongs in the world of 3D printing.</p><h4 class="page-anchor" id="h:Custom-Sized-Storage-Chambers"><span class="bold">Custom-Sized Storage Chambers</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49460115">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/460/115/12b82610ef70b11f8b067bbfcfe4fddf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748462618&amp;width=680&amp;sig=CqBSihtA4RNcA70gATPT5MubmFOZrIrNmLxx7EpmoAg%3D"/>
+</figure>
+</div>
+<p>There are different chamber sizes available — the 1kg one fits three regular 1kg spools, while the larger one is designed to fit either two 3kg spools or even a 5kg one. Since everything stacks vertically, you don’t end up wasting table space, even if you need a bigger setup.</p><h4 class="page-anchor" id="h:Reliable-Heating-with-Smart-Control"><span class="bold">Reliable Heating with Smart Control</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49460029">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/460/029/16f8747e065451aad10d5443d4822db9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748462294&amp;width=680&amp;sig=iZFT08XHbv4huOHHsxL%2FjjRwvUWqiB0Zvp%2F%2BnEMqXx8%3D"/>
+</figure>
+</div>
+<p>AeroDry uses PTC heaters, which are known for being safe and self-regulating. Each heater is paired with a high-RPM blower fan to circulate the hot air upward through the chambers. And because it’s all controlled with a digital thermostat and programmable timer, you can dry your filament at exactly the right temperature for exactly how long you need — without babysitting it.</p><h4 class="page-anchor" id="h:Direct-Filament-Feed"><span class="bold">Direct Filament Feed</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49460031">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/460/031/fda6db8c74e27bcc555983b77e04d7a7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748462299&amp;width=680&amp;sig=wMiiGdsNEWorBNt0GzOs%2B9C3IScJk4MMw%2FxmV396sd8%3D"/>
+</figure>
+</div>
+<p>You don’t have to take your filament out once it’s dry. Each chamber has its own dedicated outlet, so you can run the filament straight into your printer without exposing it to moisture again. It makes everything smoother and more efficient.</p><h4 class="page-anchor" id="h:Humidity-Tracking-in-Each-Chamber"><span class="bold">Humidity Tracking in Each Chamber</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49460156">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/460/156/e8c7ceede233e6b247afd8a1be6c24d9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748462727&amp;width=680&amp;sig=g3gakiAh%2FCZs2Mzn29WDIjtIFZumgSslo1hxlVUhNTQ%3D"/>
+</figure>
+</div>
+<p>To help you keep tabs on your filament, each unit also features a real-time humidity sensor — so you always know if your storage environment is doing its job. Just glance at the reading, and you’re set.</p><h4 class="page-anchor" id="h:Magnetic-Doors"><span class="bold">Magnetic Doors</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49460036">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/460/036/ab6c765c47838d8188e5ec200ae8d71a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748462314&amp;width=680&amp;sig=pQz5C3HjZnVFCiFtBFEt0gNtwq4aE2jV4WwZuNqU%2FDI%3D"/>
+</figure>
+</div>
+<p>The doors of each chamber snap shut with magnets — no latches or clips. It’s simple, quick, and clean. And because they seal tightly, it helps maintain the right temperature and humidity inside.</p><h4 class="page-anchor" id="h:Easy-to-Move-Around"><span class="bold">Easy to Move Around</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49460038">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/460/038/7c96ceb62304512a1c8a01f1ee8da8f7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748462317&amp;width=680&amp;sig=8uHnatUT8yyV1tiGwd2OkFhNRh39zMlWAOZY3ijlF5c%3D"/>
+</figure>
+</div>
+<p>On top of the whole stack is a carry handle — solid and practical. Even when the dryer is loaded up with filament, it’s easy to pick it up and move it across your workspace. You can shift it around as your setup changes.</p><p><span class="text-italic"><span class="bold">More than anything, AeroDry 2.0 reflects what we all love about 3D printing — the ability to make, customize, and improve. You don’t need to be an expert in electronics or assembly. Just print the parts, slot in a few basic components, and you’ve got something that’s not only functional but feels like your own creation.</span></span></p><h3 class="page-anchor" id="h:Inspiration"><span class="bold">Inspiration</span></h3><p>Every 3D printer owner has hit that wall — a print that fails for no reason, spaghetti strings all over, and inconsistent layer bonding. Most of us blame slicer settings or nozzle issues… but it’s often the filament. Moisture silently creeps in, especially in humid environments like mine, and ruins hours of work.</p><p>I realized this the hard way. Drying filament became a recurring struggle — too many makeshift setups with food dehydrators, modified ovens, or just throwing the spool in rice (yep, been there). But nothing gave me the <span class="bold">control</span> or <span class="bold">space efficiency</span> I really needed.</p><p>That’s when I started sketching out ideas — something that could <span class="bold">fit into any 3D printing workflow</span>, actively dry filament, <span class="bold">store it long term</span>, and be <span class="bold">expandable</span> as my projects grew.</p><p>And it had to be <span class="bold">fully DIY</span> — no exotic parts, no locked ecosystems. Just 3D printable components and easily available electronics. Because as makers, we love building. We don’t just want products — we want to <span class="bold">create them ourselves</span>, optimize them, and make them better than anything off the shelf.</p><p>AeroDry 2.0 is the result of that spirit. Designed from scratch, tested with real prints, and refined through multiple iterations to be as functional as it is fun to build. It’s not just a tool — it’s a <span class="bold">project you’ll enjoy assembling</span>, knowing that every detail was made with the same care we all put into our prints.</p><h3 class="page-anchor" id="h:Development-Journey"><span class="bold">Development Journey</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49471151">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/471/151/4acb91f6956cba90de2383ffb9d95f62_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748532559&amp;width=680&amp;sig=CSxLFa5W1Dqa%2BZlvn7pMjElBhXDsS38IQ7aczwhYDek%3D"/>
+</figure>
+</div>
+<p>AeroDry didn’t start as a sleek tower of modular chambers—it began on my desk with sketches, printed frames, and a heap of failed prints. Version 1.0 was functional and well-received—it was backed by 200 backers on Kickstarter—but I knew it could go further.</p><p>The first challenge was size. As I started buying larger filament spools (3kg, 5kg), most dryers simply couldn’t handle the bulk. I needed something scalable. That’s where the <span class="bold">stackable tower idea</span> was born—print what you need, and add more chambers as you go.</p><p>From there, came <span class="bold">iteration after iteration</span>. I went through <span class="bold">five major design revisions</span>, each addressing a different pain point:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49471157">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/471/157/55812300a435b598f0c90bd2a0ad3412_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748532570&amp;width=680&amp;sig=zi1sw8A3sc59Ogx%2Bpo%2FnyCdwe2iG%2B%2BKDfpuznjRGZuc%3D"/>
+</figure>
+</div>
+<ul>
+<li>🔄 Chamber redesigns to improve air circulation.</li>
+<li>🔩 A bolt-together stacking system that didn’t require screws or external frames.</li>
+<li>🌡 Replacing heatbeds with <span class="bold">PTC heaters</span> for better efficiency and simpler wiring.</li>
+<li>🌀 Fan and vent testing to get just the right airflow path for upward heating.</li>
+<li>🧲 Testing different door types before settling on magnetic latching for a perfect seal without mechanical hassle.</li>
+</ul><p>Some prints melted. Some fans weren’t powerful enough. But each problem led to a better solution. I printed over 2.5kg of prototypes, refined every clip, mount, and panel, and tested chamber airflow using actual hygrometers.</p><p>Now, AeroDry 2.0 stands not just as a version upgrade—it’s a <span class="bold">complete rethink</span>, built from ground up with modularity, efficiency, and usability in mind.</p><p>And yes, it’s still 100% DIY—every part printable, and every feature added for a reason.</p><h3 class="page-anchor" id="h:Components"><span class="bold">Components</span></h3><p>AeroDry 2.0 is designed with accessibility, affordability, and ease-of-build in mind. It uses simple, widely available electronic components that can be sourced locally or online through marketplaces like Amazon and AliExpress. This ensures that users anywhere in the world can assemble AeroDry 2.0 with minimal effort.</p><p>With a fully 3D-printable body, even the bolts that connect the chambers together, AeroDry 2.0 can be built using standard FDM printers. From the bolt-together chamber system to the modular layout, everything is designed to fit together smoothly without requiring specialized tools or advanced electronics knowledge.</p><p>All reward tiers will include a list of the parts you need along with best buy links </p><p>Assembly is straightforward and beginner-friendly. Even if you're not comfortable with soldering or programming, AeroDry 2.0 is designed to get you up and running quickly — just plug, fasten, and start drying.</p><p><span class="bold">The cost of the electronic parts usually falls between $25 and $40</span>, depending on where you live and where you buy them from.</p><h3 class="page-anchor" id="h:AeroDry-2-0-PETFusion-2-0-Bundle"><span class="bold">AeroDry 2.0 + PETFusion 2.0 Bundle</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49468694">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/468/694/100f8191159bd74514cb1b62a085dac8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748519825&amp;width=680&amp;sig=VemsaW%2Frsaj3D8LYTYzDCUKvBKyN5ydAvX7oAyB6%2FmY%3D"/>
+</figure>
+</div>
+<p><span class="bold">PETFusion 2.0</span> is a fully 3D-printable machine that lets you turn waste PET bottles into usable 3D printer filament — right from your own desk. It’s a powerful DIY solution for anyone who wants to take recycling into their own hands and create filament at home.</p><p>The campaign was backed by <span class="bold">over 850 people</span>, raising more than <span class="bold">$53,000 on Kickstarter</span>, making it one of the most well-supported community recycling projects for makers.</p><h4 class="page-anchor" id="h:Here-s-what-PETFusion-2-0-can-do-"><span class="bold">Here’s what PETFusion 2.0 can do:</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49468702">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/468/702/b2e04a3540010ca9f35271a9e9f24f06_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748519855&amp;width=680&amp;sig=hRTohGTIg0BULpHee94IVkxcpM0WENvBAaSnE%2FasCzE%3D" src="https://i.kickstarter.com/assets/049/468/702/b2e04a3540010ca9f35271a9e9f24f06_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748519855&amp;width=680&amp;sig=hRTohGTIg0BULpHee94IVkxcpM0WENvBAaSnE%2FasCzE%3D"/>
+</figure>
+</div>
+<ul>
+<li>🧃 <span class="bold">Turn waste into filament</span><br/>Slice up regular PET bottles and transform them into 1.75 mm filament ready for printing.</li>
+<li>♻️ <span class="bold">Dual-hotend extrusion</span><br/>Two hotends working together ensure smoother, faster, and more reliable filament production.</li>
+<li>🎨 <span class="bold">Inline colorizer</span><br/>Customize your filament color using regular ink — print clear, blue, green, or even blend custom shades.</li>
+<li>🔗 <span class="bold">Filament welder</span><br/>Join broken pieces of filament together using the included welder. No waste — every piece becomes usable.</li>
+<li>⚙️ <span class="bold">All-in-one assembly</span><br/>Everything is packed into one compact unit — no external mounts or separate machines.</li>
+<li>🛠 <span class="bold">Fully 3D printable design</span><br/>Just like AeroDry, most of the machine is 3D printable. And the electronics are basic, low-cost parts available online or at local electronics stores.</li>
+<li>💵 <span class="bold">Low build cost</span><br/>Total cost of non-printable parts ranges from <span class="bold">$95 to $140</span>, depending on where you live and source your parts.</li>
+</ul><p>When you combine <span class="bold">PETFusion 2.0</span> with <span class="bold">AeroDry 2.0</span>, you get a complete setup:</p><ul>
+<li>Make your own filament from plastic bottles</li>
+<li>Dry and store it properly for high-quality prints</li>
+<li>Feed filament directly into your printer without touching a thing</li>
+</ul><p>The <span class="bold">bundle</span> gives you access to both systems’ STL files at a <span class="bold">discounted price</span> — perfect for DIYers who want to reduce filament costs, print sustainably, and take full control of their materials.</p><p>It’s also a great deal if you’re planning to back the <span class="bold">commercial license tier</span>, which gives you full rights to produce and sell both machines.</p><h3 class="page-anchor" id="h:What-s-Included-in-the-PETFusion-2-0-Files-"><span class="bold">What’s Included in the PETFusion 2.0 Files?</span></h3><p>When you back the <span class="bold">AeroDry 2.0 + PETFusion 2.0 bundle</span>, you get everything you need to start building your own filament production setup at home.</p><p>Here’s what’s included:</p><ul>
+<li>✅ <span class="bold">STL files for all 3D-printable parts</span><br/>Includes everything needed to build the complete PETFusion 2.0 system — from the frame and mounts to the filament welder body, enclosure panels, and more.</li>
+<li>✅ <span class="bold">Detailed list of required non-3D-printable components</span><br/>You’ll get a full breakdown of electronics, fasteners, and other parts, along with <span class="bold">best-buy links</span> to help you source them easily and affordably.</li>
+<li>✅ <span class="bold">Step-by-step video assembly guide</span><br/>A clear video walkthrough to help you understand the build process from start to finish. Simple, visual, and beginner-friendly.</li>
+<li>✅ <span class="bold">Support via email</span><br/>Have questions or stuck during the build? We’re just an email away. We’ll help you out if anything gets confusing.</li>
+<li>✅ <span class="bold">Commercial license</span> <span class="text-italic">(included in the “AeroDry 2.0 + PETFusion 2.0 with CL” tier)</span><br/>If you choose the commercial bundle tier, you’ll be able to <span class="bold">produce, use, and sell</span> both AeroDry and PETFusion commercially — a great option for service providers, educators, or resellers.</li>
+</ul><p><span class="bold">AeroDry 2.0 + PETFusion 2.0</span> is the perfect combo for any maker.</p><p>With <span class="bold">PETFusion 2.0</span>, you can turn waste into filament.<br/>With <span class="bold">AeroDry 2.0</span>, you can keep that filament perfectly dry and ready to print.<br/>And by backing the <span class="bold">bundle</span>, you save money and get a complete DIY ecosystem — built entirely around your printer, your space, and your pace.</p><p>👉 <span class="bold">Back the project today, print it yourself, and start creating more — for less.</span><br/>Let’s bring this DIY ecosystem to life — together.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">At Creative3DP, our top priority is to deliver practical, tested, and reliable tools for the maker community. AeroDry 2.0 has gone through multiple design iterations, functional testing, and real-world use cases before this launch. We’re confident that it works as intended — and that you’ll love using it.
+
+Since AeroDry 2.0 is a fully 3D-printable DIY product, the only "challenge" is printing and assembling it — and that’s what makes it fun. You don’t need any advanced electronics skills, just basic tools and widely available components.
+
+We want you to feel 100% confident backing this project. That’s why we offer full support for any issues you face during the build. Your satisfaction is important to us 
+
+We’ve built AeroDry 2.0 to be reliable, easy to use, and easy to build. With this project, there are no complex supply chains or manufacturing delays. You print it, you build it, and it works — simple.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Unlike many consumer gadgets that break or become obsolete, AeroDry 2.0 is designed to be long-lasting and repairable. Most parts are 3D printable, so if anything wears out or breaks, you can simply reprint that part — no need to throw the whole thing away. Plus, the modular stacking system lets you expand your setup as your needs grow, so you won’t need to replace it with something bigger later.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">By offering AeroDry 2.0 as a 3D-printable digital product, we reduce the carbon footprint typically caused by mass manufacturing and global shipping. You download it, you print it — no warehouse, no waste.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">AeroDry 2.0 helps you extend the life of your filament by keeping it dry and print-ready at all times. That means fewer failed prints, fewer unusable spools, and less filament thrown away due to moisture damage.
+
+Combined with PETFusion 2.0, you get a closed-loop system — recycle plastic, print your filament, dry it, and use it to its full potential. It's a practical step toward more sustainable 3D printing.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

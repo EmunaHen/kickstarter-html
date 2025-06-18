@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenShower: Waste Ends Here</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/402/920/e386d013049f232f5c6345cd1245847e_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1748055613&width=560&sig=QFBJmskCWLLu490zB82DmbVGkmOUBRIJljellDRPfGg%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>OpenShower: Waste Ends Here</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Efficiency Right Out of the Box | Open Design | Personal Sensory Shower | 3D Printed</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,644</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn"><div class="flex-col gap-1 md:gap-3"><div class="flex max-w-full flex-col flex-grow"><div class="min-h-[20px] text-message flex w-full flex-col items-end gap-2 whitespace-normal break-words [.text-message+&amp;]:mt-5"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]"><div class="markdown prose w-full break-words dark:prose-invert dark">
+<p><span class="bold">Time to Redefine the Shower</span></p>
+<p>It’s time to break free from monotony, inefficiency, and the lack of innovation and new experiences in our showers. </p>
+<p><span class="bold">Where to start?</span></p>
+<p>A common solution is simply replacing the shower head — addressing only the tip of the iceberg. If you truly want to build in efficiency and deliver new experiences from the ground up, you need to replace the water heater, adapt the plumbing, and install additional equipment like lights and sensors. But that quickly becomes expensive and difficult to modify.</p>
+<p><span class="bold">Blanya OpenShower changes all that.</span></p>
+<p>Elevate your shower experience without spending thousands of dollars or touching anything in your bathroom. Make your shower the star of your bath with our plug-and-play, all-in-one system, ready to use right out of the box. No complicated setup. No hidden costs. Just a simple, complete solution.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49401168">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/401/168/eb32343a7bce9a15f2d987a8da296a0d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748036804&amp;width=680&amp;sig=vQWx5pxWE8scrk%2BcEY%2BWU%2BhhBFXy%2B%2Bpfd9wNNwLCtRo%3D"/>
+</figure>
+</div>
+<p><span class="bold">Vision:</span></p>
+<p>Owning a premium shower system should be as <span class="bold">simple </span>as buying a coffee machine or a vacuum — a single solution that brings together sophistication, efficiency, and innovation to help you control your comfort, your routine, and your resources.</p>
+<p><span class="text-italic"><span class="bold">Join us in redefining what a shower can be.</span></span></p>
+</div></div></div></div></div></div><h3 class="page-anchor" id="h:The-New-Water-Saving">The New Water Saving</h3><h4 class="page-anchor" id="h:1-Water-Limit-"><span class="text-italic">1.- Water Limit: </span></h4><p><span class="text-italic"><span class="bold">Showerheads reduce waste. Water limits eliminate it.</span></span></p><p>With a 19-liter (5-gallon) tank, Blanya OS introduces a natural limit that encourages a reconfiguration of habits without sacrificing comfort. </p><h4 class="page-anchor" id="h:2-Hands-Free-"><span class="text-italic">2.- Hands-Free:</span></h4><p><span class="bold">No Water, No Time, No Focus Wasted</span></p><p>With a fixed water supply, every drop counts — and every distraction needs to go. Blanya OS is designed to eliminate the most common sources of waste and let you focus fully on your shower experience.</p><ul>
+<li>
+<span class="text-italic"><span class="bold">No wasted water while heating</span></span><br/>Water is pre-heated and stored in the tank. It only travels 2 meters to the showerhead, so you get hot water instantly — no need to let it run.</li>
+<li>
+<span class="bold">No need to adjust temperature</span><br/>Forget fiddling with knobs. The system delivers your perfect temperature instantly. Just press the button and enjoy.</li>
+<li>
+<span class="bold">No manual pressure control</span><br/>The system automatically adjusts water pressure based on your profile. There's no need to pause, tweak, or touch anything mid-shower.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49523658">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/523/658/58017f7ae4dc11b6fe12a86fc187f115_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748922847&amp;width=680&amp;sig=%2F%2Bq2UHmcn1YT1BUX%2FJ8hu4oh8HRajbcABlAwT0Jjs1M%3D" src="https://i.kickstarter.com/assets/049/523/658/58017f7ae4dc11b6fe12a86fc187f115_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748922847&amp;width=680&amp;sig=%2F%2Bq2UHmcn1YT1BUX%2FJ8hu4oh8HRajbcABlAwT0Jjs1M%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:3-Profiles-"><span class="text-italic">3.- Profiles: </span></h4><p><span class="text-italic"><span class="bold">The best way to save water is to plan ahead — and enjoy doing it.</span></span></p><p>With thousands of possible combinations, <span class="bold">Profiles</span> are your personal memory presets. They coordinate water pressure, temperature, and even light intensity and color — giving you full control with zero effort during your shower.</p><p>Take the <span class="bold">“Barista Profile”</span>, for example:<br/>It delivers full <span class="bold">pressure </span>for the first minute — perfect for rinsing — then reduces the flow while you soap up, increasing it again in a loop during the first five minutes, and maintains a steady flow for the rest of the shower. Light colors shift along with the pressure, helping you intuitively follow each stage of your routine.</p><p>Create your own, or choose from curated presets. As we discover amazing combinations, we’ll share them with you.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49554869">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/554/869/10910fe9197fa06d18886d70b7197001_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749096761&amp;width=680&amp;sig=Q2J9X4fSpGqjWzve2rOVgeN%2B3c1oxq64%2BHk3CZ0e76Y%3D" src="https://i.kickstarter.com/assets/049/554/869/10910fe9197fa06d18886d70b7197001_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749096761&amp;width=680&amp;sig=Q2J9X4fSpGqjWzve2rOVgeN%2B3c1oxq64%2BHk3CZ0e76Y%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:4-Invisible-Waste-Ends-Here">4.- Invisible Waste Ends Here</h4><p><span class="text-italic"><span class="bold">Now, you can finally see what was once hidden.</span></span></p><p>Blanya’s transparent cylinder reveals how water is used at every stage of your shower — creating a new sense of awareness and connection.</p><p>Plus, the top display shows real-time information about your shower that you’ve probably never seen before.</p><h3 class="page-anchor" id="h:Saving-Energy"><span class="text-italic">Saving Energy</span></h3><p>From day one, Blanya OS heats <span class="bold">only the exact amount of water you need</span> — at the precise temperature you want — giving you a perfectly comfortable shower with <span class="bold">less waste, lower energy bills</span>, and a smaller environmental footprint.</p><p><span class="bold">Want to save even more?</span> Switch between Profiles or slightly lower your shower temperature — even by 1°C — and, thanks to the built-in sensor, you’ll always know exactly how hot it is, helping you save by using less water and heating it less. Review how the calculations are done <span>here</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49579947">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/579/947/267afd524db43a38b8d3e3ab5db86775_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749252463&amp;width=680&amp;sig=TOrbkmfQiZxbjrUORrTYjqEZcETaeFHfli0%2FpjB5zF0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Modularity"><span class="text-italic">Modularity</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49402728">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/402/728/3e6abdbdb5b717b87d122a30bcb1f8a3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748052831&amp;width=680&amp;sig=PpaukSePLu0AcdCDlNmf1AU50IT1UYN%2FRRQMcAKyxEY%3D"/>
+</figure>
+</div>
+<p><span class="bold">The system follows a Right to Repair philosophy.</span></p><p>Modularity means savings — broken or outdated parts can be reprinted or updated whenever needed.</p><p>The electronics are designed for easy replacement and upgrades through separate modules like the main board, battery, and power unit. Some components follow a LEGO-like structure, making repairs even more accessible.</p><p>For <span class="bold">non-3D</span> printed parts, standard, universally available components were prioritized — so you can find replacements.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="There are no hidden parts — each component is designed to be fully visible and accessible." data-id="49403470">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/403/470/a061a83e04d16fcc84609d0efff95502_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748063259&amp;width=680&amp;sig=5KHX%2FDkIFGDpSw8Jk0Foi3VhEBbzao5%2Bw3YgGHN5%2BKE%3D"/>
+<figcaption class="px2">There are no hidden parts — each component is designed to be fully visible and accessible.</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Safety-Operation">Safety &amp; Operation</h3><h4 class="page-anchor" id="h:Safety-">Safety: </h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49410935">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/410/935/db93aae60881be718482b5c4d7896a9b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748139778&amp;width=680&amp;sig=Iz60xrvxzQ8IxeXFIgcTcRhqsLDk%2BlBwzBjVRLOJaA8%3D" src="https://i.kickstarter.com/assets/049/410/935/db93aae60881be718482b5c4d7896a9b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748139778&amp;width=680&amp;sig=Iz60xrvxzQ8IxeXFIgcTcRhqsLDk%2BlBwzBjVRLOJaA8%3D"/>
+</figure>
+</div>
+<p>The shower only needs to be connected to main power to heat the water. For safety, it <span class="bold">cannot</span> be used while plugged in. Once the water is heated, two batteries power your shower experience.</p><p>A built-in temperature sensor monitors the water temperature, and you can also check it by simply touching the water tank. All electronics are <span class="bold">isolated </span>from the water to support durability and a long lifespan.</p><h4 class="page-anchor" id="h:Operation-">Operation:</h4><ul>
+<li><span class="text-italic">Fill the tank with water.</span></li>
+<li><span class="text-italic">Connect to main power to heat the water.</span></li>
+<li><span class="text-italic">Press the button once and wait until the target temperature is reached.</span></li>
+<li><span class="text-italic">Disconnect the shower from main power.</span></li>
+<li><span class="text-italic">Press the button again to start the shower</span></li>
+</ul><h3 class="page-anchor" id="h:One-Place-for-Sensations">One Place for Sensations</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49209614">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/209/614/38d68f2680a6a28ca27a231c614981a9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746755836&amp;width=680&amp;sig=UetFv%2BZtwcquVX7U11H603NJ62AVWabWHiYcTfjCCfI%3D" src="https://i.kickstarter.com/assets/049/209/614/38d68f2680a6a28ca27a231c614981a9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746755836&amp;width=680&amp;sig=UetFv%2BZtwcquVX7U11H603NJ62AVWabWHiYcTfjCCfI%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:See-"><span class="text-italic">See:</span></h4><p>Most of the shower is made of <span class="bold">transparent </span>materials, allowing you to observe both the water quality and the amount of water being used — encouraging awareness and conservation. This design also makes it easy to visually inspect the structure and spot any residue buildup. </p><p>Complete your experience with the calming effect of bubbles, illuminated by an LED light at the bottom of the tank, offering a wide range of colors to set a soothing and personalized mood. The bubbling water creates gentle waves that reflect light across your entire bathroom.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49555376">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/555/376/72697baa3aa529fa6973f80a01a49e2b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749101147&amp;width=680&amp;sig=AeEqvZ%2FLHVf4Pd94KjfAwpoqpijg%2FMn3EeHuhKaO1Iw%3D" src="https://i.kickstarter.com/assets/049/555/376/72697baa3aa529fa6973f80a01a49e2b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749101147&amp;width=680&amp;sig=AeEqvZ%2FLHVf4Pd94KjfAwpoqpijg%2FMn3EeHuhKaO1Iw%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Hear-"><span class="text-italic">Hear:</span></h4><p>The soft sound of hundreds of bubbles enhances the relaxing atmosphere. The motor, positioned at the center of the electronics cylinder, is carefully isolated by a 3 mm acrylic wall. During the shower, it operates quietly, ensuring a peaceful and uninterrupted experience.</p><h4 class="page-anchor" id="h:Touch-">Touch:</h4><p>You can rely on the displayed temperature — or simply touch the water tank, which maintains a uniform warmth thanks to the circulating bubbles. You can also feel the fine droplets from the shower head at the pressure you prefer, ensuring every moment is tailored to your comfort.</p><h3 class="page-anchor" id="h:Expand-Your-Experience-">Expand Your Experience<img class="image" data-id="49433769" src="https://i.kickstarter.com/assets/049/433/769/4f543b9511fa216f0e9a2240420bcc2c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748324585&amp;width=614&amp;sig=ny9v9a9RIgqx9kuLoqNTiMfDj3rrSY4%2FXTizV8Jthu0%3D"/>
+</h3><h4 class="page-anchor" id="h:Sensors-Data-"><span class="text-italic">Sensors &amp; Data:</span></h4><p>This version includes two sensors at the bottom: one for pressure and one for temperature. </p><p>All readings are accessible, offering valuable insights to better understand and optimize your shower routine.</p><p>There’s also space reserved for an additional pressure sensor at the top, allowing for future upgrades or more advanced monitoring.</p><h4 class="page-anchor" id="h:3D-Printed-"><span class="text-italic">3D Printed:</span></h4><p>Most parts are 3D printed, giving you the freedom to improve or replace components as you like — allowing your shower to evolve with your needs.</p><h4 class="page-anchor" id="h:UI-UX-"><span class="text-italic">UI &amp; UX:</span></h4><div class="group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn"><div class="flex-col gap-1 md:gap-3"><div class="flex max-w-full flex-col flex-grow"><div class="min-h-8 text-message flex w-full flex-col items-end gap-2 whitespace-normal break-words text-start [.text-message+&amp;]:mt-5"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]"><div class="markdown prose w-full break-words dark:prose-invert dark">
+<p>Mounted at the top of the shower, a 1.28-inch round, watch-style LCD screen displays real-time information.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49491931">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/491/931/bf202c384d61ba552af6632b8d2bae69_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748661281&amp;width=680&amp;sig=KP6rBGr%2BDfALYUaIqDZjrhHMj%2B4n7syPWgT41qeP5fc%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">1. Water Temperature:</span> Displays the current water temperature in Celsius.</li>
+<li>
+<span class="bold">2. Shower Profile:</span> This icon changes based on the selected profile.</li>
+<li>
+<span class="bold">3. P.Bott:</span> Measures water level before and pressure during the shower.</li>
+<li>
+<span class="bold">4. Start/Pause:</span> Displays “Start” before and “Pause” during the shower.</li>
+<li>
+<span class="bold">5. Battery</span>: Indicates the current battery level charge status.</li>
+<li>
+<span class="bold">6. Bluetooth:</span> Gray means not connected; yellow indicates a successful connection.</li>
+<li>
+<span class="bold">7. Desired Temp:</span> The target temperature for your shower.</li>
+</ul>
+</div></div></div></div></div></div><h4 class="page-anchor" id="h:Shape-"><span class="text-italic">Shape:</span></h4><p>An elegant, uniform cylinder is designed to minimize its footprint while combining form and function. The entire shower uses a single pipe diameter — making it easier to build, repair, and replace, since one size fits both the electronics and the water tank.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448560">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/448/560/c389f80b996dcc364f4e2b691993567c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748401661&amp;width=680&amp;sig=aU4Od5XOIMaN%2BVKlvVa5eQWiY5Qqf%2FZAIfHVtMYCl%2FA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Open-Design-Public-Resources">Open Design &amp; Public Resources</h3><p>With this combination of ideas and resources, I want to show you what’s been possible so far — in a way that’s as transparent as the shower itself. </p><h4 class="page-anchor" id="h:Fusion-360-"><span class="text-italic">Fusion 360:</span></h4><p>The 3D model includes only the printable parts and their placement to help you identify each shower component. Acrylic pipes are shown for reference, but they are not intended to be printed.</p><p><span class="text-italic"><span class="bold">Colored View:</span></span> <span>https://mymy18804.autodesk360.com/g/shares/SH30dd5QT870c25f12fc106a6cc78a09e97c</span></p><p><span class="text-italic"><span class="bold">Black View:</span></span> <span>https://mymy18804.autodesk360.com/g/shares/SH30dd5QT870c25f12fcdd294b2c0f4d469b</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Both versions are the same — only one has colored parts for easier identification." data-id="49192878">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/192/878/de2b73f941db815d955d043fb0180399_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746644797&amp;width=680&amp;sig=iZs%2BSLH4hN9cOWRiH%2Fvjja8w7xPm1BbAnFzdI%2BuY5D8%3D"/>
+<figcaption class="px2">Both versions are the same — only one has colored parts for easier identification.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Instructables-"><span class="text-italic">Instructables:</span></h4><p><span class="text-italic">Additional building details based on the YouTube video, plus extra insights about the process.</span></p><p><span>https://www.instructables.com/OpenShower-One-Place-for-Sensations-Sophistication/</span></p><h4 class="page-anchor" id="h:Youtube-"><span class="text-italic">Youtube:</span></h4><p>The YouTube video walks through the 18 steps to build the model, showing in detail how parts are handled, which tools are used, and extra insights only visible through video.</p>
+<h4 class="page-anchor" id="h:GitHub-"><span class="text-italic">GitHub:</span></h4><p><span class="text-italic">This is where the code, bill of materials, shower profiles, issues, and more are stored.</span></p><p><span>https://github.com/blanyaShowers/OpenShower</span></p><h3 class="page-anchor" id="h:Filling-the-Tank">Filling the Tank</h3><p>The first step to start using your shower, which is why there's a dedicated section explaining the two available methods.</p><p><span class="bold">Hose:</span> The fastest method. You can choose the water source—for example, by attaching a quick connector to a showerhead or using an adapter like the <span class="text-italic">Water Bandit</span> on a faucet.</p><p><span class="bold">Funnel:</span> If a hose isn’t available, you can fill the tank manually with a funnel. It works, but it’s slower.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49433630">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/433/630/938b2a32f736f71082dbc5f0d48e794d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748323638&amp;width=680&amp;sig=Z62Quj5qhaJZuzxZeOk1bZRNjjOTIHmokpIyssV7MZA%3D" src="https://i.kickstarter.com/assets/049/433/630/938b2a32f736f71082dbc5f0d48e794d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748323638&amp;width=680&amp;sig=Z62Quj5qhaJZuzxZeOk1bZRNjjOTIHmokpIyssV7MZA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Prototype-Specs">Prototype Specs</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49492355">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/492/355/1029d74d9d8eb5290307b8756013827d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748665624&amp;width=680&amp;sig=R3j2FqiCLme3biZyOOJsbAHDxVPzJFL3%2B2Asm4s6Gdg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Other-Details">Other Details</h3><ul>
+<li>
+<span class="bold">Batteries:</span> 2x 18650</li>
+<li>
+<span class="bold">Battery Charging:</span> Happens while the shower is connected to main power.</li>
+<li>
+<span class="bold">Heating Element:</span> The base power is 1000 W, but it can reach up to 2000 W.</li>
+<li>
+<span class="bold">Connectivity:</span> Bluetooth-enabled. Settings can be adjusted using the <span class="text-italic">nRF Connect</span> app on your smartphone.</li>
+<li>
+<span class="bold">Working Principle:</span> Pressurization.</li>
+<li>
+<span class="bold">Bubbles:</span> Air is added from the bottom of the tank to create bubbles, pressurize the system, mix with the water, and generate soothing waves and sounds for a relaxing experience..</li>
+<li>
+<span class="bold">Shower Arm:</span> The shower arm length is a standard 82 cm but can be modified based on your height or preferred measurements.</li>
+<li>
+<span class="bold">Water Flow Range:</span> 1.3 – 1.8 L/min</li>
+<li>
+<span class="bold">Operating Pressure</span>: 0.5 - 1 psi</li>
+</ul><h3 class="page-anchor" id="h:Why-Support-This-Project-">Why Support This Project?</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49563626">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/563/626/c7291751567d5c1a8e47a190df7eae70_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749147728&amp;width=680&amp;sig=yXAcS%2FIPwuYycrFAPw3Cmb3KWIP%2FzDxWsTye9EPfftU%3D"/>
+</figure>
+</div>
+<p>What started as a <span class="bold">personal </span>solution to my shower problems grew into a quiet revolution against everything we take for granted about the way we shower. It became a search for clarity, flexibility, and beauty within one of the most essential routines of daily life.</p><p>This project is part of a broader shift—toward transparency over complexity, precision over waste, and imagination over convention. It’s not just about rethinking the shower—it’s about creating a <span class="bold">new </span>category of products that expand the experience, making it personal, efficient, and open to change.</p><p>Support doesn’t just help build hardware. It helps shape a future where design, sustainability, and accessibility coexist—out in the open, not <span class="bold">behind </span>a wall.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Blanya Octopus – Concept Sketch" data-id="49580637">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/580/637/4ba59d8b54447e6c12e2b59a40c7c67c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749258217&amp;width=680&amp;sig=S2bV23a90ucXzyOqlsbG7CDJogoqM%2FUjki58Wf0IOgo%3D"/>
+<figcaption class="px2">Blanya Octopus – Concept Sketch</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:After-Your-Order">After Your Order</h3><h4 class="page-anchor" id="h:Delivery-">Delivery:</h4><p>Shipping costs are <span class="bold">not </span>included in your pledge and will be charged separately when your order is ready to ship. At that time, you’ll be able to choose your preferred shipping method, with costs based on your location.</p><p>Please note that <span class="bold">international </span>orders may incur <span class="bold">additional </span>import duties, taxes, and customs fees, which are the responsibility of the recipient and determined by the destination country.</p><p>Both the OS Kit and Fully Assembled OS will ship from <span class="bold">Mexico</span>. The average shipping weight (including packaging) is approximately 5 kg (11 lbs). Once your order ships, you’ll receive a confirmation email with a tracking number.</p><h4 class="page-anchor" id="h:Warranty-">Warranty:</h4><p><span class="bold">Missing </span>parts and manufacturing <span class="bold">defects </span>in 3D-printed components and PCBs are covered for 15 days from the delivery date, for both the <span class="bold">OS Kit</span> and <span class="bold">Fully Assembled OS.</span></p><p>If a defective part is confirmed, a replacement will be shipped within 15 days of resolution. We will <span class="bold">cover </span>up to $10 USD of the shipping cost; any remaining amount must be covered by the customer.</p><h4 class="page-anchor" id="h:Returns-">Returns:</h4><p>You may return the product within 15 days of delivery. A full refund will be issued once the item is received and inspected. Return shipping costs are the responsibility of the customer.</p><h4 class="page-anchor" id="h:Exchanges-">Exchanges: </h4><p>Exchanges are <span class="bold">available </span>for any color change or to upgrade/downgrade between the OS Kit and the Fully Assembled OS. This exchange is only possible if the package has not yet been shipped.</p><h4 class="page-anchor" id="h:Support-">Support:</h4><p>Support materials covering common issues are included. Known issues are tracked publicly in the GitHub Issues section. If you need additional assistance, a dedicated support <span class="bold">email </span>will be provided to backers.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">I’ve made every effort to anticipate and address potential risks.
+
+The most critical risk is the potential failure to deliver the rewards. However, the core parts already exist, the product is functional, and progress is publicly documented to ensure transparency and build trust.
+
+Rewards will not be shipped immediately after the campaign ends, as minor issues will be addressed first and improvements will be made based on feedback and questions from early supporters. This extra time will help refine existing features and ensure a better experience for everyone.
+
+The progress of this project depends largely on the time and resources I can personally dedicate. Another challenge is making sure this Kickstarter campaign gains enough traction to bring others on board and start involving more people in the vision.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>AI was used to ensure correct grammar and eliminate redundancy.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The majority of components are modular and repairable. Instead of relying on sealed, disposable systems, OS is designed to be opened, maintained, and upgraded over time. Individual parts can be replaced without discarding the entire unit, reducing waste and significantly extending the product’s lifespan.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

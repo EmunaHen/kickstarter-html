@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NPS Envision: The Next Generation of AR Clarity</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/048/594/930/4faa94393871ee5d10f6047abdc990d6_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1742458397&width=560&sig=JxpwoEHKzFMJOUx9dtVs%2Bq%2FmML1JRvmdAOJuPsVGFUc%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>NPS Envision: The Next Generation of AR Clarity</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">AR Glasses That Bring the Digital World Into Focus – Now 50% Off for Super Early Backers</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48813195">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/813/195/6fd39773fac44468443c94b53fd2f31f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744020368&amp;width=680&amp;sig=JVlnuZnSReRKKZEdcjnhCEuL1MHqW5C7AcBUOqy%2BjYk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48813209">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:See-the-Future-Before-Anyone-Else">See the Future Before Anyone Else</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/813/209/095dbb9595155b19d27f84dfed135e34_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744020454&amp;width=680&amp;sig=b51f1QYDUSeFp4sglvWeFZ6bM5TR12CzC06d9kEdL%2FQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559327">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/327/0b28b4f7b53413f1b35fd1f742b3b0e4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749126988&amp;width=680&amp;sig=hTrZx6yY51bZD%2BAH3%2BFtVfnnR0L9vfplpLzMZnXKkoo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48900190">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/900/190/0741224867ff8f5196f73483e4dc368d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744635443&amp;width=680&amp;sig=CWP0HYlubbtLxZFPv0nOfFlvMQvbVNA7L91hkdlw6CM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559356">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-Own-Personal-220-Inch-AR-Theatre">Your Own Personal 220-Inch AR Theatre</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/356/87bf974c67bdcea3809fef4149ab092e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749127200&amp;width=680&amp;sig=qYoG%2BIxa1ceHfaK2vhj2qOaGWUU7JqNQfLMZG6ijBxs%3D"/>
+</figure>
+</div>
+<p>Enter a new world of AR technology. With a stunning <span class="bold">220-inch micro OLED</span> screen, these sleek, ergonomic glasses boast the <span class="bold">largest AR display</span> in the world. Everywhere you go - enjoy a full HD 1920x1080 resolution full of vivid imagery and hypnotizing colors right in front of your eyes.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48813218">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/813/218/d7d3d3e5d8a3f0766ae803ddd23c0c03_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744020499&amp;width=680&amp;sig=Ze0QEzY4SYIAZtucVzzzhW8LWN5fQYtKBcl0CBWboxM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49581374">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/581/374/ef2606dcc7b0dd8e850d22bddd557cbe_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749265324&amp;width=680&amp;sig=0xvyTx0MdIwCFqFQ85lj3YxkPosTKVF8eqrglGDUPR8%3D" src="https://i.kickstarter.com/assets/049/581/374/ef2606dcc7b0dd8e850d22bddd557cbe_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749265324&amp;width=680&amp;sig=0xvyTx0MdIwCFqFQ85lj3YxkPosTKVF8eqrglGDUPR8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48929639">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:No-More-Prescription-Lenses">No More Prescription Lenses</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/929/639/fd62e68d7b794e0fde0438735e059831_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744808282&amp;width=680&amp;sig=jvPhxu0qdEJUc8UKBJDLcNsFNT2lbKWDJtngN%2Bsc9F0%3D"/>
+</figure>
+</div>
+<p>No more need for glasses - adjust your vision instantly! Our AR glasses are designed to innovate convenience and comfortability and make perfect vision effortless with its <span class="bold">0-600° dioptric adjustment wheel</span>. By simply twisting the wheel, instantly fine-tune the display to match your definition of perfect clarity so that you can focus on the future.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48813224">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/813/224/84583a4615eb2d8c19f47febba06cc01_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744020524&amp;width=680&amp;sig=g6TiXAQF2aLMz%2BM5kKRRjAgNrXjYZx7itQzq72hpQb4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48929653">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Connect-Your-Drone-Camera-">Connect Your Drone Camera!</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/929/653/5d89d951b6513a5435f9b7f17bc7e9c2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744808343&amp;width=680&amp;sig=DXkBFM46tu%2FCkM590pSNxZ08%2BLaNfsyz589nzT8Muq4%3D"/>
+</figure>
+</div>
+<p>Stream the unlimited heights of your drone feed! The Envision AR Glasses are equipped with <span class="bold">Drone Eagle Eye Image Transmission</span> - allowing you to experience a direct, <span class="bold">real-time feed of your drone footage</span> on its massive 220-inch display. Bring the views of the sky right in front of your own eyes  - seamlessly streamed, effortlessly controlled.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48939808">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/939/808/4f07bd5ed3198fbf744581d4b4edf6ec_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744875085&amp;width=680&amp;sig=RAYydfHwVbaMxR0I6fhI%2FhqqzeWKtkOaxR44M74M%2Fyg%3D" src="https://i.kickstarter.com/assets/048/939/808/4f07bd5ed3198fbf744581d4b4edf6ec_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744875085&amp;width=680&amp;sig=RAYydfHwVbaMxR0I6fhI%2FhqqzeWKtkOaxR44M74M%2Fyg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48929666">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Personalize-Your-Style">Personalize Your Style</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/929/666/78cf61ec1d4a46d6f216607bbfb1b593_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744808397&amp;width=680&amp;sig=iPd5T461VCj90PARMqn6YL1ga025zfwijvSv4h%2FZCJI%3D"/>
+</figure>
+</div>
+<p>With the help of our backers to reach our goal, the NPS Envision AR Glasses will come with 1 out of your choice of 3 <span class="bold">stylized, customizable attachable visors</span>. Designed for ultimate immersion, the visor darkens backgrounds for a more complete cinematic experience. Simply attach and detach the visor by its magnets at your convenience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48813278">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/813/278/7da758004786ec59bb902e3487ab313d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744020761&amp;width=680&amp;sig=9RgiX%2FeWTUOTA42p6pop4Ol2uDw1Q4jh7D9CrUiPE1o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49581474">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/581/474/e7d7e720c5c908b6a658ce52a7d95ba0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749266136&amp;width=680&amp;sig=BjEgawIWNJU5Q2h9rc5vOnhFUF0QY0LV3kQdFfs4mQQ%3D" src="https://i.kickstarter.com/assets/049/581/474/e7d7e720c5c908b6a658ce52a7d95ba0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749266136&amp;width=680&amp;sig=BjEgawIWNJU5Q2h9rc5vOnhFUF0QY0LV3kQdFfs4mQQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48929681">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:True-to-Life-Clarity">True-to-Life Clarity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/929/681/1ba6d8b9367786cc29efb42dc7fe20f2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744808463&amp;width=680&amp;sig=5D8Nvf8ASzOjafiKNOvuLhr1VdREVxK8unqfv9EIJeM%3D"/>
+</figure>
+</div>
+<p>The NPS Envision AR Glasses are equipped with an <span class="bold">ultra-bright 1500-nit display</span> to help provide the ultimate cinematic experience. Colors burst to life with stunning vibrancy, sharpness, and <span class="bold">true-to-life clarity - even in sunlight!</span> We have carefully designed our HD display so that you can experience augmented reality at its most vivid, wherever you go, without limitations! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48813258">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/813/258/d022ec887bba5163075a0696b3a4f8ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744020684&amp;width=680&amp;sig=uSIgxXIngOzpaq8VQ3UFZmiPazbVjwzRrFWMbEszoKE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48929695">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Unparallelled-Cinema">Unparallelled Cinema</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/929/695/27bedff6abde107023974cf544f2fd88_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744808515&amp;width=680&amp;sig=dfcFm%2FOuEzRLzXArSOXRgdxlxJNeB4ukJAu8yNoTNHk%3D"/>
+</figure>
+</div>
+<p>The NPS Envision AR Glasses deliver an <span class="bold">unrivaled 52° field of view</span> - the widest on the market - creating an all-encompassing window into augmented reality. Watch your favorite shows and stream your favorite games with rich HD clarity and deep, vivid colors. It’s not just augmented reality - it’s cinematic excellence, right before your very eyes.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48900255">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/900/255/314b1e9e2fe35f6c71c6d62d6a6bbaeb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744635952&amp;width=680&amp;sig=ftQI922CbD%2BcBijjOhN1AXjQtWz1U%2FokHWobRiBdiV8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48929706">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Upgrade-Your-Gaming-Experience">Upgrade Your Gaming Experience</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/929/706/f31743a10a7882003a751475347a0c73_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744808572&amp;width=680&amp;sig=pLF7o6zEBxhFw5g9dHnRcETFSuE1zFf%2F0f%2BByztNCNA%3D"/>
+</figure>
+</div>
+<p>As the perfect complement to the Envision, the AR station is your personal entertainment hub. <span class="bold">Powered by Android 14</span>, the AR station is certified with Google TV so that you can watch movies and TV shows on all of your favorite streaming services, such as <span class="bold">Netflix, AppleTV, Amazon Prime, and Hulu.</span> Power up your favorite games with <span class="bold">Xbox Game Pass and Nvidia GeForce Experience</span>. Take your personal cinema and video game setup with you anywhere you go with the Envision’s AR Station.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49581502">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/581/502/2aef01f80a760452683d4ad79b103ee2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749266371&amp;width=680&amp;sig=zIlMB5M5qbTo4RuYd1%2BxBq25fIVIkP5oooKG1Tfu8Ek%3D" src="https://i.kickstarter.com/assets/049/581/502/2aef01f80a760452683d4ad79b103ee2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749266371&amp;width=680&amp;sig=zIlMB5M5qbTo4RuYd1%2BxBq25fIVIkP5oooKG1Tfu8Ek%3D"/>
+</figure>
+</div>
+<p>See how the brand new Marvel Rivals game works on the Envision AR Glasses!</p>
+<p>Invest in innovation that lasts. Our AR glasses, equipped with cutting-edge Apple <span class="bold">3D decoding technology, process 3D content</span> with stunning depth and realism, making movies, games, and augmented reality experiences feel truly lifelike. Designed to stay ahead of the curve, this technology ensures seamless performance for years to come with continuous software updates and unrivaled hardware support.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49581485">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/581/485/9ffa62b5590ae7d4ac0312293fed3a5d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749266239&amp;width=680&amp;sig=juPRO%2FMuzLnzoaDufhCdlG8bRq%2BfE2web%2Fvs0Twgk78%3D" src="https://i.kickstarter.com/assets/049/581/485/9ffa62b5590ae7d4ac0312293fed3a5d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749266239&amp;width=680&amp;sig=juPRO%2FMuzLnzoaDufhCdlG8bRq%2BfE2web%2Fvs0Twgk78%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48929730">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Universal-Type-C-Connectivity">Universal Type-C Connectivity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/929/730/7ca38a1d64645d541c78f2d0550cfb6b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744808680&amp;width=680&amp;sig=hokiGWC3OQSwT3M3Z4xozTReUP6mLMfMCQJHj5mYARw%3D"/>
+</figure>
+</div>
+<p>As well as the AR Station, the Envision AR Glasses can seamlessly connect to <span class="bold">any device with a USB Type-C connection</span>, such as Samsung smartphones and <span class="bold">Samsung Dex, Apple computers, Windows devices, gaming consoles</span>, and gaming streaming services such as <span class="bold">Nvidia GeForce Experience and Xbox Game Pass</span>. Simply plug the AR glasses into your desired device and create the ultimate ecosystem for entertainment, work, and gameplay!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49581449">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/581/449/8b741fa4cd5882fe7780aae0e13159ab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749265965&amp;width=680&amp;sig=a1M5L3rNeWkNgXW%2BLS%2FS%2FpYz69obPyfSQkg7V24uxqE%3D" src="https://i.kickstarter.com/assets/049/581/449/8b741fa4cd5882fe7780aae0e13159ab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749265965&amp;width=680&amp;sig=a1M5L3rNeWkNgXW%2BLS%2FS%2FpYz69obPyfSQkg7V24uxqE%3D"/>
+</figure>
+</div>
+<p>See how the Envision AR Glasses tests below! We invited early supporters to help test earlier versions of the Envision and made sure to implement their feedback into our latest models. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48813315">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/813/315/b9cae55ccbdd4d2c080da0eed7d36133_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744020942&amp;width=680&amp;sig=%2BhBaZDCynfMMAIzaxi1bP2tcCdesBWEawWqjkYTXdnI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48900060">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Technical-Specifications">Technical Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/900/060/00cb3ff480b4515d17d9e0cfb4dd2052_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744634304&amp;width=680&amp;sig=R5URPnCbSae97PWYcTkbMPYBegLKTcB5UThjghpP3zE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48900057">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/900/057/ca31770e310ba4789144c72c9800109c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744634269&amp;width=680&amp;sig=C1HVAUzGZgSADBueKevgyz%2FctIdQOJdPn2QF7w2faks%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48900058">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/900/058/2b16595d223e78a632018edd4c6838a9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744634279&amp;width=680&amp;sig=ge49T8kbeIew20qt%2BpZ%2FC0%2FC5N%2FdmtCfJuJBZ66qYK0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559492">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Exclusive-Kickstarter-Rewards">Exclusive Kickstarter Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/492/c4a9e6931604d93ea7863bcdf9c60807_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128378&amp;width=680&amp;sig=ArgPclqD8LrlGdsCeNI%2BrGhj1j%2FlGrCoMOe%2BNdFsRs0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559489">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/489/250520b7faad0e9f1252155bd55fb64a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749128352&amp;width=680&amp;sig=wnv%2BZybEpNNGbeqOsT9%2Ba99DKJFP1PIyU12Dl6HcnUk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48813337">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goals">Stretch Goals</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/813/337/8d9ba8387bb1aa27b1398fe2e396af57_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744021060&amp;width=680&amp;sig=Oufw7i%2BG%2FH1%2FEe58q5nDLlPoEqcZSCOY7Ye7j5R6S%2F8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48813339">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/813/339/10566d8ba01f0cdc442f3d48fb6d8e1c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744021069&amp;width=680&amp;sig=24j6t1XMgBLO8fzrukMzmcXWFsiV9AZhpdV273NkQHg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48813343">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline-Roadmap">Timeline &amp; Roadmap</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/813/343/ffdcea076c18ccd638e3ac5323d2dedf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744021082&amp;width=680&amp;sig=XSeh4%2B6yUZ3wBlaIoyBXmk29QWJ4ihpmnHjHjkCR9bs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559397">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/559/397/9b8894321f16e31de734ade4aa549331_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749127600&amp;width=680&amp;sig=%2F5ldvdGY2mkSdm2%2B2znfttGDoZ1UR9Msgmv3rrsXGlg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-Back-Us">Why Back Us</h3><p>When you back an NPS project, you are not just buying a product - you are helping to introduce a bold idea that revolutionizes the world and are becoming part of a story from the very beginning. We want our backers to believe in something bigger than just a product and feel the excitement that we feel. Maybe it's the excitement of being part of an innovative launch. Maybe it's the joy of supporting independent creativity. Maybe it's the thrill of becoming the world's first pioneers of new technology.</p><p>We are here because we believe in building something original - technology that redefines what cinematic excellence is. Your pledge shows that you believe in that too. By supporting us, you are not only getting exclusive early access and rewards - you are helping bring to life augmented reality that could only exist with your support.</p><p>This isn't just a pre-order. It’s a partnership. It’s your chance to say, <span class="text-italic">“I believed in this before anyone else did.”</span></p><p>Join us - and let’s make something extraordinary together.</p><h3 class="page-anchor" id="h:About-Us">About Us</h3><p>NPS is a crowdfunding startup with partnerships Sydney, Australia, Phoenix, Arizona, and Shenzhen, China. We have previously worked with Indiegogo to deliver its customers high-quality, cutting-edge products and make it our fundamental mission to always deliver for our customers. Our specialty is introducing new and innovative forms of technology to the world through crowdfunding, and look to bring you cutting-edge technology not yet seen by your everyday customer. As lovers of new technology, we have one goal - improve and simplify the lives of our customers.</p><p>With the Envision AR Glasses, we wanted to bring you a new medium to enjoy entertainment anytime, anywhere. We want you to enjoy the comfort of a television, the functionality of a computer monitor, the range of a dynamic sound system, and the luxury of a cinema all in one device. </p><p>We are excited to say that we are finally ready to bring the Envision AR Glasses to life. To everyone who supports us, we cannot thank you enough and look forward to delivering an Envision to all of you.</p><p>- Alec, Daniel &amp; Jacob - Co-Founders of NPS</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48998359">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/998/359/67c7413bc0bc0ce8098e580408f84b42_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745334678&amp;width=680&amp;sig=L2yKIZmarTuHk7q0gJAAJQ46dtzBb0uuY8XXNPHzXXU%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Supply Chain Management
+
+We are proud to collaborate with our industry-leading manufacturers, and as we scale up for mass production, we are committed to navigating any challenges with care. By working closely with our partners, we look to ensure exceptional quality and on-time delivery, so you will receive the best possible product.
+
+ 
+
+Product Development
+
+Our prototypes have undergone rigorous testing, and we’re thrilled with their performance and full functionality. As we transition to the final stages of production, we may make small refinements to ensure the best possible product. We are committed to keeping you informed every step of the way and deeply value your support on this journey!
+
+ 
+
+Shipping &amp; Delivery
+
+We will be working with trusted logistics partners to keep everything on track and combat delivery challenges, such as shipping delays, customs processes, or unexpected global events. Our goal is to ensure a smooth and reliable delivery experience for you.
+
+ 
+
+Software Improvements
+
+Powered by advanced AR technology, NPS Envision AR Glasses are designed to evolve with you. To enhance your experience and ensure seamless compatibility, future software updates may be needed. Our dedicated development team is committed to continuous improvements, delivering regular updates to keep your glasses performing at their best.
+
+ 
+
+Product Compliance &amp; Certification
+
+Because our supporters deserve the best, we are committed to ensuring that the NPS Envision AR Glasses meet the highest safety and quality standards in markets worldwide, as well as any and all necessary certifications and regional industry regulations.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
