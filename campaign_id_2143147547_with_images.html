@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Qalzy: World’s First AI Scale to Auto-Count Calories</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/198/787/4b1a574b5950accf66072a30b7fe3875_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1746687792&width=560&sig=QB0%2FIeQEGXpCTKo%2BgV%2BNUGhw7T2zj5Ad43%2B8OGhlhOk%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Qalzy: World’s First AI Scale to Auto-Count Calories</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">One Tap Calorie Counting | Weigh, Scan, Log in <4s | OpenAI Powered Camera | Gram Accuracy | 2.9M+ Verified Foods | No Subscription</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,315</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>41 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49378134">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/378/134/7c6bfeab66acb91ce2401593fc4af145_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747899256&amp;width=680&amp;sig=BLBkJjmly%2Ffm84iFj8ysIfBY5PPeUM2l7k5n%2B1ykguE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49378207">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/378/207/df95106db22a83d5aaeee6af6c17da37_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747899705&amp;width=680&amp;sig=dmnPvlEK1zAlxslnU1N%2BqZcEXf9e1jUehpBVjUOlq0w%3D" src="https://i.kickstarter.com/assets/049/378/207/df95106db22a83d5aaeee6af6c17da37_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747899705&amp;width=680&amp;sig=dmnPvlEK1zAlxslnU1N%2BqZcEXf9e1jUehpBVjUOlq0w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169712">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/712/462d772f28756033a21e84426a8ecc28_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746514945&amp;width=680&amp;sig=8UzF0Ndj2Dnz3AndINBuOLL8tC3qg7nexFuQCq%2F8cMg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49386467">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/386/467/bed908029469e25e74fee9fbe5c165c9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747942994&amp;width=680&amp;sig=oDzqK9pg3WD5prmWnSCD1YLjSxCPljpEx22rO8kS0rk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49306621">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/306/621/9f63310726131e20a953fcc7a31fbd84_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747421321&amp;width=680&amp;sig=JEoMZK4ts08JTfpksT0fKJwuwEO%2B5uF6QQjx2queqEQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49170052">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/170/052/50fbf009c51eca78b3d794e4210b5e6f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746517360&amp;width=680&amp;sig=YK2QP18%2Brgz4FLD4JM4BDR8DH%2FJhBpO%2B2BNiOScKxo0%3D" src="https://i.kickstarter.com/assets/049/170/052/50fbf009c51eca78b3d794e4210b5e6f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746517360&amp;width=680&amp;sig=YK2QP18%2Brgz4FLD4JM4BDR8DH%2FJhBpO%2B2BNiOScKxo0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169793">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/793/c028b0d89a48a195e27303ae04cd56d8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515806&amp;width=680&amp;sig=GKKm0VzipTwPFCBSx%2Bn6cOEK%2BoyXLC962BUpJnmZeTw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169779">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/169/779/3db9f2ef5e8f243bdf849960f0ed1f4a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515699&amp;width=680&amp;sig=NnX%2Fl8PCxmuDReVEkUDGYFx%2BDlm4wdDHTLlHUbo8Pns%3D" src="https://i.kickstarter.com/assets/049/169/779/3db9f2ef5e8f243bdf849960f0ed1f4a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515699&amp;width=680&amp;sig=NnX%2Fl8PCxmuDReVEkUDGYFx%2BDlm4wdDHTLlHUbo8Pns%3D"/>
+</figure>
+</div>
+<p>Before founding Qalzy, we started like most people do—phone in one hand, food scale in the other. One of us wanted to lose weight, the other to bulk. <span class="bold">Different goals, same pain: tracking our food was slow, clunky, and wildly inaccurate.</span><br/>We had to weigh everything. Search every ingredient. Type with dirty hands. Guess macros. Try five different apps. And even then, we weren’t sure we got it right.<br/><br/>Some days, we skipped logging altogether. Other days, we gave up halfway through a meal. It was exhausting.<br/><br/>That’s when we realized: <span class="bold">Tracking only works when it’s easy, fast, and accurate.</span><br/><br/><span class="bold">And that’s exactly what Qalzy does</span>.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169797">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Instant-Food-Logging">⚡| Instant Food Logging</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/797/8be1c1164c87f30a5fa820cef1d570f5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515851&amp;width=680&amp;sig=IrSEVOU4Jc2pDMvHJLgpi8M9eDbYhZ71i4%2FI4nj93iM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169803">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/169/803/8802aef42203419e08d2f435aee175e3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515876&amp;width=680&amp;sig=V5p4ZUCxTQcRB3p8jaGdQpUcJOYN75ddP9bqmcQCNvI%3D" src="https://i.kickstarter.com/assets/049/169/803/8802aef42203419e08d2f435aee175e3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515876&amp;width=680&amp;sig=V5p4ZUCxTQcRB3p8jaGdQpUcJOYN75ddP9bqmcQCNvI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Qalzy's OpenAI-powered</span> <span class="bold">camera </span>instantly recognizes <span class="bold">raw, cooked or packaged foods</span> and <span class="bold">automatically logs their calories, macros, vitamins and minerals</span>, all in just a tap.<br/>Just place your food on Qalzy, <span class="bold">press a button, and you’re done.</span><br/><br/>The built-in camera captures what’s on your plate. Powered by OpenAI, the AI <span class="bold">instantly identifies the food with world-class accuracy,</span> while the <span class="bold">precision scale measures the weight down to the gram. </span><br/><br/>Then, Qalzy matches everything to a <span class="bold">verified database </span>of over <span class="bold">2.9 million</span> foods from sources like <span class="bold">USDA </span>and <span class="bold">CoFID</span>, calculating your <span class="bold">calories and macros automatically.</span> Within seconds, your meal is<span class="bold"> logged and sent to the app</span> over Wi-Fi. You don’t need to use your phone while cooking or type with dirty hands. When you’re ready, you’ll find it already there in the app. <br/><br/><span class="bold">No typing. No searching. Just tap, track, and move on. </span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169809">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-4-Second-Tracking">⏱️| 4-Second Tracking</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/809/5e4b0cdf5946cb63bcf3ea4820475850_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515915&amp;width=680&amp;sig=8tOUPeGLewWePxi0OU3SKuH%2FFJeW4v99nCDtRktewJk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169813">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/169/813/c0ab23332001d8ad30da6c3f5d767aa1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515938&amp;width=680&amp;sig=xhY3fWcAh3WNAEE87YJnlxO6lQBeAtTKbSSKTqvfB2g%3D" src="https://i.kickstarter.com/assets/049/169/813/c0ab23332001d8ad30da6c3f5d767aa1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515938&amp;width=680&amp;sig=xhY3fWcAh3WNAEE87YJnlxO6lQBeAtTKbSSKTqvfB2g%3D"/>
+</figure>
+</div>
+<p>Forget searching through messy food databases or manually typing every bite. With Qalzy, <span class="bold">all it takes is a single tap</span>. That’s <span class="bold">5x faster</span> than using a typical app - and <span class="bold">100x easier </span>to stick with. The built-in camera r<span class="bold">ecognizes entire meals or individual ingredients</span>, the scale measures it <span class="bold">down to the gram</span>, and the app does the math - <span class="bold">automatically logging calories, macros, vitamins and minerals in under 4 seconds.</span><br/><br/>Just place your food on the Qalzy scale, and it will automatically<span class="bold"> identify, weigh and log</span> the right ingredients with its camera. No typing, no researching to log. <span class="bold">Just one press of a button</span> and everything is waiting on your phone. Review on your own time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169816">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/816/f955fc4ec2a14154e3567c1b49d35469_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515974&amp;width=680&amp;sig=fJyu%2Fg1o5f%2FPTrTfTEZk53WsF%2Ffkqh4s%2BqGo59KY4Sk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169819">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/819/86968d19b977ed2a621cbd3c541b1236_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515991&amp;width=680&amp;sig=kaqduiAQKtxB%2FYFvMfV5MfvkIw0yRLQiy5%2FlddodQCg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169822">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/822/3635ad7ec20dd9a0b9585f19f7759655_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516005&amp;width=680&amp;sig=QDaPbBhdFn9Teczqk6pmON9KIDWLy8bv0gzmyFPo8Tg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169824">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-True-Gram-Accuracy">🎯 |True Gram Accuracy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/824/632c34084c1c117ae31b79132b46d238_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516018&amp;width=680&amp;sig=fa3mtbJmJasVU8qwm4AMZhGV7EKpK4TLUSwW7dhBXYA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199123">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/199/123/45208cda8672b39aee59fe7de25afc42_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746689968&amp;width=680&amp;sig=hY8shQEUCYIA7DGeJgF63Q8AbkdKMk9uli3aHCL7AA0%3D"/>
+</figure>
+</div>
+<p>Most AI calorie counting apps guess your food’s weight. Qalzy doesn’t.<span class="bold"> It weighs your food with gram-level precision</span> and matches it against a verified database of over <span class="bold">2,9 million food items. </span><br/>That means no crowdsourced macros, no rough weight estimates - just r<span class="bold">eal, reliable data</span> so you can finally track with confidence and see real results. Qalzy supports both <span class="bold">Metric (g/kg) </span>and <span class="bold">Imperial (oz/lb)</span> units, so you can track your meals in the format that works best for you.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169832">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Track-Anywhere-Free">🌍 |Track Anywhere, Free</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/832/525162f0da296d0dabb313c8e8dcec44_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516053&amp;width=680&amp;sig=dAuUT%2FziHsb%2B1%2BmgaO6QPQN1vMyxTGOnk%2F1yRirD7sQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/836/4d3e8995f9c3d795cad00474bf4ae9b7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516067&amp;width=680&amp;sig=yInAhh0emASq2jp9ydUkNL6fE7QPoJrJ3Bx%2FTgTwhBs%3D"/>
+</figure>
+</div>
+<p>You won’t always be in your kitchen - but <span class="bold">your goals don’t take a day off.</span> That’s why the Qalzy app works even without the scale. <span class="bold">Snap a photo, scan a barcode - and it logs everything.</span> The best part? You get the full experience. <span class="bold">No locked features. No surprise charges</span>. Just one smart app that respects your investment as much as your time.<span></span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169837">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Smart-Plate-Detection">🍽️ |Smart Plate Detection</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/837/8944cb684791cceb6b91e4d29d4c8bac_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516087&amp;width=680&amp;sig=uQVM7NeTiJW5g6fabYXhMVGBrh8BFcpG37wUx8b0p1E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49176724">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/176/724/8661dbb2277ec9937d3c14cf0f7d39c2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746548925&amp;width=680&amp;sig=9RXJ0KzRom9hepgrvM88QfDumYOG7XmH86eUWx6OsH0%3D" src="https://i.kickstarter.com/assets/049/176/724/8661dbb2277ec9937d3c14cf0f7d39c2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746548925&amp;width=680&amp;sig=9RXJ0KzRom9hepgrvM88QfDumYOG7XmH86eUWx6OsH0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49176727">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/176/727/d5576ec62929e491c981e405cc44fde9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746548933&amp;width=680&amp;sig=RgPrj%2B8z23c5hy9LOXpg%2Bxy3GhzlwLj2XOpMMCDhXAo%3D" src="https://i.kickstarter.com/assets/049/176/727/d5576ec62929e491c981e405cc44fde9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746548933&amp;width=680&amp;sig=RgPrj%2B8z23c5hy9LOXpg%2Bxy3GhzlwLj2XOpMMCDhXAo%3D"/>
+</figure>
+</div>
+<p>Whether it’s a salad you made at home, a protein bar from the store, or last night’s leftover pasta, <span class="bold">Qalzy knows what’s in your meal.</span><br/><br/>Using its <span class="bold">built-in camera and smart AI</span>, it can identify <span class="bold">multiple ingredients</span> at once, <span class="bold">read nutrition labels</span>, and <span class="bold">adjust for portion sizes.</span> You can scan each ingredient sequentially, on the same plate, giving you 100% certainty about its weight without the hassle. <span class="bold">Qalzy is smart enough to know that you’ve added a new ingredient and only calculates its calories.</span><br/><br/>If you’re feeling lazy, or simply in a rush, <span class="bold">Qalzy identifies and logs separate ingredients on your plate in one go</span>. It uses the total weight of your meal to estimate the weight of each ingredient in it. Still 30% more accurate than just snapping a photo on your phone without weighing.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49290198">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/290/198/cbc41e38506ffd66b46b379bdfab92ca_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747320367&amp;width=680&amp;sig=faSQLk4vKm6qg2W7SgUIhxUDJT59EaUgOhRHpWKrd%2BY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49290202">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/290/202/1b657f3398694dba37b1e47eee788e72_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747320372&amp;width=680&amp;sig=maX8kXJLyZdKEaVo8C0yzHeploWIhNRSim73y3GSfIA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169843">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Edible-Only-Tracking">🍗 |Edible-Only Tracking</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/843/014adeb273ca73fcf36c9895f804fc0a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516130&amp;width=680&amp;sig=gHFDj7fn2MhFFQkvDnbDD38PWQIRO4USDbn22eHVVmo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169846">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/846/40c0e69316483b5fa5027ec0941e8983_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516144&amp;width=680&amp;sig=cl09PTdmTe3LVB57tYqTBAP7ADnV81EgcAwP2OjaDUA%3D"/>
+</figure>
+</div>
+<p>Not everything on your plate ends up in your body - and <span class="bold">Qalzy knows that</span>. When scanning foods with inedible parts, like chicken wings or fish with bones, Qalzy’s AI doesn’t just log the total weight. <span class="bold">It intelligently estimates the edible portion</span> based on typical consumption patterns and nutritional databases, so your calorie and macro tracking reflects what you actually eat - not just what you serve. Another way Qalzy makes calorie tracking more accurate, with <span class="bold">zero extra effort from you.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169851">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Learns-Your-Meals">🧠| Learns Your Meals</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/851/abc1956dff5bc594ba93a9bcf263b1e5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516179&amp;width=680&amp;sig=yQXMUfXzuIkymTgFQeoy89k98BWGxnwDcepsbYwo4aU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169854">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/854/516ca99da5d8dcaf858268bd004ba039_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516190&amp;width=680&amp;sig=4syYRZbOKR786YWF0xK%2BQk%2F45QrRN1cBJdTL2QCu34w%3D"/>
+</figure>
+</div>
+<p>Qalzy doesn’t just recognize food - <span class="bold">it remembers it</span>. The <span class="bold">more meals you log, the more it adapts to your habits</span>. Favorite snacks, go-to breakfast, signature recipes? Qalzy remembers what you used last time and learns how to identify new recipes instantly - it then uses the exact ingredient amounts in your recipe for accurate tracking.<br/><br/>Add your own recipe to the database.</p><ul>
+<li><span class="bold">Using the scale, scan each ingredient that goes into your recipe. </span></li>
+<li><span class="bold">Using the app, select your ingredients and add them to your recipe.</span></li>
+<li><span class="bold">Enter name, cooked weight and even the number of servings, if you wish.</span></li>
+</ul><p>Next time you track the same meal, it’s smart enough to use your <span class="bold">own recipe</span> as opposed to the generic one found in the food database.<br/><br/>That means less time adjusting, more time eating, and a system that gets more intuitive every time you use it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49306629">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/306/629/9f63310726131e20a953fcc7a31fbd84_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747421371&amp;width=680&amp;sig=uhO6SF2kisQmsDCIMDP2E54HHiu%2BUw0ZstvfgfEPhxI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169863">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Habit-Friendly-Tracking">💪| Habit-Friendly Tracking</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/863/12b8cfc041ece6f4fc93d51047819ff3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516239&amp;width=680&amp;sig=SacN46tv0NCCGTqBpPVx0Jk3tVxwXUSsT80k0JGJMsE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169864">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/169/864/92442c0ea6fd168d0197b136bf027f55_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516257&amp;width=680&amp;sig=%2FLTUtVLUQgCzM1pXQcLiteRBDyx%2BvpYX3rVLu5L36Ys%3D" src="https://i.kickstarter.com/assets/049/169/864/92442c0ea6fd168d0197b136bf027f55_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516257&amp;width=680&amp;sig=%2FLTUtVLUQgCzM1pXQcLiteRBDyx%2BvpYX3rVLu5L36Ys%3D"/>
+</figure>
+</div>
+<p>Qalzy makes food tracking so easy, you’ll actually stick with it. By removing the hassle of typing, searching, or second-guessing, <span class="bold">Qalzy helps you track consistently</span>, one of the biggest predictors of health goal success. With just a<span class="bold"> press of a button</span>, your meals are<span class="bold"> logged automatically</span>, making healthy habits effortless and long-lasting.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49392268">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/392/268/1cbf92aebdff9a6fee597d40c5987c3a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747983802&amp;width=680&amp;sig=DqaQX9CI03DO8B6P40qOwoPwH1Y1SnJwMfGw%2B6B77sE%3D"/>
+</figure>
+</div>
+<p>We built Qalzy for people like us - trying to eat better, stay consistent, and stop stressing over every bite. But for many, food tracking isn’t just about goals - it’s about managing health.<br/>If you're living with type 2 diabetes or prediabetes, staying consistent with carb and fiber intake can directly impact your energy, blood sugar, and overall well-being. But manual logging is time consuming, error-prone, and hard to stick with.<br/>Qalzy makes it effortless for everyone.<br/>With gram-accurate weighing and instant AI-powered logging, you’ll automatically track the nutrients that matter most - carbs, fiber, protein, fat, and calories, without searching, typing, or second-guessing.<br/>Whether you're trying to stay fit or manage a health condition, tracking your food should be easy—and finally, it is.fmonitor</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169867">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Syncs-With-Health-Apps">🔄 |Syncs With Health Apps</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/867/0e9770ab243feabe659e8a6c216275b2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516275&amp;width=680&amp;sig=dJeE8F6wUGxMgs%2BFw9i%2B3p7AESyxSnT9UO4M9GuMIGA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169868">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/868/a378f0b0dbb3639165eef94b49a16018_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516286&amp;width=680&amp;sig=SMBsgtXzgNkkaoeLTea50NVmBWRurmyMc4%2FV%2BftpwRc%3D"/>
+</figure>
+</div>
+<p>Nobody’s counting calories just for fun. Your food choices depend on what you do -how much you move, rest, or recover. That’s why<span class="bold"> Qalzy syncs with Apple Health and Google Health Connect.</span> It pulls in your exercise data, adjusts your calorie targets, and syncs everything back across your apps. You get one clear, connected view of your health - no jumping between tools, saving you time and energy to achieve more.<span></span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169872">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Progress-Overview-Via-App">🧭| Progress Overview Via App</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/872/d04305a8ace22661484ea3ac94e847fc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516343&amp;width=680&amp;sig=MWA51xYEpPyJYB2lJeO7sPWRqF4VzjyCwoHhBJe%2FvU4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169876">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/876/ca9c620f1fa919839e1e8d41e9c9d2cc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516356&amp;width=680&amp;sig=k%2FJufBaPeSL32VXnKyaEWa%2B8SA7rLHpZArPuvU27veg%3D"/>
+</figure>
+</div>
+<p>Think of Qalzy as your personal coach - always watching out for your progress and adjusting to your lifestyle. It’s not just about logging meals.<span class="bold"> It’s about making sense of your health, one smart feature at a time.</span><br/> </p><ul>
+<li>
+<span class="bold">Visualise Your Progress, Track your Achievements</span> <br/>Qalzy’s powerful dashboard allows you to set goals for your weight, calories, macros and micros and visualise your progress - one step at a time.  </li>
+<li>
+<span class="bold">Track Your Full Nutrition Data </span><br/>Monitor your calorie intake, macros, and critical nutrients like carbs and fiber - so you get the full picture, especially if you're managing diabetes or another condition.</li>
+<li>
+<span class="bold">Keeps your ecosystem in sync </span><br/>Any meals you log in Qalzy get pushed back to your health app, making sure your food and fitness data stay connected across all platforms.</li>
+</ul><p>No spreadsheets. No math. Just <span class="bold">real insights</span> that help you <span class="bold">stay consistent</span> and see results, because you can’t manage what you can’t measure<br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169887">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Voice-Logging">🎙️ | Voice Logging</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/887/67b60e9b19523ea314d1b1fca97f25e3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516448&amp;width=680&amp;sig=VS%2BtozypPXdMoJ85dzdhvqHiJbMnzlGsvmdAldH%2FEFA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169889">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/169/889/e096a31382671fc99983e042131a312f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516469&amp;width=680&amp;sig=NiutxuDVh%2FnItdkwKtPuljBnkjbmImK79%2BbXhXnpWmk%3D" src="https://i.kickstarter.com/assets/049/169/889/e096a31382671fc99983e042131a312f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516469&amp;width=680&amp;sig=NiutxuDVh%2FnItdkwKtPuljBnkjbmImK79%2BbXhXnpWmk%3D"/>
+</figure>
+</div>
+<p>No need to pause mid-recipe or reach for your phone or scale when you’re feeling lazy. <span class="bold">Qalzy integrates with Alexa</span>, so you can log ingredients in real time <span class="bold">just by speaking</span>.<br/><br/>Add olive oil, sauces, or any other small-but-mighty ingredients that often go untracked. Your voice command goes straight into the Qalzy app, syncing calories and macros without missing a drop.<br/><br/>Because it’s the little things that make a big difference, right?</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169895">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/895/bfee5ee6223de9f2a4d50bf597021fd9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516496&amp;width=680&amp;sig=ddrTUF18KyryZwPoGLpz16%2FJUHCkJ7tLhLKLuJpTh48%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169899">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/899/f6a3f26f42b289052148746b0d46bd24_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516518&amp;width=680&amp;sig=HRZVA9ImjDIEytS%2BNSLzjy0QDp3JrTO1%2B0UIFtrv3Lk%3D"/>
+</figure>
+</div>
+<p>Qalzy looks sharp - and stays that way.<br/>Its <span class="bold">splash-proof, tempered glass</span> surface is easy to wipe clean, and the compact design blends effortlessly into any kitchen. The <span class="bold">built-in camera folds</span> neatly out of sight when not in use, keeping your counter clear and your setup sleek.<br/><br/>Choose between classic <span class="bold">black </span>or clean <span class="bold">white - </span>two timeless color options designed to match any interior, whether you're cooking in a modern loft or a cozy home kitchen.</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169905">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Low-Light-Ready">🌙 | Low-Light Ready</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/905/076333bdee6890dab18bc83c3967ac89_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516534&amp;width=680&amp;sig=LPljk0RE1MzCX71yBAgRrP%2FxHqTO%2Bj8iUnecWdEC8uk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49170048">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/170/048/fb7f1b262c809adbce1cce06edfe6042_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746517336&amp;width=680&amp;sig=BsHzUBJKfmuq1rms9qdqgzrggt%2B%2B2RpiQ0pv262u5Lw%3D" src="https://i.kickstarter.com/assets/049/170/048/fb7f1b262c809adbce1cce06edfe6042_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746517336&amp;width=680&amp;sig=BsHzUBJKfmuq1rms9qdqgzrggt%2B%2B2RpiQ0pv262u5Lw%3D"/>
+</figure>
+</div>
+<p>Lighting conditions can affect food recognition accuracy. That’s why Qalzy is equipped with a<span class="bold"> kitchen-safe LED flash</span> that ensures <span class="bold">clear, high-quality images</span> - even in dim lighting. Perfect for when you’re prepping a late-night snack.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169915">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/915/3a4e141560005b96ae248529f5512eea_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516598&amp;width=680&amp;sig=EYSHlFKnqPD3hM1Hne1W1M6hYVCWwRCYy7urwEpS3Js%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169919">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Before-vs-After">🔄 | Before vs After</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/919/a7f8367a18968e0a61023dc650fa6cd9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516612&amp;width=680&amp;sig=cn%2FsubA8yHNOTP2QJOTqSTa7fWjqK1ZqJcPbH%2FRkQNk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169925">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/925/ca236f849e9d5e2f78eb2fe8ac397ab7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516635&amp;width=680&amp;sig=B3TmQedzUkKJZ4aeju4QStRqh41jDlPU1YQeP929jUk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169929">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/929/70dc133ab138740ec700d966315d636b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516647&amp;width=680&amp;sig=4Dnf6kGhUUoKfALD%2FM8OJZvx1cxt7WlSuu%2BhUNo2ARk%3D"/>
+</figure>
+</div>
+<p>We built Qalzy for people like us - trying to eat better, stay consistent, and stop stressing over every bite. Qalzy makes a difference for you if you are:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169931">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Qalzy-vs-Others">✅ | Qalzy vs Others</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/931/9a9d1e8d0f25cb91422e55466d3b877c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516664&amp;width=680&amp;sig=rdCeyQ7%2BI4irBA%2B7fhI6vc18oTeEe0K3B9vP591Jv8s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49241397">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/241/397/b38ff8905841498c777b7832cc81e868_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747039236&amp;width=680&amp;sig=qhZbIiVuzPT9bfgqG9yNv2BR%2FV1OBsfg161mHnfU3rk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169938">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/938/1efbcebc39bf7537c5a441c129015781_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516690&amp;width=680&amp;sig=HbfHftaZd1BzfkC7yoiCJNlBcXY3mUSINpT%2B2gRiBG4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169943">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/943/aaae9063053bbcb9a10c745bcc11b35b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516701&amp;width=680&amp;sig=oDv3pCaq5O6wDMNe%2BGeBeHRFJKvKthkZWfDfASisJF8%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169947">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-About-Us">📜 | About Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/947/00a20c62190dfc6f6f16ab82983b5674_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516713&amp;width=680&amp;sig=%2Bq3Q13i5Av%2FG9GjzLpPrmElJubiUU%2BI54N0ZxfV9I9g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169957">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/957/837adc4edaf682ee4e0dbe2c77d314c9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516725&amp;width=680&amp;sig=yHeP8AoST65XSGOQUFAs3%2FoWA7UC4NR6ReEgdJoEyCc%3D"/>
+</figure>
+</div>
+<p>Hey, we’re <span class="bold">Kostas and Michael - </span>co-founders of Qalzy.<br/><br/>Before we built this, we were <span class="bold">just two guys trying to get healthier</span>. One of us was trying to <span class="bold">lose weight</span> after becoming a dad. The other was working on <span class="bold">building muscle.</span> We were serious about food tracking because we knew it worked. But doing it every day? That part sucked.<br/><br/>We tried every app. Weighed every ingredient. Typed every bite. But logging a single homemade meal could take 15 minutes. And if you forgot to add the olive oil or that one snack? Your numbers were off.<span class="bold"> Every day started to feel like a math test.</span><br/><br/>We thought: there has to be a<span class="bold"> better way.</span><br/><br/><span class="bold">There wasn’t. So we built it.</span><br/><br/>We’ve both worked in tech for years - <span class="bold">ex-Microsoft, ex-startup founders</span>, <span class="bold">AI nerds to the core</span>. In 2019, we even built an <span class="bold">AI stylist that outperformed humans at London Fashion Week. </span>But this time, we weren’t building for the runway. <span class="bold">We were building for our own kitchens.</span><br/><br/>We wanted a scale that could <span class="bold">see what you’re eating, weigh it, and log it without the typing, guessing, or giving up.</span><br/><span class="bold">The first time we pressed that button and watched it work, we knew: this was it.</span><br/><span class="bold">Qalzy changed how we track food. Now we want it to help you, too.</span><br/><br/><span class="bold">Thanks for being here, Kostas &amp; Michael</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169964">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Specifications">⚙️ | Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/964/3ced758802b578a1270d455188c17ba4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516741&amp;width=680&amp;sig=dLRsC2P%2FqEg0rAiLnJ2b7PtDLx8CtnCFJfJW2dQCjxU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169965">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/965/aa5abfa0885c5d89548b9154c5f8c855_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746516750&amp;width=680&amp;sig=TP%2FNwOo%2ByfB9%2BcFz7yS7v%2FhUTEmcWHH7B%2Fv%2F9EakntI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169967">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Timeline"> 🗓️ | Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/967/542eb2455ba0b09eeb8b573d88fa4a63_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746516764&amp;width=680&amp;sig=UqQ7mSpiCq9JR28jABlzbUAknu%2FHKkHXEp61F6rHivQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169970">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/970/c6edb07a53ec40ad55de2ea02f83d465_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746516771&amp;width=680&amp;sig=jgARvG39LV%2Fi4cDvv7yxFuxkR%2F1b1AWpjiHG03RvUC4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169972">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-What-s-in-the-Box">📦| What's in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/972/5bddc11d30d86f0dfc21b5a599b258b8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746516781&amp;width=680&amp;sig=P35uR9Z0TBZEg%2FGPawlux9%2Bd665eI7tmy64V2se1DAU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169975">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/975/69bf784e5639243a610e7f312cda56b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746516789&amp;width=680&amp;sig=LGXwczrbpjd0rst4KtLRKYreCbUzAYGOWZhiXRVFDSg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49173956">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Rewards">🛒| Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/173/956/5c480c15962cbcb986556fbbd9e609d1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746537514&amp;width=680&amp;sig=ctgUXzG0jCVeuUpUrcN2ZiJ%2B9y9GOtVhxgcUZieyZPs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49173959">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/173/959/3704f00732a1a4bc4e1801debf3ea7c6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746537521&amp;width=680&amp;sig=9Zo2wnsPBBxqO58GEiKDZV%2BlyZtYDl1M2FtQrWhAUf0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49173964">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Add-Ons">➕ | Add-Ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/173/964/c79fec9f80a7e81d7ba0336ac06ebb47_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746537526&amp;width=680&amp;sig=FLYNns3vkVysOynCJFpzGz6ZmlsVPbB6M6HWvK9ZhP0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49173966">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/173/966/0327a6da8edcf47a8f04c9d0e60d48e6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746537533&amp;width=680&amp;sig=Pu1C36lCjn23ozHj7spDmT1h565wKuI45ed0r0UjEQc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49172615">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Shipping-Chart">🚢| Shipping Chart</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/172/615/9eef303c7cdb8db4bcdc03cf441635d5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746531438&amp;width=680&amp;sig=Q253N%2BPYbNEIgF1cffj0kFVBQgPNLDH1Zx821RuRjyI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49173955">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/173/955/b83841b340417ef1f158d87a1ee21afb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746537506&amp;width=680&amp;sig=Y%2FgMh9UahnPqxdVj9wmdXRQKy4B7udFHwWmVkxe%2F1Ck%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49172661">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/172/661/5b2330a2c91b59ce871aff4921161438_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746531635&amp;width=680&amp;sig=SX2T4EmsPIG2r6xSnuH8ZUeVRtMqWQPj3CvJlsrXOJU%3D"/>
+</figure>
+</div>
+<p><span class="bold">Qalzy </span><span class="text-italic">campaign is designed and fully managed by </span><span>TCF (The Crowdfunding Formula)</span><span class="text-italic">, a leading, award-winning crowdfunding marketing agency. We team up and help companies to build global brands.</span><br/><span class="text-italic">With the largest team and the largest crowdfunding ecosystem on the market, </span><span>TCF</span><span class="text-italic">offers a wide range of crowdfunding services.</span><br/><span class="text-italic">We manage campaigns all the way from product concept to market validation, lead generation to email marketing, SMM and influencer marketing, PR and direct sales, video, design, and advertising - leading to the ultimate success of campaigns.</span></p><span></span><p>This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them.</p><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Bringing Qalzy to market involves a combination of precision hardware, AI integration, and smooth logistics. While we’ve completed extensive prototyping, in-house testing, and validation with real users, challenges such as component availability, supply chain delays, and scaling production can still arise.
+
+To minimize risks, we are working closely with experienced manufacturing partners and suppliers who specialize in consumer electronics. Our team has successfully launched multiple hardware and AI-driven products in the past, and we’ve built contingency time into our production timeline to account for unexpected issues.
+
+We're also continuously improving Qalzy’s AI through testing and real-world feedback to ensure food recognition remains as accurate and helpful as possible.
+
+We are committed to keeping our backers informed every step of the way, and we won’t ship a unit until it meets our quality standards. Your support helps us bring effortless, accurate calorie tracking into kitchens around the world — and we’re incredibly grateful to have you on this journey.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Qalzy uses artificial intelligence (AI) to automatically recognize the food you place on the scale, so you don’t have to type or search for it manually.
+
+When you put something on the scale, a built-in camera takes a photo. That image is then analyzed by Qalzy’s AI, which has been trained on millions of food photos from around the world. It compares what it sees to this massive library and identifies what the food is — whether it’s an apple, a steak, a slice of pizza, or a full mixed meal.
+
+Then, it combines that visual identification with the precise weight of the food to calculate the calories and nutrients (like protein, fat, and carbs). Everything is sent straight to the app, where you can confirm or adjust it if needed.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

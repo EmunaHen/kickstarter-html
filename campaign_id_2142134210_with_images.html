@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PaintStation : Maker Space Furniture System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/554/400/33bb80083579ad9837cab490cd03f945_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749093353&width=560&sig=9RHGnY6rvVapzVojxQ2ZLG7Yr7nX0D9gpH7%2FM%2FQLtVU%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>PaintStation : Maker Space Furniture System</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Revolutionizing Model Making Experience</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,529</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Welcome-to-the-future-of-model-making-"><span class="bold">Welcome to the future of model making!</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347142">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/142/01d2eadffc759d10678e2c96f814b414_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747730264&amp;width=680&amp;sig=eHHpnOs8VdNnj7VQQcxLKWkQyCFGRvesWgbR%2FsYTEBA%3D"/>
+</figure>
+</div>
+<p>Introducing <span class="bold">PaintStation</span>, the all-in-one solution designed specifically for hobbyists who are passionate about model making. Say goodbye to messy setups and hello to a streamlined, organized, and safe painting experience.<br/> </p><h3 class="page-anchor" id="h:-Stretch-Goal-Reached-">
+<br/><span class="bold">Stretch Goal Reached !!</span>
+</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49554082">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/554/082/33bb80083579ad9837cab490cd03f945_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749091141&amp;width=680&amp;sig=bL7EMQfQySjFsL7LG2%2B%2B3FkFzzK%2BvPmb50ijY7%2BiSII%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:We-reached-our-first-stretch-goal-water-curtain-spray-booth-">We reached our first stretch goal ~ <span class="bold">water curtain spray booth</span>!</h4><p><span class="bold">"🎉 Stretch Goal Unlocked!</span> Thanks to your incredible support, we've hit our first stretch goal - and that means every PaintStation will now be upgraded with a <span class="bold">water curtain filtering spray booth</span>! This innovative system will provide an even cleaner, clearer painting experience by trapping overspray more effectively. <span class="text-italic">(Note: This photo illustrates the concept - final design may vary as we optimize production.)</span> Keep sharing the campaign to help us reach the next milestone!"</p><h3 class="page-anchor" id="h:Why-Choose-PaintStation-"><span class="bold">Why Choose PaintStation?</span></h3><h4 class="page-anchor" id="h:1-Purpose-Built-Design-"><span class="bold">1. Purpose-Built Design:</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344321">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/344/321/ad365d302bd02d7c14ebe877d474b9b6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747709750&amp;width=680&amp;sig=hgN00OcCPmD0UKfPKXcay1vV3jxZclAtv%2F4byllVeE4%3D"/>
+</figure>
+</div>
+<p>PaintStation is Design exclusively for model making enthusiasts, providing everything you need in one convenient set up. Whether you’re painting minis, airplanes, or intricate models, we’ve got you covered!</p><h4 class="page-anchor" id="h:2-Air-Filtering-Ventilation-System-"><span class="bold">2.Air Filtering Ventilation System:</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47498959">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/047/498/959/4c187ca0726e7a361466bdd29703c3ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1733470085&amp;width=680&amp;sig=Uzhzt6dT4ov2vkAZxmLsi5aLuGy6bCX4gAMPzm%2BLKGo%3D" src="https://i.kickstarter.com/assets/047/498/959/4c187ca0726e7a361466bdd29703c3ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1733470085&amp;width=680&amp;sig=Uzhzt6dT4ov2vkAZxmLsi5aLuGy6bCX4gAMPzm%2BLKGo%3D"/>
+</figure>
+</div>
+<p>Breathe easy with our high-performance air filtering system. It effectively reduces harmful fumes and particles, ensuring a safe and healthy workspace while you paint. The system features <span class="bold">two types of filters</span>: a <span class="bold">Carbon + PM2.5 filter</span> for use during painting, and a <span class="bold">PM2.5 +VOCs filter</span> that removes chemicals and odors while your models dry. Enjoy peace of mind knowing that you're working in a cleaner environment!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47674608">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/674/608/a07ba6124f08cea780dec1c2c41d266e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1735371648&amp;width=680&amp;sig=y96n1bhx1QEIBZ1K7H4RVL8l1rfracydV6TxXeLeJT4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Compressed Recycled P.E.T. Board for Airbrush Painting</span></p><p>The compressed recycled P.E.T. board is an excellent material for airbrush painting due to its superior paint adhesion. Paint particles stick effectively to the board, ensuring that the application is seamless. Additionally, cleaning is hassle-free; a simple wipe with a wet cloth is all that’s needed to remove any paint residue.</p><p>Our P.E.T. boards are designed for durability, lasting for months of extensive painting sessions. When it comes time for a replacement, the process is straightforward and efficient.</p><h4 class="page-anchor" id="h:-3-Dust-Free-Drying-Chamber-">
+<span class="bold">3. Dust-Free Drying Chamber:</span><br/> </h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47498847">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/047/498/847/4ecd7a9900be07d47047b5e49f600ddc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1733468692&amp;width=680&amp;sig=b7bTdrh%2B%2F0NlqYcdZ%2BiO41jWYC6DhVM0pffQli01e9Q%3D" src="https://i.kickstarter.com/assets/047/498/847/4ecd7a9900be07d47047b5e49f600ddc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1733468692&amp;width=680&amp;sig=b7bTdrh%2B%2F0NlqYcdZ%2BiO41jWYC6DhVM0pffQli01e9Q%3D"/>
+</figure>
+</div>
+<div class="MessageContent-module__message-content___Am59P MessageContent-module__message-content--markdown___oLH9Y">
+<p>Protect your masterpieces with our dedicated dust-free drying chamber. Keep your painted models pristine as they dry! The PM2.5 + VOCs filter ensures the space is free from dust and debris that could ruin your hard work. The chamber also features temperature control and fan airflow control, allowing you to create the perfect drying environment for optimal results. </p>
+<p>Inside the Dust-Free Drying Chamber, you can easily attach your parts using our magnetic clips. Enjoy peace of mind knowing that your creations are cared for from start to finish!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47674635">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/674/635/6449feaa92bbc031951cd6d764b808e9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1735372290&amp;width=680&amp;sig=66XnamOAjYWV5b1mly0VUVbNP0zP%2FYFDtpRDJWNlOYg%3D"/>
+</figure>
+</div>
+<p><span class="bold">Built-in 6000K Daylight LED Strip </span></p>
+<p>The PaintStation is equipped with a built-in 6000K daylight LED strip that enhances the painting experience by providing optimal color accuracy and visibility. This lighting setup ensures the best observation for dust and imperfections, allowing for precise detailing. Additionally, the design eliminates hand shadows during airbrushing, ensuring a clear view of the artwork throughout the process.</p>
+</div><h4 class="page-anchor" id="h:4-Painting-Preparation-Deck-"><span class="bold">4. Painting Preparation Deck:</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47499004">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/047/499/004/f021bd2ed694c850e809b41df94874bc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1733470528&amp;width=680&amp;sig=M7O2MO7QHJfHu%2BKF2LnzxCY1MdOSViZdpc2%2BCiXWxBc%3D" src="https://i.kickstarter.com/assets/047/499/004/f021bd2ed694c850e809b41df94874bc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1733470528&amp;width=680&amp;sig=M7O2MO7QHJfHu%2BKF2LnzxCY1MdOSViZdpc2%2BCiXWxBc%3D"/>
+</figure>
+</div>
+<div class="MessageContent-module__message-content___Am59P MessageContent-module__message-content--markdown___oLH9Y">
+<p>No more searching for your brushes, paints, and tools! PaintStation features a built-in organizing station to keep all your painting supplies at your fingertips—everything in its place for maximum efficiency. Plus, the modular design of the organizer in the drawer allows users to set it up according to their preferences, giving you the flexibility to customize your workspace as you see fit!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47674587">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/674/587/6b032d4ffea7ae2e776d98f5d951085e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1735371219&amp;width=680&amp;sig=lbv1hhrDeReu%2BLP9VdP6fMSTmZo41prMymwVuN93ifk%3D"/>
+</figure>
+</div>
+<div><div class="MessageContent-module__message-content___Am59P MessageContent-module__message-content--markdown___oLH9Y">
+<p><span class="bold">Modular Design Paint and Tools Organizer</span></p>
+<p>Experience maximum flexibility with our modular design paint and tools organizer! Tailor your setup to fit your unique needs and preferences, ensuring that all your painting supplies and tools are easily accessible and neatly arranged.</p>
+<h4 class="page-anchor" id="h:6-Extended-Work-Surface-"><span class="bold">6. Extended Work Surface:</span></h4>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49241542">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/241/542/f035330c3260401e83f2aa28e7760d3b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747039966&amp;width=680&amp;sig=WNEg%2FBjDfQbCMQZNTQ2ik84XSdxBMyuIA%2BXuUqpzjxk%3D"/>
+</figure>
+</div>
+<p>"Need to paint larger objects? No worries. Our extended work surface provides plenty of space to handle big projects comfortably, turning your workspace into a versatile zone for all sizes of models."</p>
+</div></div>
+</div><h4 class="page-anchor" id="h:6-Convenient-Lower-Storage-Space-"><span class="bold">6. Convenient Lower Storage Space:</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47499017">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/047/499/017/91db96a638b7fea5975400d458e8cdc5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1733470625&amp;width=680&amp;sig=q3SRBCTW3%2Btgu%2Fe8Bn%2BRPu50MW8V3VCp%2Bvp36hHJH54%3D" src="https://i.kickstarter.com/assets/047/499/017/91db96a638b7fea5975400d458e8cdc5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1733470625&amp;width=680&amp;sig=q3SRBCTW3%2Btgu%2Fe8Bn%2BRPu50MW8V3VCp%2Bvp36hHJH54%3D"/>
+</figure>
+</div>
+<p>Tired of clutter? Our design includes a lower storage area specifically for your air compressor and other equipment, allowing for easy access while keeping your workspace clean and organized. Inside the storage unit, the sliding shelf provides effortless access to all your tools, making organization simple and efficient!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47674666">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/674/666/56dd247677f80ac44759824cbc58e617_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1735372596&amp;width=680&amp;sig=aDZ6c8l0AcIiA%2BMRuLvR%2BPPraZZ5zYgTYU2XFmrpm8A%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:7-Polishing-and-Assembling-Station-"><span class="bold">7. Polishing and Assembling Station:</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47674682">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/674/682/471d99eb924125393bacdd59c6ffb184_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1735372730&amp;width=680&amp;sig=KrMhsIgg2wSwOH4elLx29xdKk%2FFnyqwF%2BvwHqtJx9bM%3D"/>
+</figure>
+</div>
+<p>The PaintStation isn’t just a paint booth—it also serves as a workstation for polishing and assembling your models. This flexibility allows you to streamline your workflow and make the most out of your creative time.</p><h3 class="page-anchor" id="h:Stretch-Goal-"><span class="bold">Stretch Goal </span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49554056">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/554/056/72c6986ec58b51680fe487a676588af1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749090984&amp;width=680&amp;sig=1ovKgpdZD02aFr5Q%2BqTZPW6JwnqDjcZmshWbS3SV6h0%3D"/>
+</figure>
+</div>
+<p><span class="bold">"The current PaintStation is a prototype—but with your support, we can make it even better!</span></p><p>🔥 <span class="bold">100 units reached !! </span> We’ll upgrade the paint booth from carbon filter  to the latest <span class="bold">water curtain technology</span> for smoother, cleaner painting.</p><p>✨ <span class="bold">250 units unlocked?</span> The drying chamber will upgrade from heated fan drying to  high-tech <span class="bold">UV drying upgrade</span> for faster, flawless results.</p><p>🎁 <span class="bold">And if we hit 250 units?</span> You’ll receive our <span class="bold">secret new product</span> (still under development!) as a <span class="bold">Mystery Gift!</span></p><p><span class="bold">Help us push the limits—every order brings us closer to the next upgrade!"</span></p><h3 class="page-anchor" id="h:Photo-Gallery-"><span class="bold">Photo Gallery </span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347145">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/145/df5ac8fd79f19c7b301d9fd928ada88a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747730283&amp;width=680&amp;sig=SA2V1MgXwbpUa2lX%2BvsbBR31%2BzvQmQzrP0ln0PoPK4k%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Product-Details-"><span class="bold">Product Details </span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47686431">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/686/431/24eef682d61412f219d7d6426dd9437d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1735538812&amp;width=680&amp;sig=gVQtd2pz3nKT%2Fg5chg2Lub4T6piqYi%2B5ZTyYvx6b7FI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Product-Size-and-Specification-"><span class="bold">Product Size and Specification :</span></h3><p><span class="bold">For the size and product specifications of the PaintStation, please refer to the following link. </span><span>Product Size and Specification</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344345">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/344/345/2f60228be8bb5b5890ce9a09bd68a626_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747709903&amp;width=680&amp;sig=eAjw%2BDJ31tLlix%2BsNY%2FhrlrcHSSR9nrdG%2FqnzgfPrZ8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:How-You-Can-Help-"><span class="bold">How You Can Help:</span></h3><ul>
+<li>
+<span class="bold">Back Our Campaign:</span> Your support will help us with production costs and bring PaintStation into reality! And you will received the PaintStation in first hand ~</li>
+<li>
+<span class="bold">Spread the Word:</span> Share our project with fellow hobbyists and friends to help us reach our goal.</li>
+<li>
+<span class="bold">Stay Connected:</span> Follow us by joining our <span>Facebook community</span>, <span>Instagram</span>, sneak peeks, and behind-the-scenes looks at our development process..</li>
+</ul><h3 class="page-anchor" id="h:Rewards-for-Backing-"><span class="bold">Rewards for Backing:</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48810794">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/810/794/97a1f0486b29d0a5ab7e20bcb9003fe8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744002183&amp;width=680&amp;sig=eZWW9bXLvHpILvLrE03uFKj5rLzsRiejI%2B4J9BtDwEo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Shipping"><span class="bold">Shipping</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49197823">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/197/823/6f64447347d2354f73877f3c2ad015cf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746679451&amp;width=680&amp;sig=xWV9sgD0TfhXoPhUh%2BLEzcZ%2BzTRMh06mw0m5TOuxO8o%3D"/>
+</figure>
+</div>
+<p>All Kickstarter rewards will be shipped directly from our factory in China. The shipping lead time is approximately 25-30 days by sea, and rewards will begin shipping in Nov 2025."<br/> </p><h3 class="page-anchor" id="h:-Development-and-production-process-">
+<span class="bold">Development and production process</span><br/> </h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48372900">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/372/900/6ac93e1b81aff3df67cdbfe837985baf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740967385&amp;width=680&amp;sig=dQm4vehJHpz2ODVUrD3c17dpv%2FZo%2BIsKhCQZ4v80GVI%3D"/>
+</figure>
+</div>
+<p>The PaintStation is designed and developed at UFM Design Studio in Hong Kong, led by our chief designers, Arb Leung and Ritchie Yau. Arb Leung is the former lead designer for Steelcase, and Ritchie Yau is a former product designer for Herman Miller, both with over 20 years of experience in furniture design and production. The manufacturing takes place at our production facility in Dongguan, China, which specializes in office furniture and boasts 30 years of experience in providing high-quality steel furniture to renowned brands such as Steelcase and Herman Miller.</p><h3 class="page-anchor" id="h:Project-scheduled-"><span class="bold">Project scheduled </span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49183201">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/183/201/113e76766f54673dcce9cdb4f4eb6afd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746588138&amp;width=680&amp;sig=9wE9fZwrjcq64HEx10dmZUaCvX%2BfEc2EYF85S%2B58BSs%3D"/>
+</figure>
+</div>
+<p>Based on our past experience with Kickstarter projects, we are confident in our ability to manage our development and fulfillment timelines effectively, ensuring a positive experience for our backers.</p><h3 class="page-anchor" id="h:About-UFM-Design-and-Previous-Project"><span class="bold">About UFM Design and Previous Project</span></h3><span></span><p>UFM Design is dedicated to pushing the boundaries of innovation in the 3D printing space. In 2023, we successfully launched <span>PrintStation</span>, raising an impressive <span class="bold">$2 million in funding</span>. We take great pride in having<span class="bold"> completed 100% of our reward fulfillment by Oct,2024</span>, ensuring that our backers received their products on time.</p><p>Moreover, we're thrilled to share that our project was recognized by Kickstarter as a "<span class="bold">Project We Love</span>," highlighting the quality and impact of our work. With your support, we look forward to continuing to create outstanding solutions for the 3D printing community!</p><h4 class="page-anchor" id="h:-Thank-You-">
+<span class="bold">Thank You!</span><br/> </h4><h3 class="page-anchor" id="h:Follow-us-"><span class="bold">Follow us </span></h3><span></span><span></span><span></span><p><span class="bold">Join Us on This Journey!</span></p><p>Thank you for considering supporting PaintStation. Together, we can create the ultimate paint booth that will enhance the model making experience for hobbyists everywhere.</p><p><span class="bold">Let’s paint a better future—support PaintStation today!</span><br/> </p><h3 class="page-anchor" id="h:-Project-Collaborator-">
+<br/> <br/><span class="bold">Project Collaborator </span>
+</h3><span></span><span></span><span></span><span>This project is promoted by New Backer, a community of over 400,000+ members that has raised creators over $100MM to date.</span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As with any crowdfunding project, there are inherent risks and challenges involved in bringing our vision for PrintStation to life. We want to be transparent with our backers about these potential obstacles:
+
+Production Delays: Manufacturing any product can face unforeseen delays due to factors such as material availability, machine breakdowns, or labor shortages. We are working with experienced suppliers and manufacturers to minimize these risks, but there may be occasional setbacks.
+
+Shipping and Logistics: Shipping globally involves various challenges, including customs clearance and carrier delays. While we will do our best to provide accurate shipping estimates, unforeseen circumstances such as natural disasters or international shipping disruptions could affect delivery timelines.
+
+Quality Assurance: We prioritize quality in every aspect of our product. However, there is always a possibility of defects or inconsistencies in production. We are committed to rigorous quality control processes and will address any issues promptly, but some defects may slip through.
+
+We appreciate your support and understanding as we navigate these challenges. Our team is committed to keeping you updated throughout the process and ensuring that we deliver a quality product that meets your expectations!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">PaintStation is designed with longevity in mind. We utilize high-quality powder-coated steel, ensuring that your paint booth not only looks great but also stands up to the test of time. This robust material offers exceptional resistance to scratches, corrosion, and wear, making it the perfect choice for hobbyists who want a reliable and durable workspace.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">At PaintStation, we believe in sustainability without compromising on quality. That’s why we incorporate recycled PET panels into our design. These panels not only contribute to a reduced environmental footprint but also provide outstanding durability and flexibility.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

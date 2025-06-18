@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roll Cam Camera Man</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/312/784/0f90b559f5252db755cc79ce79e19527_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747475791&width=560&sig=iWoakGo%2BkYVPUgsVPm5rBbs4qjUOC7QSAtDFLnDJq38%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Roll Cam Camera Man</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Worlds First Robotic Camera Man. You don't need to hire a camera man anymore! Pays for itself with just one use!</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div>
+<h3 class="page-anchor" id="h:What-Is-Roll-Cam-"><span class="bold">What Is Roll Cam?</span></h3>
+<h4 class="page-anchor" id="h:Roll-Cam-The-Worlds-First-Robotic-Camera-Man-"><span class="bold">Roll Cam, The Worlds First Robotic Camera-Man. </span></h4>
+<p>Roll Cam tracks and follows you as you walk around <span class="bold">recording or live streaming videos</span>, keeping you framed automatically.  <br/><br/><span class="bold">No camera man needed!</span></p>
+<p>A <span class="bold">real camera man </span>can give you <span class="text-italic">great shots</span>, but <span class="bold">they're </span><span class="text-italic"><span class="bold">expensive</span></span>, may easily cost $200/hr, $300/hr, or more!</p>
+<p>But if you're on a budget, a solo creator, or just need basic video shots,<span class="bold"> Roll Cam Robotic Camera Man is for you.</span> </p>
+<ul>
+<li><span class="bold">Pays for itself after just one use!</span></li>
+<li><span class="bold">A game changer for content creators!</span></li>
+<li><span class="bold">SDK available for developers, hobbyists!</span></li>
+<li>
+<span class="bold">Freedom to walk around recording yourself </span><span class="text-italic"><span class="bold">hands free </span></span><span class="bold">without paying a camera man</span>
+</li>
+</ul>
+<p><span class="bold">Please back this project to help us bring Roll Cam to video creators all over the world!</span></p>
+<p>* Tripod and Video camera not included - use your own tripod and video camera</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49364698">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/364/698/74a0df4bb04426c5e141c20a19cd47c2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747824210&amp;width=680&amp;sig=daka6D%2FqBHMfk99mNch8GMF1vUc91TANqwVnRkDRctg%3D"/>
+</figure>
+</div>
+<p><span class="bold">* Products shown are Working Prototypes. Final appearance and features may vary.</span></p>
+<h3 class="page-anchor" id="h:-Roll-Cam-Referral-">🚀 <span class="bold">Roll Cam Referral</span>
+</h3>
+<p><span class="bold">Hay backers!! instantly join our </span><span>Roll Cam referral program</span><span class="bold">and get free stuff just for referring people who back our Kickstarter. You don't have to be a backer to refer people.</span></p>
+<ul>
+<li>Free Roll Cam battery + charger ($40)</li>
+<li>Free 2x Roll Cam clamps ($40)</li>
+<li>Free Pan-Tilt Chip ($59) </li>
+<li>Free SDK ($99)</li>
+<li><span class="bold">Free Roll Cam ($299)</span></li>
+</ul>
+<h3 class="page-anchor" id="h:Perfect-For-Solo-Content-Creators"><span class="bold">Perfect For Solo Content Creators</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559029">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/559/029/4d6464ffabb9dc340e49658605b59970_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749125038&amp;width=680&amp;sig=Cr%2FFZ9V3JVZE2MNOfvOtWKe0IfWV%2BpRzywSLjgZiIuo%3D" src="https://i.kickstarter.com/assets/049/559/029/4d6464ffabb9dc340e49658605b59970_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749125038&amp;width=680&amp;sig=Cr%2FFZ9V3JVZE2MNOfvOtWKe0IfWV%2BpRzywSLjgZiIuo%3D"/>
+</figure>
+</div>
+<p><span class="bold">Whether you're recording for:</span></p>
+<ul>
+<li>Tik-Tok</li>
+<li>YouTube</li>
+<li>Instagram Reels</li>
+<li>Facebook/Meta</li>
+<li>Real Estate walk-through</li>
+<li>Travel bloggers</li>
+<li>Personal Work out videos</li>
+<li>Fitness Trainers</li>
+<li>Cooking videos</li>
+<li>Lectures or tutorials</li>
+<li>Solo videos</li>
+<li>Others</li>
+</ul>
+<p>Roll Cam makes high-quality solo video production cheap and easy.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49562174">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/562/174/0e931b6c10bd786b7c30d5e97b6f97ea_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749141412&amp;width=680&amp;sig=V6XL%2FKq4CqO85c55jLpTRSOOA6hdOOFOjwJg9rmWAmM%3D" src="https://i.kickstarter.com/assets/049/562/174/0e931b6c10bd786b7c30d5e97b6f97ea_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749141412&amp;width=680&amp;sig=V6XL%2FKq4CqO85c55jLpTRSOOA6hdOOFOjwJg9rmWAmM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:What-People-Are-Saying"><span class="bold">What People Are Saying</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49321660">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/321/660/60d31bb97d25e64d1913e494cb6faac7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747571959&amp;width=680&amp;sig=TJd%2BFqZ1yPNjM7cF1zUknbrTBYBOMigZQr5F%2BmnYs%2Bc%3D"/>
+</figure>
+</div>
+<p>* What real people are saying about Roll Cam</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49498070">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/498/070/df4b23ee970d3f754ecb22cccf6a3431_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748723334&amp;width=680&amp;sig=SivQ6I9Eu%2BnxVYkX321Xd7AL822zXL2O01qz6Vh7A5A%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Creators-Will-Love-Roll-Cam"><span class="bold">Creators Will Love Roll Cam</span></h3>
+<p>✅ No need to google for a camera man<br/>✅ A robotic camera man you can use anytime<br/>✅ Set it up in seconds and start recording<br/>✅ No scheduling delays<br/>✅ No negotiations or contracts to sign<br/>✅ No complicated set up<br/><span class="bold">✅ One time purchase, no hourly fees</span><br/>✅ Re-shoot anytime, no extra cost<br/>✅ Small, portable, and super easy to use<br/>✅ No Rails needed<br/><span class="bold">✅ DIY SDK developer capability</span><br/>✅ Start recording the moment you get a creative inspiration<br/> </p>
+<h3 class="page-anchor" id="h:-Why-Choose-Roll-Cam-Comparison-">
+<span class="bold">Why Choose Roll Cam</span> (Comparison)</h3>
+<h4 class="page-anchor" id="h:Roll-Cam-vs-High-End-Motion-Control-Systems"><span class="bold">Roll Cam vs. High-End Motion Control Systems</span></h4>
+<p>Many professional-grade motion control rigs cost <span class="bold">thousands of dollars</span>—but Roll Cam delivers <span class="bold">cutting-edge AI powered real-time vision tracking</span> at a <span class="text-italic">fraction of the price</span>.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49567766">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/567/766/681e1589e5680d2d90520a93feef47a0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749171375&amp;width=680&amp;sig=o56ckiTxNwnsSUkMuLAjO7Xkl2Bp3oeRE%2F%2FJsScmCbg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Roll-Cam-vs-Other-Device-Types"><span class="bold">Roll Cam vs. Other Device Types</span></h4>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49364752">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/364/752/8bf5ed572d96f1fb2e43df60bffd52fd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747824593&amp;width=680&amp;sig=%2Brshol7TiFUnIl25HxrLGuBMABRixlRx9FPCNHpHgpg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:How-To-Get-Roll-Cam"><span class="bold">How To Get Roll Cam</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49592565">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/592/565/09952b4ed0db7cda4a61d80f4c0f3bc3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749383831&amp;width=680&amp;sig=HvdcNx3QnZivdsEyz%2Be6s3HtzSLdRM2DKw3t%2FCTHEL0%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Step-4-Select-your-reward-level-The-earlier-you-get-it-the-cheaper-it-is-">
+<span class="bold">Step 4.</span> Select your reward level. <span class="text-italic">The earlier you get it the cheaper it is!</span>
+</h4>
+<h3 class="page-anchor" id="h:Roll-Cam-Tech-Specs"><span class="bold">Roll Cam Tech &amp; Specs</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559320">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/559/320/f17d489e5c1a7d240d1c96e39bd6a7c9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749126941&amp;width=680&amp;sig=Z65xuDsiufeeS2W%2BfYCchd57bwVxIMC7IS9Nu0whdRE%3D" src="https://i.kickstarter.com/assets/049/559/320/f17d489e5c1a7d240d1c96e39bd6a7c9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749126941&amp;width=680&amp;sig=Z65xuDsiufeeS2W%2BfYCchd57bwVxIMC7IS9Nu0whdRE%3D"/>
+</figure>
+</div>
+<p>Roll Cam uses the latest cutting edge AI technology to make your life easier and save you money!</p>
+<p>Its built in <span class="bold">Computer Vision </span>and <span class="bold">LIDAR technology </span>automatically tracks you and moves to follow you as you walk from place to place recording or live streaming videos. </p>
+<ul>
+<li>ArmV8M MCU running at 500Mhz 2.23 DMIPS/Mhz</li>
+<li>
+<span class="bold">Neural Network </span>Intelligent engine for AI processing</li>
+<li>CNN <span class="bold">Neural Processing Unit </span>at 0.4 Tera Flops</li>
+<li>Embedded <span class="text-italic">Tensor flow</span>-Lite AI</li>
+<li><span class="bold">Full body tracking AI</span></li>
+<li>Advanced temporal and spacial noise reduction (3DNR)</li>
+<li>Multi-stream real-time H264/H265/JPEG video encoding</li>
+<li>Built in Tracking Video Camera, WiFi, Bluetooth, and Audio Codec</li>
+<li>Built in LIDAR</li>
+<li>Ultra quite precision powerful stepper motors</li>
+<li>Adjustable base handles different tripod sizes</li>
+<li>Bat: Dual (5V/12V) 18000mAh (combined) <br/> </li>
+<li><span class="bold">Easily handles the weight of tripod, DSLR, Mirror-less, Phone camera, Gimbals etc</span></li>
+<li><span class="bold">Speed range from 0 to almost 7 MPH</span></li>
+<li><span class="bold">Roll Cam itself is less than 15 pounds</span></li>
+<li>Holds position on reasonable slopes</li>
+<li>Variable speed and sensitivity</li>
+<li>Manually drive it around remotely, or use automatic tracking</li>
+<li>Teach it a movement pattern to playback</li>
+<li>Adjustable motion dampening</li>
+<li>Smooth speed ramp up/down</li>
+<li><span class="bold">Base adjusts to different Tripod width/height</span></li>
+<li>Supports many types of cameras/lens/tripods:</li>
+<li>
+<span class="bold">Use it with video stabilization software:</span><ul>
+<li>Free Gyroflow</li>
+<li>MotionCam Pro</li>
+<li>Film It</li>
+<li>ReelSteady</li>
+<li>Free Davinci Resolve</li>
+<li>CapCut</li>
+<li>Adobe Warp Stabilizer</li>
+<li>Etc</li>
+</ul>
+</li>
+</ul>
+<h3 class="page-anchor" id="h:Roll-Cam-Ai-Robotics-Programming"><span class="bold">Roll Cam Ai Robotics Programming</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49567581">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/567/581/f6009fcfd72db8fd197dbda8c3a53156_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749169640&amp;width=680&amp;sig=DHW3hfW3j5uYdWooSsLrfOW%2BSA2tHxvG8hEcaQ1MY8k%3D"/>
+</figure>
+</div>
+<p>The Roll Cam Developer SDK license Add-On, gives you exclusive access to DIY Roll Cam's API by <span class="bold">writing your own C++ program code for it</span>. Create custom features and behaviors using an embedded computer programming language. </p>
+<p>Great opportunity to learn robotics real-time programming, read data from the vision system, read data from the LIDAR, move the servos, digital filtering, control the movement motors, pan and tilt the camera, develop your own tracking algorithms, and more!</p>
+<h3 class="page-anchor" id="h:Phone-App"><span class="bold">Phone App</span></h3>
+<p>The Phone app is very simple and <span class="bold">easy to use</span>. Just press <span class="bold">one button </span>to start it tracking.  It works on both Android and IOS. Below shows a simple working prototype of the app. The funds raised will be used to upgrade the app with better looking visuals and features.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49407928">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/407/928/eef1ea058a6805912702cf5ae0b0b62d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748112492&amp;width=680&amp;sig=oiwBrjee52IBGwLY8IZDnurAtCDSV29yGWlFjl01e2g%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Reviews-and-Walk-Thru"><span class="bold">Reviews and Walk Thru</span></h3>
+<p>See how creators can use Roll Cam to get smooth, dynamic shots on their own.</p>
+<p>* Reload the page if the video above doesn't show.</p>
+<ul>
+<li><span class="bold">Programmable tracking speed</span></li>
+<li>Programmable turn speed</li>
+<li>Programmable start/stop acceleration</li>
+<li>Programmable damping</li>
+<li>Programmable speed ramp/up/down</li>
+<li><span class="bold">Programmable tracking distance </span></li>
+<li>Programmable dead motion zones</li>
+<li>Programmable motion sensitivity</li>
+<li>Programmable movement pattern</li>
+<li><span class="bold">Adjust the tripod to desired height</span></li>
+</ul>
+<h3 class="page-anchor" id="h:Multiple-Shooting-Modes"><span class="bold">Multiple Shooting Modes</span></h3>
+<ul>
+<li>Easy ease in/ease out dolly type shots</li>
+<li>Easy orbital shots</li>
+<li>Easy side shots</li>
+<li>Constant direction/speed shots</li>
+<li>Tracks from behind you</li>
+<li>Tracks from in front of you</li>
+<li>Tracks beside you</li>
+<li>Track in place</li>
+<li>Manually drive it around using remote app</li>
+<li>Teach it a movement pattern</li>
+<li>360 video</li>
+<li>Panorama</li>
+<li>Time-lapse (Stretch Goal)</li>
+<li>Zero turning radius</li>
+</ul>
+<h3 class="page-anchor" id="h:Special-Tires-Smoother-Recordings"><span class="bold">Special Tires/Smoother Recordings</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559348">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/559/348/89bbf8f396a70d18c762a575665e94cc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749127146&amp;width=680&amp;sig=STf4eke9rr11uzXWwZTJvG3m%2BUQV1DK%2BhS%2FdhfU3yVY%3D" src="https://i.kickstarter.com/assets/049/559/348/89bbf8f396a70d18c762a575665e94cc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749127146&amp;width=680&amp;sig=STf4eke9rr11uzXWwZTJvG3m%2BUQV1DK%2BhS%2FdhfU3yVY%3D"/>
+</figure>
+</div>
+<ul>
+<li>Rides on top of rubber spikes</li>
+<li>Reduces surface area contacting the ground/bumps</li>
+<li>Rubber spikes absorbs bumps/jiggles</li>
+<li>Space between spikes avoids bumps</li>
+<li>Helps produce smoother video recordings</li>
+<li>Relatively smooth surface still recommended</li>
+</ul>
+<h3 class="page-anchor" id="h:Easy-Setup"><span class="bold">Easy Setup</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559445">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/559/445/721ea1853963a470f593b8cd53b139f2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749127922&amp;width=680&amp;sig=5049aQ%2BRY9alt5l1UC7c6kokMEND%2Bk0x1cQMPRIznRE%3D" src="https://i.kickstarter.com/assets/049/559/445/721ea1853963a470f593b8cd53b139f2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749127922&amp;width=680&amp;sig=5049aQ%2BRY9alt5l1UC7c6kokMEND%2Bk0x1cQMPRIznRE%3D"/>
+</figure>
+</div>
+<ul>
+<li>Compact and easy to assemble</li>
+<li>Portable easy to carry</li>
+<li>Use your own tripod, cameras, lens</li>
+<li><span class="bold">Adjusts for different width/height tripods</span></li>
+<li>Attach your camera to various spots on the tripod for added versatility</li>
+</ul>
+<h3 class="page-anchor" id="h:Advanced-Features"><span class="bold">Advanced Features</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559475">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/559/475/ddf338efeb501a2d94406e392f1ae535_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749128151&amp;width=680&amp;sig=gHV%2FeYYN5TFvW7s9ZmCk3H7IysLmqarrCh1wFju09Ko%3D" src="https://i.kickstarter.com/assets/049/559/475/ddf338efeb501a2d94406e392f1ae535_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749128151&amp;width=680&amp;sig=gHV%2FeYYN5TFvW7s9ZmCk3H7IysLmqarrCh1wFju09Ko%3D"/>
+</figure>
+</div>
+<p>* <span class="bold">Orbit Mode </span>automatically tracks around you to make the orbit video effect</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49552889">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/552/889/cfaf0870916b5898e456f434303e23ae_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749082861&amp;width=680&amp;sig=Lf91Y5OquUTW6U5FxPqNwz4srXlFGButxlNLRgVDJes%3D" src="https://i.kickstarter.com/assets/049/552/889/cfaf0870916b5898e456f434303e23ae_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749082861&amp;width=680&amp;sig=Lf91Y5OquUTW6U5FxPqNwz4srXlFGButxlNLRgVDJes%3D"/>
+</figure>
+</div>
+<ul>
+<li>Program path to follow</li>
+<li>Time-lapse (Stretch Goal)</li>
+<li>Panorama / 360 videos</li>
+<li>Shoot Move Shoot (Stretch Goal)</li>
+<li>Hyper-lapse (Stretch Goal)</li>
+<li>Slider features</li>
+<li>Table Top Dolly features</li>
+</ul>
+<h3 class="page-anchor" id="h:Use-Your-Own-Gear"><span class="bold">Use Your Own Gear</span></h3>
+<p>Instead of being tied to a fixed built in camera and lens like a drone, Roll Cam allows you to use almost any camera/lens within reason. You can also use your own Gimbals, Tripod, and also adjust its width and height as you like.</p>
+<ul>
+<li>GoPro Cameras</li>
+<li>Various DSLR / Mirrorless Cameras / Lens</li>
+<li>Your favorite gimbals and tripods</li>
+<li>Phone Cameras (Android/IOS/Any)</li>
+<li>Others</li>
+</ul>
+<h3 class="page-anchor" id="h:Pan-Tilt-Chip"><span class="bold">Pan Tilt Chip</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559535">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/559/535/860ea108f84a759cc551500c228c8aa0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749128748&amp;width=680&amp;sig=Iv3fKi%2ByPZKvhRz7b3gxIY2sLXzHyKK0Fz1WVAN1odc%3D" src="https://i.kickstarter.com/assets/049/559/535/860ea108f84a759cc551500c228c8aa0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749128748&amp;width=680&amp;sig=Iv3fKi%2ByPZKvhRz7b3gxIY2sLXzHyKK0Fz1WVAN1odc%3D"/>
+</figure>
+</div>
+<p>The <span class="bold">Pan Tilt chip </span>is an <span class="bold">optional add-on circuitry </span>inside of the Roll Cam hardware. It allows you to use the app to remotely pan and tilt your camera, independently from the motion of Roll Cam. This means your camera can pan/tilt in one direction, while Roll Cam moves in a different direction. </p>
+<p>This is great for giving your videos a smooth dramatic and cinematic <span class="bold">parallax</span> <span class="bold">effect </span>to appear more creative. It works with the <span class="bold">Bescor </span>motorized pan/tilt head (not included). Having the independent pan/tilt capability also has many other creative uses too.</p>
+<p>* Video above/below (not affiliated with Roll Cam) shows examples of Parallax effect.</p>
+<h3 class="page-anchor" id="h:Early-Working-Prototypes"><span class="bold">Early Working Prototypes</span></h3>
+<p><img src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,w_695/v1746564732/m3axkfx4qcxpwovepxrf.jpg"/></p>
+<p>* Prototype of the AI Controller</p>
+<p><img src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,w_695/v1747365261/bgp8yw5ebpzunsqkqjr0.png"/></p>
+<p>* Complete working prototype shown - tripod and video cameras not included</p>
+<p><img src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,w_695/v1746564776/poejraos2n9fquaxibui.jpg"/></p>
+<p>* Final product will look slightly different</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559568">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/559/568/16418b06ebe51a697b55f731f614e862_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749128880&amp;width=680&amp;sig=Ufj2t%2B9Jm2qx1aWAOOf8lECyZ03FlXQf%2FxUWJqUlPaI%3D" src="https://i.kickstarter.com/assets/049/559/568/16418b06ebe51a697b55f731f614e862_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749128880&amp;width=680&amp;sig=Ufj2t%2B9Jm2qx1aWAOOf8lECyZ03FlXQf%2FxUWJqUlPaI%3D"/>
+</figure>
+</div>
+<p>* AI Vision controller, and dual 5V/12V battery to power the electronics and the motors</p>
+<h3 class="page-anchor" id="h:Stretch-Goals"><span class="bold">Stretch Goals</span></h3>
+<h4 class="page-anchor" id="h:VR-Headset-experimental-feature-"><span class="bold">VR Headset (experimental feature)</span></h4>
+<p><img src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,w_695/v1746565295/ivykdqm6wbtdwitnivrr.png"/></p>
+<p>VR app allows you to control Roll Cam from your VR headset. See live view and be able to control it and drive it around remotely through your VR headset and controller as you record videos or live stream. Many drones also have this feature.</p>
+<p>We have a working version of the VR app, but its still in the experimental phase.</p>
+<h4 class="page-anchor" id="h:Voice-Command-Control-"><span class="bold">Voice Command Control </span></h4>
+<p>Our aim is to make Roll Cam extremely easy to use. </p>
+<p>Having voice commands allows you to simply speak to Roll Cam to give it commands so your hands are free to prepare for your shots. </p>
+<p>Just say it and shoot.</p>
+<p>For example, simply say "forward track", "reverse track", "turn left", "turn right", make a circle with a 3 foot radius", go forward 10 feet then reverse 10 feet" speed 1 inch per second", "start", "stop", etc.</p>
+<h3 class="page-anchor" id="h:R-D-Process"><span class="bold">R&amp;D Process</span></h3>
+<p>Many iterations were required to complete the Roll Cam design, requiring a combined knowledge of mechanical engineering, electronics engineering, and software engineering.</p>
+<h4 class="page-anchor" id="h:Early-Prototype-Development"><span class="bold">Early Prototype Development</span></h4>
+<p>* Video shows initial prototype testing of the servo controlling the distance tracking LIDAR during development. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559604">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/559/604/9eaf63d252556aa2712542a26bbac61e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749129019&amp;width=680&amp;sig=5rjY1oqbHU2nFD7x8CGyKizxL07DrY4s6doCuMK1m7I%3D" src="https://i.kickstarter.com/assets/049/559/604/9eaf63d252556aa2712542a26bbac61e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749129019&amp;width=680&amp;sig=5rjY1oqbHU2nFD7x8CGyKizxL07DrY4s6doCuMK1m7I%3D"/>
+</figure>
+</div>
+<p>* Early Prototype Testing</p>
+<p>* Move it around manually</p>
+<h4 class="page-anchor" id="h:Early-CAD-Designs"><span class="bold">Early CAD Designs</span></h4>
+<p>Extremely early design concept CAD drawing gave us an idea how it would look.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49427535">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/427/535/8df4d9ce266857a665722d98486a5551_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748280757&amp;width=680&amp;sig=4hr1LoDj%2FbR5lmAH0%2B98UJAsq2TLnH4M8UP44EHnpzg%3D" src="https://i.kickstarter.com/assets/049/427/535/8df4d9ce266857a665722d98486a5551_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748280757&amp;width=680&amp;sig=4hr1LoDj%2FbR5lmAH0%2B98UJAsq2TLnH4M8UP44EHnpzg%3D"/>
+</figure>
+</div>
+<p>To design Roll Cam, countless variations of different CAD designs were experimented with to find the simplest design with maximum flexibility.</p>
+<p><img src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,fl_lossy,w_695/v1746563609/cvfwhgxxewrvjfzqcws3.gif"/></p>
+<p>* CAD for plastic housing for base and the Ai Controller</p>
+<h4 class="page-anchor" id="h:Circuit-Design"><span class="bold">Circuit Design</span></h4>
+<p>Countless variations of circuit designs were tried, including testing different chips, drivers, wheels, power supplies, voltage levels, batteries, etc to get it working.</p>
+<p><img src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,fl_lossy,w_695/v1746563661/owmcwi5vqucvbqnqjolr.gif"/></p>
+<p>* Schematics and PCB layout for Ai Controller</p>
+<h4 class="page-anchor" id="h:Program-Code"><span class="bold">Program Code</span></h4>
+<p>Thousands of lines of embedded C++ firmware code written from scratch during the wee hours of countless nights to operate the micro controller (the brains) inside Roll Cam hardware. The multi-threaded program controls everything, including its built in WiFi, Computer Vision tracking, LIDAR, motor PID (Proportional-Integral-Derivative) control, various DSP (digital signal processing) filters, real-time mathematical calculations, wireless communication with the app, and lots more. Additional code for the phone app too!</p>
+<p><img src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,fl_lossy,w_695/v1746564088/k4bxmdvom6cw5iodhux4.gif"/></p>
+<p>* Firmware code for Ai controller</p>
+<h4 class="page-anchor" id="h:CAD-Drawings-Of-Early-Prototypes-How-the-idea-started-"><span class="bold">CAD Drawings Of Early Prototypes (How the idea started)</span></h4>
+<p><img src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,w_695/v1746564251/guz8pnkyavsdu32z9vmn.png"/></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559846">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/559/846/98ec2b6113022a504be65de080194007_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749129928&amp;width=680&amp;sig=kJJgqosDKGLiSMTxacDlzt3Ffy1P6wZYRuyh93ql4Uo%3D" src="https://i.kickstarter.com/assets/049/559/846/98ec2b6113022a504be65de080194007_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749129928&amp;width=680&amp;sig=kJJgqosDKGLiSMTxacDlzt3Ffy1P6wZYRuyh93ql4Uo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-">
+<br/> </h3>
+<h3 class="page-anchor" id="h:Lets-Roll-With-Roll-Cam-"><span class="bold">Lets Roll With Roll Cam!</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49559900">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/559/900/e40e7af045278baab3c5682dc364f02e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749130070&amp;width=680&amp;sig=8QCbes4zmbn3ng06%2FTNBp93iWO5fxdNfi6O8CK0%2F%2B4w%3D" src="https://i.kickstarter.com/assets/049/559/900/e40e7af045278baab3c5682dc364f02e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749130070&amp;width=680&amp;sig=8QCbes4zmbn3ng06%2FTNBp93iWO5fxdNfi6O8CK0%2F%2B4w%3D"/>
+</figure>
+</div>
+<p>* Actual Roll Cam image - zero turning radius</p>
+<h4 class="page-anchor" id="h:Why-back-this-project-"><span class="bold">Why back this project? </span></h4>
+<p>Roll Cam <span class="bold">may save you money</span>. A <span class="bold">real camera man </span>can give you great shots, but <span class="bold">they're expensive</span>, may cost easily $200/hr, $300/hr or more!</p>
+<p>But if you're on a budget, a solo creator, or just need basic video shots,<span class="bold"> Roll Cam is for you. Instead of hiring a camera man, Roll Cam pays for itself after just one use!</span></p>
+<p>Also, you may have to wait weeks to fit into a photographers schedule. If there was a mistake while shooting, you may have to schedule a re-shoot, pay again, waste time preparing, long delays, a huge hassle and a <span class="bold">huge pain point! </span><br/><span class="bold">We have been thru it ourselves many times!</span></p>
+<p>With Roll Cam you can start recording immediately anytime you feel an inspiration, just roll out of bed, turn it on, and start recording, no need to contact anyone. </p>
+<p>Please back this project to help us bring Roll Cam to video creators all over the world!</p>
+<p>If you back this project now before it hits retail stores, you will save even more off the MSRP. So what are you waiting for!!</p>
+<h3 class="page-anchor" id="h:Who-Are-We"><span class="bold">Who Are We</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313363">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/363/208f2a39f5763a132cd8ff904c8e83a5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747483074&amp;width=680&amp;sig=PvuBcc5P19UDDmoAPjbf6h%2FrQlpYdK3mZjKrYdaHpm0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49336672">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/336/672/8af2bf2ed159f6c02178b01f93338115_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747669668&amp;width=680&amp;sig=30RJ4Kgwf4UWS0L%2BpXwbBkWZ7IT42SnSJBYnaW7vvT4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Berkshire Computing </span>is an American technology consulting company founded in 2021.</p>
+<p>Our engineers have Masters Degrees in Computer Science and Electrical Engineering, with over 20 years combined experience working at large engineering companies such as Amazon, Motorola, Citibank, Lockheed Martin, and developing software for <span class="bold">NASA Artemis moon base program</span>. </p>
+<p>We have experience creating reliable systems from Uber type phone apps and servers, to high speed hardware for digital cameras, Bare Metal, Embedded Linux, VR Video Games and more. We strive to make Roll Cam useful and save you money.</p>
+<h3 class="page-anchor" id="h:The-Team"><span class="bold">The Team</span></h3>
+<p>Information about the team</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49652955">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/652/955/d97d95c14003ba8b3010b0aa8486bead_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749744268&amp;width=680&amp;sig=2NOkgIKmXNzhftFptsx8h5uW%2FZe0o5Pud6m0e0I4wno%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:The-Idea-"><span class="bold">The Idea!</span></h3>
+<p>We got the idea for Roll Cam when we noticed that the face tracking gimbals on the market were stationary and fixed to a tripod. They only allowed you to move around within the radius of the tripod. </p>
+<p>So we got the idea to create Roll Cam, a device that can track and follow the user as they walk from place to place, giving them more freedom than fixed face tracking Gimbals. We couldn't find any device like it on the market, so we started designing it right away.</p>
+<h3 class="page-anchor" id="h:How-Will-We-Use-The-Funds"><span class="bold">How Will We Use The Funds</span></h3>
+<p>We already have a working prototype as you can see. The funds raised will be used to add the finishing touches to the existing design, for manufacturing, to ship it to you, and to put it on the market afterwards.</p>
+<h3 class="page-anchor" id="h:Whats-In-The-Box"><span class="bold">Whats In The Box</span></h3>
+<p>The basic Roll Cam System includes everything you need to get started (It does not include a tripod, nor recording equipment).</p>
+<ul>
+<li>Roll Cam powered wheel base</li>
+<li>Roll Cam platform spreader</li>
+<li>Roll Cam Controller</li>
+<li>Dual 5V/ 12V battery</li>
+<li>Battery Charger</li>
+<li>Cables</li>
+<li>Phone app</li>
+</ul>
+<h3 class="page-anchor" id="h:Optional-Add-On-Accessories"><span class="bold">Optional Add-On Accessories</span></h3>
+<h4 class="page-anchor" id="h:Extra-Re-chargeable-Batteries-Add-On"><span class="bold">Extra Re-chargeable Batteries Add-On</span></h4>
+<p><img src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,w_695/v1746565188/jfzrek83ziwfqsqe6osq.png"/></p>
+<p>Roll Cam uses a dual (5V/12V) 18000mAh (combined) re-chargeable / removable / replaceable battery, basically two batteries in one to power the electronics, motors, and servos. Ordering extra batteries will ensure you are able to quickly swap batteries to keep Roll Cam rolling for a long time between charges. Roll Cam already includes one battery and charger, getting another one (charger included) is recommended to keep you rolling without delays.</p>
+<h4 class="page-anchor" id="h:Roll-Clamp-Add-On"><span class="bold">Roll Clamp Add-On</span></h4>
+<p><img src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_limit,w_695/v1746565172/x8fia2xyyjbb4bz2lcx7.png"/></p>
+<p>Designed to work with Roll Cam, it helps keep your cameras, batteries, and Roll Cam itself attached to your tripod. Its <span class="bold">very handy </span>to have, and can be used not only with Roll Cam, but for other uses too. Getting at <span class="bold">least 2 is recommended</span>.</p>
+<h4 class="page-anchor" id="h:Pan-Tilt-Chip-Add-On"><span class="bold">Pan/Tilt Chip Add-On</span></h4>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49471679">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/471/679/083464a2424dc51a0af0c12b4cfe706c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748534687&amp;width=680&amp;sig=qjIuJuNYUguhzB03cQvs7sBNDnZS6eKo%2B1ZNP4PeF4M%3D"/>
+</figure>
+</div>
+<p>Adding the <span class="bold">Pan/Tilt chip option </span>to the Roll Cam controller allows you to plug in a Bescor MP101/360 motorized pan/tilt head into Roll cam. This allows you to remotely pan or tilt your camera while Roll Cam is being operated. This gives you a lot more flexibility to make more creative shots, where Roll Cam is moving in one direction while the camera is panning in a different direction, like a <span class="bold">parallax effect</span>.<br/><br/>With this chip added, all you need to do is plug in your Bescor Motorized head directly into Roll Cam controller, then control it remotely via the app. Bescor Pan/tilt head itself is <span class="bold">not</span> included. This chip is an added capability to the Roll Cam controller.</p>
+<h4 class="page-anchor" id="h:Roll-Cam-Ai-Robotics-Developer-SDK-License-Add-On"><span class="bold">Roll Cam Ai Robotics Developer SDK License Add-On</span></h4>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49567581">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/567/581/f6009fcfd72db8fd197dbda8c3a53156_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749169640&amp;width=680&amp;sig=DHW3hfW3j5uYdWooSsLrfOW%2BSA2tHxvG8hEcaQ1MY8k%3D"/>
+</figure>
+</div>
+<p>The Roll Cam Developer SDK license Add-On, gives you exclusive access to DIY Roll Cam's API by <span class="bold">writing your own program code for it</span>. Create custom features and behaviors using an embedded computer programming language. <br/><br/>Great opportunity to learn robotics real-time programming, read data from the vision system, read data from the LIDAR, move the servos, digital filtering, control the movement motors, pan and tilt the camera, develop your own tracking algorithms, and more!</p>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Potential risks are the ability to obtain the necessary components (Micro-controller, LIDAR, Motor Control chips, Stepper Motors, etc.) to complete manufacturing.
+
+To overcome these issues, we plan to design the circuit, PCB, and firmware, so that it can work with different chips and components, so if a particular component isn't available, we can switch to using a completely different one without redesigning everything, so as not to waste time.
+
+A reliable on time delivery is our top priority, that said, sea freight schedules can be unpredictable, and delays beyond our control may occur. We’ve lined up experienced logistics partners and will keep you updated every step of the way to minimize any impact on delivery.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
