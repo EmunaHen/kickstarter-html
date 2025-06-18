@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAMAY - the BUGGY !</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/048/868/572/aba61dc21dae4da4e037f00ef5f28730_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1744361493&width=560&sig=SuVbZ%2FZXt%2FcIg3w%2BvF2eRX3Un%2BUBgK7RyAxdumL9KpQ%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>MAMAY - the BUGGY !</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">The right way to go OFFROAD!</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 86,276</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:MAMAY">MAMAY</h3><p>Hi! We are a team from Lviv, Ukraine, and we build buggies for the offroad use. We call them MAMAY after iconic Ukrainian folkloric cossack hero whose fundamental traits were desire for freedom and resistance to oppression. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768623">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/623/ca3cba9c3944c202840c2201007f1165_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743662864&amp;width=680&amp;sig=6RBLDyZEBF04O0jaUzpdLPZQqA8Zf8hcn%2FwFzbE%2BB8g%3D"/>
+</figure>
+</div>
+<p>In fact, we build not only buggies - our team has experience in delivering more than 20 projects in automotive domain. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768632">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/632/fe1600cab874202ed848e66c5bbd4375_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743662929&amp;width=680&amp;sig=muOrz0Q7xLFf4dDf6TWzoIZeMxvQtfxV0ksVEufk564%3D"/>
+</figure>
+</div>
+<p>These were busses, e-cars, light trucks, trailers, bodies for sport cars and many others.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768636">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/636/d51596f81d015991093411e8c9e6b4ea_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743662976&amp;width=680&amp;sig=mjKI%2F9h2lZDw13CLX1%2Ft5kaGnbEziM1tW%2F5hdimwRUY%3D"/>
+</figure>
+</div>
+<p>At the beginning it was just a dream...</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768650">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/650/8e68d187619c9d5843770a3ad389f86e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663113&amp;width=680&amp;sig=wRpvjS5bSMuA9JUmhj6Ylw6GA3KqM1uoGbJC%2F8bbfCw%3D"/>
+</figure>
+</div>
+<p>...but now, we develop our own independent project - we are building our own vehicle, and this are just the first steps our our jorney. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49010882">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/010/882/58244b2fd06b81032e7fc9e2657be0e3_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745413324&amp;width=680&amp;sig=8hxzMqCQevj21yHxFaqnH4VNc3V3%2BEiPheHts%2FF2vA0%3D"/>
+</figure>
+</div>
+<p>This is our first buggy we built.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49011024">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/011/024/94408880a265f839f9c7f0169deb76f6_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745413629&amp;width=680&amp;sig=lrvrAdaEXJ6iNqXDKXWnKJ3S0jBQWWLVvWo%2BM9bexnc%3D"/>
+</figure>
+</div>
+<p>It looks similar to current model, but the differences are significant.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49010899">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/010/899/3fe64f84a323945217cc915f3bc73e9e_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745413392&amp;width=680&amp;sig=FE6Oh9msWuCVDb9ylTtFKrBhQ3USALzpK%2FkWC9i9SGQ%3D"/>
+</figure>
+</div>
+<p>It`s easy to work for everybody at the plant, because of 3D design made before.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49010902">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/010/902/9d18e3c021164916bb371bf13afe23d1_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745413412&amp;width=680&amp;sig=aA9VFtmfzeEaU3gEXOFvaa%2FjlL1lBud1J43ZTWRzt90%3D"/>
+</figure>
+</div>
+<p>Also we can make fast changes.</p><p><img class="image" data-id="48993616" src="https://i.kickstarter.com/assets/048/993/616/2ea8e0a8bc1c65b6be46ea354d50b272_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745310605&amp;width=1600&amp;sig=8ik0zf2fOcdFkzAwo6aClTGfCvKpGF8xjWXUTEwMyko%3D"/><img class="image" data-id="49011091" src="https://i.kickstarter.com/assets/049/011/091/75570bfeee239f430acc5c8ce21b6e3c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745414048&amp;width=4096&amp;sig=MCFgCPdCcLNO5A5hwWewKiomYoZfu3bZLi%2BVCHVDzCM%3D"/>At the plant we build Mamay in small series, but there are more possibilities..</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768659">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/659/0b5931f74a90145fd65efe3d06f39893_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663198&amp;width=680&amp;sig=wKl8UsUOEWUBcRHetiHrtgKwgEFY2dKrB0HPuuq3GvA%3D"/>
+</figure>
+</div>
+<p>MAMAY is a lightweight four-wheeled high-terrain vehicle, designed and manufactured in the first place for use in sport and entertainment. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768666">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/666/5e3100c3b6f69b30154e88bbb20dbf24_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663257&amp;width=680&amp;sig=yRojffnyRq93R%2BI1sBpKup%2B6WMGmdV10luUY6Dm7Mwo%3D"/>
+</figure>
+</div>
+<p>It can be used in agriculture and forestry, too.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768685">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/685/aa9e2b49e6e1142cdf3f2344b475c43f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663338&amp;width=680&amp;sig=GHrhCkqV9FJOv61HtUm2TtMr8EIy5xKMSWTv5YS%2FKEM%3D"/>
+</figure>
+</div>
+<p>It is a joy and fun to drive.</p><p>Now, why are our vehicles of any importance these days? </p><p>The answer is simple - they are used by the Armed Forces of Ukraine to evacuate the wounded directly from the battlefield. </p><p>Our vehicles save lives - and this is what matters the most! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768698">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/698/9aaa102c0490d5549b3b98426205ad32_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663392&amp;width=680&amp;sig=Xn1Q%2FWDybK0CDv7Q0h2eH1wU%2BaJP%2BGPBr%2B9ycoS9vz4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768702">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/702/d734c3c1109c46c0941e0dc00c7bb826_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663425&amp;width=680&amp;sig=INnqwFSXy%2BUUHeLIX8R3FYtMPenwOg9Z3SuiEALCt6Y%3D"/>
+</figure>
+</div>
+<p>We work continuously on improving the design and manufacture different vehicle modifications depending on the needs.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768709">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/709/a999d603786bfcff0cefdb11a3d88917_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663452&amp;width=680&amp;sig=kl1DJkZs%2Fz8Mr1714wiq8hGF6jhAJ4rRf025XHjjVhg%3D"/>
+</figure>
+</div>
+<p>Efficiency - frankly speaking, one person is enough to evacuate two wounded from the battlefield! And this is sinificant and impressive. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768715">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/715/9171412292a0b16cf20fe9f4c9cde8f2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663497&amp;width=680&amp;sig=e2mfkWfRyqxwzI562GHyE1LgBCYgYUU%2BNOv2xNhUBvI%3D"/>
+</figure>
+</div>
+<p>Our utility interior is easy to clean and maintain.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768717">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/717/58a90351fdb1404243a604be02a5c28c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663515&amp;width=680&amp;sig=3tkU4UvhYjHkbkC6A49%2Bt7GwVxNbck7RmaS8Ixtm4rY%3D"/>
+</figure>
+</div>
+<p>Nothing extraordinary, simplicity from the day one.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768724">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/724/02d338f170960ab6f1650c4da32d0ccd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663555&amp;width=680&amp;sig=u4ndsl9emRL0lIOnZ%2BrMT2fnrzU0jBPmhK8yDC1UhzA%3D"/>
+</figure>
+</div>
+<p>Our vehicles are tested under extreme conditions and circumstances.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768738">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/738/00219ad0777902f352bf51f958b7d0bb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663697&amp;width=680&amp;sig=pYonqwCv99UzkpCbi46l0895QjWrWgfx%2F9XszOr6Q%2B4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768742">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/742/7adbfd64dc4914fd3059011bfe5cc4a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663708&amp;width=680&amp;sig=FNuc5oC9iKY5whrUbSqyqQcq61RsCVrGc2qxPDS6Hwc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768746">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/746/4e076d28ac9a5c813462bfeda4b42546_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663720&amp;width=680&amp;sig=t2L1QgS14Xr1Q2vxGMTjl7QzapBA5r%2FAicZ806CvKlA%3D"/>
+</figure>
+</div>
+<p>Design solutions, that bring you to success!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768752">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/752/794bec6fa2123bd43f4a820911816d23_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743663751&amp;width=680&amp;sig=4RryQDn7IyI%2Bz0OVMDVNA1hsBi4kVvrQ%2F4FEtKvnUF4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48768759">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/768/759/ee17b677cc25839ea621d35acea2aae7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743663790&amp;width=680&amp;sig=h8gg5Q8LhPyfjCjyY316naQp5a7xMvDhyjqsKDPemik%3D"/>
+</figure>
+</div>
+<p>Let's make a history together!</p></div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div class="relative flex justify-center items-center h50"><svg height="250" preserveaspectratio="xMinYMid" viewbox="0 0 250 250" width="250"><g transform="translate(125, 125) scale(2.5, 2.5)"><defs><pattern height="1" id="bg1" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/xglb1yux-hatch_light_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=clgJlzhY3k416hIJWrLOR2MdAEuRyBIYLy5Q4Y0qGuE%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg2" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/qm5rth84-dot_line_white_2_pattern_overlays_20190901.png?origin=static&amp;sig=X4u8yLPJQSLFYyFAWhfks%2Bb0l7JvccL9Ns4mZ%2BdcX%2Fs%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg3" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/2pgrzep-scattered_dots_black_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=7dYAvrHvJlUMrHNcRby2NfD16BbES28QnocyMYhS%2BjU%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg4" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/l9o3ber7-grid_dark_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=w1sAH2Z8b0%2Bm44c8oN%2BES4hwspBpkhrrhc1YpFJSPyQ%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg5" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/v0js8b2e-dot_line_white_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=j1%2Biz4vH2TtOn5EX0sEl2Xque0oEBcJupM5qVbNe8CM%3D" width="160" x="0" y="0"/></pattern></defs><path class="innerArc innerArc0" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-30.236067900365036,31.689433537450853L-23.93960966376013,25.463652313578315A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="#059968" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc1" d="M-32.02871567233484,29.876435068139113A43.8,43.8,0,0,1,-40.763154829278285,-16.025143006047916L-32.62017115487415,-12.546989034294885A34.949999999999996,34.949999999999996,0,0,0,-25.732257435729938,23.650653844266568Z" fill="#71A0FF" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc2" d="M-39.76165722699783,-18.369828920344656A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-31.618673552593698,-14.891674948591625Z" fill="#a3a3a3" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArcTexture" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-30.236067900365036,31.689433537450853L-23.93960966376013,25.463652313578315A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="url(#bg1)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-32.02871567233484,29.876435068139113A43.8,43.8,0,0,1,-40.763154829278285,-16.025143006047916L-32.62017115487415,-12.546989034294885A34.949999999999996,34.949999999999996,0,0,0,-25.732257435729938,23.650653844266568Z" fill="url(#bg2)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-39.76165722699783,-18.369828920344656A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-31.618673552593698,-14.891674948591625Z" fill="url(#bg3)" style="opacity: 1;"></path><path class="outerArc" d="M1.274808758606064,-49.983745984359565A50,50,0,0,1,40.737399926923345,28.99076141107552L37.697470144208395,26.70843957865223A46.2,46.2,0,0,0,1.2748087586060677,-46.18240858410247Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M40.99672418161262,28.62286859098471A50,50,0,0,1,-34.646440606470804,36.0503003219431L-31.943361089061696,33.37756255830883A46.2,46.2,0,0,0,37.82540746999385,26.52694007474164Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-36.439088378440594,34.237301852631376A50,50,0,0,1,-46.466931713729025,-18.46142619386822L-42.97113589427688,-16.96824917177932A46.2,46.2,0,0,0,-33.73600886103151,31.564564088997084Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-45.46543411144858,-20.806112108164935A50,50,0,0,1,-37.510212183051735,-33.060308256010515L-34.723443604546645,-30.474948141742086A46.2,46.2,0,0,0,-41.969638291996425,-19.312935086076063Z" fill="#cccccc" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-37.80630126772768,-32.72130169253375A50,50,0,0,1,-25.45437375670183,-43.03573929484806L-23.603209699192647,-39.71559507165842A46.2,46.2,0,0,0,-34.86951881734573,-30.307699639642273Z" fill="#999999" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-25.840750178276117,-42.80485521788297A50,50,0,0,1,-12.433276816291157,-48.429470651757875L-11.582197762682515,-44.724631859704694A46.2,46.2,0,0,0,-23.79382806684975,-39.60168867517134Z" fill="#848484" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-12.868735217064748,-48.315583965353014A50,50,0,0,1,-1.2748087586060257,-49.983745984359565L-1.2748087586060426,-46.18240858410247A46.2,46.2,0,0,0,-11.797030668893056,-44.668445992637764Z" fill="#cccccc" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><text font-size="8" height="250" style="opacity: 1;" text-anchor="middle" width="250" x="-1" y="3">$86,276</text></g></svg></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$54,000</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Manufacturing</div><div class="m0 type-16 text-nowrap">$30,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Research &amp; Development</div><div class="m0 type-16 text-nowrap">$24,000</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Multiple/Other</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$16,250</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Labor</div><div class="m0 type-16 text-nowrap">$16,250</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$16,026</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">$4,315</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">$4,315</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Taxes</div><div class="m0 type-16 text-nowrap">$3,883</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">$3,512</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Fulfilling</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$0</div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated April 3, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We have already produced more than 50 cars of this model, so the risks are minimal. 
+And we cary on with manufacturing and to improvements. 
+
+But we can do more: we plan to develop the project and make it self-sustained.
+
+Of course, we face different challenges every day - continious emergency power outages, labor shortages due to war conditions, unstable economic situation and similar - we have already come a long way, and we plan to make a jump and to do much more!
+Yes, we face the challengtes but we are ambitious to overcome them!
+
+Also we plan to build a bit bigger car with more room and safety for passengers.
+
+That`s why we need for our start a friendly kick from you, if you know what I mean :)</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The solid car body is made from rectangular tubes and fiberglass panels. It is durable, but also very easy to repair if necessary.
+
+Thanks to the large ground clearance (325 - 520 mm), long suspension travel (260 - 320 mm), protection of systems under the body bottom and the absence of front and rear overhangs, the car overcomes significant obstacles and can do more, than most of the serial offroad vehicles.
+
+The capacity is up to 5 people plus a trunk above the engine, an additional trunk on the roof is also possible. The car body provides protection from wind and rain, and an easy access due to the wide armhole.
+
+Seatings are made of fiberglass, they are adjustable in length. Installed external lighting allows you to move in the dark and in a convoy.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">We give a second life chance to components such as the engines, gearboxes, wheel hubs and others - this class of cars is not used for long range of service. In this way, we minimize the impact on the environment.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

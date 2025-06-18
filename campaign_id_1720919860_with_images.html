@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Athena - A Research Log</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/271/461/0270ce4b3c3d523d7f214aa91963e185_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747207933&width=560&sig=lZLEjfq%2FP9ozVs4ESTQn8c2NQ74QkwK%2BTmo5uF5ISLk%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Athena - A Research Log</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Athena is a web app designed to support university students during their thesis year, helping them through the key steps before the act</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 11,758</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272273">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/273/9c5bf8d5f01c686fd4294f4368bea9fc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212318&amp;width=680&amp;sig=aT5G8ay9iiJkP1WYfnfbv0fzBZ37m18WB16h3hMHupo%3D"/>
+</figure>
+</div>
+<p>Writing a thesis should be a journey of discovery — not a source of endless stress and confusion.<br/>Yet, for thousands of students every year, the experience turns into a frustrating maze: scattered notes, lost research materials, unclear structures, and overwhelming deadlines.</p><p>We created Athena because we believe students deserve better tools.<br/>Tools that don't just "help" — but truly <span class="bold">guide</span>, <span class="bold">simplify</span>, and <span class="bold">empower</span>.</p><p>Athena is the research and writing assistant we wished we had during our university years: a smart, intuitive web app that helps students find credible sources, structure their ideas into a clear outline, and stay on track with a personalized roadmap.</p><p>No more last-minute panics. No more lost documents. No more staring at a blank page.<br/>Athena lights the way — so students can focus on what really matters: their ideas.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052109">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/109/0490ccc927baebbe8999f0893f014711_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745686756&amp;width=680&amp;sig=waCFs5D9s7oDzwavemv9jk9iZ21vENv%2FFy56ePQrqsI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272305">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/305/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212445&amp;width=680&amp;sig=l4aRMuZ93xlHG83ICEUkPGqMF2wIQCzq7Jo9co1ybyc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272276">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/276/31070feaee7d290bb5bfc19c9acfe980_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212329&amp;width=680&amp;sig=2dsVAA%2Fh0NNOmmq8x0qd14DFwVcn5DSsKHvxovSCcss%3D"/>
+</figure>
+</div>
+<p><span class="bold">Turning Problems into Solutions</span><br/>After interviewing over 100 students, we found the same struggles repeated over and over: scattered research, lack of structure, procrastination, and overwhelming stress.<br/>That's why we designed Athena — a platform built around real needs, offering clear, powerful solutions for every step of the thesis journey.</p><ul>
+<li>
+<span class="bold">Smart Academic Research</span><br/>Find high-quality academic sources quickly with AI-driven search tools, connecting you to articles, papers, and official documents without the chaos.</li>
+<li>
+<span class="bold">Automatic Thesis Outline</span><br/>No more staring at a blank page: Athena generates a structured, customizable index based on your research and your topic focus.</li>
+<li>
+<span class="bold">Personalized Writing Roadmap</span><br/>Athena creates a dynamic, step-by-step plan tailored to your timeline, helping you beat procrastination and stay on track through every phase.</li>
+<li>
+<span class="bold">Organized Source Management</span><br/>Save, categorize, and easily access all your research materials in one intuitive place — no more lost PDFs or messy folders.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052163">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/163/e642dced2e229714f6bd9209f1c240fa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745687205&amp;width=680&amp;sig=%2BjU9lQKzBStgHVQ%2BkFPEk4N6w1f0uMM%2FZe3GyUi7Ir8%3D"/>
+</figure>
+</div>
+<p>And now, ahed with some spoiler!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Smart Research Tab" data-id="49291269">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/291/269/9b0bbdacf9971051ede48a10e6340a00_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747325171&amp;width=680&amp;sig=gpW9NH0Zv5fkCEp9JB46%2BTUCEThTKyiiSNNJHBNDwVk%3D"/>
+<figcaption class="px2">Smart Research Tab</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Index Tab" data-id="49291272">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/291/272/838de6de08ffc9a58d67de3b16c53ae6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747325187&amp;width=680&amp;sig=UutFuSJR1sBOeQ0WT3H4drLmAp5M5iDSXBSkiq9VGSo%3D"/>
+<figcaption class="px2">Index Tab</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Roadmap Tab" data-id="49291279">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/291/279/5a2c1de8cdfece0c9b15ac2a2d9559af_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747325206&amp;width=680&amp;sig=SR1Ty6sAAzigDiHvr88gbIkRZ4f0jUdr0hKwBDBNjnU%3D"/>
+<figcaption class="px2">Roadmap Tab</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Citations Tab" data-id="49291293">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/291/293/e014bfd148850cc146197c3de27e0789_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747325241&amp;width=680&amp;sig=EakONmVNkk4JT7DdqPNaC4a8ajZmwq2qFdsofFedo04%3D"/>
+<figcaption class="px2">Citations Tab</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Document Detail Hub" data-id="49291301">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/291/301/b6ec8edee6a719eb5cdbe37f5e1431b0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747325259&amp;width=680&amp;sig=TUtAUEBhRRo489y4Y8p83r1dCMdP7lRdtWi9KlqXQhc%3D"/>
+<figcaption class="px2">Document Detail Hub</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272306">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/306/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212452&amp;width=680&amp;sig=BPABFyG54OXGbZcmz9qJ25PMCp28PvrNliJc6QfYbP0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272279">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/279/aca26ee1c3aae067a9f1d819a4dbf8b0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212342&amp;width=680&amp;sig=6CjWVl8Y33CNbWydXePSov%2FxPFHJzfyoBMPZeXxap1c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052243">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/243/c079335a93ced36edd02e69dbfcd9a62_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745687781&amp;width=680&amp;sig=kLeLtU7HZ6WQGCXHDXaBonMqb5RyYEg%2Fsj8cnf2SWNg%3D"/>
+</figure>
+</div>
+<p>Our backend is powered by <span class="bold">Python</span>, a versatile and robust language that seamlessly integrates with the <span class="bold">AWS infrastructure</span>. Python allows us to rapidly build scalable, high-performance features while leveraging AWS’s ecosystem (such as AWS Lambda, EC2, and more) for automation and processing. This setup ensures that our platform remains flexible, efficient, and future-proof.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052244">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/244/f3009a4248b5bd01ca8fe7a57cb7182d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745687782&amp;width=680&amp;sig=hRK8ZPcnbNgaSFMZvbYrmn%2FMMBk8cpRJsRz9ZI9AcqQ%3D"/>
+</figure>
+</div>
+<p>For the frontend, we’ve chosen <span class="bold">React</span>—one of the most powerful and widely adopted frameworks for building dynamic, responsive, and user-friendly web applications. By utilizing <span class="bold">up-to-date libraries</span> (all non-deprecated) and React’s efficient rendering, we deliver a smooth, interactive experience that works seamlessly across devices. Our application is fully <span class="bold">responsive</span>, ensuring a top-tier experience on everything from desktop computers to mobile phones.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052246">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/246/a9d61ac583217b7a1a156bd0a9bbcd4f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745687782&amp;width=680&amp;sig=1bpGlyooFScF76R2D8X3IZHFA%2Fj1jETmtjIsJzlOnCQ%3D"/>
+</figure>
+</div>
+<p>Our platform is hosted on <span class="bold">Amazon Web Services (AWS)</span>, a leading provider of cloud solutions known for its scalability, security, and reliability. We utilize a range of AWS tools, including <span class="bold">AWS CloudFront</span> for fast and secure content delivery and <span class="bold">S3</span> as our scalable data storage solution, enabling us to handle vast amounts of data efficiently and reliably.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052248">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/248/b7f8d569a04c0b184f9fdf4eeeddf0ef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745687782&amp;width=680&amp;sig=UowRInrLEr76Z0Z1gbS%2Frx52nilWQ2FYE3m1natgp8E%3D"/>
+</figure>
+</div>
+<p>For our database needs, we rely on <span class="bold">AWS DynamoDB</span>, a fully managed, high-performance <span class="bold">NoSQL</span> database. DynamoDB is perfect for handling unstructured data and ensuring low-latency, scalable performance even during high-traffic periods. It’s the ideal solution for our data-intensive platform, providing the speed and reliability required by modern applications.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052247">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/247/09f0d43221e1704a544834f8da26443c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745687782&amp;width=680&amp;sig=Cog6%2FnP8inTBvk326cbZaC2w%2BuBUw%2B3EpaPuFIgcpKQ%3D"/>
+</figure>
+</div>
+<p>Our application leverages <span class="bold">Gemini 2.0 Flash</span> (currently using the free-tier version) to power its advanced <span class="bold">AI capabilities</span>. This cutting-edge AI model allows us to integrate intelligent algorithms that enhance user interaction, automate complex tasks, and deliver personalized experiences. We are committed to staying at the forefront of AI technology to provide innovative features that set our platform apart.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052249">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/249/8cd464df714a7831e59c336390a602b0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745687783&amp;width=680&amp;sig=CL6rFQB42e8872HFqhh4rZIBl%2BJz%2BjjGJsqmB0LNn6g%3D"/>
+</figure>
+</div>
+<p>Data security is a top priority. We take <span class="bold">GDPR compliance</span> seriously, ensuring that all user data is handled with the highest standards of privacy and security. Our platform employs <span class="bold">encryption</span> to protect sensitive data and enforces strict <span class="bold">access controls</span> to ensure that only authorized users can interact with confidential information. You can trust that your data is in safe hands.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052250">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/250/897a10ce2389be1aa7d597008d6c55ed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745687783&amp;width=680&amp;sig=DYYZMfQy7I%2BuVxN3grR5FLs8%2BqZBgs4Qe3GObNj91uE%3D"/>
+</figure>
+</div>
+<p>To enrich the user experience and broaden our resource pool, we integrate with high-value APIs like <span class="bold">Semantic Scholar</span>, giving access to a wealth of academic and scientific knowledge, and we utilize a <span class="bold">metadata scraping API</span> to add external sites and sources to our platform. These integrations ensure that our users have access to the most comprehensive and diverse set of information available.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272308">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/308/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212460&amp;width=680&amp;sig=aIhmkDbuud8KGoxEXOHLFzOCwvHyI%2Fzi%2FsSvefaR6q4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272282">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/282/7f866d58cbd6343b61490eb5a0e4cd1a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212353&amp;width=680&amp;sig=0qDE8VCUzbqiTUmHyiDHnjRRQklG8Gs8Jz6G2Sq6NCI%3D"/>
+</figure>
+</div>
+<p>When it mattered most — during the intense weeks of writing their theses — our first <span class="bold">beta testers</span> trusted Athena to guide their research.<br/>We gave them <span class="bold">early access</span>, they gave us <span class="bold">honest</span> feedback, and together, we shaped a better, smarter platform. Here’s what they experienced.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49201370">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/201/370/38bd5106a1cd5aa035b902cdabecb57e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746704400&amp;width=680&amp;sig=G%2BWXifAV06%2FINKnOETh1AwgLbAqB5O2v6F9gdeMBm0A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272309">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/309/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212465&amp;width=680&amp;sig=9cud3VnBJih0oYE4jVMgMSrALcw%2FH%2BdVcJ82hbwgTuA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272286">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/286/cfb661c74bf883949fd83826ad47529e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212359&amp;width=680&amp;sig=HLI%2FxhRe9TauRddkAOqXC1TXl2MNIGHfvFFHDoVvmzQ%3D"/>
+</figure>
+</div>
+<p>Athena was born from a <span class="bold">shared vision </span>— created by a team of friends and collaborators who studied together in university, specializing in <span class="bold">Media Design</span> and innovation.</p><p>We come from diverse backgrounds and bring different strengths to the table — from UX design to AI development, from data engineering to digital storytelling.<br/>What unites us is a common belief: that accessing <span class="bold">trustworthy knowledge </span>should be <span class="bold">simpler</span>, <span class="bold">smarter</span>, and more <span class="bold">empowering</span> for everyone.</p><p>We built Athena combining creativity, technical expertise, and a relentless passion for making knowledge more accessible.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052585">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/585/2b81213f1b883f1b4566aa0c4fda5978_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745689677&amp;width=680&amp;sig=332N2B4VVc8CEC0XoZtUfA8GmzX%2BQ2%2FCizPfKfsOQTc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272310">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/310/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212473&amp;width=680&amp;sig=mPiH8j%2FTezbxxW6tKWS81HUkDJkrh4uGT0DGC%2FcCNic%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272287">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/287/36e685dd920bdc1cfd392b287ef455d6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212364&amp;width=680&amp;sig=AuLGztGBqRNwAF%2BPma10pc4V2X3%2Bd6qbQPENrrZY%2B6A%3D"/>
+</figure>
+</div>
+<p>You're not just funding an app — you're building the future of smarter, safer knowledge discovery. Here’s what your support makes possible:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052576">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/576/5c1981c99fcf99b667bfab0b655986d4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745689584&amp;width=680&amp;sig=gRoGE%2Fq0PTLXvAGZN1UfM2ouXzJfRRyLCYOkBRgerTc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272312">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/312/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212480&amp;width=680&amp;sig=%2F09MxkfhbZLEGX76wmn2Yxec549t%2Br4YXCYYmkJsj1w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272291">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/291/88ce999d45725b9e441c086b1f43d88e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212375&amp;width=680&amp;sig=8zXIZqo3WIXvAkK1eo4E5ULuL9AhDz6UQ0GKfMEUlo0%3D"/>
+</figure>
+</div>
+<p>The first funds raised through Kickstarter will be immediately invested where they matter most:<br/><span class="bold">in enhancing Athena’s AI engine and expanding our knowledge database</span>.<br/>Our initial focus will be:</p><ul>
+<li>
+<span class="bold">Upgrading the AI core</span> — Boosting semantic understanding, improving source validation, and delivering even smarter recommendations.</li>
+<li>
+<span class="bold">Expanding the Data Foundation</span> — Adding new verified sources, refining metadata scraping, and creating a richer, more reliable knowledge bank for our users.</li>
+</ul><p>These upgrades will allow Athena to offer a dramatically better experience from day one — making every search smarter, faster, and more trustworthy.</p><p><span class="bold">🛠️ Short-Term (Next 6-12 months):</span></p><ul>
+<li>
+<span class="bold">Public Launch</span> — Official release of Athena Beta with upgraded AI and expanded database.</li>
+<li>
+<span class="bold">Feature Expansion</span> — Enhanced tools for semantic search, metadata enrichment, and smart sourcing.</li>
+<li>
+<span class="bold">Mobile Optimisation</span> — Advanced responsive design for a seamless experience on all devices.</li>
+<li>
+<span class="bold">Security and Compliance Upgrades</span> — Further strengthening GDPR compliance and encryption standards.</li>
+</ul><p><span class="bold">🚀 Mid-Term (12-24 months):</span></p><ul>
+<li>
+<span class="bold">Next-Gen AI</span> — Integration of next-level AI models to deepen personalization and contextual understanding.</li>
+<li>
+<span class="bold">Knowledge Graph</span> — Building Athena’s proprietary knowledge graph to uncover smarter connections between data points.</li>
+<li>
+<span class="bold">Strategic Partnerships</span> — Forming alliances with research centers, universities, and knowledge-based platforms.</li>
+</ul><p><span class="bold">🌟 Long-Term Vision:</span></p><ul>
+<li>
+<span class="bold">Athena Everywhere</span> — Browser extensions, mobile apps, and lightweight APIs to embed Athena into daily workflows.</li>
+<li>
+<span class="bold">Crowd-Sourced Expansion</span> — Opening Athena’s platform for user contributions and verified data enrichment.</li>
+<li>
+<span class="bold">Global Leadership</span> — Establishing Athena as the go-to knowledge platform for critical thinkers and knowledge seekers worldwide.</li>
+</ul><p><span class="bold">Your support doesn’t just fund a product — it fuels a smarter, more open future for knowledge discovery. Together, we're building something that matters.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272314">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/314/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212487&amp;width=680&amp;sig=hMWPl9Iqgsqstawcbia1xXSjwsVT4BE8FP%2FX5Kl7AXw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272296">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/296/7ffdfbdbb9ef1c2f28fc04f6abdc8fc1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212398&amp;width=680&amp;sig=vSfTzc6YOrMd0rOVMpheLTNB18sJFJk6gzN18um%2Bi6w%3D"/>
+</figure>
+</div>
+<p>We’ve created <span class="bold">four different reward tiers</span> to make Athena accessible to everyone — whether you’re just discovering us or you want to be a founding supporter. Every contribution helps bring Athena to life, and every backer will be recognized in our Hall of Heroes!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272317">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/317/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212492&amp;width=680&amp;sig=dPTGWbA%2BogWVP0iqUY4hpsSj%2F5M8MZeSr83CT4Eek%2BM%3D"/>
+</figure>
+</div>
+<p><span class="bold">🧭 Explorer's Digital Pack — €50</span></p><p><span class="text-italic">You’re one of our first adventurers!</span><br/><span class="bold">Includes:</span><br/><span class="bold">- </span>Founding Member status — Exclusive launch package<br/>- Honored Contributor — Special recognition from the Athena team<br/>- Eternal gratitude — Your name listed in our Founders' Hall</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Explorer's Digital Pack" data-id="49052949">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/949/7d045bdfc969f6f1dd57bbba40750daf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745692410&amp;width=680&amp;sig=9EAu28C1UsEgImVj2h3tdg2qlnO6zh0AXA%2FQ06Hmy%2B0%3D"/>
+<figcaption class="px2">Explorer's Digital Pack</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272319">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/319/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212499&amp;width=680&amp;sig=y%2ByMpeEDbeQQwHS1LHhyGC0klJpTW3Q%2BpEYqaev7fxU%3D"/>
+</figure>
+</div>
+<p><span class="bold">🚀 Super Early Bird – 3 Premium Months — €200</span></p><p><span class="text-italic">You believe in Athena's potential — and you're getting in early!</span><br/><span class="bold">Includes:</span><br/><span class="bold">- </span>Early Visionary status — 3 months of Premium Access<br/>- Founding Member — Exclusive launch package<br/>- Athena Pioneer — Featured spotlight on GetAthena.app<br/>- Priority Partner — VIP support channel access<br/>- Honored Contributor — Special recognition from the Athena team</p><p>🛡️ Limited to 100 backers<br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Super Early Bird - 3 Premium Months" data-id="49052956">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/956/069977092542370aa24a76edc9ecff95_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745692435&amp;width=680&amp;sig=cHDRfMyajL65xp6BOtJ3kC5%2Biub9S2Mk5NJTeo0DaE8%3D"/>
+<figcaption class="px2">Super Early Bird - 3 Premium Months</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272321">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/321/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212514&amp;width=680&amp;sig=%2F0%2Bulat1goWgr5uFtevGx9Xd5QMfQlxwKqapZIEHTgM%3D"/>
+</figure>
+</div>
+<p><span class="bold">🌟 Super Early Bird – 6 Premium Months — €400</span></p><p><span class="text-italic">You're building the future of Athena with us!</span><br/><span class="bold">Includes:</span><br/><span class="bold">- </span>Premium Founder status — 6 months of exclusive Premium Access<br/>- Founding Member — Exclusive launch package<br/>- Athena Pioneer — Featured spotlight on GetAthena.app<br/>- Priority Partner — VIP support channel access<br/>- Honored Contributor — Special recognition from the Athena team</p><p>🛡️ Limited to 50 backers</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Super Early Bird - 6 Premium Months" data-id="49052959">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/959/089be0ff4b01293a490a23f4e0f4ba36_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745692459&amp;width=680&amp;sig=R54G%2Fgmj5prL%2Fu83KRQhCZXH49xyRZ4441wyDUVdkXE%3D"/>
+<figcaption class="px2">Super Early Bird - 6 Premium Months</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272324">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/324/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212523&amp;width=680&amp;sig=3ttHR45M65jxlsyO0BeO58Ay2oigpm6IT5fBrMVc0kc%3D"/>
+</figure>
+</div>
+<p> 🏛️ <span class="bold">Legendary Founder – Lifetime Legacy — €1000</span></p><p><span class="text-italic">You’re not just supporting Athena — you’re shaping its legacy.</span><br/><span class="bold">Includes:</span><br/><span class="bold">- </span>Athena Legacy status — Lifetime Premium Access<br/>- Athena Pioneer — Featured spotlight on GetAthena.app<br/>- Founding Member — Exclusive launch package<br/>- Priority Partner — VIP support channel access<br/>- Honored Contributor — Special recognition from the Athena team</p><p>🛡️ Limited to 20 backers<br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Lifetime Legacy" data-id="49052962">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/962/571b015d3ba5ac1793b0a0889f64873e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745692466&amp;width=680&amp;sig=3isu5e%2Fo%2Bqwtnp5s3HmjXaCgftdb5giGGWIDETn7Pwo%3D"/>
+<figcaption class="px2">Lifetime Legacy</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272325">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/325/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212529&amp;width=680&amp;sig=o7cc9Ao8STpMsb9sEb%2F7MJQUumU4HU75gh2kkDRHcWQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49052497">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/052/497/1a03d5d4361172cef3db0168abaeca7b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745689089&amp;width=680&amp;sig=kIuD2tfmNnjo5EnxDZ1dp2DkdRqiwkTc%2FwMEzsyolJQ%3D"/>
+</figure>
+</div>
+<p>- All backers will be invited to exclusive behind-the-scenes updates, early betas, and insider events as part of the <span class="bold">Athena Founders' Circle</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272327">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/327/0d76753e890e2c6904f1720a20a55628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747212534&amp;width=680&amp;sig=6ZGVrUg9E5XDIWSqmpW%2BwTyHIbHIu75u8gSNlw%2FXzNo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Thank You KickStarters!" data-id="49068757">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/068/757/30cbecb2304b2cee4897c58e5781cb9d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745829806&amp;width=680&amp;sig=O%2FdvtH8rJGIbBTpQzcodoGXNaIpP8daVpb6bM%2FmCFCo%3D"/>
+<figcaption class="px2">Thank You KickStarters!</figcaption>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Athena is currently under active development, with a working MVP (Minimum Viable Product) already being built. However, as with any tech project, there are some potential risks and challenges:
+
+- Technical Scalability: As Athena grows, managing a large number of simultaneous users could stress the system. To address this, we are building the app on scalable cloud infrastructure (AWS) and conducting regular stress tests to ensure reliability.
+
+- AI Model Limitations: At launch, Athena will rely on a single AI model for academic support and index generation, which could initially limit some personalization features. Future updates are planned to integrate multiple AI models to increase flexibility and accuracy.
+
+- Time Constraints: Some advanced features, like full Word/Pages document integration within the roadmap, will not be available at launch due to development complexity. We are prioritizing the essential core features and planning phased updates based on user feedback and funding milestones.
+
+- Market Competition: The academic support tool sector is competitive, but Athena differentiates itself through its fully integrated, thesis-focused workflow, combining research, structuring, and time management in one platform — something that current competitors do not offer.
+
+- User Adoption: Students may initially prefer traditional methods. To encourage adoption, Athena is being designed with an intuitive, user-friendly interface and clear onboarding processes to make it easy for students of all tech skill levels to use it effectively.
+
+We are committed to transparency, rapid iteration, and maintaining a user-first approach. With your support, we are confident Athena will become an essential companion for thousands of students writing their thesis.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18 mt5">I plan to use AI-generated content in my project.</h3><h4 class="bold lh4" style="margin-bottom: 1.5rem;">What parts of your project will use AI generated content? Please be as specific as possible.</h4><p class="border-left border-create-700 border-left5px pl3">In our project, Athena, AI-generated content will be used in multiple key areas:
+
+- Automatic Research Assistance: The AI will search for academic documents, articles, and official papers to support students during the thesis writing process.
+
+- Index Generation: The AI will automatically generate a coherent and customizable table of contents for the thesis based on the user's inputs and selected research materials.
+
+- Personalized Roadmap: The AI will create a dynamic and personalized project timeline to guide students step-by-step throughout the research and writing phases.
+
+All AI-generated elements are designed to assist the user in organizing, structuring, and planning their academic work more efficiently</p><h4 class="bold lh4" style="margin-bottom: 1.5rem;">Do you have the consent of owners of the works that were (or will be) used to produce the AI generated portion of your projects? Please explain.</h4><p class="border-left border-create-700 border-left5px pl3">Yes. The AI in Athena only accesses publicly available academic databases, licensed APIs (such as Semantic Scholar), and official documents that are permitted for academic and research use. No proprietary or copyrighted material without permission is used. Additionally, the sources retrieved are processed solely to assist the user in their personal educational work, respecting all applicable copyright and data usage laws​</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Environmental Commitments
+
+- Low Carbon Digital Footprint: Athena is built with energy-efficient code and hosted on servers powered by renewable energy to minimize our carbon footprint.
+- Paperless Operations: By providing digital solutions, we help users reduce paper consumption and transition to more sustainable workflows.
+- Sustainable Development: Our development practices follow green coding principles to optimize resource usage and reduce server load.
+- Remote-First Team: Our distributed workforce minimizes commuting emissions and office resource consumption.
+- Digital Education: Part of our mission includes educating users about how digital tools like Athena can contribute to sustainability efforts in their organizations.
+- Commitment to Improvement: We regularly audit our environmental impact and are dedicated to continuous improvement in our sustainability practices.
+
+As a web application, Athena inherently promotes sustainability by replacing resource-intensive physical processes with digital alternatives.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDGForge – A Precision Hand Lathe for Makers and Engineers</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/369/662/9f7f40fed4f52fa7fa66f960dc1e34fd_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747846230&width=560&sig=hoFRwnFNgRiC1rfAugw2It1HoJkBtYWqxhQQY%2Bb0wxc%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>EDGForge – A Precision Hand Lathe for Makers and Engineers</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A powerful, precise hand lathe with a digital micrometer, speed control up to 8000 RPM, and a safe, clean working experience</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>40 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:What-is-EDGForge-">What is EDGForge?</h3><p>EDGForge is a compact, desktop precision manual lathe that provides professional-grade operation experience for makers, engineers, and anyone who loves machining.<br/>Whether it is metal, plastic, or wood, EDGForge can help you realize your creative and functional parts with micron-level precision.</p><h3 class="page-anchor" id="h:Why-did-we-create-EDGForge-">Why did we create EDGForge?</h3><p>At a time when industrial lathes are too large and expensive, and simple tools cannot meet the precision requirements, we hope to provide a solution that balances size, function and cost.<br/>EDGForge was born to enable individual makers, small studios, and educational institutions to have a professional-level machining experience without sacrificing space and budget.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369734">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/734/9f7f40fed4f52fa7fa66f960dc1e34fd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747846607&amp;width=680&amp;sig=qvWBdHG4ZL3wx222jvMrxp7ZDuWdGcDmxH9kIlqVuNE%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Product-highlights-at-a-glance"><span class="bold">Product highlights at a glance</span></h3><h3 class="page-anchor" id="h:Adjustable-Spindle-Speed-0-8000-RPM">Adjustable Spindle Speed: 0–8000 RPM</h3><p><span class="bold">Adapt to any material with precision</span></p><p>EDGForge offers a wide spindle speed range from 0 to 8000 RPM, allowing you to match the ideal cutting speed for different materials — whether it's metal, plastic, or wood.</p><h4 class="page-anchor" id="h:-Key-benefits-">✅ Key benefits:</h4><p><span class="bold">Better surface quality</span> – Fine-tune speed to reduce chatter and achieve smoother finishes.</p><p><span class="bold">Protects your tools</span> – Prevents overheating and extends tool life.</p><p><span class="bold">More material options</span> – One machine handles both soft and hard materials with ease.</p><p><span class="bold">Greater control</span> – Adjust speed for setup, learning, or complex operations.</p><p>This flexibility makes EDGForge suitable for both beginners and professionals seeking precision in every project.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370271">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/370/271/22c06564b368b1b1810ffdeeb08d1fe1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747848694&amp;width=680&amp;sig=g3kxS6jaGqQS89IUR0J4mCMS9fZg12k1aCc5kzYLKJE%3D" src="https://i.kickstarter.com/assets/049/370/271/22c06564b368b1b1810ffdeeb08d1fe1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747848694&amp;width=680&amp;sig=g3kxS6jaGqQS89IUR0J4mCMS9fZg12k1aCc5kzYLKJE%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Electronic-Micrometer-0-001mm-Resolution"><span class="bold">Electronic Micrometer – 0.001mm Resolution</span></h3><p><span class="bold">Achieve true micron-level precision</span></p><p>EDGForge is equipped with a high-precision <span class="bold">digital micrometer</span> that displays down to <span class="bold">0.001mm</span>, enabling fine control over cutting depth and positioning.</p><h4 class="page-anchor" id="h:-Key-benefits-">✅ Key benefits:</h4><p><span class="bold">Micron-level accuracy</span> – Ideal for producing tight-tolerance parts.</p><p><span class="bold">Clear digital readout</span> – Instantly view feed depth with no guesswork.</p><p><span class="bold">Consistent results</span> – Repeat operations with confidence and precision.</p><p><span class="bold">Better than analog</span> – No parallax error, no manual estimation.</p><p>Perfect for engineers, makers, and anyone who demands exactness in their work.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370275">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/370/275/2f385b7b95566e4d8f31bcf2895c37bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747848714&amp;width=680&amp;sig=ObY%2BsF1j8ABaoKBV5IghCotGX4nlAlSsXbBHoNxjk7w%3D" src="https://i.kickstarter.com/assets/049/370/275/2f385b7b95566e4d8f31bcf2895c37bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747848714&amp;width=680&amp;sig=ObY%2BsF1j8ABaoKBV5IghCotGX4nlAlSsXbBHoNxjk7w%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Multi-Material-Support"><span class="bold">Multi-Material Support</span></h3><p><span class="bold">One machine for metal, plastic, and wood</span></p><p>EDGForge is built to handle a wide range of materials — from tough metals to soft plastics and natural wood — without compromising on precision.</p><h4 class="page-anchor" id="h:-Key-benefits-">✅ Key benefits:</h4><p><span class="bold">Versatile usage</span> – Perfect for prototyping, repairs, or creative builds.</p><p><span class="bold">No material swapping</span> – Use the same setup for different projects.</p><p><span class="bold">Consistent performance</span> – Clean cuts, smooth finishes across all materials.</p><p>Whether you're machining aluminum parts, shaping wood ornaments, or testing plastic enclosures, EDGForge adapts with ease.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370285">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/370/285/d023d5a062b39ce8b23c04e074234d93_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747848751&amp;width=680&amp;sig=txtokV8S4jlqvdm4h8CC8NO3zV1juzc5y2GFv9tARyE%3D" src="https://i.kickstarter.com/assets/049/370/285/d023d5a062b39ce8b23c04e074234d93_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747848751&amp;width=680&amp;sig=txtokV8S4jlqvdm4h8CC8NO3zV1juzc5y2GFv9tARyE%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Processing-Stroke-Ø30mm-200mm"><span class="bold">Processing Stroke: Ø30mm × 200mm</span></h3><p><span class="bold">Meet both practical and creative needs</span></p><p>With a maximum turning capacity of <span class="bold">30mm in diameter</span> and <span class="bold">200mm in length</span>, EDGForge covers a wide range of everyday and custom machining tasks.</p><h4 class="page-anchor" id="h:-Key-benefits-">✅ Key benefits:</h4><p><span class="bold">Ideal for small parts</span> – Perfect for gears, shafts, sleeves, and ornaments.</p><p><span class="bold">Supports prototyping &amp; repair</span> – Great for hobby use, product design, or engineering test parts.</p><p><span class="bold">Compact but capable</span> – Big enough for real work, small enough to fit on your bench.</p><p>From functional components to artistic creations, this stroke range strikes the perfect balance between size and flexibility.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370386">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/370/386/8d2d0eda98395f1cac932f818ebb8ae2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747849266&amp;width=680&amp;sig=p7IPIVLW3rBIHP1cVjd%2FYpYs7%2BZJNeKGHi%2FfYX8lr%2FI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Protective-Shell-Design"><span class="bold">Protective Shell Design</span></h3><p><span class="bold">Block splashes, stay clean and safe</span></p><p>EDGForge features a <span class="bold">fully enclosed protective shell</span> that keeps chips, dust, and debris contained during operation — ensuring both safety and cleanliness.</p><h4 class="page-anchor" id="h:-Key-benefits-">✅ Key benefits:</h4><p><span class="bold">Improved safety</span> – Prevents flying fragments from reaching the user.</p><p><span class="bold">Cleaner workspace</span> – Keeps your desk or workshop tidy.</p><p><span class="bold">Professional feel</span> – Work confidently with better visibility and protection.</p><p><span class="bold">Ideal for shared spaces</span> – Safer for classrooms, homes, and maker studios.</p><p>Protection meets practicality — for a smoother, safer experience every time you turn on the machine.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370295">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/370/295/2f8716b71db50925adbb23077465b4d1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747848780&amp;width=680&amp;sig=mcbvrLCTjcKSDODFzLkco6cJnU%2BdJ1dJGy9QQIndsCI%3D" src="https://i.kickstarter.com/assets/049/370/295/2f8716b71db50925adbb23077465b4d1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747848780&amp;width=680&amp;sig=mcbvrLCTjcKSDODFzLkco6cJnU%2BdJ1dJGy9QQIndsCI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Built-in-Storage-Drawer"><span class="bold">Built-in Storage Drawer</span></h3><p><span class="bold">Keep tools and accessories neatly organized</span></p><p>EDGForge includes a <span class="bold">convenient storage drawer</span> integrated into the base — giving you a dedicated space for tools, cutters, measuring gauges, and spare parts.</p><h4 class="page-anchor" id="h:-Key-benefits-">✅ Key benefits:</h4><p><span class="bold">All-in-one convenience</span> – Tools always within reach when you need them.</p><p><span class="bold">Stay organized</span> – No more misplaced bits or cluttered workspaces.</p><p><span class="bold">Save time</span> – Faster setup and cleanup between projects.</p><p><span class="bold">Compact design</span> – Maximizes workspace efficiency without extra bulk.</p><p>A thoughtful detail that turns your workbench into a clean, ready-to-go station.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370303">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/370/303/2309b270dfc62622a2f4bdf8f5eaf282_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747848820&amp;width=680&amp;sig=WA2XLd7LVaQOjfrLrjJj2g%2FFn%2BllHgGKHPsIyPvHRCg%3D" src="https://i.kickstarter.com/assets/049/370/303/2309b270dfc62622a2f4bdf8f5eaf282_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747848820&amp;width=680&amp;sig=WA2XLd7LVaQOjfrLrjJj2g%2FFn%2BllHgGKHPsIyPvHRCg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Applicable-scenarios">Applicable scenarios</h3><p>For makers and engineers, the ability to fabricate <span class="bold">small metal components</span> means greater freedom and faster prototyping. With <span class="bold">EDGForge</span>, you can easily create:</p><p><span class="bold">Custom micro gears</span>: With precise speed control and stable feed, you can cut gears of various sizes and modules, perfect for robotics, transmission systems, or even clockwork mechanisms.</p><p><span class="bold">Precision shafts</span>: Whether for motors, couplings, or alignment components, EDGForge ensures excellent concentricity and dimensional accuracy.</p><p><span class="bold">Thread cutting</span>: By using appropriate tooling and feed control, you can cut both internal and external threads to meet real-world connection requirements.</p><p>Tasks that are difficult with hand tools or basic machines are made simple with EDGForge's 0.001mm digital micrometer and adjustable spindle speed up to 8000 RPM.</p><p>Whether you're repairing parts, making mechanical assemblies, or testing structural ideas — EDGForge is your workshop ally for precision.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369864">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/864/3cbd15c18973baa0e30f886e78dbdd53_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747847282&amp;width=680&amp;sig=y8gulkxWERRn3og64uYnRS1b%2Fq4ot5quSex0kZfAfoc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Carved-creative-crafts-wooden-ornaments-customized-gifts">Carved creative crafts: wooden ornaments, customized gifts</h3><p>In a world of mass production, <span class="bold">what truly stands out is something handcrafted and personal</span>. EDGForge is more than a tool — it's an extension of your creativity, helping you turn ideas into meaningful creations:</p><p><span class="bold">Wooden ornaments</span>: With adjustable spindle speed and gentle cutting control, you can shape different types of wood into artistic or meditative desktop pieces.</p><p><span class="bold">Personalized gifts</span>: Carve names, messages, or intricate shapes into wooden tokens or keepsakes — ideal for friends, clients, or commemorative moments.</p><p><span class="bold">Prototyping</span>: Test your designs in wood before machining metal, saving on material while refining form and function.</p><p>Whether you’re an artist, a custom gift maker, or simply someone who loves crafting with their hands — EDGForge offers both the tactile feel and the precision you need to bring ideas to life.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369771">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/771/bc788df37415b04f02db7fb2d0d9b34c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747846771&amp;width=680&amp;sig=eaYHNSwmgvTWuyDIyx%2FkMtgNwPIB5S91V73nI2rwDho%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-English-Version">🧩 English Version</h3><p>Plastics are ideal for lightweight prototypes, structural testing, and creative designs. With <span class="bold">EDGForge</span>, you can process plastics efficiently, cleanly, and precisely:</p><p><span class="bold">Fast prototyping</span>: Machine ABS, PVC, acrylic and more into complex curves, connectors, or mechanical interfaces — perfect for functional testing and assembly fit.</p><p><span class="bold">Custom enclosures and parts</span>: Craft unique shells for electronics, toys, gadgets, or artistic builds with ease.</p><p><span class="bold">Quiet and clean operation</span>: Compared to metalworking, plastic machining is quieter, smoother, and produces less mess — ideal for home workshops, makerspaces, or classrooms.</p><p>With high spindle speeds and micron-level digital control, EDGForge helps you avoid melting, stringing, or distortion — giving you professional results even with softer materials.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369878">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/878/10a3e2b97f539fe0a399fb17b6bbacb1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747847357&amp;width=680&amp;sig=YZn2kbaI4vDHpOBrcMG0BAs4Te2r05Y8vZZVB3rhx8Q%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Engineering-grade-design-reliable-feel-comes-from-every-detail">Engineering-grade design, reliable feel comes from every detail</h3><p>EDGForge pursues the fusion experience of "extreme compactness + professional functions" not only to save space, but also to release the maximum performance in a limited volume. We are well aware that a trustworthy lathe must be perfect in structure, material and operating feel.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369980">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/980/31e45c3a1391a92e4aa15369ff7c7cba_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747847697&amp;width=680&amp;sig=pge1PrslrKina%2FEf4lU4rVDnQJtQvJDRJdadnmsADfo%3D"/>
+</figure>
+</div>
+<p><span class="bold">All-metal body structure:</span> The core frame is made of high-strength aluminum alloy CNC precision processing, with excellent rigidity and weight ratio, ensuring stability and no shaking during processing. The outer shell is formed by bending cold-rolled steel plate, which is sturdy and durable, and has good anti-interference and protection effects.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369934">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/934/3ab86fa399462867e52fd213fa822b81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747847559&amp;width=680&amp;sig=EhzV4EZac5XKeRJVxXjD2jK3UoMt%2FwfwPOf%2B%2B6x1sJA%3D"/>
+</figure>
+</div>
+<p><span class="bold">Smooth feel, precise feedback: </span>Each knob, lead screw and feed structure has been polished and tested to ensure that the manual feeding process is stable and smooth, the hand feel feedback is clear, and every tiny feed is accurately controlled.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369944">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/944/73f463f7a3af627333c123fdfb271a37_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747847589&amp;width=680&amp;sig=v2AePH%2FncUpcNrjoCvEFEYePXZGyUqs0EoYPh%2FdyxGw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Fully wrapped protective shell design:</span> Effectively blocks metal or wood chips from splashing, protects the operator's safety, and keeps the working environment clean. There is a visual window on the top to take into account observation and protection.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369951">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/951/246658e693d5a4c9682d92d29b5ef34c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747847634&amp;width=680&amp;sig=y3XERm2ABLTH8rDx0CGwbl4f5JEv7tuFATZNPqFZB%2F8%3D"/>
+</figure>
+</div>
+<p><span class="bold">Micron-level precision, starting from the structure: </span>Through high-precision bearings and reasonable structural weights, EDGForge can achieve high-precision and stable output under long-term operation, ensuring that each of your works meets professional standards.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369971">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/971/fb88e27716c63edb899f13457574d2dc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747847674&amp;width=680&amp;sig=P%2FZdOBSORhq7xyqkSUoNvZcS2hmnlXYDjBiPr5H3Pco%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Technical-Specifications"><span class="bold">Technical Specifications</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369789">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/369/789/6ed5612519d86a07ac55670b6380fcac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747846864&amp;width=680&amp;sig=51JutA8mwdKo89XOAvkNFxZSItdcU%2BE2W7tXRYYv7fY%3D"/>
+</figure>
+</div>
+<p><span class="bold">Model：</span>EDGForge Mini Lathe</p><p><span class="bold">Input Voltage：</span>100–260V AC, 50/60Hz</p><p><span class="bold">Spindle Speed：</span>0–8000 RPM (adjustable)</p><p><span class="bold">Processing Stroke：</span>Max Ø30mm × 200mm length</p><p><span class="bold">Resolution：</span>0.001mm (digital micrometer)</p><p><span class="bold">Supported Materials：</span>Metal, Plastic, Wood</p><p><span class="bold">Body Material：</span>Full-metal construction; aluminum alloy frame + steel shell</p><p><span class="bold">Protective Shell：</span>Enclosed design with viewing window</p><p><span class="bold">Built-in Storage：</span>Integrated drawer for tools and accessories</p><p><span class="bold">Dimensions：</span>14.96*8.66*7.87in</p><p><span class="bold">Weight：</span>15KG</p><h3 class="page-anchor" id="h:-Backer-Rewards">🎁 Backer Rewards</h3><h3 class="page-anchor" id="h:1-Early-Bird-Special-399">1. Early Bird Special — $399</h3><p><span class="bold">Limited quantity at a special launch price!</span><br/>Get your EDGForge manual lathe at just $399 — significantly below the expected retail price of $599. Perfect for early supporters who want the best deal and to be among the first to own this precision tool.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370778">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/370/778/df8da5460d2afddd1fb913742c124c20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747851256&amp;width=680&amp;sig=fzCXu5iJg3iluRI2vKPcW0vL7jlUf7gSvoB3NURbgtw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:2-Standard-Package-449">2. Standard Package — $449</h3><p><span class="bold">Great value for dedicated makers</span><br/>Secure your EDGForge at a discounted price of $449. Still saving $150 off retail, this is ideal for those who want to join the project but missed the Early Bird offer.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370782">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/370/782/0057db8988e19c30e4cd6f21742aec1c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747851269&amp;width=680&amp;sig=sM6EYQ2isYo%2FhACp3wJfGMsLaGBDEXD5HE1G2LTgOdA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:3-Double-Pack-749">3. Double Pack — $749</h3><p><span class="bold">For teams or makers with multiple projects</span><br/>Get two EDGForge units at a special bundle price of $749. Save even more while doubling your machining capacity — perfect for workshops, small businesses, or collaborative creators.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370786">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/370/786/c13b736757cf3e329b97c7734f406f3e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747851300&amp;width=680&amp;sig=gAduHHc%2FulWPfogXYpUvn6JUiFVDha8BufcSRVTs5TM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:4-Workshop-Bundle-1-399">4. Workshop Bundle — $1,399</h3><p><span class="bold">Best deal for serious enthusiasts or small shops</span><br/>Includes <span class="bold">3 EDGForge units</span> plus a set of premium cutting tools and accessories to get you started right away. Unlock maximum productivity and savings with this all-in-one package.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370791">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/370/791/0871cd1b95ba7fdc1c1efed568ccc93d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747851314&amp;width=680&amp;sig=UsAqPH1TkHtgzfLop6gFFNOQl8lxlUSIEdH0M5p6PSQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Meet-the-Team-Behind-EDGForge"> Meet the Team Behind EDGForge</h3><p>We are a small but passionate team of engineers, makers, and designers who believe in the power of <span class="bold">hands-on creation</span>. With years of experience in <span class="bold">precision machinery, product development, and prototyping tools</span>, we've often found that the tools we wanted — compact, reliable, and truly capable — simply didn’t exist. So we decided to build our own.</p><p>The idea behind <span class="bold">EDGForge</span> was born from real workshop needs:</p><p>A lathe that fits on a desktop without sacrificing function</p><p>Precision that’s good enough for real engineering work</p><p>A design that’s safe, beautiful, and made to last</p><p>Our team has previously worked on everything from CNC systems to embedded electronics and consumer-grade maker tools. We combine practical manufacturing know-how with a strong sense of product design.</p><p>We’re not a big corporation — we’re makers ourselves. EDGForge is built <span class="bold">by creators, for creators</span>. Backing this project means you’re supporting a team that truly understands your workflow, and is committed to delivering tools that empower your creativity.</p><h3 class="page-anchor" id="h:-From-Sketch-to-Steel-The-Prototyping-Journey">✏️ From Sketch to Steel: The Prototyping Journey</h3><p><br/>All great tools begin with an idea – and the EDGForge is no exception. Our journey began with a simple question: “What would an ideal manual lathe look like for today’s makers?”</p><p>🔹 1. Concept &amp; Sketching<br/>We started with pencil and paper – exploring different layouts, component locations, and usability ideas. Compactness, ergonomics, and safety were at the core of our thinking from day one.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49423739">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/423/739/cfce5c87b303048c77d59c3b8f613eab_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748258974&amp;width=680&amp;sig=eoD2AADRSm1J26%2B%2F7NU0SOR%2BFgS4OOBVllY9h8AZyxY%3D"/>
+</figure>
+</div>
+<p>🔹 2. Prototyping<br/>We built and tested multiple fully functional prototypes using CNC machined parts and sheet metal for the enclosure.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438191">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/191/dd8858dde865ede006eb5205cf849d9d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748348443&amp;width=680&amp;sig=5FAmk7A8e3n4MLa4y8rcyDI1Yut5HBQu2atkXK0FdHc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438192">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/192/42ff71b1a0722da958969ff012e095c8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748348449&amp;width=680&amp;sig=VHWwBekTMnAYP8WKZzJRoJBGknlHx1J9kejsnBBZRpw%3D"/>
+</figure>
+</div>
+<p>🔹 3. Field Testing &amp; Feedback<br/>Our prototypes were tested in a real bench environment – ​​machining metal bars, carving wood pieces, and even cutting custom threads. Feedback from hobbyists and engineers helped us refine every detail.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49398868">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/398/868/10a3e2b97f539fe0a399fb17b6bbacb1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748022643&amp;width=680&amp;sig=OaqRm8wOIS5B61NbD8Yn9j%2FpIW6IchMH40Lp9RPl7iU%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Prototype-Demonstration-Video">Prototype Demonstration Video</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49370720">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/370/720/d22b21e61f97e1f1f1b23bb6b7d795a1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747850948&amp;width=680&amp;sig=NpF8yL83zco1UKWMl3lQB3DHn9h7BI43Sx9xkmUKhxQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49530844">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/530/844/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748964167&amp;width=680&amp;sig=lNlkOMnKZ1mV8651yqOGrmOH8RsOBSKC0T%2FfWMpvuP0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49532071">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/532/071/54781de5c0e9a9ee87c9f5c58f7dff5b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748969281&amp;width=680&amp;sig=z6kcxz%2BmcoB2GEQ3LIBKZJ8%2BQjiJzWlhemw0KCSfGgk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49557655">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/557/655/6538e83f9ff37276e48829b47f6e018d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749116327&amp;width=680&amp;sig=Y9wfCWDysChsit3ykOaY0JTfL14m8rr7mq2VziQy6QE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49557657">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/557/657/dca85caa45a76bc75377292a19bac2c1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749116346&amp;width=680&amp;sig=o0OYf%2FmC6jRQl%2FNHSFAP0R7HB83mbBdsVtBKwJt1DDk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49569704">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/569/704/2a4fb6dfdad3e0851c68f4eb1ca9f1c5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749186977&amp;width=680&amp;sig=cmmyI73l6g3kxtVLUxiaikUXyLaPF7u5ENYuml2w6lE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49569896">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/569/896/318ea2f4206d16594ae59a3577158ce8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749189125&amp;width=680&amp;sig=xqf6Xm6h53i8BGn3SAqw6eb6K4on6ykhpr0R%2FvE5yIo%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">⚠️ Risks &amp; Challenges
+At EDGForge, we are committed to delivering a high-quality, reliable manual lathe that meets your expectations. However, as with any hardware project, there are some risks and challenges involved:
+
+Manufacturing Delays: Precision machining and assembly require meticulous attention to detail. Unexpected delays in component sourcing or production may occur, but we have established strong relationships with our suppliers to minimize this risk.
+
+Quality Control: Maintaining consistent quality for every unit is our top priority. We will implement thorough testing and inspection processes to ensure each EDGForge lathe meets our strict standards before shipping.
+
+Shipping &amp; Logistics: International shipping can sometimes face customs delays or logistical issues. We will work closely with experienced shipping partners to ensure your reward arrives safely and on time.
+
+We believe transparency is key. If any challenges arise, we promise to keep all backers informed with regular updates throughout the campaign and production process.
+
+Thank you for supporting EDGForge — together, we’ll bring this project to life!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

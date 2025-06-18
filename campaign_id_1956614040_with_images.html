@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D Print Sensor: Air Quality Monitor & Controller</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/048/850/004/6d1c0d319c879a72f94998f25b41342c_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1744239676&width=560&sig=8KF6PL3qh6yvs0YySFtXXwM3COBsdCOw1g6f9%2Bgcqk8%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>3D Print Sensor: Air Quality Monitor & Controller</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Air Quality Monitor For 3D printers and Makers</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48790572">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/790/572/c5523e174c7cb88f4b332ac624b46bce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743813175&amp;width=680&amp;sig=gaZ26La7gHvnJoKJZ97LR4UGpEtGfTyYSTM1KOf3TEs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48851438">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/851/438/2b0176de9ff785de78e21b11f7631023_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744249879&amp;width=680&amp;sig=Tiu3COv5W8iKGjVCiSKSCJJumyoYlJr4%2BbwtTawThao%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49613068">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/613/068/05fa8736548405bbb42e681785543b81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749514989&amp;width=680&amp;sig=Yw07qokUXok4kI%2BMzQ%2F9n2j3GRWadWxELceZgtf0ZRk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49529528">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/529/528/51070ecf0da7a817a2937dd3e9aee20b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748959031&amp;width=680&amp;sig=YNPwMXcvlg0EkXWFIEU0ex5K4OmEeUig5eoW42qNodo%3D"/>
+</figure>
+</div>
+<p> <span class="bold">3D printing opens up a world of creativity—</span>but it also comes with hidden risks. FDM and resin printing can release fine particulates (PM), VOCs, and other airborne pollutants that build up over time in enclosed spaces. Most makers don’t realize how much their environment changes while a print is running.<img class="image" data-id="48851207" src="https://i.kickstarter.com/assets/048/851/207/cb45b8cc133e58f13e9fbe483d694b2f_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744248318&amp;width=1438&amp;sig=L17jxUCS3bWsjfZNJ6xoPuXRGtez86vcemt7laPNxDs%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49612882">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/612/882/15196cf0f8ad69d70af6531cfc7a6220_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749513717&amp;width=680&amp;sig=pYQ4BPP5KJCu9lTY2GRi7zqyHyv0d%2B6BJyxKYKcBd7A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49610484">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/610/484/936469f1aeaca977a4cacb1eafb3ce4e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749500420&amp;width=680&amp;sig=3VahAX7NLWYndk%2FdIoceFlBYHe8WrVF80YiiWLkPTEw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Built from the ground up for makers, hobbyists, and 3D printing enthusiasts</span>—a reliable air quality monitor tailored to the needs of modern workspaces. Here's what makes it essential gear for your bench:</p><ul>
+<li>
+<span class="bold">Real-Time Air Quality Monitoring</span><br/>Instantly track particulates (PM1.0 &amp; PM2.5), VOCs, CO₂, Humidity, Temperature and more with the professional-grade sensor unit.</li>
+<li>
+<span class="bold">Automatic Fan &amp; Filter Control</span><br/>Set custom triggers that activate ventilation systems or air purifiers as air quality changes—hands-free safety.</li>
+<li>
+<span class="bold">Designed for FDM, Resin, and Workshop Use</span><br/>Whether you're running a high-temp extruder or handling uncured resin, this sensor is built to detect what matters!</li>
+<li>
+<span class="bold">Easy-to-Read Touchscreen Interface</span><br/>View current conditions at a glance with a responsive display—no app or WiFi required.</li>
+<li>
+<span class="bold">Customizable &amp; Maker-Friendly</span><br/>Print your own case, choose your filament, and mount it your way</li>
+<li>
+<span class="bold">Powerful Hardware,</span><br/>Features an SEN66 sensor and custom PCB</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Optional Power Relay - Allows users to set triggers to automatically turn on fans, purifiers, heaters, etc" data-id="48851452">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/851/452/e0c60f7d5410e2fe60d976258450e737_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744250032&amp;width=680&amp;sig=z6R2vYxREi%2FhLVQFqU0CJJYDWBTLEo%2Bdr%2FWXQIzuLes%3D"/>
+<figcaption class="px2">Optional Power Relay - Allows users to set triggers to automatically turn on fans, purifiers, heaters, etc</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-Choose-a-High-Quality-Sensor-"><span class="bold">Why Choose a High-Quality Sensor?</span></h3><p>During our testing we purchased and ran trials with a variety of off the shelf air quality monitors. You can purchase air quality monitors off amazon for around $100, however, the results will vary significantly from sensor to sensor... Additionally, we designed ours specifically for 3D printing and workshops. Off the shelf sensors often use a handful of very cheap and unreliable sensors which is what led us to creating our own. They also dont often have the sensors required for activities like 3D Printing. If you're like us and you spend a significant amount of time in your workspace, or if you have kids, pets, employees or family sharing the space, it's probably worth making sure it's safe. </p><p>Our build is not secret - It runs on the SEN66 Sensor. The sensor unit alone is about $50-$70 just to get it on the custom PCB board. Our code will also be released to our customers as well! We took the SEN66, integrated it into our custom PCB build which includes the live monitoring, the trigger system, a touchscreen interface and desktop monitoring software.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48829951">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/829/951/16135974afa948a43c207d6dadbde366_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744120779&amp;width=680&amp;sig=auuUHhX5BRr7DaYvoTde13o3g4ZuV3NmjiPmxnm4U70%3D" src="https://i.kickstarter.com/assets/048/829/951/16135974afa948a43c207d6dadbde366_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744120779&amp;width=680&amp;sig=auuUHhX5BRr7DaYvoTde13o3g4ZuV3NmjiPmxnm4U70%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48934402">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/934/402/295a1dc973dbaf78cda238133ec4bb2c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744832505&amp;width=680&amp;sig=ZgpFfgoZmfvpkrAhp2Y94CEE0u8Aq5f9w5cmgGz5DDQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609996">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/996/4d3b78304396e7e2871b0324c0615c5c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749497836&amp;width=680&amp;sig=a%2FIUihUV3JHDxfgrO%2FlAinu6POVK7LR6yA8cAu35vNE%3D"/>
+</figure>
+</div>
+<p>With continuous tracking across a wide range of pollutants, you can monitor how your air quality changes throughout the day, during specific print jobs, or in response to certain materials. Whether you're printing overnight, running back-to-back batches, or working with resin, <span class="bold">you’ll see exactly when conditions change—and how effective your countermeasures are.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48788665">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Is-this-for-YOU-">Is this for YOU?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/788/665/7460804e27954c3ae3f184349b59e737_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743798487&amp;width=680&amp;sig=XJpaCpnO%2BFS4zyP5P7UMsaLUlJGgqKpeNpIPBjIfArI%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Do-you-have-a-3D-Printer-in-your-home-"><span class="bold">Do you have a 3D Printer in your home?</span></h4><p>Both FDM and Resin printers can affect the quality of the air in your home. If you are 3D printing in a house and not a designated workshop, we highly recommend implementing some sort of air filtration or vent system, especially if there are kids or pets present. </p><h4 class="page-anchor" id="h:Do-you-have-multiple-3D-Printers-in-a-room-without-proper-ventilation-"><span class="bold">Do you have multiple 3D Printers in a room without proper ventilation? </span></h4><p>Having multiple 3D printers running in small rooms or workshops can quickly affect the air quality, even with basic materials like PLA.</p><h4 class="page-anchor" id="h:Do-you-have-a-workshop-where-you-do-any-printing-curing-painting-cutting-sanding-gluing-etc-that-does-not-have-proper-ventilation-"><span class="bold">Do you have a workshop where you do any printing, curing, painting, cutting, sanding, gluing, etc, that does not have proper ventilation? </span></h4><p>It's not only 3D Printing that causes changes to the quality of air in your workshop!</p><p>Although we hope you consider supporting our project, even if you choose not to, we do encourage you to make sure you have sufficient air ventilation in your workplace. One of the biggest surprises for us was that in addition to 3D Printing, a lot of the other activities in our workshop also triggered the relay. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48788668">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/788/668/0552634515c6c29545bff7dd01a15b2e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743798521&amp;width=680&amp;sig=AtsHw0kwBqp5iQL4LexNWwOx3Z1VxC%2FcYVQbDpakZSg%3D" src="https://i.kickstarter.com/assets/048/788/668/0552634515c6c29545bff7dd01a15b2e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743798521&amp;width=680&amp;sig=AtsHw0kwBqp5iQL4LexNWwOx3Z1VxC%2FcYVQbDpakZSg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Protect-your-lungs-while-you-paint-prime-and-sand-This-sensor-helps-you-stay-safe-during-all-stages-of-the-creative-process-">Protect your lungs while you paint, prime, and sand. This sensor helps you stay safe during all stages of the creative process.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48789135">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/789/135/7be119643472212452d370d1a6b38765_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743801591&amp;width=680&amp;sig=ftrk%2BaBxD%2B1QDRuEDUF8xZGDXtuCSSLcwXS4eL%2BHzSU%3D" src="https://i.kickstarter.com/assets/048/789/135/7be119643472212452d370d1a6b38765_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743801591&amp;width=680&amp;sig=ftrk%2BaBxD%2B1QDRuEDUF8xZGDXtuCSSLcwXS4eL%2BHzSU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Whether-you-re-running-PLA-ABS-PETG-or-resin-this-system-gives-you-clear-feedback-on-what-you-re-breathing-helping-you-know-which-types-or-which-brands-and-materials-are-impacting-your-air-quality-">Whether you’re running PLA, ABS, PETG, or resin, this system gives you clear feedback on what you're breathing helping you know which types or which brands and materials are impacting your air quality.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48789290">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/789/290/7154cc2f1f64729bc98ea6da9c22f6af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743802486&amp;width=680&amp;sig=sr9QEgQ1g8h5pUub7H4wSSlOhzSD%2FJaROvU4oIRDZOQ%3D" src="https://i.kickstarter.com/assets/048/789/290/7154cc2f1f64729bc98ea6da9c22f6af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743802486&amp;width=680&amp;sig=sr9QEgQ1g8h5pUub7H4wSSlOhzSD%2FJaROvU4oIRDZOQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Monitor-the-impact-of-multiple-machines-and-maintain-a-safe-environment-for-teams-students-or-shared-maker-spaces-">Monitor the impact of multiple machines and maintain a safe environment for teams, students, or shared maker spaces.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48703633">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Features-Breakdown">Features Breakdown</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/703/633/c046837eebb6138d2b5be7b843fcd42e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743201208&amp;width=680&amp;sig=LNaFyd3JX2aMj1dXyCkjwRmqkXRaqkSDaGzVh9aWvEQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49612892">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/612/892/9c878f10cc7ccd86b75f1a3f95e43b62_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749513764&amp;width=680&amp;sig=SvQVd1QJgLeOoEXobdXx6YKrrvcOluVOoQqwyTz4Dng%3D" src="https://i.kickstarter.com/assets/049/612/892/9c878f10cc7ccd86b75f1a3f95e43b62_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749513764&amp;width=680&amp;sig=SvQVd1QJgLeOoEXobdXx6YKrrvcOluVOoQqwyTz4Dng%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48851328">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/851/328/a46cf6882acd578056dcc6ebcff282a7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744249143&amp;width=680&amp;sig=%2FSnmOYd2QYD6V5l3XjBa8oZlYTWj8NT7K44E23z4Alk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49566071">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/566/071/329d4d3201683390c8e3fec170d96e5b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749158992&amp;width=680&amp;sig=DJdscaUI%2BUWohxED130Rmn4pl9Jui%2FkBH7YIJBZD%2Bbo%3D" src="https://i.kickstarter.com/assets/049/566/071/329d4d3201683390c8e3fec170d96e5b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749158992&amp;width=680&amp;sig=DJdscaUI%2BUWohxED130Rmn4pl9Jui%2FkBH7YIJBZD%2Bbo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49612899">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/612/899/da9f274fc7971fa43b69c6fc20552eaa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749513806&amp;width=680&amp;sig=9gwqCEGHOhH5BtFJw2eQ7EB5yRqGG1KEhXRgoMHf34Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49529881">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/529/881/d0fe4d3fea881ee8ebb288af9922e750_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748960284&amp;width=680&amp;sig=TkgEcmYyTM%2FgYgiWsFnz%2FV4ifNiqz3vsXydxiDRNRxI%3D" src="https://i.kickstarter.com/assets/049/529/881/d0fe4d3fea881ee8ebb288af9922e750_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748960284&amp;width=680&amp;sig=TkgEcmYyTM%2FgYgiWsFnz%2FV4ifNiqz3vsXydxiDRNRxI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49521128">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/521/128/969aa74c8dba1fd8c346e11b31721d4d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748905301&amp;width=680&amp;sig=Pw%2BZBFXqiICam9F2gTvWe1N1sdCkuMNdD7Qg%2Bfc1pg8%3D" src="https://i.kickstarter.com/assets/049/521/128/969aa74c8dba1fd8c346e11b31721d4d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748905301&amp;width=680&amp;sig=Pw%2BZBFXqiICam9F2gTvWe1N1sdCkuMNdD7Qg%2Bfc1pg8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49610806">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/610/806/4e5fc74fd2bc3f40b77cf3a12a71a7d6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749501721&amp;width=680&amp;sig=V4GwkOxdsaOFEg0sMTqBoZhwzNobXc6WhRGf2zM9D%2Bc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49529461">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/529/461/b073881bfd3e57e4b3c1cff5effd7b92_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748958753&amp;width=680&amp;sig=FuOp02rDiECKPeGjmsTEsMKjdx%2B23gFQzMD%2FpEGcksE%3D"/>
+</figure>
+</div>
+<p>After the Kickstarter is complete, it should be around 6 months to get the final sensors to us and then we will immediately ship them out to you. We are hoping for closer to 4 months, however it does depend on the timeline for the electrical certifications, so we are saying 6 months to play it safe!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48789054">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/789/054/554c27b58b7379ef0feee8b6f78fbac8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743800926&amp;width=680&amp;sig=CVuToIJ3iBMVTAfv82Mt%2Fv7QIV8JguqsdF2SRxKubac%3D"/>
+</figure>
+</div>
+<p>We designed this tool right here at our shop in New York City because we found ourselves feeling a bit funky after sitting in our workshop for too long. To our surprise, it was not only the 3D Printing that was elevating the pollutants, it was also the other workshop activities like curing, painting, soldering, sanding.. etc. We hope to help make everyone's workshop safe and reliable. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48789056">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Additional-Information-">Additional Information!</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/789/056/e6f0c55be8c0e2ca2f63acd9ec30ab71_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743800932&amp;width=680&amp;sig=Cs4RnGybEUdlodU7WjRYT7dRl6PACu3KE5De4Zwik4w%3D"/>
+</figure>
+</div>
+<p>The Sensors will go into production the day the campaign ends. We will post regular updates and ship them in order of backer numbers, <span class="bold">so first to back the project will be first to have their tool shipped.</span> The .STL files for the 3D print Sensor case will be delivered 30 days after the campaign ends so you can get a HeadStart on your case!  </p><h3 class="page-anchor" id="h:What-s-Included-">What's Included?</h3><p>Included in your pledge is 1 X 3D Print Sensor, USB Cabling, .STL files for the 3D Print Sensor housing, and the 3D Print Sensor Computer Software. </p><h3 class="page-anchor" id="h:Open-Source-Code-">Open Source Code!</h3><p>The code for the 3DPrintSensor will be released for all customers. We know we have some technical and creative people in the audience and if you want to customize anything this will enable you to do so! The system is built on Arduino-based code, running on an ESP32 with an integrated touchscreen and hardware relays. (For the display we have used Nextion Editor).  </p><h3 class="page-anchor" id="h:The-Relay-System">The Relay System</h3><p>One of the awesome and optional features with the 3D Print Sensor is the ability to set triggers and connect power relays. While the 3D Print Sensor can work with a variety of relays, we will link our favorite one below. </p><p>Amazon Link (Recommended) - <span>HERE</span>    Alt Links <span>Here</span>, <span>Here</span>. </p><p>If you're not familiar with how relay systems work, essentially what happens is that when the 3D Print Sensor registers air quality values over the threshold, it will trigger the relay device. The relay device we linked above is our favorite. It has 4 power outlets, one is always on, which is a good one for you to plug the sensor or your printer or machine into, as it will always be powered on. Two of the power outlets are set to normally off, which means the 3D Print Sensor will turn two of them on when the relay triggers. These are good choices for filtration devices, fans, etc. One power outlet is set to normally on, so the 3D Print Sensor will actually turn this off when triggered, we find this is a good option to use in case you want to turn off a machine if the air quality dips below a specified value (this is especially useful if you are printing in a home, home office, basement, etc).</p><p>Please note that whatever devices you connect to the relay system must be powered on by default. For example, if you have a fan connected to the relay, when the 3D Print Sensor triggers the relay to turn on the fan, it is providing power to the fan, so the fan must be set such that when power is provided, the fan turns on. (The relay does not do anything more than control the power on/off, so if you have a device that must be turned on, and then requires you to adjust some settings before it actually turns on, it is not a good option for the system). </p><p>Ultimately, using these relays we can customize our workshop automation to suit any maker needs. </p><p><span class="bold">The 3D Print Sensor can connect to up to 3 Trigger and Relay Systems!</span> For example, if you have a workshop where you are FDM printing in one area and Resin printing in another area, you can have two different relay systems set up!</p><h3 class="page-anchor" id="h:3D-Print-Sensor-Monitoring-Software-">3D Print Sensor Monitoring Software </h3><p><span class="bold">We made a custom 3D Print Sensor Software!!</span> Included with the file and sensor delivery will be a software download link. We have designed a custom software to go with your sensor, there is no fee or membership or anything like that, it's free forever. Using the 3D Print Sensor Software, you can wirelessly connect the sensor to your computer where it will send the air quality readings. The readings will automatically be saved in a .csv file, in live time, which can be plotted to visually see what happens to the air quality in your workshop! </p><p>What's really cool about the monitoring software is that you can see in live time what really affects the air quality. For example, if you start up your printers, you might see some of the values start to rise, then when you open a window or maybe your relay automatically turns on a fan, you will see the values decrease. We've tested this with printing, curing, washing (IPA), painting, sanding, priming, gluing, soldering... etc! </p><h3 class="page-anchor" id="h:Shipping-Taxes-and-Tariffs"><span class="bold">Shipping, Taxes and Tariffs</span></h3><p>Some backers located in the United States will be charged sales tax in the pledge manager. This is completely out of our control, we must collect and remit sales tax. You probably know who you are if this applies to you. </p><p>Backers are responsible for the shipping costs. The shipping will be charged though the pledge manager right before we ship your unit. Right now, shipping costs are roughly USA - $11, Canada - $16, Rest of World - $22. We dont expect these to change much.</p><p>We are not expecting any major tariff change. The current tariff as of May 20, 2025 has been included in our costs from the manufacturer. In the event of a very dramatic increase in tariff where it made the project not possible to fulfill, we would explore alternate options like production within the USA or fulfillment through our Canadian partners. We dont forsee this being an issue and have a backup plan in place incase something happens!<br/> </p><h4 class="page-anchor" id="h:Thank-You-Backers-Lets-Keep-Your-Workshops-Safe-">Thank You Backers!! Lets Keep Your Workshops Safe!!  </h4></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">There are no risks or challenges, we have finalized the prototype and are ready for production.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">Digital File Delivery</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

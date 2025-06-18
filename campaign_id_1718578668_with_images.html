@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xercise: Portable Gym,Coach, and Fitness Lab —All in One.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/346/760/384a5cfd3e20a8e63cca197c1505db4c_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747727927&width=560&sig=SL2dfNp0UbUaBCMeE5IAG4cDxYlfCVSefpxKOAv1CkI%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Xercise: Portable Gym,Coach, and Fitness Lab —All in One.</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Precision Training System | Pro-Grade Resistance | Ultimate Portability | Full-Body Fitness | Personal Coach</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 9,884</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>40 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332172">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/172/6809d5fd26ed100746383ae3eb384743_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647413&amp;width=680&amp;sig=XuiYSNmwd5HbzySUWenqz%2FEvMeDtEMQ%2Blzv1X8vmTz4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450636">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/636/44a63b5fdd56ac575c78aab8f2524650_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748415418&amp;width=680&amp;sig=0I%2Bt8J%2B6lZEJG%2FGu7KeAe2MiNz3xvga4vgP9Z7QPWA8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347949">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/949/ca82c0a9afe441945c699adefc655f01_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747734614&amp;width=680&amp;sig=UtB3GhT4dqanG0AISjgHPQGqta8YTqbn8wL4csRKq7c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49467653">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/467/653/455c6de38f592ed05d646ce2fee9010e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748512885&amp;width=680&amp;sig=6Huz9WOeIAmEOt7iLqmD4khuqjYKQEihBeXs%2F5o9op4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49467469">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/467/469/09935b76c4c57ae263399badf6a31395_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748511901&amp;width=680&amp;sig=yOIoMOzriM11NtKFzkbKwbedDZoG%2FhTHo3LnAFigGyU%3D" src="https://i.kickstarter.com/assets/049/467/469/09935b76c4c57ae263399badf6a31395_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748511901&amp;width=680&amp;sig=yOIoMOzriM11NtKFzkbKwbedDZoG%2FhTHo3LnAFigGyU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49286045">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:KOL">KOL</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/286/045/c50da494d43e764051c70ade9ed5a192_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747293710&amp;width=680&amp;sig=%2F60ON7dMtOfHc2YutYRJvkKm6wjyNoCONkEiq4NNabQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49467547">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/467/547/e2b1607fa0500ef0f77cd0c43890af42_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748512335&amp;width=680&amp;sig=vajwK5rGcH%2FvpKlYGsZFClfpWsLWhVDLZk7Nh4Y1fPA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268611">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/611/c719dbd6859d624dae4aa96680272557_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747186824&amp;width=680&amp;sig=TzGO%2Bpb%2BO4fkdjQWtKu7LO%2FDD9VuqVkumAq%2BCbyc9pY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49256812">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/256/812/e7b027a4e67fa17643ac0e91568102da_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747125311&amp;width=680&amp;sig=FWrXvSTfdFImZ2njsGHOg9l4k4j8SpuXuPmSEAHRQ40%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268613">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:NO-MORE-EXPENSIVE-SPACE-HOGGING-FITNESS-GEAR">NO MORE EXPENSIVE,SPACE HOGGING FITNESS GEAR</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/613/6131fde0502162547e5e22f4c2822c0a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747186847&amp;width=680&amp;sig=QF04jLPK5aloR%2FxMPviMWxBp8NUPI3TletchNSr6ILY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49196649">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/196/649/74294b233ba96894b06fe78cafdc7f9f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746669754&amp;width=680&amp;sig=xPC3iUk6HeVAWRaQWYghXbP%2Bz7hjir%2BdCkB7sWuWGD0%3D" src="https://i.kickstarter.com/assets/049/196/649/74294b233ba96894b06fe78cafdc7f9f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746669754&amp;width=680&amp;sig=xPC3iUk6HeVAWRaQWYghXbP%2Bz7hjir%2BdCkB7sWuWGD0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268697">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:YOUR-PORTABLE-FITNESS-CENTER-ANYWHERE-YOU-GO">YOUR PORTABLE FITNESS CENTER, ANYWHERE YOU GO</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/697/949afb83a584ebe26054bea0867c8533_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747187453&amp;width=680&amp;sig=Qjwj35a7sVwFdedb9M4fPLglFAGJFd%2Bc3NuupHZaZYA%3D"/>
+</figure>
+</div>
+<p>💪Train like you're in a full gym, no matter where you are.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268701">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/268/701/46d466423c5e0fa1270c6f3dec165e5a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747187488&amp;width=680&amp;sig=T0o6kUGGDXAka4OBPJ4Aax1Uda2Y1DE9OfSciYGJUOI%3D" src="https://i.kickstarter.com/assets/049/268/701/46d466423c5e0fa1270c6f3dec165e5a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747187488&amp;width=680&amp;sig=T0o6kUGGDXAka4OBPJ4Aax1Uda2Y1DE9OfSciYGJUOI%3D"/>
+</figure>
+</div>
+<p>With Xercise, every place becomes your workout zone.</p><p>Just 4kg and backpack-ready, it’s built to follow your lifestyle—not the other way around.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268706">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/268/706/38fa5ace9cf4b84a349149e63cc41ea7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747187510&amp;width=680&amp;sig=2g5llBFwIcByBOL0ggXIoMwrRbUAb7K%2BrdHueo1AQ%2BY%3D" src="https://i.kickstarter.com/assets/049/268/706/38fa5ace9cf4b84a349149e63cc41ea7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747187510&amp;width=680&amp;sig=2g5llBFwIcByBOL0ggXIoMwrRbUAb7K%2BrdHueo1AQ%2BY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268674">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:DYNAMIC-DIGITAL-WEIGHT-THAT-ADAPTS-TO-YOU-IN-REAL-TIME">DYNAMIC DIGITAL WEIGHT THAT ADAPTS TO YOU IN REAL TIME</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/674/61ed61980f634d164ee59c3202e38ddc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747187300&amp;width=680&amp;sig=grybkxSLctT%2BA9DYTyOZtnWcITNwHC4cPTtX7aFVGxc%3D"/>
+</figure>
+</div>
+<p>No clunky weight stacks. No manual plates.</p><p>With Xercise, you get precision resistance from 5 to 75 lbs, auto-adjusted via intelligent algorithms for smoother, safer, and more effective training.</p><p>Instant feedback, seamless switching, zero lag</p><p> Supports strength, recovery, and endurance modes</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49273434">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/273/434/0ac781f2580a4d2fd66f539643ee84cd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747218153&amp;width=680&amp;sig=zZkMHqy3s4zUnN6ocka1wh4PUypGLk%2FggAkFaq%2BTW7g%3D" src="https://i.kickstarter.com/assets/049/273/434/0ac781f2580a4d2fd66f539643ee84cd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747218153&amp;width=680&amp;sig=zZkMHqy3s4zUnN6ocka1wh4PUypGLk%2FggAkFaq%2BTW7g%3D"/>
+</figure>
+</div>
+<p><span class="bold">Real-Time Feedback. Smarter Progress.</span><br/>Xercise tracks your power and speed with precision—every rep, every second. No guesswork. Just clear data to help you train smarter and improve faster.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49327796">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/327/796/6d18d79ef7080cdf3e0de0d7d7577b58_original.GIF?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747618297&amp;width=680&amp;sig=Ucq9l3pfducHwARhp4T35R6dItqn%2BMKsEaszRwjj%2Fc8%3D" src="https://i.kickstarter.com/assets/049/327/796/6d18d79ef7080cdf3e0de0d7d7577b58_original.GIF?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747618297&amp;width=680&amp;sig=Ucq9l3pfducHwARhp4T35R6dItqn%2BMKsEaszRwjj%2Fc8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268711">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:TRAIN-LIKE-AN-ATHLETE">TRAIN LIKE AN ATHLETE</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/711/add5a18f4381bc5d65580b99ebcfd0af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747187547&amp;width=680&amp;sig=kPh0uGWC%2FboMnj9rx%2Fkw0hS%2Fi3C1Jrav84mAYV9KKkk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346221">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/221/3acc904aea57e19331494bb356eba9ff_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724568&amp;width=680&amp;sig=kdxYSbayjrJIi%2BzbQXn6eTpgXX38mfJ4r5YSsYgDpVk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:All-Encompassing-Muscle-Activation">All-Encompassing Muscle Activation</h4><p>🏋🏻‍♀️From core strength to golf swings, Xercise adapts to your sport.</p><p>· Focus: Rotational core strength, oblique power, shoulder stability</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49327930">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/327/930/25d0b5b5d4f6d927d0028b3d07a054ea_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747619495&amp;width=680&amp;sig=Rk8MBOVja2O%2FmC5rP8j7b61cvC44fM1IPYBh8SAecHQ%3D" src="https://i.kickstarter.com/assets/049/327/930/25d0b5b5d4f6d927d0028b3d07a054ea_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747619495&amp;width=680&amp;sig=Rk8MBOVja2O%2FmC5rP8j7b61cvC44fM1IPYBh8SAecHQ%3D"/>
+</figure>
+</div>
+<p>· Exercise: 15lb diagonal explosive drills</p><p>· Result: After 2 weeks, swing speed ↑5%🏌🏻</p><p>Whether you're training for golf, badminton, rowing, or more, Xercise helps build the exact muscle groups and motion patterns your sport demands.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49327934">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/327/934/a49099a95106959a1e1abaac8915eba1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747619534&amp;width=680&amp;sig=nNBcVYNz1X1hjgJstFpLVsKS30H9ShOv4d7m54XRfaU%3D" src="https://i.kickstarter.com/assets/049/327/934/a49099a95106959a1e1abaac8915eba1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747619534&amp;width=680&amp;sig=nNBcVYNz1X1hjgJstFpLVsKS30H9ShOv4d7m54XRfaU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49196715">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/196/715/72d3d7dd046677ebc28f828de8cd4583_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746670161&amp;width=680&amp;sig=AYil1ItrjYnGMsBegEJR%2BGugG2LaR3AHm58Z1jkGNsA%3D"/>
+</figure>
+</div>
+<p>200+ Training Modes | Core | Balance | Power | Precision⛹🏼‍♂️🏊🏼🏋🏼‍♀️🏌🏼‍♂️⛷🤼‍♀️🧗‍♀️🤺</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268684">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:CONSTANT-FORCE-CONSTANT-RESULTS">CONSTANT FORCE,CONSTANT RESULTS</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/684/3439514e243da192650870ffb515675e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747187350&amp;width=680&amp;sig=dKw8V8Z5Yn78e0D4BOKRKfEW4imOylXDFn1%2Bs4Bn0HU%3D"/>
+</figure>
+</div>
+<p>Why traditional equipment falls short—and how Xercise fixes it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49196712">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/196/712/6f538a20ebd805458a0a4c014911d5ce_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746670147&amp;width=680&amp;sig=aC%2FWYcorqbrP8CXrHfddef8YXmfok%2FDKkwlvOD%2BwQ7c%3D" src="https://i.kickstarter.com/assets/049/196/712/6f538a20ebd805458a0a4c014911d5ce_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746670147&amp;width=680&amp;sig=aC%2FWYcorqbrP8CXrHfddef8YXmfok%2FDKkwlvOD%2BwQ7c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49345942">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/345/942/1a84a5fd5633ebda979abcdebc156bd6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747722670&amp;width=680&amp;sig=7UwfECCX0cK8wlWyLWgnonTfNxC8awAbFdQDYrn1xVc%3D"/>
+</figure>
+</div>
+<p>· Weight ≠ Effectiveness: Even 140lb load may not deliver desired muscle response❌</p><p>· Speed Training Limitation: Power = weight × speed → Traditional machines can't keep up❌</p><p>· Gravity &amp; Inertia: Create instability during fast, repetitive movements❌</p><p>· Return Force Drop-Off: Conventional systems lose tension on the way back—reducing training effect❌</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49299589">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/299/589/dcb2e6e11162e740cb6a5784ee9e74ec_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747380803&amp;width=680&amp;sig=iaDBj7E99STg4ipII3vr9gJzcW07T6MdGBdartodCDw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48812865">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/812/865/635fa04dd0aaff6ff90f1bc8b43790e9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744018510&amp;width=680&amp;sig=HkCO3jcj4eE1%2FXIayW8jWv9dmN3hlVY2WmkE92fTGik%3D" src="https://i.kickstarter.com/assets/048/812/865/635fa04dd0aaff6ff90f1bc8b43790e9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744018510&amp;width=680&amp;sig=HkCO3jcj4eE1%2FXIayW8jWv9dmN3hlVY2WmkE92fTGik%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49299491">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:WHY-MECHATRONICAL-RESISTANCE-TRAINING-WORKS">WHY MECHATRONICAL RESISTANCE TRAINING WORKS</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/299/491/622999884e37f9550daaa82965c4a3ce_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747379941&amp;width=680&amp;sig=COAQz5%2BQB9kokRY56iZ7d0l163kVweujGuZKo4SRPFs%3D"/>
+</figure>
+</div>
+<p>Simple science, real impact—four reasons it outperforms traditional weights.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332189">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/189/c197edb5611198a47a95556a2d9fe4f9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647504&amp;width=680&amp;sig=CGP71R10eHuVznBIJXsdA5ntaxj1Ye7fS%2F0%2FoIPXe4s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332191">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/191/cda3ccac4c6c0f890925fb4ad5bcd15d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647511&amp;width=680&amp;sig=Hd6KVWSOZbN1quXk5aeus4G2oS%2F6QAEel8kcSh%2F63Pg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328885">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/328/885/212097a096caeada5d4733bebaea5a29_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747626488&amp;width=680&amp;sig=pxWMlo34RBchqXr8XfKMwXXB5LpUHn7ds03Ruz5YdUw%3D" src="https://i.kickstarter.com/assets/049/328/885/212097a096caeada5d4733bebaea5a29_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747626488&amp;width=680&amp;sig=pxWMlo34RBchqXr8XfKMwXXB5LpUHn7ds03Ruz5YdUw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49276314">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/276/314/018385270fca1ea872df15f3e2fbca41_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747233406&amp;width=680&amp;sig=g%2FJBeXsWe0324we6SvANdoN6tIFTiU1mGoGdOGqW1CA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328886">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/328/886/c05dd692297a98ba4eb50bfe1fee1b90_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747626494&amp;width=680&amp;sig=wfTznW%2BiYVYhxQB1HB3NA5C4EmDQ5QeTrhpgH0YMW%2B8%3D" src="https://i.kickstarter.com/assets/049/328/886/c05dd692297a98ba4eb50bfe1fee1b90_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747626494&amp;width=680&amp;sig=wfTznW%2BiYVYhxQB1HB3NA5C4EmDQ5QeTrhpgH0YMW%2B8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49276312">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/276/312/0d0274ae969c6f0d737bf0a05a1e4f90_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747233405&amp;width=680&amp;sig=%2FpaaOIV3kpUI%2BN%2Bu4MyBhGNfcUqcf%2BhfkqY5w2X%2Fub8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49276335">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/276/335/03bc125ee5b1eaecea2d5b1c1bb42111_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747233464&amp;width=680&amp;sig=HtDxhZ2CMcP8pBpqB6oJwD9tTmqqbRv4wcT%2BeU6oKOg%3D" src="https://i.kickstarter.com/assets/049/276/335/03bc125ee5b1eaecea2d5b1c1bb42111_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747233464&amp;width=680&amp;sig=HtDxhZ2CMcP8pBpqB6oJwD9tTmqqbRv4wcT%2BeU6oKOg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49277249">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/277/249/7f3f07b25ff3287d617d0f44f111ed70_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747237661&amp;width=680&amp;sig=wgVHoMk3IOKEZYFiKlqTZqBEbCKY6xc1qKOB3biFdaA%3D" src="https://i.kickstarter.com/assets/049/277/249/7f3f07b25ff3287d617d0f44f111ed70_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747237661&amp;width=680&amp;sig=wgVHoMk3IOKEZYFiKlqTZqBEbCKY6xc1qKOB3biFdaA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49277241">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/277/241/df5d40fe2ab5cb70461eacbadcdf4183_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747237615&amp;width=680&amp;sig=AYnjRC6m8wsfHNVhJplOBdLYE5Z952ig9es%2BbrU8Yzs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347958">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/347/958/6efb3315383c28ab637894e6e84ad201_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747734655&amp;width=680&amp;sig=nSaceRZhFOD8ix35GigBy19BO%2BH2ZZflkVvg2gfpRfo%3D" src="https://i.kickstarter.com/assets/049/347/958/6efb3315383c28ab637894e6e84ad201_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747734655&amp;width=680&amp;sig=nSaceRZhFOD8ix35GigBy19BO%2BH2ZZflkVvg2gfpRfo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268740">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:APP">APP</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/740/df39a54b1992bc38610e36d16f45601f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747187875&amp;width=680&amp;sig=KrKKttdnzEl9MpD7MkQvqHWf6cMu34aB0aZw1E7ZqtE%3D"/>
+</figure>
+</div>
+<p>With the Xercise App, your workout is never guesswork.</p><p>From beginner plans to athlete-level drills, everything is guided, personalized, and trackable.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49196997">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/196/997/450ae94feb360522c259686109d3804b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746671735&amp;width=680&amp;sig=YERa1ixxHqahVmMVT01unzlsulfY6tpsvWpY5yzxYSo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49196998">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/196/998/1b30a184d675305061927238a7668785_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746671735&amp;width=680&amp;sig=NK9v1dQbu9cQExLsvO6%2B2ZGE4VbeEXZx8jYt1pJWxR0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49481841">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/481/841/ad55314ae8833ccc5ccacd4c77210d0c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748597924&amp;width=680&amp;sig=yi1gIKTnpH4mKtQt6IVLuvx%2Bp6bvA%2BJPDIdxz3%2FBtCQ%3D"/>
+</figure>
+</div>
+<p>Mirror your Xercise app to your TV for an immersive training experience. Follow guided workouts, track live performance data, and stay in the zone—no squinting, no distractions, just full-screen focus.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49481880">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/481/880/f0eb448ad1998e1323ffa88bce0703c2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748598157&amp;width=680&amp;sig=tlclgBh%2FJDDH83twV%2B3GcPcNv%2FQiowzWk%2FNV5jaItuU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268745">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:HOW-XERCISE-EXCELS-AGAINST-OTHERS">HOW XERCISE EXCELS AGAINST OTHERS</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/745/8e1c90f1f817107efc7d1979314a71cb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747187922&amp;width=680&amp;sig=PFNRe5GQ5639bKkaZAMV69DwDc0dOsGbjlJeta4ncvY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49271305">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/271/305/7e6dd0c5156ac9ece79ddadaa223e5b1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747207015&amp;width=680&amp;sig=nZtjimwjuPuN3tpz4BVUT1Le%2BzPDaRFJ0zos3qWv1Fc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268761">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:TECH-SPECS">TECH SPECS</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/761/49281ba0626e6275fa39f92e22f9c485_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188103&amp;width=680&amp;sig=v%2Bqe0FOyK0cXbUi8%2FupNYNnLiothAje4LzvpaXiz6xk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268757">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/757/3bb86805fc49ede17c68507bf0b82f35_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188073&amp;width=680&amp;sig=5BW7B5EOkk8m2HnD%2FtCRRF8ryp8C0pYndJAMgSLNXSQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268769">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:WHAT-S-IN-THE-BOX-">WHAT`S IN THE BOX?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/769/ce816102ea316e45f70af966306923a0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188130&amp;width=680&amp;sig=SeA05TjBzzEWwBj3Ys6cNqtTGfRBIpkfZRGyyPjNmQ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49299501">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/299/501/dd80d1b506079422d3ba7f52f19054f7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747380020&amp;width=680&amp;sig=hAA%2FGjRyxHpiNuAqemPvg0qJJTNn2kd2FNE%2FOwowBAY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268771">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/771/8604c8e7e7f2675815b2c2e0ea986153_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188143&amp;width=680&amp;sig=zqBKafkJhc%2FtaGk0fn69o9FfMH%2Fccv8S2r%2B40HjHlOo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332195">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/195/f443f597dad2a0c61f6f9d75c58d6e55_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647537&amp;width=680&amp;sig=bwoo7U9x3Wui2l90llXXKoOx7iawlwTMEdEMX91eC7g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332197">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/197/b3b7fecbd647410768543ce8c51c1a65_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647542&amp;width=680&amp;sig=dQTsDWZQPVF9hYl%2Fwh5QvHeVAKhO7192b0BU%2BiE2vsw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332200">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/200/d82136dd9a01f612758808ba0cc2fa66_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647557&amp;width=680&amp;sig=JJqw1Z%2F2VyHJgHfb5OQ6Xsl9%2BpuwyECyBViQKK8O9Mw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332202">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/202/b0fe2edf6a2d6588bdd128b73d25766d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647562&amp;width=680&amp;sig=7vFKKW6ZpD1C59Pdfu7V0Nw9G3Kyba3txcqQ0RQnwAE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268781">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/781/d98446b3bac3e304a5e0541c363752e3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188171&amp;width=680&amp;sig=N8BKC%2BYN45K7FuXZ4a%2BDJ62ahmU%2BFeRGC1NnXF0alJo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347731">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/731/6e59d2cdfe92a6303f3229e8a12134d0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733459&amp;width=680&amp;sig=2Opzia%2Bbul%2BtZmyA3hLALzZgNh2Hqcz%2FZtgXMLENDyQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344565">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/344/565/d725f4751671973cd64ff2731fe8ce49_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747711410&amp;width=680&amp;sig=stE3dRUuvDRyZoxMhcUSDB8vcckNX3voRT9yZtujixo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344566">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/344/566/eb77eba034289583490080cb61355da0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747711410&amp;width=680&amp;sig=kH1Bs1KNTpWGrv86XNmKCh7ynq6nfo0jhE6K10Pjb0Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346234">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/234/b620c1abfa951de5d95e2738b892a677_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747724685&amp;width=680&amp;sig=p3gAuv50%2FEus4%2FIc4nLW6xBgPHm%2FrekMzLrV%2FwUey6s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344567">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/344/567/fc1d9a9e0a2c7a8794a91db8f63818b3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747711410&amp;width=680&amp;sig=JzzExNbm65AXXA70swCxTCTxdbRcE8Lx0V12Pp4wsQ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344568">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/344/568/1836e6a378c8c1d9828ba43d216867b6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747711410&amp;width=680&amp;sig=AWXXRaqgrm0IpGaOElN%2BPZFBH5gbuPcSCslzujJiJWY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344564">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/344/564/36932e9f4ace487fac81c509c3dde29a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747711409&amp;width=680&amp;sig=Ucdr%2Bif%2BslrKQZyxqe9h2VYtCjMmKMXqmHfnh%2FEkf6g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49345986">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/345/986/1c1e8ca0465a971f642af725701445e2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747722959&amp;width=680&amp;sig=XyMFu6mUEeOYD2WXYsLbwjFQGxewNL%2B65ZsNbX2xFEY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268866">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/866/cebe3accd5f5a4aa4286f07a123acb07_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188564&amp;width=680&amp;sig=3ibo3ntDX0WdCiKfh1Xoz40S%2FIU21GeqFRSpC8F3FxU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49345949">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/345/949/150383b09bd965f3c5a08bca5f26804e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747722706&amp;width=680&amp;sig=6tXaQB4e9JSBPigNORx9tPgiFJhnErAcsz%2FzLszq6Tw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268873">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/873/fc1b26edae1f15080096d5b69b2eaeb9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188625&amp;width=680&amp;sig=pjFKwCpl4yic5S04haXoxxdu95GncQOQfkCE2rcjMXM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332298">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/298/3f50d851170a94defdf7c83e4f5f3000_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747648104&amp;width=680&amp;sig=vB0bserkKl%2FsG3MOF%2BG1fbhcTeIQ28mH776XyMU99Cg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332208">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/208/3e53b1378b6732685f7bcec88edd611d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647594&amp;width=680&amp;sig=W09r3vAsEhr%2B8Y6qD89uMiro5kMxKIMdcO%2B%2FkdTc%2BCk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268775">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/775/b66b93835a9bc060c2a1e83e50998ba6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188152&amp;width=680&amp;sig=Rjxr%2B5z53MjdZiqW2RJdGbGku2EGc9DROZk25lT4vu4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346443">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/443/91dcb6dd3365460c458791508351c8c8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747726143&amp;width=680&amp;sig=ZBZwyxnnguWpq8LFZnanKLamUjVRn8%2BCudmXeEeHguY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268778">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/778/465f87e9dda2346a082f581506e4d8b7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188162&amp;width=680&amp;sig=%2FHvTAUwB0kU0UJh3HogSKsGoFBhSAEh64Ncu0dJEL6k%3D"/>
+</figure>
+</div>
+<p>We partnered with the University of Waterloo. They have been providing research and tech support from their amazing Laboratory of Computational Intelligence and Automation. We absolutely could not have done this without them.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268794">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/794/f8307db57e28cc65a274839f0531092a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188241&amp;width=680&amp;sig=0WYREC7ZLE6%2FCW6%2BGL%2B%2BfD%2FFDCulo2dssvry5PKSKE0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:About-US">About US</h3><p>Our company provides life-altering convenient, and innovative technology. We aim to make life better for everyone. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268792">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/792/ededbf1d35a85c5097aaf8d8692fe8c5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747188228&amp;width=680&amp;sig=c7VqUrhm4G%2FWMGZYbbXRqn5428hSGte32JM0bFPqgIs%3D"/>
+</figure>
+</div>
+<p><span class="bold">SL Innovation Corporation</span> is a Canadian company headquartered in Toronto. </p><ul>
+<li> <span class="bold">Waterloo, Canada:</span> Our tech support from Laboratory of Computational Intelligence and Automation. We have been collaborating with the University of Waterloo since 2014. </li>
+<li>
+<span class="bold">Hong Kong: </span>Sl Innovation Co., Limited specialises in the development of fitness related equipment in Hong Kong.</li>
+<li> <span class="bold">Toronto, Canada:</span>SL Innovation Corporation. Production R&amp;D Center.</li>
+</ul><p>We have our own manufacturer in China, and a reliable supply chain which ensures we can deliver a high quality product in the most expeditious manner possible.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268804">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/804/38403c715d038001ffe5c549ec1dfa18_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188277&amp;width=680&amp;sig=UlDcDYoXSDnpkK2Wr29iy77pcgDjc4VExW7xjQFDSuw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522294">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/522/294/c520ea61ab7334b01566b23e8da3b940_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748913522&amp;width=680&amp;sig=fM2R%2FbHClLemds3wHeJ8qLHjxQ6mbzsu87EXa54GwaY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49327850">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/327/850/26adaec29592ab84529e9931c76f2d6e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747618798&amp;width=680&amp;sig=eaQnASH6z8OzEk9plJ2qfcs%2BkLS0QVcasyTNli9lilI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49343897">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/343/897/8c75f5f2ab3dfb29c19074146ddb2b1c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747707197&amp;width=680&amp;sig=GabruF9gOWP6mL1FM%2F3mpWn%2FRVzpYJu7mXCwCvCGOLw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332307">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/307/33d6eced9fd73a1465d288e6cbc883c1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747648144&amp;width=680&amp;sig=SibOtEjQ68macuBy3iOOZxbm2fumUlyY9%2FuuC4419po%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49268856">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:SOCIAL-MEDIA">SOCIAL MEDIA</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/268/856/1e0bb34cdc965379ede318e51ead4ee8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747188514&amp;width=680&amp;sig=ZDblK2xEqZGADwrPqKVWjEoN08RmBA0JBHYdlV%2BfIqM%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As a Kickstarter enthusiast, I am very familiar with the Kickstarter environment and the concerns of backers about projects. We promise to truly provide comprehensive after-sales service for backers, rather than just paying lip service. Every aspect of the production and transportation of each product involves risks and challenges, but we are confident in delivering high-quality products and are willing to maintain close communication with each and every backer.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Xercise is equipped with an electronic chip that tracks and records two key data, power and speed, in real time, so users can clearly see how each workout is performing in real time and make adjustments and optimizations based on the data to help you achieve your training goals more efficiently.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

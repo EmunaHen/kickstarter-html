@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardylish: The Wall-Sticking, Style-Switching Phone Case</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/210/814/740d344e1bd6c3bf1e92b3a49c04bc4b_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1746767082&width=560&sig=%2BgBtC2Ci2iybohq80uJJe13pdqnShu3zIic9aXYZkIY%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Cardylish: The Wall-Sticking, Style-Switching Phone Case</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Stick Anywhere | Switch Designs | With Mirror | Check Makeup Fast | Snap Hands-Free | Shock-resistant | Wireless Chargin |Best for Gift</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 3,448</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>27 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49023137">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Brand-Video">Brand Video</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/023/137/30b55da8a20e7ad1937ee7de025c370d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745488126&amp;width=680&amp;sig=Lkrd9wF2oHymtGOI8Qp08VnKygxSKGQqKDHOKxshQ3Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49023141">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:2-points">2 points</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/023/141/8818c5a3a18194883a1749a62d1d9617_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745488172&amp;width=680&amp;sig=pVrCWKgqRsHWVXHZbQgsp%2Bzs8wYRO1m8IKI313Jc%2B%2Fw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056452">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/056/452/839ca3af7c45a2bd498f25a3368e4f04_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745727571&amp;width=680&amp;sig=%2FevALkNw46aLUVXQ65V5nWXT4wMhL9RwCfvY9HGDS3U%3D" src="https://i.kickstarter.com/assets/049/056/452/839ca3af7c45a2bd498f25a3368e4f04_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745727571&amp;width=680&amp;sig=%2FevALkNw46aLUVXQ65V5nWXT4wMhL9RwCfvY9HGDS3U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210522">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/210/522/001dea144cc503166e6a59bce104f73c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746763906&amp;width=680&amp;sig=41WUhxguit855S2pXJpJ0bc%2FhxJem%2BbVNKQJfT7myYk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49036337">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/036/337/ec730d29a61b48aef0000d8ec2a4c225_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745569939&amp;width=680&amp;sig=3qPATpb%2BXMMloBNG7bWGts23E%2BZxavTY1INe8G3qkKw%3D" src="https://i.kickstarter.com/assets/049/036/337/ec730d29a61b48aef0000d8ec2a4c225_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745569939&amp;width=680&amp;sig=3qPATpb%2BXMMloBNG7bWGts23E%2BZxavTY1INe8G3qkKw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49036766">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:We-deliver-on-our-promises-no-surprise">We deliver on our promises-no surprise</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/036/766/7b94864c6022000e471b660bb33d2b29_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745572131&amp;width=680&amp;sig=6%2BCYrybdHib%2B62Jm9J8eYznGEW8L3EamodffTAOM8R0%3D"/>
+</figure>
+</div>
+<p><span class="bold">You Support It. We Ship It.</span><br/>We're fully prepared to deliver every single Cardylish case.<br/>We've partnered with reliable suppliers and logistics teams to make it happen.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49037589">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/037/589/69b9f2ceb6bd0a8102ab4e191e8bf86f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745576548&amp;width=680&amp;sig=l2nHnbeeffdTV7WtoDnzx%2FblHu3Y5YQxM7fQtAuz5bw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49037616">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Review-Videos">Review Videos</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/037/616/83af9f8e41a667468beb0564848faa35_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745576655&amp;width=680&amp;sig=i2vPVaHj3dwt5d71X6NBlTqMrKit2ITVeFjTEoa0zGg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210610">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/210/610/680071873f970a05ba00967833a06699_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746764969&amp;width=680&amp;sig=R10tdEdV%2F7pn8jH6TZqnYPGw1IUnS2cH27tf%2F1lqhW8%3D" src="https://i.kickstarter.com/assets/049/210/610/680071873f970a05ba00967833a06699_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746764969&amp;width=680&amp;sig=R10tdEdV%2F7pn8jH6TZqnYPGw1IUnS2cH27tf%2F1lqhW8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210532">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/210/532/1d2e3763ed23385f70805309d659aaeb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746764014&amp;width=680&amp;sig=lO1N8FzNaFFcuaOuUaPnhtsBdQFEbd0f6QB2EEK%2FhDI%3D" src="https://i.kickstarter.com/assets/049/210/532/1d2e3763ed23385f70805309d659aaeb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746764014&amp;width=680&amp;sig=lO1N8FzNaFFcuaOuUaPnhtsBdQFEbd0f6QB2EEK%2FhDI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056225">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stick-your-phone-anywhere-to-free-your-hands">Stick your phone anywhere to free your hands</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/225/5315d8ab72f3fbb7d9dd09611e2cc95b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745724390&amp;width=680&amp;sig=Cx8Cs8vQqfIlHa7mtopCEpfWXu9vGq1f2lF3iYQQjOY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056263">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/263/f90fc784a6f07a20fec6f661f929e3b3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745724945&amp;width=680&amp;sig=VcjSlZSZ1%2BYGipJhoUrsYlAKFvAuo%2BZjYm7wag7jsoQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49125865">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/125/865/df3559967ccd596adf346b3a14474032_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746166694&amp;width=680&amp;sig=NX23Iohemy1LTtZtGTyS9QT4WcXVFPGM%2BOrPbTdAvdw%3D" src="https://i.kickstarter.com/assets/049/125/865/df3559967ccd596adf346b3a14474032_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746166694&amp;width=680&amp;sig=NX23Iohemy1LTtZtGTyS9QT4WcXVFPGM%2BOrPbTdAvdw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056251">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/251/145deebea669d68fac9b60e917162dec_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745724825&amp;width=680&amp;sig=NfeRdwjuN5gw0kn9Ubi4PrBcFlq6C7vXcZydj9s2SKk%3D"/>
+</figure>
+</div>
+<p>Cardylish is a futuristic smartphone case that can stick firmly to walls, thanks to innovative Nano-Suction technology. Nano-Suction uses countless microscopic suction cups that securely adhere to flat surfaces.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056249">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/056/249/e0163fc0ca207f210221b60ae37b09a3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745724805&amp;width=680&amp;sig=1sMYvr9G6AhO8cXXsnjeSm3MTUCaIJ91J3QmO7m0trI%3D" src="https://i.kickstarter.com/assets/049/056/249/e0163fc0ca207f210221b60ae37b09a3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745724805&amp;width=680&amp;sig=1sMYvr9G6AhO8cXXsnjeSm3MTUCaIJ91J3QmO7m0trI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210507">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/210/507/8dfdfbc849b91a5b994fb23665d2d3d6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746763791&amp;width=680&amp;sig=Dq%2Bqfr4wVPn8XhVFHjeHmGVZ87CQYYc6yhQa%2Fe%2F3hO0%3D" src="https://i.kickstarter.com/assets/049/210/507/8dfdfbc849b91a5b994fb23665d2d3d6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746763791&amp;width=680&amp;sig=Dq%2Bqfr4wVPn8XhVFHjeHmGVZ87CQYYc6yhQa%2Fe%2F3hO0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056273">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/273/bd6065b91bfa21cb46e9895f0dc4c0bc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745725047&amp;width=680&amp;sig=z5coCO%2BHJOpjcVks3wW0iZzvuqU2vbNLOTpumyR4uPM%3D"/>
+</figure>
+</div>
+<p>Unlike magnets, Cardylish can stick perfectly to non-metallic surfaces such as glass, mirrors, tiles, etc.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056276">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/276/e695449926e34f89dd52e9af60ff2a29_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745725101&amp;width=680&amp;sig=V1GZk7JRNLL3WF2c2MTAhIukV3csscbFgDVMq8Wp1hQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210788">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/210/788/bb23d43d8611bfd49952b407700bb21c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746766684&amp;width=680&amp;sig=QRr%2BLZkpwWux3WeCOZq9ROmUtavzYHJ%2FKUnup7vDyvs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335067">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/067/ae027898fc02c02e1808d7dd8b9e09b3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747662746&amp;width=680&amp;sig=E6%2BTGY%2F8fCZl41DTsJvTgxicQmsdJY2pTJOeZE3jtUs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056279">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/279/f10340f2bfd6134f586955060bdd3f82_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745725137&amp;width=680&amp;sig=AUGn8zMnQZ62OsmX7cLp7XiNfmJBLrHdfwuryZmtsJs%3D"/>
+</figure>
+</div>
+<div class="inner2">
+<div class="text">With Cardylish, enjoy seamless, hands-free experiences wherever you are. Let’s Free your hands for smarter selfies, video calls, cooking recipes, or streaming videos, exploring the endless possibilities only by your imagination.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49511208">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/511/208/7ef24e116370d9134e5a8f79baafad33_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748849125&amp;width=680&amp;sig=PSi4zy7l3zLk9xfN5ks9KFPbAl1CP65uN6%2BO%2F1F%2FoCA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49511416">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/511/416/4e686187ddf96e0e8191f12a8fd5cb55_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748850940&amp;width=680&amp;sig=62bufVECLzuSrrMSXnBMPXZTAQpNATwxesu1wEdMm8Q%3D" src="https://i.kickstarter.com/assets/049/511/416/4e686187ddf96e0e8191f12a8fd5cb55_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748850940&amp;width=680&amp;sig=62bufVECLzuSrrMSXnBMPXZTAQpNATwxesu1wEdMm8Q%3D"/>
+</figure>
+</div>
+<p>The nano-suction adhesion lasts semi-permanently. If it starts to lose its stickiness, simply wipe off any dust or debris with a damp cloth or sheet, and the adhesion will be restored.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056283">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Customize-your-phone-to-match-your-fashion">Customize your phone to match your fashion</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/283/5e14f3e43714e05a9942c364a4eb07ad_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745725166&amp;width=680&amp;sig=HRhtOdIkzKWKRen%2F%2FyrGdwBoZlhv8Gj8Tx9r8nR3ubU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056290">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/290/cc3a18d828cb8c298919dd70e289a986_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745725214&amp;width=680&amp;sig=5grjQMUiYo7VejoNiK6y21SBk4yFdgJTnyw1Z%2B6IZnw%3D"/>
+</figure>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056301">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/301/e434d25b35ef14f763200ad3b766e1d1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745725332&amp;width=680&amp;sig=J4tQQaMGmby9wTw1D%2FIc%2BRqNRaBqEhDAbUhSjdnhmb4%3D"/>
+</figure>
+</div>
+<p>Cardylish utilize the unique sticking feature to attach stylish cards with a mirror backing.These cards, called "Design Cards," are available in a wide variety of designs.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056312">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/056/312/9dcf678cff7b6cf4d51cdad80b5b336b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745725411&amp;width=680&amp;sig=bzFxuE%2BmyJui72wcdatNTNfnzCKfAx8UhJoLNuTCmWs%3D" src="https://i.kickstarter.com/assets/049/056/312/9dcf678cff7b6cf4d51cdad80b5b336b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745725411&amp;width=680&amp;sig=bzFxuE%2BmyJui72wcdatNTNfnzCKfAx8UhJoLNuTCmWs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056455">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/455/db63a70e2833f88a41128857e9f2a985_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745727599&amp;width=680&amp;sig=ojJ2XcUpjmKqGtFu8Er5lEVLpeCcVXa1mQphJHhATj8%3D"/>
+</figure>
+</div>
+<p>With Cardylish, you can easily change your phone's style to suit your daily mood or outfit.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056462">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/462/ad5851ace6eec1fcd207f0ee3e1e1e87_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745727639&amp;width=680&amp;sig=CfSoPPpu12GsDwKMNc%2BL8W78C8sMhZsJw1rJBxxUy48%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056464">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/464/db4a30dab30e2cccf039bc29a024b229_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745727675&amp;width=680&amp;sig=t%2FJdGaB2Jl5v7Sxz8RHrPWm1VY7zM48LnnRecYxp9fQ%3D"/>
+</figure>
+</div>
+<p>The mirror-backed cards let you effortlessly check your appearance or touch up your makeup anytime, without having to open your bag.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056466">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/466/744b59ee32fb62d848c1de962dca1040_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745727731&amp;width=680&amp;sig=Edt9n8YqCqR8jaEwMt%2BpvBqKoU4EGkGSmDM4lkaHZQw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056468">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/468/2462ad79a146f598330ee39e8c94af47_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745727749&amp;width=680&amp;sig=DhmUfrIbNcRQ9h59q3VUsXuYIJA525XGUqUZgSPMPl0%3D"/>
+</figure>
+</div>
+<p>Your smartphone goes everywhere with you—make it uniquely yours. Choose your Design Card just like you choose your sneakers; match your style, match your mood.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056471">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:More-smart-features-for-your-mobile-life">More smart features for your mobile life</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/471/d568941766a92be272ee8614995fea1e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745727804&amp;width=680&amp;sig=1CDjJwJRMJ4gxbhXrCRhKSinotlPpmuJzDQan0aGJLw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056695">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/695/a24520872e2be5f55486567bb10d2cf0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745730923&amp;width=680&amp;sig=KMb54CbC5KmBOvIbYSwzapRzMhOlWhfksSWCzzwTfNY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056834">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/834/70de7b693e656d19c4cab3c5ce2b9e3f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745733013&amp;width=680&amp;sig=i%2B4obvLFd%2BFcTlAhDdHr61YyVcBALq6P6%2Bt46d2CtCc%3D"/>
+</figure>
+</div>
+<p>There are two strap holes on each side of the case, allowing you to attach a strap to wear it around your neck.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056703">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/703/98379185c2540ec5ca9bd55c500ddde0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745731020&amp;width=680&amp;sig=OPJAm2ILzCPu1gtPxuj0J1oE37vFzHRYqif8qoMAcSc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056704">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/704/ccac884dbdcc9aa2c1b4d781344c195c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745731032&amp;width=680&amp;sig=a9dyyTfBL3ZDtKlKDJ1gAS5btSEPt%2BB1bednYeQtXTo%3D"/>
+</figure>
+</div>
+<p>The case is designed to be shock-resistant, providing peace of mind even if you accidentally drop your smartphone.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056713">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/713/62b90f3d5631e1f5a18acee42f0d23e2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745731197&amp;width=680&amp;sig=WOLqkABUfeT0jyDgibl8f3kit03nWr6aYetitu4HCVY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056715">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/715/087cca7e7614614fd0aa42bbe527e683_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745731209&amp;width=680&amp;sig=iTlIBnsu6W0Tfv5QQEDZP3eGpjBnoUwalghYZ%2FdUDvY%3D"/>
+</figure>
+</div>
+<p>The case features a heat-dissipating design that’s gentle on your smartphone.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056729">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/729/23322dedcc413d39b9c22013c9415ba8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745731471&amp;width=680&amp;sig=sEDjULEJFLfMJ2PEeoluxjHrt7PkUntuF57lxa0fthY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056730">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/730/9f3d721d4e3e068073bc456a1a6a6bad_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745731477&amp;width=680&amp;sig=f5cG61qDDYkW3dYB0D8LrUCUwIJuYeH5OClYqIT4imk%3D"/>
+</figure>
+</div>
+<p>The case supports wireless charging, making it easy to power up your device.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056734">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/734/35a9665208f40017ff38c541e98dc84e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745731606&amp;width=680&amp;sig=6rxHeRFyiY5C99I4a4HUEDwV%2Bopbg5HNQpZWIX0PGRw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056738">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/738/01a85f14d8767f1a86f60a2e254e08ca_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745731616&amp;width=680&amp;sig=derom6eTpsbP3nJBWEnZWsMUXbBPIQUTCSOynY9lSnQ%3D"/>
+</figure>
+</div>
+<p>Genuine products are engraved with the official brand logo.Please be aware of counterfeit items.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056783">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Best-for-gift">Best for gift</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/783/29576a284358a7eb368788d97d6e668c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745732095&amp;width=680&amp;sig=eLmyOhacao3ftSG1A0TJCOlZEJYCsncXOEjS1d9W5%2FQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056822">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/822/5af3f3e040908df5cbf5eb7bb17d4d61_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745732868&amp;width=680&amp;sig=xzBh1vO8PRwaKpLneIw0agwqIFf8uZY7sk25bTgVL5s%3D"/>
+</figure>
+</div>
+<p>Choosing the right gift for a special day can be difficult.Cardylish is the perfect choice — combining innovative features and stylish design.It's a gift that's sure to surprise and delight whoever receives it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056617">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Brand-look">Brand look</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/617/ee5976a85eef3c213bf73153a40d795d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745729357&amp;width=680&amp;sig=ZuB6CCz5n9io3lsN%2Bv2gzVih2k0sAqS7APl0IAKoX28%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056618">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/618/422050b0d7b978c0ea639ae5335ce615_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745729361&amp;width=680&amp;sig=wYTNrsIOlZXJGuyN6Jj5yerMZac9PXnYyNicZ9425a8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056509">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Made-in-Japan">Made in Japan</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/509/37a6bbde7525abc1195b2d88954f6e60_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745728283&amp;width=680&amp;sig=evzDydAhZzvU4FraCo3zwukygYmSv6%2FEB8ne3PG4lP4%3D"/>
+</figure>
+</div>
+<p>Cardylish products are proudly made in Japan to ensure superior quality. Each item is carefully crafted by skilled artisans, promising durability and meticulous attention to detail.Transparency is key for us—so expect regular updates on production and shipping as we move forward. <span class="bold">We’ll keep you in the loop every step of the way.</span> Your trust and support mean the world to us, and we can't wait to deliver another successful project!</p><p><span class="bold">Cardylishの製品は、品質にこだわり、すべて日本国内で誇りを持って製造しています。</span><br/>熟練の職人たちによって丁寧に仕上げられており、優れた耐久性と細部への徹底したこだわりをお約束します。私たちは透明性を大切にしており、製造や配送の進捗についても随時アップデートをお届けしてまいります。一歩一歩の進行状況をしっかりご報告していきますので、どうぞご安心ください。皆さまの信頼とご支援は私たちにとって何よりも大切です。心を込めたプロジェクトを必ずお届けします！</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056517">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/517/3af45a1d7a46bb7c7f11d940f654474b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745728350&amp;width=680&amp;sig=R9NjKXaDcWscFgNxdjqMIBtkm3jKbJekcuajfEUsjmY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49037616">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Review-videos">Review videos</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/037/616/83af9f8e41a667468beb0564848faa35_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745576655&amp;width=680&amp;sig=i2vPVaHj3dwt5d71X6NBlTqMrKit2ITVeFjTEoa0zGg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210616">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/210/616/680071873f970a05ba00967833a06699_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765047&amp;width=680&amp;sig=pSBuha794PF8NwsVcHb7M6AOQgrIxdkKkonC7YNq3F4%3D" src="https://i.kickstarter.com/assets/049/210/616/680071873f970a05ba00967833a06699_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765047&amp;width=680&amp;sig=pSBuha794PF8NwsVcHb7M6AOQgrIxdkKkonC7YNq3F4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210643">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/210/643/01c0bf76d3ca8ad11c0c302b1a7612fc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765256&amp;width=680&amp;sig=%2BfmoR%2F6S26hASDMHuKjt7356LNtRKIa2%2BV0gg1SXQHM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210618">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/210/618/1d2e3763ed23385f70805309d659aaeb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765052&amp;width=680&amp;sig=cxbKfPGPteOsjw3GZlA%2FRjg0ClVpLiOi%2F4fg7cUxYdI%3D" src="https://i.kickstarter.com/assets/049/210/618/1d2e3763ed23385f70805309d659aaeb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765052&amp;width=680&amp;sig=cxbKfPGPteOsjw3GZlA%2FRjg0ClVpLiOi%2F4fg7cUxYdI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210648">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/210/648/d416c2df55b1755d4122a1a33eb51c74_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765286&amp;width=680&amp;sig=%2FUOS8bPuln4Blz4sRwHNhOb24EtYlaa4QnKvkydrqcE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210620">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/210/620/d3d1abd1c98221f729268875293fcb93_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765064&amp;width=680&amp;sig=NcYV6t0jQmsGBdFN9gVZNGSIF5IfbRzlWZQ0Nx2LmJE%3D" src="https://i.kickstarter.com/assets/049/210/620/d3d1abd1c98221f729268875293fcb93_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765064&amp;width=680&amp;sig=NcYV6t0jQmsGBdFN9gVZNGSIF5IfbRzlWZQ0Nx2LmJE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210650">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/210/650/e0509effb13499871a2f57d700b64b7c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765303&amp;width=680&amp;sig=vc6PeizEXjRt21L3ABUrgGwrcgkct5uV%2BZvrW9NBFpY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210621">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/210/621/d940297d0df4dc2f4558da26af936a78_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765075&amp;width=680&amp;sig=S8F4TmDACEj1uroFSVCIu%2F%2FW%2FfYSnMbvrWqvGHSjH0g%3D" src="https://i.kickstarter.com/assets/049/210/621/d940297d0df4dc2f4558da26af936a78_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765075&amp;width=680&amp;sig=S8F4TmDACEj1uroFSVCIu%2F%2FW%2FfYSnMbvrWqvGHSjH0g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210653">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/210/653/ef38f897c3d6aa466b41ac46c6c72661_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746765317&amp;width=680&amp;sig=b6sb9LSRnJsD8Fg6x8FLmXsf%2BCips12L%2BDsyDtTVnZ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210796">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Demo-Video">Demo Video</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/210/796/72c13ffedcce04642a7df0d61591d9b4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746766795&amp;width=680&amp;sig=D71S%2F8LsDYxk12Rpe6kIo%2Bt3aYCGHr6kDUZtM0%2Fo4nA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49087783">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Desigh-list">Desigh list</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/087/783/747fc84eccad5c574ea840d775670756_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745936710&amp;width=680&amp;sig=srRYDxd6RlEyd44JuVAC0mPPjkX4reqqhCOSVnHPFKI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49088084">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/088/084/be6a222308ed3005e455020f52f7b6c9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745937777&amp;width=680&amp;sig=5GBgWwtMpJoMRiDGBA9Hsxu%2FaKLz1axnRTLWTp0WgDQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49139447">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Compatible-models">Compatible models</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/139/447/803e1b99aeef9b7bb7e241f0e239f277_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746278848&amp;width=680&amp;sig=%2BU%2BVzZxOzsjYOCSv9zuE3XgJ0ScY4SaIuitaWqO7%2FLo%3D"/>
+</figure>
+</div>
+<p>You will be asked to confirm your iPhone model selection via a survey sent after the campaign concludes.</p><p>In the event that a selection error results in receiving a case for an incorrect model, we will make every effort to accommodate an exchange in good faith.<br/>However, due to the constraints of our profit margins, we kindly ask that customers cover the return shipping costs. We appreciate your understanding.</p><p>Cardylishはすべての<span class="bold">iPhoneモデル</span>に対応しています。残念ながら、現在、Androidデバイスや他のスマートフォンは対応していません。</p><p>ご希望のiPhone機種につきましては、ご注文後にお送りするアンケートにてご回答いただきます。</p><p>万が一、機種の選択に誤りがあり、異なるサイズの商品が届いた場合には、誠意をもって可能な限り交換対応させていただきます。ただし、当社の利益構造上、返品にかかる送料はお客様のご負担とさせていただきます。何卒ご了承くださいますようお願い申し上げます。</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056630">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Bluetooth-remote-included">Bluetooth remote included</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/630/a5261c4c502b72223f63d72b46d56625_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745729603&amp;width=680&amp;sig=JbfGV3dLFQT8HfxbzqEQYp9WU%2BSKkUUl1%2Ftml7SwOLE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056636">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/636/9bbbb721a843b64e9a4c77d67bdc64fb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745729801&amp;width=680&amp;sig=y3cU05emr3r3vMWPtYdIUKW%2BJqWiFW1kDIvAeJ4zGGQ%3D"/>
+</figure>
+</div>
+<p>Every backer gets a free Bluetooth remote — perfect for snapping photos and recording videos hands-free!</p><p>すべての支援者の皆さまに、Bluetoothリモコンを無料でプレゼント！ハンズフリーでの写真撮影や動画撮影にぴったりのアイテムです。</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49056883">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Perks-we-offer">Perks we offer</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/056/883/f3c95096720e0f4b6fdecb306adf578c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745733627&amp;width=680&amp;sig=BGDnrm5MNXuQ33jgyzxp5MhUlWu8NqrJOa1ru1VLLg4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210503">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/210/503/082e75cbda0a9731f52aa76cb325edcc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746763715&amp;width=680&amp;sig=JPfOoLasTF1psuOqmUMTM9JrPgB6fL2eb65fHUVPPHw%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49088717">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-fees">Shipping fees</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/088/717/7b664f63c16d2e42e4f65b7a88e3a9c2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745940204&amp;width=680&amp;sig=MiyMrWVY%2FeJFicKN0L8svFC3UrCJPMrkiVxOyTlusjw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49126456">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/126/456/86ef15df45d604d81244d4f7b3bb3f95_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746172712&amp;width=680&amp;sig=FOgcKa4%2BPtimzCyObB6eUZ%2F08LtEPX%2FeenL3ikfe3fY%3D"/>
+</figure>
+</div>
+<p>The average number of days for shipping may vary depending on the origin and destination.Also, please bear in mind that any import duties or taxes will be your responsibility, so be sure to check for any potential additional costs.</p><p>配送にかかる平均日数は、発送元とお届け先の地域によって異なる場合があります。また、輸入時に発生する関税や税金はお客様のご負担となりますので、追加の費用が発生する可能性についてあらかじめご確認ください。</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49116301">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:After-sales-Warranty">After-sales &amp; Warranty</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/116/301/92ef5d03b1714d625a9760f5258448d5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746101071&amp;width=680&amp;sig=dDU%2B3DTrgusD2XHfOX%2BDOGALXMIzRgV2eBFzuRC%2BkzE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49269164">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/269/164/90c3c562212d44d0fdb3f4986f900bbc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747190348&amp;width=680&amp;sig=OlFMjeQgnHJArgCb2vEcB94%2FyIyhYM%2FddNhfB145NSE%3D"/>
+</figure>
+</div>
+<p>If your product arrives damaged or has any initial defects, we’ll replace it free of charge within 30 days of delivery. We stand behind our quality and are here to ensure you feel confident with your purchase.</p><p>商品に破損または初期不良があった場合は、<span class="bold">配達から30日以内</span>であれば<span class="bold">無料で交換対応</span>いたします。</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49269178">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/269/178/fb23033bb1129a4172bcb3f83ac5d4eb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747190408&amp;width=680&amp;sig=NU5sbJlt3F8%2BB6Znv7kNbKMdyG1pD1%2F0In4BoIR0ME0%3D"/>
+</figure>
+</div>
+<p>Have questions or need assistance? Our friendly and professional customer support team is ready to help with troubleshooting, replacements, or general inquiries.  </p><p>ご不明点やご質問がある方は、お気軽にご相談ください。私たちの<span class="bold">フレンドリーで専門的なサポートチーム</span>が、トラブル対応や交換、その他のお問い合わせに迅速に対応いたします。</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49269204">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/269/204/e3cc404c34c6152be11e143767f4efe3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747190586&amp;width=680&amp;sig=b26iicNCdVb1tdD8KBLF7M%2FBTUheUKIY8cIvlzJB6kI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49495652">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Referral-Affiliate-Program">Referral Affiliate Program</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/495/652/6fab2fcf9864c6a907f080e7f97d678c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748704596&amp;width=680&amp;sig=ocmbuPLxUPtkn0cpSQz8yn8fzAP7BqDqeMBcbpA%2BO6w%3D"/>
+</figure>
+</div>
+<p><span class="bold">紹介報酬プログラム</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49495653">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/495/653/79fe85d5fa410cec997e270e20bc50c5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748704612&amp;width=680&amp;sig=cC%2Bb7qn%2FlvH61C7V2uPsJzAP3pQ95fbVf6cUeM9IlsA%3D"/>
+</figure>
+</div>
+<p>With this project, you not only get an exclusive discount, but also the opportunity to join our referral rewards program.If you refer a friend and they make a purchase, you'll receive 10% of their purchase amount as a reward.There’s no limit — you can refer as many people as you like.To join the referral program, simply click the link below.</p><p>このプロジェクトでは、お得に商品を購入できるだけでなく、紹介報酬プログラムもご用意しています。あなたが友人にこのプロジェクトを紹介し、その友人が商品を購入すると、購入金額の10%があなたに報酬として支払われます。紹介人数に制限はありません。何人でもご紹介いただけます。紹介報酬プログラムへのご参加は、下記のURLをクリックしてください。</p><p><span>https://cardylish.kickbooster.me/boost/cardylish</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49116646">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-brand-philosophy">Our brand philosophy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/116/646/7722f3f1e234ec81c510f974b505119b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746103757&amp;width=680&amp;sig=ibDYpJq9QQcLl%2FOFnkEE%2BgztaS2ng7l%2FN1FabdJJ%2F3o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49116672">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/116/672/04f02a83819ba857b9c0bb35ac18b15e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746104021&amp;width=680&amp;sig=u2vLLmxnYbVkRBwdWEikdzq2OlEYx7%2FvGN4G3ONjGxA%3D"/>
+</figure>
+</div>
+<p>The era of fixed ideas is over.</p><p><span class="text-italic"><span class="bold">"Dress your phone, Dress your life."</span></span></p><p>This is our philosophy at Cardylish. In a world connected through social media, diverse values blend, evolve, and inspire new cultures. We offer a revolutionary alternative beyond conventional smartphone cases.</p><p>Cardylish – Innovation, right in your hands.</p><p>固定概念に縛られるのはもう古い。</p><p><span class="text-italic"><span class="bold">"Dress your phone, Dress your life."</span></span></p><p>それが、私たち CARDYLISH のフィロソフィーです。今、SNSを通じて、私たちはあらゆる価値観とつながる時代。新しいカルチャーが生まれ、変化し、混ざり合う。スマホケースの常識を超えた、新しい選択肢を。</p><p><br/>「CARDYLISH」 – 革新を、あなたの手に。</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49116698">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Time-line">Time line</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/116/698/16435cdd0090a3223589e89839152a8e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746104293&amp;width=680&amp;sig=KwElNZnOKFB56yqyyf8w%2F9FBvCDzLzhHBbb6RIaB8AI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49269248">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/269/248/2f6e675e8056f9b3a301b2912849474d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747190782&amp;width=680&amp;sig=iB5mfJTu%2F%2F%2BVrQ8sxPCtlVl9tDVnRYo%2FHUtkI2dttqk%3D"/>
+</figure>
+</div>
+<p>If you need to change the case design or size before shipping, feel free to contact our customer support—we’ll be happy to assist you.</p><p>出荷前にケースのデザインやサイズを変更する必要がある場合は、お気軽にカスタマーサポートまでご連絡ください。ご要望に応じて対応させていただきます。</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49117056">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Behind-Cardylish-Powered-by-SOILNOKIDS-Inc-">Behind Cardylish — Powered by SOILNOKIDS Inc.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/117/056/b9b316483b55b1b139a539b9dc1a6e6e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746106740&amp;width=680&amp;sig=o5Q7u2jT65vYnwHkr9GsUiN98DgkLzC8seftDLxyW0U%3D"/>
+</figure>
+</div>
+<p><span class="bold">Behind Cardylish — Powered by SOILNOKIDS Inc.</span><br/>Cardylish is developed and managed by SOILNOKIDS Inc., a Tokyo-based company dedicated to creating design-forward lifestyle products that merge function and fashion.<br/>Our team has experience in launching physical products, building communities, and delivering thoughtful innovation to customers worldwide.</p><p><span class="bold">Cardylishは株式会社SOILNOKIDSが開発・運営しています。</span></p><p>Cardylishは、機能とファッションを融合させたデザイン性の高いライフスタイル製品の開発を手がける、東京拠点の株式会社SOILNOKIDSによって企画・運営されています。私たちのチームは、商品のローンチやコミュニティの構築、世界中のお客様へ向けた革新的なプロダクトの提供において豊富な経験を有しています。</p><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Launching Cardylish comes with a unique set of challenges, including potential delays in production, international shipping, and material sourcing.
+While we’ve already completed multiple rounds of prototyping and secured trusted manufacturing partners, unforeseen issues may still arise.
+
+Our team has carefully planned each step with risk management in mind, and we are fully committed to delivering on our promises.
+If any delays or changes occur, we will communicate transparently and proactively with our backers.
+
+Your trust and support are what drive us forward.
+With your help, we’re confident we can bring Cardylish to life smoothly and deliver a product that exceeds expectations.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

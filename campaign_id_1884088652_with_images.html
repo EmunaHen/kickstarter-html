@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BUG- First AI Powered, Voice Control, Ethical Hacking Device</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/620/262/4db3db9857d2b4f93625f1250531d172_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749557314&width=560&sig=1bWHfd1ANLCCczMFuynHQA%2B9eonl7dTAJHgg1IwlJZE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>BUG- First AI Powered, Voice Control, Ethical Hacking Device</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Ethical Hacker’s Dream Tool — Wi-Fi, BLE, GPT & SD in One Voice-Driven USB. Plug In, Build Smart, Stay Wireless.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,987</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:-Kickstarter-marked-our-first-project-as-a-Backers-Favorite-now-we-re-back-with-our-second-">🎖️ <span class="bold">Kickstarter marked our first project as a “Backers’ Favorite” — now we’re back with our second!</span> 🚀</h3><h3 class="page-anchor" id="h:Introducing-Bug-The-First-AI-Powered-Voice-Controlled-Ethical-Hacking-USB-Device"><span class="bold">Introducing Bug : The First AI-Powered, Voice-Controlled, Ethical Hacking USB Device</span></h3><h4 class="page-anchor" id="h:-Fully-Funded-In-Just-Minutes-">🟢🎯 <span class="bold">Fully Funded ✅ In Just Minutes!</span>
+</h4><h4 class="page-anchor" id="h:-USB-BUG-First-AI-Powered-Voice-Controlled-Wi-Fi-Enabled-USB-for-Ethical-Hackers-Makers-Educators-">
+<span class="bold">🐞 </span>USB BUG: First AI-Powered, Voice Controlled-Wi-Fi Enabled USB for Ethical Hackers, Makers &amp; Educators </h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49544596">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/544/596/bb7c81d17b477719d194c5b0d1bb62a4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749039287&amp;width=680&amp;sig=H1VYmI5lyBUlZS2GEiajfPFSEuLYUJPtgwh8%2Fa%2FEFbc%3D" src="https://i.kickstarter.com/assets/049/544/596/bb7c81d17b477719d194c5b0d1bb62a4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749039287&amp;width=680&amp;sig=H1VYmI5lyBUlZS2GEiajfPFSEuLYUJPtgwh8%2Fa%2FEFbc%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Plug-Speak-Hack-It-s-that-simple-"><span class="bold">Plug. Speak. Hack. It’s that simple.</span></h4><p>BUG is the <span class="bold">world’s first open-source ethical hacking tool</span> that looks like a USB stick — but it's a supercharged, <span class="bold">AI-assisted, voice-activated powerhouse</span> for cyber testing, automation, learning, and rapid prototyping. Whether you're an ethical hacker, student, or educator — BUG helps you explore, learn, and build smarter than ever before.<img class="image" data-id="49467853" src="https://i.kickstarter.com/assets/049/467/853/28c4b0d73883cf0cf07bcbf23b06cfc6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748514218&amp;width=1024&amp;sig=itz7geE0KtyuFBO%2FYAVX5VmgRJ4uv8XL9DF%2Fahd2dPc%3D"/></p><p>BUG is a groundbreaking tool designed for the next generation of cybersecurity. This <span class="bold">AI-powered</span>, <span class="bold">voice-controlled USB </span>device combines cutting-edge <span class="bold">HID injection capabilities </span>with <span class="bold">wireless control </span>and <span class="bold">ChatGPT integration</span>, making it an essential companion for <span class="bold">ethical hackers, cybersecurity trainers, tech educators, and DIY makers.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49557973">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/557/973/4933c787c00ceadf69440e8b22bc17e2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749117842&amp;width=680&amp;sig=5Hx5j0Lmp%2F9Yc8g2SOybNKKtJ9GtKzNIqyRPSsQK%2B7M%3D"/>
+</figure>
+</div>
+<span></span><p><span class="text-italic">We’re excited to announce a <span class="bold">special reward tier</span> for our most dedicated backers — introducing the <span class="bold">VIP Collector’s Edition</span> of BUG.</span></p><p><span class="text-italic">As a VIP backer, you’ll also be able to <span class="bold">submit your name</span> to be proudly featured in the special <span class="bold">"Collectors" list</span>, which will appear at the <span class="bold">beginning of the credits screen programmed into every BUG</span> device we ship.</span></p><p><span class="text-italic">✅ Celebrate your support by becoming a part of BUG's embedded legacy</span><br/><span class="text-italic">✅ Available to <span class="bold">all backers — no limits!</span></span></p><span></span><p><span class="text-italic">Show your passion for innovation and hacking — and make your mark in every BUG!</span></p><h3 class="page-anchor" id="h:Human-Like-Typing-Machine-Like-Precision"><span class="bold">Human-Like Typing, Machine-Like Precision</span></h3><p>Acts like a keyboard. Hacks like a pro. BUG uses HID to emulate keystrokes &amp; commands. BUG mimics real typing — making payloads untraceable and undetectable</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542539">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/539/06c4a477ba2b703b566a0b6c48a50ace_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749029172&amp;width=680&amp;sig=xJom8sic%2F52MUt5lbRYlu01st%2F1Kpk3PSA3noAiRYKQ%3D" src="https://i.kickstarter.com/assets/049/542/539/06c4a477ba2b703b566a0b6c48a50ace_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749029172&amp;width=680&amp;sig=xJom8sic%2F52MUt5lbRYlu01st%2F1Kpk3PSA3noAiRYKQ%3D"/>
+</figure>
+</div>
+<p>Whether you're conducting penetration tests, teaching ethical hacking, or automating tasks with voice commands, BUG delivers powerful functionality in a compact, user-friendly form. <span class="bold">From keystroke injection to real-time scripting and wireless payload delivery</span>, BUG empowers you to explore ethical cybersecurity like never before.<img class="image" data-id="49524556" src="https://i.kickstarter.com/assets/049/524/556/adfc28a631a732a2b38f3e401570c0fb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748928919&amp;width=1581&amp;sig=BYP8iw64NjhBhuRM5%2FjkY%2Bnm3OlGSZDucCUFv4nwhJM%3D"/></p><h3 class="page-anchor" id="h:ChatGPT-Integration"><span class="bold">ChatGPT Integration</span></h3><p>Speak. Execute. Hack. BUG supports ChatGPT, enabling voice-controlled AI-assisted tasks. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542405">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/405/4f414299c697dc637fcba3906df249e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028563&amp;width=680&amp;sig=FiGIyjy1FwBIPsg7O97DjkXxYTguqWYbTcaRjLVc108%3D" src="https://i.kickstarter.com/assets/049/542/405/4f414299c697dc637fcba3906df249e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028563&amp;width=680&amp;sig=FiGIyjy1FwBIPsg7O97DjkXxYTguqWYbTcaRjLVc108%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Voice-Command-to-BUG-">
+<img class="image" data-id="49524629" src="https://i.kickstarter.com/assets/049/524/629/a4cdd259c4ebd6b50a91233641586591_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748929539&amp;width=1581&amp;sig=z%2FlbPz05qqzvj3ESWDseyc3Qllo9L2e0PMd8kb5p%2FF4%3D"/><span class="bold">Voice Command to BUG</span>
+</h3><p>Just say the word — BUG listens and acts on your voice instructions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49543671">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/543/671/d84e9dea60edf983c9e7a725f713ed49_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749034702&amp;width=680&amp;sig=P5vjuXOospYWAhGN1ZlKALDHbmMDxKx9eYQGY%2FcfMvk%3D" src="https://i.kickstarter.com/assets/049/543/671/d84e9dea60edf983c9e7a725f713ed49_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749034702&amp;width=680&amp;sig=P5vjuXOospYWAhGN1ZlKALDHbmMDxKx9eYQGY%2FcfMvk%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Run-Payloads-Instantly"><span class="bold">Run Payloads Instantly</span></h3><p>No setup needed. Deploy payloads at lightning speed with plug-and-play simplicity.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49543702">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/543/702/5c4c84b9fad4b2ad6f882825d869a657_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749034779&amp;width=680&amp;sig=admUGPJp7EboQgyC%2BxaeYdv7XBDg7jYMFLRVKW3Haxs%3D" src="https://i.kickstarter.com/assets/049/543/702/5c4c84b9fad4b2ad6f882825d869a657_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749034779&amp;width=680&amp;sig=admUGPJp7EboQgyC%2BxaeYdv7XBDg7jYMFLRVKW3Haxs%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:SD-Card-Support"><span class="bold">SD Card Support</span></h3><p>More storage. More power. Use onboard microSD to store payloads, logs, and loot</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542446">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/446/2a71cc8cdfde4ed0fc4d55f9f408c52c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028775&amp;width=680&amp;sig=g4ltBLSXM%2BYOYRa7YyTMWycQWa9nfT6BpXtUIREBaTA%3D" src="https://i.kickstarter.com/assets/049/542/446/2a71cc8cdfde4ed0fc4d55f9f408c52c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028775&amp;width=680&amp;sig=g4ltBLSXM%2BYOYRa7YyTMWycQWa9nfT6BpXtUIREBaTA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Unlock-PC-with-BUG"><span class="bold">Unlock PC with BUG</span></h3><p>No password? No problem. Use BUG to unlock devices and bypass login screens.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542429">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/429/91bacfa67c31b505f44acde2cf1e791a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028688&amp;width=680&amp;sig=gUNzguo7OhOqh6tBS9ZbAHGIaF%2FNY3k3LpeViSybsxY%3D" src="https://i.kickstarter.com/assets/049/542/429/91bacfa67c31b505f44acde2cf1e791a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028688&amp;width=680&amp;sig=gUNzguo7OhOqh6tBS9ZbAHGIaF%2FNY3k3LpeViSybsxY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Bitcoin-Mining"><span class="bold">Bitcoin Mining</span></h3><p>BUG's hidden power: Explore experimental crypto mining right from your USB device.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542462">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/462/40f9203b7015cf26724c1378cc166e7f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028853&amp;width=680&amp;sig=WwUt3MolQ%2Fynt9YinCWft4Cwz5U5qq5KDBYfjPH5oq8%3D" src="https://i.kickstarter.com/assets/049/542/462/40f9203b7015cf26724c1378cc166e7f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028853&amp;width=680&amp;sig=WwUt3MolQ%2Fynt9YinCWft4Cwz5U5qq5KDBYfjPH5oq8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Multiple-OS-Compatibility-"><span class="bold">Multiple OS Compatibility </span></h3><p>Plug in. BUG works in many OS and delivers precise payloads.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542483">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/483/4ad7bbc65017a9c4fc21394f8163e17c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028894&amp;width=680&amp;sig=DQAG54w035fvBSwlv8yxYuH%2Ffmqk7HaSipRKMdRqj5U%3D" src="https://i.kickstarter.com/assets/049/542/483/4ad7bbc65017a9c4fc21394f8163e17c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028894&amp;width=680&amp;sig=DQAG54w035fvBSwlv8yxYuH%2Ffmqk7HaSipRKMdRqj5U%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Wireless-Control-with-Hotspot"><span class="bold">Wireless Control with Hotspot</span></h3><p>No wires. No limits. BUG turns into a Wi-Fi hotspot for remote control &amp; payload injection.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542493">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/493/4bccb58863c19cb576f8cf990417e449_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028954&amp;width=680&amp;sig=Ijb9XsBg0aG%2FZtQ5l65uId5AdedvwNPbkqYH8n5c29k%3D" src="https://i.kickstarter.com/assets/049/542/493/4bccb58863c19cb576f8cf990417e449_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028954&amp;width=680&amp;sig=Ijb9XsBg0aG%2FZtQ5l65uId5AdedvwNPbkqYH8n5c29k%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Control-BUG-with-Your-Phone"><span class="bold">Control BUG with Your Phone</span></h3><p>Send commands directly from your phone to your PC through BUG — wherever, whenever.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542498">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/498/d3a97e556d7d3b3b243d424cfe75b4df_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028986&amp;width=680&amp;sig=if78YftgcZ4uP%2B1hYZpB3XcGKmbb5%2BctayewzyGIDzY%3D" src="https://i.kickstarter.com/assets/049/542/498/d3a97e556d7d3b3b243d424cfe75b4df_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749028986&amp;width=680&amp;sig=if78YftgcZ4uP%2B1hYZpB3XcGKmbb5%2BctayewzyGIDzY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Completely-Open-Source"><span class="bold">Completely Open Source</span></h3><p>Hack it your way — Open-source firmware and libraries give you total creative freedom.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542552">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/552/4115e963be5c2548390e4bc16f6c8d5f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749029298&amp;width=680&amp;sig=qx1Su%2B7BqCTFRQRawxd73G1HFBBFNQ8H7qHhv0q76L4%3D" src="https://i.kickstarter.com/assets/049/542/552/4115e963be5c2548390e4bc16f6c8d5f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749029298&amp;width=680&amp;sig=qx1Su%2B7BqCTFRQRawxd73G1HFBBFNQ8H7qHhv0q76L4%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Play-Image-Video-on-BUG-Display"><span class="bold">Play Image &amp; Video on BUG Display</span></h3><p>Small screen. Big impact. Show images, videos, and animations on BUG’s built-in display.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542561">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/561/d2648013085ea0cb7b6a0c16532d24c8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749029345&amp;width=680&amp;sig=yzKy%2F5LpqCsL1b2Eh71JgnAHAe%2BF5GmGmRcT11jEQWo%3D" src="https://i.kickstarter.com/assets/049/542/561/d2648013085ea0cb7b6a0c16532d24c8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749029345&amp;width=680&amp;sig=yzKy%2F5LpqCsL1b2Eh71JgnAHAe%2BF5GmGmRcT11jEQWo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Automate-Educate-Secure-">🔓 Automate. Educate. Secure.</h3><p><span class="bold">USB</span> <span class="bold">BUG</span> — a feature-packed plug &amp; play device with <span class="bold">Wi-Fi, BLE,  GPT &amp; SD card support</span> in One <span class="bold">Voice-Driven</span> USB. Built for <span class="bold">👩‍💻 researchers, 🕵️ ethical hackers, 🧑‍💻 penetration testers, 🔧 hardware enthusiasts, and 🎓 educators—</span>combining everything we've learned from legacy tools, and pushing far beyond. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49557065">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/557/065/9751dfa73f472572c957a9b6141a40ad_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749112808&amp;width=680&amp;sig=xNqa%2Bgf6kIkYGXbWBcmqHKdD8yrFuekSUuaO6x7HNUE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:This-isn-t-just-a-device-"><span class="bold">This isn’t just a device.</span></h4><p>It’s a platform.<span class="bold"> 🚀🎙️ voice-controlled, 🤖 AI-assisted, 📶 Wi-Fi-enabled </span>companion that adapts to how you work—whether you're in the field, the classroom, or your home lab.</p><ul>
+<li>🎙️ <span class="bold">Voice Controlled</span>: Trigger injections &amp; actions hands-free</li>
+<li>🤖 <span class="bold">AI Powered</span>: Describe the action, let BUG craft it for you</li>
+<li>📶 <span class="bold">Wi-Fi &amp; BLE Enabled</span>: Control it from any device</li>
+<li>🧰 <span class="bold">Plug &amp; Play Apps</span>: Tools preloaded for instant use</li>
+<li>💻 <span class="bold">Multi-OS Support</span>: Windows, Linux, macOS, Raspberry Pi</li>
+<li>⚙️ <span class="bold">Multi-language</span>: Write payloads in Python, MicroPython, C++, etc.</li>
+<li>🧠 <span class="bold">Open-Source</span>: Build your own apps, tweak firmware</li>
+<li>💾 <span class="bold">MicroSD Support</span>: Store payloads, logs, and stolen data</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49524580">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/524/580/79d79aa9cafd29b9569292a8dc0f3fa1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748929087&amp;width=680&amp;sig=1qCNRfEiSQAT5DTNXnhx4p6AMxD1VblBD4KMus%2BUwL0%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">To a human, it looks like a USB stick.</span><br/><span class="text-italic">To a computer, it’s a keyboard typing at superhuman speed.</span><br/><span class="text-italic">To YOU, it’s the most versatile hacking, automation, and learning device ever made.</span></p><p>🔐 <span class="bold">Keystroke &amp; Mouse Injection (HID)</span><br/>Mimic real user input to automate or simulate attack vectors.</p><p>🗣️ <span class="bold">Voice-Activated Commands</span><br/>Just say “BUG, launch payload,” and it’s done.</p><p>📶 <span class="bold">Wireless Triggering</span><br/>Control BUG remotely from your smartphone, tablet, or laptop.</p><p>🧠 <span class="bold">AI-Generated Payloads</span><br/>No coding? No problem. Use ChatGPT integration to generate code for you.</p><p>📦 <span class="bold">File System Spoofing</span><br/>Hide payloads or loot as everyday files and folders.</p><p>🔁 <span class="bold">Smart Payload Logic</span><br/>BUG detects OS, user activity, and adapts payload behavior accordingly.</p><p>⛏️ <span class="bold">Crypto Mining Mode</span> <span class="text-italic">(experimental)</span><br/>Explore embedded mining capabilities just for fun.</p><p>🎮 <span class="bold">Mini Games &amp; UI Apps</span><br/>Because hacking can be fun, too.</p><h3 class="page-anchor" id="h:Choose-Your-MCU-"><span class="bold">Choose Your MCU:</span></h3><p>You can pick any MCU in your post-campaign survey:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542653">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/653/219a87cf083dd855ba7cfd9b3769d5ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749029842&amp;width=680&amp;sig=LKFV8vULHbv1b8VEO8kxsCwBBX0zYUNNxZKp4s3Tiyk%3D" src="https://i.kickstarter.com/assets/049/542/653/219a87cf083dd855ba7cfd9b3769d5ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749029842&amp;width=680&amp;sig=LKFV8vULHbv1b8VEO8kxsCwBBX0zYUNNxZKp4s3Tiyk%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">RP2040</span> – Raspberry Pi-designed dual-core chip; low-cost, high-speed.</li>
+<li>
+<span class="bold">ESP32-S3</span> – With built-in Wi-Fi + Bluetooth 5 (ideal for wireless payloads).</li>
+<li>
+<span class="bold">STM32F411</span> – Advanced features, powerful performance, MicroPython-ready.</li>
+</ul><h3 class="page-anchor" id="h:Onboard-RGB-LED"><span class="bold">Onboard RGB LED</span></h3><p>Stay in control. Real-time visual feedback with customizable onboard LEDs.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542848">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/848/4f10032959923d53f0f9e70264e097df_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030712&amp;width=680&amp;sig=aBgWLB9yFS%2BVlDuerKOE8haU2ZLPDJgHfn3OQM%2FQ6OE%3D" src="https://i.kickstarter.com/assets/049/542/848/4f10032959923d53f0f9e70264e097df_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030712&amp;width=680&amp;sig=aBgWLB9yFS%2BVlDuerKOE8haU2ZLPDJgHfn3OQM%2FQ6OE%3D"/>
+</figure>
+</div>
+<p>The Hotplug Tool changed ethical hacking by introducing keystroke injection — a method where a USB emulates a keyboard to deliver pre-set commands instantly. Disguised as a flash drive, it bypasses security by exploiting trusted HID protocols, enabling stealthy, plug-and-play payload execution without detection.</p><ul>
+<li>
+<span class="bold">⚡ </span>Lightning-fast plug-and-pwn response</li>
+<li>
+<span class="bold">🎯</span> Smart payload logic — triggers based on OS, language, or user behavior</li>
+<li>
+<span class="bold">🤖 </span>AI-assisted payload creation — just describe what you want</li>
+<li>
+<span class="bold">🔁 </span>Multi-stage automation with onboard logic and context awareness</li>
+<li>
+<span class="bold">⌨️ </span>Bad USB-style HID emulation — acts as a human keyboard for stealthy input</li>
+<li>
+<span class="bold">🕹️ </span>Playable mini-games on-screen (because why not?)</li>
+<li>
+<span class="bold">📦 </span>Still tiny, still stealthy—now with a brain 🧠</li>
+</ul><p>USB BUG honors its origins<span class="bold">—and evolves them with intelligent automation, playfulness, and power. 💪</span></p><h3 class="page-anchor" id="h:-Speak-It-BUG-Executes-It-Voice-Controlled-Injection-">
+<span class="bold">🎙️ Speak It. BUG Executes It -</span><span class="text-italic">Voice Controlled Injection</span>
+</h3><p><span class="bold">🗣️ “Run a Wi-Fi scan and report all hidden networks.”</span></p><p><span class="bold">🗣️ “Clone and emulate anything nearby.”</span></p><p><span class="bold">🗣️ “Inject a payload only if the target matches Windows 11.”</span></p><p><span class="bold">🗣️ “Teach me how spoofing works.”</span></p><p><span class="bold">🗣️ “Open a terminal and type out a script. Then close it.”</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542854">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/854/0ab292cdb024452d9d351eec1e70f5f3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030750&amp;width=680&amp;sig=%2F0LpHSBRxVbScBHc3%2Fdz8ru5Ak0uy2kXPqKV9zc2ro4%3D" src="https://i.kickstarter.com/assets/049/542/854/0ab292cdb024452d9d351eec1e70f5f3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030750&amp;width=680&amp;sig=%2F0LpHSBRxVbScBHc3%2Fdz8ru5Ak0uy2kXPqKV9zc2ro4%3D"/>
+</figure>
+</div>
+<p><span class="bold">With 🤖 AI and 🎙️ voice, BUG becomes your on-demand sidekick—executing tasks with voice commands  and making fieldwork a lot less manual. ⚙️</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49524635">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/524/635/6a81a65219f01a00fd187ab09876d1b9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748929591&amp;width=680&amp;sig=oQ5wlogAzXxGrxUtbIoizXKNs5EEdRwlJzXBMW7bgWw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Control-Bug-through-Voice-Commands-OPEN-YOUTUBE-">Control Bug through Voice Commands-<span class="bold">🗣️</span>"OPEN YOUTUBE "</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49468913">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/468/913/6aeb64f6f33a78a11fba75ec057dac10_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748520982&amp;width=680&amp;sig=%2FmyVSEPHaffuKAbhmu3WWv12EtItp2z3nufwOaPRL6Q%3D" src="https://i.kickstarter.com/assets/049/468/913/6aeb64f6f33a78a11fba75ec057dac10_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748520982&amp;width=680&amp;sig=%2FmyVSEPHaffuKAbhmu3WWv12EtItp2z3nufwOaPRL6Q%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Deploy-payloads-at-lightning-speed-with-plug-and-play-simplicity">Deploy payloads at lightning speed with plug-and-play simplicity</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542865">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/865/5c4c84b9fad4b2ad6f882825d869a657_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030803&amp;width=680&amp;sig=xGuPrHiBVtSPJOlp4jJ3nh8tXo3qMSJ0KBAZoA1L1qw%3D" src="https://i.kickstarter.com/assets/049/542/865/5c4c84b9fad4b2ad6f882825d869a657_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030803&amp;width=680&amp;sig=xGuPrHiBVtSPJOlp4jJ3nh8tXo3qMSJ0KBAZoA1L1qw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542867">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/867/56d44193712f6633772394e8976518ee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030817&amp;width=680&amp;sig=9571l%2F5jyx0bJ7os7lgMcjM%2B4BXHoKkXdlneYj3XyKY%3D" src="https://i.kickstarter.com/assets/049/542/867/56d44193712f6633772394e8976518ee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030817&amp;width=680&amp;sig=9571l%2F5jyx0bJ7os7lgMcjM%2B4BXHoKkXdlneYj3XyKY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Built-for-Research-Education-Exploration"><span class="bold">📚 Built for Research, Education &amp; Exploration</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49557074">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/557/074/9c129910b190d4490c97b7bed6fde966_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749112831&amp;width=680&amp;sig=ETyaD05k1VfDPg4nr0F1EFkhTtnGzXrA%2F0P%2B24W3kKE%3D"/>
+</figure>
+</div>
+<p>BUG isn't just for professionals — it's designed to unlock 🔓 cybersecurity for 🧪 labs, 🏫 classrooms, and 🤔 curious minds.</p><p><span class="bold">🧪 Cybersecurity Researchers - </span>Automate complex test cases across wireless, USB, and hybrid vectors.</p><p><span class="bold">🎓 Educators - </span>Use BUG to safely demonstrate real-world attacks in a guided, modular way.</p><p><span class="bold">🔍 Students &amp; Self-Learners - </span>BUG walks you through techniques, explains what’s happening, and lets you experiment hands-on. 🧠💡</p><h3 class="page-anchor" id="h:-Emulates-human-keyboard-for-stealthy-payloads"><span class="bold">🔌Emulates human keyboard for stealthy payloads</span></h3><h4 class="page-anchor" id="h:-Voice-Activation-Wake-word-full-natural-language-control"><span class="bold">🎙️ Voice Activation — Wake-word + full natural language control</span></h4><h4 class="page-anchor" id="h:-Voice-Controlled-Injection-Speak-commands-trigger-attacks-hands-free"><span class="bold">🗣️ Voice-Controlled Injection — Speak commands, trigger attacks hands-free</span></h4><h4 class="page-anchor" id="h:-Multiple-Apps-Use-a-variety-of-built-in-tools-right-out-of-the-box-"><span class="bold">🧰 Multiple Apps — Use a variety of built-in tools right out of the box </span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542870">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/870/357582713fca5915f00c9d9583a5a85c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030840&amp;width=680&amp;sig=HgY96KQgnJRAJbQ6k5fIvTYvAFm4R1juErOegBWrSDc%3D" src="https://i.kickstarter.com/assets/049/542/870/357582713fca5915f00c9d9583a5a85c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030840&amp;width=680&amp;sig=HgY96KQgnJRAJbQ6k5fIvTYvAFm4R1juErOegBWrSDc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Multi-Language-Support-Learn-prototype-and-create-all-in-your-preferred-coding-environment-"><span class="bold">Multi-Language Support — Learn, prototype, and create — all in your preferred coding environment.</span></h3><p>With BUG, you're not locked into one programming language. Whether you prefer Python, C++, C, or others, BUG’s flexible libraries let you build and experiment in the language you’re most comfortable with.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49557078">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/557/078/2f101b47122605a8f146455e992ec505_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749112851&amp;width=680&amp;sig=bpWbuRsfjTAsgR9iNYo42JEEku4Fh1yndpCV6t615dA%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Advanced-Bug-Script-From-macros-to-multi-threaded-logic"><span class="bold">🔋 Advanced Bug Script — From macros to multi-threaded logic</span></h4><p><span class="text-italic">Simple to start, limitless as your creativity grows</span></p><p><span class="bold">Create Any Program with Ease — Powered by HID Libraries</span><br/><span class="bold">BUG comes with easy-to-use HID libraries that support seamless program development in your preferred language.</span></p><p><span class="bold">Whether you're a beginner exploring coding or an expert building advanced tools, BUG gives you the flexibility and freedom to create without limits.</span> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49557080">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/557/080/5d674bfc077b155f613bf01f2f86f650_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749112862&amp;width=680&amp;sig=zBkis20%2FJB4xfifl%2BlNY3o52Z73FcTJv7YAk3QaApYc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Open-Source-Firmware-Tools-Fully-hackable-fully-yours-"> <span class="bold">💻 Open-Source Firmware &amp; Tools — Fully hackable, fully yours </span>
+</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49557091">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/557/091/182916697cf46fbf6c2bfc963a04b96d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749112913&amp;width=680&amp;sig=vkav4JwPx2Mk2i73o2ToJZD2%2BtNQ7LaXgAihdjIDIK8%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:USB-BUG-not-just-preserves-the-legacy-but-redefines-it-bringing-real-intelligence-fun-and-flexibility-into-your-hands-"><span class="bold">USB BUG not just preserves the legacy, but redefines it, bringing real intelligence, fun, and flexibility into your hands. 🤲</span></h4><p><span class="bold">🔓 </span>The next step for<span class="bold"> Ethical hackers</span></p><p><span class="bold">🧪 </span>The smarter sidekick for<span class="bold"> researchers</span></p><p><span class="bold">🎓 </span>The interactive guide for<span class="bold"> learners</span></p><p><span class="bold">🕹️ The gadget you’ll actually enjoy using</span></p><p><span class="bold"><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdyfRSwzVfjfojIW9CG9ASLg7MiT75cCvaugvGdsD_b-dv3ZeUYQHt0Pxt1Hwfyl7N-mgfTiOA--Ne1nx4KHcPvjnPCUtqjJgKUV6HaRiANj5vL5RMYOt77vudCJSNudOC7iOKhqYlXUUXzVVlr4g?key=yNW87qFcOHF90ODYclTiAA"/></span></p><h3 class="page-anchor" id="h:BUG-isn-t-just-a-tool-it-s-a-movement-for-smarter-ethical-cybersecurity-">BUG isn’t just a tool — it’s a <span class="bold">movement for smarter, ethical cybersecurity.</span>
+</h3><p>Whether you're a hacker, learner, or teacher, BUG gives you the tools to <span class="bold">automate, educate, and explore</span> like never before.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542874">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/874/0dcfddd491133f5f036c8ccfd87cc2bb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030889&amp;width=680&amp;sig=yXcfQepYtwJmXIhCQbTvVizjMUN6XqayDrS6YvbDiME%3D" src="https://i.kickstarter.com/assets/049/542/874/0dcfddd491133f5f036c8ccfd87cc2bb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749030889&amp;width=680&amp;sig=yXcfQepYtwJmXIhCQbTvVizjMUN6XqayDrS6YvbDiME%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49557675">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/557/675/09133e8a3217a3361c95f6d2344434cf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749116404&amp;width=680&amp;sig=Y3HaL%2FEA35j7W0%2BL3g54P74PZx9kKFbr02HehmEIupo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Custom-GPT-Payload-Builder-Access-FREE-for-All-Backers-">
+<span class="bold">Custom GPT Payload Builder Access - </span>FREE for All Backers!</h3><p>If we reach <span class="bold">$100,000</span>, every backer will receive <span class="bold">FREE access</span> to our <span class="bold">Custom GPT-Powered Payload Builder</span> — an AI-assisted tool that lets you describe a function or exploit idea and get ready-to-run BUG payloads instantly.</p><h3 class="page-anchor" id="h:-What-You-Get-"><span class="bold">✨ What You Get:</span></h3><p>🎙️ <span class="bold">Voice or Text Input</span> – Simply speak or type your request</p><p>⚙️ <span class="bold">Instant Code Generation</span> – Auto-generates payloads tailored to BUG</p><p>💬 <span class="bold">Natural Language to Script</span> – AI transforms commands into actual code</p><p>🔐 <span class="bold">Ethical &amp; Controlled Output</span> – Pre-tested payloads, safe to deploy</p><p>💻 <span class="bold">Built for BUG</span> – Plug-and-play payloads you can run or modify</p><p>🧰 <span class="bold">No Coding Needed</span> – Perfect for beginners and pros alike</p><p>🏆 <span class="bold">Unlocked at $100,000</span> — help us reach the goal and <span class="bold">empower the entire BUG community with smarter, faster payload building.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49557670">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/557/670/7e8266a7a9f90fa7e8084e0a70cf46ca_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749116397&amp;width=680&amp;sig=ZGBntEUiF%2F27metzfmwRhWXfEBWg8ORXJg9Bm96uFpg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Stretch-Goal-Unlocked-at-50-000-"><span class="bold">🎯 Stretch Goal Unlocked at $50,000!</span></h3><p>Hit $100K and every backer gets 2 exclusive BUG payloads every month — for an entire year, absolutely FREE. That’s 24 powerful, ready-to-use tools to supercharge your BUG! 🧠💻</p><h3 class="page-anchor" id="h:-What-You-Get-"><span class="bold">📦 What You Get:</span></h3><p>✅ 2 Powerful Payloads Every Month<br/>✅ Delivered Monthly for 12 Months<br/>✅ Plug-and-Play Scripts for BUG<br/>✅ Curated by Security Pros<br/>✅ Automate, Learn &amp; Hack Smarter</p><h4 class="page-anchor" id="h:-Let-s-Reach-50K-and-Supercharge-Your-BUG"><span class="bold">🚀 Let’s Reach $50K and Supercharge Your BUG</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49541160">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/541/160/36eadbeba67a7a41bd0848153fdaa914_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749020768&amp;width=680&amp;sig=Fn62uq4WooP%2BLAC7saBDtbFOjoV5T6HSupgG1ImeUpg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49541163">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/541/163/f8868f74b6f503ce004fea0620374be4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749020797&amp;width=680&amp;sig=6D9h1GaG5QAKK9asM88ulZARDnf6MgompqwaEeRPqXs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49541012">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/541/012/8000e443d6113aaa4931a4bab96bec77_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749019552&amp;width=680&amp;sig=rjsNG%2B%2BbG%2FMpg5oYWZI7nqYzEK%2FVZXIKsWB9yBIJXLE%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As with any hardware project, some risks are inherent—but we’ve taken strong measures to minimize them.
+
+We’re working with trusted manufacturing partners and have already developed fully functional production samples. Every BUG device will undergo thorough quality control, programming, and testing prior to shipment to ensure it meets our high standards for reliability and performance.
+
+The primary risks relate to logistics—specifically shipping and delivery. While we work closely with our fulfillment partners to ensure safe, trackable, and on-time delivery, there may be occasional issues such as delays, damage, or loss during transit. In such cases, we will provide support and seek the best possible resolution for our backers.
+
+Please note: We will only support orders placed through Kickstarter for up to six months after the campaign ends. To ensure smooth fulfillment, all backers must complete their Fulfillment Survey within 30 days of receiving it. Failure to do so may result in delayed or unshipped orders.
+
+We’re committed to transparency and communication throughout the campaign and beyond—and we’ll keep our backers updated every step of the way.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

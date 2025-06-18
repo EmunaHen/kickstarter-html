@@ -1,0 +1,614 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kamingo: Turn Your Bike into a 750W E-bike in 10 Sec</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/636/929/0946a09a9e5013f7a98aadd8fe6ea8b7_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749647512&width=560&sig=KoBhydQs%2FZW8v%2BYgEc84f7Y7rTblkUjSoWkaJPi4Iwo%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Kamingo: Turn Your Bike into a 750W E-bike in 10 Sec</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Instant Install | 750W Peak Power | 55 mi (90 km) Range | Cruise, Assist, & Standby | Ultralight |Water-Resistant |Regenerative Braking</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>49 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49637290">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/637/290/5a668679a20a4f5144ff2581f11c3f5a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749649086&amp;width=680&amp;sig=CCzuGC9CFb45gAav1ojlxenPm1LCvLxOocY0Dm2Ncdk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49637256">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/637/256/462eea9cf3d05361f189b77ed6848e94_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749648938&amp;width=680&amp;sig=217%2FxHVtoXMOthVuTlba%2BrVrBa5wJsoVffxnDIYzy1c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636547">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/636/547/8f79322834e3cf6824b09137d5da9ac1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645162&amp;width=680&amp;sig=0bBVKjhGRbe4Us6klR3%2FGP6zAhtFVPEoBYI6o5HiIF8%3D" src="https://i.kickstarter.com/assets/049/636/547/8f79322834e3cf6824b09137d5da9ac1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645162&amp;width=680&amp;sig=0bBVKjhGRbe4Us6klR3%2FGP6zAhtFVPEoBYI6o5HiIF8%3D"/>
+</figure>
+</div>
+<p><span class="bold">Created by engineers, cyclists, and former Huawei and BYD</span> innovators with a reimagined vision for e-bike converters—<span class="bold">Kamingo supercharges your bike by turning your bike into a powerful and innovative 750W e-bike,</span> all while preserving your original riding experience.<br/><br/>Finally, a solution that<span class="bold"> installs in seconds</span>. Detaches just as fast.<span class="bold"> Fits in your bag.</span> And keeps your bike looking as great as it did before.<br/><br/><span class="bold">Glide uphill. Slash commute times. Ride farther without pushing harder.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633271">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/633/271/74f838fcf77c80a4a212bcaa4a9ca480_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626083&amp;width=680&amp;sig=EbwN9Rys5iNdZrBr9KpeL9ORwWV4E1Q4wNTqxdGg2J8%3D" src="https://i.kickstarter.com/assets/049/633/271/74f838fcf77c80a4a212bcaa4a9ca480_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626083&amp;width=680&amp;sig=EbwN9Rys5iNdZrBr9KpeL9ORwWV4E1Q4wNTqxdGg2J8%3D"/>
+</figure>
+</div>
+<p>And all it takes is<span class="bold"> 10 seconds</span> to mount<span class="bold"> 3 compact components</span> -<span class="bold"> motor, battery, controller,</span> that work as 1 system to give you instant <span class="bold">power</span>, <span class="bold">total control</span>, and road-gripping <span class="bold">stability</span> you can trust.<br/><br/>Install and hop on. <span class="bold">The e-bike revolution starts now.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49638761">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/638/761/1fb3f14ea1a6dd255388a21d3d2a292a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749656423&amp;width=680&amp;sig=BFKj%2Bt2UX4D%2BOW6ay97itHdZa%2BEQ%2FGmGlsyZWx6eUcc%3D"/>
+</figure>
+</div>
+<span></span>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633304">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Fast-Installation">🛠️ | Fast Installation</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/304/254149ad6ff3f9370dc42bdf3741eb74_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626301&amp;width=680&amp;sig=0njcFeE2Pu4NeYFzyUPswjCq2sSOKBAGqv8ggUGCXiA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636016">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/636/016/5a54a8af17c13354f417ff551705e36a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749640995&amp;width=680&amp;sig=efq%2F5I4RZMbb92wa5aUbYDVGwe2sk%2BvOmnbSmkPxQu8%3D" src="https://i.kickstarter.com/assets/049/636/016/5a54a8af17c13354f417ff551705e36a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749640995&amp;width=680&amp;sig=efq%2F5I4RZMbb92wa5aUbYDVGwe2sk%2BvOmnbSmkPxQu8%3D"/>
+</figure>
+</div>
+<p>The world is full of e-bike conversion kits. Bulky. Complicated. Impossible to remove without tools when you don’t need them. <br/><br/><span class="bold">With Kamingo, you’re about to experience the easiest e-bike conversion, ever.</span><br/><br/>It’s the modular e-bike converter composed of just 3 components:<span class="bold"> Battery, motor, and controller.</span><br/><br/>Install it one time within <span class="bold">less than 3 minutes,</span> and when that’s done, remove and reattach components as often as you need, within <span class="bold">less than 10 seconds.</span><br/><br/><span class="bold">Without special tools. </span>By yourself. Faster than it takes to blend a smoothie.<br/><br/><span class="bold">Click on, click off. You get the drill. It can’t get any easier.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633325">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-750W-Power">⚡ | 750W Power</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/325/1c419f8fd4d1411c060d4a5f9c8e1254_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626482&amp;width=680&amp;sig=b1LcwUcpnf2m1q9cr3u22eY6YSkm%2Bvqe2Z3YbiqvS8Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633327">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/327/4e7cf9472f2bffc11162a5573f57aad5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626486&amp;width=680&amp;sig=q03ehF%2Fy%2Bwp7d3YfYhJoxhohmld6khKdACLn8B4ndn8%3D"/>
+</figure>
+</div>
+<p>Enjoy the ease-of-use, power, and performance of a premium e-bike, all without spending $1,000+ on an e-bike or wasting time on complicated conversion kits.<br/><br/>The advanced friction-drive motor delivers up to <span class="bold">750W of peak power</span> (with continuous output tuned to local regulations), making your ride as<span class="bold"> light as a feather </span>and powering you through steep uphill climbs with ease. <br/><br/>Enabling max cruise speeds* of up to 20 mph (USA**, Class-2), and a max assisted speed* of 25 km/h (EU/UK/AU**).<br/><br/>Kamingo is a better and faster ride, on your terms, at a fraction of the price.<br/> <br/><span class="bold">* Compliant with local laws and regulations.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633368">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/368/fbc16a9675588ac4a415868bccd983c9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626632&amp;width=680&amp;sig=q7ejOYIWKGeUFRQuOU1vTLkDshZLNlA3DuzD4vXC9JM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633371">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Compatibility">🔗 | Compatibility</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/371/6cca0e13e852c676771c10ba8106f084_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626639&amp;width=680&amp;sig=LgqKxX0qVSSmouzYA%2BC5aOsvg3n%2BjfWRtPAif9EQ3qY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633374">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/374/bb2060c63d05df487c46187e1fd8dc8c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626647&amp;width=680&amp;sig=3TVIUCR2ew%2BsEhLp8QktOPDlfnwNgf%2FHVRS4lckJzfc%3D"/>
+</figure>
+</div>
+<p>Kamingo is <span class="bold">compatible with the bike you already have and love.</span> No need to get new wheels or lose the look of your bike. Kamingo preserves everything. Your ride feel, your frame, your setup.<br/><br/>It’s compatible with most popular bike types: <span class="bold">City, MTB, Road, Gravel, Folding, Trekking, you name it.*</span><br/><br/>*For more specifics on compatibility, scroll down to the compatibility section below.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633388">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/388/1876a5fc5757f4a0f0350b2dbe3ad507_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626694&amp;width=680&amp;sig=H%2BtziCVMpqJe9KUwOQsr5FhE6yIiDJ5SEvi5%2FmX09GM%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633396">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Modes">🔄 | Modes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/396/e6c1643560db16c517aa5d830337a5cb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626710&amp;width=680&amp;sig=2Z2ovVFCg4A1LlaqDZTDFkSZk1lBKvvAF8kidBEkzmU%3D"/>
+</figure>
+</div>
+<p>Maybe you want a boost for your morning commute, but a natural ride on the weekends. Or perhaps you only need the motor for the uphill parts.<br/><br/>With Kamingo’s innovative motor lift system, you can instantly switch between the e-bike modes and regular riding as you go.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633414">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/414/48d772d2ce5950d1e768fc544249fcf0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626824&amp;width=680&amp;sig=FM9BYFfMp1CDW3xhM%2Fz7TP%2FHpf0bemhqiXBrtRghWok%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633417">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/633/417/4396865c3aa390bbe0badd48c9c228dc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626843&amp;width=680&amp;sig=Z3nfIS1%2BL7cCXOESBdI7f6AWguFttg2XNXTn3OTp3kE%3D" src="https://i.kickstarter.com/assets/049/633/417/4396865c3aa390bbe0badd48c9c228dc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749626843&amp;width=680&amp;sig=Z3nfIS1%2BL7cCXOESBdI7f6AWguFttg2XNXTn3OTp3kE%3D"/>
+</figure>
+</div>
+<p><span class="bold">Want assistance?</span> Turn the knob on the controller to lower the motor onto the tire and enter assist mode.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633493">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/493/269f15cecb8497ff22e77e7e8ffaf9d7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749627216&amp;width=680&amp;sig=mAgPPO69FNiFioNTRzDdtcSPHttM3Y59F6aMnXuMOi4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633503">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/633/503/2091c0e5f2788dc05d868fcc381e4149_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749627269&amp;width=680&amp;sig=KYY2KvsD1Td9TH%2Fd921%2B2yjxjdWBuidC1V9QYnzVYbw%3D" src="https://i.kickstarter.com/assets/049/633/503/2091c0e5f2788dc05d868fcc381e4149_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749627269&amp;width=680&amp;sig=KYY2KvsD1Td9TH%2Fd921%2B2yjxjdWBuidC1V9QYnzVYbw%3D"/>
+</figure>
+</div>
+<p>Want Kamingo to take over completely? Flick the throttle to activate <span class="bold">cruise mode.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633513">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/513/9d147e012db80debf53d4c1863610df8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749627304&amp;width=680&amp;sig=Ld7UbKZuwUEoA7Z4bcf84yvl6gkb98zV1vZAy%2BS46Bc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633515">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/633/515/7e36e2e70fe9c0995741b9f49c27c1de_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749627319&amp;width=680&amp;sig=spmOVmff5gqsYA4OFIX6Eg%2BpQ9WUBxTsSQDW5xpgndo%3D" src="https://i.kickstarter.com/assets/049/633/515/7e36e2e70fe9c0995741b9f49c27c1de_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749627319&amp;width=680&amp;sig=spmOVmff5gqsYA4OFIX6Eg%2BpQ9WUBxTsSQDW5xpgndo%3D"/>
+</figure>
+</div>
+<p>Want to ride naturally? Turn the knob to raise the motor off the tire and enter<span class="bold"> standby mode.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633544">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/544/e4797dc4a2147c352a14438e5f3c60ee_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749627496&amp;width=680&amp;sig=JmHGTqApFa0fqh4Y%2BFSqgRDioiXkvnLVcNtCy9uCe6U%3D"/>
+</figure>
+</div>
+<p>And the best part? You can do all this without having to stop your ride.<br/><br/>An e-bike when you want it. A regular bike when you don’t.<br/><br/>The controls are at your fingertips.</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633549">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Lightweight-and-Small">🪶 | Lightweight and Small</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/549/c995c4d52239a8584086dc6901a8583e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749627527&amp;width=680&amp;sig=k0gsKJiKUjLPH%2FA7E%2B5eRxi1YAoRoKXZhlc0%2FpxEq0s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633644">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/644/7b9194d99106304888714dd41d72f890_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628057&amp;width=680&amp;sig=wdmZa2iMYwIQSwdzhGZcOMgyxlDECPUx4JeeHjhmAmc%3D"/>
+</figure>
+</div>
+<p>Our engineers have successfully gone above and beyond to make Kamingo as lightweight as possible. <span class="bold">At a total weight of just 2.3kg (motor: 0.9 kg, battery: 1.4kg)</span>, it’s about as light as a MacBook.<br/><br/>That matters. Because with a converter this light, you get to <span class="bold">effortlessly carry your bike</span> up stairs, take it with you on the train, or toss it in a van for a weekend ride out of town.<br/><br/>And whenever you don’t need it on your bike… simply <span class="bold">pop it off and toss it in your backpack.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633654">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/633/654/fd7f84d7ed972c1ff6f9f15a12116076_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628098&amp;width=680&amp;sig=Z%2FZn6jZJV53S8vqSv8ODGulomKWkRQ7XJbEIoPPk6Ok%3D" src="https://i.kickstarter.com/assets/049/633/654/fd7f84d7ed972c1ff6f9f15a12116076_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628098&amp;width=680&amp;sig=Z%2FZn6jZJV53S8vqSv8ODGulomKWkRQ7XJbEIoPPk6Ok%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633658">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Long-Range">🚴‍♂️ | Long Range</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/658/66087646b57da683c0482293207cb47b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628113&amp;width=680&amp;sig=Oeuty5Uush9o2OZj68vDVygpju5cr5StrxKW25FfDIs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633667">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/667/8bee5e1f83ac595e8623ad6cd26e5a73_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628137&amp;width=680&amp;sig=nzF9TmBZU79p3EQWo0u6Qkx3ZyktbqrWOhIIhgMXdGY%3D"/>
+</figure>
+</div>
+<p>We wanted to deliver exceptional energy density, to let you ride as far as possible, with a battery that’s as compact as possible.<br/><br/>Kamingo runs on a removable <span class="bold">266Wh EV-grade battery, powered by the same 21700 cells </span>found in electric vehicles like the Tesla Model 3 and Model Y. <br/><br/>The result? <span class="bold">Up to 55 miles (90 km) of assisted range</span> on a single charge.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633679">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/633/679/a1150178ff251effe9a7eedc643fa8d3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628191&amp;width=680&amp;sig=zkOba0ixl52Vm%2BokbG%2FeATsWwy6%2BWDoQZJhgDsknthQ%3D" src="https://i.kickstarter.com/assets/049/633/679/a1150178ff251effe9a7eedc643fa8d3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628191&amp;width=680&amp;sig=zkOba0ixl52Vm%2BokbG%2FeATsWwy6%2BWDoQZJhgDsknthQ%3D"/>
+</figure>
+</div>
+<p>That’s your daily commute, and your weekend adventure.<br/>Your trip to work, and the escape from it.<br/><br/>And if you need to go farther, you can! The battery is fully modular, so you can<span class="bold"> swap it out anytime and double your range in seconds.</span></p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633684">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/684/40ac7d3f2c6dc8d5e7841bfc5813e5e3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628217&amp;width=680&amp;sig=F0%2BnlxfcHKlfy8caUVcFRXL3xKiNy2q4d09gSKdiSvE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636556">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/636/556/94a13212a6b537abbd51544565705a15_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645238&amp;width=680&amp;sig=G00WHp0TT0%2BnGVhz1gpwreqipqgxnnpFL2Su8dnNoO4%3D" src="https://i.kickstarter.com/assets/049/636/556/94a13212a6b537abbd51544565705a15_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645238&amp;width=680&amp;sig=G00WHp0TT0%2BnGVhz1gpwreqipqgxnnpFL2Su8dnNoO4%3D"/>
+</figure>
+</div>
+<p>Most conversion kits apply fixed pressure to the tire, which can lead to skidding, slippage, or tire wear. Kamingo avoids all that with<span class="bold"> Pressure-Adaptive Technology (PAT™).</span><br/><br/>PAT™ uses built-in pressure sensors to always <span class="bold">maintain the perfect pressure level</span> against the bike tire, in real-time, as you ride. It does this by pressing the assist wheel harder (or softer) against your bike tire when as needed.<br/><br/>PAT™ makes every ride feel<span class="bold"> smoother, safer, and smarter.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49637209">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/637/209/bf28bcccdd08bcf2745447734f809bc9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749648724&amp;width=680&amp;sig=0nmo%2FEnb0eTznRUSkz839DrTsiciganb%2B6vQ1eJ%2BTyQ%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633705">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Safety-Features">🛡️ | Safety Features</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/705/213e21759a7477dd2ac65080684a24b6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628286&amp;width=680&amp;sig=9Vej0d90Sg%2BDuUh6%2Flm0VonthwA4kk5H0ZmpJZJd4n0%3D"/>
+</figure>
+</div>
+<p>When you’re riding, the last thing you want to worry about is what could go wrong. That’s why Kamingo is built with a Smart Safety Suite to keep you and your bike secure—not only during, but also after your ride.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633712">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/712/2a0265557b323f6d1df131eabc81f580_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628314&amp;width=680&amp;sig=aJT9G6cN9gmhliyePiK4qSPh3t2Iv5q3eDO3feVDHNw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636558">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/636/558/539a592aef1cb5038e4a36611a7eaa0a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645263&amp;width=680&amp;sig=k0Mnu6MkXFLBH2vIZ%2Fyju0T8mqdmsBvnHlI0Ua5gAak%3D" src="https://i.kickstarter.com/assets/049/636/558/539a592aef1cb5038e4a36611a7eaa0a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645263&amp;width=680&amp;sig=k0Mnu6MkXFLBH2vIZ%2Fyju0T8mqdmsBvnHlI0Ua5gAak%3D"/>
+</figure>
+</div>
+<p>Kamingo constantly monitors movement, for your safety.<br/><br/>If your bicycle<span class="bold"> tilts more than 45°, its built-in IMU sensor will automatically detect a fall,</span> lift the assist wheel, and immediately cut power to the motor to prevent further injury or runaway movement.<br/><br/>Staying safe means staying in control, even when things go sideways.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633716">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/716/b4c31fa8328f22b83bd9afb1d135c5c2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628337&amp;width=680&amp;sig=5KwqQFi9etBB4wevMRaryV7x2QF%2B2UWZKGI9mDKpO64%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633719">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/633/719/85961409b486518a623f66832afac721_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628357&amp;width=680&amp;sig=rbmt4I6I3FkmRusGUbiKVemR9zhWjROP45lyLmi094A%3D" src="https://i.kickstarter.com/assets/049/633/719/85961409b486518a623f66832afac721_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628357&amp;width=680&amp;sig=rbmt4I6I3FkmRusGUbiKVemR9zhWjROP45lyLmi094A%3D"/>
+</figure>
+</div>
+<p>It may be easy to install and remove. But it’s just as easy to<span class="bold"> lock in place</span>—all thanks to <span class="bold">Kamingo’s Bluetooth-operated quick-lock, </span>which securely mounts the motor onto the base mount.<br/><br/>Simply lock the motor in place wirelessly via a Bluetooth connection, paired with the Kamingo app on your smartphone, and voilá, you’re the only person who can take it off.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633815">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/815/dc5bb2af10a9625e9a8f3d61a4b2f7e7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749628851&amp;width=680&amp;sig=QuL6AaNXy7veNVbp2xffXTgIDPG6ID11P4FJLg66oC8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636562">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/636/562/f2c028952e81c226b11569519374e383_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645276&amp;width=680&amp;sig=0DlCISJohFf1bYRy8cnWA3i%2FzKghGgCCTvDVMd8FPZo%3D" src="https://i.kickstarter.com/assets/049/636/562/f2c028952e81c226b11569519374e383_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645276&amp;width=680&amp;sig=0DlCISJohFf1bYRy8cnWA3i%2FzKghGgCCTvDVMd8FPZo%3D"/>
+</figure>
+</div>
+<p>Small debris like rocks or twigs might seem harmless, but they can wreak havoc on your system if ignored. <br/><br/><span class="bold">Kamingo’s sensors detect obstructions on your bicycle’s tire before they become an issue.</span> When detected, the motor automatically disengages from the wheel, and you are notified with an alert on the controller screen.<br/><br/>This lets you address the issue immediately, saving your Kamingo from potential damage, prolonging its lifetime, and keeping your ride smooth. Always.</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633821">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Clean-Design">🧼 | Clean Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/821/5dcb6ab390622398b1a8df35795e0e0c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628874&amp;width=680&amp;sig=fWEJpEsY3WNnWS9x1ZlYW2ZsHKD0MlDuhBBDuFjbueI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633823">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/823/27a8983442f07f784f8b0148cf8edc7b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628896&amp;width=680&amp;sig=nTFRX26SWMlmj6Aq2ZVlLF7lifXXbCctCaQjQYRpYNQ%3D"/>
+</figure>
+</div>
+<p>We’ve seen what most conversion kits do to bikes. Wires everywhere, mismatched parts, and a look that feels more like a science project than something you'd want to ride.<br/><br/>With Kamingo, we knew we could do better.<br/><br/>From the very beginning, our team of engineers, cyclists, and designers agreed on one thing: the system should be powerful, yet honor the beauty of the bike, not take away from it.<br/><br/>So our team worked hard to keep everything compact, clean, and easy to love. And after 40 design iterations, with immaculate attention to detail, the result is one to behold.</p><ul>
+<li><span class="bold">The battery fits right into most bottle holders.</span></li>
+<li><span class="bold">The controller slides onto your handlebar.</span></li>
+<li><span class="bold">And the motor stays compact and low-profile</span></li>
+</ul><p>Built for absolute convenience, in every way, shape, and form.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636567">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/636/567/6154ac5f7fbb39d925561b59529d1b30_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749645313&amp;width=680&amp;sig=OA15EEixm9ANRBSpjY32I8vkAofiZ9D9Zaoduz9K7gc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633853">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Battery">🔋 | Battery</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/853/ef8c9761bf00dcad8dc14cccea0776b7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749628989&amp;width=680&amp;sig=bHygTahEXXG4mc0rFgzX%2FvxnDjI%2FnIBPOvS5m8PL78U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633858">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/633/858/285ab8b3cf5c4c9092227a9fc21c0064_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629003&amp;width=680&amp;sig=HfSp65A9CDt%2Fht0PUNuVnhKM0SX5znJ58ltZRfrZq0M%3D" src="https://i.kickstarter.com/assets/049/633/858/285ab8b3cf5c4c9092227a9fc21c0064_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629003&amp;width=680&amp;sig=HfSp65A9CDt%2Fht0PUNuVnhKM0SX5znJ58ltZRfrZq0M%3D"/>
+</figure>
+</div>
+<p>Kamingo’s battery is as innovative as the rest of the system. Built using<span class="bold"> high-grade</span> <span class="bold">21700 EV battery cells</span>, it’s more than likely to outlast your bike—engineered to last through hundreds of charge cycles without significant degradation.<br/><br/>Beyond powering your ride, it’s detachable and also doubles as a USB-C power bank which you can use to charge your phone or other devices when you're on the go.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633883">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/883/413ae73cba2e148d5b9901b10974d7bd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629066&amp;width=680&amp;sig=f9zIJTgPbfaM325gFzMx661pfyWMfrBR7z8xn8mlpvg%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633878">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Waterproof">💧 | Waterproof</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/878/0248d7a81ac90ac489b19546ea05e160_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629044&amp;width=680&amp;sig=K0cpTdfU8puvIdHGKWGMohqGof%2BVcPcbP3uWVo7EgkQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633880">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/880/83b0f3cb9d1a16ab24b5aaa0607fc6bd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629054&amp;width=680&amp;sig=owARIKXlAcMKLjxS8dVmlSWek9S0zYjCcCqfCCSr96Y%3D"/>
+</figure>
+</div>
+<p>Rain shouldn’t stop your ride. Neither should road dust, sand, or mud.<br/><span class="bold">Kamingo’s motor unit is IP66-rated</span>, meaning it’s built to resist heavy water pressure and prevent dust from getting in.<br/>The assist wheel also features a smart tire tread drainage design. It actively channels water away, to ensure strong grip with your bike’s tire and prevent slippage.<br/>So go ahead. Ride the rainstorm, hit the muddy roads, and cross those dusty hills.<br/>You always get to enjoy your Kamingo, no matter what.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633887">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Regenerative-Breaking">♻️ | Regenerative Breaking</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/887/ae2f43498b31b9da57f45731ded9f5f0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629086&amp;width=680&amp;sig=vSU5bM8T%2FitIOLKzDT1sdNgjOhREeBRxVCGwTnxh%2Fiw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633901">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/633/901/d1780ffabdf246c7595c226c638868b5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629152&amp;width=680&amp;sig=qagPzSvYpD75zdj%2FNBKPm3gj%2B4ao%2F1bZ4ObkSvZdcoo%3D" src="https://i.kickstarter.com/assets/049/633/901/d1780ffabdf246c7595c226c638868b5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629152&amp;width=680&amp;sig=qagPzSvYpD75zdj%2FNBKPm3gj%2B4ao%2F1bZ4ObkSvZdcoo%3D"/>
+</figure>
+</div>
+<p>Going downhill or easing off the throttle? We’ve incorporated a <span class="bold">Regenerative Braking System (RBS)</span> into the motor component to capture kinetic energy produced during braking or downhill rides, and use it to charge the battery and maximize your range.</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633945">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Quiet-Operation">🔇 | Quiet Operation</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/945/27c033cf8547396809a04282f25fb811_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629293&amp;width=680&amp;sig=agjDevkys5%2B%2FO%2F26ZR%2BoGrV%2BCc0qJ8Oa0LeYR%2B2ota0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633949">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/949/6b733ad8a649fc42a0e10981f29233f3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629309&amp;width=680&amp;sig=qRFgV9fa4eXp8GMTlPvIIadIyVyXucUhQ04MEhPZEA0%3D"/>
+</figure>
+</div>
+<p>Kamingo<span class="bold"> runs at just 56 dB</span>. Quieter than a casual conversation. That’s thanks to its precision friction motor and smart pressure control, which eliminate the grinding noises found in other kits. <br/><br/>You get silent acceleration and smooth assistance, perfect for early morning rides, quiet neighborhoods, and stress-free commutes.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633954">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Health-Care">❤️ | Health Care</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/954/efde2643f04c13df392d6a81958813cd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629327&amp;width=680&amp;sig=vQsAmybyozsKODmUuBhrkhiaa595rXv78%2BeelZMTrsI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636569">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/636/569/d9cb52194c8b0cb0aa51d83880e8504f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645337&amp;width=680&amp;sig=GvMgZv8aiJIYGKJyAAttGiKGtG%2BQyQccmNZb6QMEA%2FI%3D" src="https://i.kickstarter.com/assets/049/636/569/d9cb52194c8b0cb0aa51d83880e8504f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645337&amp;width=680&amp;sig=GvMgZv8aiJIYGKJyAAttGiKGtG%2BQyQccmNZb6QMEA%2FI%3D"/>
+</figure>
+</div>
+<p>With Kamingo, you still pedal, but with less effort and less strain. <br/><br/>That means:</p><ul>
+<li><span class="bold">Less pressure on joints, knees, and hips</span></li>
+<li><span class="bold">Steady cardiovascular exercise</span></li>
+<li>
+<span class="bold">Encouragement to ride more often</span><br/> </li>
+</ul><p>Active commuting that doesn’t wear you out. Ideal for riders recovering from injury, easing into cycling, or just wanting a healthier routine without pushing their body to the limit.</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633975">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-App-Connectivity">📱 | App Connectivity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/975/449642eb1ce41724167c8bb6d98cb39a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629403&amp;width=680&amp;sig=hGJLIDF4y90NS8jBaK4ycWKhqoPDPaY%2FVNnIkYd1Zfg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49637808">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/637/808/1870e62c756d45fb6568eac9abd3850f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749651727&amp;width=680&amp;sig=iTfshM0r0%2B9BHjqBeM9QSobszsONY5jshSkPc8Pw9c4%3D"/>
+</figure>
+</div>
+<p>Connect your smartphone to using Bluetooth to access a detailed range of stats, lock and unlock the motor, manage settings, and more—straight from the Kamingo app.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633982">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-How-It-Works">🧩 | How It Works</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/982/350ba0fa7deccce4418481c0f34f4993_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629430&amp;width=680&amp;sig=qJd2KaKW%2FLDVwi%2FFCjDe%2BkxPql3Awex8zHllIzx%2BA5E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636572">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/636/572/b9974890ed6e20dd5a15195a90f4aecd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645349&amp;width=680&amp;sig=lvzr1hhpD2pC7zJuIiK3oCemHwm87Kuoa1K2Z%2B4R39Y%3D" src="https://i.kickstarter.com/assets/049/636/572/b9974890ed6e20dd5a15195a90f4aecd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749645349&amp;width=680&amp;sig=lvzr1hhpD2pC7zJuIiK3oCemHwm87Kuoa1K2Z%2B4R39Y%3D"/>
+</figure>
+</div>
+<p>Kamingo works by mounting a lightweight friction-drive motor above your rear tire, fully controllable from your handlebar.<br/><br/>When activated, the assist wheel on the motor drops down, presses against the tire, and spins to turn your bicycle wheel (and give you a push) as you ride.<br/><br/>And thanks to its modular design, installation can’t get any easier!<br/> </p><ul>
+<li><span class="bold">Mount the motor base onto the seat stay (one-time setup)</span></li>
+<li><span class="bold">Attach the wireless controller onto your handlebar</span></li>
+<li><span class="bold">Drop the battery into your bottle cage</span></li>
+<li><span class="bold">Connect the battery wire</span></li>
+<li><span class="bold">Place the wireless cadence sensors</span></li>
+<li><span class="bold">Get riding!</span></li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633991">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-What-s-in-the-Box">📦 | What's in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/991/a52c2a8b3cd3192639441d3642aa3eb8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629487&amp;width=680&amp;sig=LcoJN4KYlqEgTBgQt3e8POqD0Udg7gmbkyt062XcscM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49638662">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/638/662/d6551614905d255dd11498407bb061d4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749655798&amp;width=680&amp;sig=ptC2lVWO2yv0DVyxsmNQbTYu8B%2FLbtJgGA5acK5%2BoGA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49635553">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Compatibility-">🔍 | Compatibility.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/635/553/6c39ed303bedef8d8fe7739651493f38_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749637986&amp;width=680&amp;sig=IoVkweM6uyPQRrsbI%2BF9HXlrdD7HQx%2BBPjjzUzcOxYs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49635604">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/635/604/b6edf2f28352c927630af20b8287158c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749638410&amp;width=680&amp;sig=39dY7jrCGb%2F3D2GxbCd9NgWZ%2BdB%2BqVguIX1K2jFfQ%2BU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49651562">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/651/562/a78d6cad356c65ec73ab20b6c4d34ac7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749737727&amp;width=680&amp;sig=no0HlWzo5t0wYFPOAqjiP737srAaNFndaRD9QIuyStA%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">* Kamingo is not compatible with carbon fiber bike frames. It’s compatible with all the other types (steel, aluminum, etc).</span></p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634030">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Use-Cases">🌍 | Use Cases</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/030/2549a58191671df8a99a38da7f7db323_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629717&amp;width=680&amp;sig=aps%2BqwjSOfqUNg9NAtgdA2uSPuFiBLEUKfxBFjPdzKk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634034">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/034/3273d0712e888019d1a530d95dc39909_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629731&amp;width=680&amp;sig=vvhihlO0ZPgjvNUqbD65eyHSPoct2mVlu8aHCuni4wA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634036">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Comparison">⚖️ | Comparison</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/036/ece7775f2c30b65867c9c2df0447ee6d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629763&amp;width=680&amp;sig=8Ak%2FBVOVoxDBpgc00Lokcv%2FNUBQcAFa7d7oj0zoAOrM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634040">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/040/32231048bf73bf0e2d7d776df77545ce_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629777&amp;width=680&amp;sig=U8yvh%2FcfY97Mxt7N9WJkwJxfTtFkEz7085ClmmY0vbk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634042">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Our-Story">👨‍🔧 | Our Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/042/d7b7ee52225548109f99e2770ced1fbb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629793&amp;width=680&amp;sig=Uw3IJKOE6gLTaWHTQt%2B8HzWA7D0zmqYJ890bDfBPpvQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636161">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/636/161/f96ca9fd3f299c5e9966e6ff742a1c6c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749642387&amp;width=680&amp;sig=08U99N2zgVNy6giD5GN7XW8u3%2FRJW6EjRlZX2ZYXdMw%3D"/>
+</figure>
+</div>
+<p>We’re a team of engineers, designers, and lifelong cyclists with backgrounds at <span class="bold">Huawei and BYD,</span> who came together with a simple belief:<br/><br/>Everyone should have the ability to enjoy the joy of riding with electric assistance, without the high price tag or sacrificing the simplicity of their existing ride.<br/><br/>But every time we looked at e-bike solutions, we saw the same problems. High price tags. Overcomplicated installs. Bulky kits that changed the entire look and feel of your bike.<br/><br/>That wasn’t the future we believed in.<br/><br/>So we decided to build something different. Something we’d actually want to use, and something we knew others needed too.<br/><br/>Kamingo is our answer. A lightweight, powerful, easy-to-install converter that brings electric assistance to the bike you already own. And we built it for people like us: Those who ride to work, to the store, to the mountains, or just to clear their minds. The ones who love their bikes and don’t want to give them up just to go electric.<br/><br/>This is the joy of e-bikes, not available for everyone.<br/><br/>And it all starts in just 10 seconds</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636404">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/636/404/c6b4a9b4c6a0ee8df41253bd8a5e13ad_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749644283&amp;width=680&amp;sig=RSMP0Vf8aOuCZy%2F4ImvBp4g%2FxRFTaKOAXdNrMcTAiI0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636374">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/636/374/4b642bf5c965a3362a85149bbb2d3aa1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749644090&amp;width=680&amp;sig=vBJ4R0nX%2BiHg9i9Ji1Fzyk5lsM7MdxuL3yDVwd9AynY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49636171">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Rewards">🛒 | Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/636/171/a7f3e75a2c63ec247e515d9c1c97886e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749642445&amp;width=680&amp;sig=SKHl%2BzTX%2BBP%2FYEHXol6EjRKurLn3z489jUIkFUEgVdI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49638711">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Add-ons">➕ | Add-ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/638/711/f5cd1b0e5aff3b76e74df01eb0bde301_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749656120&amp;width=680&amp;sig=hXpVN%2BNtRF00TPDZIYRQ7aM2oWbDczOKRvR6tAYrlAM%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49637602">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Timeline">📅 | Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/637/602/17354f45c3507b71cbbdb87549486214_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749650631&amp;width=680&amp;sig=H1iyGRxlSPOVPzVxEEjgn7j4RP6kaAvBhR4xPKjuM84%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49637605">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/637/605/160344a9d56d5397a787bb676a490d85_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749650640&amp;width=680&amp;sig=t7j%2F9PANdtILb%2BCmuTchvNYWW0neh%2FjAoOwgoC0DscM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634045">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Specifications">📐 | Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/045/c9fefe7025f1eb4b2884767b7742a46d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629818&amp;width=680&amp;sig=IdZ3Je6vVnvUNW0lI5vAAbQGFQDt01OaCBWRpQyoUQ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634047">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/047/72d3da203809769b9832ead84e07212a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749629831&amp;width=680&amp;sig=6q2fCa4cCFrHWYc%2Fjj5PRjyqn8Z%2BmVB2Ze3rnak4ZGY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Product-production-process"><span class="bold">Product production process</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49527851">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/527/851/a48b2ae2766e8cde9e8fa649482d6d59_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748951134&amp;width=680&amp;sig=IadO%2Bk6H91IIm615XEMZtq9luKkXdaWwmtgkTrRvju4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49527854">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/527/854/4f1096d4f83a3cb0bde39b61aa3ef66c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748951165&amp;width=680&amp;sig=UHRq8DWymfThSEML66p3%2BGvV79V%2FNv2FisgF%2Ffr%2FDzM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49527861">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/527/861/4e55d51589dd010d76ab0e6b0c35985f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748951197&amp;width=680&amp;sig=r1%2FqSkxUACeBGrmN7nIRGrClcL3kjnQrA4KojwHzWV0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Demo-Video"><span class="bold">Demo Video</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49483277">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/483/277/a0c54d7919140da7f8afecc84785f8e8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748608911&amp;width=680&amp;sig=kh9YEiTxj57MZcYflzInTvIHoW4B%2FEPJaH4k21loey0%3D"/>
+</figure>
+</div>
+<p><span class="bold">Kamingo </span><span class="text-italic">campaign is designed and fully managed by </span><span>TCF (The Crowdfunding Formula)</span><span class="text-italic">, a leading, award-winning crowdfunding marketing agency. We team up and help companies to build global brands.</span><br/><span class="text-italic">With the largest team and the largest crowdfunding ecosystem on the market, </span><span>TCF</span><span class="text-italic">offers a wide range of crowdfunding services.</span><br/><span class="text-italic">We manage campaigns all the way from product concept to market validation, lead generation to email marketing, SMM and influencer marketing, PR and direct sales, video, design, and advertising - leading to the ultimate success of campaigns.</span></p><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Bringing Kamingo to market involves a combination of precision hardware, software and smooth logistics. While we’ve completed extensive prototyping, in-house testing, and validation with real users, challenges such as supply chain delays, and scaling production can still arise.
+
+To minimize risks, we are working closely with experienced manufacturing partners and suppliers.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

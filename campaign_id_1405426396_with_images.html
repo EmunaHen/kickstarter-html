@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TPScoreboard: electronic scoreboard for Padel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/578/280/7b82a76428269b71a9f3f73055c3812d_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749239683&width=560&sig=zUc43pG1abqkPWcyxKbHBqG%2FIxrpqAHBrNpq6PxRj2U%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>TPScoreboard: electronic scoreboard for Padel</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">An innovative electronic scoreboard designed specifically for Padel. Affordable, practical, lightweight, and portable</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 3,455</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49577800">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/577/800/61bf71ec8db629adf264f0098947b0f5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749237196&amp;width=680&amp;sig=x8OJIlIo9DfIwEVu6bnu829Ac6e6TqMtvtdc4kEEg%2FU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49575994">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/575/994/b2e36251c9c9358336fdc026721276c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749226973&amp;width=680&amp;sig=WzTTUeCu6W%2BzNNpDLkfgNoRWmuI%2Bpeor5Zfx4mwQr28%3D"/>
+</figure>
+</div>
+<span></span><h3 class="page-anchor" id="h:Technical-Specifications"><span class="bold">Technical Specifications</span></h3><h4 class="page-anchor" id="h:-Supported-Scoring-Modes"><span class="bold">🎾 Supported Scoring Modes</span></h4><ul>
+<li><span class="bold">Number of sets to win: 2, 3, or 5</span></li>
+<li><span class="bold">Optional Killer Point rule (no advantage)</span></li>
+<li><span class="bold">Optional Super Tiebreak rule (as final set decider)</span></li>
+</ul><h4 class="page-anchor" id="h:-Side-Switch-Options"><span class="bold">🔄 Side Switch Options</span></h4><ul>
+<li><span class="bold">Standard automatic side change (as per official padel rules)</span></li>
+<li><span class="bold">Automatic after each set</span></li>
+<li><span class="bold">Manual side change at any time</span></li>
+</ul><h4 class="page-anchor" id="h:-Point-Cancellation"><span class="bold">↩️ Point Cancellation</span></h4><ul><li><span class="bold">You can roll back up to 4 points in case of scoring errors</span></li></ul><h4 class="page-anchor" id="h:-Match-Statistics"><span class="bold">📊 Match Statistics</span></h4><p><span class="bold">At the end of each game, the device displays a summary of sets and games.</span><br/><span class="bold">At the end of the match, you can access detailed stats including:</span></p><ul>
+<li><span class="bold">Total points played</span></li>
+<li><span class="bold">Win percentages for each team</span></li>
+<li><span class="bold">Set points and match points occurred during the match</span></li>
+</ul><h4 class="page-anchor" id="h:-Language-Support"><span class="bold">🌍 Language Support</span></h4><ul>
+<li><span class="bold">Italian 🇮🇹</span></li>
+<li><span class="bold">English 🇬🇧</span></li>
+</ul><h4 class="page-anchor" id="h:-Display-Brightness"><span class="bold">💡 Display Brightness</span></h4><ul><li><span class="bold">Adjustable brightness: levels 1 to 10</span></li></ul><h4 class="page-anchor" id="h:-Standby-Power-Management"><span class="bold">🔋 Standby &amp; Power Management</span></h4><ul>
+<li><span class="bold">Automatic standby after 2 minutes (dimmed screen to save power)</span></li>
+<li><span class="bold">Display off after 30 minutes</span></li>
+<li><span class="bold">Full standby after 1 hour</span></li>
+<li><span class="bold">Manual shutdown available from the menu</span></li>
+<li><span class="bold">Near-zero power consumption when turned off</span></li>
+</ul><h4 class="page-anchor" id="h:-Battery-Life"><span class="bold">⚡ Battery Life</span></h4><ul>
+<li><span class="bold">Powered by a 5000 mAh power bank</span></li>
+<li><span class="bold">Provides at least 72 hours of continuous use</span></li>
+<li><span class="bold">Thanks to power-saving modes, it can last several weeks between charges</span></li>
+</ul><h4 class="page-anchor" id="h:-Connections-Firmware-Updates"><span class="bold">🔌 Connections &amp; Firmware Updates</span></h4><ul>
+<li><span class="bold">USB-C charging port</span></li>
+<li><span class="bold">Rechargeable with standard USB wall chargers</span></li>
+<li><span class="bold">Can be connected to a PC via USB cable for firmware updates</span></li>
+</ul><h4 class="page-anchor" id="h:-Settings-Memory"><span class="bold">💾 Settings Memory</span></h4><ul><li><span class="bold">Device settings can be saved and recalled, so you're always ready with your preferred game configuration</span></li></ul><h4 class="page-anchor" id="h:-Multi-Device-Sync-TPScoreboard-Mini-Plus-"><span class="bold">🔗 Multi-Device Sync (TPScoreboard Mini Plus)</span></h4><ul><li><span class="bold">The TPScoreboard Mini Plus can control additional TPScoreboard Mini units, allowing for synchronized multiple displays around the court</span></li></ul><h4 class="page-anchor" id="h:-Remote-Control-Range-Signal-Handling"><span class="bold">📡 Remote Control Range &amp; Signal Handling</span></h4><ul>
+<li><span class="bold">Wireless range: up to 100 meters in open field</span></li>
+<li><span class="bold">Advanced interference-reduction algorithm ensures reliable performance</span></li>
+<li><span class="bold">Reception tolerance level adjustable from the configuration menu</span></li>
+<li><span class="bold">A Remote control programming feature allows to program the universal remote to avoid possible signal conflicts with other devices around (TPScoreboard mini plus).</span></li>
+</ul><h4 class="page-anchor" id="h:-Mounting-Options"><span class="bold">🧲 Mounting Options</span></h4><ul>
+<li><span class="bold">Net hooks for mounting inside the court</span></li>
+<li><span class="bold">GoPro-compatible bracket for glass wall mounting (outside the court)</span></li>
+</ul><h4 class="page-anchor" id="h:-Display-Color-Options"><span class="bold">🌈 Display Color Options</span></h4><ul>
+<li><span class="bold">Default display color: Red</span></li>
+<li><span class="bold">Optional: Green, Blue, or Yellow (note: these may require longer delivery times)</span></li>
+</ul><h4 class="page-anchor" id="h:-Dimensions-">📏 <span class="bold">Dimensions</span>
+</h4><ul>
+<li><span class="bold">Width: 22 cm</span></li>
+<li><span class="bold">Height: 13 cm</span></li>
+<li><span class="bold">Depth: 3.5 cm</span></li>
+</ul><h4 class="page-anchor" id="h:-Weight">⚖️ Weight</h4><p><span class="bold">Approximately 450 grams</span><br/> </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49587835">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/587/835/5f25b66d7e26423acac63af6a01e1f4b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749326535&amp;width=680&amp;sig=Mhp%2Bzuj9IIo4TA69VJHb8tzw76sQmqGZl751bp%2FXq68%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49587839">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/587/839/6c4d41cb303ee644ec4d65f2d092e117_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749326571&amp;width=680&amp;sig=Pwhwl1kMMZWlXkxO9vW4V8chAry8YiqRRhRsuJsdgw0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Why-Choose-TP-Scoreboard-Discover-the-Advantages">
+<img/><img/><br/>🔋 Why Choose TP Scoreboard? Discover the Advantages</h3><p>TP Scoreboard isn’t just another padel scoreboard – it’s a <span class="bold">smarter, simpler, and more efficient solution</span> designed with players in mind. Here’s what sets us apart from the competition:</p><p><span class="bold">Ultra-Long Battery Life</span><br/>Not 8, not 16… but <span class="bold">48 hours of continuous use</span>! Play all weekend without worrying about recharging.</p><p><span class="bold">🎮 Two Remotes Are Better Than One!</span></p><p>Unlike other scoreboards that rely on a <span class="bold">single bulky, multi-button remote</span>, TP Scoreboard uses <span class="bold">two simple remotes — one for each team</span>.<br/>This means <span class="bold">no single player is burdened</span> with managing the score for both sides, and <span class="bold">no confusion</span> about who’s in control.</p><p>Real-world use has shown that <span class="bold">scorekeeping errors are rare</span>, and if they happen, they’re <span class="bold">quickly and easily corrected</span> using the device's intuitive buttons.<br/>There’s no need to overload players with unnecessary controls — <span class="bold">simplicity wins every time</span>.<br/><br/><span class="bold">🔊 Hear the Click – Confirm the Point</span></p><p>With TP Scoreboard, <span class="bold">every button press gives immediate audio feedback</span>.<br/>This <span class="bold">subtle but essential feature</span> lets players know the point was registered — <span class="bold">without needing to take their eyes off the game</span>.</p><p>No second-guessing. No delays. Just a clear, satisfying confirmation that your input was received.<br/>Especially during fast-paced matches, this <span class="bold">auditory cue</span> makes all the difference in <span class="bold">keeping focus and confidence</span> on the court.</p><p><span class="bold">Simple &amp; Intuitive Design</span><br/><span class="bold">No bulky wristbands, no confusing buttons</span>. Just a <span class="bold">standard watch-style controller with a single button</span>. Elegant and easy.</p><p><span class="bold">Compact &amp; Highly Portable</span><br/>Smaller and lighter than traditional systems – <span class="bold">easy to carry anywhere</span> without taking up space in your bag.</p><p><span class="bold">Affordable &amp; Visible</span><br/>A budget-friendly solution that’s <span class="bold">clearly visible from anywhere on the court</span>, ensuring every point counts.</p><p><span class="bold">Multi-Device Syncing</span><br/>Seamlessly <span class="bold">pair multiple TP Scoreboards</span> on the same court for synchronized performance.</p><p><span class="bold">Settings Memory</span><br/>Automatically <span class="bold">saves your preferences</span>, even when turned off – no need to reset each time.</p><p><span class="bold">Smart Power Management</span><br/>Designed for <span class="bold">maximum energy efficiency</span>, optimizing battery usage without sacrificing performance.</p><h3 class="page-anchor" id="h:The-Story-Behind"><span class="bold">The Story Behind</span></h3><p><span class="bold">My name is Carlo, and I'm a computer engineer and lifelong sports enthusiast. In August 2024, I discovered a new passion: Padel. It didn't take long for me to fall in love with the game — but I quickly noticed a recurring problem shared by players of all levels: no one could consistently remember the score.</span></p><p><span class="bold">This may sound trivial, but it’s not. Forgetting the score causes frustration, interrupts the rhythm of the game, and can even lead to arguments — yes, even during friendly matches and amateur tournaments. This kind of tension undermines the fun, social atmosphere that clubs strive to create.</span></p><p><span class="bold">With a background in designing electronic devices, I knew I could help.</span></p><h4 class="page-anchor" id="h:-From-Cardboard-to-a-Fully-Functional-Device"><span class="bold">🔧 From Cardboard to a Fully-Functional Device</span></h4><div class="template asset" contenteditable="false" data-alt-text="1st prototype" data-caption="" data-id="49526326">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:1st-prototype">1st prototype</h3>
+<img alt="1st prototype" class="fit" src="https://i.kickstarter.com/assets/049/526/326/ff48866dd7827397a9a60da5e2738438_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748941203&amp;width=680&amp;sig=rWWwatkpdDue2H7CBGQxKrEQJHo%2FUWE5e88qc8ybIXU%3D"/>
+</figure>
+</div>
+<p><span class="bold">I started building a prototype: an electronic scoreboard controlled by simple radio-frequency remotes. The very first version? Housed in a cardboard box, using basic universal remotes. It wasn’t pretty, but it worked — and it proved the concept.</span></p><p><span class="bold">Over the next 8 months, I dedicated myself to testing and improving the device. I 3D-modeled a sleek new case and rewrote the software from scratch to support all Padel scoring rules and variations. The design evolved from clunky remotes to single-button wrist controllers that players can wear effortlessly.</span><br/> </p><div class="template asset" contenteditable="false" data-alt-text="2nd prototype" data-caption="" data-id="49526333">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:2nd-prototype">2nd prototype</h3>
+<img alt="2nd prototype" class="fit" src="https://i.kickstarter.com/assets/049/526/333/cd7c7b1c78da704055a7851b56e0a8c7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748941242&amp;width=680&amp;sig=7%2Ft5ouWSS91GSaTkuuFh2jKrX4t0GV3X%2FPVNjHANeu0%3D"/>
+</figure>
+</div>
+<p><span class="bold">To maximize portability and battery life, I implemented advanced standby modes and optimized the power system to run on any standard power bank.</span></p><h4 class="page-anchor" id="h:-Meet-TPScoreboard-Mini"><span class="bold">🎯 Meet TPScoreboard Mini</span></h4><p><span class="bold">After months of development, testing, and iteration, the result is TPScoreboard Mini — a compact, affordable, and ultra-simple scoreboard designed just for Padel.</span></p><p><span class="bold">✔️ Bright, easy-to-read display visible from all sides of the court</span><br/><span class="bold">✔️ Lightweight and portable: just power it up and you're ready in 2 seconds</span><br/><span class="bold">✔️ Single-button wrist controllers make it effortless to update the score</span><br/><span class="bold">✔️ Designed to minimize disputes and improve the game experience for everyone</span></p><p><span class="bold">As of May 2025, the final version is ready. We’ve refined every detail and are now creating video tutorials to guide new users and provide the best possible support.</span><br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49550801">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/550/801/ab70a179e6245ee264cefacff2cbfc22_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749069890&amp;width=680&amp;sig=yHQzToAuD0%2B46sLkuBS27PgX5ZD2GGECx5WKxFuPgjI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49550792">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/550/792/f1d0f4d45c6f9820b23291a6c38a6433_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749069843&amp;width=680&amp;sig=PsZ6nrTTpHsPKKub3yl3EkkH%2FJbrl5zIfYlkOgOTF4Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="final prototype" data-caption="" data-id="49526341">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:final-prototype">final prototype</h3>
+<img alt="final prototype" class="fit" src="https://i.kickstarter.com/assets/049/526/341/883d458f36cfcf38672d57ea471732de_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748941299&amp;width=680&amp;sig=O4sXk7%2Fb459jbHWDbtbULd93faBNgePN9kWUv8x5tqo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49548678">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/548/678/cbc55a0886eeba4630dbcc308c67aa3e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749059302&amp;width=680&amp;sig=5ZrUx4GWihBuU0PH7IUAYEIBTzVSyoBJmo10sXhPHig%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49550600">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/550/600/f0eed9d3cfb745ac3867761e72a9c3e4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749069002&amp;width=680&amp;sig=DPnxOgTjwoTL9CZAQBZ4mV4U88lBqA00bvpA7x%2Ban%2B0%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Why-We-Need-Your-Help"><span class="bold">🚀 Why We Need Your Help</span></h4><p><span class="bold">We’re launching this Kickstarter to fund our first production run — and we have big plans ahead. Future versions will include larger displays, more advanced features, and optional modules, like real-time score logging that can generate subtitle files for match video overlays.</span></p><h4 class="page-anchor" id="h:-Building-a-Team-Supporting-a-Vision"><span class="bold">🤝 Building a Team, Supporting a Vision</span></h4><p>I'm actively working to <span class="bold">build a dedicated team</span> to support both the <span class="bold">production and long-term management</span> of this project.<br/>Having experience in <span class="bold">developing and manufacturing electronic devices</span>, I know first-hand that <span class="bold">after-sales support</span> is essential to turning a great idea into a great product.</p><p>That’s why special attention will be given to <span class="bold">clear documentation</span> and <span class="bold">video tutorials</span>, to make the TP Scoreboard easy and enjoyable to use for everyone.<br/>Additionally, the company will maintain <span class="bold">active social media channels</span>, where users can get support, share tips, and connect with each other.</p><p>This is not just about a product — it’s about creating a community.</p><p><span class="bold">If you've ever lost track of the score in a Padel match, or just want to make your games smoother and more enjoyable — TPScoreboard Mini is for you.</span></p><p><span class="text-italic"><span class="bold">Support our campaign and help us bring this project to Padel courts everywhere!</span></span></p><h3 class="page-anchor" id="h:-">
+<img class="image" data-id="49597494" src="https://i.kickstarter.com/assets/049/597/494/023fa263ca80137a97567c827e9cde3b_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749422027&amp;width=898&amp;sig=8NXGYW2kueXHJLxg%2FYFmPiLfr%2FzIb%2BM%2BhXoQkC%2Bsw1M%3D"/><br/> </h3><p><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Developing and manufacturing a hardware product always comes with challenges. After 8 months of prototyping and testing, we’re confident in the performance and reliability of TPScoreboard Mini. That said, here are the main risks and how we plan to handle them:
+
+Component availability: If any electronic parts become difficult to source, we have already identified multiple suppliers and alternative components to avoid delays.
+
+Manufacturing delays: We’re working closely with trusted production partners and have already validated the final design with small-batch testing. Our manufacturing process is modular and scalable.
+
+Shipping &amp; logistics: We plan to work with experienced fulfillment services to ensure timely and trackable global delivery.
+
+User support: We’re preparing a complete set of video tutorials and documentation. We’ll also offer direct email support to help backers with any questions or issues.
+
+We’re not new to designing, producing, and selling electronic devices. Our experience with customers around the world has taught us that support is just as important as the product itself. That’s why, even though the TPScoreboard Mini has been fully functional for nearly a year, we chose to test it thoroughly and become true experts in every possible issue it might present. This ensures that when we launch, we’re ready to support our users every step of the way.
+
+The TPScoreboard Mini will not be just another anonymous gadget. It will come with comprehensive digital manuals and a dedicated YouTube channel with tutorial videos, so that every user — regardless of technical experience — can start using the device with confidence, right out of the box.
+
+We’re passionate about this project and committed to delivering a polished, supported product. Your backing will help bring a smarter, smoother Padel experience to players everywhere.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Potentially forever. The battery pack can be replaced and the electronic parts can be found everywhere.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

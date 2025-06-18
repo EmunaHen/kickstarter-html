@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Guide: One-Tap Sharing & Anti-Theft Protection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/557/757/088558d7d8e8419123c9a047ce83f632_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749116836&width=560&sig=z1CQLnNsXrgQu9yKN9%2FZA4NSZNo3OWnCBnm%2Fkc1IhU8%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>The Guide: One-Tap Sharing & Anti-Theft Protection</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">With one-tap location sharing, SOS alerts, anti-theft protection, and security mode, The Guide lets you travel safely—anywhere you go.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>35 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49614412">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/614/412/765a7db0db7a4bc06b1d6b85b3fd0a00_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749522837&amp;width=680&amp;sig=bH7uQtKseDtwJct775jShAtT63Os6YNpRDbpJj1DTW8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49036762">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Every-Traveler-Needs-A-Guide">Every Traveler Needs A Guide</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/036/762/d51fc39a3f775fe6ac446b05d860346b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745572116&amp;width=680&amp;sig=x5at6KIwjsqJH8iXh01Ao6GGbrQGdK8GdUhYAFCJR6g%3D"/>
+</figure>
+</div>
+<p>When we’re in a foreign country, the lack of familiarity with local languages and systems can make us feel like a fish out of water.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478330">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/330/8c000d236928671ce7dbf6251c4e84a8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681289&amp;width=680&amp;sig=b%2FGT18yITbXFSSCX4pPFJjI9Jy%2BkXSa53u3peB1%2Fvr4%3D" src="https://i.kickstarter.com/assets/048/478/330/8c000d236928671ce7dbf6251c4e84a8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681289&amp;width=680&amp;sig=b%2FGT18yITbXFSSCX4pPFJjI9Jy%2BkXSa53u3peB1%2Fvr4%3D"/>
+</figure>
+</div>
+<p><span class="bold">The Guide is here to get rid of any frustration while travelling.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478500">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/500/4b0c471b56f01a43edbe7f83526a173e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682407&amp;width=680&amp;sig=gXWuvnqmu8S5EYIM3LMQ65Xt0bK9MIEa%2FswZKChm%2FbI%3D" src="https://i.kickstarter.com/assets/048/478/500/4b0c471b56f01a43edbe7f83526a173e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682407&amp;width=680&amp;sig=gXWuvnqmu8S5EYIM3LMQ65Xt0bK9MIEa%2FswZKChm%2FbI%3D"/>
+</figure>
+</div>
+<p>Whether you’re at the airport without someone to watch over your belongings, or even if you’re just walking down the street, The Guide comes with a host of features to <span class="bold">facilitate travel and keep you and your belongings protected. </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48504802">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/504/802/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741838210&amp;width=680&amp;sig=CI7YPLiGedmG%2FMXwrDdemnZ2E3CgtgcAARFT1npdPtw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48648070">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/648/070/99d5ddaf14c30e280417678de388391b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742866144&amp;width=680&amp;sig=F0Nxx815iRZFKSGL8yi7RGIxsoR65xmQO65WDSY1K9o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48492435">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/492/435/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741762712&amp;width=680&amp;sig=1lVc8ca5Xj8KOCrrgSsgjt%2BycWCGy1H1Ac8HK1kuwU4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48648071">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Easy-Location-Share">Easy Location Share</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/648/071/4418d67e5e575b37fa4f593a9868e63c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742866147&amp;width=680&amp;sig=srhs3oTgXrP8EesEhqERDzyrc%2B399GYCyPAlSmP0gyk%3D"/>
+</figure>
+</div>
+<p>When you’re traveling with friends or family, knowing everyone’s location is a top priority. This is especially so when travelling to a new country or city.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48993708">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/993/708/a97d84243006567302a77dbdbb97ce28_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745311065&amp;width=680&amp;sig=3t8U3pbbI8K4eNANljq4Peu6GxHxqg%2FW6HRckwfdCl4%3D" src="https://i.kickstarter.com/assets/048/993/708/a97d84243006567302a77dbdbb97ce28_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745311065&amp;width=680&amp;sig=3t8U3pbbI8K4eNANljq4Peu6GxHxqg%2FW6HRckwfdCl4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48564933">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/564/933/514561d03efb144b17207885e65347a5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742278921&amp;width=680&amp;sig=VS3pFUulkUzlzZ8RHearQsH6t25I%2FLyMLVQjp6QtIMI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Just one push of a button will instantly share your location </span>via The Guide’s handy app.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48991741">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/991/741/7ec90d7ee315a72e086dd7a7f684d3d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745297404&amp;width=680&amp;sig=W7QSHycqWsxPpsVLO%2BCUoZ3qsNYyYLftxkshQJgAAE0%3D" src="https://i.kickstarter.com/assets/048/991/741/7ec90d7ee315a72e086dd7a7f684d3d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745297404&amp;width=680&amp;sig=W7QSHycqWsxPpsVLO%2BCUoZ3qsNYyYLftxkshQJgAAE0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478366">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/478/366/ecb5c992f989889b18f144d48673b9fb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741681496&amp;width=680&amp;sig=1QMdAZrs7tF2kHXMfUYEoz46JWybGMMBeVd93HOlcA0%3D"/>
+</figure>
+</div>
+<p>You can also <span class="bold">share your location multiple times in one trip </span>to show your path of movement</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48990560">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/990/560/5bcfcf8fd08beff1d894dfc160feeffc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745289694&amp;width=680&amp;sig=2tNfXWKjVGv0gLdHFSzjVhbTDlQ4chuhyRsL%2BrGmTRI%3D"/>
+</figure>
+</div>
+<p>And if you’re traveling alone, setting up The Guide on a friend or guardian’s phone back home will let you easily <span class="bold">communicate how your travel is going or let your contact know if something has gone wrong.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478372">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/372/17ce34de245ff6a2105a556550b92e5a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681557&amp;width=680&amp;sig=Nfw7z%2BH0W%2BkeyBVhQpClEiD84jYF8HMpJKOhRVWAqWk%3D" src="https://i.kickstarter.com/assets/048/478/372/17ce34de245ff6a2105a556550b92e5a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681557&amp;width=680&amp;sig=Nfw7z%2BH0W%2BkeyBVhQpClEiD84jYF8HMpJKOhRVWAqWk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48492436">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/492/436/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741762722&amp;width=680&amp;sig=BNX0eJML0n98nh%2B4CWa4fN3ZYL1JTPpeMtrDqzNeOMg%3D"/>
+</figure>
+</div>
+<p>This feature can be configured to send your location, an SOS emergency message, or a rendez-vous message based on your preferences.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992350">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/992/350/9ae036c3c2d4e37e14c7ef0ad822fced_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745302006&amp;width=680&amp;sig=aWFLNFxV23fRNd766N9kmkZlntwBcGd1HrXIPZTrhNw%3D" src="https://i.kickstarter.com/assets/048/992/350/9ae036c3c2d4e37e14c7ef0ad822fced_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745302006&amp;width=680&amp;sig=aWFLNFxV23fRNd766N9kmkZlntwBcGd1HrXIPZTrhNw%3D"/>
+</figure>
+</div>
+<p>Your GPS position is revealed to your designated contact ONLY, and only when you send them a ping.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48648073">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Anti-theft">Anti-theft</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/648/073/c93d4931e5f1e3b40f5d28e662684aeb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742866153&amp;width=680&amp;sig=judEjEKvoJvYXg59k635KJGXxrUkDKWknT5YrLX8hEs%3D"/>
+</figure>
+</div>
+<p>Need to place your valuables down but worried that someone will steal them?</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478381">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/381/cd8fdbebc2732ff204bd432ecead8bca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681641&amp;width=680&amp;sig=RCUAnFY1BH5EuTJP044PEj6v2ssYDvJBOXT%2B2m%2FSOb8%3D" src="https://i.kickstarter.com/assets/048/478/381/cd8fdbebc2732ff204bd432ecead8bca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681641&amp;width=680&amp;sig=RCUAnFY1BH5EuTJP044PEj6v2ssYDvJBOXT%2B2m%2FSOb8%3D"/>
+</figure>
+</div>
+<p>The Guide has an <span class="bold">anti-theft feature to keep your belongings safe from thieves. </span>Just set the The Guide to theft mode and place it on your bag, suitcase, phone, wallet—anything!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48490498">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/490/498/3a3817edd674ad6b42c021fd04ddbbe5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741747384&amp;width=680&amp;sig=ijypNcTrQs9l2U08ijpPIstcDViYzr4OQrRBeaupMAo%3D" src="https://i.kickstarter.com/assets/048/490/498/3a3817edd674ad6b42c021fd04ddbbe5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741747384&amp;width=680&amp;sig=ijypNcTrQs9l2U08ijpPIstcDViYzr4OQrRBeaupMAo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48505472">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/505/472/b56568b48156f54fd301dbb2a7e415e5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741842233&amp;width=680&amp;sig=EF4hocr1NXEXILoFk%2B%2F8sEZjNbBdoiEXZc6A6t%2FKfEk%3D"/>
+</figure>
+</div>
+<p>If someone tries to steal your belongings, The Guide’s motion sensor will detect movement, <span class="bold">simultaneously sounding an alarm and sending an alert to your phone. </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478393">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/393/1b4bdb368ddee730c5a7d227dc2e4f02_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681734&amp;width=680&amp;sig=TFxpzoygcj0AYBGUeoQqpP4EGs6i%2FgRKVsMtgipXWtw%3D" src="https://i.kickstarter.com/assets/048/478/393/1b4bdb368ddee730c5a7d227dc2e4f02_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681734&amp;width=680&amp;sig=TFxpzoygcj0AYBGUeoQqpP4EGs6i%2FgRKVsMtgipXWtw%3D"/>
+</figure>
+</div>
+<p>This feature can only be used while the protected item is at rest.</p><p>The Guide is an extra layer of protection not only for you, but for you belongings, too.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48492438">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/492/438/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741762734&amp;width=680&amp;sig=%2BYndznwOejU%2BZ9goPQdkZ3JuKF96fYR1by56jfYqiq4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48648075">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Security-Mode">Security Mode</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/648/075/dc3ace507671953b661909ba012364f5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742866158&amp;width=680&amp;sig=QQ0AHKJdpFR97pIefXaV0KZeWm1pGysSyMr8qm6z%2F34%3D"/>
+</figure>
+</div>
+<p>Not sure if your Airbnb is safe from unwanted guests while you’re sleeping?</p><p>Set the The Guide to security mode and attach it to your door or window.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48992696">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/992/696/cbd2726879b6284e483fe5fbfb81c7ab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745305021&amp;width=680&amp;sig=va%2FJfgrUhmAxcfM2p3QismqjQmjhW2Y02%2FEn8DO%2B%2FLA%3D" src="https://i.kickstarter.com/assets/048/992/696/cbd2726879b6284e483fe5fbfb81c7ab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745305021&amp;width=680&amp;sig=va%2FJfgrUhmAxcfM2p3QismqjQmjhW2Y02%2FEn8DO%2B%2FLA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478407">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/407/3516869cb2e75f6c383e548c88e6170a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681929&amp;width=680&amp;sig=0zpnTh%2F9xmOmL%2BKd%2FJM4bNqNRo2owF2ecYtKnhZY7bE%3D" src="https://i.kickstarter.com/assets/048/478/407/3516869cb2e75f6c383e548c88e6170a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681929&amp;width=680&amp;sig=0zpnTh%2F9xmOmL%2BKd%2FJM4bNqNRo2owF2ecYtKnhZY7bE%3D"/>
+</figure>
+</div>
+<p>When The Guide detects significant force on the object it’s attached to, <span class="bold">an alert will be sent to you and a designated user’s smartphone so they can take appropriate action.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478414">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/414/7f43f8d5c0478afe34aad61b8e049dd6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681967&amp;width=680&amp;sig=Ea3XABjIXnWZlh2niPU3Ku%2BvbW8%2FK4zirH5GvnMePW0%3D" src="https://i.kickstarter.com/assets/048/478/414/7f43f8d5c0478afe34aad61b8e049dd6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741681967&amp;width=680&amp;sig=Ea3XABjIXnWZlh2niPU3Ku%2BvbW8%2FK4zirH5GvnMePW0%3D"/>
+</figure>
+</div>
+<p>When triggered, the Guide will also emit a <span class="bold">sound alarm </span>to drive away any potential intruders.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48492516">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/492/516/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741763297&amp;width=680&amp;sig=Ii44d3d70ohKW5kAxdAOh%2Fb%2BStHXZbYXFsbAXfAti6A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48648076">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Safety-Check-In">Safety Check In</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/648/076/17764962479cee0ae13e21d9bc976bc4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742866162&amp;width=680&amp;sig=kfr%2BEvOycVCVaFvHYTYC92OPDDdfRCvD3NAzR6%2FaVa0%3D"/>
+</figure>
+</div>
+<p>Planning to meet up with someone while you’re traveling? Remember: anything can happen when you’re in a new place.</p><p>Stay prepared for any curveballs thrown at you with The Guide’s <span class="bold">safety check-in location share.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478430">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/430/8777973c61ac3bcbf9e31bc76e058894_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682060&amp;width=680&amp;sig=W0iwuQsQo6xBkTbE5SDUKOt8hGwmpqUwCKKsvSLPgqM%3D" src="https://i.kickstarter.com/assets/048/478/430/8777973c61ac3bcbf9e31bc76e058894_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682060&amp;width=680&amp;sig=W0iwuQsQo6xBkTbE5SDUKOt8hGwmpqUwCKKsvSLPgqM%3D"/>
+</figure>
+</div>
+<p>To use the check-in location share, start by identifying your destination and the expected arrival time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478435">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/478/435/2d4d878e6e728c4284241665a95b3e06_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741682079&amp;width=680&amp;sig=yiyo7cc4%2BsCSHNbbqtpMYUC1Ls4lv03Nwoz9z8ST3fE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48492517">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/492/517/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741763300&amp;width=680&amp;sig=N8Ck%2BwCMJKH45F2tei6G4g2f%2FXBcFltSwy%2BuSQ1kp%2Bs%3D"/>
+</figure>
+</div>
+<p>If you don’t arrive by your expected arrival time, The Guide will send your location to a designated friend or family member. This will <span class="bold">automatically keep your point of contact informed about your situation</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478443">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/443/274a64f4895f6f859169d432d536b634_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682112&amp;width=680&amp;sig=bmNZCCA6oeVTg7As6KdL6ZoKuBz4Wko3NbrLxYKzR24%3D" src="https://i.kickstarter.com/assets/048/478/443/274a64f4895f6f859169d432d536b634_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682112&amp;width=680&amp;sig=bmNZCCA6oeVTg7As6KdL6ZoKuBz4Wko3NbrLxYKzR24%3D"/>
+</figure>
+</div>
+<p>Once you’ve arrived<span class="bold">, The Guide will send a notification to your registered user that you’ve successfully arrived at your destination</span>. This feature is also great for commuting to work or school or other scenarios when you aren’t traveling.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48990141">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/990/141/63e48a21dcee51239ff50976ed8ceb23_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745286861&amp;width=680&amp;sig=3%2FdfLx6Cou3crffuOlHZerdqBJcRbZl7NkmAi5J0UWU%3D" src="https://i.kickstarter.com/assets/048/990/141/63e48a21dcee51239ff50976ed8ceb23_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745286861&amp;width=680&amp;sig=3%2FdfLx6Cou3crffuOlHZerdqBJcRbZl7NkmAi5J0UWU%3D"/>
+</figure>
+</div>
+<p>We are also currently working on developing a feature that will let you track multiple steps of your trip to share with your contact while you’re on the go.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48492518">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/492/518/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741763306&amp;width=680&amp;sig=W82d5cHDeap2XYy%2F1v23%2BqsdOa%2FagV57YVTgH0IyP%2BA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48782231">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Recorded-Voice-Messages">Recorded Voice Messages</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/782/231/56df1b41e00345596ab468ad29aaa650_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743756864&amp;width=680&amp;sig=pxADy24YqCIhRLHE6IeUh%2FA4LthZnprvjOEPj16wHQg%3D"/>
+</figure>
+</div>
+<p>We’ve added travel-essential phrases like “How much is this?”  “Where is the hospital?”  and more onto The Guide’s pre-loaded phrase list for more convenient travel.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48990305">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/990/305/81cd6ddd60c01148a80f7d9c408f16e1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745288046&amp;width=680&amp;sig=elWraydxKuWE24BZPLN4jWrePHnoQqnTu2hQdis2n4Q%3D"/>
+</figure>
+</div>
+<p>Voice messages can be delivered in English, Spanish, French, and Korean.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48980133">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/980/133/86352812271cddebdeaa291c0f538dfd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745227208&amp;width=680&amp;sig=PZZhoucIRGTpdspI%2B%2Fyb8ni5FdfBXY6Zlo2Jrq%2FMvLE%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="48492519" src="https://i.kickstarter.com/assets/048/492/519/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741763314&amp;width=680&amp;sig=tOmscJ1sDIQyqvi5LqIZnHNk1Bu%2Bjjw7Jy%2FoSQrdw0E%3D"/>The Guide also lets you mask your voice messages in an <span class="bold">authortiative voice recorded by native speakers</span> to chase away potential intruders</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49008019">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/008/019/c2e5f47d15940900e30785cd4484a83f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745397021&amp;width=680&amp;sig=yxpEojbSZ5g3aPbnNaFP3JqBUrb4StUW6r%2BdhOyve8o%3D" src="https://i.kickstarter.com/assets/049/008/019/c2e5f47d15940900e30785cd4484a83f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745397021&amp;width=680&amp;sig=yxpEojbSZ5g3aPbnNaFP3JqBUrb4StUW6r%2BdhOyve8o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48492521">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/492/521/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741763317&amp;width=680&amp;sig=TKq2Jy6QZobiBz1NW5iFoyGJFonH%2Bt5jjXWHVe37Q2M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48492522">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/492/522/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741763321&amp;width=680&amp;sig=8y%2BZHf7zn9MjiYJQPj39KTocd%2FMc5O2aF6jOATuTf%2Bw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48648088">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:SOS-Message">SOS Message</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/648/088/59865859f39e983e49a31ad3895a5181_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742866210&amp;width=680&amp;sig=AQUP4xB00IjHwjcgYjjp%2B7doCZZkzWNxONFKXtMbUv8%3D"/>
+</figure>
+</div>
+<p>When you need help, it can be impractical to reach for your phone and call the emergency hotline.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48479281">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/479/281/10007effb954672101ca9f749eb4f2b7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741686316&amp;width=680&amp;sig=1%2FAWLw7oB2lY87FeOWVLrHi5H4sPzgIkofdEmdFo2A8%3D" src="https://i.kickstarter.com/assets/048/479/281/10007effb954672101ca9f749eb4f2b7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741686316&amp;width=680&amp;sig=1%2FAWLw7oB2lY87FeOWVLrHi5H4sPzgIkofdEmdFo2A8%3D"/>
+</figure>
+</div>
+<p>The Guide connects to your smartphone so you can<span class="bold"> call for help with the push of a button.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48993882">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/993/882/9b93dfc7afdb7685355e8be7c5641c5e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745311912&amp;width=680&amp;sig=PB%2FFEvswMqiNBET1QvTrcfokMwLSknyZk%2BOJAwp6AVo%3D" src="https://i.kickstarter.com/assets/048/993/882/9b93dfc7afdb7685355e8be7c5641c5e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745311912&amp;width=680&amp;sig=PB%2FFEvswMqiNBET1QvTrcfokMwLSknyZk%2BOJAwp6AVo%3D"/>
+</figure>
+</div>
+<p>When you push The Guide’s SOS button, <span class="bold">an emergency message is sent to a pre-designated user </span>to let them know that you’re in need of assistance.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478564">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/564/3b40d6501a3693b2c5953dc867728774_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682768&amp;width=680&amp;sig=E9yvZ%2FpOKB1%2BRG198ShwdPwRF02GGEmBIljjLVqPSFE%3D" src="https://i.kickstarter.com/assets/048/478/564/3b40d6501a3693b2c5953dc867728774_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682768&amp;width=680&amp;sig=E9yvZ%2FpOKB1%2BRG198ShwdPwRF02GGEmBIljjLVqPSFE%3D"/>
+</figure>
+</div>
+<p>The SOS button also <span class="bold">sends your realtime GPS location </span>to keep your contact aware of where you are.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48563559">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/563/559/0063965813446be4cd82a9d24c54a965_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742267988&amp;width=680&amp;sig=u1H%2BatJYbbIpDlaOT%2F7wPVOviD%2F7PnaI0MKcjRgcZiI%3D"/>
+</figure>
+</div>
+<p>Quick and discreet, The Guide’s SOS button can <span class="bold">buy you valuable time while help is on the way.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478591">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/591/4b0c471b56f01a43edbe7f83526a173e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682853&amp;width=680&amp;sig=U1snM33ulGKT1vtwVNnA%2FD%2FhvwtrdKg7RRb31vWlcvU%3D" src="https://i.kickstarter.com/assets/048/478/591/4b0c471b56f01a43edbe7f83526a173e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682853&amp;width=680&amp;sig=U1snM33ulGKT1vtwVNnA%2FD%2FhvwtrdKg7RRb31vWlcvU%3D"/>
+</figure>
+</div>
+<p>If you’re worried about privacy, rest assured that your GPS position is revealed to <span class="bold">your designated contact ONLY, </span>and only when you call for help.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48493718">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/493/718/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741771479&amp;width=680&amp;sig=TzRNjrxFz7bg7egKG8qrPkOMmRs4vpLTeRk%2FZjQfip8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48648094">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Find-My-Phone">Find My Phone</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/648/094/4cd207b9d064e9dcf8e62871c1f2d07d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742866224&amp;width=680&amp;sig=BZiZqKp9yv85lZ6xdY15fmrdIyoT2Lko8Sj0yxGW3T0%3D"/>
+</figure>
+</div>
+<p>If you ever lose your phone, just use The Guide’s Find My Phone feature.<img class="image" data-id="48478926" src="https://i.kickstarter.com/assets/048/478/926/24a89bb00808017d867a7fd6a5cd39d3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741684460&amp;width=680&amp;sig=hZRdVhzV3rH3tVd4%2BseraGXvtbG3NyL8xzLPRs1X9YU%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478609">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/478/609/8cbfc97121e5b9bbf47d3825d562126a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682911&amp;width=680&amp;sig=Rryu7Hfvt7YyVfm8lE4rYV%2FEfwmxcbiMaQ%2F0KeSJpqU%3D" src="https://i.kickstarter.com/assets/048/478/609/8cbfc97121e5b9bbf47d3825d562126a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741682911&amp;width=680&amp;sig=Rryu7Hfvt7YyVfm8lE4rYV%2FEfwmxcbiMaQ%2F0KeSJpqU%3D"/>
+</figure>
+</div>
+<p>Just hold down The Guide’s buttons and <span class="bold">your phone will sound an alarm so you can find it quickly.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48492526">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/492/526/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741763335&amp;width=680&amp;sig=tZgvrHxe8lvWQHHTK0XNTKBWVBw8apMJzDF%2FHt67Y7w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49005458">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Accessory-Design">Accessory Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/005/458/f459ada4ce5fa342199ba54a080af932_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745376667&amp;width=680&amp;sig=af70U0REGmzgVTYQc7vXkyFnKyZITEKAjefY1A9nFSk%3D"/>
+</figure>
+</div>
+<p>The Guide fits in the palm of your hand and sports a discrete accessory design reminiscent of a 4-leaf clover.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48993122">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/993/122/c0dff71746b0c6f0a8ad8b1dd981056b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745307526&amp;width=680&amp;sig=CsCLGhHLqdUsdalLjG43c2OL9bGZOnp06qcgeBVQOUk%3D"/>
+</figure>
+</div>
+<p>And to commemorate our Kickstarter campaign, we’re releasing a limited-edition <span class="bold">Lucky Green Pack </span>for those who want to carry their own lucky 4-leaf clover with them anywhere.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48993123">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/993/123/d558ece4734545d52ebf664420fb4742_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745307527&amp;width=680&amp;sig=FjmOf9Qg2IXMbaZZ1del6Tlx9aFDM1fXpJUTmJj3pVA%3D"/>
+</figure>
+</div>
+<p>With The Guide, you can call for help, set up security, discourage intruders, and much more—all with a light, easily attachable accessory.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48990411">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/990/411/dbee29cff4bca147d8aa28ae877e6022_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745288857&amp;width=680&amp;sig=vT8PRDFPlft32th3BCPM45o3J89b2w8NFuTGpwIyZkY%3D" src="https://i.kickstarter.com/assets/048/990/411/dbee29cff4bca147d8aa28ae877e6022_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745288857&amp;width=680&amp;sig=vT8PRDFPlft32th3BCPM45o3J89b2w8NFuTGpwIyZkY%3D"/>
+</figure>
+</div>
+<p><span class="bold">The Guide unlocks smarter, safer travel for all!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49124545">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/124/545/405be984386e9d773ca8e3a16053a7b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746154233&amp;width=680&amp;sig=CQL%2BlRYpAH%2BjeRbg6B2G0a7ARksb99K%2BUthe6h3bd%2F4%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="48648102" src="https://i.kickstarter.com/assets/048/648/102/e2a5322896a97344c2660b6d3d2dd447_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742866261&amp;width=680&amp;sig=gpBMdJvz2tifw59uZqv9MkmBJQwUTi0vtp300zH%2BOoQ%3D"/></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49124549">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/124/549/405be984386e9d773ca8e3a16053a7b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746154308&amp;width=680&amp;sig=g1airrRzNgRUh1M0WQdiYiNODGWPeI3jc9Auj9G1AU0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49100233">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/100/233/abada46298397bfb5b44f9fad9e617e0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746005043&amp;width=680&amp;sig=ElnfOTD7%2F8WIbt6lBmhvPUhBe%2BlzSLTSdleQk3izqyE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49100241">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/100/241/983d06f066c9fdd9847c800850340740_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746005083&amp;width=680&amp;sig=b%2F70%2Brbvn4TLQAtZDm0rq6OUxHmgjDMo076%2F09P%2Bdms%3D" src="https://i.kickstarter.com/assets/049/100/241/983d06f066c9fdd9847c800850340740_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746005083&amp;width=680&amp;sig=b%2F70%2Brbvn4TLQAtZDm0rq6OUxHmgjDMo076%2F09P%2Bdms%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48494089">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Product-Details">Product Details</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/494/089/10bf563638a1b0e8dac6504e70921e4c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741773301&amp;width=680&amp;sig=dM2cD561G%2BGFqOfWfE354RjOPQwhfJPHRpGSpMlsDmc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49603005">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/603/005/b4688416dfb50a936f4cf79af0038279_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749463284&amp;width=680&amp;sig=S1EiR0R%2FLs5RJ6B4rzOROMSi8Wsi5AX%2F4ybhQVasVAQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48492530">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/492/530/a1769a6e9184864a2c21dfa9707c4fac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741763353&amp;width=680&amp;sig=oyDA3nGoNxTcLwotVR%2BvxL%2BLXu27iLEgdIx%2Fhv0mLwU%3D"/>
+</figure>
+</div>
+<p>*Backers will be able to select their reward color (White/Black) after the campaign ends. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48782233">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-In-The-Box">What's In The Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/782/233/1c434d7b0b8ba0e8b5ea9bfe466d4613_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743756880&amp;width=680&amp;sig=Jqv6s4ZKHK34M4rpJEs2Z6D6BBWDK0DbQwqA9Ezs8Ls%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49603008">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/603/008/067979b4637a0de8570e294c2529139a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749463298&amp;width=680&amp;sig=iiX%2FUgvkBjTDXcZ%2FekD%2FsmlKFEgRv60swQzvnOzHXQE%3D"/>
+</figure>
+</div>
+<p>*For backers purchasing addons, please note that up to 2 Four-Leaf Clover Green addons may be purchased with one backing.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48479480">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/479/480/405be984386e9d773ca8e3a16053a7b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741686992&amp;width=680&amp;sig=0TcwLc2KPFu9AJchdYqxFQ8phdAWGR8DaBVCjA9iZgE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49345455">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/345/455/6d03cde8cfac05e55ae83109c77a1861_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747719291&amp;width=680&amp;sig=UYSNfCymgCqbsJqO4%2F0JIGZRpY0KX5ogwJqCwkkLepw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48479320">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/479/320/384f0f1377f2f1b13abf0ced44516bed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741686456&amp;width=680&amp;sig=XYgCoZT41uYsiq22D2ZaX7GA4U1Oy2nbkvtspdhsPAk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478814">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Journey">Our Journey</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/478/814/891925059a5bcd06c25c36c1268e7ef0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741683875&amp;width=680&amp;sig=NjJgYFU70R1IWQG2VS4wwducsNm1wrBeg2qoiOQpm0c%3D"/>
+</figure>
+</div>
+<p>On backpacking trips and other journeys abroad, our team has had to deal with the dangers of potential thefts, break-ins, and risks of all kinds. As any traveler will know, while travelling abroad, you worry not just for your belongings, but for your own personal safety as well. And should the worst possible circumstances come to pass, not only is it hard to access the local systems, but we usually can’t even use the local language to ask for help.</p><p>Isn’t it about time today’s technology got around to fixing these problems?</p><p>This vision for safer travel was our inspiration for The Guide. We started working on our first prototype way back in 2021, and after multiple rounds of testing and feedback, we’ve created no small share of mock-ups, molds and app iterations, all so we can bring our product to perfection.</p><p>Now, we’re excited to bring the best possible version of The Guide to Kickstarter.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49124598">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/124/598/a4d22299cab8a58711d97ef4e0da1ce2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746154664&amp;width=680&amp;sig=kx%2F6xKcteNvzPc5RYoCqVdD4qhSlGYhnjm7M4udv5rA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49345459">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/345/459/384f0f1377f2f1b13abf0ced44516bed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747719318&amp;width=680&amp;sig=p6ZytMsBlKCOT8jkICTGoeCu3LwNUGV%2Fp0c1mda%2FHSE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478831">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Who-We-Are">Who We Are</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/478/831/50f31b84f3c6abb4c3236fd56f5636e6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741683955&amp;width=680&amp;sig=wxOSMukyCswDAqqf98HuydYQhOAhnC%2FqHCbFPSSfTFc%3D"/>
+</figure>
+</div>
+<p>The Guide is a team of professionals who have experience either volunteering in developing countries or have partaken in solo backpacking trips in countries around the world. And we all know how important is to have reliable safety services during all of life’s adventures.</p><p>We are currently developing a proprietary GEO AI service to help people travel more safely around the world. Our team of experts in safety, AI, and sociology, are hard at work planning and developing products and services to help travelers everywhere.</p><p>The Guide is here for you all the time! For better, safer travel. After all of our revisions and testing, we’re excited to see how the Kickstarter community receives our product. We hope that you will lend us your support to help us achieve our funding goal.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49007395">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/007/395/232dfcdcda4511838a9349298ac92159_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745392662&amp;width=680&amp;sig=DoQ5%2ByaOU7Q%2By0zn9LWvKOoQIS4JduGMxivg9xvSAN4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48479308">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/479/308/384f0f1377f2f1b13abf0ced44516bed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741686425&amp;width=680&amp;sig=1ZffKoxKliqcL2R1CGPomTOx6%2FD7f2ca8sFcgz3Lwiw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478863">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Kickstarter">Why Kickstarter</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/478/863/4ea1db977d16c11f0d29d110f3fa534d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741684179&amp;width=680&amp;sig=hGsiF2KAUwOIJe22XnVuJvT%2FoktnEoFWoUrEUkdvCxE%3D"/>
+</figure>
+</div>
+<p>We’re bringing The Guide to Kickstarter because of the amazing backer community and its passion for not only travel products, but also for new, innovative ideas.</p><p>If you’re always heading off on a new adventure and want to keep a record of where you go, you’ll be able to not only use The Guide for safety purposes, but also to keep a log of where you go and better meet people on your journey.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49343484">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/343/484/384f0f1377f2f1b13abf0ced44516bed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747704314&amp;width=680&amp;sig=gMAzCJ7xTWaOm2hUr1Kt%2Fhpp2ISIORiKLbUAk1ekKqo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49343481">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping">Shipping</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/343/481/8ac1ebc08541ae5b44bc573c804069b0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747704302&amp;width=680&amp;sig=pgkBgD5tgTneCQ%2FGMdnifzG2%2FFz7pXJxSiBmJyaElHg%3D"/>
+</figure>
+</div>
+<p>Shipping will incur a flat rate of <span class="bold">9 USD</span> worldwide.</p><p>The shipping fee will be charged via a separate shipping survey at the end of the compaign.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49345486">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/345/486/df890bab959dbdfcd1ad4718b6157b48_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747719542&amp;width=680&amp;sig=wAl8tBI8isMiPAyIU%2F1Hk6kVgWT7Lax04h4dQEYZVtc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49345463">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/345/463/384f0f1377f2f1b13abf0ced44516bed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747719336&amp;width=680&amp;sig=gwgRwwduGWfwLeRDMSD045jWs9QmeW1q9GzyWqTA8mk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478874">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Warranty">Warranty</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/478/874/bd5b35c3135559bf31eb73a1da11eacd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741684225&amp;width=680&amp;sig=4g1j%2BD1bf%2FuNnmA8I%2FFelCJTv4MpwSUpTN5Mj2OM4Bg%3D"/>
+</figure>
+</div>
+<p>In the event of a product defect on shipment, product exchange is provided. In the event of product malfunction due to a product defect, free repair services are provided for the duration of 1 year.However, returns and exchanges from user misunderstanding of the product will incur a separate shipping fee for the requested service.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48479312">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/479/312/384f0f1377f2f1b13abf0ced44516bed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741686436&amp;width=680&amp;sig=ju%2FMPddIep4tRZoJXwjVEk%2Fh%2FUdRvN7wFizK3dTF9VQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48478876">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Custom-Duties-Taxes">Custom Duties &amp; Taxes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/478/876/2ab6a2e5e9cabb4c6e8c06460b8fdf15_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741684236&amp;width=680&amp;sig=wNnBAchIaSWcVLYXYxo9R%2FtWpLDNgHOpb6PYHThzbXE%3D"/>
+</figure>
+</div>
+<p>Due to the global nature of Kickstarter, duties and taxes will vary based on your location. Please note that in the event of additional taxes, duties or fees on product import, neither Kickstarter nor The Guide will be held liable for these expenses.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48479313">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/479/313/384f0f1377f2f1b13abf0ced44516bed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1741686440&amp;width=680&amp;sig=jWZCOpZ%2BXzHj5SABPmZj5wqKFgbLQv2wpAB57nMrb1I%3D"/>
+</figure>
+</div>
+<span></span><p><span>This campaign is powered by FUNDINGINSIDER. Providing an All-Inclusive One Stop Crowdfunding service for developers to freely express their ideas. All the way from newsletter, unboxing product review, fast and safe backer survey! Beyond expectations.</span></p><span></span><p><span>This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them.</span></p><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">After a rigorous development cycle and comprehensive user testing, we are proud to say that all design, planning, and inspection are complete. We are now ready to take the next steps to manufacture our product, Once our campaign reaches its successful conclusion, we will start manufacturing immediately. In the event of any unexpected issues, we promise to provide clear and open communication with our backers. 
+We’ve also secured a shipping partner for speedy and accurate delivery to ensure the smoothest possible fulfillment process. 
+You can count on us to get your rewards to you safely and quickly! And in the event of any changes, we promise to notify you as quickly as possible.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

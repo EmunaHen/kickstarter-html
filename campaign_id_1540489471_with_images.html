@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FOSSiBOT F107 Pro, Rugged phone with Starlight Night Vision</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/211/900/448d63f1ed4bb0f8a7afd7ed9bf79547_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1746776722&width=560&sig=VwrSuNDEHIw6udvWo1zPlIWGTu9YxzbJ1S0WDPFWkm0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>FOSSiBOT F107 Pro, Rugged phone with Starlight Night Vision</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Exclusive Full-Color Vision | 200MP +50MP+ 32MP Camera | 28000 mAh Battery | 50m Beam Distance | 16G + 512 GB | 5G Global Connectivity</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,992</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49299901">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/299/901/45975976c1aaf2ced33d8594a5c33773_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747382789&amp;width=680&amp;sig=93R3YLD3H09M3HvxBPXWEDOI%2FkF5wN6EI0AxtU5yOXg%3D" src="https://i.kickstarter.com/assets/049/299/901/45975976c1aaf2ced33d8594a5c33773_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747382789&amp;width=680&amp;sig=93R3YLD3H09M3HvxBPXWEDOI%2FkF5wN6EI0AxtU5yOXg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49480618">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/480/618/75ec9091642f408fe46c322b3d524b06_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748589680&amp;width=680&amp;sig=DO%2Fqi5eMi21NbjxLlaHfbsXYb9C6ax8Gzlr6AV9ARow%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213004">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:World-1st-Rugged-Phone-with-Starlight-Night-Vision">World 1st Rugged Phone with _Starlight Night Vision</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/004/d48381c169b04779c596b25745164116_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746783967&amp;width=680&amp;sig=xFSxMwgkIG6fgODmKpQDG28k1ssjbxTc5PcDiUXVFoQ%3D"/>
+</figure>
+</div>
+<p>Introducing <span class="bold">Starlight Night Vision</span> — exclusive technology that transforms how you capture moments in the dark. By harnessing minimal ambient light, FOSSiBOT F107 Pro delivers clear, full-color photos and videos even <span class="bold">in total darkness</span>. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49253770">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/253/770/384b67a6dfc2ca870d1becbbe3590f93_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747105223&amp;width=680&amp;sig=OzALjseOdjIeHHo2bNR7jPz8K3zmeb5VxrInjj9qSIs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49300014">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/300/014/c4383e8577facaedc9a9dab19b4f61ee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747383271&amp;width=680&amp;sig=I7kYG6G6lwRkeSqmupf5bVGJSlgfSQzBLvFjtCR7Mic%3D"/>
+</figure>
+</div>
+<p>Unlike traditional infrared night vision, which only produces black-and-white images using infrared light, SNV uses minimal ambient light(like moonlight or starlight) to create vibrant, color-rich visuals. This advanced technology detects both visible and infrared light, offering clearer, more detailed shots than standard night vision systems.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210360">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/210/360/dd57431655ccc8f33cbcffc6db5a6140_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746762612&amp;width=680&amp;sig=TheR4UVKqklCUwmLpnJJ3gD6AEET%2B2An%2FU3a6p3yJSw%3D"/>
+</figure>
+</div>
+<p>While infrared requires a separate light source (like IR LEDs) and thermal imaging focuses on heat signatures (without color), Starlight uses what’s already available in the environment to give you natural, high-quality images, even in low-light conditions. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49297860">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Capture-the-Wild-in-Stunning-Detail">Capture the Wild in Stunning Detail</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/297/860/487b72661df7d7ba86d929321bdd213f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747366564&amp;width=680&amp;sig=%2FmrfhUPy7rRfwU5%2FAnJM0xwvKJwziLPf7ER6Clo7yAU%3D"/>
+</figure>
+</div>
+<p>The FOSSiBOT F107 is built for serious outdoor photography, featuring a powerful <span class="bold">200MP main camera</span> that captures every detail with stunning clarity—even in rugged, natural settings. Whether you're shooting wide mountain views, close-up textures in nature, or vibrant sunsets, the <span class="bold">50MP wide-angle lens</span> and <span class="bold">macro camera</span> give you the flexibility to frame your shot perfectly. And with a <span class="bold">32MP front camera</span>, your selfies and vlogs stay sharp and vivid, even on the go. From vast landscapes to tiny details, the F107 lets you capture your adventures exactly as you see them.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49211298">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/211/298/6579196c91154d470d1f1118d7813aae_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746771627&amp;width=680&amp;sig=1Zz%2F2MNgq%2FXxIpsm%2FSI3AErHV0cB8T5fNpF2dYsL6jM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213007">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Conquer-the-Wild-with-Electronic-Image-Stabilization-EIS-">Conquer the Wild with _Electronic Image Stabilization (EIS)</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/007/fa63f338fe92c5758e218468c1ae2638_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746783988&amp;width=680&amp;sig=TJpfYfaZFsjd1rBRG9CKZrvQXFuP%2FAnAcxklvHfM3CM%3D"/>
+</figure>
+</div>
+<p>With <span class="bold">Electronic Image Stabilization (EIS)</span>, the FOSSiBOT F107 Pro ensures your footage stays smooth and steady, no matter the adventure. Whether you're cycling down rough trails, hiking through rocky landscapes, or vlogging on the go, EIS eliminates shake for clear, professional-quality content. <span class="bold">Conquer the wild and record every moment without compromise.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238782">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/238/782/48cef09088df1f6090b053c334806966_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016567&amp;width=680&amp;sig=5IFL%2BfW%2F8ZPS87C52ydE%2BzvBC21YJnnJtPPSZCv2zI8%3D" src="https://i.kickstarter.com/assets/049/238/782/48cef09088df1f6090b053c334806966_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016567&amp;width=680&amp;sig=5IFL%2BfW%2F8ZPS87C52ydE%2BzvBC21YJnnJtPPSZCv2zI8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49182200">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/182/200/a3160f8317a8ab518bee163fc150ee8e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746581089&amp;width=680&amp;sig=83RvGwoG8DgMGogkYs0xKirKKH%2B4BB%2Fzva4Lcu%2BUpn4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213012">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Charge-Once-Relax-for-30-Days-Sounds-Like-A-Vacation">Charge Once, Relax for 30 Days: Sounds Like A Vacation</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/012/9019675b172eaa2fbea4b9f83661a92a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784005&amp;width=680&amp;sig=0v6VfPGj1MCz9sQXZScXoUVaVrg1cXoqC8dYwP6DvDc%3D"/>
+</figure>
+</div>
+<p>Equipped with a massive <span class="bold">28,000mAh battery</span>, the FOSSiBOT F107 Pro is built for extended adventures. With just one charge, it delivers up to <span class="bold">30 days of standby</span>, including <span class="bold">4,827 hours in flight mode, 2,800 hours on 5G standby, 215 hours of talk time</span>, and <span class="bold">133 hours of music playback</span>. Whether you're out camping, trekking through remote trails, or spending days off the grid, it keeps going strong — perfect for long outdoor missions where charging isn’t an option.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49296877">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/296/877/2ae68b80b7d08908f062a3e3e24de257_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747360088&amp;width=680&amp;sig=oehiLAs%2FiK0Dgvo7lsYOAPNy%2BfigcMzEZ%2BtlYD9%2BXiw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49182226">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/182/226/cc911b2563559983eb688ec240ad9f78_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746581227&amp;width=680&amp;sig=tSJmlfn4G68VoNgijCItg8ehBPMSID1D5egwnpY5Rt4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213015">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-Mobile-Power-Station">Your Mobile Power Station</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/015/9bc5153109127e0552a237f5f127c308_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784026&amp;width=680&amp;sig=WuX8jlEs4%2BTqcVXIuBNAzNO2eo3oWhAUaf4T0amYyRU%3D"/>
+</figure>
+</div>
+<p>The FOSSiBOT F107 Pro charges at lightning speed with <span class="bold">66W fast charging</span>, so you’re back in action in no time. And when your other gear runs low, it’s got your back — thanks to <span class="bold">10W reverse charging</span>, you can power up your devices straight from your phone. Whether you’re off the grid or deep in the outdoors, this rugged essential keeps everything running strong.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49182247">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/182/247/4ddcb38045d789ff653660def3ad7013_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746581307&amp;width=680&amp;sig=iAPk64VXsPJXNL8TCJCaNLWO88w6o6y5BgSlbeK%2F6CY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49200039">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/200/039/4c7ba9ed2a286c6e8be11bec7f0a041a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746695605&amp;width=680&amp;sig=HVnMyQ%2Fj%2FsvRxN9F4%2B%2Bh6lDizwf0cr2oELNctZl3XSc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213019">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Beast-Inside-Tough-Outside">Beast Inside, Tough Outside</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/019/e855adfb94d98b209f274abeccf51461_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784067&amp;width=680&amp;sig=BnPgzXG1tpd0XUaVOTAPf%2B57HNkja0ieig5jrIPTDsM%3D"/>
+</figure>
+</div>
+<p>Built to handle the toughest adventures, the <span class="bold">FOSSiBOT F107 Pro</span> meets military-grade <span class="bold">MIL-STD-810H</span>, <span class="bold">IP68</span>, and <span class="bold">IP69K</span> standards. Whether it’s dropped during a <span class="bold">hike down a rocky cliff</span>, splashed with <span class="bold">rain while camping</span>, or exposed to <span class="bold">mud and dirt during a mountain bike ride</span>, it stays intact and fully functional. Engineered for the harshest environments, it is designed to endure and perform through every challenge.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238740">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/238/740/224692f37263e4c8cf307df815c0188a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016318&amp;width=680&amp;sig=osCsJHgzNrbTzqnCKcyEMIW3enUk%2BRa2%2FpF1sVquSw0%3D" src="https://i.kickstarter.com/assets/049/238/740/224692f37263e4c8cf307df815c0188a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016318&amp;width=680&amp;sig=osCsJHgzNrbTzqnCKcyEMIW3enUk%2BRa2%2FpF1sVquSw0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238786">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/238/786/71b26fccc70711252aa57275990f6d01_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016587&amp;width=680&amp;sig=2iosV%2BhgND0S%2FseiGjwQz0O955m8Qf5YLpwch80mLns%3D" src="https://i.kickstarter.com/assets/049/238/786/71b26fccc70711252aa57275990f6d01_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016587&amp;width=680&amp;sig=2iosV%2BhgND0S%2FseiGjwQz0O955m8Qf5YLpwch80mLns%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238788">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/238/788/8802f848a3d18fb86eae4631d5a904bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016602&amp;width=680&amp;sig=rvcu3501Ul2FwOrexJVlZ3g76x5bzVayk%2BCPwB2zujA%3D" src="https://i.kickstarter.com/assets/049/238/788/8802f848a3d18fb86eae4631d5a904bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016602&amp;width=680&amp;sig=rvcu3501Ul2FwOrexJVlZ3g76x5bzVayk%2BCPwB2zujA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213026">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Unstoppable-Light">Unstoppable Light</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/026/71f65890c76f389862e655c61ccf6f2d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784091&amp;width=680&amp;sig=2csKjLoNwHZzzPEIBcaAe70zxUoHCwBYVpSahKc2gjI%3D"/>
+</figure>
+</div>
+<p>The FOSSiBOT F107 Pro comes equipped with a powerful flashlight that delivers a <span class="bold">50-meter beam distance</span>, perfect for outdoor adventures. Whether you're navigating a <span class="bold">campsite at night</span>, exploring a <span class="bold">dark hiking trail</span>, or needing extra light for an <span class="bold">emergency situation</span>, this flashlight provides bright, reliable illumination. With its long-range beam, you can light up the path ahead or signal for help, ensuring you're never left in the dark during your wildest expeditions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238793">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/238/793/d228303f2e81373254acc9b4f76b6d6b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016618&amp;width=680&amp;sig=JwlesmqXZIjyt0%2B77JXX3GPEDfD3liNFzsABw47hoL8%3D" src="https://i.kickstarter.com/assets/049/238/793/d228303f2e81373254acc9b4f76b6d6b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747016618&amp;width=680&amp;sig=JwlesmqXZIjyt0%2B77JXX3GPEDfD3liNFzsABw47hoL8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213032">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Seamless-Connectivity-Wherever-You-Go">Seamless Connectivity, Wherever You Go</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/032/12d324ab4c83b5eb43f259d82fcc590f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784111&amp;width=680&amp;sig=07hqmr6z%2Fohp%2FZZ6DcesFy%2BHPkEm9zp5TjPAty%2Bb4JY%3D"/>
+</figure>
+</div>
+<p>The FOSSiBOT F107 supports a global network, ensuring you're always connected no matter where your adventures take you. Whether you're trekking through remote mountains, camping in the wilderness, or exploring new cities, this rugged phone supports a wide range of network bands to keep you in touch. From <span class="bold">GSM</span>, <span class="bold">CDMA</span>, and <span class="bold">WCDMA</span> to <span class="bold">5G</span> connectivity, including multiple bands for both <span class="bold">TDD</span> and <span class="bold">FDD</span>, it ensures seamless communication, no matter your destination. Stay connected, whether you're off the grid or exploring urban jungles.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49186712">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/186/712/82f0fec6054a354dfb7aac30400ee43e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746612586&amp;width=680&amp;sig=sFmtjbVyHb8QVrUAoG1BhzljkNlRuBToGnL40FZkq5E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49253621">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/253/621/b169bcf8d447c410d4c0452aef8e9c83_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747104452&amp;width=680&amp;sig=KaUt2xtcYk2Z9tYr8njIcs6QJOYPzzzUzX62jwtkTQk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213045">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Smooth-Immersive-Built-for-Action">Smooth, Immersive, Built for Action</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/045/eafc14a9cc3e96023f6a0149facad762_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784155&amp;width=680&amp;sig=%2BUDh4et5A4YEjkcYj9cDuSzSd3VSTeRm7zDI5QBr%2FGk%3D"/>
+</figure>
+</div>
+<p>The FOSSiBOT F107 doesn’t compromise on performance. It features a smooth <span class="bold">120Hz refresh rate</span> and a large <span class="bold">6.95” FHD+ display</span>, delivering sharp visuals and a fluid user experience—even outdoors. The screen is protected by <span class="bold">Gorilla Glass 3</span>, adding durability against scratches and drops. With <span class="bold">12GB/16GB of RAM</span> and <span class="bold">512GB of internal storage</span>, you’ll have all the speed and space you need for multitasking, apps, photos, and videos. Powered by the <span class="bold">MediaTek Dimensity 7300 Ultra</span>, the F107 handles demanding tasks with ease, making it a powerful companion for both everyday use and extreme adventures.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49297117">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/297/117/8f97591a16a1e5d8362c311894e96b3b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747361733&amp;width=680&amp;sig=kQuoZhgUNz030qYNp5M%2B9ZSOXL0A%2BC%2Bm6zGnKa9TdSE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49297121">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/297/121/9bca3416207810b26e2b7133f01adf7d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747361767&amp;width=680&amp;sig=KZ1M8kHOMdQGfH9n6hpCH14V5hr74dDNlDchm6ysyWQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213047">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specification">Specification</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/047/f40aa67edcc23abb2fe8e969ed0cc1c4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784181&amp;width=680&amp;sig=qo8qXeZuHZ7%2BEEqKyfAbR3LI5oRtmKkGCn8%2Fbjr8xPM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287250">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/287/250/5dd383fcd11ba81266698f769bd44ad4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747302248&amp;width=680&amp;sig=ElsTiNv1T%2BMxq6AMZQQMLhEqtTP5D%2BUCLkMmFJ2YI80%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49480651">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/480/651/17a63c9653131861308d0af7914e7331_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748589791&amp;width=680&amp;sig=5ivgQ4ze01tzlZGheyzyS3URcALaAKDOEceDjAs1paI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213052">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box">What’s in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/052/4264daf1a32ca9a689ffa496f60b4e7d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784198&amp;width=680&amp;sig=5hQXE1hta78HVW3PXYJE2VDZxRhGS5FaasB8%2F5QSLVc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49329840">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/329/840/4fc1ad6b1234e76963e219917cf680a5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747634326&amp;width=680&amp;sig=KLv1g7GT5AFn%2BnL6irCG1MkbBCbqTtcUH%2F%2BR089YYds%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49366321">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-to-Back-Us">How to Back Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/366/321/a54a966df4528fa22d2c54d0c1540731_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747833631&amp;width=680&amp;sig=osbZybGQZLZwW0gnIrdnlkqv%2Fxa4bls2GL9UyI6k0Vs%3D"/>
+</figure>
+</div>
+<p><span class="bold">Be the first</span> to experience the world’s first rugged phone with true <span class="bold">Starlight Night Vision</span>—an industry-first feature that lets you capture crystal-clear photos and videos even in complete darkness. Built for those who go beyond the ordinary, this phone also packs <span class="bold">a massive battery</span> for days of power, <span class="bold">military-grade toughness</span> to survive any environment, and <span class="bold">global connectivity</span> so you’re never out of reach. By backing us on Kickstarter, you’re not only getting early access to groundbreaking tech—you’re helping us bring this vision to life.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49366344">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/366/344/56c63255b8472e335ea7e4f383cd3fb9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747833702&amp;width=680&amp;sig=FYeJwsYgHYBdB1B8NRfzCdo110Gv%2F5sISwzuRhuaoXA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213058">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/058/66f35242f9e99246dc2c0f605055e195_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784231&amp;width=680&amp;sig=v9nn%2BmMP%2FtgphPi7sg39EflBmgsWfrREwpMVe33qI9k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49330129">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/330/129/be0df7c9e35591dc8c32ba1e3f134b02_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747636708&amp;width=680&amp;sig=290GmNltMnKPD2hgzXpz1G43YRlFutTY%2F6IVT%2BetuR4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346581">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/346/581/1f41a65f7ce5e169f54966ba52915946_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747727025&amp;width=680&amp;sig=o%2FlNIpvJ3qXoVcgKjEenLiIDttL09W9iNUfOt8nVLoM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213061">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Airplane-Friendly-Shipping">Airplane-Friendly &amp; Shipping</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/061/7951be9feaea2d7dbc9616f4cdaa222d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784251&amp;width=680&amp;sig=A37LPOkIrhmFqn8HcB25tl6j6fWeijOvjyK8UEquXNA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49273082">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/273/082/d2573192b1de0014a084088153b3e393_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747216310&amp;width=680&amp;sig=1KyBK8IwmjVsWMkA4gQlNvuVxF7kUnJsHaVWzv%2F3ON0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213068">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/068/8a7ab8ba20245335473fca4089b0349b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784268&amp;width=680&amp;sig=d9PNOCgCiJFJnxP6wW9a0ZScPX6%2B28ZtNuuILrhQoak%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49362835">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/362/835/2767edbc0d3f11c7e783b2a82d3aef06_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747812815&amp;width=680&amp;sig=AavjDpDUffWKQ5fPCnAXsWXhk%2FVjmPBANhNjT6eACkw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49212998">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:FOSSiBOT-at-MWC-2025-Barcelona">FOSSiBOT at MWC 2025,Barcelona</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/212/998/3a87523bbd7e848bf5cbbcf5d1a369a2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746783939&amp;width=680&amp;sig=c9%2FHsBZ%2Fm3MubAOtpSjVIwSWyW%2FF9MJbs1mHZr7yvdo%3D"/>
+</figure>
+</div>
+<p>From March 3rd to 6th, 2025, FOSSiBOT attended MWC 2025 at the Barcelona Convention Center, showcasing a range of innovative products. The highlight was the F107 Pro, the world’s first rugged smartphone featuring a starlight full-color night vision camera, offering stunning photos and videos in near total darkness. Visitors at the FOSSiBOT booth experienced the unique capabilities of this groundbreaking technology.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49210943">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/210/943/b0b486aec0ac16b7e8103f9740f6adb0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746768893&amp;width=680&amp;sig=SvVaQv6wNKjzqKGFzJ%2FXn0rMLrrqnvO19%2Fo5eRKzQ5g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213070">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-FOSSiBOT">About FOSSiBOT</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/070/239426fa48547deeae40bb2c344cd264_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784280&amp;width=680&amp;sig=gAzuVIotjTs8e0KusTam74k31hJ5u92O6og0cKHXCJs%3D"/>
+</figure>
+</div>
+<p>Established in July 2022, FOSSiBOT is a dynamic brand founded by a team with over 10 years of experience in research and development in the smartphone and energy storage industries. With consistent annual growth of at least 20% in sales, FOSSiBOT's products are now available in over 80 countries and regions, including Russia, Spain, Germany, France, South Africa, and more. A global network of over 100 authorized agents supports the brand, with products available on major e-commerce platforms like Amazon, eBay, AliExpress, and Cdiscount, as well as through the official FOSSiBOT website.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49184287">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/184/287/5d6bddabb95f41a4d21b5d0e090075b6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746599108&amp;width=680&amp;sig=CeValwrBll6FU6c00OVMRqrjjO4xKUWVt1IkMtc%2FGHU%3D"/>
+</figure>
+</div>
+<p>Originally focused on rugged outdoor phones designed for tough, demanding environments, FOSSiBOT has rapidly evolved into a leading technology brand. The company operates an 8,500-square-meter factory in China, ensuring high-quality standards at every stage, from design to production. Rigorous testing is conducted on all FOSSiBOT products to guarantee an exceptional user experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49298910">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/298/910/daf6c7964d16c6925ef15eea7d3b5cf8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747376284&amp;width=680&amp;sig=3%2FERGDDKVTC6t1kihNFEFVOHivIkuAlbldQcMhFpKsg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213075">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Follow-FOSSiBOT">Follow FOSSiBOT</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/075/cdb42573d1153449193250231946fc6f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746784300&amp;width=680&amp;sig=f2Z1J%2Bt9e%2FagfmNpf4kDvPvEw8dP05EKmB7oTqJXr6g%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Like all crowdfunding projects, there are inherent risks to consider. However, with FOSSiBOT's established supply chain and strong manufacturing capabilities, we are confident in our ability to address and minimize any unforeseen challenges during production.
+
+As a reputable brand with years of experience, FOSSiBOT collaborates closely with trusted suppliers and manufacturers to ensure a smooth and efficient production process. Our technology-driven approach allows us to constantly refine our processes, ensuring timely delivery.
+
+While any new product may come with unexpected developments, that's part of the excitement of crowdfunding—you're invited to join us on this journey, gaining exclusive insights into the progress. We will provide regular updates as we move through the final stages of development and production, and we’re thrilled to have you along for the ride. Thank you for your support and understanding!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

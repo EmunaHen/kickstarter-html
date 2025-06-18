@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xebec Tri-Screen 3: Instantly Add Two Monitors To Any Laptop</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/327/868/c2feaff90dc74105f5e8e0799ee18ff8_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747618882&width=560&sig=OBY4qknbz8yPazxgOya0phlwY9%2BbJadyys0UBbyjo3c%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Xebec Tri-Screen 3: Instantly Add Two Monitors To Any Laptop</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Two 13.3" Full-HD Screens | Single Cable Connection | Aluminum & TPE Materials | Mac, PC, Chromebook Compatible | Included Padded Case</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>29 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49296481">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/296/481/aff06dbaba7fc31d05243abece2f3019_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747357118&amp;width=680&amp;sig=OH6pEHJRx6Yh7sMSunso0eZWY7Yve1Zv0SywPrWEv88%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49296468">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/296/468/af958e98e711cc72f83eac3a88cfc726_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747357004&amp;width=680&amp;sig=EAY9UaPF1Z3wsJAnGjvKGUmdgfyVb8Q%2BGbqV3GXphMw%3D" src="https://i.kickstarter.com/assets/049/296/468/af958e98e711cc72f83eac3a88cfc726_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747357004&amp;width=680&amp;sig=EAY9UaPF1Z3wsJAnGjvKGUmdgfyVb8Q%2BGbqV3GXphMw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49296494">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/296/494/46aac97ab214134df3d5b1eaed9308fe_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747357262&amp;width=680&amp;sig=oe2xI9PlW1Txxb5UpcvDacOYKu8m0ekaBXQ3LaG5c54%3D"/>
+</figure>
+</div>
+<p>The Tri-Screen 3 is the ultimate portable workstation that lets you add two more screens to your laptop with just <span class="bold">one cable</span>! Designed by us here at Xebec, the <span class="bold">creators of the original Tri-Screen. </span></p><div><div><div><p>Reimagine the way you work on the go, with the Tri-Screen 3.</p></div></div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49461325">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/461/325/f81989f346d5b2b78a49c7b59dfc4d81_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748468015&amp;width=680&amp;sig=8etTv86%2BShS%2BR%2FzP%2FfaVbmFlNVbao9npZhuzcJ2f%2FXQ%3D"/>
+</figure>
+</div>
+<div><div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49353599">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Setup">Setup</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/353/599/0a1f9825c40f492de83f5207ae9de186_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747760303&amp;width=680&amp;sig=F2Qc%2FV%2Frl3bX0zciNXSpvGyXnYQHXJr1ggHKrKZnIeQ%3D"/>
+</figure>
+</div>
+<p>In <span class="bold">just 10 seconds</span> you have triple the screen space. Our fastest setup yet!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49353556">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/353/556/601474cf659ffc64b617862699bff9ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747760129&amp;width=680&amp;sig=zRiXLfCS0HmprlJpEvec%2BJ3%2BzhKvj7fbVjHAOECkIYs%3D" src="https://i.kickstarter.com/assets/049/353/556/601474cf659ffc64b617862699bff9ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747760129&amp;width=680&amp;sig=zRiXLfCS0HmprlJpEvec%2BJ3%2BzhKvj7fbVjHAOECkIYs%3D"/>
+</figure>
+</div>
+<p>Simply expand the Tri-Screen 3 frame to mount it on the back of your laptop screen using our tried-and-true, patented tensioning design. No magnets or adhesives. Deploy the new and <span class="bold">improved aluminum kickstand</span> for ultimate support. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49353541">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/353/541/67d49f416c309a8a026048b106482e06_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747760066&amp;width=680&amp;sig=vONkrT4wsZsU3F3gCoiwhD89zpjHI%2FoAA8WDjEF386E%3D" src="https://i.kickstarter.com/assets/049/353/541/67d49f416c309a8a026048b106482e06_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747760066&amp;width=680&amp;sig=vONkrT4wsZsU3F3gCoiwhD89zpjHI%2FoAA8WDjEF386E%3D"/>
+</figure>
+</div>
+<div><div><div>
+<p>Connect with a single, embedded USB-C cable. <span class="bold">One cable for two extra screens, that’s it</span>. <span class="text-italic">Mac laptops require the single cable Xebec Tri-Screen 3 Mac Adapter, more details below.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49461138">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/461/138/ad422aaf7995e2f4576416de929ee99d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748466936&amp;width=680&amp;sig=68ZCg%2BSp5U%2FI5Jgd2IZqEeDKKXztAJaiOxOHxwElFQQ%3D" src="https://i.kickstarter.com/assets/049/461/138/ad422aaf7995e2f4576416de929ee99d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748466936&amp;width=680&amp;sig=68ZCg%2BSp5U%2FI5Jgd2IZqEeDKKXztAJaiOxOHxwElFQQ%3D"/>
+</figure>
+</div>
+<div><div><div><div><div><div>
+<p>Open your screens and enjoy seamless screen expansion and over 40% boost in productivity.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49327909">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/327/909/124de95589179225f01de5570e8d9590_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747619283&amp;width=680&amp;sig=VMBxnOfZGPoBjNrFfYJHmJXoFp4VkuOTqXfulDSQTAs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49327908">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/327/908/9440781a5a3326e4a27d5c7ac67d4d3a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747619276&amp;width=680&amp;sig=muTXz6Bi5856FJt0WZVHsH%2BqlXtbeyHxqV9bv6kRhuk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49459365">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Single-Cable-Connection">Single Cable Connection</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/459/365/512219d69c27c8631fba47960d96f116_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748459141&amp;width=680&amp;sig=%2Fh%2FziXGTxgWTc1VdMTHONA8jVgXFrCxyIsg%2FWKoG84U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49461141">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/461/141/b7e403c7113964a3c005ec5c0011e76d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748466980&amp;width=680&amp;sig=0JSAFNj0D1bUm%2BMGaCnzp5iE43cckNLukvvtePF9SIM%3D" src="https://i.kickstarter.com/assets/049/461/141/b7e403c7113964a3c005ec5c0011e76d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748466980&amp;width=680&amp;sig=0JSAFNj0D1bUm%2BMGaCnzp5iE43cckNLukvvtePF9SIM%3D"/>
+</figure>
+</div>
+<div><div><div>
+<div><div><div>
+<div><p>Introducing the <span class="bold">world’s first</span> plug-and-play Tri-Screen with a <span class="bold">single embedded USB-C</span> <span class="bold">cable</span>. Just connect one cable to your laptop and go. No setup headaches, no more digging for the right cables, no separate power cable required! </p></div>
+<div><p>This isn’t just fewer cables, it’s fewer compromises. Instantly add two extra screens to your laptop with <span class="bold">one seamless connection</span>. Whether you're working remotely, presenting on the go, or powering through tasks at your favorite café, this single cable does the heavy lifting so you can <span class="bold">stay focused, efficient, and untangled</span>.</p></div>
+<p><span class="text-italic"><span class="bold">Mac users, quick heads-up</span>: due to macOS limitations, the Tri-Screen 3 Mac Adapter add-on is required to enable Tri-Screen support, along with a one-time DisplayLink® driver installation (more details below). It’s fast, safe, and only takes a minute for the one-time setup and allows you to <span class="bold">still take advantage of the single cable solution</span>. After that you’re fully set, just plug in and go, every time.</span></p>
+</div></div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328026">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:13-3-Full-HD-Displays">13.3" Full-HD Displays</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/026/f0e6ef6fae03a21dc3dd7cfeb5254fce_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620465&amp;width=680&amp;sig=H3F8glHHedN8NImWc64cylHN%2FLLg%2BYvpsDULelx%2FJYk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49353783">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/353/783/d1751029f2cd4094e88f869aa4fb768f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747761005&amp;width=680&amp;sig=B7KXLrGr86Kevd4oVgpbcyTo0SCK6TkyvgnXBISYm0Y%3D" src="https://i.kickstarter.com/assets/049/353/783/d1751029f2cd4094e88f869aa4fb768f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747761005&amp;width=680&amp;sig=B7KXLrGr86Kevd4oVgpbcyTo0SCK6TkyvgnXBISYm0Y%3D"/>
+</figure>
+</div>
+<div><div>
+<div><p>Level up your workflow with two additional <span class="bold">13.3” Full HD screens</span>. With vivid 1080p resolution, you get crisp text, lifelike colors, and sharp visuals that make multitasking effortless.</p></div>
+<div><p>Whether you're comparing spreadsheets, editing media, coding, or managing multiple apps at once, you can fit it all in the same view. And with more screen real estate, you can <span class="bold">boost your productivity by over 40%. </span>No more alt-tabbing, window shuffling, or squinting. Just smooth, focused efficiency from edge to edge.</p></div>
+</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49461280">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Included-Padded-Case">Included Padded Case</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/461/280/ea446d3eca95ac721c6a8c916c0602b1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748467740&amp;width=680&amp;sig=ZjfBXUP%2Bxn3%2Fl51PpoxGzgmCQZ95zv966OxYG9TnJsA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Xebec Padded Case included with all Tri-Screen 3 &amp; Dual-Screen 3 orders" data-id="49353806">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/353/806/c4c7be4073f5377d0086c408e325ecc9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747761084&amp;width=680&amp;sig=1t8%2BY%2FlbgePoZ4iwARRA4hfgJ47KlYzyEg60u%2FmH%2FZE%3D" src="https://i.kickstarter.com/assets/049/353/806/c4c7be4073f5377d0086c408e325ecc9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747761084&amp;width=680&amp;sig=1t8%2BY%2FlbgePoZ4iwARRA4hfgJ47KlYzyEg60u%2FmH%2FZE%3D"/>
+<figcaption class="px2">Xebec Padded Case included with all Tri-Screen 3 &amp; Dual-Screen 3 orders</figcaption>
+</figure>
+</div>
+<div><div>
+<div><p>The Tri-Screen 3 is designed for the modern, mobile professional. Lightweight, ultra-slim, and <span class="bold">protected by the included EVA-padded travel case</span>, it slides easily into your backpack or laptop bag.</p></div>
+<div><p>Whether you're jumping between coworking spaces, hopping on a plane, or setting up at the kitchen table, your full multi-screen setup goes with you. It's durable enough for travel, compact enough for tight spaces, and always ready when you are. <span class="bold">Freedom to work where you want</span>, without sacrificing screen space or productivity.</p></div>
+</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49385880">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Compatibility-">Compatibility </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/385/880/787560657af6216d4199c63c6fa29325_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747939924&amp;width=680&amp;sig=J2Fokac4Lk6PPYQQIG6uZZBI%2FhzktfXBnKX31OafmcA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49445514">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/445/514/d43d264744c0d14a5d03a8939812341f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748382242&amp;width=680&amp;sig=q39IBl1Nvr5RLC%2BZMl3BSpWior6ui4qxJoJrGJZG26g%3D" src="https://i.kickstarter.com/assets/049/445/514/d43d264744c0d14a5d03a8939812341f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748382242&amp;width=680&amp;sig=q39IBl1Nvr5RLC%2BZMl3BSpWior6ui4qxJoJrGJZG26g%3D"/>
+</figure>
+</div>
+<p>The Tri-Screen 3 is compatible with Windows, Mac, Chromebook, and Linux laptops that contain at least one USB-C port with DP Alt mode or Thunderbolt. </p>
+<p>Xebec's <span class="bold">patented mount</span> expands to clasp to the back of any 13”-18” laptop screen <span class="bold">without magnets or adhesive</span> so you can enjoy worry-free use, even on company laptops</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49385521">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Tri-Screen-3-Mac-Adapter">Tri-Screen 3 Mac Adapter</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/385/521/02b4db10bda95e92f35b6e7df31ec415_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747937926&amp;width=680&amp;sig=p0UuHwke%2F4BcG2AqrHMWUmUysFmEFd1E0rtFzQ0iCeo%3D"/>
+</figure>
+</div>
+<div><div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49445428">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/445/428/826d39dcf5947b3883beef35bfcd382a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748381858&amp;width=680&amp;sig=vxLEb%2Bav6shCYjfGQfOrjSAg979Nry9F2sq1eJ0htcg%3D" src="https://i.kickstarter.com/assets/049/445/428/826d39dcf5947b3883beef35bfcd382a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748381858&amp;width=680&amp;sig=vxLEb%2Bav6shCYjfGQfOrjSAg979Nry9F2sq1eJ0htcg%3D"/>
+</figure>
+</div>
+<p>The Xebec Tri-Screen 3 Mac Adapter is <span class="bold">required for all Mac users</span>. It connects directly to the frame and screws in so it becomes part of the unit overall, no need to remove and attach each time. The single cable solution still applies, even utilizing the same embedded cable management system to keep it all in place.</p>
+<p>It's NOT a dongle... it's a <span class="bold">one time connection</span> so you can truly set it and forget it.</p>
+<p><span class="text-italic">Installation of the free DisplayLink® driver is required.</span></p>
+<p><span class="text-italic"><span class="bold">NERDY ADAPTER DETAILS BELOW...</span></span></p>
+<p>The Adapter is required because Apple does not support MST, which is the technology that allows for a single cable to drive both additional screens. Our custom built adapter makes this possible due to the DisplayLink chips embedded into it's PCB.</p>
+</div></div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328039">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Embedded-Cable-Mgmt">Embedded Cable Mgmt</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/039/7fd43f9c4fe4457ff19b9ddf9c2d7de5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620541&amp;width=680&amp;sig=BIrJ%2FT1uuufFRVa1Hcbytie2xj6%2BswftFoC1q6ZLcik%3D"/>
+</figure>
+</div>
+<div><div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49443991">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/443/991/c7cc004aed6d5afe384eba61b19d6768_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748374615&amp;width=680&amp;sig=wzfqQEdr1rQ9Wy273OxyEPWqf6DMi7Ioeiv%2FeN81PuI%3D" src="https://i.kickstarter.com/assets/049/443/991/c7cc004aed6d5afe384eba61b19d6768_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748374615&amp;width=680&amp;sig=wzfqQEdr1rQ9Wy273OxyEPWqf6DMi7Ioeiv%2FeN81PuI%3D"/>
+</figure>
+</div>
+<p>The Tri-Screen 3 features a fully embedded USB-C cable, integrated directly into the Tri-Screen’s frame. No more rummaging through your bag or realizing you left your cable at home because now, you can't. </p>
+</div>
+<div><p>It tucks neatly into a custom cable track for clean storage and quick deployment. When you’re ready to connect, just pull it out and plug in. When you’re done, it stows securely, no tangles, no clutter, no lost cables.</p></div>
+<div><p>It’s a small detail that makes a huge difference: effortless setup, <span class="bold">always-ready convenience</span>, and one less thing to worry about.</p></div>
+</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328047">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Presentation-Mode">Presentation Mode</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/047/305ad0cc0effc8f5fa6191cdbdf428f9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620571&amp;width=680&amp;sig=lgt7K0gVy2%2BtffitVRIVC0QWaOaFQQf7qfzYmOgPDfA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49353857">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/353/857/ef85ae2b8cb33e31e24b420c8ff7d115_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747761300&amp;width=680&amp;sig=NvjnkvMhOWkyc%2B3as7nDcN3t0aZyJieaWoX1cAUiRCQ%3D" src="https://i.kickstarter.com/assets/049/353/857/ef85ae2b8cb33e31e24b420c8ff7d115_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747761300&amp;width=680&amp;sig=NvjnkvMhOWkyc%2B3as7nDcN3t0aZyJieaWoX1cAUiRCQ%3D"/>
+</figure>
+</div>
+<div><div>
+<div><p>The Tri-Screen 3's <span class="bold">Presentation Mode</span> lets you rotate your display up to 270°, so you can easily swing a screen around to <span class="bold">face a colleague, client, or collaborator</span>. It takes just a second to flip a screen into view, no unplugging, no repositioning your laptop.</p></div>
+<div><p>It’s a smarter, smoother way to collaborate in meetings, at cafés, or on the go. Your screen becomes their screen, instantly.</p></div>
+</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328049">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Wide-Kickstand">Wide Kickstand</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/049/463e70770e622a956c3bcc7d855deeb3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620594&amp;width=680&amp;sig=BY1dmHEB7IbzjC7iMCMJd6haD06EYVZuA7DJ47GWicY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49353908">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/353/908/4289645c254572ed7358f34b13b6c6d9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747761474&amp;width=680&amp;sig=r476m31G%2BXjgD1Vh7Brs%2BExmHdYxDQH%2BRsP73l%2FnzGE%3D" src="https://i.kickstarter.com/assets/049/353/908/4289645c254572ed7358f34b13b6c6d9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747761474&amp;width=680&amp;sig=r476m31G%2BXjgD1Vh7Brs%2BExmHdYxDQH%2BRsP73l%2FnzGE%3D"/>
+</figure>
+</div>
+<div><div>
+<div><p>The Tri-Screen 3’s built-in aluminum kickstand has <span class="bold">10x the number of contact points</span> delivering unmatched stability and strength, giving your laptop a sturdy foundation wherever you work.</p></div>
+<div><p>Crafted from <span class="bold">durable aluminum</span>, it protects your laptop’s hinges from strain and wear while holding your screens steady on any surface, from your office desk to your <span class="bold">lap while sitting on the couch.</span></p></div>
+</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328052">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Pass-through-Charging">Pass-through Charging</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/052/c6cf03e8791c275c6491ec4d3d2c7d54_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620609&amp;width=680&amp;sig=0X00x%2FMjlbn%2Fewnencn%2FY3OGEYZpLQu5O92U6bFJNUA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49444046">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/444/046/60cad5403d69893cf4ac3329d324c04a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748374923&amp;width=680&amp;sig=JQcqhF21JonxYEgwPXzF%2FCTq%2BoRQjmz2u37dLESSOV0%3D"/>
+</figure>
+</div>
+<p>Pass-through charging allows you to <span class="bold">charge your laptop</span> even if your charging port is occupied by the Tri-Screen 3. Simply plug your laptop's supplied USB-C charger into the dedicated pass-through charging port on the back of the Tri-Screen 3 and allow up to 60W of power to pass through and keep your laptop powered up! </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328055">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Dual-Screen-3">Dual-Screen 3</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/055/ee5623711df97782def238faff7b2e2a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620625&amp;width=680&amp;sig=3M2WxtQO5wfF%2FT8YnOp4hckIzKSdp%2BhBKf6awM1mU6c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49353925">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/353/925/83d6196a54b36ab4259746865860fe18_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747761575&amp;width=680&amp;sig=vaLeOnxtdNd%2BTKxvEjxNejtQO%2BziDLtZa1ucQPYwvFU%3D" src="https://i.kickstarter.com/assets/049/353/925/83d6196a54b36ab4259746865860fe18_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747761575&amp;width=680&amp;sig=vaLeOnxtdNd%2BTKxvEjxNejtQO%2BziDLtZa1ucQPYwvFU%3D"/>
+</figure>
+</div>
+<div><div>
+<div><p>We're incredibly excited to introduce the ALL NEW Xebec Dual Screen 3. Your perfect companion if you want all the productivity perks of the Tri-Screen 3 but with <span class="bold">just one additional display (instead of two)</span>. Enjoy the same sleek design and all the features including a vivid 13.3” Full HD screen, built-in cable, stable aluminum kickstand, pass-through charging, included padded case and effortless portability.</p></div>
+<div><p>Mac users can plug and play natively on the Dual-Screen 3, <span class="bold">without needing our Tri-Screen 3 Mac Adapter or driver.</span> </p></div>
+</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328084">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/084/52a447051d2812311bb4036504219b00_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620793&amp;width=680&amp;sig=pYOY%2FLVXkeczRW1tkowSBEP%2Fe38f1EugNa5WIW%2BWcmM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328087">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Tech-Specs">Tech Specs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/087/e040d84082e31eb21608042f190b1b07_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620811&amp;width=680&amp;sig=42gyu7Mqcu5Lv8Bfs3jxqX%2By5rPjPYNQotQQdCCw9ic%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49519260">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/519/260/a0816070dd06eb72c5c3f7de45e8ce54_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748894572&amp;width=680&amp;sig=5uqbTF%2Bag5gz6xQnvPgWDv%2FYlhu5KCD%2BYtVMhRJeROQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49519247">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/519/247/fcbcc4f84d1b64ebdee3aecc34983801_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748894509&amp;width=680&amp;sig=kV2bGax9rMesVDxuNEsv7iqGZZuYMHADfebBWUTgTMQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328091">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/091/ac75559466d527cf727b3525dbcb5f36_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620843&amp;width=680&amp;sig=XsPIILJQDLolh96yi3jBx52Hs%2B5onNJ9FCW5tygDDMo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49544604">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/544/604/d6ba8ff5b9c15069101bdde873b257b8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749039318&amp;width=680&amp;sig=5uxwY5qj44Vqd9BBUIkrc0fwLUt5mOI%2FPMfBkjIGJRU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328092">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-Ons">Add-Ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/092/c2811fdae227a93d8c459c3a119d4c58_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620846&amp;width=680&amp;sig=QkUVFQpQZ2gSKGjt099T1SZZ82DmZ6hu4xEXnF5lMQQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49519198">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/519/198/d09ac23323e110344b819d3f88495b00_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748894244&amp;width=680&amp;sig=anV4SCGonCtI8HHdOoJ6GN4Mi4L8SfUiEZpDsJsimAY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328100">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Making-the-Tri-Screen-3">Making the Tri-Screen 3</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/100/fde3ff118e0726e652dc4f32ce90c1c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620872&amp;width=680&amp;sig=Ao7NQSxMuGPCr7qfGSLQy2oT6BQgmZ8e6noeQgJqEcA%3D"/>
+</figure>
+</div>
+<p>Check out the videos below to see the Xebec Tri-Screen 3 in action on a MacBook Pro and in the second video, a Windows laptop.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Production is ready to begin with golden sample sign-off from our Head of Engineering, Ethan, completed on May 22nd! Take a look at some of his photos from the trip!" data-id="49519165">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/519/165/8a684f7df92c06ef873a66b2db16d1b9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748894038&amp;width=680&amp;sig=Ktpwdd6hf5GWQFNTAuzW5tN020jCNfqLjqmm8Lajfqc%3D"/>
+<figcaption class="px2">Production is ready to begin with golden sample sign-off from our Head of Engineering, Ethan, completed on May 22nd! Take a look at some of his photos from the trip!</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328963">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/963/073083672c9a1b6a7d23298b2b8279c0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747626960&amp;width=680&amp;sig=8gmz0GFjYzWVKXTTl0pX4unZe%2FKX1Mv4ftMIdkQO2DI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49486945">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Xebec-">Why Xebec?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/486/945/98115029e055f281536265a6cbfc7779_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748628215&amp;width=680&amp;sig=msRSlnXDYY%2Fq1Oexprlys9yxotAv1Fxh4slMopLApUI%3D"/>
+</figure>
+</div>
+<p>As the<span class="bold"> creators of the Original Tri-Screen</span> back in 2019, we know a thing (or three) about what makes the perfect mobile office setup. We've been recognized with awards from SXSW, CES, and Popular Mechanics just to name a few. We've taken all of this experience and all of your feedback and packed the Tri-Screen 3 with more features than even <span class="text-italic">we</span> thought possible. Check out how the Tri-Screen 3 stacks up against the rest and is truly in a league of it's own!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49519135">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/519/135/fb90290d625ba1c544bc5cfecd8a99dd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748893895&amp;width=680&amp;sig=DCre0Wk2Qaw%2B3gdqUa7sEXF%2F%2B2eLAelfIJ15faI2yD8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328102">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Mission">Our Mission</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/102/7dfa0e244cef5827bbf02398f7958c93_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620881&amp;width=680&amp;sig=c1c8DRY1dsnoeGeJytzGDq2q16j5fan0q8EGF73%2BcWM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328225">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/225/764053f72be5f30f56a9c6e140f5c5a4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747621761&amp;width=680&amp;sig=3NLoaM64ivScH%2FfERSMv4yVGNGxBxKVz64WQsikqsI0%3D"/>
+</figure>
+</div>
+<p>We founded Xebec back in 2018 with a simple mission: Enable anyone to work from anywhere.</p>
+<p>This drive still fuels our passion for creating innovative products that grant individuals the freedom to choose their "office" each day without compromising productivity. We encourage everyone to adopt the "Free Yourself" way of life, liberating themselves from rigid work schedules and embracing the power to work on their own terms, wherever their adventures take them.</p>
+<p>Our journey began with the Tri-Screen, born out of our own need for multiple screens while traveling for work. This innovation allowed us to maintain peak productivity while pursuing personal and professional growth, unburdened by the constraints of a traditional office.</p>
+<p>Since launching in 2019, our products have revolutionized what it means to work remotely and enabled modern workers to thrive while on the move. We’ve incorporated all of this product feedback over the past 6 years into the Tri-Screen 3 and we can't wait for you to get it in your hands and change the way you work.</p>
+<p>Join us in embracing the "Free Yourself" lifestyle as we continue to expand our product line, equipping you with the world’s best flexible work setup with our Tri-Screen 3 and Dual-Screen 3!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328103">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Taxes">Shipping &amp; Taxes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/103/a672c7b706f1f8c3a5a615cdc0e71239_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747620886&amp;width=680&amp;sig=%2BMmqHGQ5VmAWTKev08BvO2EaJUHbCa94LDvsgG6mW2Q%3D"/>
+</figure>
+</div>
+<p><span class="bold">Shipping: </span>Shipping fees will be calculated and collected for your pledge via our post-campaign fulfillment survey. You will be required to provide us with a detailed shipping address and contact information before we can ship your pledge. The table below provides the approximate charges for your region; however, please note that this will vary based on the add-ons selected. Charging for shipping closer to the delivery date once the campaign has closed ensures that we’re able to secure the best and most accurate pricing at that time, rather than overcharging or undercharging during the campaign. Please refer to the FAQ to view the countries we can't ship to. </p>
+<p><span class="bold">US State Sales Tax (for US backers): </span>Customers based in the US will not have to pay import duties as we are shipping from the US-based fulfillment center. Applicable state sales taxes (which can range from 0% to 10% depending on the state we are shipping to) will be calculated and collected via the post-campaign fulfillment survey.</p>
+<p><br/><span class="bold">Customs Duties (for non-US backers):</span> Backers outside the US are responsible for paying all import duties and VAT applicable to their country/region. <span class="text-italic"><span class="bold">These taxes will not be collected via the post-campaign survey</span></span>. Rather, once we ship the product to you and is assessed by your country’s customs office, you will be contacted by them or the carrier directly using the contact information you have provided in the post-campaign fulfillment survey. Keep an eye out for communication from them once we share the tracking information with you!</p>
+<p><span class="bold">Tariffs for US Customers: </span><span class="text-italic">In anticipation of high tariffs we made the decision in the Fall of 2024 to move production from China to Vietnam for the Tri-Screen 3 and Dual-Screen 3. The current tariffs are already baked into our costs and we are fully prepared to eat up to an additional 10% tariff should that be added between the start of the campaign and the ship date. With that being said, the global trade situation is ever evolving so we can't guarantee nothing insane will happen again, in which case we will be incredibly up front and transparent about what the timeline impacts are and the options available at that time should it occur.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49460636">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/460/636/7cdc4dc47d6b884cb54f948de4ebe7d1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748464695&amp;width=680&amp;sig=Sjggqzz48EtpplbNd1bMctGX8clXBl7E3esCge9sh6E%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><span></span><p><span class="text-italic">This project is promoted by </span><span>Jellop</span><span class="text-italic">, the ad tech power behind the best Kickstarters with 6,000+ successful Kickstarter projects with over $1.4 Billion raised between them.</span></p>
+<span></span><span></span><p><span class="text-italic">Free Yourself - ZAH</span></p>
+</div></div></div>
+</div></div></div></div></div></div>
+</div></div></div>
+</div></div></div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">At Xebec, we take great pride in our track record of delivering high-quality gear to our customers since 2019. With the successful launch of eight previous products, as well as strong relationships with both our manufacturing partners and our dedicated quality assurance team, we are confident in our ability to deliver the Tri-Screen 3 and Dual-Screen 3 as promised.
+
+While we’ve got the experience and taken the necessary precautions, unforeseen issues can always arise, from manufacturing delays to customs and shipping issues. Despite this, we are committed to bringing the Tri-Screen 3 and Dual-Screen 3 to market and will provide full transparency and an open line of communication should anything come up.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">The Tri-Screen 3 and Dual-Screen 3 ship in fully recyclable cardboard boxes without any wasteful plastic inserts. Shipping the product inside the Xebec Padded Case allows us to avoid the addition of packing foam and bubble wrap all while providing unparalleled impact resistance and protection in transit.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

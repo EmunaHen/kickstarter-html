@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artsetpro1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/100/131/745354e112115e7c99945fb2d4b4dbd5_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1746004629&width=560&sig=sdX%2BGXov7jVeZgsdiZW7Jb%2BOQttZHVMNCl5Mh4k%2BX58%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Artsetpro1</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">3D Printable Modular system for Miniatures, Board Games, Collectibles, Figures and More!</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 7,915</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>33 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="mb3">
+<h3 class="page-anchor" id="h:ArtSetPro-1-"><span class="bold">ArtSetPro 1 </span></h3>
+<h4 class="page-anchor" id="h:STL-3D-printable-modular-system-to-paint-customize-and-display-your-miniatures-and-figures-">STL . 3D printable modular system to paint, customize and display your miniatures and figures.</h4>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48656857">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/656/857/eae2023bf3dab391c76bfff3c68f35c2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742917797&amp;width=680&amp;sig=bp3%2FDw2ztefhWUPiqd2ZxNY6qPHgVQAH8oqxtRaGgUg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:3D-printable-modular-system-for-painting-and-customizing-miniatures-board-games-collectibles-1-6-scale-figures-and-much-more-"><span class="bold">3D printable modular system for painting and customizing miniatures, board games, collectibles, 1/6 scale figures and much more.</span></h4>
+<h4 class="page-anchor" id="h:Paint-organize-and-transport-your-miniatures-in-your-home-or-workspace-"><span class="bold">Paint, organize and transport your miniatures in your home or workspace. </span></h4>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48656875">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/656/875/7e7a636db0fb97e900059f8f21e0a0e5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742917902&amp;width=680&amp;sig=k4BR4hK%2Ffo5yN4HxYFiJivT1GrmhqV164D2JpF908cY%3D"/>
+</figure>
+</div>
+<p><span class="bold">Discover innovation, organization and work precision for enthusiasts and professionals! Our innovative system not only optimizes your workflow, but also provides you with an incredible ergonomic experience. Based on communication, experience from other painting studios and professional figure customization, every detail has been carefully crafted to offer you professional comfort and efficiency. In addition, its compact and portable design allows you to take your creativity with you, wherever you go or optimize your workspace. Be part of a new productivity system and take your performance to the next level with this system today.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48670684">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/670/684/224beb68523ec3242b86248467b2bcd0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742999506&amp;width=680&amp;sig=7BIIO6aaUyF%2F4PeiMdmK8Q1TbO0h3k40AWhrxzJqh2E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48656992">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/656/992/07492598c654d5e40e8c547ba8badb46_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742918555&amp;width=680&amp;sig=VLP6aZRbm6F9xEmW8aRs4ofPJyIY2t8t5C4dskYz09c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="43845038">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/043/845/038/eacb3ea93f92efd9d53d47c4c5b2cea1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1706694509&amp;width=680&amp;sig=QRnVi892vGayqQ%2FrTil30WxHg%2FUvx3Mfv%2BGm6yeaF6o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="43845211">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/043/845/211/f2ae66fd059f2bbca65cecc58464d782_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1706695796&amp;width=680&amp;sig=uGAT5fWMng9%2FBJFoRoHXwh4WeYGasPiWK3k1OkUD6cc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="43845220">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/043/845/220/d743df7dad97964d1e7dfdd85d477e41_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1706695879&amp;width=680&amp;sig=YR0rBim8wiOwek4Coed2upkbLDTKt6HE0AaL4OBlw7Q%3D"/>
+</figure>
+</div>
+<ul>
+<li><span class="bold">Although the real photos of the prototype look like the final prototype, we still have a lot of hard work to do, not only to improve the parts and designs, but also to make tests and checks of all kinds to deliver a product in optimum conditions of durability, reliability, ergonomics and practicality.</span></li>
+<li><span class="bold">Less than one roll of filament = one complete project.</span></li>
+</ul>
+<h3 class="page-anchor" id="h:UPDATES"><span class="bold">UPDATES</span></h3>
+<h4 class="page-anchor" id="h:We-want-to-share-some-great-news-with-our-community-Updates-will-be-constant-in-ArtstPro-where-we-will-continue-to-improve-expand-and-offer-new-tools-to-optimize-the-experience-for-our-users-">We want to share some great news with our community! Updates will be constant in ArtstPro, where we will continue to improve, expand and offer new tools to optimize the experience for our users.</h4>
+<h4 class="page-anchor" id="h:In-addition-everyone-who-supports-the-project-through-Kickstarter-will-have-free-access-to-many-of-these-updates-improvements-and-new-tools-ensuring-that-your-investment-in-our-platform-will-continue-to-grow-over-time-">In addition, everyone who supports the project through Kickstarter will have free access to many of these updates, improvements and new tools, ensuring that your investment in our platform will continue to grow over time.</h4>
+<h4 class="page-anchor" id="h:We-are-committed-to-delivering-the-best-and-building-an-ever-evolving-community-together-thank-you-for-being-a-part-of-this-journey-">We are committed to delivering the best and building an ever-evolving community together - thank you for being a part of this journey!</h4>
+<ul>
+<li><span class="bold">In our exciting project, we are pleased to offer you two options to suit your individual preferences and needs. If you are someone who enjoys using standard hardware and parts in your prints, we have designed an option that will allow you to do so with ease and precision.</span></li>
+<li><span class="bold">On the other hand, if you prefer the convenience and speed of snap-in systems, we also have an option designed especially for you. With our innovative snap-in system, you will be able to assemble and disassemble your creations quickly and easily, without the need for additional tools.</span></li>
+<li><span class="bold">Whatever your choice, our goal is to provide you with the best possible experience, giving you versatile options that suit your working style and allow you to achieve exceptional results. Join us on this exciting adventure and discover the limitless possibilities our project has to offer.</span></li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="44000223">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/044/000/223/139031548a379d3e806046f66fdf81fd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1707898898&amp;width=680&amp;sig=kJZksXayewy9SRf6r%2Bo0xZO3U3TnuebheZSyOn0yPTs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="44000227">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/044/000/227/32388c62f965d341932393874d49f65e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1707898905&amp;width=680&amp;sig=PV0bSlJsm57v7xqAuJIwpET%2BuPGZ%2FrpHFP2yBI81rw8%3D"/>
+</figure>
+</div>
+<ul><li><span class="bold">We will have a community at your disposal for those who purchase any of the rewards, to continue releasing parts, updates and continue extending or expanding the modules, as well as connectors and tools for the hobbyist or professional.</span></li></ul>
+<h4 class="page-anchor" id="h:Sample-project-completely-realized-using-Artsetpro-"><span class="bold">Sample project completely realized using Artsetpro  </span></h4>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45655531">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/655/531/68ace0fe82f9bc517530668c85f3d3cb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1720450214&amp;width=680&amp;sig=XTt0E%2Fbj0Ykilz%2BAVeMspfzfg27Yax46OUwOEenI7Fo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45655536">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/655/536/b9f25325252dbb7968e42ee220364986_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1720450240&amp;width=680&amp;sig=Pi7vLDn2wOx%2FNxo%2BFN%2F5PJYaVrOeUrSDTiQv14POfRo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45655543">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/655/543/1a7eafc015424403cbf98b1f60de3482_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1720450260&amp;width=680&amp;sig=O1LPb1adLzQBWpJX9gHy%2BC7X5R91F7UbGKYAfx6%2FeTU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Modular-system-for-painting-and-customizing"><span class="bold">Modular system for painting and customizing</span></h4>
+<ul>
+<li><span class="bold">Each size uses the same modular system that can be 100% customizable to fit and store your customs however you like. This includes, but is not limited to, miniatures, board games, paint kits, gaming accessories and really all hobbyist activities!</span></li>
+<li>
+<span class="bold">ArtSetPro is designed with YOU in mind. </span>Custom build your ArtSetPro to fit your specific configuration.</li>
+<li>Included with the campaign are the standard configurations we like and use every day for our workflows or those who want to simply print and build their Artsetpro.</li>
+<li>ArtSetPro is built with linear guides, reusable connectors and internal or external combinations that will allow us to add tons of recommendations from the ArtSetPro community. We expect ArtSetPro to be a constantly evolving project with hundreds of future additions.</li>
+<li><span class="bold">Artsetpro solves the typical challenges of organization and precision when custom painting our miniatures, figures or 3d creations.</span></li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48657373">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/657/373/3de33f8231247797db8ea401374ca80f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742920532&amp;width=680&amp;sig=NgPSEdDf13kwjj1XbVM%2BPOMjUoaufshmzqVn2yyKhMk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48670679">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/670/679/db712774a9b8981855dc701d3b3f27c4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742999493&amp;width=680&amp;sig=Go2R%2F61DN7FYZnIuGXKQopjBVrMCwMxZhkAWwlinUOQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48667500">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/667/500/4a733a7d34079d540e522bd60a51bc40_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742982901&amp;width=680&amp;sig=ZVjFPl9quNVDZNOjMXLHSiug4gCchTGQGixINmE2O4k%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Additional-Features-"><span class="bold">Additional Features 🧨</span></h3>
+<ul>
+<li><span class="bold">All parts are designed and optimized to facilitate FDM printing on any printer, as well as some modules and sets such as the MHS on SLA printers.</span></li>
+<li>All parts are pre-nailed with pins and holes to fit.</li>
+<li>ArtSetPro was designed with accessories in mind and comes with a lot of amazing stretch target features that can be added to your workbench.</li>
+<li>Backers! Please leave a comment suggesting what themes you would like us to sculpt for the Stretch Goals selected by backers.</li>
+<li>We will also have as a service a Discord or Patreon community for updates from the parts after the campaign.</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48657554">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/657/554/02c531815d830bd8c78a3e728e1a710d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742921307&amp;width=680&amp;sig=zZA1V2l1%2Bb9HJ5med1d%2FP1aQkXNLUC9xJEH8yV93q00%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48670672">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/670/672/c5c26ea6f542efc28dc33692752a1daa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742999468&amp;width=680&amp;sig=n1gabn3BmKhqmDomFtxy8LVCgyc5k7dFJOCQcoo%2B5Lg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48657411">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/657/411/15f2551818764aec9988a47d02907c79_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742920679&amp;width=680&amp;sig=OnN276sAQHUgQx%2B4%2BPKQLm0if5usdZmOTei3maZfzy0%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Gifts-Videos-">Gifts Videos 👇</h4>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="44462516">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/516/6e427efadde2961843b49c65127c5290_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711363858&amp;width=680&amp;sig=ytV6Mj0Qt8weOFcwRqfynD46R51x3Cn2FFgWJ95kmYc%3D" src="https://i.kickstarter.com/assets/044/462/516/6e427efadde2961843b49c65127c5290_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711363858&amp;width=680&amp;sig=ytV6Mj0Qt8weOFcwRqfynD46R51x3Cn2FFgWJ95kmYc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Standard handle clamps from R20 to R60 and pedestals from 20x20 to 50x50 👆" data-id="44462550">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/550/97b1f89d22f4fd9029ae7ba7cf98ce4f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364016&amp;width=680&amp;sig=bZIXclyKKN97YCxkkeoTnjZ4jUIfaUhFXCJM%2B9vr%2F1U%3D" src="https://i.kickstarter.com/assets/044/462/550/97b1f89d22f4fd9029ae7ba7cf98ce4f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364016&amp;width=680&amp;sig=bZIXclyKKN97YCxkkeoTnjZ4jUIfaUhFXCJM%2B9vr%2F1U%3D"/>
+<figcaption class="px2">Standard handle clamps from R20 to R60 and pedestals from 20x20 to 50x50 👆</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="This ergonomic system to paint with a lot of precision and comfort was the origin of the arsetpro project. We have been testing this system for a long time and you will be amazed when you try it." data-id="44462561">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/561/f46aafbac9b1b9e6b31bcb7c1fe1b67b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364072&amp;width=680&amp;sig=jaUfPyTEusKvUqWK4bpP3OZ0ROFBBWpM2LKHb1oPyz0%3D" src="https://i.kickstarter.com/assets/044/462/561/f46aafbac9b1b9e6b31bcb7c1fe1b67b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364072&amp;width=680&amp;sig=jaUfPyTEusKvUqWK4bpP3OZ0ROFBBWpM2LKHb1oPyz0%3D"/>
+<figcaption class="px2">This ergonomic system to paint with a lot of precision and comfort was the origin of the arsetpro project. We have been testing this system for a long time and you will be amazed when you try it.</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Approximate-standard-measurements-"><span class="bold">Approximate standard measurements 📐📏</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48814184">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/814/184/7bd23ed47d993fca2268cb196e6a5935_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744026864&amp;width=680&amp;sig=B6XwJGmYKVz%2FDHf7uOaGHwEvMSM0fQf2WQBGZFxtdwQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48814185">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/814/185/06354f4658e8391c10c30d9572ca6626_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744026868&amp;width=680&amp;sig=wT5y7S10Sp%2Fg8LVfTyOiUJgwQDbhOL4aGL7sH1LvyJU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48814187">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/814/187/f9c38e5543ca44c80e8f1989565efa06_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744026877&amp;width=680&amp;sig=WaT6lLoAy1vuu16RrAUMU0EFtpFLHeSmzzr5%2BO%2BYjUQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Gifts-Videos-">Gifts Videos 👇</h4>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Easy adaptive clamp system with standard O'Rings👆" data-id="44462588">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/588/ebe4bbfb48e058dac398b064ee0b0d62_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364324&amp;width=680&amp;sig=IN4nWYWpHQFUCJn2ZUZIIVjopBJiIIzUb4lTdn%2B1sbg%3D" src="https://i.kickstarter.com/assets/044/462/588/ebe4bbfb48e058dac398b064ee0b0d62_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364324&amp;width=680&amp;sig=IN4nWYWpHQFUCJn2ZUZIIVjopBJiIIzUb4lTdn%2B1sbg%3D"/>
+<figcaption class="px2">Easy adaptive clamp system with standard O'Rings👆</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="High-strength, interchangeable, interlocking systems.👆" data-id="44462593">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/593/7c45fc441ac48ca51907772f2803f5fc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364352&amp;width=680&amp;sig=51wi%2FIu%2FKI3M7T5ZS%2BRTE6p7bHTbEkh%2BbyK0nz4SILE%3D" src="https://i.kickstarter.com/assets/044/462/593/7c45fc441ac48ca51907772f2803f5fc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364352&amp;width=680&amp;sig=51wi%2FIu%2FKI3M7T5ZS%2BRTE6p7bHTbEkh%2BbyK0nz4SILE%3D"/>
+<figcaption class="px2">High-strength, interchangeable, interlocking systems.👆</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Magnetic key-type magnetic fixing systems for different types of positioning or sectorized sorting.👆" data-id="44462607">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/607/cc4c96667754a6af3b16641f696468d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364438&amp;width=680&amp;sig=EKGGkOWYrxUNlCdeEMOw5FGN%2FUi3fJXmEhqzwHYdzaA%3D" src="https://i.kickstarter.com/assets/044/462/607/cc4c96667754a6af3b16641f696468d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364438&amp;width=680&amp;sig=EKGGkOWYrxUNlCdeEMOw5FGN%2FUi3fJXmEhqzwHYdzaA%3D"/>
+<figcaption class="px2">Magnetic key-type magnetic fixing systems for different types of positioning or sectorized sorting.👆</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Adaptable grip system for brushes 👆" data-id="44462631">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/631/66ad2ac32d38b3e5a4bc8c25c211e2dd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364666&amp;width=680&amp;sig=LGRuz1WEiaz8vfwipFpxI5zk4QsV9bf6xHFhBMxOdAA%3D" src="https://i.kickstarter.com/assets/044/462/631/66ad2ac32d38b3e5a4bc8c25c211e2dd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364666&amp;width=680&amp;sig=LGRuz1WEiaz8vfwipFpxI5zk4QsV9bf6xHFhBMxOdAA%3D"/>
+<figcaption class="px2">Adaptable grip system for brushes 👆</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="44462637">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/637/72a41b7451cf278bd3083c352e347f2e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364697&amp;width=680&amp;sig=tfYSzgBIho01%2FBRtlsThINloryNKrkHixbpEsBANryc%3D" src="https://i.kickstarter.com/assets/044/462/637/72a41b7451cf278bd3083c352e347f2e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364697&amp;width=680&amp;sig=tfYSzgBIho01%2FBRtlsThINloryNKrkHixbpEsBANryc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Removable wet paint tray with adjustable height 👆" data-id="44462654">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/654/9a619e77c4635e6ca9f0e4f630d28d57_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364768&amp;width=680&amp;sig=7n9doABPnu3%2Fj0BLuCUm9iRJrk8%2B6h%2BDCmqXhWoAGVw%3D" src="https://i.kickstarter.com/assets/044/462/654/9a619e77c4635e6ca9f0e4f630d28d57_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364768&amp;width=680&amp;sig=7n9doABPnu3%2Fj0BLuCUm9iRJrk8%2B6h%2BDCmqXhWoAGVw%3D"/>
+<figcaption class="px2">Removable wet paint tray with adjustable height 👆</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Easy-to-assemble interchangeable systems" data-id="44462657">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/657/0411114e186435dbf7fdad6265b2c705_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364795&amp;width=680&amp;sig=6lFIU%2F8vSMAW1v12KlpWKvXHKc0iwmGbWCy1ya34fTQ%3D" src="https://i.kickstarter.com/assets/044/462/657/0411114e186435dbf7fdad6265b2c705_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364795&amp;width=680&amp;sig=6lFIU%2F8vSMAW1v12KlpWKvXHKc0iwmGbWCy1ya34fTQ%3D"/>
+<figcaption class="px2">Easy-to-assemble interchangeable systems</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:SET-COMBOS-">SET-COMBOS 🛒</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49098756">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/098/756/1d7123e4e0c6abc1a4222e4c6f359ece_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745997296&amp;width=680&amp;sig=yr5%2Fzs%2F1m4hPIH61GjfaHpwJP58wW1a37f1yfuNQ%2Bfk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49098758">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/098/758/47e38c4d91ad9bb9feeb8257bcb4c133_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745997307&amp;width=680&amp;sig=nNeMEztA06ttAwJVZZkbW2%2FBSN4JtwO8N7dKMrx%2FrNg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49098760">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/098/760/af28f1fdade04522f79ba7fdea052c24_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745997314&amp;width=680&amp;sig=%2FXXseQbMzhwvqK8uTxWTLa%2F6F1kmk%2BHccBWisUFPmZY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49098762">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/098/762/99b6891db1d9d2e0a7b385532f3e2ded_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745997320&amp;width=680&amp;sig=N99rKhykesH5IAFlr99iJcGFoJjipX0n6vJOUQ%2BLj64%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="44462676">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-mission">Our mission</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/044/462/676/11831d580ec99a5b30672a1e09a90d97_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1711364896&amp;width=680&amp;sig=Pbf4upKPj0Cu1UqiZ6WRGX4O%2Butax1dxKH6mCUXi94A%3D"/>
+</figure>
+</div>
+<p><span class="bold">Above all, we are aficionados of the 3D printing realm—enthusiasts, collectors, artists, and gamers.</span> Our aspiration was to conceive a modular storage system tailored to meet our diverse requirements. Artsetpro encapsulates nearly two years of collaborative design endeavors, exhaustive testing, iterative refinement, and relentless dedication to perfection. Today, we stand at the precipice of unveiling a creation that embodies the essence of our collective passion.</p>
+<p>Artsetpro isn't just a storage solution; it's a manifestation of our journey. From concept to creation, our commitment to excellence has been unwavering. We are thrilled to share with you how Artsetpro seamlessly integrates into your world of hobbies or work, promising to elevate your experience to new heights.</p>
+<p><span class="bold">Artsetpro was designed by engineers here in Europe, with experience in the automotive tooling and tooling production sector for production organization and leave no stone unturned to constantly improve and optimize the designs.</span> Our idea and mission is to bring the best designs to the 3D printing community as well as to Hobbyists and customizers, we believe Artsetpro is a perfect example of a perfect example for production and organization systems, we will be here working 24 hours a day for the next 60 days to make all the ambitious goals come true!</p>
+<p><span class="bold">Plans, objectives and advantages.</span>We are very happy that you will not only acquire tested and studied sets, but also tools that after the end of the campaign will still have a couple of updates to achieve maximum performance, ergonomics for a system of practicality and organization.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="44462687">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/687/5ef65b79cdd0fed8d70f871c96e84a27_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364960&amp;width=680&amp;sig=YPqOWIDfx70U44vf46GexrJIm9mqYn8eOCMznhuu7Uk%3D" src="https://i.kickstarter.com/assets/044/462/687/5ef65b79cdd0fed8d70f871c96e84a27_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364960&amp;width=680&amp;sig=YPqOWIDfx70U44vf46GexrJIm9mqYn8eOCMznhuu7Uk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="44462689">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/044/462/689/04b824b53e5b70a78c8099c06021ab91_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364968&amp;width=680&amp;sig=qPRzyS3vhlq0p7WbSe0VJOJdi84vIOn3zAZ2JbWCi3Q%3D" src="https://i.kickstarter.com/assets/044/462/689/04b824b53e5b70a78c8099c06021ab91_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1711364968&amp;width=680&amp;sig=qPRzyS3vhlq0p7WbSe0VJOJdi84vIOn3zAZ2JbWCi3Q%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Materials-and-printing-times-"><span class="bold">Materials and printing times 👌⏰</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49083153">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/083/153/0c7ae481c95e6991b9d299f4501946e9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745916963&amp;width=680&amp;sig=59T9TGoU5CE9DVyVCWBAa5nfiEeX87fbG17qz7O3Vp0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49083155">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/083/155/f849071125e8833243a630050a9e7f9e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745916971&amp;width=680&amp;sig=sT%2Feq9pC9VOUxP6QY5n%2FvhGuiMUmtVlVYZDOSD0fuPs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Example of printing time for module 240.mm X 360.mm X 500.mm" data-id="49083217">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/083/217/3c339a644714c1468ece8d478f356a90_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745917185&amp;width=680&amp;sig=7z7z2itn8%2BCs9pVqHA0SqjeQvH33mOxZz5aq8HZ6%2FFs%3D"/>
+<figcaption class="px2">Example of printing time for module 240.mm X 360.mm X 500.mm</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="44462699">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/044/462/699/f1c9ec8de9ab78f10bed452574f8bb52_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1711365059&amp;width=680&amp;sig=YoV4dMdjdBSZ0cnXk%2FT8tthKdUup8cg0FuTUq7rOPWk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="44462700">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/044/462/700/e272b01c17466637d17df69f9c8a4552_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1711365066&amp;width=680&amp;sig=QZt2uJSpABEwY750WkqIVfYFtGIZbU7niewTz6dzkFg%3D"/>
+</figure>
+</div>
+<p><span class="bold">Depending on the combination and the type of hobby or focus of work will be the type of project you will use to print, this will allow not only save material but also time, we have optimized everything so that with a single roll of filament you can make a whole modular project for you.</span></p>
+<h4 class="page-anchor" id="h:Estimated-Print-Statistics-and-Settings">Estimated Print Statistics and Settings</h4>
+<p>Print statistics and estimated settings<br/>Very easy to print and build. For beginners, simply drag and drop files and hit print.</p>
+<p>Artsetpro- Easy to print and build with a focus on those looking to take advantage of functionality and modularity.</p>
+<p>All print times are estimates. Fast print times have been calculated from the latest printers (Elegoo,Bambu, Prusa MK4, etc.), therefore these are not final print times.</p>
+<p>There are few supports needed to print Artsetpro, however all parts are easy to print. All recommended media locations are included in the PDF and video. We will also provide a description of our recommended settings.</p>
+<p>We will also design special parts to save time and material such as test printing and checking of parts where tolerances, fittings, screws and others have an optimal result for easy printing.</p>
+<h4 class="page-anchor" id="h:Maximizing-3D-Printing-Efficiency-Files-Optimized-for-Success"><span class="bold">Maximizing 3D Printing Efficiency: Files Optimized for Success</span></h4>
+<p>At the forefront of the 3D printing revolution, we are proud to present files designed with millimeter precision and futuristic vision. We prepare for you a unique experience: the ability to adjust print tolerances with precision, minimizing material usage and optimizing production time.</p>
+<p>Discover a new era in 3D printing with our optimized files. We offer you the ability to fine-tune print precision, saving material and time without compromising quality. Our intelligent approach means more efficiency, less waste and excellent results where innovation is in every detail.</p>
+<h4 class="page-anchor" id="h:Material-Usage-"><span class="bold">Material Usage </span></h4>
+<p>As we meticulously refine the files, the material consumption statistics are currently presented as estimates. Towards the culmination of our campaign, we endeavor to furnish a more precise assessment, a delicate equilibrium of optimizing components while meticulously minimizing material usage and print durations. The inherent diversities in printer models, print configurations, nozzle dimensions, and the like may induce considerable variances in these metrics.</p>
+<p>Our commitment lies in optimizing these files to not only embody resilience and efficiency in printing but also to harmonize seamlessly with standard specifications. We align with the industry norm, employing a 0.4 mm nozzle, adhering to standard dimensions and print sizes compatible with mainstream machines, and embracing fundamental materials like PLA.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49098972">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goals-">Stretch Goals 🙌🎁</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/098/972/6ab27c9e03d23ea7841d90622199070d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745998911&amp;width=680&amp;sig=q3J1iLReIKnOEfD4Z2NU8mvk8oXA75iH5nycDhLSxMs%3D"/>
+</figure>
+</div>
+<p><span class="bold">If you have any ideas for Stretch Goals or something specific to add to the sets we would love to hear from you and we would be very grateful if you could help us with comments so that we can add or modify some of them.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="This upgrade will bring capacity for 6-10 up to 12 portable colors." data-id="48814071">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/814/071/fb432ea988eb43b3a525dbe4b00c690f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744026173&amp;width=680&amp;sig=Jc8c2aEUoksT2Shx8yokhef3jzzRwAQxgiOUraxN5Zw%3D"/>
+<figcaption class="px2">This upgrade will bring capacity for 6-10 up to 12 portable colors.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="This upgrade will bring the ability to alternate colors of different brands on a single shelf or portable tray, and fully customizable trays can be created." data-id="48814082">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/814/082/5f8818256f9fc7a4d80b2d0ecdaec345_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744026244&amp;width=680&amp;sig=2YeBTBaHhHZkJeKso%2FY9trq%2BF7JpPbiHx93800%2F1aRw%3D"/>
+<figcaption class="px2">This upgrade will bring the ability to alternate colors of different brands on a single shelf or portable tray, and fully customizable trays can be created.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48814103">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/814/103/349261f78f9fae68b516c3f56913408f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744026327&amp;width=680&amp;sig=lr%2FSJ236umHaUeFkUGPfcU9SLVDvsWcZ2FUy7QCUeUs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48814105">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/814/105/b17acdfac70639144735d61f9de1372a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744026337&amp;width=680&amp;sig=WinOIk9EZgiUJS5%2F3pD8LAF7U9yjV6GGJIEYWVtROc4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48814151">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/814/151/10b864bc8ab29e1287b14d82fcf22a1d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744026664&amp;width=680&amp;sig=8Qk16Jac7mNRROZ1rMQBhUWqiyNY0aONU5kXeWO0Atg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49084112">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/084/112/247733dafb9c66a26d096ba8edfe335f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745921712&amp;width=680&amp;sig=GFJpWdWVbmoJcYCJCSXtlnDWOiCue%2BB2sZJU%2FbhYBdo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49084157">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/084/157/05d5165681fa4ec42198fb5c82e29b0b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745921881&amp;width=680&amp;sig=AP5SETNm1znOUTV6BsT9R7HYUKeOgDpsWHGvPy4K6kQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:MORE-STRETCH-GOALS-CAN-BE-ADDED"><span class="bold">MORE STRETCH GOALS CAN BE ADDED</span></h4>
+<p><span class="bold">If we surpass our funding goal or if lots of backers have specific recommendations we will add or modify the existing stretch goal list!</span></p>
+<p><span class="bold">Order a Physical Modular Artsetpro system.</span><br/>The following campaign is for digital files only. However, if you are interested in ordering an ArtSetpro, please fill out the form <span>HERE</span> and we will have one of our Commercial License backers reach out when the campaign is complete.</p>
+<h4 class="page-anchor" id="h:Commercial-license"><span class="bold">Commercial license</span></h4>
+<p>Commercial licenses are designed in such a way that they are amortized on the first one or two sales. Commercial licenses are for selling 3D prints of the digital files. Commercial license holders are not allowed to distribute the digital files or use them for injection molding mass production or any other type of mass production. The commercial license is only to sell 3D prints of the digital files.</p>
+<p>All commercial license holders will receive an individual registered commercial license which they must display wherever they sell their showcases (this is usually done in a listed form).</p>
+<p>All commercial licensees will also receive a multimedia folder with all professional photos, videos, renders and illustrations. Our goal is to make it as easy as possible for our commercial sponsors, we want to see Artsetpro in homes and studios around the world.</p>
+<h4 class="page-anchor" id="h:File-Use-Agreement"><span class="bold">File Use Agreement</span></h4>
+<p>All backers of this campaign are strictly prohibited from sharing or distributing the digital files. All digital files have been custom marked and are monitored by a third party. Sharing of the digital files may result in legal action.</p>
+<h4 class="page-anchor" id="h:File-Delivery"><span class="bold">File Delivery</span></h4>
+<p><span class="bold">All files will be delivered exactly 20 days after the campaign ends - it takes about 15 days for Kickstarter to get the final list of backers and we are giving ourselves the other 5 days to finish the final set of files and all stretch goals so we can deliver all files at once!</span></p>
+<p>All files will possibly be available on MMF and other download platform. If you have an MMF account, they will be automatically added to your MMF library. If you do not have an MMF account, we will still send you an email where you will be able to redeem them if you decide to become an MMF account.</p>
+<h4 class="page-anchor" id="h:3D-Printing-Files-Disclaimer-"><span class="bold">3D Printing Files Disclaimer:</span></h4>
+<h4 class="page-anchor" id="h:Dear-Community-"><span class="bold">Dear Community,</span></h4>
+<p>We are thrilled to share our 3D printing creations with you. However, we want to emphasize the importance of respecting certain boundaries to ensure the integrity of our work and preserve the unique essence of each design.</p>
+<p>These files have been crafted with passion and dedication, and their uniqueness lies in their exclusive nature for individual 3D printing. We encourage you to explore, customize, and enjoy these designs for personal use, but we kindly request that you refrain from selling the files or attempting mass production, whether through injection molding or other similar methods.</p>
+<p>By adhering to this request, you contribute to keeping the artisanal spirit of 3D printing alive and support the independent design community. Each download is a vote of confidence in our work, and we trust that you will understand and respect this plea to preserve the magic of creative and one-of-a-kind 3D printing.</p>
+<p>Thank you for your understanding and ongoing support!</p>
+<p>Sincerely,PCJ</p>
+<h4 class="page-anchor" id="h:Disclaimers"><span class="bold">Disclaimers</span></h4>
+<p>This is a digital file campaign - there are no physical products being sold.<br/>All digital files will be delivered exactly 20 days after the campaign.<br/>Commercial license backers - you cannot use these files for injection molding or any other type of mass production except 3D printing. 3D print farms are absolutely allowed and encouraged!<br/>You have the entire duration of the campaign to cancel your pledge. There are no refunds once the campaign is over. This is strictly enforced as our team spends the entire duration of the campaign sculpting away at the stretch goals that are unlocked as a result of your pledge!<br/>The files will be available for purchase after the campaign at a much higher price.<br/>It is the backers responsibility to know how to use a 3D printer to print the files. We have made the process very beginner friendly.<br/>In addition to 3D printed pieces, we believe the Artsetpro looks best with a basic acrylic piece added to it. The acrylic does not come with the files. We are currently trying to source some acrylic to make it super cheap for our backers, but this campaign does not come with the acrylic or any other hardware components. It is just the .STL files!</p>
+<h4 class="page-anchor" id="h:THANK-YOU-BACKERS-FOR-SUPPORTING-THE-CAMPAIGN-WE-ARE-COMMITTED-TO-CREATING-THE-BEST-PRINTABLE-FILES-">THANK YOU BACKERS FOR SUPPORTING THE CAMPAIGN! WE ARE COMMITTED TO CREATING THE BEST PRINTABLE FILES. </h4>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">All files have been tested and printed to avoid any risks or challenges...</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Design to be modular, reusable, creative and long lasting.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">The files are digital friendly and with zero pollution.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">Recommendations for material and energy savings.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

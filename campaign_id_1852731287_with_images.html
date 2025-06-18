@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hyperformer|All-in-One Home Smart GYM</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/542/333/1fed1bf09cc38cb66bcd2943f51f8aef_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749028165&width=560&sig=I%2B%2FWWPD0vmEirj5jzcbqjSSP5bXLdkoxUCH0%2B6HPVa0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Hyperformer|All-in-One Home Smart GYM</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">An all-in-one fitness machine with AI-driven control, offering personalized workouts, precise resistance, and multi-functional training</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,274</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49543589">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/543/589/f262cb8edf188525242911d2e8e73376_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749034288&amp;width=680&amp;sig=Z7w3PHtZG1BbGCfuu8%2FiYfdZNb6gAy6gVjjE8a6J9Lc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49556193">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/556/193/cbdfaa768956bcb74a83d3e8a53830dc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749108084&amp;width=680&amp;sig=2opVIwFwBGf6JwMBACWy8vCuIIWnnakR1N9WK6w7QCo%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542044">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-choose-Hyperformer">Why choose Hyperformer</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/044/f5530b818c5356f85989304b5476c046_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749026674&amp;width=680&amp;sig=fllfH9BgXJ%2FtCzycLNFhk0O%2B62TlpMNc6TRJndB%2FVt0%3D"/>
+</figure>
+</div>
+<div>
+<p>More and more fitness enthusiasts and Pilates practitioners are finding it difficult to attend gym classes regularly due to their busy lifestyles. They're limited by time, cost, hygiene concerns, and restricted access to equipment.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542048">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/048/50ff56e8b02a82868e28418a548b06f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749026718&amp;width=680&amp;sig=dQmLGCaCKCgMlHi8hzeEbgSWXoCbXGuh1aBaG9niC1E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542063">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/063/3942e952bfbd9318641fad7aca18505a_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749026789&amp;width=680&amp;sig=4YA86y0UA9JfY6QJFuqqjYV%2FV8%2FAeqMkoxVsIVRZHLY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49555894">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/555/894/acd111b5617af937ee5cabeb2a299cf2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749105480&amp;width=680&amp;sig=vjBU%2BaT%2F6tXiuicp42y25cH01SesCzCjgAPiZf9zVH0%3D"/>
+</figure>
+</div>
+<p>Hyperformer seamlessly combines the structured training systems of professional gyms with the convenience of home workouts. Compact yet powerful, it integrates a Pilates reformer, modular strength training, and smart AI technology into one versatile machine. Supporting cardio, strength, stretching, sculpting, fat burning, flexibility, and balance exercises, it eliminates the need for multiple pieces of equipment.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542065">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/065/396855b6b9106991c349985cdb5d0103_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749026806&amp;width=680&amp;sig=7ysChVLcFxDmVkzOHHonUTi64Mv5sMet5VWCsKtfa1k%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542073">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:KOL-Review-Videos">KOL Review Videos</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/073/679f184a02d358fd109aac7dabb8bf8e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749026837&amp;width=680&amp;sig=Kt%2BIjdPQq5Nr8QchCNCI5MkuRRsx5OjbZ7Z8%2F0IkDdo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49556036">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/556/036/a236193061bcd25799c97aabdd666b7a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749106901&amp;width=680&amp;sig=dy%2Bw2pfKcVCcs7fzYvmsG4E6%2FahH6cennSyt8OpGRIM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49556039">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/556/039/01e51ed0b79e47d098479f9ec20fb7b9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749106907&amp;width=680&amp;sig=ZxnmF%2F1I3GWJDgfhuaHtowbKE2EN%2BG28y4eHZPxqDKw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542088">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Integrated-Five-Equipment-Functions">Integrated Five Equipment Functions</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/088/a3f1445aea79511370280a8ebab79b98_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749026910&amp;width=680&amp;sig=aHdDHkdhOykrmronTAYzCsP2yqZbvG0SznNAxmR2vMc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542093">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/093/be666f8f77841e48bb5775bb9a86fe92_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749026928&amp;width=680&amp;sig=QUU73eikt5fCaSxophvJGApXEgFwwe%2Bc6klIQ3o08bg%3D" src="https://i.kickstarter.com/assets/049/542/093/be666f8f77841e48bb5775bb9a86fe92_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749026928&amp;width=680&amp;sig=QUU73eikt5fCaSxophvJGApXEgFwwe%2Bc6klIQ3o08bg%3D"/>
+</figure>
+</div>
+<div>
+<p>Hyperformer’s strength training module simulates the free-weight zone of a professional gym. It supports a variety of resistance exercises such as squats, deadlifts, and presses, helping users, systematically build muscle strength and endurance, boost metabolism, and develop a stronger, more defined physique.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542104">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/104/62df10a53af65d3f31051616f580b376_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749026982&amp;width=680&amp;sig=f5YxdIaJKYa7uYS7JOsaDdWgL0Cv7zfvggjXJOGZyEk%3D" src="https://i.kickstarter.com/assets/049/542/104/62df10a53af65d3f31051616f580b376_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749026982&amp;width=680&amp;sig=f5YxdIaJKYa7uYS7JOsaDdWgL0Cv7zfvggjXJOGZyEk%3D"/>
+</figure>
+</div>
+<div>
+<p>Building on classic Pilates moves, this module incorporates strength and cardio elements to intensify workouts. By engaging major muscle groups through compound movements, it increases heart rate and accelerates calorie burn, resulting in a toned and sculpted body.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542114">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/114/28bdac74da3584bc6d48cf74b5d0e1b0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027047&amp;width=680&amp;sig=aoIQkVMkMInvsVYS68eCFwTuSySXHjHc8eRuH1AxzVg%3D" src="https://i.kickstarter.com/assets/049/542/114/28bdac74da3584bc6d48cf74b5d0e1b0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027047&amp;width=680&amp;sig=aoIQkVMkMInvsVYS68eCFwTuSySXHjHc8eRuH1AxzVg%3D"/>
+</figure>
+</div>
+<div>
+<p>This full-body cardio module simulates rowing and activates both upper and lower body simultaneously. It’s ideal for boosting heart rate, increasing endurance, and enhancing metabolic efficiency to support fat burning and stamina.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542121">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/121/12c952299f95ce583bb3227b84b0bca6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027075&amp;width=680&amp;sig=RSvcWVhpoDy2EEfoc7SGEFLNt091WnMxroy9TFooRgQ%3D" src="https://i.kickstarter.com/assets/049/542/121/12c952299f95ce583bb3227b84b0bca6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027075&amp;width=680&amp;sig=RSvcWVhpoDy2EEfoc7SGEFLNt091WnMxroy9TFooRgQ%3D"/>
+</figure>
+</div>
+<div>
+<p>As the core Pilates bed module, the Reformer features a sliding platform and adjustable spring resistance to deliver precise stretching and controlled movements. It effectively improves flexibility, enhances joint mobility, relieves muscle stiffness, and strengthens posture and core control.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542130">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/130/a9a6e22fa297f773dae87cef0df0618c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027104&amp;width=680&amp;sig=Cc%2B1gs0Uj4tGqxmYmBV6GuagFhDJCjCWkl%2ByrcnbDVA%3D" src="https://i.kickstarter.com/assets/049/542/130/a9a6e22fa297f773dae87cef0df0618c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027104&amp;width=680&amp;sig=Cc%2B1gs0Uj4tGqxmYmBV6GuagFhDJCjCWkl%2ByrcnbDVA%3D"/>
+</figure>
+</div>
+<div><p>Designed specifically for glutes and lower body training, this module uses multi-angle resistance exercises like hip thrusts and leg presses to precisely activate the glute muscles. It helps users sculpt firm, lifted curves and improve overall lower body symmetry and posture.</p></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542141">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Precision-Motor-Control">Precision Motor Control</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/141/da56507565682dee03fe725571bb9eab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027157&amp;width=680&amp;sig=g4nDWX2Lf%2FLIQ1JZA1RpXhzqSUgfvuZe9PET6cTiQnQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542143">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Up-to-70kg-Electronic-Resistance-Adjustment">Up to 70kg Electronic Resistance Adjustment</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/143/c001c5b3f60732f97235ad4b693bde1f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027169&amp;width=680&amp;sig=EBfDBJNJvESvKD4Udgtveht2cfm3x4HNJMfw4PZCc7s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542145">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/145/9bc809d68e1e1636f5a7f4df7dd491c2_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027183&amp;width=680&amp;sig=ZEL7bh%2B91ER5btK1drTP6JlEo4yadazwIfLZWVdpfmI%3D"/>
+</figure>
+</div>
+<div><p>Hyperformer features an advanced digital motor system that offers a <span class="bold">0–70kg resistance range with 0.5kg precision</span>—far exceeding the limitations of traditional spring- or weight-plate-based equipment. Say goodbye to clunky manual adjustments and the hassle of swapping springs.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542149">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/149/f8f646b7c05dfe6e80656e07d3e2849d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027205&amp;width=680&amp;sig=t2P0t3PFEmuUfkxyoALklZv14WUq5jxZ33Iy4CqHhZs%3D" src="https://i.kickstarter.com/assets/049/542/149/f8f646b7c05dfe6e80656e07d3e2849d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027205&amp;width=680&amp;sig=t2P0t3PFEmuUfkxyoALklZv14WUq5jxZ33Iy4CqHhZs%3D"/>
+</figure>
+</div>
+<div>
+<p>With no physical weights or springs to change, Hyperformer ensures smoother transitions, safer workouts, and a more personalized training experience. Hyperformer makes it effortless.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542155">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Diverse-Strength-Modes">Diverse Strength Modes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/155/fbc46f21cc93c975a9b1d95b488a26a8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027235&amp;width=680&amp;sig=omPPJoeoWmR0y8gLTnDFl%2BJG0WPXPd%2FhNvthYumcNaU%3D"/>
+</figure>
+</div>
+<div>
+<p>Hyperformer offers three intelligent resistance modes to elevate your strength training experience. These smart modes adapt to your goals, whether you’re aiming to build muscle, boost athletic performance, or improve muscle coordination.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542163">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/163/5b9f2d9df3c3ccfb34686e024cc9fcf5_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027268&amp;width=680&amp;sig=kPqwtZz0Znd4oxmUbXDA2o%2F4DISYxrs6pfdIqj9AH9s%3D"/>
+</figure>
+</div>
+<div>
+<p>Delivers a steady, uniform resistance throughout the movement, perfect for controlled muscle building and improving form.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542169">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/169/cfa80dff236d1d117bb490fc82e17879_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027294&amp;width=680&amp;sig=UanJmkf7wzCaD0o5V9wCjxXd3hOXGSv5caUKpp0SIc4%3D"/>
+</figure>
+</div>
+<div>
+<p>Mimics the dynamic resistance of free weights—resistance increases as you move—helping develop explosive power and functional strength.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542176">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/176/80a1d0dc6efac3cbb1105fc0f354b875_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027338&amp;width=680&amp;sig=HTkKk2P%2BjB6kSj%2BLtzwz%2B3%2FMCwWr2yl%2BPNfQysZkeg8%3D"/>
+</figure>
+</div>
+<div>
+<p>Focuses on the lengthening phase of muscle contraction, enhancing muscular endurance, control, and overall strength gains.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542185">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rowing-Water-Resistance-Simulation">Rowing Water Resistance Simulation</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/185/c2632b9bc535d39784515ed09b723d15_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027370&amp;width=680&amp;sig=jnV%2F95XjskFPny0tmf9XT5i2mKTfbvXgZPqWKyUAFis%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542191">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/191/43937f81ce558c00e4aacff42d60a000_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027390&amp;width=680&amp;sig=0giPqGLlMCreOI8dJ5L3aZQ1mciIl%2BNpj0TozCgu7jw%3D" src="https://i.kickstarter.com/assets/049/542/191/43937f81ce558c00e4aacff42d60a000_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027390&amp;width=680&amp;sig=0giPqGLlMCreOI8dJ5L3aZQ1mciIl%2BNpj0TozCgu7jw%3D"/>
+</figure>
+</div>
+<div>
+<p>Hyperformer accurately simulates the natural resistance curve of water rowing, delivering a smooth and realistic rowing experience. It effectively improves aerobic capacity, builds endurance, and efficiently activates multiple muscle groups. Bringing the benefits of on-water rowing training right into your home environment.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542193">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Smart-AI-Coaching-Personalized-Training">Smart AI Coaching&amp;Personalized Training</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/193/8dec4ec302099032af7dffeb1ec6ff5f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027406&amp;width=680&amp;sig=W0eytEL4gmZb9M0mmlyroMt9HNJcmt7VIzmUFKdg2Vw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542195">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:AI-Coach-Real-Time-Guidance">AI Coach Real-Time Guidance</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/195/ca8de918febde59e84d28f7d50d79f5d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027411&amp;width=680&amp;sig=c8F2Tdl%2FxsYBUN5BIxeZzdjr9YNkt%2BYJD%2Fp%2FwUhAI6A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542199">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/199/f1af71f4d1f5a540aafbeedabc15f6fd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027427&amp;width=680&amp;sig=9eyBs4O96T%2FdtIZxXZM61gO%2Fjpl479Cs1k6nFKIY8f4%3D" src="https://i.kickstarter.com/assets/049/542/199/f1af71f4d1f5a540aafbeedabc15f6fd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027427&amp;width=680&amp;sig=9eyBs4O96T%2FdtIZxXZM61gO%2Fjpl479Cs1k6nFKIY8f4%3D"/>
+</figure>
+</div>
+<div>
+<p>Hyperformer’s AI Coach combines real-time motion tracking with video demonstrations to ensure proper form and reduce injury risk. It also offers smart guidance by tracking your strength curve and providing clear data visualization, allowing you to monitor progress accurately and optimize your training effectively.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542205">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Smart-Data-Driven-Personalized-Training">Smart Data-Driven Personalized Training</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/205/5c7ffa45f01b4b4454b07785494f075a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027444&amp;width=680&amp;sig=UvSs61JGt7guYJ3m1jedJE6c%2FfQXSTjBHLZKbl0Wjl8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542206">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/206/76bca89a86e542fee5fbb5e551f719fb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027455&amp;width=680&amp;sig=KGFujUgQ%2FCQB%2FAtm40owSColpm86SCF1JAa%2FTVMFktY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542211">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/211/fd09c00bd454af560c773b03b26d3796_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027471&amp;width=680&amp;sig=f3BzFG5R0apcMit5JGBTj3cCoFqHGsCGiChIJBkDhgY%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542213">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/213/62d0176196a0ee0eb76bb5f8961a2144_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027494&amp;width=680&amp;sig=G6HdDdH4fkxsZlE6%2BUO4RcRdx3M%2BPSkvz8fqUnhlAHM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542215">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/215/323789c5c4c5678ab96d8171ae50eb65_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027501&amp;width=680&amp;sig=d93d15GcJiYhSpkNKmFI%2Bz9wH%2B1g1k%2B%2F2Jcss77eEPI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542220">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/220/a28824168b3e923a32bb9ceebd5b80c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027538&amp;width=680&amp;sig=xHx5LeU31S%2FH4Afp2SunRpy0d2eMV%2FM3cD8LHdm1LlI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542221">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/221/f7d8a476ccd19cd34203d517edff387e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027550&amp;width=680&amp;sig=qr5JK%2BQMfFRa592KQpnieBr0obDA4sOVNDmLFC%2Foj3A%3D"/>
+</figure>
+</div>
+<div>
+<p>Hyperformer’s powerhouse library packs 500+ on-demand classes designed to sculpt, energize, and transform. From heart-pumping HIIT and precision Pilates to zen-inducing yoga and core-crushing strength sessions.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542223">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Compact-Stylish-and-Built-for-Home-Use">Compact, Stylish, and Built for Home Use</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/223/69781b580f0cfd2952a0e951ee8b1bf6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027575&amp;width=680&amp;sig=9aIZOuT4ZLXTOrCTJ0zV%2FmiLx8AOpP0pTc0rIYZ3xt4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542224">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/224/1a5c71de36f3e1a196e9dac2e2cdac27_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027586&amp;width=680&amp;sig=dvrOrkWEWyEpGqnroYf37ooTeAyWVmMn9Nxv0qQm7TY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542228">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/542/228/63dfbec56291c6e45a7f8d71203bf74a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027614&amp;width=680&amp;sig=EgOGp%2F7o0gRzaZkpXMu2OBjy67koGVYvURh9JZcBrNU%3D" src="https://i.kickstarter.com/assets/049/542/228/63dfbec56291c6e45a7f8d71203bf74a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749027614&amp;width=680&amp;sig=EgOGp%2F7o0gRzaZkpXMu2OBjy67koGVYvURh9JZcBrNU%3D"/>
+</figure>
+</div>
+<div>
+<p>Expands to 1.7㎡ (18.3 sq ft) and folds to 0.23㎡ (2.5 sq ft)—about the size of a small coffee table. Train at home anytime to save time and avoid gym hygiene risks.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542233">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/233/c01b3647b3ac8114a61716df072bceb6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027664&amp;width=680&amp;sig=hNI2hdncdRBoiSMHPY6%2BKHfvmAW2Kbdhv3xJ%2FCp5%2BTE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542238">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/238/c4e68e72b74ac1e4cb5da418265b2da4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027678&amp;width=680&amp;sig=5drmGd%2FtWRdCNI7qqg3QEvRfyAmXfFSt49Vr88ddXnI%3D"/>
+</figure>
+</div>
+<div>
+<p>Equipped with a noiseless motor and precision-machined aluminum alloy, it offers a premium feel, smooth and silent operation, perfectly blending into home environments.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542243">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Demo-Video">Demo Video</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/243/1580abf6ba448813bd815a6c68c3d2dd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027700&amp;width=680&amp;sig=yvoJcsePKEspV0QuN1rIpuZVr237WQvZ9vSK%2FaFWgsU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542246">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/246/1b0b80425ab1ee33ca9c74b8725bcf5f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027712&amp;width=680&amp;sig=Y%2FHRidtFJmSzkqLQp8Iascb9jCTDkk7QZaXzV46Y4Z0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542249">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/249/8d0470c4ee3eead4494e394550150418_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027727&amp;width=680&amp;sig=icKEdcGm0EftuSBLx72g4Uxy31om2uWBHpxmBJy002U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542253">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/253/6b89860a86864716ab08a58a39e371bc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027738&amp;width=680&amp;sig=WXg4poERNubq1AcuXqbzZ87AYjkrf2%2BZuVMwMgSAHvg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542255">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specification">Specification</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/255/80e7a092b5e15e06ced9554117fb49e5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027747&amp;width=680&amp;sig=1jzlZXEt7JB4LgPwH%2FrqV27IE4RSiDPdDJ5oNJAtTJE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542260">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/260/2c25617b7df3503cb6e7621dbd42ebb0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027757&amp;width=680&amp;sig=ru3WDzBWxhHmp1L5kAlm8y1YkODZGuuvtRc6Cp0fGd4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542271">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-box">What's in the box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/271/c69660f6af3e150c8164c7d92bd010b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027795&amp;width=680&amp;sig=OR%2FurITMRvs9w3bR5lxc6JZHTprYpla6CH1JsZcmucc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542273">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/273/67d683b573c2c3d911cae2130f4732ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027806&amp;width=680&amp;sig=J1JupuvNO72Qw5rJUHIqG%2F6e3Nh6tPThIYGNl41RJmY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542276">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Reward">Reward</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/276/9059fac27d0bad2cfd26e57985bbdcab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027828&amp;width=680&amp;sig=0GoDTOfEEAo0B6rNmtDiMj9nrpXcj7MH%2FmU9Ro1%2B%2B%2BA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49543598">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/543/598/b0f48468220cbeae52f4cfd30c49c6f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749034346&amp;width=680&amp;sig=A2OaornT6WZiG6rbsp1WoRhRKkfhMZGTOP3wfbHrjpE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49543601">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/543/601/7131931a7318b951518bd3ed46bcc868_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749034356&amp;width=680&amp;sig=d3IYSfwip%2B5chRjbP5XvCg83HnBPUqRJ0yMnyOOBgu8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49543604">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/543/604/d10157325a73ae161de22343129ac6c6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749034368&amp;width=680&amp;sig=VqPgBc93wZIHlhRq3R5ZwB8TwyeMbesbCdi5iShqHTw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542286">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-on">Add-on</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/286/ac9a7a3d53e14e0acf82596dd16a05ef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027904&amp;width=680&amp;sig=Rd1cbejMN%2FD6w4Gv158syNj%2Fvy6Nf4VIY351bBSgKQo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49556357">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/556/357/d5863df14e91ee3da03a8d66dfae94eb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749108953&amp;width=680&amp;sig=rUXkE1oXUFKmdez9mO%2BRCApw2e1olsRK%2FMeUitzf1rA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542290">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Estimated-Shipping-Fees">Estimated Shipping Fees</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/290/817819060d301de1225eb20bfb836a71_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027930&amp;width=680&amp;sig=F8LwTaUvmXmWwJGaiOiTqnM%2F5BQ%2FvBZf8Rx%2BSI%2B9p54%3D"/>
+</figure>
+</div>
+<p>Shipping fees are estimated based on different countries and regions. The final cost may fluctuate slightly depending on shipping rates at the time of delivery.<br/>*<span class="text-italic">Please note that shipping will be charged separately after the campaign concludes.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49558628">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/558/628/813dfb39ceb07ffa7b1e85073081b4fd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749122138&amp;width=680&amp;sig=VtTAr%2FrXpXan8WEU6FGWgN2oAv42jCe5hFdUeLuweJU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542296">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/296/0dc88b2dccce7495be09572fb3a78b9d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027959&amp;width=680&amp;sig=Hie2UnBZDMLK%2FF%2FfCFyD%2BoE0%2FNHFtxfOmOrm%2BaxhgTI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49543607">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/543/607/6c2d31d721e7cc82a86be4d6c92ce274_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749034404&amp;width=680&amp;sig=BcS0PWFH%2BGZDdpKgA4%2F5j54QksI2IakUW9deyuEnmQU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542304">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Behind-The-Brand">Behind The Brand</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/304/993dc4ededb0806fc17c8de4a3d8f7f2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027984&amp;width=680&amp;sig=0dn4kZucaeVSMXoSiY5ZKDxwdgjUI9VRsUW1XP%2FnOAc%3D"/>
+</figure>
+</div>
+<p>Gymera Technology was founded in 2022 and is headquartered in Shenzhen, with a research and development team of nearly 100 members. Our core team includes former executives and experts from Fortune 500 companies such as Huawei and leading AI companies like Dobot Technology, bringing deep technical and industry expertise. <br/><br/>By leveraging ICT, AI, robotics, IoT, and cloud-based data analysis, Gymera creates personalized fitness plans tailored to various health needs—enabling both scientific training and proactive health forecasting. <br/><br/>We understand the importance of transparent communication, and we will continuously provide real-time updates on the progress of Hyperformer to keep you informed every step of the way.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49543609">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/543/609/0d8519da5d65ef69cad62ef90a7a0eb6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749034416&amp;width=680&amp;sig=Y1wHRo5xLSurDJfO7%2FBVNNTj2tymeUxTIUBWOWOnPP8%3D"/>
+</figure>
+</div>
+<span>This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Launching the Hyperformer comes with its set of risks and challenges, including potential supply chain disruptions, manufacturing delays, and unexpected logistical hurdles. We are committed to proactive communication and leveraging our extensive experience to navigate these challenges. Our team has meticulously planned each step to minimize risks and ensure timely delivery, maintaining the high quality and innovation our supporters expect. Your trust and support motivate us to overcome any obstacles and bring the Hyperformer to life seamlessly.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">We use high-quality aluminum alloy, a durable and eco-friendly material that is not only lightweight and strong but also fully recyclable and reusable. By choosing sustainable materials, we aim to reduce environmental impact and promote a greener future.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

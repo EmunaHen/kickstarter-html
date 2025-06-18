@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FaSuH - The Ultra-Thin Portable Touchscreen Monitor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/421/714/cc9187e16f29024c8cf7165708d12801_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1748243951&width=560&sig=8ncIaQXHsv5y3yxpNHkiop2kKOfJeQ3sZwVoyrsY3fc%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>FaSuH - The Ultra-Thin Portable Touchscreen Monitor</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">16mm Ultra-Thin | Touchscreen | 360° Rotation | Plug and Play | RGB Backlight | Thin & Portable</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,802</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605604">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Background">Background</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/604/c07629b9c11c4b761e4f058c2a1f7663_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742522751&amp;width=680&amp;sig=BqAxfiN80kA0ssctkzRr43v1I4Z%2FpdjmJe3%2BswKw6nw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48418406">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/418/406/5ffec8c9256c6fdb7fa10448be7dcad5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741246665&amp;width=680&amp;sig=1JLDJpNc9Rse9pecCdNtEurNnbpVydbKhv6SCC2gx44%3D"/>
+</figure>
+</div>
+<p>Tired of the hassle of constantly switching windows?<br/>Struggling to find the perfect visual angle because of limited adjustability?</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605947">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/605/947/bc157b9310790c8a6af8a76f146138ee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742525667&amp;width=680&amp;sig=7INwXUCkrM2cjhkzLxTl5IH8wIVFCkJWCDeobJh0Bnk%3D" src="https://i.kickstarter.com/assets/048/605/947/bc157b9310790c8a6af8a76f146138ee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742525667&amp;width=680&amp;sig=7INwXUCkrM2cjhkzLxTl5IH8wIVFCkJWCDeobJh0Bnk%3D"/>
+</figure>
+</div>
+<p>FaSuH 14.5-inch Portable Touchscreen Monitor — Redefining efficiency and immersion!<br/>One screen, effortless control — Seamlessly switch between work and entertainment, unlocking your full productivity and creativity with just a touch!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605622">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-FaSuH-Touchscreen-Monitor-">Why FaSuH Touchscreen Monitor?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/622/2216c31e0c4d62a906b5387999f7df40_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742522984&amp;width=680&amp;sig=nBAKWlKQHwz8qfWEnQGQelBfD%2FGuEcsEiIG%2BJkCjq6s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49271616">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/271/616/3e58bbd3ac53c147c0b9aeff1d59c51c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747208658&amp;width=680&amp;sig=gWrqlhXF1No69cQfFMymiumvYfrjaxewvYYLYwOitoU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605626">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Multitask-Effortlessly-Boost-Work-Efficiency">Multitask Effortlessly, Boost Work Efficiency</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/626/878e669196eee4821bfc5eafe772b444_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523000&amp;width=680&amp;sig=jxERjfMGbZaBK59S8pGVX2xVLUQZfP4RZ7azNiMtJm4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48418138">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/418/138/d9f85a4959240a5a72049a82ca7aa4e9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741244214&amp;width=680&amp;sig=%2FYAJD0%2BkaMXbrvI5pA3oCJgaw9ZeDE4QUlTdAE657mM%3D" src="https://i.kickstarter.com/assets/048/418/138/d9f85a4959240a5a72049a82ca7aa4e9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741244214&amp;width=680&amp;sig=%2FYAJD0%2BkaMXbrvI5pA3oCJgaw9ZeDE4QUlTdAE657mM%3D"/>
+</figure>
+</div>
+<p>Multitasking made easy, with multiple applications running simultaneously without the need to constantly switch between interfaces, ensuring a smooth workflow.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49437150">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/437/150/023551286d40dc5775a6cb5f480402c3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748342744&amp;width=680&amp;sig=u4Vg0Rd%2FqHxoZ%2FkxjmkC3%2FDPtM4wcQ4pznqW%2B8sbo6I%3D"/>
+</figure>
+</div>
+<p>Optimize your workflow with smart schedules and task management, eliminating messy paper notes. Easily plan and organize your tasks for improved productivity.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605631">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Touch-Control-Made-Easy">Touch Control Made Easy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/631/44f8b8fe4bdd2ff340a037a03e127727_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523059&amp;width=680&amp;sig=5dID1FX4BesKiCm0kmP%2BEw03iLWO8EHBvX0O%2Ft4dMyw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48301255">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/301/255/5b985280b1b81b326cf0e8cb30268e66_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1740452352&amp;width=680&amp;sig=skO2n2PQWKHCUAQrray7%2BAcaW63KosGBcch4%2BCIlf34%3D" src="https://i.kickstarter.com/assets/048/301/255/5b985280b1b81b326cf0e8cb30268e66_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1740452352&amp;width=680&amp;sig=skO2n2PQWKHCUAQrray7%2BAcaW63KosGBcch4%2BCIlf34%3D"/>
+</figure>
+</div>
+<p>Not only is the screen touchable, but the volume adjustment can also be controlled via touch, making your user experience more intuitive and convenient, enhancing smoothness and ease of operation.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605632">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Effortless-Drag-and-Drop">Effortless Drag-and-Drop</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/632/e4b80fde546ae700ba08c3fc7b41ba7b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523081&amp;width=680&amp;sig=LN4xxbpWB14v0vVsaP9bBrjcfUZbG%2F8f%2FxG70fCXm2s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48418168">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/418/168/46041b1f3f545fdc29ba041fc6feb7bc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741244506&amp;width=680&amp;sig=vPXUBaczN3ESUB%2FuwICfLbKa5AhX4O3dSCscJ1SAvK0%3D" src="https://i.kickstarter.com/assets/048/418/168/46041b1f3f545fdc29ba041fc6feb7bc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741244506&amp;width=680&amp;sig=vPXUBaczN3ESUB%2FuwICfLbKa5AhX4O3dSCscJ1SAvK0%3D"/>
+</figure>
+</div>
+<p>The FaSuH monitor allows you to effortlessly drag tasks from your computer screen to the display, enabling precise and smooth window switching and content adjustment to enhance work efficiency.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605635">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Immersive-Gaming-on-Multi-Platform-with-Low-Latency">Immersive Gaming on Multi-Platform with Low Latency</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/635/b84eca2bec6a8954fbaccf06ddbc8499_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523110&amp;width=680&amp;sig=vHtWeafGTOlPA5zCsty7k0JYsFZJ5JghtpiMSQfW51w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49421817">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/421/817/54dc8c701a192ae0243f7ce28fef74c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748244706&amp;width=680&amp;sig=k%2BEQ%2BTLC026BoUxcGR%2BIrE%2F%2B9fmlnKhPsTtTw0IBDGI%3D"/>
+</figure>
+</div>
+<p>Supports multiple gaming platforms including PS4, XBOX, SWITCH, PC, and TV BOX, allowing you to fully enjoy the immersive gaming experience on a large screen!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605648">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/605/648/88a7281abc9b9103a5b2f41a3340c61e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523224&amp;width=680&amp;sig=GeVLwvLuSMFXAQj8q4IqUfeKbpdGMe0eJ163xNfAsUk%3D" src="https://i.kickstarter.com/assets/048/605/648/88a7281abc9b9103a5b2f41a3340c61e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523224&amp;width=680&amp;sig=GeVLwvLuSMFXAQj8q4IqUfeKbpdGMe0eJ163xNfAsUk%3D"/>
+</figure>
+</div>
+<p>Ultra-low latency and smooth visual response ensure no lag or screen tearing during gameplay, delivering a flawless gaming experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605666">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Adjust-the-Angle-As-You-Like">Adjust the Angle As You Like</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/666/452f6f291ed31a26b5e518641b3c4b28_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523389&amp;width=680&amp;sig=L9GQ1aq%2BrAYMhwo4rflVqwogYxglv%2Bl3c8V6rRJY6CA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48301310">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/301/310/58d52751692997998f26b5cf9868a822_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1740452637&amp;width=680&amp;sig=SulvxzHqaJ%2BQsed5H9kJS3dsPv%2BpBvtYimLSyTO3oDI%3D" src="https://i.kickstarter.com/assets/048/301/310/58d52751692997998f26b5cf9868a822_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1740452637&amp;width=680&amp;sig=SulvxzHqaJ%2BQsed5H9kJS3dsPv%2BpBvtYimLSyTO3oDI%3D"/>
+</figure>
+</div>
+<p>Adjustable angles from 45° to 135°, ensuring comfort during long hours of use without fatigue. The kickstand requires no extra accessories, making it the ideal choice for work, entertainment, and creativity. Sturdy and durable, it provides secure support, freeing your hands for a better experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605714">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Flexible-Screen-Rotation-for-Every-Task">Flexible Screen Rotation for Every Task</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/714/4d8734db5f38a34df27e578e77e2782a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523767&amp;width=680&amp;sig=z8DhFk6iNlgsgrwnC5Wo5sbJklcdhnllXwcIbcrVOYY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605706">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/605/706/d779dc3af67ec0d13501c295e71301ce_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523655&amp;width=680&amp;sig=3KqUQi3OuZnVdXTzbb1qqiswQqL9Apva57juhUnqylA%3D" src="https://i.kickstarter.com/assets/048/605/706/d779dc3af67ec0d13501c295e71301ce_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523655&amp;width=680&amp;sig=3KqUQi3OuZnVdXTzbb1qqiswQqL9Apva57juhUnqylA%3D"/>
+</figure>
+</div>
+<p>The FaSuH monitor supports easy switching between landscape and portrait modes. Landscape is ideal for multitasking, while portrait mode is better for reading long documents and coding. You can effortlessly adjust the display angle according to your work needs, ensuring a more efficient and comfortable work experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605674">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Seamless-Connectivity-with-Dual-Side-Ports">Seamless Connectivity with Dual-Side Ports</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/674/503068eb976bcfb0a16319631a3c9f88_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523464&amp;width=680&amp;sig=ayRSFvnmEYHE2zG84rE92mwT2jZPlK%2FDbd5Mhqs%2BqiM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48301319">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/301/319/88223ca2883bc498dbfcbf18c77d7321_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1740452684&amp;width=680&amp;sig=c0knKCo9viZz0pYri7k3xl4Jts22x4x8BACDmDBvMtE%3D" src="https://i.kickstarter.com/assets/048/301/319/88223ca2883bc498dbfcbf18c77d7321_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1740452684&amp;width=680&amp;sig=c0knKCo9viZz0pYri7k3xl4Jts22x4x8BACDmDBvMtE%3D"/>
+</figure>
+</div>
+<p>Easily connect from either side, making it perfect for different work environments without the need to flip or adjust the device. Simultaneously connect multiple devices to handle all your expansion needs, including external monitors, headphones, and power banks. With 3.5mm audio, dual Type-C, and Mini HDMI ports, it offers enhanced compatibility for audio, office tasks, and gaming.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605720">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Professional-Display-Experience">Professional Display Experience</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/720/c98cd6e8d9199c41ac9e8c0184f98614_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523810&amp;width=680&amp;sig=PC3%2FZJIHSG7p4pESR0NCIAvqpFgiT65NXHzLeBX6RkI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48609015">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/609/015/918053c9062937377f165f3068832130_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742554399&amp;width=680&amp;sig=XWyD0lMquOu23LSJlmg9ItGUZ5quAZiCnGa8lKmpJZg%3D" src="https://i.kickstarter.com/assets/048/609/015/918053c9062937377f165f3068832130_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742554399&amp;width=680&amp;sig=XWyD0lMquOu23LSJlmg9ItGUZ5quAZiCnGa8lKmpJZg%3D"/>
+</figure>
+</div>
+<p><span class="bold">Ultra-Wide Viewing Angle (ADS Technology)</span> – Clear, vibrant visuals from any angle, perfect for multi-angle use.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49422919">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/422/919/bdb4aaa9c33c038bfaafc27364ca67bf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748252577&amp;width=680&amp;sig=hku5%2BB6iGZtMsZDce%2FgwiGzst7TxCfVtLHLgzmNIZCE%3D"/>
+</figure>
+</div>
+<p><span class="bold">Projection-like Display, Vibrant Colors</span> – Higher brightness and precise color reproduction, ensuring visibility even in well-lit environments.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605730">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Ultra-Wide-Display">Ultra-Wide Display</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/730/246b5a5ff4edca70eb5b8809c66e2ace_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523930&amp;width=680&amp;sig=XpB1%2FOgo9x%2FPPZPI%2F4hyQm1IEeEGxJ%2F091a3gJpwHmM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49422883">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/422/883/f31aee6d1bb701d04d905a680f641b4e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748252350&amp;width=680&amp;sig=N1QvPdXLCrjBj5c18a2JdUwlXt%2BRB0yebpnkIU72LEo%3D"/>
+</figure>
+</div>
+<p>FaSuH boasts a 14.5-inch ultra-wide screen with a 32:9 aspect ratio, delivering a near dual-screen experience. The expansive display boosts multitasking efficiency and offers an immersive gaming experience with sharp details and precise control.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605734">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stunning-2K-Clarity">Stunning 2K Clarity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/734/ffedf06899717c80ddb88711c3b3d8d9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523963&amp;width=680&amp;sig=TZGaLp3478fQvtEP6wgzHJk3UVRjb8CHAk5iIcj5%2BRs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49421860">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/421/860/d18e3b79168288a56c7ece4a04f6fec1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748244975&amp;width=680&amp;sig=Po96M4c5xfZbR%2FOdNix6fPNwtg4Qql6G9p%2BXC%2FBr38o%3D"/>
+</figure>
+</div>
+<p>With a 2560×720 resolution, it delivers exquisite 2K quality, providing clear images and true-to-life colors, making the details come to life.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605743">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Smooth-Display-Precise-Response">Smooth Display, Precise Response</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/743/2f5e67462641bef03c50bdae56a195bd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742523999&amp;width=680&amp;sig=UKXA7LOwk%2FukAXTAUFkMfIF5Dd6IHT95sr%2BVhguCOFo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49437221">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/437/221/f37ab836f69e6f8e56cf7139991fdda4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748343152&amp;width=680&amp;sig=Ej37uM72751Y5OjsMp963PoXbEcBmbMW8BcXqHn2uuw%3D" src="https://i.kickstarter.com/assets/049/437/221/f37ab836f69e6f8e56cf7139991fdda4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748343152&amp;width=680&amp;sig=Ej37uM72751Y5OjsMp963PoXbEcBmbMW8BcXqHn2uuw%3D"/>
+</figure>
+</div>
+<p>The 60Hz refresh rate ensures smooth and seamless screen transitions, reducing lag and stutter, enhancing the experience in office work, image editing, and gaming, making every action precise and accurate.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605751">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:100-sRGB-for-Accurate-Colors">100% sRGB for Accurate Colors</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/751/253a7ce5334d84af47f2ca1a9112d4d3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742524048&amp;width=680&amp;sig=%2F3VGei7UzLv6Uhge9C1SZksp2MZPoO%2Fsjdbga5wgaRo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49421880">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/421/880/440ce2e8ae2909cfba747134bec67a77_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748245177&amp;width=680&amp;sig=3D48uvvhK8AYHwAe2lLUFloDwL8pmDnajRXn4otm5Jo%3D"/>
+</figure>
+</div>
+<p>With support for 100% sRGB color gamut, it delivers precise color reproduction and vivid details. Whether for design, photography, or video editing, it ensures accurate color performance to meet professional needs.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605764">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Carry-Your-Cinema-Anywhere-with-Ease">Carry Your Cinema Anywhere with Ease</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/764/fb7ce8c063909ff8691143d8d5fcc6a9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742524124&amp;width=680&amp;sig=ZKE8WqjsXrOR8%2F8bhMQ57r5bxxQpA1IWB9fCCViqU10%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48301499">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/301/499/dd3927338ad82ad39b01864d55b7fbea_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1740453845&amp;width=680&amp;sig=3DunDXMMBLuDAX6Ky8AX7QLG28EOjXyX7wPaf3vMTjs%3D" src="https://i.kickstarter.com/assets/048/301/499/dd3927338ad82ad39b01864d55b7fbea_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1740453845&amp;width=680&amp;sig=3DunDXMMBLuDAX6Ky8AX7QLG28EOjXyX7wPaf3vMTjs%3D"/>
+</figure>
+</div>
+<p>With a 16mm ultra-thin body, slimmer than a pencil, and lightweight design, it’s easy to slip into your backpack for effortless travel and commuting.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49527553">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/527/553/4fa711f1140b1a6185fd7a86863f0c3c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748949000&amp;width=680&amp;sig=UyhqAwQCd22t0EiamkbP0FV2BSbdNv%2BabA8QtFNoCbg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605768">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:One-Screen-Fits-All">One Screen Fits All</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/768/51b2d1ef7c65f1e36c659cb6fcedc506_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742524143&amp;width=680&amp;sig=6UVOgq117RE5CXG7tjr5QtReRQiY%2BjCM9dW2MuzzFFE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48635564">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/635/564/1652ff33b7f06baa74a6cb42a2465f7c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742787159&amp;width=680&amp;sig=2zBdvZ4NjiuMp%2FPybkn6Q473kbEZr3d4FeDOil7Jo74%3D"/>
+</figure>
+</div>
+<p><span class="bold">Dual-Side Plug-and-Play Ports:</span> Featuring Mini HDMI 2.0×1, two full-function Type-C×2, and a 3.5mm audio jack, supporting plug-and-play with PS4, Xbox, Switch, Android phones, PCs, and more.</p><p><span class="bold">One-Cable Compatibility: </span>Directly connect Type-C 3.1 phones from brands like Samsung, Huawei, and Sony to instantly transform into a productivity workstation.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605776">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-Screen-Every-Scene">Your Screen, Every Scene</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/776/32f6299b76ae595a41dbf560cd0f9892_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742524200&amp;width=680&amp;sig=H3qZ14TU7o0BN43%2FNu1psTktSecdqjhhhFvUN%2BN8Gvo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49421897">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/421/897/29aaf0c5fe9832b9526ac38d301206de_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748245263&amp;width=680&amp;sig=WBkcdVkP5hivAyyIvqosG1hG3FN1QhjNLvbwe02bM88%3D"/>
+</figure>
+</div>
+<p>Boost your productivity with FaSuH! Effortlessly multitask, edit, organize, and connect—all on a single screen. Perfect for both work and play!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605778">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-FaSuH-Beats-the-Rest-">Why FaSuH Beats the Rest?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/778/d1cfb4bbb0d2041d5ecf8e90ab1501bf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742524235&amp;width=680&amp;sig=nzIkUsYO5NfaU%2F6EimSOC%2BcZYjb8HVh3Xcdsa%2FOcF5Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49422972">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/422/972/5ed7734314afa8f2c390f1058303248e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748252852&amp;width=680&amp;sig=L7MEHbxPc2GGERnCy1T%2F8LBSSLneaxcp6ubqujgxPXM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49422831">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/422/831/9dad7fed4ed8f60882785184703bd24d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748251928&amp;width=680&amp;sig=S8wxHHZLkw1W89q4bJ0PB%2BzQK71nV30eDZ%2Bk1HnQBks%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49422862">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/422/862/b4a66e40317f06c5785c89fcbd3fe26a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748252183&amp;width=680&amp;sig=Ez282KzgyE5RpbCTttADjN0t8lHIyKalG6W6Y710Nh0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49422864">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/422/864/d06b5af9de56e66f42ab137203f9e73d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748252188&amp;width=680&amp;sig=%2BVItB%2BFN%2F5gjqwhr463XRn%2BJSSClP%2Fp%2BZF8DHhdC7YA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605782">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/782/671dc06c9c203139d5fa1620e7cf20bf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742524250&amp;width=680&amp;sig=tyD%2BPElHlNMBKiFtApLsmw9wCLmUQsHDtH8L%2FpYtq%2F0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49527175">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/527/175/740f336505154822dc7da0ae49331526_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748946378&amp;width=680&amp;sig=DLY%2B7%2FkjGqRinM%2FBMP3nrX3Or3aMPl93qOxraN0QI6g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605810">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Operation-Video">Operation Video</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/810/35df139df1de9afbdc751a65de74aab3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742524503&amp;width=680&amp;sig=iAJt3djgGVw%2F%2F7kUmED8Cv9V9WFKRtPiUA%2Bpqs70aaY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605814">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Design-History">Design History</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/814/505b3e6ee4a99ac69d964cd2ca7e109c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742524511&amp;width=680&amp;sig=0LwAw%2Bnqr7Sur9l5CpsPnX%2FYRCtxpMgPzYYrPD%2B%2FagE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49432229">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/432/229/46585c0abc72ebb1e565fbdc86f139ef_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748313360&amp;width=680&amp;sig=iqbOhnOXgttz99bgXc3mu7%2FESymUlAWH%2FYHFv03oLUQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49432707">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/432/707/1aa0d05e3505533c8cb7d20842721de1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748316778&amp;width=680&amp;sig=u43YWY1yh6lK5Tewotzw8YMN%2FNN%2FGSvFNS3haZV8z4w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49437505">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/437/505/3c5c80a3dbc38fff9e82cca05e8ee091_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748344761&amp;width=680&amp;sig=U5acFZeh%2FI5T2EhYF5aTmVKZBynzBoAtOpjdq7%2BXSo4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48605795">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Us">About Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/605/795/cb6df60bac74e4b5f6072633dcf2b43b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742524328&amp;width=680&amp;sig=C2b10Lso%2FHWn8s%2F8UpU17d28xWtcoElJu1RjVFy0dho%3D"/>
+</figure>
+</div>
+<p>At FaSuH, we're dedicated to enhancing modern life with innovative technology, offering seamless experiences for work and play. Our mission is simple: technology should empower creativity and break boundaries. We create intelligent display solutions with touch control and split-screen capabilities, making multitasking effortless and productivity easier, while delivering immersive entertainment. </p><p>With a 16mm ultra-thin design and 360°adjustable hinge, our products combine portability and performance. Featuring cinema-grade audio-visuals, FaSuH redefines display use for work, creativity, and leisure, providing flexible and intuitive solutions that elevate your everyday experience. </p><p>FaSuH — Empowering Life with Technology, Infinite Possibilities at Your Fingertips.</p><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As an experienced 3C accessories manufacturer, we've developed a solid production process to ensure high - quality products are delivered on time. But we're not immune to challenges like supply chain disruptions, component shortages, or logistical delays.
+To deal with these risks, we've lined up backup suppliers and made our production schedule flexible. Our team is committed to strict quality control and keeps in regular touch with our backers.
+If unexpected problems occur, we'll let our supporters know right away and work hard to fix them.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

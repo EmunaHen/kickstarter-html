@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quickboards - Schematic Design Library</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/321/524/943717ed7d7bfb52a7fcfd6fc1e97b64_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747569496&width=560&sig=L1ZA7b9EhMIaOErt4xT6pcykgI6Nx7RAQZ1%2FAPtjBzc%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Quickboards - Schematic Design Library</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Building block reference designs to help you design circuits quickly and efficiently.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 732</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49098515">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hardware-is-Hard">Hardware is Hard</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/098/515/e7be2d643860c820daa770385e32dfd1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745995377&amp;width=680&amp;sig=xWu%2FKzKoDMT2T3EP5VHzXvuQ1LC82kgsYj8S12gSRzA%3D"/>
+</figure>
+</div>
+<p>Some circuits just don't cooperate! Whether its datasheets with key details hidden in a haystack, 100s of reference pages but no reference code, every conceivable detail available except for ECAD symbols, footprints or 3D models.</p><p>Let's face it, hardware development is hard. The industry has come far in simplifying development, but not far enough. Luckily, Quickboards will change things, and <span class="bold">you get to be a part of it!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49069992">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Quickboards-Library">The Quickboards Library</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/069/992/a0fdb090f5d88eb8def2d3900329f285_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745836335&amp;width=680&amp;sig=eJfpoPQRJ4SFnyTyjyrTUz%2FFb%2BxBwmxAdp8MYCm%2FLCI%3D"/>
+</figure>
+</div>
+<p>We’re launching the Quickboards <span class="bold">Schematic Library</span>—a curated collection of proven, modular circuit building blocks you can copy-paste directly into your own ECAD software.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49287311">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/287/311/1ab50f2c10d0806f0e3f700b397acf45_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747302556&amp;width=680&amp;sig=PnoTt9JtlCz2e1lwUj%2FdHaa0Zat9aYBZbwAq9GG%2FUYA%3D" src="https://i.kickstarter.com/assets/049/287/311/1ab50f2c10d0806f0e3f700b397acf45_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747302556&amp;width=680&amp;sig=PnoTt9JtlCz2e1lwUj%2FdHaa0Zat9aYBZbwAq9GG%2FUYA%3D"/>
+</figure>
+</div>
+<p>Skip component search, Skip symbol/footprint/model creation, Skip interpreting datasheet circuit diagrams - browse our library for pre-built schematics, download and paste into your project.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49074637">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-it-works">How it works</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/074/637/cd5b8526334ef1f8fcae1086088e44d4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745862207&amp;width=680&amp;sig=iJ44oCTdV81qWsiw%2B8RrXALQU1onB5X3J17F3fB%2BAro%3D"/>
+</figure>
+</div>
+<p>Your circuit needs sensors? Easy! browse the sensor blocks library, find the sensor type you need, copy and paste into your project</p><p>Need a microcontroller to collect data from those sensors? Browse the processor blocks library and pick out a micro, paste into your project.</p><p>Need to power all those ICs? Browse the power management blocks library and find a suitable power block, paste into your project.</p><p>Need an ADC to measure various voltages throughout the circuit? Browse the ADC blocks library and paste into your project.</p><p>Tie the blocks together, and start PCB layout.</p><p>What usually took months, can now be done in days.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49083295">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Application-Example-BMS">Application Example BMS</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/083/295/df2ade28c5980641f7914853e26b23c1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745917472&amp;width=680&amp;sig=eDSZwvOXV801p55nUBmqe8HpYWXkQsaRe7qTtL3wOxk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49095785">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/095/785/00154dc8a2204044807a3ccf750bc6e7_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745975604&amp;width=680&amp;sig=De1kIDtQYUVVWry%2FZmbBWYvAEz1RV%2Ffmg34yvyplI7g%3D"/>
+</figure>
+</div>
+<p>A complete 12-cell lithium-ion Battery Management System (BMS) can be assembled by combining a few modular Quickboards blocks.</p><p>Start by adding a <span class="bold">Power Management Block</span> built around the LTC6811 IC, responsible for cell voltage monitoring and passive balancing. Pair this with a <span class="bold">Processor Block</span> featuring a PIC24F microcontroller, which communicates with the LTC6811 via SPI. The microcontroller reads voltage data from each cell and sends commands to initiate cell balancing as needed.</p><p>Next, add a <span class="bold">Power Management Block</span> equipped with eight N-Channel MOSFETs<span class="bold">.</span> Two of these are used to drive mechanical relays—one for controlling the battery relay and the other for the charge relay.</p><p>for current and temperature measurement, integrate <span class="bold">current sensor blocks</span> to monitor both battery discharge and charging currents, and include a <span class="bold">temperature sensing block</span> with eight analog temperature sensors to track cell temperatures accurately. Then add an <span class="bold">ADC block</span> to collect the various sensor voltages.</p><p>To complete the system, include a <span class="bold">Power Management Block</span> containing several buck converters to power all the sub circuits.</p><p>You can find the full schematic pdf <span>here</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49083297">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Application-Example-LPF">Application Example LPF</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/083/297/c6f8fef5ee62f3c87f10678b29bdb00f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745917479&amp;width=680&amp;sig=s%2F5lRVudVILBpq978rLjktKca8WS9BmjNaW5MoNQ5vI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49283144">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/283/144/232b3c1513a8975602ddd130771b26a6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747272200&amp;width=680&amp;sig=AMGurj%2BJLOn5Nf8FufFTsDIeEaEaXAUpoLbA6CUtmOg%3D"/>
+</figure>
+</div>
+<p>A fully programmable low-pass filter system can be created by combining several Quickboards building blocks designed for precision analog and digital signal processing.</p><p>Start with an <span class="bold">Analog Input Block</span> that includes four differential input buffers. These buffers condition the incoming analog signals and pass them to the next stage with high signal integrity.</p><p>Next, connect an <span class="bold">ADC Block</span> to sample the differential inputs. This block digitizes the analog signals and sends the data to a <span class="bold">Processor Block</span> featuring the dsPIC33 DSP via SPI. The dsPIC33 performs digital filtering on the sampled data in real time by applying a FFT, subtracting or attenuating the particular frequencies of choice, then applying an inverse FFT to reconstruct the time-domain signal.</p><p>Once processed, the filtered signals are transmitted through SPI to <span class="bold">two DAC Blocks</span>, which convert the digital data back into analog signals.</p><p>Finally, the analog output from the DACs is routed into an <span class="bold">Analog Output Block</span> containing eight precision active low-pass filter circuits. These filters provide final analog smoothing and bandwidth control, making the system suitable for applications requiring clean, programmable analog output.</p><p>You can find the full schematic pdf <span>here</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49074568">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Kickstarter-Rewards">Kickstarter Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/074/568/a93f0f7b83c5fd6cd703ad57d2d19531_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745861883&amp;width=680&amp;sig=m872n3LoTCcObzWczhKKVJudR5RzwXXgbRTxF%2FOucSU%3D"/>
+</figure>
+</div>
+<p>Kickstarter Backers will receive a one year subscription to the schematic library, where they can download the schematic files below in Altium, KiCAD, and Eagle format. Once the subscription year is over, backers can renew their subscription at the same Kickstarter price tier in perpetuity, unless cancelled.</p><p>Below are the schematic files that will be released on July 1st, more designs are in the works and will be added to the library throughout the year.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49049209">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/049/209/98620cd00322df7caeeb9b02e7cc06c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745659046&amp;width=680&amp;sig=iWqSfOevL9ZY0OuBtpsqsFX1W3YMoU7DR4l5OYtvPqI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49365160">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/365/160/057dc87e69bd58e2ba61a5e79f15b429_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747827350&amp;width=680&amp;sig=cSLEIkCiQzCTDOG%2FGQysFGop4VwKIJEpFpLJWKN%2FtBI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354115">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/115/facb7e6c3870284bcbd1947108b004ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747762577&amp;width=680&amp;sig=eGetgnX9FeXcXjJxzbHIbp0PVnS2xacZlZtqTVs30rY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354792">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/792/91e1725114fd44fc3c4232f2c4d05095_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747765110&amp;width=680&amp;sig=I5Yi50T9xgmSjodRKpBp9kgOwm0KBoPPuv8ivVz8VZo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49397332">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/397/332/e9b2ae60d5c65c506ee6d67c3a91cdbf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748014997&amp;width=680&amp;sig=F96BuGXnfnz%2Fec9iGfOD1aupgn%2B8ZzaerpZPVfk4z2Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49074787">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Who-Should-Back-This-Project">Who Should Back This Project</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/074/787/178d58139d6cdc703e397eb469152c65_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745862965&amp;width=680&amp;sig=r2PQZ7P4yjzqinBQfbhAJUJb0rLYxMYiZX7DARHam%2BQ%3D"/>
+</figure>
+</div>
+<ul>
+<li>If electronics development is costing you a lot of time, money, mental energy and want a faster way to design.</li>
+<li>If you want to learn electronics by studying a library of reference designs.</li>
+<li>If you want to help us grow this library to 1000+ circuits, making a difference for you and the entire industry. </li>
+<li>If you want to lock in an exclusive annual cost of this library, while everyone else pays a flexible price as the library grows in size and demand.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49076100">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goals">Stretch Goals</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/076/100/7dc44877524ecb029587cf9bf875a1b0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745869561&amp;width=680&amp;sig=PQSwyiy%2BRz2IsApFOwrLWwf66X%2Fl2I2SNydHkNSYABs%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:STRETCH-GOAL-1-Firmware-Blocks-Access-20-000-">STRETCH GOAL #1 - Firmware Blocks Access ($20,000)</h4><p>Most schematic blocks come with a corresponding firmware block, so you can confidently select sensors, ADCs, and other peripherals knowing there's already tested and documented code available to interface them with the Quickboards processor blocks. Once the first stretch goal is reached, all backers will receive unlimited access to firmware blocks as part of their subscription.</p><h4 class="page-anchor" id="h:STRETCH-GOAL-2-15-off-Hardware-Blocks-40-000-">STRETCH GOAL #2 - 15% off Hardware Blocks ($40,000)</h4><p>Every schematic block has a matching hardware block, giving you the flexibility to quickly prototype your design on the bench before committing to the final schematic and PCB layout. If the second stretch goal is achieved, all backers will receive a 15% discount on all hardware blocks added to their subscriptions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49397345">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/397/345/4c13ed4794f4e01a6d826e5eb9445e80_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748015059&amp;width=680&amp;sig=tFNkRTXbmF6h%2FC%2BYgf6o1jvB%2FC9D1ztuXIn3jMLAUWU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49397353">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/397/353/0ecf022f2a4cde5f1ad81d9357e3a886_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748015116&amp;width=680&amp;sig=jtfAev3EjC%2Fri8jQ9wDbSlgkqX6TplTGo6pdt1pEmD4%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Timeline">Timeline</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49353724">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/353/724/50addaac26a41f00da801852a48aa915_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747760729&amp;width=680&amp;sig=mTyMqjrE%2BIAZArKk2phG8kMtm5TYJqU1%2FGOjPyiw3ic%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Our main challenge is expanding the library while maintaining quality and reliability of designs. With your support, we’ll be able to expand our team of industry experts to ensure success.
+
+Our secondary challenge is navigating component stock issues, which can impact module availability and timelines. To address this, we’ve prioritized components based on availability and production status, ensuring resilience and minimizing the risk of delays. In the event of out-of-stock components, we will communicate promptly with backers regarding potential delays, including any required redesigns</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">One of the key factors in ensuring the longevity of Quickboards is the careful selection of integrated circuits (ICs) that have been in production for years and are widely used in the electronics industry. This approach guarantees long term demand for the particular design, proven reliability and industry support.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Quickboards are modular building blocks designed for reuse across multiple prototype designs, reducing electronic waste.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
