@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChefLab: World's First AI-Powered Wireless Meat Thermometer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/572/679/a6bd1ef10815c71a03ac925c6eff1f48_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749206478&width=560&sig=%2BJV3fF%2B%2Fari%2FQ6w03UKYdHeJ9R83e61nJPYLNSPmV9U%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>ChefLab: World's First AI-Powered Wireless Meat Thermometer</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">AI Auto Temp Setting | Cooking Video Tutorials | App & Dock Dual Control | Magnetic Mount | Temp & Humidity Monitoring | 700FT Wireless</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332016">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Introducing-ChefLab">🌡️ Introducing ChefLab</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/016/3e8ef947bc9b01305ffbe1c90d17e596_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747646782&amp;width=680&amp;sig=UKwFmIoyKPF0zLIOzWQT%2FsXyP1tOfzkIVirvOnWsYW0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49200465">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/200/465/62ebd6484239f6b96bfa188de03edc23_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746698187&amp;width=680&amp;sig=g6f%2BNiSAwXH%2BR2rFvuCFdAzARn%2FCInmyjiWSgh5Odsc%3D" src="https://i.kickstarter.com/assets/049/200/465/62ebd6484239f6b96bfa188de03edc23_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746698187&amp;width=680&amp;sig=g6f%2BNiSAwXH%2BR2rFvuCFdAzARn%2FCInmyjiWSgh5Odsc%3D"/>
+</figure>
+</div>
+<p>Perfect doneness is hard to guess—even seasoned home cooks sometimes miss the mark. <span class="bold">ChefLab’s AI-powered thermometer takes the guesswork out of cooking by automatically setting the ideal temperature, offering curated global recipes, and guiding you to delicious results every time.</span> Whether you're aiming for a juicy steak or exploring new world flavors, ChefLab helps you cook with confidence and creativity.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349394">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/394/69fd739a6ead3a116390603f72550d7c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747742711&amp;width=680&amp;sig=i6VrvlcT0Pg5daUSKjCsVI1QHSro5Cv7PrHrE7yVhzw%3D"/>
+</figure>
+</div>
+<span></span><p><span class="bold">Join our </span><span>Kickbooster program</span><span class="bold"> and earn 20% cash back on every referral!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332054">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Traditional-Cooking-Makes-Doneness-a-Guessing-Game">💡 Traditional Cooking Makes  Doneness a Guessing Game</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/054/d929579b14889a813886b7c4f1a25435_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647002&amp;width=680&amp;sig=lUCHTwSCV%2FxRVlQUIWDMLaCwMMuWAtYvc2a%2BDUAeu6M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49333935">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/333/935/79026338c06b5747889bf669f6c6ed14_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657364&amp;width=680&amp;sig=D1w4MoL4Bpz3Ui8S5GIqDf9X2qS3qarl%2BlQ7iZ7ggJw%3D" src="https://i.kickstarter.com/assets/049/333/935/79026338c06b5747889bf669f6c6ed14_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657364&amp;width=680&amp;sig=D1w4MoL4Bpz3Ui8S5GIqDf9X2qS3qarl%2BlQ7iZ7ggJw%3D"/>
+</figure>
+</div>
+<p>Even seasoned cooks often rely on gut feeling or rough timing to judge doneness—especially with meats. One moment too early, it's undercooked; one moment too late, it's dry. <span class="bold">Traditional thermometers only measure temperature but don't tell you what to do with it.</span> That’s why cooking still feels like guesswork.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348098">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/348/098/11c0bdfb6b9bdb3fa11b3a0e368fa0d0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747735574&amp;width=680&amp;sig=9wQritjtYi%2BHYk8Cy%2BoJPb%2FQdi%2FS%2Bx2bTo6wyJNcjug%3D" src="https://i.kickstarter.com/assets/049/348/098/11c0bdfb6b9bdb3fa11b3a0e368fa0d0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747735574&amp;width=680&amp;sig=9wQritjtYi%2BHYk8Cy%2BoJPb%2FQdi%2FS%2Bx2bTo6wyJNcjug%3D"/>
+</figure>
+</div>
+<p>No matter the ingredient—steak, salmon, or veggies—ChefLab recommends the best cooking method, auto-sets the ideal temperature, and offers curated video tutorials.<span class="bold">You'll treat every dish like a chef who's mastered it!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332061">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-ChefLab-s-AI-Thermometer-Makes-Cooking-Smarter-and-More-Personalized">📱 ChefLab's AI Thermometer Makes Cooking  Smarter, and More Personalized</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/061/cde8f12329866dc7188e96f8c5401031_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647021&amp;width=680&amp;sig=gI3RxI%2BtxF0W8k8o7q1p%2BbnOGe6Vfn%2FOY0FEziGfyYQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332119">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/119/d559a3a2566bc392b4e6507596ceabdb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647175&amp;width=680&amp;sig=DRO6myIi3JP34h5mVIJ9FCYV6SZBi2bfCZlQG5bNaI0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49334007">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/334/007/a9f576f5b50f1de1d6e2b09f27edae0e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657803&amp;width=680&amp;sig=XU%2FpjGmn4ecrjU0Wtb9qOn4ulvYLPGDr3f%2FPf6wU9RM%3D" src="https://i.kickstarter.com/assets/049/334/007/a9f576f5b50f1de1d6e2b09f27edae0e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657803&amp;width=680&amp;sig=XU%2FpjGmn4ecrjU0Wtb9qOn4ulvYLPGDr3f%2FPf6wU9RM%3D"/>
+</figure>
+</div>
+<p>With traditional probes, you're still on your own—<span class="bold">relying on vague instincts or wasting time scrolling through endless recipes (×)</span> to figure out temperatures and techniques.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348374">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/348/374/9314216cb1915dc2906c568f80dc3731_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747736855&amp;width=680&amp;sig=0vOZ1sokRjGkMTldLMVlBPPuU4Q5TuTEx3BFVIugAII%3D"/>
+</figure>
+</div>
+<p>ChefLab changes everything. <span class="bold">It offers a curated list of cooking options based on your ingredients and automatically sets the ideal temperature for perfect doneness—no manual tweaking needed.</span> Not sure what to cook? ChefLab uses AI to handpick the latest YouTube and streaming tutorials, helping you discover global flavors and learn new techniques effortlessly. Just tap, cook, and enjoy—ChefLab brings smart precision and culinary creativity right into your kitchen.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49364059">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/364/059/fc8c1ff4bb144a196d5f50a7def0cbdc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747820761&amp;width=680&amp;sig=SG6GHmXSvI5xpzBOg7oIXhgAlEGIBzoJQdcF9hQ3QtU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332120">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/120/06c770f67fca83180cee80fa5937bc86_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647178&amp;width=680&amp;sig=kVi3657lBMnF1sd%2FrilLV2dmFZNJYSZ9riynwwfJM30%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348104">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/348/104/924cd236bdecf5d41faf16adff040372_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747735611&amp;width=680&amp;sig=FLGOAUVfza1Xt7n4H4N0t%2B%2BSV0SSjqbHzVrV2M4lZ6U%3D"/>
+</figure>
+</div>
+<p>Explore the world’s cuisines through AI-curated, up-to-date video tutorials streamed in the app. Learn new dishes, techniques, and flavors—from Korean BBQ to Mediterranean fish.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332123">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/123/42717539a317cafd9687cf57e865a5c7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647183&amp;width=680&amp;sig=cR254eJgWTYfBefVVyvGiu2%2Fkd3TnrJ4%2BEHi71gLDEU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49333976">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/333/976/64a1e90a0ca505457582a677d3364af5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657573&amp;width=680&amp;sig=g4n3xVUkcXzUHe%2FdcsbPnUL0SWBXNYykIoGTdlkGa74%3D" src="https://i.kickstarter.com/assets/049/333/976/64a1e90a0ca505457582a677d3364af5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657573&amp;width=680&amp;sig=g4n3xVUkcXzUHe%2FdcsbPnUL0SWBXNYykIoGTdlkGa74%3D"/>
+</figure>
+</div>
+<p>Want to cook something beyond the basics? <span class="bold">Just add your own ingredients, and ChefLab’s AI will instantly recommend the ideal recipes and temperature settings</span>—tailored for what you’re cooking.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332128">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/128/d8fdd30bbf0cd3368d888a119ac29c13_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647200&amp;width=680&amp;sig=Vim2j3yQ%2FikOb%2FO4lLFekmxpuiRy%2BHIkKuE%2F%2Ffa8DqU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348109">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/348/109/34cb50f2085d25da753c5b3063e976f5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747735645&amp;width=680&amp;sig=Kvt7ayDfGqRZsmsb85SDR7JHkPEdq8kA4Gn9oHdepXw%3D" src="https://i.kickstarter.com/assets/049/348/109/34cb50f2085d25da753c5b3063e976f5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747735645&amp;width=680&amp;sig=Kvt7ayDfGqRZsmsb85SDR7JHkPEdq8kA4Gn9oHdepXw%3D"/>
+</figure>
+</div>
+<p>ChefLab’s compact probe houses <span class="bold">two internal meat sensors and one ambient sensor, working together to deliver real-time, high-precision temperature tracking.</span> It intelligently detects the coldest spot inside your ingredients—whether it’s a thick steak or a whole chicken—ensuring consistent doneness and perfectly cooked meals, every time you cook.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332063">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Built-for-Precision-Designed-for-Real-Kitchens">🍳 Built for Precision Designed for Real Kitchens</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/063/d99a1233e0c46acd4d7209886495e0f7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647025&amp;width=680&amp;sig=E3l32rXD8ZJvxkCtcRkRFj632BT%2BEmbuAulkqWdy89c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332136">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/136/732f7539d3bcc05431286e97e474c602_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647223&amp;width=680&amp;sig=kiqK48yuIh6VI3LvuVUoc1pvswMNXeG1g4SfsonoDow%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49334025">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/334/025/4273787737d96c875c5df68ea00d547c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657861&amp;width=680&amp;sig=6gcW9juo2flwLNBB3lB0ocXrNU3dh5k4qi0ja5ylAm0%3D" src="https://i.kickstarter.com/assets/049/334/025/4273787737d96c875c5df68ea00d547c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657861&amp;width=680&amp;sig=6gcW9juo2flwLNBB3lB0ocXrNU3dh5k4qi0ja5ylAm0%3D"/>
+</figure>
+</div>
+<p><span class="bold">Whether you love the convenience of real-time tracking and AI recipe suggestions on your phone, or prefer a screen-free, focused cooking flow, ChefLab adapts.</span> Use the app for guided cooking and smart alerts, or rely on the display dock to monitor temps and set alarms—no phone required.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49390600">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/390/600/7a4afa63f624e869b0991cea638ad7e3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747968955&amp;width=680&amp;sig=pn7vErsiJ3aXa8H7jlj2nxi5ZJZucJNUzf7ks4gdwdU%3D"/>
+</figure>
+</div>
+<p><span class="bold">Not just a charger—it's your kitchen's environment monitor.</span><br/>When you’re not grilling, the dock switches to display real-time ambient temperature and humidity. It's a functional, smart addition to any modern kitchen.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348208">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/348/208/b935b36a839b13c1c29f8478add8eb3d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747736111&amp;width=680&amp;sig=oaOXUUSE%2FzmVLeJxrLS3uoH5F8qYoT3j3l4Sua4BFKI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332137">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/137/3ce52a82b7a2982de150d01317f2831a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647227&amp;width=680&amp;sig=6O0%2FdmLg43U0tLrwhY3zEpR4g%2BuLE9UnklDuLyVmZc4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348363">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/348/363/9f487f78621bb21460b95df625828359_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747736818&amp;width=680&amp;sig=ThbpSBgTPJ%2FQGqhu8gqbIdBFQ8bEP5VV0qbMrkRemB8%3D" src="https://i.kickstarter.com/assets/049/348/363/9f487f78621bb21460b95df625828359_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747736818&amp;width=680&amp;sig=ThbpSBgTPJ%2FQGqhu8gqbIdBFQ8bEP5VV0qbMrkRemB8%3D"/>
+</figure>
+</div>
+<p>More than just a charger—<span class="bold">its magnetic base lets you place it anywhere along your cooking path.</span> Snap it onto metal surfaces to keep live temperature updates right where you need them, no matter how you move through the kitchen.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332141">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/141/8c75109fe618975aa9995e9ed1ec4b2a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647232&amp;width=680&amp;sig=tzaTo%2B8NGP0yHN36DUX7sHGAIDkeK04p7NN1VlvjWrQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49334020">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/334/020/9fae5386b9be287aa18536ae41de808c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657846&amp;width=680&amp;sig=7U2rwQX8eFtHypR4aJ4jhMTapgieOlnoV82aYfVcRtg%3D" src="https://i.kickstarter.com/assets/049/334/020/9fae5386b9be287aa18536ae41de808c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657846&amp;width=680&amp;sig=7U2rwQX8eFtHypR4aJ4jhMTapgieOlnoV82aYfVcRtg%3D"/>
+</figure>
+</div>
+<p>Whether grilling, roasting, or sous-vide, the waterproof and heat-resistant probe handles tough environments and is fully washable for repeated use.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332143">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/143/dd6a574115ed2000eef1b6dd5a1a6a72_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647241&amp;width=680&amp;sig=JCdVkOfwWpr9FZIqKzpXKJFHgmWcednlAytrhrXKpqQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49333963">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/333/963/0dd83b21cf6fda1c59b5ced51bbcab73_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657516&amp;width=680&amp;sig=3N6iHjRsFQLyyB%2BZdmw5oqWZefIACOrCEqh3aTUpvT4%3D" src="https://i.kickstarter.com/assets/049/333/963/0dd83b21cf6fda1c59b5ced51bbcab73_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747657516&amp;width=680&amp;sig=3N6iHjRsFQLyyB%2BZdmw5oqWZefIACOrCEqh3aTUpvT4%3D"/>
+</figure>
+</div>
+<p>With Bluetooth 5.0, ChefLab covers up to 700ft in open space. Even with grill lids or kitchen walls, you’ll still enjoy a strong, reliable connection for most cooking setups.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49348195">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/348/195/0a06208fc8bff13f46aca7ba804c790f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747736016&amp;width=680&amp;sig=UoYaIwl50Fy5EOmG3dXKkiQYoL6ALYJXS7Z1U91CakE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332074">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Other-Thermometers-Just-Measure-ChefLab-Thinks">🧠 Other Thermometers Just Measure ChefLab Thinks</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/074/413f0f053dcd23bbc43bfa54b0133393_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647052&amp;width=680&amp;sig=b6ck5wDv8DsG3UxfTEz5ALj6NUspiPTrylXN%2Ft662Yk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346500">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/346/500/15e194d8c625c4ca972119ceec8aebf0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747726512&amp;width=680&amp;sig=0fM3XeU3YVaMNh9ThaoOPJb56in3SqmGSrqe%2F%2BTfev0%3D" src="https://i.kickstarter.com/assets/049/346/500/15e194d8c625c4ca972119ceec8aebf0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747726512&amp;width=680&amp;sig=0fM3XeU3YVaMNh9ThaoOPJb56in3SqmGSrqe%2F%2BTfev0%3D"/>
+</figure>
+</div>
+<p><span class="bold">Most thermometers give you a number. </span></p><p><span class="bold">ChefLab gives you insight.</span> </p><p>With intelligent recommendations, personalized settings, and real-time learning, it transforms cooking from reactive to proactive—making you not just a cook, but a confident chef.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49346514">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/346/514/4aa243c1dad7ebf797a0d17245305835_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747726607&amp;width=680&amp;sig=mjbinXePdShbzxyrF3zoNv7EHJuoFR2vCf3toGA4B%2Bg%3D" src="https://i.kickstarter.com/assets/049/346/514/4aa243c1dad7ebf797a0d17245305835_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747726607&amp;width=680&amp;sig=mjbinXePdShbzxyrF3zoNv7EHJuoFR2vCf3toGA4B%2Bg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349399">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/399/66e08e26932b4ccee0480ccbcba2b316_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747742746&amp;width=680&amp;sig=ROFFaG6jl4U69uA7qtLuvYJdcXY4IvLW%2BxQdOxkTw7Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349436">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/436/535be540654725047c803a040870fd01_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747743009&amp;width=680&amp;sig=EcJBKbT33x3ku%2FJnEFKWbGGjnl1kD5LwxT8LVKDJnV8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349602">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/602/619541609cb0af5521fe33a5f46b5c96_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747744068&amp;width=680&amp;sig=4o%2FhOnTAQNEAyjJuqERJwMfUlSnOWFsyjrga4Me68E8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349605">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/605/3bc23c87eb7a2e2553537907c39256b7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747744076&amp;width=680&amp;sig=n%2FEhqCNm6SbuGJBx4%2BDyTW0kqJ5ea37KrWIMtyR8u%2F4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349608">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/608/e503eef083912d2e49188c58526b1f72_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747744089&amp;width=680&amp;sig=%2BSJtaSpcyob2VhlZS0TCE7Jiq8FEJGB0KtHCfd4QdGA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349609">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/609/0e5c9687748ada4bfa32e493b6fd811d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747744094&amp;width=680&amp;sig=tH7Yb75pvM7ll0VQYNdPiNv9Wbdo%2FpUE0bp2MeFjePw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349610">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/610/c0a3620ff2b495321ad65866d27851f1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747744105&amp;width=680&amp;sig=XGwD12iRkR9lvLmLgq2eu7Nmwx7ViLZh5if36OC%2BktA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349614">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/614/673da864071b022d86629f8b313afbff_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747744110&amp;width=680&amp;sig=N4A3EdQZzDf2mfNsDCJdPUQzukR3aYMZkxWk8beZdbw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349437">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/437/f9e46c9bacb9705007a13accd7737b74_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747743016&amp;width=680&amp;sig=4ikix6xfD3jb791QKNRz8pQY946peCpuG0j5Mfbj77s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49364001">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/364/001/689d187f4edd7329aca9d299864db2f3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747820349&amp;width=680&amp;sig=hm6M0I%2FaPRfHWGmdEr112Y15LxxjF5mr6VPy8vrlG2E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49363996">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/363/996/829eebe834328cecdd6d87189c218db5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747820328&amp;width=680&amp;sig=24UcVAM75I3qRUNEGyMq1bHwKTjGX%2BiQqCoGU9OgbpI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332085">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Design-Journey">Design Journey</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/085/8c42c9c48256910439fcf222e53910f8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647082&amp;width=680&amp;sig=wNNo2Eb54NmskTU0v50GbwZSSkp%2BqhmFdjuhZ3T0drw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49211338">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/211/338/9c9f0c0433fd5e1518174796406522c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746772054&amp;width=680&amp;sig=XpyLm1l4JK9zCr6%2B%2FXL4ij0iZWkPRBG%2Biy6ER5rAggs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332086">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Demo-Video">Demo Video</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/086/fbc88c24aed4f7119e9a124330157f48_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647087&amp;width=680&amp;sig=NBCBmKADSQ9pBFZ283Ztzrjx30PpYeXuaEjMpM0hNAI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332090">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specification">Specification</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/090/e9a0dc5ad0d56d03eeef99d59e486fb2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647093&amp;width=680&amp;sig=scVT3PuKv6eF2jBvwwd2sulbN8C91el0vkkmsSQ01Co%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213518">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/518/17bbd696745accd375ee59f8ab4d9768_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746786210&amp;width=680&amp;sig=YMS57clTfXzJql1E1odhwAgjcIoFTl9hKGRCeBK%2BKw4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332092">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/092/b4b1be7430d743a38888b48a019c639f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647100&amp;width=680&amp;sig=J7lvyWoaqTFh7aLOO%2FbJxqRJVYMNptX3ihN5irmIh2w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49213567">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/213/567/bbc5eda9a21cc1bbe24e63b763922db7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746786416&amp;width=680&amp;sig=K1WtkdRCTtz52vGtf52xX9x0geMybf%2Bvc8VfJ4EYClg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332094">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Us">About Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/094/0df764f4ab875f73e41e0e04f7a28e07_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647104&amp;width=680&amp;sig=9bNRjk6IDa4kjHHwMi8qVk%2BOOC2wjFHKsjggbfaDkSo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49211542">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/211/542/a0a3a721f525609b16440175bc262584_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746773764&amp;width=680&amp;sig=MMzcUv1bSGtTooDR5lG3Fx6JksWoPAd8nn3pNd6Yvkg%3D"/>
+</figure>
+</div>
+<p>ChefLab is a smart cooking brand created by Sunstone Technology Co., Ltd—a trusted high-tech manufacturer with over 15 years of experience in consumer electronics. With a strong background in Bluetooth innovation and smart home products, Sunstone has served renowned international brands like Walmart, MINISO, JVC, and more, delivering over 10 million products worldwide. Backed by a team of over 100 professionals and a 2,000m² R&amp;D and production facility, ChefLab brings precision engineering and practical innovation into the kitchen. ChefLab’s mission is simple: to make advanced cooking tools accessible, helping everyday users cook smarter, safer, and better.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49361221">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/361/221/03548db6ffbe9b4635c6398cb5168f1c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747799909&amp;width=680&amp;sig=XwL4SJFR7OrsoIWwq%2FGbBAGgH7GmIHyegIFr%2FyEQIwQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49361222">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/361/222/33154d825511404e236cdd31bc6d9477_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747799918&amp;width=680&amp;sig=Tgez07jhZxDdHpeca4WFwLqSP0HPF4CxawA1cfgGpGk%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As with any hardware product, there are risks related to manufacturing, supply chain delays, and final product calibration. While we’ve completed multiple rounds of prototyping and are already preparing for mass production, unforeseen issues such as component shortages or logistics disruptions could cause schedule changes. To minimize these risks, we’re working with experienced suppliers and have built in buffer time to our timeline. Our team has over a decade of experience in consumer electronics manufacturing and a strong track record of delivering products for global brands. We are committed to keeping backers updated and delivering ChefLab on time and with the promised quality.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>ChefLab uses AI to enhance the cooking experience. Our companion app features an AI-powered system that recommends personalized grilling tutorials and cooking tips based on the type of meat and target doneness. The AI does not generate creative content on the project page, and all visual and written materials were created by the human team behind the product. The AI is used strictly within the product’s functionality to support users during cooking.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

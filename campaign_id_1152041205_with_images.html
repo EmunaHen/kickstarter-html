@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZzzRing is The World's First Solar-Powered AI Ring</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/253/748/2e710673b478062d37d0d421057b276c_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747105116&width=560&sig=MML%2FRc36gRrJS6%2BTb2MPGmlMOihjWvEet6pdeAOhcAY%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>ZzzRing is The World's First Solar-Powered AI Ring</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Solar-Powered AI Ring | NFC | 6-Axis Sensor｜No Subscription Fee｜iOS&Android ｜Sleep Tracking</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Why-ZzzRing">Why ZzzRing</h3><div class="lake-content">
+<p>ZzzRing is the world's first solar-powered smart ring that solves battery life challenges through its innovative technology. Combining an advanced chip and 6-axis sensors, it delivers precise health tracking, gesture-controlled photography and video switching, and one-tap ChatGPT activation - all without subscription fees. This revolutionary device redefines wearable technology.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49160340">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/160/340/97916713455f34676f25959f5f638cf6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746456970&amp;width=680&amp;sig=uv%2BajxA6BF6Mq3tETELSCbcNmfHHT8SoxCgr36L3QpQ%3D"/>
+</figure>
+</div>
+<p>At the same time, ZzzRing is also committed to inspiring everyone to form good health habits and pledges to use 30% of its proceeds to incentivize its users.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49276621">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-World-s-First-Solar-Powered-AI-Ring">The World's First  Solar-Powered AI Ring</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/276/621/f643b109ad0d91ddc6c2fdbbefb4227f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747234515&amp;width=680&amp;sig=ckRXvAH3BANvn8sNtXblxQy%2FfV6HHtIHtvovNHSo68Y%3D"/>
+</figure>
+</div>
+</div><div class="lake-content">
+<div class="lake-content">
+<p>The smart ring utilizes high-efficiency flexible perovskite solar cells for power supply, combined with low-power design, intelligent power management. Supporting both indoor and outdoor light charging, it reduces charging frequency, enhances wearing experience.Say goodbye to battery anxiety and never miss a data point - even when you forget to charge.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49509708">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/509/708/44505c38ffe9b491d64cf5c9e27d4e14_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748832493&amp;width=680&amp;sig=y8GAwraMlUZF8%2BNfjBKqsse1ba5NgDvqRNPTwhsuFk4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49150511">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Redefine-Your-Lifestyle">Redefine Your Lifestyle</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/150/511/7184fc99a8c35299d6ad03229afd2fdc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746379680&amp;width=680&amp;sig=HHwqsP0lkRIgWFg3KNHhf2301RQsOKu%2F0D4rtc35%2FLA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49253143">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/253/143/2e195e3055ff458ba3cd78064da403fa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747101184&amp;width=680&amp;sig=7uPzRLlDbllRl%2FUU3LSyzuclTJD7QtNGxsrpyFEg58U%3D"/>
+</figure>
+</div>
+<p>ZzzRing sets up two incentives:</p>
+<ul>
+<li>Sleeping incentive</li>
+<li>Exercise Incentive</li>
+</ul>
+<p>Users community to initiate any challenge, if you win the challenge or adhere to the clock, then will be awarded ZzzRing tokens, tokens can be used for the exchange of the actual goods or cash rewards.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49169789">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/169/789/4c026edd4978712378038f12b4a8c72c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746515778&amp;width=680&amp;sig=A9MP11xCEaavbZi8VXi5Re51HXYzhaWOXJDd3Fge68w%3D"/>
+</figure>
+</div>
+</div>
+<div class="lake-content">
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48773768">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:More-Accurate-Sleep-Tracking">More Accurate Sleep Tracking</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/773/768/5c8535b56b19512bb5ce1e456f95c31b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743696389&amp;width=680&amp;sig=VKtDw5phBcV%2B22qg7%2B10KwZtaxwdSrMdgqIIS15%2FI%2B0%3D"/>
+</figure>
+</div>
+<div class="lake-content"><p>After solving battery life challenges, ZzzRing utilizes the high-efficiency Apollo chip to achieve a sleep monitoring frequency twice as high as other smart rings.</p></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48741733">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/741/733/a88b58b773a72dad531640a3f25767f7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743506165&amp;width=680&amp;sig=07PKcu%2Fs1N%2BzFE8WAWdZHws9cas5jPXNZR3258O3xx4%3D" src="https://i.kickstarter.com/assets/048/741/733/a88b58b773a72dad531640a3f25767f7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743506165&amp;width=680&amp;sig=07PKcu%2Fs1N%2BzFE8WAWdZHws9cas5jPXNZR3258O3xx4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48773783">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Six-Axis-Sensor">Six-Axis Sensor</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/773/783/1d963e6c2b08f943abcd418a1eb89289_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743696447&amp;width=680&amp;sig=nZePXfoKCi2%2Bv82ZtDK%2BS68Ub50UjlHuGL01ZYj0HfQ%3D"/>
+</figure>
+</div>
+<div class="lake-content">
+<div class="lake-content"><p>With its advanced 6-axis sensor, ZZZRing responds to your gestures instantly - snap photos mid-air with just a wave.</p></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48741835">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/741/835/f29be977684e3c8a5049446b8dc0cf0b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743506604&amp;width=680&amp;sig=%2BcQLhdMoPvil5XN380jVNR4hrp0SnFcDAepD4QL%2BeXU%3D" src="https://i.kickstarter.com/assets/048/741/835/f29be977684e3c8a5049446b8dc0cf0b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743506604&amp;width=680&amp;sig=%2BcQLhdMoPvil5XN380jVNR4hrp0SnFcDAepD4QL%2BeXU%3D"/>
+</figure>
+</div>
+</div>
+</div>
+<div class="lake-content"><p>Hands full while scrolling? ZzzRing lets you swipe videos with a wave—hands-free freedom!</p></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48741923">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/741/923/22470e57031621c62b28868f4f687ea5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743507095&amp;width=680&amp;sig=a7jV%2BnCEMjXsYJDURyQAjwal1ctFpwu6VA7juF5JdN4%3D" src="https://i.kickstarter.com/assets/048/741/923/22470e57031621c62b28868f4f687ea5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743507095&amp;width=680&amp;sig=a7jV%2BnCEMjXsYJDURyQAjwal1ctFpwu6VA7juF5JdN4%3D"/>
+</figure>
+</div>
+<div class="lake-content">
+<div class="template asset" contenteditable="false" data-alt-text=" A Smarter Ring That Know You Better" data-caption="" data-id="48773803">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:A-Smarter-Ring-That-Know-You-Better">A Smarter Ring That Know You Better</h3>
+<img alt=" A Smarter Ring That Know You Better" class="fit" src="https://i.kickstarter.com/assets/048/773/803/c725b279cd4ba98c06948b73a6137913_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743696512&amp;width=680&amp;sig=%2Bmb1hpBiimnl0GlKcHKmF%2B%2FdoaHG4BEWlSZPhERSvoE%3D"/>
+</figure>
+</div>
+<div class="lake-content">
+<div class="lake-content"><p>ZzzRing monitors your daily stress levels through heart rate analysis, and provides personalized mood reports and improvement tips powered by AI—nurturing your emotional well-being</p></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48752597">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/752/597/9ddd469b92047d2b6e82aeafafa93814_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743562408&amp;width=680&amp;sig=hAlgvgpitfv9n7u0cAWnfNACx%2FMSOMFYquxMMbNFwD0%3D" src="https://i.kickstarter.com/assets/048/752/597/9ddd469b92047d2b6e82aeafafa93814_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743562408&amp;width=680&amp;sig=hAlgvgpitfv9n7u0cAWnfNACx%2FMSOMFYquxMMbNFwD0%3D"/>
+</figure>
+</div>
+<p>ZzzRing also provides personalized mood reports and improvement recommendations powered by artificial intelligence - for your emotional health!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48752599">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/752/599/c87ff86fb4949afd2c0c67d483565204_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743562420&amp;width=680&amp;sig=F4fitrNEQTn%2FeMLzdIhgbc4uoRKEUkouW5YigU9Ztwo%3D" src="https://i.kickstarter.com/assets/048/752/599/c87ff86fb4949afd2c0c67d483565204_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743562420&amp;width=680&amp;sig=F4fitrNEQTn%2FeMLzdIhgbc4uoRKEUkouW5YigU9Ztwo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Sports Tracking" data-caption="" data-id="48773812">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sports-Tracking">Sports Tracking</h3>
+<img alt="Sports Tracking" class="fit" src="https://i.kickstarter.com/assets/048/773/812/335eb3e794e65053e2f212a1213acb73_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743696579&amp;width=680&amp;sig=qWwK2V2RlRw8Qh9ddD7TCkQQx52cZrUlIJOnpirbtRE%3D"/>
+</figure>
+</div>
+<div class="lake-content">
+<p>Whether you are sleeping or exercising ZzzRing is able to track your health data throughout the day under any conditions , whether you are running or riding ZzzRing will summarize your exercise data every week and every month, so that you can see the results of your exercise at a glance!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48752608">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/752/608/76c12e48ffda9c8ba38dd484a2012e6f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743562443&amp;width=680&amp;sig=iyPdtTBkuw87gDCdc0OqPShcMH1Sp%2BDdq2vP72srg60%3D" src="https://i.kickstarter.com/assets/048/752/608/76c12e48ffda9c8ba38dd484a2012e6f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743562443&amp;width=680&amp;sig=iyPdtTBkuw87gDCdc0OqPShcMH1Sp%2BDdq2vP72srg60%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Physiological Stage Tracking" data-caption="" data-id="48773826">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Physiological-stage-Tracking">Physiological stage Tracking</h3>
+<img alt="Physiological Stage Tracking" class="fit" src="https://i.kickstarter.com/assets/048/773/826/088d3e3ccb98db00498bbdd08647360f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743696642&amp;width=680&amp;sig=oPt0VuxW7zNCfhMOGn8vguQFXI3zBXDFXxI0GnXNw0c%3D"/>
+</figure>
+</div>
+<div class="lake-content">
+<p>ZzzRing accurately recognizes the changes in body temperature at different stages through multiple temperature sensors to identify the time of the onset of menstrual period, and once abnormalities occur, ZzzRing can give feedback to the data in the first place.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48752613">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/752/613/093b6e98327b91e7d56e7a7a3460ec9e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743562478&amp;width=680&amp;sig=ldJJpHKCyh0M56OlkdN8VYEm0jt%2FPdQHlahYY%2BJAtCI%3D" src="https://i.kickstarter.com/assets/048/752/613/093b6e98327b91e7d56e7a7a3460ec9e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743562478&amp;width=680&amp;sig=ldJJpHKCyh0M56OlkdN8VYEm0jt%2FPdQHlahYY%2BJAtCI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Heart Health Tracking" data-caption="" data-id="48773836">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Heart-Health-Tracking">Heart Health Tracking</h3>
+<img alt="Heart Health Tracking" class="fit" src="https://i.kickstarter.com/assets/048/773/836/a8b3ad47aaca05a7c5cc62a6ff3e5db6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743696702&amp;width=680&amp;sig=TIEzwK5Bb8LQQT5Gun%2F4aPntEkn4aDmEcDFENV6fmPs%3D"/>
+</figure>
+</div>
+<div class="lake-content">
+<div class="lake-content">
+<p>ZZZRing monitors key health metrics including heart rate (HR), heart rate variability (HRV), and blood oxygen levels (SpO₂), then uses AI to generate regular cardiac health reports from this data.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48855453">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/855/453/fecad4cec62f046d2383dc24b977a768_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744276836&amp;width=680&amp;sig=gBGggbS5UeV6IYz%2FqfxvLFMEkUdYTtG7D8PKE6unHXk%3D" src="https://i.kickstarter.com/assets/048/855/453/fecad4cec62f046d2383dc24b977a768_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744276836&amp;width=680&amp;sig=gBGggbS5UeV6IYz%2FqfxvLFMEkUdYTtG7D8PKE6unHXk%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Comprehensive Health Guide" data-caption="" data-id="48773869">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Comprehensive-Health-Guide">Comprehensive Health Guide</h3>
+<img alt="Comprehensive Health Guide" class="fit" src="https://i.kickstarter.com/assets/048/773/869/2b59622b71498840628972cdbe3b3047_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743696844&amp;width=680&amp;sig=WZA2gP66AnVu9NEFefZjlyJ6iUVmijWCIQwDzlqpidA%3D"/>
+</figure>
+</div>
+<div class="lake-content">
+<p>Whether it's sleep, exercise and stress tracking is to make us more aware of our health status, ZZZRing will give you a regular summary of your health status based on all the data aggregated and provide you with guidance, so that you can feel more at ease and live healthier!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48855455">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/855/455/92c53090c5695b06bcd2e74b2050a583_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744276847&amp;width=680&amp;sig=2jGv%2F7408xN%2Bvs8l9XX7RGkRWX9CY6wyg64HDnLGxGo%3D" src="https://i.kickstarter.com/assets/048/855/455/92c53090c5695b06bcd2e74b2050a583_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744276847&amp;width=680&amp;sig=2jGv%2F7408xN%2Bvs8l9XX7RGkRWX9CY6wyg64HDnLGxGo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="The Most Comprehensive Ring" data-caption="" data-id="48773881">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Most-Comprehensive-Ring">The Most Comprehensive Ring</h3>
+<img alt="The Most Comprehensive Ring" class="fit" src="https://i.kickstarter.com/assets/048/773/881/d9a9cdb8967db92aa74a8ed773adfd74_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743696900&amp;width=680&amp;sig=yrTemdaabPjFxBrXP6hleWADP0ziU2YvmC6qWljGiXE%3D"/>
+</figure>
+</div>
+<div class="lake-content">
+<p>You can't imagine that ZzzRing can surround your life so comprehensively, that is, now ZzzRing in the case of thin and light design NFC function, even if you can't spare your hands to still be able to unlock the door of your home through ZZZRing.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449299">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/449/299/2db8bdee5979f9f2190368954a4b3c37_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748405748&amp;width=680&amp;sig=2TxSLfYqfkumZTqb4%2BlsqQzK3MmhZ1Tp9BVV4xYZ0eY%3D" src="https://i.kickstarter.com/assets/049/449/299/2db8bdee5979f9f2190368954a4b3c37_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748405748&amp;width=680&amp;sig=2TxSLfYqfkumZTqb4%2BlsqQzK3MmhZ1Tp9BVV4xYZ0eY%3D"/>
+</figure>
+</div>
+<div class="lake-content">
+<p>Gently touching each other's rings can send your messages face-to-face to new friends, and all these functions that require multiple products to be realized can be brought together in the ZZZRing!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48752629">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/752/629/91f041306a3022ce2d8f3e8e47499aeb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743562551&amp;width=680&amp;sig=hBl19WAyaSzeZAefE8MkFOLP9MFd2hvfIW5sC4QXOPQ%3D" src="https://i.kickstarter.com/assets/048/752/629/91f041306a3022ce2d8f3e8e47499aeb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743562551&amp;width=680&amp;sig=hBl19WAyaSzeZAefE8MkFOLP9MFd2hvfIW5sC4QXOPQ%3D"/>
+</figure>
+</div>
+<p>Now you can touch ZZZRing to invoke ChatGPT and keep AI waiting for service!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48774006">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Waterproof">Waterproof</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/774/006/a38666bdeeeb8a20ba9c61979c890b66_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743697527&amp;width=680&amp;sig=xc4IUCksf8rK%2B1bMl4y4u1tV1bYZVpgKdMXZJx00NqY%3D"/>
+</figure>
+</div>
+<div class="lake-content">
+<p>ZzzRing is rated IP68 waterproof, allowing you to wear it normally while swimming or showering, ensuring continuous data tracking</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48774012">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/774/012/d73e3fea26236479ee3647628ba1a9f8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743697568&amp;width=680&amp;sig=CttOzm0cTLgD76waWL8PHZOZfaxJ%2B76BME8vszcktTg%3D" src="https://i.kickstarter.com/assets/048/774/012/d73e3fea26236479ee3647628ba1a9f8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743697568&amp;width=680&amp;sig=CttOzm0cTLgD76waWL8PHZOZfaxJ%2B76BME8vszcktTg%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Demo" data-caption="" data-id="48773920">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Demo">Demo</h3>
+<img alt="Demo" class="fit" src="https://i.kickstarter.com/assets/048/773/920/47b40106b0919e06d67e8cccd3f13f3f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743697055&amp;width=680&amp;sig=rOU93hq62hSRI%2Fh2rqIha41Y43Mqjr31UFD8QkU53bc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Solar Charging Test Procedure" data-caption="" data-id="49390135">
+<figure class="image">
+<img alt="Solar Charging Test Procedure" class="fit" src="https://i.kickstarter.com/assets/049/390/135/a7e48fd2e2cf270afa57a1b10ea061f4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747965293&amp;width=680&amp;sig=eOC8Ufr5qhmHHlN60pzIS%2B38YZ3Zbhr3JYF5BlA0Omg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49390150">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/390/150/a30cd77e8bcb5cb95978b2793cad8811_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747965363&amp;width=680&amp;sig=yay1acVDNQ0ec02HoUcGrnRvQon7CRD9uTUnWZHolwg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Manufacturing Progress" data-caption="" data-id="49426653">
+<figure class="image">
+<img alt="Manufacturing Progress" class="fit" src="https://i.kickstarter.com/assets/049/426/653/da64bd50f35a2dc84d760a496982526f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748276155&amp;width=680&amp;sig=PZ5Db97K%2F%2BT4fTkpf4Eu%2FLEff5Fvavvi%2FCRxnzprD%2Bk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49426656">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/426/656/cf51bc380e4b28266b91f582a362d297_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748276179&amp;width=680&amp;sig=kh4Y7BgFCIwcx4auTVaAyPRE6As%2Fjs0n%2FBCBvpZuBi4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49253133">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:SPEC">SPEC</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/253/133/b050b98c2ea20087c0716f01faa0b741_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747101114&amp;width=680&amp;sig=Nh%2Be5izXcS7L9eoJSgsojGELFWi7IcUdw7mxHMyExRE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49160385">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/160/385/28453a01c0a48c13f3bf9de44ef5d481_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746457255&amp;width=680&amp;sig=%2BUAXWjWn%2BeTK5LjKxLA8qw0jzbwP1JOJ6YU6aG9bBDI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Timeline" data-caption="" data-id="48773933">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="Timeline" class="fit" src="https://i.kickstarter.com/assets/048/773/933/3cfe50b5b19e7a6093d621cb0e98b36f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743697157&amp;width=680&amp;sig=FQ34aASUEi2PrpFF3pjKhizkEIhuk%2BJnGWXVtpWkUdg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48769637">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/769/637/40dfafcc6a3e06755ddba6ea2cf1f287_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743670037&amp;width=680&amp;sig=rzIfI4xk7%2FMDNg7SW%2B%2F9AKNYyoz93%2Fe4wuWqD8w4rmY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Cooperate-With">Cooperate With</h3>
+<span></span><h3 class="page-anchor" id="h:"><span></span></h3>
+<span></span><h3 class="page-anchor" id="h:About-Us">About Us</h3>
+<p>As an industrial designer with 8 years of experience who is also a smart wearables enthusiast, I found that both smartwatches and smart rings have battery life problems, and they also often suffer from missing data because they forget to charge or the charger can't charge in time.<br/>In order to solve this problem we designed ZzzRing's first smart ring that can be charged by solar energy, thus solving the problem of battery life and power outage of smart rings, and based on this, we added a lot of features to make life more convenient, so that every user can get more accurate health tracking and efficient life through ZzzRing.<br/>In the future, we will keep updating and iterating as the demand increases, so let's unlock more possibilities of ZzzRing together!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As with any innovative product, ZzzRing may face unforeseen challenges during production and delivery. While we have extensive experience and strong manufacturing partners, potential delays or technical adjustments may arise. Additionally, global logistics can be unpredictable, but we are committed to working with reliable partners to ensure smooth fulfillment. We pledge to maintain transparent communication, providing regular updates and prompt solutions if any issues occur. Your support and understanding are invaluable as we bring this groundbreaking AI-powered habit coaching ring to life.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

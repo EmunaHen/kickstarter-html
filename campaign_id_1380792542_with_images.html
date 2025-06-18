@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PIDGN</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/207/338/6c42c2618c41aaf553aabf35f3fbbab6_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1746739662&width=560&sig=Ou35IJnpeiKWx7hNyPpKwdRNJ3%2B3WllUQ%2BrifvPmTig%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>PIDGN</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Why be seen? PIDGN lets you drop USB payloads from across the room. Wireless, stealthy, and built for red team ops.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:What-is-PIDGN-">What is PIDGN?</h3><p><span class="bold">PIDGN</span> is a stealthy, plug-and-play hacking device that merges USB attack capabilities with a wireless command hub—no external controller or physical interaction required. Designed for red teamers, penetration testers, and hardware hackers, PIDGN emulates a USB keyboard to deliver customizable payloads while hosting a local command center over its own password protected Wi-Fi hotspot.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Base PIDGN Model" data-id="49354228">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/228/635bb8d874903c152cb297e09fd2bf82_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763005&amp;width=680&amp;sig=G5B7fsEDyIvVaUI7vpmtSScOfH%2Bz0PAI3t3Q9CSr2%2BE%3D"/>
+<figcaption class="px2">Base PIDGN Model</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Lollipop For Scale" data-id="49354316">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/316/a091086f01696ce0b871a594b6568cc1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763238&amp;width=680&amp;sig=ZLct1VJEdJ95M68BpuTFV9OsRd4PvItY6NUfjX7uL6k%3D"/>
+<figcaption class="px2">Lollipop For Scale</figcaption>
+</figure>
+</div>
+<p>Once plugged in, it instantly appears as a keyboard and executes tailored scripts, enabling HID attacks, remote command execution, and post-exploitation actions. Its browser-based interface requires no apps or pairing—just connect to the password protected hotspot and launch. Payloads can be created, sorted by attack phase, and dynamically updated with variables like C2 addresses, making PIDGN a compact, field-ready tool for on-the-fly operations.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49518310">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/518/310/0fd3054422865123c4ea292341c34f44_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748889132&amp;width=680&amp;sig=IUar3yWggpi3quMEwGpltDJmQ07IBj8FrLIuhRcf3Cg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Kickstarter Exclusive Wood Model" data-id="49354322">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/322/10c7f2268af69c3397613a3dbf69f8be_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763252&amp;width=680&amp;sig=QBo3OHVZj76p79Jm74s%2BqVyHrr%2B%2FXZJT6J6Iu6HxjkE%3D"/>
+<figcaption class="px2">Kickstarter Exclusive Wood Model</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Preloaded-with-Scripts-for-Every-Phase-of-the-Hacker-Methodology">Preloaded with Scripts for Every Phase of the Hacker Methodology</h4><p><span class="bold">PIDGN</span> comes preloaded with a full suite of scripts aligned with every phase of the hacker methodology—so penetration testers can act fast, pivot intelligently, and maintain momentum during assessments. Whether you're conducting recon, delivering payloads, or establishing persistence, PIDGN has pre-programmed routines ready to deploy at the push of a button.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Hello Script Execution" data-id="49371607">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/371/607/1a82d9784c8a8266e962f2764606bbcd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747855414&amp;width=680&amp;sig=LLYeATzcPRfzkAzkEIwJaC3gO8fu7q4jjizpI9e1nQ8%3D" src="https://i.kickstarter.com/assets/049/371/607/1a82d9784c8a8266e962f2764606bbcd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747855414&amp;width=680&amp;sig=LLYeATzcPRfzkAzkEIwJaC3gO8fu7q4jjizpI9e1nQ8%3D"/>
+<figcaption class="px2">Hello Script Execution</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Social Engineering Script For Credential Theft" data-id="49498299">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/498/299/d66ecf32f65a2ac0b773dc646c98c68f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748725046&amp;width=680&amp;sig=AiJwE%2FxCVblBeQ23mAkBVT7NzD2BTFijoYLe%2F8OMcUo%3D" src="https://i.kickstarter.com/assets/049/498/299/d66ecf32f65a2ac0b773dc646c98c68f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748725046&amp;width=680&amp;sig=AiJwE%2FxCVblBeQ23mAkBVT7NzD2BTFijoYLe%2F8OMcUo%3D"/>
+<figcaption class="px2">Social Engineering Script For Credential Theft</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Social Engineering Script For Credential Theft" data-id="49498318">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/498/318/3070d514bd0489e3136c8edcef55b3f3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748725178&amp;width=680&amp;sig=qL6dYRWwJ4%2BErRRljeUerXOl%2B%2FvYkv%2BmCOUDbLjRikw%3D"/>
+<figcaption class="px2">Social Engineering Script For Credential Theft</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Control From 300+ Feet Away" data-id="49518211">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/518/211/3c5165e8e57dcced6c0a062912bb9c99_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748888609&amp;width=680&amp;sig=iPA4eH1LHixsbq2X0YJyxPUa6V0ZmxaSCMvDJBPJHBY%3D"/>
+<figcaption class="px2">Control From 300+ Feet Away</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Included-Phases-Capabilities-">Included Phases &amp; Capabilities:</h4><p>Below is a small list of the kinds of scripts you as a tester can find preloaded on PIDGN.</p><ul>
+<li>
+<span class="bold">Recon</span> – Initiate scripts for system identification, domain enumeration, and basic environment mapping, and more</li>
+<li>
+<span class="bold">Scanning</span> – Launch targeted scans for open ports, live hosts, and exposed services across the network</li>
+<li>
+<span class="bold">Exploitation</span> – Deploy pre-configured payloads to exploit discovered vulnerabilities and gain initial access</li>
+<li>
+<span class="bold">Privilege Escalation</span> – Execute routines to escalate access rights, harvest tokens, or bypass UAC restrictions</li>
+<li>
+<span class="bold">Lateral Movement</span> – Utilize built-in tools to move through the network, dump credentials, or reuse sessions</li>
+<li>
+<span class="bold">Post Exploitation</span> – Run cleanup scripts, establish persistence, or exfiltrate key data via your configured C2</li>
+</ul><p>PIDGN empowers testers with turnkey, on-demand payloads that reduce time spent typing and maximize impact during field operations.</p><h4 class="page-anchor" id="h:Under-the-hood">Under the hood</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49388767">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/388/767/30df3d40d9454cf578135b14d8cdecac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747954516&amp;width=680&amp;sig=B9GHYnzaS27lG%2Fp5plv5KwbqjusAjjScefydCh09rEY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Main Menu" data-id="49354474">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/474/8c6a985fb1a14c265bd612826a89397b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763894&amp;width=680&amp;sig=cOKalM1ejOduII4qaKHXIzmFqEPWTJI%2FwBVW0yQEvuI%3D"/>
+<figcaption class="px2">Main Menu</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Sub Menu" data-id="49354218">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/218/73cb90c524420d9b95d022b02f2fd806_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747762945&amp;width=680&amp;sig=BQRXt8jtkpssCZZqIGOX4IIUIJm91VQ0WGxj4ECGmA8%3D"/>
+<figcaption class="px2">Sub Menu</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Custom Payload Menu" data-id="49351728">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/351/728/d62996b2589b0922788e820bff1f1a40_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747753500&amp;width=680&amp;sig=uNB94i9rY1EIyB2s4lnfcNHawxDsPblUMGl72vYZIQU%3D"/>
+<figcaption class="px2">Custom Payload Menu</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Data Returned From Script Execution" data-id="49355231">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/355/231/6a550d67de975d7073da8f5f9a70e10f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747767062&amp;width=680&amp;sig=uCGkMw5AmiUuQuEAfDlcVjdhCjq6a3Y4MHobf%2FSkVUQ%3D"/>
+<figcaption class="px2">Data Returned From Script Execution</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Script Execution With Results Returned In Browser" data-id="49386995">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/386/995/9f4038b94c3b42a5945d015ddfef1c7a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747946135&amp;width=680&amp;sig=BIv72ARUxvZn9X9ygaOLPN%2BZHUANOaQ9c4w07oy%2B97g%3D" src="https://i.kickstarter.com/assets/049/386/995/9f4038b94c3b42a5945d015ddfef1c7a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747946135&amp;width=680&amp;sig=BIv72ARUxvZn9X9ygaOLPN%2BZHUANOaQ9c4w07oy%2B97g%3D"/>
+<figcaption class="px2">Script Execution With Results Returned In Browser</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49351949">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/351/949/7a03429b6aa0db3029c10faa53e556ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747754362&amp;width=680&amp;sig=D6zD4JaIsTKrlv4YAlvJlzeSeS6MZ79K8lbV7FOCQas%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Capabilities">Capabilities</h3><h4 class="page-anchor" id="h:Core-Features"><span class="bold">Core Features</span></h4><p><span class="bold">Plug-and-Play USB HID Emulation</span></p><ul>
+<li>Acts as a keyboard to send keystrokes to the host machine</li>
+<li>Compatible with Windows and Linux</li>
+</ul><p><span class="bold">Wi-Fi Access Point Mode</span></p><ul>
+<li>Broadcasts its own hotspot (default SSID: Pigeon)</li>
+<li>No internet required for use</li>
+</ul><p><span class="bold">On-Device Web Interface</span></p><ul>
+<li>Hosted server with HTML interface (accessible via http://192.168.4.1)</li>
+<li>Works on mobile and desktop browsers</li>
+</ul><p><span class="bold">Modular Payload System</span></p><ul>
+<li>Locally stored payloads</li>
+<li>Organize by OS and phase</li>
+</ul><h4 class="page-anchor" id="h:Web-Interface-Capabilities"><span class="bold">Web Interface Capabilities</span></h4><p><span class="bold">Command Execution</span></p><ul>
+<li>Execute predefined payloads via links</li>
+<li>Supports custom payload input via text input on the Custom tab</li>
+</ul><p><span class="bold">Custom Scripting Support</span></p><ul><li>Input raw payload lines (e.g., WIN+R, notepad, ENTER) which are sent live from your phone to execute on the target machines.</li></ul><p><span class="bold">Live Output Rendering</span></p><ul>
+<li>Displays command line output after script execution</li>
+<li>Used to show status, results, or error messages</li>
+</ul><p><span class="bold">Settings Management</span></p><ul><li>Update IP/Port for C2 communications, and SSID settings via the web interface</li></ul><p><span class="bold">Command Cheat Sheet</span></p><ul><li>Quick reference for supported keystrokes and variables built into the server, no need for external research.</li></ul><h4 class="page-anchor" id="h:Stealth-and-Security"><span class="bold">Stealth and Security</span></h4><p><span class="bold">No Installation Required on Target</span></p><ul><li>Executes payloads without leaving artifacts (unless intended)</li></ul><p><span class="bold">Encrypted Payload Transfer (planned)</span></p><ul><li>Future support for AES-encrypted payload definitions</li></ul><p><span class="bold">Offline Usage</span></p><ul><li>Device operates independently without external servers</li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49355765">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/355/765/7a03429b6aa0db3029c10faa53e556ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747769558&amp;width=680&amp;sig=HYH2jcQNTg5CGVNN0IWj0vamyYfBR36pkN1YnxZK4R8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Scripting">Scripting</h3><p>The PIDGN uses a lightweight scripting language designed for rapid offensive operations. It's based on simple, human-readable commands similar to batch scripting and keystroke injection syntax. You could call the language Batch+. Each line in a script represents a specific action—such as launching an app, typing text, or executing key combos—making it easy for both beginners and pros to write and modify payloads on the fly.</p><p>No coding experience? No problem. If you can write:</p><p>WIN+R  <br/>cmd  <br/>ENTER  <br/>whoami  <br/>ENTER<br/>—you can script with PIDGN.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Additional Commands List" data-id="49355759">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/355/759/fcfb4f6b7111106640f5ff891466aeef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747769528&amp;width=680&amp;sig=ZA%2B89Yr9Vf%2Blc75mhjaRaIxw1kSPBrv5lQ3IWlRoPys%3D"/>
+<figcaption class="px2">Additional Commands List</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49350900">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/350/900/7a03429b6aa0db3029c10faa53e556ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747750491&amp;width=680&amp;sig=OyTOGwpLCmPY82ew0EjGPrzn4m662sWFhOaDuukPKRM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:But-Why-">But Why?</h3><p>I’m an infosec developer with a passion for building tools that empower red teams to test real-world scenarios—without limitations. During assessments, I often needed a discreet device that didn’t rely on a phone app or external C2 infrastructure. Something I could plug into a target, walk away from, and still control when needed. That’s how <span class="text-italic">PIDGN</span> was born.</p><p>I'm raising funds to take PIDGN from a functional prototype to a fully refined, purpose-built hardware platform. Version 1 will be based on open-source hardware, providing a robust and accessible starting point for pentesters and security researchers. <br/><br/>With your support, we’ll also begin development on Version 2, featuring a proprietary board design with a smaller footprint, enhanced capabilities, and streamlined performance.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49351204">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/351/204/7a03429b6aa0db3029c10faa53e556ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747751794&amp;width=680&amp;sig=k4ybnNN9nWNPwanbJKO7qd0zPCCMVAMVtI4uHnICuy8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Stretch-Goals">Stretch Goals</h3><p><span class="bold">$15,000 — BLE Remote Trigger Mode</span><br/>I will add support for remote BLE control using a companion app.</p><p><span class="bold">$20,000 — Multi-Device Dashboard</span><br/>A dashboard to monitor and control multiple Pigeon units simultaneously via Bluetooth will be developed.</p><p><span class="bold">$30,000 — Customizable Macro Language</span><br/>The current script language will be enhanced with advanced logic flows (e.g., “if window X exists, then inject Y”).</p><p><span class="bold">$50,000 — Pigeon Pro Expansion Hardware</span><br/>We'll develop a <span class="text-italic">Pigeon Pro Expansions</span>, attachable add-ons with expandable onboard storage, a rechargeable battery, a display for field feedback, and a keyboard pass-through adapted.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49351153">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/351/153/7a03429b6aa0db3029c10faa53e556ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747751633&amp;width=680&amp;sig=rJarYZTfjfmBhw7V2iwXhhFspDualOaxq0yyOHrl1T8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Shipping">Shipping</h3><p>We’ll be using BackerKit to manage all pledges and fulfillment details. Due to ongoing fluctuations in global shipping rates, we’ll collect shipping fees closer to the actual ship date. This approach ensures the most accurate and up-to-date pricing, allowing us to pass potential savings directly to you—our valued backers.</p><p>Final shipping costs will be calculated based on real rates at the time of fulfillment. Any applicable sales tax or VAT will be determined based on your location and charged accordingly.</p><p>To guarantee delivery, please make sure to confirm your pledge in BackerKit before the stated deadline. We cannot ship pledges that remain unconfirmed after this period.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49352693">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/352/693/7a03429b6aa0db3029c10faa53e556ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747756927&amp;width=680&amp;sig=u%2Fn1BPyQxWWZD4UFuCt3iUyA4e%2BfYpCfw%2FECqH4Vik0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:FAQ">FAQ</h3><h4 class="page-anchor" id="h:What-is-the-shipping-cost-">What is the shipping cost?</h4><p>Shipping is available worldwide and will be charged separately closer to the fulfillment date via our website. Due to ongoing volatility in global shipping rates, we’re unable to provide an exact cost at this time. Even small fluctuations can significantly impact logistics budgets.</p><p>Estimated shipping costs currently range between $10 and $35, depending on your region. We do not profit from shipping fees and will work hard to ensure the most cost-effective and timely delivery possible.</p><h4 class="page-anchor" id="h:Are-taxes-duties-or-VAT-included-">Are taxes, duties, or VAT included?</h4><p>No—our prices do not include local taxes, customs duties, or VAT. These charges are determined by your country’s regulations and will be your responsibility upon delivery. However, we’ll make every effort to minimize these additional costs where legally possible.</p><h4 class="page-anchor" id="h:When-will-PIDGN-ship-">When will PIDGN ship?</h4><p>We expect to receive campaign funds after the campaign ends. At that point, we will begin tooling and production immediately. If everything goes as planned, shipments will begin in September 2025.</p><h4 class="page-anchor" id="h:Is-PIDGN-legal-">Is PIDGN legal?</h4><p>The official PIDGN firmware does not include any potentially illegal features (e.g., DOS, DDoS, or destructive code).  Since PIDGN is open source, you are free to modify or install third-party firmware. However, any modifications are done at your own risk and may not be legal in your country.</p><h4 class="page-anchor" id="h:Will-PIDGN-include-Bluetooth-">Will PIDGN include Bluetooth?</h4><p>Yes. All PIDGN units will include Bluetooth functionality upon release, provided we meet our funding goal. This applies to all backers, regardless of when you pledged.</p><h4 class="page-anchor" id="h:I-m-new-how-can-I-learn-to-use-PIDGN-">I’m new—how can I learn to use PIDGN?</h4><p>We’re building a full knowledge base, wiki, and step-by-step tutorials to help you get started. Whether you’re a beginner or a seasoned pentester, you’ll find helpful resources to explore PIDGN’s full potential and scripting capabilities.</p><h4 class="page-anchor" id="h:Can-I-join-the-development-">Can I join the development?</h4><p>Absolutely! We welcome contributors and community support from day one. A full development roadmap and contribution guide is in the works and will be shared in an upcoming update.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354191">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/191/7a03429b6aa0db3029c10faa53e556ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747762869&amp;width=680&amp;sig=ciF8WcynlyXekFCRPt2L3DOEroJ8eqnRA%2B28LdanjZ4%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">While the PIDGN device is fully functional and has been thoroughly tested, potential risks remain primarily related to supply chain factors. The most significant risk involves tariffs and import/export regulations that could impact the availability and cost of key components, potentially leading to production delays or increased manufacturing costs.
+
+To mitigate this, we are working closely with our suppliers and manufacturers to secure reliable component sources and streamline our logistics to reduce the likelihood of delays. Despite these potential challenges, we remain committed to delivering high-quality devices on schedule.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>My logo was AI generated and I use it to grammar and spell check my page content.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

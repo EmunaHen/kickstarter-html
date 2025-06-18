@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MIDILLI MIDI Router, Hub, and Filter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/022/888/c316b282919190e9ca22deef3194f2da_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1745486625&width=560&sig=ybB04qmzIr7ksAR%2B424ghTwgc2R1MXkTvu0hSNOXOtE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>MIDILLI MIDI Router, Hub, and Filter</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A MIDI Hub with selective MIDI routing and filtering between Bluetooth, USB, DIN-5, and TRS Type A & B.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,027</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>32 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Introducing-MIDILLI-MIDI-Router-A-MIDI-Hub-and-Filter-">Introducing MIDILLI MIDI Router: A MIDI Hub and Filter!</h3><p>After our <span>first project</span> was fully funded in less than three weeks, we couldn't wait to build more. Now we're back, and this time, it's all about MIDI routing done right.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="MIDILLI MIDI Router - MIDI Hub, Router &amp; Filter in One Box." data-id="49026066">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/026/066/73ec249c8e5046ba60a9c9a0f445f79a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745505993&amp;width=680&amp;sig=r2OzkNFDulGuejARUP%2BzHKZjsYs9birx0nwyjhKh82M%3D" src="https://i.kickstarter.com/assets/049/026/066/73ec249c8e5046ba60a9c9a0f445f79a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745505993&amp;width=680&amp;sig=r2OzkNFDulGuejARUP%2BzHKZjsYs9birx0nwyjhKh82M%3D"/>
+<figcaption class="px2">MIDILLI MIDI Router - MIDI Hub, Router &amp; Filter in One Box.</figcaption>
+</figure>
+</div>
+<p>Meet the smartest way to take control of your MIDI world. The MIDILLI MIDI Router lets you route messages exactly <span class="bold">where</span> you want and in <span class="bold">any direction</span> you want — between USB, Bluetooth, DIN and TRS (Type A &amp; B) — with per-interface and per-message type filtering that gives you total creative freedom. Compact, powerful, and ultra-efficient, it’s designed for both stage and studio. Only 106 × 55 × 33 mm (4.17 × 2.17 × 1.3 inches) and 115 grams (4.06 oz).</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Connect every cable you need — USB, DIN, TRS... and Bluetooth, of course (invisible, just like it should be)." data-id="49035807">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/035/807/bd152b5303f7f11eb1aa0ec1fe574272_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745566584&amp;width=680&amp;sig=Es4JuJQCNEkw5npmsgCnUHBKPh5kpsKZtkKq5OyOMbA%3D" src="https://i.kickstarter.com/assets/049/035/807/bd152b5303f7f11eb1aa0ec1fe574272_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745566584&amp;width=680&amp;sig=Es4JuJQCNEkw5npmsgCnUHBKPh5kpsKZtkKq5OyOMbA%3D"/>
+<figcaption class="px2">Connect every cable you need — USB, DIN, TRS... and Bluetooth, of course (invisible, just like it should be).</figcaption>
+</figure>
+</div>
+<p>Say goodbye to messy cables and rigid signal chains — and hello to the most flexible MIDI brain you've ever owned.</p><h3 class="page-anchor" id="h:-Product-Highlights">📦 Product Highlights</h3><p>MIDILLI MIDI Router is a plug-and-play and versatile tool that works across many platforms and has various connection options for MIDI routing. It's particularly useful for musicians or producers who need a flexible setup for connecting multiple MIDI devices.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Features 6 physical MIDI ports (2 In, 4 Out), USB and Bluetooth MIDI In/Out, and 2 MIDI Thru outputs. You can selectively disable routing between interfaces, where applicable." data-id="49023286">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/023/286/a1c728873a2c24faf294ae67b1af25cf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745488894&amp;width=680&amp;sig=4HO4sVSLDaRs9840KZ4gL%2F4NzdutdAw4ENeGcm9CDck%3D"/>
+<figcaption class="px2">Features 6 physical MIDI ports (2 In, 4 Out), USB and Bluetooth MIDI In/Out, and 2 MIDI Thru outputs. You can selectively disable routing between interfaces, where applicable.</figcaption>
+</figure>
+</div>
+<p>We built the MIDILLI MIDI Router from the ground up—hand-programmed and focused on the requirements that true music makers crave. In a world where off-the-shelf products often miss the mark, we've engineered a routing, filtering, and customization system that fills the gaps for musicians, producers, and DJs.</p><p>Every feature is a response to your needs: seamless integration across Bluetooth, USB, DIN, and TRS interfaces, a smart matrix routing system, and message filtering to ensure that every note, beat, and control signal arrives just as you intend.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Plug-and-play - No drivers needed!" data-id="49022914">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/022/914/1e60ac04ec3c074cc943233501064d57_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745486804&amp;width=680&amp;sig=QVOBJpuGP6VHIMYM2mmvU1bPa8fCmzOXPl6NIH5zWxU%3D" src="https://i.kickstarter.com/assets/049/022/914/1e60ac04ec3c074cc943233501064d57_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745486804&amp;width=680&amp;sig=QVOBJpuGP6VHIMYM2mmvU1bPa8fCmzOXPl6NIH5zWxU%3D"/>
+<figcaption class="px2">Plug-and-play - No drivers needed!</figcaption>
+</figure>
+</div>
+<p>Imagine having the flexibility to create complex signal chains with just a few simple clicks, tailoring every connection to suit your specific performance or studio setup. Our selective routing isn't just about connectivity. It’s about giving you full control over your musical expression. Elevate your live shows, streamline your studio sessions, and push the boundaries of what’s possible with MIDI — all on your terms.</p><h4 class="page-anchor" id="h:Selective-MIDI-Routing">Selective MIDI Routing</h4><p>Introducing our advanced <span class="bold">Selective MIDI Routing</span>—a game-changer designed with musicians, producers, and live performers in mind. With MIDILLI, you enjoy a versatile suite of interfaces including USB In/Out, MIDI In/Out, and Bluetooth In/Out, all seamlessly integrated into one powerful device.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49413355">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/413/355/baffb2d51adb30a27c36693040018f55_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748168709&amp;width=680&amp;sig=GdQcRtVo2l2WBYmA6xpPw7frcb5WfgbF35RouxCEA5I%3D"/>
+</figure>
+</div>
+<p>Using our intuitive MIDI routing matrix (or simply by clicking on the interfaces in our Configurator software) you can effortlessly enable or disable signal paths. This means you have complete control over which signals from any input are routed to your desired outputs. Whether you're splitting, merging, or isolating signals, our system lets you craft the exact connectivity your creative workflow demands.</p><h4 class="page-anchor" id="h:More-Than-a-Simple-MIDI-Router">More Than a Simple MIDI Router</h4><p>Beyond MIDI routing capabilities, MIDILLI MIDI Router also introduces powerful message filtering.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Each output can be configured individually." data-id="48842797">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/842/797/633dbb58fe82a3ec9375634262bdd844_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744199934&amp;width=680&amp;sig=KP1G%2FjY1r1c4TsaSAVQNrf8flluskoSVOr7zk%2FgyaiQ%3D"/>
+<figcaption class="px2">Each output can be configured individually.</figcaption>
+</figure>
+</div>
+<p>Decide exactly which types of MIDI messages each output should receive. From Clock, Start, and Continue signals to Control Changes, Program Changes, Note On/Off, Pitch Bend, Aftertouch, and even System Exclusive messages — you're in control. No more unwanted data clogging your setup. Just pure, purposeful MIDI.</p><p>Don't want to send Clock signals to Bluetooth Out? Just disable it.</p><h4 class="page-anchor" id="h:One-Software-to-Rule-Them-All">One Software to Rule Them All</h4><p>Our lightweight Configurator software (under 100 MB) allows you to set up, sync, and update your MIDI Router (actually, all your MIDILLI devices) with ease.<br/>Everything is just a few clicks away — from routing to firmware updates.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="This is how the Configurator looks like. You can individually click the interfaces to enable or disable the messages coming from specific interfaces, perform firmware updates, backup/restore settings and more..." data-id="49392862">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/392/862/9c11a9fa9c9acb4f02530e788f0097ce_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747987741&amp;width=680&amp;sig=4k4TiPlBI9RcCKas8BheL%2BY%2F1Kg1suc1%2FlbT9JvYHDE%3D" src="https://i.kickstarter.com/assets/049/392/862/9c11a9fa9c9acb4f02530e788f0097ce_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747987741&amp;width=680&amp;sig=4k4TiPlBI9RcCKas8BheL%2BY%2F1Kg1suc1%2FlbT9JvYHDE%3D"/>
+<figcaption class="px2">This is how the Configurator looks like. You can individually click the interfaces to enable or disable the messages coming from specific interfaces, perform firmware updates, backup/restore settings and more...</figcaption>
+</figure>
+</div>
+<p>Once you’ve configured your MIDILLI MIDI Router, your settings are saved directly on the device.</p><p>The Configurator runs on <span class="bold">Linux</span>, <span class="bold">macOS</span>, and <span class="bold">Windows</span>. And with your support, we'll also make it available directly in your <span class="bold">browser</span>.</p><p>Want to have a quick look at its full features? Read more <span>here</span>.</p><p>You can already download it <span>here</span>.</p><p>Want to switch between different setups? You can export and import your configurations anytime, making it easy to switch between live shows, studio sessions, or custom workflows.</p><p>Just use the menu in the Configurator. It’s rich and waiting to be explored. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Menu button with its all available options for your new MIDI Router." data-id="48843691">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/843/691/618e2865187a7e7c12e46807202f466e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744205271&amp;width=680&amp;sig=LsLHj5TPNV6tRja5hGQCTFHxzNzznBHSFIci9ZEBAM0%3D"/>
+<figcaption class="px2">Menu button with its all available options for your new MIDI Router.</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Key-Features">✨ Key Features</h3><p><span class="bold">Multiple MIDI Interfaces:</span></p><ul>
+<li>4x MIDI Out (2x MIDI DIN-5, 1x TRS 3.5mm Type-A, 1x TRS 3.5mm Type-B) 🎹</li>
+<li>1x MIDI In DIN 5 🎶</li>
+<li>2x MIDI Thru DIN 5 🔄</li>
+<li>1x USB MIDI (In and Out) 💻</li>
+<li>1x Bluetooth MIDI (In and Out) 📱</li>
+</ul><p><span class="bold">MIDI Routing:</span></p><ul>
+<li>Forward incoming MIDI messages between MIDI Out, USB MIDI, and Bluetooth MIDI </li>
+<li>Enable or disable interfaces for forwarding </li>
+<li>Select which message types (e.g., Note, Clock, SysEx) to forward.</li>
+</ul><p><span class="bold">Plug &amp; Play:</span></p><ul>
+<li>No drivers required! Works out of the box with <span class="bold">macOS, Windows, Linux, Android, and iOS*</span>
+</li>
+<li>
+<span class="bold">Powered via USB-C</span> with low power consumption.</li>
+</ul><p><span class="text-italic">*iOS: Bluetooth MIDI or with devices with USB-C connector.</span></p><h3 class="page-anchor" id="h:-Rewards">🎁Rewards</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49023468">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/023/468/30247a0e173195beb3e2eaf7e3b707f2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745489829&amp;width=680&amp;sig=%2FsflQD7NkDAo5Tytgadtu6ZzVLLfMMMnDHX6BX%2Ftw3g%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Supporter-10-">Supporter (10 €)</h4><p>A special thank-you and exclusive updates about the project. Your support means the world to us!<br/>Join our journey from day one and get behind-the-scenes insights, early announcements, and heartfelt gratitude for helping us turn this project into reality.</p><h4 class="page-anchor" id="h:MIDILLI-MIDI-Router-Early-Bird-155-Only-5-Available">MIDILLI MIDI Router - Early Bird (155 €) - Only 5 Available</h4><p>Be the first to experience the power of MIDILLI MIDI Router at a special discounted rate.</p><p><span class="bold">Just for the first 5 to claim it!</span></p><p>This early access tier includes an advanced MIDI Router in Black featuring:</p><ul>
+<li>
+<span class="bold">4x MIDI Out</span> (2x MIDI DIN-5, 1x TRS Type-A, and 1x TRS Type-B)</li>
+<li>
+<span class="bold">1x MIDI In</span> (DIN-5)</li>
+<li>
+<span class="bold">2x MIDI Thru</span> (DIN-5)</li>
+<li><span class="bold">1x Bluetooth MIDI</span></li>
+<li><span class="bold">1x USB MIDI</span></li>
+</ul><p>Additionally, you'll receive a sleek <span class="bold">USB 64 GB Flash Drive </span>with a premium gunmetal casing. Enjoy free worldwide shipping and secure your unit at an exclusive price!</p><p>Experience complete, selective routing and filtering across your devices (Bluetooth, USB, DIN, and TRS) while enjoying free global shipping. It’s the ideal choice for artists who need powerful, streamlined connectivity without compromise.</p><h4 class="page-anchor" id="h:MIDILLI-MIDI-Router-Complete-Edition-165-Only-5-Available">MIDILLI MIDI Router - Complete Edition (165 €) - Only 5 Available</h4><p>For the true MIDI aficionado—this bundle gives you the entire MIDILLI experience along with premium add-ons at a special discount.</p><p><span class="bold">Limited quantity!</span></p><p>The Complete Edition includes:</p><ul>
+<li>
+<span class="bold">MIDILLI MIDI Router </span>featuring:<ul>
+<li>4x MIDI Out (2x MIDI DIN-5, 1x TRS Type-A, and 1x TRS Type-B)</li>
+<li>1x MIDI In (DIN-5)</li>
+<li>2x MIDI Thru (DIN-5)</li>
+<li>1x Bluetooth MIDI</li>
+<li>1x USB MIDI</li>
+</ul>
+</li>
+<li><span class="bold">USB 128 GB Flash Drive with Gunmetal Casing, instead of 64 GB!</span></li>
+<li><span class="bold">2 m (ca 6.5 ft) USB Cable</span></li>
+<li><span class="bold">Mini Metal USB-A to USB-C Converter</span></li>
+<li>
+<span class="bold">Choose Your Own Color</span> option to match your personal style</li>
+<li>
+<span class="bold">Custom Device Name</span> so your hub carries your unique identity</li>
+<li>
+<span class="bold">Exclusive MIDILLI Sticker</span> – show off your support proudly, on your gear or anywhere else!</li>
+</ul><p>Plus, enjoy free worldwide shipping on this ultimate package. It’s your all-in-one solution for superior, customized MIDI control!</p><h4 class="page-anchor" id="h:MIDILLI-MIDI-Router-185-">MIDILLI MIDI Router (185 €)</h4><p>Didn’t make it in time for the Early Bird or the Complete Edition? No worries — you can still grab your MIDILLI MIDI Router in Black packed with all the groundbreaking features. The only thing you’re missing is the flash drive!</p><p>Experience complete, selective routing and filtering across your devices (Bluetooth, USB, DIN, and TRS) while enjoying free global shipping. It’s the ideal choice for artists who need powerful, streamlined connectivity without compromise.</p><h4 class="page-anchor" id="h:2x-MIDILLI-MIDI-Router-289-Only-5-Available">2x MIDILLI MIDI Router (289 €) - Only 5 Available</h4><p>Get an extra copy of the MIDI Router with a special bundle discount. You will get:</p><ul>
+<li>
+<span class="bold">2x MIDILLI MIDI Router in Black </span>featuring:<ul>
+<li>4x MIDI Out (2x MIDI DIN-5, 1x TRS Type-A, and 1x TRS Type-B)</li>
+<li>1x MIDI In (DIN-5)</li>
+<li>2x MIDI Thru (DIN-5)</li>
+<li>1x Bluetooth MIDI</li>
+<li>1x USB MIDI</li>
+</ul>
+</li>
+<li>
+<span class="bold">2x USB 64 GB Flash Drive </span>with gunmetal casing</li>
+</ul><h4 class="page-anchor" id="h:3x-MIDILLI-MIDI-Router-289-Only-5-Available">3x MIDILLI MIDI Router (289 €) - Only 5 Available</h4><p>Get 3x MIDI Router with a special bundle discount. You have great setup there! You will get:</p><ul>
+<li>
+<span class="bold">3x MIDILLI MIDI Router in Black </span>featuring:<ul>
+<li>4x MIDI Out (2x MIDI DIN-5, 1x TRS Type-A, and 1x TRS Type-B)</li>
+<li>1x MIDI In (DIN-5)</li>
+<li>2x MIDI Thru (DIN-5)</li>
+<li>1x Bluetooth MIDI</li>
+<li>1x USB MIDI</li>
+</ul>
+</li>
+<li>
+<span class="bold">3x USB 64 GB Flash Drive </span>with gunmetal casing</li>
+</ul><h3 class="page-anchor" id="h:-Addons"><span class="bold">🧩Addons</span></h3><ul><li><span class="bold">Display a Custom Device Name (10 €) 🏷️</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Set the device text visible on the lists, where applicable." data-id="49035751">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/035/751/706e5fcc16ec15619e01b18c324b4dd5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745566074&amp;width=680&amp;sig=zeT6MNQODY6YzNCxNfc4jNBFvtuJiBGmLhMPdssz%2Fpw%3D"/>
+<figcaption class="px2">Set the device text visible on the lists, where applicable.</figcaption>
+</figure>
+</div>
+<p>By default, your device will appear as "MIDILLI MIDI Hub" in Bluetooth device list and DAW software. With this add-on, you can personalize it by setting any name you like.</p><ul><li><span class="bold">Choose Your Own Casing Color (5 €) 🎨</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49399032">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/399/032/0e32edfe29a6e4eb8e7ac7cda834d1f3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748023741&amp;width=680&amp;sig=AZgO8WYhnj%2BZCrWH8%2BWOJ9SfZahZEqvGzgpPzwk%2F%2F%2Bc%3D"/>
+</figure>
+</div>
+<p>Stand out from the crowd! Instead of the standard black casing, pick your favorite color and give your MIDILLI MIDI Router a unique look that fits your setup.</p><ul><li><span class="bold">2 m (ca 6.5 ft) USB Cable (1 €)🔌</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49399041">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/399/041/8820e3a0afa9983e5745274eb9c0ede5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748023835&amp;width=680&amp;sig=WsBeeUArFPxn8iRkJ6Zu9vcTvyO3l5WCOpEril66Czg%3D"/>
+</figure>
+</div>
+<p>Need a bit more reach? Add a 2-meter (about 6.5 ft) USB cable to your order — perfect for more flexible setups, whether you’re on stage or in the studio. Also for multi-use possible. Supports up to 6A for faster charging.</p><ul><li><span class="bold">Mini Metal USB-A to USB-C Converter (1 €) 🔄</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49399008">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/399/008/d8a1ae878d81974817b4b0aa37ecc64f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748023599&amp;width=680&amp;sig=FBRjnMlwaTYbBx68Z99Yj9m9pA7qEoLdLmmGyR3BQy0%3D"/>
+</figure>
+</div>
+<p>Add a USB-A to USB-C converter to your pledge — so you can easily connect your MIDI gear to any USB-C laptop, tablet, or phone. Quick, simple, and hassle-free.</p><p>Dimensions: 19.2 mm × 16.2 mm × 8.2 mm (0.76 in × 0.64 in × 0.32 in) (Length × Width × Height)</p><ul><li><span class="bold">USB 64 GB Flash Drive with Gunmetal Casing (4 €)</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49413383">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/413/383/bd2b7c6d88841a97a673233552489d8e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748169054&amp;width=680&amp;sig=rtfYtzQZsYHE8qlZAHlUvfEU8Lmx6dG6%2BDuqQ8Dr6r8%3D"/>
+</figure>
+</div>
+<p>Store and carry your data in style with this sleek, gunmetal-finished USB drive.</p><p>Dimensions: 5.87 x 1.8 x 0.78 cm (2.31 x 0.71 x 0.31 in) (Length x Width x Height)</p><ul><li><span class="bold">USB 128 GB Flash Drive with Gunmetal Casing (7 €)</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49413383">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/413/383/bd2b7c6d88841a97a673233552489d8e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748169054&amp;width=680&amp;sig=rtfYtzQZsYHE8qlZAHlUvfEU8Lmx6dG6%2BDuqQ8Dr6r8%3D"/>
+</figure>
+</div>
+<p>Store and carry even more data in style with this sleek, gunmetal-finished USB drive.</p><p>Dimensions: 5.87 x 1.8 x 0.78 cm (2.31 x 0.71 x 0.31 in) (Length x Width x Height)</p><h3 class="page-anchor" id="h:-Specifications-">🔧 <span class="bold">Specifications</span>
+</h3><p><span class="bold">⚙️ Physical Connections</span></p><ul>
+<li>1× MIDI In (DIN-5)</li>
+<li>2× MIDI Out (DIN-5)</li>
+<li>1× TRS 3.5mm MIDI Out – Type A</li>
+<li>1× TRS 3.5mm MIDI Out – Type B</li>
+<li>2× MIDI Thru (DIN-5)</li>
+<li>1× USB MIDI (via USB-C)</li>
+<li>1× Bluetooth MIDI</li>
+</ul><p><span class="bold">📦 Dimensions</span></p><ul>
+<li>
+<span class="bold">Size</span>: 106 × 55 × 33 mm (4.17 × 2.17 × 1.3 inches) (Width × Depth × Height)</li>
+<li>
+<span class="bold">Weight</span>: 115 grams (4.06 oz)</li>
+</ul><p><span class="bold">🔌 Power</span></p><ul>
+<li>5V, USB-C Powered</li>
+<li>Current: 95 mA (with Bluetooth enabled)</li>
+<li>Current: 75 mA (with Bluetooth off)</li>
+</ul><h3 class="page-anchor" id="h:-Shipment">🚚 Shipment</h3><p><span class="bold">Shipping's on us! </span>Orders are shipped from Germany (EU). There are no additional charges for EU countries. For other regions, local taxes or customs duties may apply and are the responsibility of the backer.</p><h3 class="page-anchor" id="h:Who-is-MIDILLI-">Who is MIDILLI?</h3><p>MIDILLI is a startup from Germany, with an idea from 2024 and found after its first successful Kickstarter project: <span>MIDILLI: Create Your Own Custom MIDI Controller</span>. The project was fully funded in less than three weeks. Now, we're back for the second time — and we need your support to bring this project to life as well.</p><p>MIDILLI aims to produce high quality and fully customizable devices for professionals and non-professionals. No serial production, everything is tailored to your needs. Read more about us on our website: <span>https://midilli.info/about-midilli/</span></p><p>Or read more about everything we have so far:</p><ul>
+<li><span>https://midilli.info/</span></li>
+<li><span>http://midilli.tech/</span></li>
+<li><span>http://midilli.store/</span></li>
+<li><span>http://customidi.eu/</span></li>
+</ul></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">MIDILLI has already been founded. One potential risk is the delay in component delivery, which could depend on the number of backers. However, we have accounted for this by adding a buffer to the delivery dates, ensuring that we can manage any unforeseen delays.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Firmware Updates: Ongoing firmware updates to keep the devices up-to-date, functional, and bug-free.
+
+User Support and Resources: Tutorials to assist you in troubleshooting and maintaining the devices.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">Durable Materials: To extend the product's life cycle, reducing the frequency of replacement and associated waste.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">RoHS (Restriction of Hazardous Substances) compliant electronic components were used.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">Energy Efficiency: Low power consumption.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oorian - Java-based Web Application Framework</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/104/823/2d483ce9a2d889c29cf818aaf707d911_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1746027255&width=560&sig=SxxF4oFuCmtutycFZszofdagg1P49aVe8HcftT5V8a0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Oorian - Java-based Web Application Framework</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Develop dynamic, highly interactive, data-driven web apps in pure Java - front-end to back-end.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 50,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:What-is-It-">What is It?</h3><p>Oorian is Java-based framework for creating dynamic, interactive, data-driven web applications purely in Java allowing you to leverage all the benefits of object-oriented design in your applications front-end to back-end.  Your entire web application, including the UI, can be written in Java without the need for maintaining separate HTML, CSS, and/or JavaScript code.  As someone who is proficient in Java and highly productive when using it,  I've found trying to develop large web application UI's through a combination of HTML, CSS, and JavaScript to be incredibly tedious and inefficient at best.  Not able to find a Java-based web framework that met my needs, I created Oorian.  <br/><br/>Development began on Oorian several years ago to support the development of <span>iGradePlus</span> - a very large, data-driven web application.  Oorian has been in production use for at least 8 years as the basis for iGradePlus which now consists of hundreds of unique web pages and over 500k lines code.<br/><br/>Since Oorian has matured and proved to be a reliable and practical framework for developing web applications, I have decided I'd like to make it publicly available for other developers who may appreciate its benefits as much as I do.   However, because iGradePlus requires all of my time, I have not been able to get Oorian polished up enough to make it available for general use.  I am trying to raise money to hire a developer who can clean up the code and produce the documentation necessary to make it available for general use.</p><h3 class="page-anchor" id="h:How-Does-It-Work-">How Does It Work?</h3><p>Oorian web applications are built and deployed just like normal Java web applications, except they include the Oorian library which provides the UI components and the translation engine for converting the pure Java UI into the HTML, CSS, and Javascript that is served to the client's browser.  </p><p>Oorian web applications consist of mutliple pages like traditional web applications; however, the web pages are coded in Java and not HTML.  The code for the simplest Oorian web page looks like this:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48976417">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/976/417/37d174507081fe90109c0c2b37127f66_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745195809&amp;width=680&amp;sig=gvP4xJNg95FO6xVuglBnxOzU%2BZD1VpfUIlBTBeRpljY%3D"/>
+</figure>
+</div>
+<p>The basic building blocks of an Oorian web applications are HTML element classes.  Oorian contains a class for every HTML 5 element available. Additionally, the API for the element classes support all CSS3 style attributes. Here is a slightly more elaborate page showing some of the API and CSS styling.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48976418">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/976/418/977bfb02f4f1f8dbbc8a20e064ebd3ba_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745195842&amp;width=680&amp;sig=%2FFRFGwpzPr86PQIK6Ih3L7JfL3A2g3b7DLvhBLrrhwo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-Use-It-">Why Use It?</h3><p>If you are like me and are a proficient object-oriented, Java programmer, but find web application development messy and cumbersome and just flat out despise JavaScript and the all the frameworks built for it, then you might just love Oorian.  </p><h4 class="page-anchor" id="h:A-Familiar-Programming-Model">A Familiar Programming Model</h4><p>The biggest problem I encountered when I first started developing web applications was trying to adjust to a programming model that was highly inferior to the programming model I was used to when using Java.  I think in terms of object-oriented design and in order to be productive, I need a programming language that supports that.   Oorian fills that need by allowing you to develop your entire web UI in Java using object-oriented design principles.</p><h4 class="page-anchor" id="h:Extensibility-and-Reusability">Extensibility and Reusability</h4><p>For sophisticated UI's, your page code won't consist of hundreds of basic HTML elements.  You'll most likely be using more sophisticated components you have built such as menus, grids, dialogs, etc.  And that is one of the benefits of Oorian.  Unlike HTML where reusability means copying and pasting code or creating UI components in JavaScript, you can build a library of sophisticated controls that can be easily used throughout your web application leveraging the benefits of object-oriented programming such as inheritance and polymorphism.  With a control library layered on top of the Oorian Core library, your web application code will begin to resemble the code of a traditional GUI application. </p><p>The screenshot below is a sophisticated spreadsheet-like control that was built for iGradePlus to enter student assignment scores.  In addition to the spreadsheet, it also shows a custom dialog that the spreadsheet pops up when a cell is clicked.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48984130">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/984/130/76175e8f6cf896115b96ef6191b45708_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745253411&amp;width=680&amp;sig=TpAhe6dgam7rtk6Hd4hxmsTuUJPH2%2F7huj%2FWB5%2FiLp4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Seamless-Client-Server-Communication">
+<br/>Seamless Client-Server Communication</h4><p>The second major benefit of Oorian is the seamless communication that occurs between your web app and the user's browser.  Any event that is generated in the user's browser can be easily handled in your web app running on the server simply by registering to receive the event.  It appears as if your server-side app is actually running on the client-side.<br/><br/>Oorian implements an event / listener model similar to the JDK for familiarity.  In the code sample below, the HelloWordPage implements the MouseClickListener interface, then registers to receive the MouseClickedEvent from the Div.  When the user clicks on the Div in the browser, the onMouseEvent method will be called on the HelloWorldPage class.  <br/><br/>Any updates to the UI that occur as a result of a UI event are automatically sent back to the client, which updates the loaded web page accordingly.  <br/><br/>In the code sample below, we change the text displayed by the Div and its background color.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48976502">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/976/502/e211c58a80e8df11a562155b28d45042_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745196727&amp;width=680&amp;sig=T%2FZkR0lqj5KrhZdpLzLTo12H9NOreK7n2%2FFqPkRUf74%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Flexibility">Flexibility</h4><p>Oorian doesn't prevent you from using normal HTML, CSS, or JavaScript code in your project if you need to. </p><p><span class="bold">Static HTML</span><br/>Full static HTML pages can be included in your project and served to the client just like you would normally with a Java web application. Oorian also provides you with the ability to include HTML code fragments in an Oorian web page or element by using the HtmlFragment class.</p><p><span class="bold">HTML Templates</span><br/>If you're building an interactive, dynamic website as opposed to a full-blown web application and are using a professionally designed template, you can still use Oorian to manage the site.  Oorian provides a special page class, HtmlTemplatePage that can be used to publish a page from an HTML file while still using all the features of Oorian to interact with page.  </p><p>For instance, the <span>official Oorian website</span> is built using Oorian and a modified version of <span>this template</span>.  The code for this page is shown below.  The entire page is loaded from an HTML file, but the forms on the page are managed by the Oorian page.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48985736">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/985/736/c7ae0e31d7f6709d36b5cde73b18df00_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745262946&amp;width=680&amp;sig=ckvYn9yLP4iV8Mw8IOCHrRaoWgQWKqpSXDSk5%2FG2%2FvI%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Static CSS</span><br/>If you'd like to use CSS files with your web application, you can do so just as you would with normal HTML pages.  You simply add a tag to your page Head like this:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48984141">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/984/141/3c5fe2504af5f37d0515dc6c8ade252c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745253499&amp;width=680&amp;sig=iQfbBa0hHuC2p%2FiJUttreSY%2BF9NBw6WTs6dMkEDWWdg%3D"/>
+</figure>
+</div>
+<p>And you can set the CSS class names on any elements like this:<br/><br/><img src="https://i.kickstarter.com/assets/048/984/148/b67d9607d73c401a1fdb09bdba24c2a8_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745253535&amp;width=484&amp;sig=eVd5xAYEA0LXIarj%2Fz4MO%2Frot91Nlvv0xEllyKUXy7g%3D"/></p><p><span class="bold">Dynamic CSS</span><br/>Oorian includes a various number of CSS-related classes that can be used to create dynamic CSS on the backend programmatically instead of using static CSS files. The snippet below shows a very simple Oorian style-sheet created programmatically:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48985768">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/985/768/2cf452ffc57a11dff4b6a3307368aa9e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745263123&amp;width=680&amp;sig=DdUpSziYop%2Fp3ddFAq3voi7Gapda%2FzhfyWs3NLh3tgw%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">JavaScript</span><br/>JavaScript can be included if necessary in the same manner as a normal web page:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48985795">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/985/795/531ea11a7999fe75cc673b18cb4f10e4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745263253&amp;width=680&amp;sig=hDTy8Pl2rD31t6DdlKIWOQcnt6X7t3v745KyMRO6irQ%3D"/>
+</figure>
+</div>
+<p><br/>And your webapp can send JavaScript to the browser to execute on the fly:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48985816">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/985/816/96784df48495985a1c7c4311a0e1449a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745263346&amp;width=680&amp;sig=RVDk9Yz2d%2FV%2F9Yl6%2Ba8i62ZAKgZG4C1uDmJjFYQU71Y%3D"/>
+</figure>
+</div>
+<p><br/>And you can override the built-in HTML element handlers from within your webapp: </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48985830">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/985/830/04a848980706dcec114eb6f28d792f46_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745263394&amp;width=680&amp;sig=hZarVx8FFO81VMy5Th8bng7tcWonTInkJymi43pXH9Q%3D"/>
+</figure>
+</div>
+<p><br/><br/><span class="bold">Third Party UI Controls</span><br/>Oorian itself is not a rich UI control library. It is simply a framework for developing web applications in Java without having to write and maintain HTML, CSS, and JavaScript code. With that said, it can be used to easily wrap controls from rich UI control libraries. For instance, iGradePlus uses a commercial PDF Viewer for viewing and marking up assignments uploaded by students. A screenshot is shown below.  Controls like this can be incorporated into your Oorian web app by creating a custom component that creates any elements required by the control and executes the necessary JavaScript to initialize the control.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48985901">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/985/901/501dc5f65624e6c3760f85d34098aaf4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745263654&amp;width=680&amp;sig=FAzRzauEmLToerwSGY9TC1x3mGAY7Ef06KKUhAsEqvc%3D"/>
+</figure>
+</div>
+<p><br/>This control was easily integrated into our web app by including the JavaScript and CSS files provided by the control's developer in our deployed web app and creating a custom Oorian class to wrap this functionality as shown below.  The control below allows opening, displaying, editing, and saving a modified PDF.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48986099">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/986/099/532217cd648404fca0819102627aa37f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745264661&amp;width=680&amp;sig=cr65JHBXGOuCMc2BNRqgipauAYpQGP1Zon2PrIAjaEQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Roadmap">Roadmap</h3><h4 class="page-anchor" id="h:Polished-Code-and-Documentation">Polished Code and Documentation</h4><p>The first version of Oorian will require minimal updates to the existing code and features and will mainly be producing the documentation necessary to use it and removing code that has become obsolete over the last several years.   </p><h4 class="page-anchor" id="h:Single-Page-App-Option">Single Page App Option</h4><p>In it's current state, you cannot produce Single Page Applications (SPAs) with Oorian. The missing piece is a reliable navigation mechanism, which I have never had time to implement.  However, once this has been developed, Oorian should be able to produce SPAs pretty easily.  It already handles asynchronous web page updates seamlessly, it just cannot perform these updates based on user navigation.  Since SPAs have become very popular, this option is high priority.</p><h4 class="page-anchor" id="h:Web-Awesome-and-Syncfusion-Integration">Web Awesome and Syncfusion Integration</h4><p>The original intent of Oorian was to create a Java-based framework for developing rich web applications.  The name itself is derived from this concept - Object-oriented Rich Internet Application Framework.  </p><p>Because there are so many JavaScript-based libraries for rich UI controls, it became obvious that integrating Oorian with these various libraries was easier than building a rich set of controls directly into Oorian.  However, because iGradePlus requires so much of my time, I only integrated the UI controls that I needed and I didn't integrate Oorian fully with any control libraries.   </p><p>If Oorian proves to be popular based on the performance of this campaign, integrating Oorian with popular UI control libraries will be the major focus post version 1. Syncfusion which has a comprehensive control library with a community edition is high on the candidate list.  Web Awesome, which is a new product by the people over at Font Awesome looks like another good candidate.  </p><p>However, I will be open to integrating with other libraries if users have suggestions.  It's actually pretty easy to create Oorian controls that wrap JavaScript UI controls, so community developers will be able to easily integrate with any control library they'd like if they want to develop it themselves and make it available to other users.</p><p><br/> </p><p><br/><br/> </p><p><br/><br/><br/><br/> </p><p><br/><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Since Oorian has been used in a production system for several years, the risks related to the release of version 1 are pretty minimal.  Since most of my time is dedicated to the development of iGradePlus, funding will be used to hire a developer to clean up the code and produce the documentation for the first release.  Producing the community edition should be pretty low effort.  The biggest challenge will be getting the licensing infrastructure in place for commercial customers.  If I raise significantly more than I have targeted, indicating a greater interest in adoption, I will dedicate more of my time to the project as a whole.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

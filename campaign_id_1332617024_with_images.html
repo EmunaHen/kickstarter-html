@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>moodlink — turn feelings into friendships</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/318/256/857104a3e9cdd1b3e85cb46d1cde1ce9_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747526427&width=560&sig=D5TcvH9guGPODZWKAP1qp4L5%2BKUwfRG4u9%2BmGukTAt0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>moodlink — turn feelings into friendships</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A social mood app that turns a 3-second color check-in into peer support & evidence-based micro-actions</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 68,498</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49319144">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/319/144/4f875eabbc3c401d98b5f1b0473521f4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747535178&amp;width=680&amp;sig=9vj11dB5G0eb0lytjJfzEIs9lkS%2BBRBrsgF2oBP6uPw%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">(A social‑first mental‑wellness app that transforms a 3‑second mood check‑in into real‑time support, evidence‑based micro‑activities, and meaningful community connections.)</span></p><p>1. Our Story &amp; the Problem We’re Solving</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49319149">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/319/149/de8497c3aafce8e6fc038dfcbee82d54_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747535195&amp;width=680&amp;sig=rrZqOw0kM84qy2k6gU6p3gdk6JObV8RYHS06OIFCMRw%3D"/>
+</figure>
+</div>
+<p>More than <span class="bold">1 in 5 people</span> report feeling seriously lonely on any given week. While hundreds of wellness apps promise “community,” most still keep you scrolling alone. Meanwhile, privacy scandals and inconsistent clinical standards make many users wary of sharing their most personal data online.</p><p>MoodLink was born from one simple insight: <span class="bold">if we could turn an emotion into an invitation, our phones could become the fastest bridge between how we feel now and the human help we need next.</span></p><p>2. What Exactly Is MoodLink?</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49319155">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/319/155/cbfd157d267670fa03eb13df95faf219_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747535216&amp;width=680&amp;sig=xCWDa6KHztoA0NFadW%2FpiTbARd5LpuMakOr9kCk%2F4vo%3D"/>
+</figure>
+</div>
+<p><span class="bold">Core layers &amp; why they matter</span></p><p>• <span class="bold">Color‑Swipe Check‑In</span> — Drag your thumb across a living gradient, pick today’s color‑feel, add <span class="text-italic">(optional)</span> voice note. <span class="text-italic">Result</span>: 3‑second habit → 30‑day emotional graph.</p><p>• <span class="bold">AI Feel‑Fuse Feed</span> — GPT‑powered model sums up your entries and pushes a micro‑action (60‑sec breath drill, quick stretch, or “nudge a friend” card). <span class="text-italic">Result</span>: Converts awareness into scientifically grounded action.</p><p>• <span class="bold">Circle‑Match</span> — Smart algorithm groups 3–5 peers in complementary mood ranges for live text / audio rooms. <span class="text-italic">Result</span>: Peer support proven to improve outcomes &amp; retention.</p><p>• <span class="bold">Clinician‑Verified Journeys</span> — Short, leveled paths (e.g., “Navigate Sunday Scaries”) written by psychologists. <span class="text-italic">Result</span>: Structure without replacing therapy.</p><p>• <span class="bold">Privacy‑First Vault</span> — End‑to‑end encrypted; zero ads; GDPR‑ready audit log; local delete‑any‑time. <span class="text-italic">Result</span>: Trust by design, not promise.</p><p><span class="bold">Stretch Goal (€110 k)</span> → <span class="text-italic">AR Mood‑Maps: see opt‑in circles in your vicinity via soft‑focus overlay.</span></p><p>3. Why Now?</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49319156">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/319/156/d3ccbfa3ae491e05e843aa2e35abd82d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747535235&amp;width=680&amp;sig=tQMIFPgwS9K%2BpHWf90RlDWeLO9EBJVNTJmPuSm2ks8s%3D"/>
+</figure>
+</div>
+<p>The global <span class="bold">mental‑health app market</span> was ≈ <span class="bold">$7.5 billion in 2024</span> and is projected to triple by 2032 at 14–18 % CAGR.</p><p><span class="bold">Gen Z &amp; Millennials</span> rank <span class="text-italic">community</span> above <span class="text-italic">content</span> when choosing wellness tools—but <span class="bold">19 of 32 leading apps</span>fail basic privacy tests.</p><p>Kickstarter backers already support transparent, impact‑driven health‑tech; MoodLink fills the <span class="text-italic">clinically‑literate, community‑first, privacy‑obsessed</span> gap.</p><p>4. Who It’s For</p><p>• Anyone who tracks mood but wants <span class="text-italic">action</span>, not just metrics.<br/>• Remote workers craving genuine micro‑social breaks.<br/>• Students &amp; young professionals navigating high‑pressure phases.<br/>• NGOs &amp; campus counselors seeking low‑cost peer‑support tools <span class="text-italic">(our Buy‑One‑Give‑One program gifts seats where therapy access is scarce).</span></p><p>5. Reward Tiers</p><h3 class="page-anchor" id="h:Early-Feel-10">Early Feel — €10</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49319159">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/319/159/0dee9bf4505512a6304c1d61700635a1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747535259&amp;width=680&amp;sig=N1cfQbDVHwp5r7jGMtJ4wy%2Bj70IOly3EhOui9xeqfI0%3D"/>
+</figure>
+</div>
+<p>• Name on Founders Wall<br/>• Exclusive dynamic ringtone that shifts with your mood palette</p><h3 class="page-anchor" id="h:Lifetime-Vibe-25">Lifetime Vibe — €25</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49319160">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/319/160/04b8d3538e4ee2a1060a922809f26800_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747535267&amp;width=680&amp;sig=nBUCcawlcb6zJz%2F6XlXOS3cAuNZmtX5NfMiT4eEAZO4%3D"/>
+</figure>
+</div>
+<p>• All previous rewards<br/>• <span class="bold">Lifetime Premium</span> <span class="text-italic">(limit 5 000)</span></p><h3 class="page-anchor" id="h:Beta-Buddy-59">Beta Buddy — €59</h3><p>• Lifetime Vibe perks</p><p>• TestFlight / Play‑Store early access from closed beta (Nov 2025)</p><p>• Private Discord channel with dev team</p><p>• Kickstarter‑exclusive emoji &amp; app‑icon skins</p><h3 class="page-anchor" id="h:Mood-Maker-99">Mood Maker — €99</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49319181">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/319/181/be611a1cc29bf7399935b87f525111bb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747535429&amp;width=680&amp;sig=t11lRMqfurYk2x%2BAlZRuYL%2FXi12%2F0%2F6u5sMcjXElKbM%3D"/>
+</figure>
+</div>
+<p>• All Beta Buddy perks</p><p>• Invitation to monthly live UX‑jam streams with the design team (Jan–Jun 2026)</p><p>• Custom gradient theme pack, credited to you inside the app</p><h3 class="page-anchor" id="h:Circle-Champion-199">Circle Champion — €199</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49319186">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/319/186/2b117201d388d5047fd83fde101ce85e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747535453&amp;width=680&amp;sig=CGf3T%2FKMSQK5lryKDHDu6W7%2FYh5Ou6L5uf0PPXA7LYc%3D"/>
+</figure>
+</div>
+<p>• All Mood Maker perks<br/>• <span class="bold">We donate 20 one‑year Premium seats to a partner NGO in your name</span><br/>• Digital supporter badge displayed on your profile &amp; website listing</p><h3 class="page-anchor" id="h:Ambassador-Pack-499">Ambassador Pack — €499</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49319186">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/319/186/2b117201d388d5047fd83fde101ce85e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747535453&amp;width=680&amp;sig=CGf3T%2FKMSQK5lryKDHDu6W7%2FYh5Ou6L5uf0PPXA7LYc%3D"/>
+</figure>
+</div>
+<p>• Special ambassador Discord role &amp; badge<br/>• <span class="bold">Donation of 100 one‑year Premium seats to a school/NGO of your choice</span><br/>• 1‑on‑1 60‑min product/design call with the founding team</p><p>6. Stretch Goals</p><p>• <span class="bold">€75 k</span> — Apple Watch &amp; WearOS widgets<br/>• <span class="bold">€110 k</span> — <span class="bold">AR Mood‑Maps</span> module<br/>• <span class="bold">€150 k</span> — Multilingual launch <span class="text-italic">(Spanish, German, Japanese)</span></p><p>7. Transparent Budget</p><p><span class="bold">Product &amp; AI development (45 %)</span> — iOS, Android, backend, GPT inference credits.</p><p><span class="bold">Clinical partnerships &amp; content (20 %)</span> — Psychologist contracts, evidence reviews.</p><p><span class="bold">Community &amp; marketing (15 %)</span> — TikTok creator collabs, campus pop‑ups.</p><p><span class="bold">Security &amp; compliance (10 %)</span> — Pen‑tests, GDPR &amp; HIPAA legal.</p><p><span class="bold">Kickstarter/payment fees (5 %)</span> — Platform + Stripe.</p><p><span class="bold">Contingency (5 %)</span> — Buffer for FX &amp; component swings.</p><p>8. Roadmap</p><p><span class="bold">June 2025</span> — Public prototype video &amp; email capture<br/><span class="bold">15 Jul – 15 Aug 2025</span> — 30‑day <span class="bold">Kickstarter</span> live<br/><span class="bold">Sep 2025</span> — Closed alpha <span class="text-italic">(250 users)</span><br/><span class="bold">Nov 2025</span> — Open beta <span class="text-italic">(Android/iOS)</span><br/><span class="bold">Jan 2026</span> — Public launch with <span class="bold">Buy‑One‑Give‑One</span> wave 1<br/><span class="bold">Mar 2026</span> — KPI checkpoint: <span class="bold">10 k DAU</span>, &lt; 10 % monthly churn<br/><span class="bold">Q3 2026</span> — Mood‑Maps <span class="text-italic">(if unlocked)</span> + <span class="bold">B2B campus pilot</span></p><p>9. Risks &amp; Challenges</p><p><span class="bold">Clinical efficacy</span> - External IRB‑approved usability study before v1.0; steering panel of four clinicians.<br/><span class="bold">Data privacy</span> - End‑to‑end encryption; third‑party audits; no ads, no data resale.<br/><span class="bold">AI hallucinations</span> - Guardrails + human moderation for sensitive content.<br/><span class="bold">Timeline slips</span> - Agile sprints with public burndown board; monthly video updates.<br/><span class="bold">Hardware logistics (mood ring, tees)</span> — Partnered with EU‑based wearables OEM &amp; eco‑cotton supplier; sample run booked pre‑campaign.</p><p>10. The Bigger Impact</p><p>For <span class="bold">every pledge</span>, we unlock a <span class="bold">free 12‑month premium seat</span> for someone who cannot afford therapy-distributed through partner NGOs and university counseling centers. Together we aim to gift <span class="bold">10 000 seats</span> in our first year.</p><p>12. Join Us</p><p>If you believe feelings deserve real‑time friends, click <span class="bold">Back This Project</span>, pick your tier, and share our campaign with one person whose day you’d brighten with a color check‑in. Let’s build <span class="bold">MoodLink</span>—where a swipe of green, blue, or yellow can start the conversation that changes everything.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49319217">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/319/217/6bc91c21260adac63ba958db299db771_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747535795&amp;width=680&amp;sig=cGhEC7mTsHI0FDVbZNpK4iV4%2FIEw1KcKgwr6JVkgU1s%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">(Have questions? Shoot us a message in the “Comments” tab we’re here and listening!)</span></p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Risks &amp; Challenges
+
+Clinical efficacy
+	•	Why it matters: MoodLink offers mental-wellness guidance; ineffective or unverified advice could erode trust—or worse, harm users.
+	•	How we’ll address it:
+	•	All “Journeys” are written or reviewed by a panel of four licensed psychologists.
+	•	An IRB-approved usability study runs during closed beta; we’ll publish the results before v1.0.
+	•	Any content that might be construed as medical advice is clearly flagged with “Wellness only – not a substitute for therapy.”
+
+Data privacy &amp; security
+	•	Why it matters: Users share highly personal mood data.
+	•	How we’ll address it:
+	•	End-to-end encryption for entries and chats.
+	•	Annual third-party penetration test plus GDPR audit log.
+	•	No ads and zero data resale; our revenue comes from subscriptions only.
+
+AI hallucinations
+	•	Why it matters: GPT summaries could generate misleading suggestions.
+	•	How we’ll address it:
+	•	Fine-tuned models on a vetted corpus; high-risk outputs blocked by moderation filters.
+	•	Prompts that mention self-harm escalate to human moderators and crisis-line resources.
+
+Timeline slips
+	•	Why it matters: AI and mobile projects often overrun.
+	•	How we’ll address it:
+	•	Two-week sprints with a public burndown board in Discord.
+	•	Buffer baked in: we promise a Jan 2026 launch, but our internal goal is Nov 2025.
+
+Platform rule changes
+	•	Why it matters: Apple or Google policy shifts could delay store approvals.
+	•	How we’ll address it: Dual-track builds (TestFlight + APK sideload) so backers can still access new versions if one store is held up.
+
+Stretch-goal creep
+	•	Why it matters: Extra features (Watch widget, AR Mood-Maps) can pull focus from core release.
+	•	How we’ll address it: v1 scope is frozen; stretch-goal code lives in separate branches and ships only after the main launch.
+
+Shipping risk
+	•	All rewards are digital, so there are no supply-chain delays or customs fees to worry about.
+
+⸻
+
+We’ll post monthly video updates, share sprint demos in real time, and flag any setback the moment it appears—along with our revised plan. If something ever becomes impossible, backers will vote on the best alternative use of that budget or receive proportional refunds.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>How MoodLink will use AI and why we’re seeking funding
+	1.	Building core AI features (funding request)
+	•	We will fine-tune an open-weight large language model (LLM) plus a lightweight on-device classifier to:
+• summarise daily mood entries (“AI Feel-Fuse Feed”)
+• suggest micro-actions (breathing drill, 2-min stretch, “nudge a friend”)
+	•	Kickstarter funds cover GPU training time, inference credits, and data-privacy audits.
+	2.	AI-generated in-app content
+	•	The LLM produces short, original text: calming prompts, evidence-based tips, and friendly summaries of a user’s 30-day emotional graph.
+	•	All outputs are post-processed through content-safety filters; anything medical, diagnostic, or self-harm related is escalated to a human moderator and crisis-line resources.
+	•	We never present AI text as professional medical advice; every suggestion carries a “wellness only” disclaimer.
+	3.	Additional AI use-cases
+	•	Circle-Match algorithm: a clustering model groups 3–5 peers with complementary moods for live text/audio rooms.
+	•	Privacy-First Vault: on-device AI redacts personally identifying info before optional cloud sync.
+	•	Dynamic theme engine: a small GAN variant generates gradient backgrounds that reflect aggregated community mood (purely cosmetic).
+	4.	Data &amp; IP assurances
+	•	Training uses only:
+• public-domain or CC-BY mental-health corpora
+• licensed clinical-psycho-education materials
+• first-party user data collected with explicit opt-in (de-identified).
+	•	No copyrighted or proprietary text is ingested without permission.
+	•	Users can export or delete their mood data at any time (GDPR compliant).
+	5.	Risk mitigation &amp; transparency
+	•	Monthly model-performance audits shared in public updates.
+	•	External penetration test + bias evaluation before each major release.
+	•	If an AI component under-performs or becomes unsafe, we will disable it and notify backers immediately, offering a roadmap revision or partial refund vote.
+
+In short, we’re seeking funding to develop, fine-tune, and run the AI that powers MoodLink’s mood summaries, micro-actions, and peer-matching, while meeting Kickstarter’s AI policy for safety, data rights, and transparency.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

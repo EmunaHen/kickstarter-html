@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iFramix Pro: Breathe New Life into Your Old Pad and Phone</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/241/218/622bce9920f93b60acb605368b930509_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747038359&width=560&sig=oc%2BAriHgYB28jlEewS2huHonsC4Q45IRsNuQfYnqR9M%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>iFramix Pro: Breathe New Life into Your Old Pad and Phone</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Frame Kit+Charging Module+Smart LED Strip+ Dedicated Applications: Photo Display |Weather Station |Calendar |FlipClock|News|Focus Timer</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 6,418</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div>
+<p>Do you have an old pad or phone gathering dust? Bring it back to life with iFramix!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49124864">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/124/864/c8de0f2da5f444e3788cd60ad71e2425_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746157221&amp;width=680&amp;sig=RJLieroG%2FmQPzaZ1wumaca8XgV%2FLbJoClq2VCdlAup8%3D" src="https://i.kickstarter.com/assets/049/124/864/c8de0f2da5f444e3788cd60ad71e2425_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746157221&amp;width=680&amp;sig=RJLieroG%2FmQPzaZ1wumaca8XgV%2FLbJoClq2VCdlAup8%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-FPuOdGQu5o1bG3x17kacdQctnCe">In 2023, we launched the first generation of iFramix, gaining the support of 5,906 backers and achieving over 98% delivery rate.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49067571">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/067/571/839b32da6e9c7bb766f743d38a7c379c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745821258&amp;width=680&amp;sig=X9EeHNGJrnqONrHCfNZU%2BO2gNg%2BMFM3zM3sBhKOnGkE%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-Vja4dPxavoRQCBxTSlTcFw6Zn2e">To date, iFramix has helped repurpose over 30,000 idle devices worldwide. Transforming old tablets and phones into something valuable has become the mission of iFramix.</div>
+<div class="ace-line old-record-id-Vja4dPxavoRQCBxTSlTcFw6Zn2e">This is the user tutorial video for our 1st gen iFramix：</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49321277">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-2nd-Gen-iFramix-iFramix-Pro">Meet 2nd Gen iFramix- iFramix Pro</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/321/277/fd098344be6d1ec9ad4f5d0810a7cec0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747564992&amp;width=680&amp;sig=B0f3M0b6UPt5B7FdAldWw5%2BrwHAHCUm9miJG8Yu6C%2BE%3D"/>
+</figure>
+</div>
+<p>Now, meet the second generation iFramix — iFramix Pro. It supports all iPad and most Android tablets, as well as all iPhones and most Android phones. It also features an improved charging management module that protects older devices from overcharging.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49322112">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/322/112/67443f8a6c3f1153b4bfd0947666f0da_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747577243&amp;width=680&amp;sig=KRp2J5E82ph3Xty%2FQ2OHFXUcdHv4uHovlHJcY%2BzDgLk%3D"/>
+</figure>
+</div>
+<div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49241546">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/241/546/24af7eb000259f1df80464c4a53e8556_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747039980&amp;width=680&amp;sig=Dz4WaIauGVkWOZbCodAnu7FJRosEyuUOXYzXJdmxLdU%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-VnqadcrYbokASnxRwk3ctjd1nLR">Thanks to our investment in software development for lower OS versions, even very old devices—such as iPad 1/2/3/4 or iPhone 4/5/6, or Android 4.4-5.0 devices—can run most of our applications, bringing great experiences to users</div>
+<span></span><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879198">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/198/30cd30f7166bee2e2e96f7bf691a7aed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744449951&amp;width=680&amp;sig=xbILtpSqV16sMw5Tj%2BdlwyMZtEtFnp0UyElgLZ6s5ik%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-Mf4vdjQMLobX5BxOwm6cjQY8nzb">No more letting your old Phones and Pads gather dust! Whether it’s in the bedroom, living room, or study, they can instantly transform into practical digital photo frames.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48841972">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/841/972/eb11e09c173136c23e456f26fc805e30_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194366&amp;width=680&amp;sig=xwQFcVVf6Qz%2FWfiLmiJR5QNLFfKtc9g1p7cbnIDzL8s%3D" src="https://i.kickstarter.com/assets/048/841/972/eb11e09c173136c23e456f26fc805e30_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194366&amp;width=680&amp;sig=xwQFcVVf6Qz%2FWfiLmiJR5QNLFfKtc9g1p7cbnIDzL8s%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-IzMidbZJZoa38Wx2BJkcQnDbnob">On the back of the frame, a smart LED strip is added, dynamically changing its colors to match the tones of your photos—bringing a touch of elegance and style to your space.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48841975">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/841/975/0b8d130c1b42934f6d951963d999f4be_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194378&amp;width=680&amp;sig=jJ7U92mm85NoT7ZXWQnGiBwgT8OiobaPBo75o%2F2q5Zw%3D" src="https://i.kickstarter.com/assets/048/841/975/0b8d130c1b42934f6d951963d999f4be_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194378&amp;width=680&amp;sig=jJ7U92mm85NoT7ZXWQnGiBwgT8OiobaPBo75o%2F2q5Zw%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49197582">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/197/582/ce5685b01cfc7c69d2d4f8251290d284_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746676605&amp;width=680&amp;sig=IRgCJnLQCFW6%2FMom3zpZq7RYu5LBZzWXydfpYAVYwio%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48880512">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/880/512/9ddcd383a0fc7d14ee87f58e75083f0f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744464481&amp;width=680&amp;sig=nzZgR1p1rPbs7R1dlsp9VMOkLG4rNEX70sCgjxIAdeU%3D" src="https://i.kickstarter.com/assets/048/880/512/9ddcd383a0fc7d14ee87f58e75083f0f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744464481&amp;width=680&amp;sig=nzZgR1p1rPbs7R1dlsp9VMOkLG4rNEX70sCgjxIAdeU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49197584">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/197/584/ecc4704f0a21000ea4de566d27210f4f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746676625&amp;width=680&amp;sig=O%2Bvgp9Boon0NOSD7FF6PRVI46F6yDPPNRRDq61PPAXA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48841977">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/841/977/ba8351b7c6f2b3e0fe793e5dce003e1a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194383&amp;width=680&amp;sig=moJHoVDwDWpN5DRy10FPYhquQe8USOE%2BNqay9FYhhrM%3D" src="https://i.kickstarter.com/assets/048/841/977/ba8351b7c6f2b3e0fe793e5dce003e1a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194383&amp;width=680&amp;sig=moJHoVDwDWpN5DRy10FPYhquQe8USOE%2BNqay9FYhhrM%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49197628">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/197/628/92ee5a647fd06de75155959bda11fb4f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746677032&amp;width=680&amp;sig=oIxKsB%2B0rXkhmGIsUTx%2FloaLhfJTvXCh2WAvM75eSy4%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-DVdAddu4XoVDPuxYqSRcrRaUnfM">Select your favorite singers, writers, entrepreneurs, artists, or the Bible—anyone you admire. Our AI model will analyze your photos and match them with relevant text from sources like song lyrics, poetry, Bible verses, or quotes that resonate with the mood of your image.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48841983">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/841/983/32ab7acfb4989edc62da514782880978_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194417&amp;width=680&amp;sig=bWBz3V7cHuPV2WPTv7fb5ae0pTzQH5grqoUYM9NFKQs%3D" src="https://i.kickstarter.com/assets/048/841/983/32ab7acfb4989edc62da514782880978_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194417&amp;width=680&amp;sig=bWBz3V7cHuPV2WPTv7fb5ae0pTzQH5grqoUYM9NFKQs%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-KlkudynNIoFGmyxmCwAcFe7TnKh">The images and text are presented in various design styles. We’ve created 12 classic layouts for photo and text combinations, with more to come in the future.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48910630">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/910/630/5505eedf0d6e0b054a41c5f93bdaf99c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744698382&amp;width=680&amp;sig=RLAvSM8JmfIfGuP7siMM9LkAUC8h2k7ClX1N8MeMTVg%3D" src="https://i.kickstarter.com/assets/048/910/630/5505eedf0d6e0b054a41c5f93bdaf99c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744698382&amp;width=680&amp;sig=RLAvSM8JmfIfGuP7siMM9LkAUC8h2k7ClX1N8MeMTVg%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-JNKRderyLo8esixDXlBcUyGEnCb">With iFramix Pro, your photos are no longer just pictures. They become stories, filled with emotion, meaning, and connection. Each image is transformed into a work of art, like something you'd see in a gallery</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48841989">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/841/989/fbf21bb60f218f8583e2038e66fecf92_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194437&amp;width=680&amp;sig=dSVmXmiWvEwMw8vFKMVwsdHFaEupYY2zyOUc8PoFWZ0%3D" src="https://i.kickstarter.com/assets/048/841/989/fbf21bb60f218f8583e2038e66fecf92_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194437&amp;width=680&amp;sig=dSVmXmiWvEwMw8vFKMVwsdHFaEupYY2zyOUc8PoFWZ0%3D"/>
+</figure>
+</div>
+<div><div><div><div><div>
+<div><div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49197606">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/197/606/13da181bd4e6b2fc7a99763f6c50e112_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746676828&amp;width=680&amp;sig=n0Qgia3WM9NcRXIqlA%2B8CAPDRqMfCudyTwnrUZ6%2BMnc%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-GGaPdxxjPoaXQvxLxKacWydgnXg">Our elegant calendar integrates with Apple and Google calendars, syncing your events directly. Managing your schedule has never been smoother!</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48880541">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/880/541/f19f07e8281dbb5e60d9da05e61c40b3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744464669&amp;width=680&amp;sig=4lvF06iLTbNqCmKy5tLDWyQb3VXVRUXOf1oNue1sSBQ%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49197636">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/197/636/1830a03823cc0626d1572412db8aa916_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746677100&amp;width=680&amp;sig=U4EWmMijUyJCtn%2B5XaFXwexjxCTJQWrtu%2BtWRTrvTDQ%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-BKmvd3vYbozPPHxCsx4cGNosntd">With one click, start the Pomodoro Timer and focus on your tasks. Avoid distractions and excuses to achieve effortless productivity. Work smarter, stay sharp, and own your time!</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48842003">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/842/003/3cb07637308aac7d227bea97e713abed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194496&amp;width=680&amp;sig=hnqT1%2FyZtwsZLG%2FqeZqsqkIUpDmRmrT3st2C7gVWErg%3D" src="https://i.kickstarter.com/assets/048/842/003/3cb07637308aac7d227bea97e713abed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194496&amp;width=680&amp;sig=hnqT1%2FyZtwsZLG%2FqeZqsqkIUpDmRmrT3st2C7gVWErg%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49197638">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/197/638/1ab65899c604e58898cf26d240dd5f70_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746677127&amp;width=680&amp;sig=60boL9Nz7XmdGbI0KsJ3Leexg3CXg8nzHHBVrOOF5Z0%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49197660">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/197/660/f2ae5ccfce481b1d5f5370e7a0d2a1af_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746677411&amp;width=680&amp;sig=Ddbmb6SYCPiiEVYUZ8N6c9XWLSwi%2FrU8ux9Najp6Cuk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49197665">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/197/665/9be61ec5f6f4912922cc810617b5ae84_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746677461&amp;width=680&amp;sig=owQEQeqyRmOcRaHz9n0eFdxxOUfWWgW0DlLQXTt8Uo4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49197667">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/197/667/711b201f27098155a0ecedbab4b3948b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746677465&amp;width=680&amp;sig=Y5OMR0vhlNCt3ZKN8gaZJdZLP6do0j4EO7%2FGzSXS7GM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879349">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/349/0e61acd3333f7194d7a4f36b0873b9b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744451940&amp;width=680&amp;sig=1WD3SpJMC2tRVyK7Cj7knYCMn3thb2DsSmJyb5CeCQU%3D"/>
+</figure>
+</div>
+<ul><li>Smart Home Hub: We are evaluating open-source smart home control software to serve as a central hub for connected devices. While the concept is promising, there are still some technical challenges we need to address before moving forward.</li></ul>
+<ul><li>Motion Sensor: When a person approaches, the light strips and screen automatically illuminate; when they leave, both dim down. We’ve already reserved an interface for this accessory on iCharguard, and it will be made available for sale as an add-on at the right time.</li></ul>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48912267">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Worth-500-USD-Again">Worth 500 USD Again</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/912/267/3895a0bb0c50be98872948a12441d0a5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744708798&amp;width=680&amp;sig=A3FOduZoNtB%2B6z4NKH%2Bo9XgTYaikKFyzyRFsQ9E%2Fi4g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48912325">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/912/325/e2124bdac8352eaa1952f2ef4c1a2035_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744709121&amp;width=680&amp;sig=fPB7JxrQOmCLhFcDOovMDyMqCHG0m9rFgbMjBKxWG%2F0%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879350">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-What-is-iFramix-Pro-"> What is iFramix Pro?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/350/fddd5e3a26711266da242d12b1dcbe47_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744451945&amp;width=680&amp;sig=23MlhUEvL7GcZPMe78Q6QflLt0B%2F3HGZSRmbW1D8UlY%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-EF2mdG7CqoyHtzxm08Mc4Ucankh">iFramix Pro is a thoughtfully designed system that combines aesthetics, functionality, and intelligence. </div>
+<div class="ace-line old-record-id-EF2mdG7CqoyHtzxm08Mc4Ucankh"><span class="bold">It consists of four key components:</span></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199521">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/199/521/98616f38a012c39c78c7f7e833c34473_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746692549&amp;width=680&amp;sig=XeI0u02CZBh2GCiv2s1eIXr8%2BeiESKnEqa73ny2Hllc%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879288">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:1-Wooden-Frame-Kit">1. Wooden Frame Kit</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/288/d9825837defb3f72a2265a267061ee25_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744451209&amp;width=680&amp;sig=vaHC%2FdGVdsivZrqQ6GbZX0Wjz9zPVRS0BGYWB68eWoo%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-FB7xdawnXoGOxCxZvpNcLx1sn4c">At first glance, the frame may look simple, but its design and production are anything but. </div>
+<ul>
+<li>Compatibility: The frame is designed to work seamlessly with all iPads and iPhones, as well as most Android phones and tablets</li>
+<li>Ease of Use: Simple and intuitive to set up and use. </li>
+<li>Aesthetic Appeal: A timeless design that enhances the beauty of any space.</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49321833">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/321/833/af0b18bbf4ce62b1ad38671a2c70b224_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747574338&amp;width=680&amp;sig=J45x2o1ULAkB8W5NHd4L5MgApRyCsggpDhLVV46k15k%3D" src="https://i.kickstarter.com/assets/049/321/833/af0b18bbf4ce62b1ad38671a2c70b224_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747574338&amp;width=680&amp;sig=J45x2o1ULAkB8W5NHd4L5MgApRyCsggpDhLVV46k15k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48910722">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/910/722/70a2c3241bf948a2e7bb118bc7f7bed5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744698930&amp;width=680&amp;sig=wX%2B5PRYkrbG%2B6zbI8C51cr6LibKytG%2FzhPqTw7jDvgQ%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879291">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:2-iCharguard-Charging-Mangement-Module">2. iCharguard-Charging Mangement Module</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/291/dcee38c4ddbf6ff7f06390d3db8e795b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744451221&amp;width=680&amp;sig=Egqzuv8mGtGzi9hyVGJVXsOpHQCLX%2BuKeLq4a641ncU%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-FZx6dLB4TobIIfxAPKBcZf2XnFe">iCharguard is the core hardware module designed to address the challenges of safe power supply and battery protection for older Phones and Pads during prolonged use.</div>
+<div class="ace-line old-record-id-MrexdFSrWoCOdYxtmTnc5bRHnXf">With the second-generation iCharguard, we’ve made significant improvements—essentially a complete redesign—making it more powerful and versatile.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48842011">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/842/011/3d48bd28696b3aafc1c49abe4439081f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194558&amp;width=680&amp;sig=qmxN0l36RgzoF%2BnkyNQ%2FSvuQT9sDdkOwswx8eBvhf9g%3D" src="https://i.kickstarter.com/assets/048/842/011/3d48bd28696b3aafc1c49abe4439081f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194558&amp;width=680&amp;sig=qmxN0l36RgzoF%2BnkyNQ%2FSvuQT9sDdkOwswx8eBvhf9g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48910888">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/910/888/2bb3097921833cc4fee9796e460146a0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744700298&amp;width=680&amp;sig=5ildHZQgbBRXouDRZVwABCVHdilzPm5EINnBk58Iwac%3D"/>
+</figure>
+</div>
+<p>How iCharguard Works：</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49321840">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/321/840/ad222c5c999c022a65ea378a34ae9e1d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747574389&amp;width=680&amp;sig=LFfSxK9YzlE0j7afGIyOfKEw8QF%2BHug4wjp33n5uwlI%3D"/>
+</figure>
+</div>
+<p>--For devices that support real-time battery monitoring via Bluetooth: iCharguard stops charging when the battery is fully charged and resumes when the battery level drops below a certain threshold.</p>
+<div>--For devices that cannot provide real-time battery data via Bluetooth: iCharguard uses machine learning to analyze the charging voltage and current patterns of each device. This allows it to dynamically adjust the charging process, ensuring a balance between power supply and energy consumption.</div>
+<div class="ace-line old-record-id-NYi6drRhvolFBpxHycwc2C2jnOh">This design prevents overcharging and helps maximize the battery lifespan of older devices, even during prolonged power supply scenarios.</div>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879292">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:3-Smart-Ambient-LED-Strip">3. Smart Ambient LED Strip</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/292/b6cf42d4051ad3042c15fcfb6a0051fe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744451228&amp;width=680&amp;sig=FGJbS1NGQemILVUb1iaUD2ih1bh89BHzGx%2BgdOy1JyA%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-T17sdYyMBoZbkKxU55xcwe8Xnfd">The Ambient LED Strip connects to iCharguard and is fully controlled by it. iCharguard adjusts the color changes of the LED strip by receiving color information from the screen.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49321883">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/321/883/5106cb3bde853ce36ce477e75b6d4e94_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747574846&amp;width=680&amp;sig=y6Xb4iScIWtj06t3Q1AtTKxPEJCGyW%2B%2BhCbph99fzEI%3D" src="https://i.kickstarter.com/assets/049/321/883/5106cb3bde853ce36ce477e75b6d4e94_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747574846&amp;width=680&amp;sig=y6Xb4iScIWtj06t3Q1AtTKxPEJCGyW%2B%2BhCbph99fzEI%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879294">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:4-Software-AI-Service">4. Software + AI Service</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/294/74ae935068fbbf7e304ae9524d638757_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744451235&amp;width=680&amp;sig=58CYN8VM%2FoSutt2BSq0pBrgKza1qK9OqT8G1H%2FCvBuE%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-SDfjdQLGuo93ywxIiVtc13xsnbf">The wide range of features showcased at the beginning are all powered by software and AI services.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48842016">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/842/016/c187d19a23c07a27993c437641da14ba_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194573&amp;width=680&amp;sig=%2B1Nne45GxB7PYu%2FM0bTxOzqxUpfQGySXJImdWLbWj0I%3D" src="https://i.kickstarter.com/assets/048/842/016/c187d19a23c07a27993c437641da14ba_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744194573&amp;width=680&amp;sig=%2B1Nne45GxB7PYu%2FM0bTxOzqxUpfQGySXJImdWLbWj0I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48971000">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/971/000/abe46f1e87ac642e227dac484cd9a2ed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745140144&amp;width=680&amp;sig=1uA0XxAEaiSUaTjgy4zGyMienA84dMOV8sMPrgwI%2B5o%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-BW3EdCO6eoxJL3x0Hqdchp8Znoz"><span class="text-italic"><span class="bold">Software:</span></span></div>
+<div class="ace-line old-record-id-JXo1dzaftoWGbSxPDazcVTnGnGd">The software is divided into two main parts:</div>
+<p>--Control Side: We have developed the iFramix app, compatible with both iOS and Android, to facilitate remote image uploads and basic settings.</p>
+<p>--Display Side: To accommodate different versions and architectures of iPads, Android Pads, iPhones, and Android Phones, we have designed five technical solutions：</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48910897">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/910/897/a4cdb961984f1d8a1087a7cc7efa0cda_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744700395&amp;width=680&amp;sig=ihV2HWj3AET%2F67Oor%2BO4IzpgmK%2FOteOHAwrS%2BXcvR2s%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">The control side and the display side do not need to be on the same operating system. For example, you can use your iPhone to control an Android tablet.</span></span></p>
+<div class="ace-line old-record-id-U5NRdW7a1ooyQ2x3AHGcOZGdnMv">We believe that every idle phone or pad deserves to be rediscovered.</div>
+<div class="ace-line old-record-id-Z4TMdaoEuo8jpfxvc4Mc3zZtnud">
+<span class="text-italic"><span class="bold">-Lifetime Free Software Usage:</span></span>The software is free to use for life.</div>
+<div class="ace-line old-record-id-J1K7da521oybMqxVsI3c58lVnDf">
+<span class="text-italic"><span class="bold">-AI Services:</span></span>Basic AI services are free of charge. Features such as image captions, "Today in History," AI Tips, and AI News—which consume fewer tokens—will remain free forever.</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49137555">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Supported-Device-Models">Supported Device Models</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/137/555/7e126c7b254bef8529557c74ff791f55_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746255906&amp;width=680&amp;sig=xwBvQMeRHUc9Tr2pv8wEB9ezUlj%2B73hETE4RMiyXJM4%3D"/>
+</figure>
+</div>
+</div>
+<div>
+<p>We support all iPhone and iPad models. The Android device support details are as follows:</p>
+<p><span class="bold">Android Phones:</span><br/>We support most Android phones. Unsupported Android phones include:</p>
+<ol>
+<li>Phones with Android versions below 4.4: Mainly Android phones from 2012 or earlier;</li>
+<li>Models with a body length greater than 164mm: These are mainly oversized models;</li>
+</ol>
+<p><span class="bold">Android Tablets:</span><br/>We support most Android tablets. Unsupported Android tablets include:</p>
+<ol>
+<li>Tablets with Android versions below 4.4: Mainly Android tablets from 2012 or earlier;</li>
+<li>Models with a body length greater than 253mm: These are mainly oversized tablets;</li>
+</ol>
+<span></span><p>If you are not sure about the model of your unused phone or tablet, you can email us for confirmation<img class="image" data-id="49197688" src="https://i.kickstarter.com/assets/049/197/688/2d01a505a7d022606c1ab807f803f40a_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746677703&amp;width=1360&amp;sig=33WDvIJGmn7IWwBPDrnQ7Aghiln1BvLD9Q0VOv8ACRA%3D"/><img class="image" data-id="49197738" src="https://i.kickstarter.com/assets/049/197/738/05805dfe6ae1440adfd30de5f15a61ef_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746678272&amp;width=1920&amp;sig=AXIracuooB8C0YbCNSqPhIUGY02TzVS%2B6btvS%2B7Mh4k%3D"/></p>
+</div>
+<div>
+<p>At iFramix, we're driven by a powerful mission: to reduce electronic waste by giving your idle, high-quality devices a vibrant new life. We passionately transform these forgotten treasures into valuable digital tools, helping you rediscover their potential and contribute to a more sustainable world</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879351">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Ultimate-Cost-Effectiveness">Ultimate Cost-Effectiveness</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/351/90c118c73e18c15aa9e671866a803030_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744451987&amp;width=680&amp;sig=mJrNlgpHylXLQaW4YKvQ8yPY996ac1bV8HzlAtmyNtw%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-LXBAddTWWoVPqxxR9w1cuKLFnXd">We are not aiming for maximum profit. Instead, we want to help users fully utilize their idle devices at the lowest possible cost:</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48910801">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/910/801/585fcad23ac43906474224d48b4f1ca8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744699447&amp;width=680&amp;sig=Pl6R%2FuTV57xBadRnfG8K0YjRGoe0GKcxwI4GjPW%2F%2BhY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879359">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/359/31df0ecf25b8c7b2437fe4476973bd09_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744452054&amp;width=680&amp;sig=C%2BVH5b5m8WUrVhzbXmmL1ewqSxvkzIdLtrc1gLn5zEo%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49242691">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/242/691/d1f532cf3e23bff7a12933d171102462_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747046432&amp;width=680&amp;sig=UzccYWKBHIo33hUDFC1RS%2BXyoYkUCEOpDkyqfh%2FunAA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49081724">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/081/724/83066f672f91e3fb67f7714c65e5558a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745907924&amp;width=680&amp;sig=89A%2BW7IvIVL%2Fgq5l2lDZTTAFuL%2BH8Z2aeKrOPauUpO8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879370">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stories-from-1st-Gen-iFramix-Users">Stories from 1st Gen iFramix Users</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/370/5ad18852c3197517170b351564ba33e7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744452229&amp;width=680&amp;sig=ENRdq0hpscsyy2LXN%2FA71DLJ%2FYon71EWIBvMgt5cqSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328360">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/360/d3c9f385365d6beb1207afc0b9e0221e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747622905&amp;width=680&amp;sig=SiE53XtfZVwSqw5LGgMyWg7i9n0lbpTGBWzY03b32MU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879966">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/966/64545ec477d9ff17a4d1910e958a5f09_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744460404&amp;width=680&amp;sig=f8NHmLSslP7qdK7aqDhfXkF1LMJnJKq8I%2FIN5T2Vimw%3D"/>
+</figure>
+</div>
+<div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879372">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Project-Timeline">Project Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/372/5bbe7aa6b1a229a967e4e40f689fc065_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744452245&amp;width=680&amp;sig=QrtRAqvoqn8QW%2BRSGK4fZQDFXegmb7CvdHc3Nf7%2Bo3k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879979">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/979/0d29a18e9294cb0d79cd101094f4034b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744460555&amp;width=680&amp;sig=QvFnIyCGJm8npScB41nlsS6Axdg%2Bcmu2BwmFLhRUt4o%3D"/>
+</figure>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48879389">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:iFramix-Brand-Story">iFramix Brand Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/879/389/5e910a89e094e306a349282abc201128_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744452467&amp;width=680&amp;sig=xMcM82Du175UssHI4OgZTPDh8BpFvR3dbKfc9Jr%2BVgc%3D"/>
+</figure>
+</div>
+<p>iFramix began with a simple observation: hundreds of millions of devices sit unused around the world—wasted resources with untapped potential. In 2023, our first-generation solution transformed over 30,000 idle tablets into valuable digital tools, earning the trust of nearly 6,000 backers with a 98% delivery rate.</p>
+<p>Our mission transcends technology; we're giving new life to forgotten devices while reducing electronic waste. With iFramix Pro, we've expanded this vision to support all tablets and smartphones, integrating AI to unlock even greater possibilities.</p>
+<p>We believe every device deserves a second chance. By combining thoughtful design with practical functionality, we're not just repurposing technology—we're reimagining what it means to truly value our digital resources.</p>
+<span></span><span></span><span></span><p><span class="text-italic">This project is promoted by </span><span>Jellop</span><span class="text-italic">, the ad tech power behind the best Kickstarters with 4200+ successful Kickstarter projects with over $1.2 Billion raised between them.</span></p>
+</div></div></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">With the experience and lessons learned from delivering the first-generation iFramix, we are confident in the delivery of the second-generation iFramix. However, if we must discuss risks and challenges, we believe there are two main points:
+1. We are confident in delivering all Phone and Pad frames by July. However, for the software component, considering the need to adapt to five different solutions for various older devices, we estimate that 90% of the functionality will be delivered by the end of July. The remaining 10% will be implemented in subsequent iterations as quickly as possible.
+2. Risks related to logistics and tariffs caused by trade protectionism.
+Our backers come from more than 30 countries, and under the current global environment, the trend of trade protectionism and increasing tariffs is a challenge we cannot ignore. While this is beyond our control, we will do our best to select appropriate shipping channels to help backers avoid tariffs or minimize them as much as possible.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>AI helps our users better showcase their photos by generating accompanying text, which is sourced through AI searches. The purpose of this text is to make the photo display more poetic and meaningful. However, AI is merely an auxiliary feature. The core of our product is a frame kit, charging module, and ambient lighting system that allows users to repurpose their old iPads. The role of AI is simply to make the iPad display more engaging and fun.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">We plan to use upcycled materials, including reclaimed solid wood, to ensure sustainability and reduce environmental impact</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

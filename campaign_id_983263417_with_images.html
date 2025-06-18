@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pantera 2, Tiny AI-Enabled Mini PC for AR / VR/ XR & Gaming</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/070/125/ecb9578d861a1ad9b7182ce4bc33669f_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1745837294&width=560&sig=FpBy3yTRQMSFTfH1lKQAPT%2FZQQGl1Uj%2BzgB%2FUzfNULE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Pantera 2, Tiny AI-Enabled Mini PC for AR / VR/ XR & Gaming</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Pantera 2 is a tiny Ryzen 8840u Mini PC with an AI NPU, RGB lights, dual MEMS mics, OLED stats display & user-upgradeable DDR5 & SSD.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,054</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49070292">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/070/292/93d916db030659e1f655f3fd0ebe0189_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745838237&amp;width=680&amp;sig=Kw2cC1Nfok7Q77GX04zWeb5bDSyt748u%2BSrYqiMpLsU%3D"/>
+</figure>
+</div>
+<p><span class="bold">THE PROBLEM:</span> <br/><br/>Full-sized desktop computers clutter your workspace, so a computer with a much smaller footprint will allow more freedom to do whatever you want on your desk. Sadly, most compact mini PCs have fixed components, limiting their upgradeability, and usable lifespan. Other devices may have some level of customizability, but look boring,  just a box with vent holes.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49070293">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/070/293/5c79d745374e7228d476069c4c481aa1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745838248&amp;width=680&amp;sig=hd1KGjzbZ8F6onmXvkEge31B2ct5pzRkDzvU34tpjY4%3D"/>
+</figure>
+</div>
+<p><span class="bold">THE SOLUTION:</span></p><p>The XDO Pantera 2 super compact yet capable. Its small footprint does not compromise performance. Unlike the previous generation Pantera, XDO leaves the old plain-box design in favor of having desktop-level power, functional aesthetics, user-replaceable memory, faster and bigger storage capacity, even more upgraded ports, all while keeping the device small enough so it does not take up a lot of space on your desk.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49070347">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/070/347/1ba2fff9146ba1d32e00ad2347bc9478_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745838499&amp;width=680&amp;sig=m7kqX3sk3jpMsFMr56rkOsFVmUsMKDbtG197mM9KBEY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49070352">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/070/352/89531e258fcc2565a44c822ca73e62ca_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745838542&amp;width=680&amp;sig=kn8vUP7fSxgODC%2F%2B8K9smIBTmVTNgVcuwft3RoZ4Eaw%3D"/>
+</figure>
+</div>
+<p><span class="bold">HERE ARE SOME OF THE HIGHLIGHTS OF XDO PANTERA 2</span><br/><br/>The Pantera 2 uses the AMD Ryzen 7 8840U 8-core 16-threads processor for superior multitasking and processing.</p><p>It supports up to 64 GB of user-replaceable dual-channel DDR5 RAM to future-proof your setup; RGB Lighting to customize the way you like the lights look to match your desk. OLED Status Display for monitoring your real-time system status at a glance, including current time, processor load, memory usage, and system temperature. <br/><br/>Despite its small size, the Pantera 2 offers surprising versatility and performance. Beyond standard office, gaming, and multimedia tasks, it’s well-suited for various specialized uses: it can function as an embedded computer, power a POS system, support digital signage, run CCTV systems, and more, depending on your needs.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49070354">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/070/354/e392c0d117bb9d3128915facbacb1f18_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745838555&amp;width=680&amp;sig=%2FzKNe8c7bFz089PmCaR7FEGZjMoukxZPtw4pWhDKmD0%3D"/>
+</figure>
+</div>
+<ul>
+<li>AMD Ryzen 7 8840U 8 Cores/16 Threads  (APEX Variant - see comparison chart below)</li>
+<li>AMD Radeon™ 780M graphics, 2700 MHz</li>
+<li>AMD Ryzen AI Up to 16 TOPS </li>
+<li>DDR5 4800MHz Dual-channel (2 slots; MAX 64GB)</li>
+<li>1x HDMI 2.1 Up to 4K @60Hz</li>
+<li>1x M.2 PCIe 4.0 NVME 4X 2280 (MAX 2TB)</li>
+<li>1x MicroSDXC card slot</li>
+<li>2x Fan variable speed</li>
+<li>2x  USB 3.2 ports (Gen2/10Gbps) Copper heatpipes and radiators</li>
+<li>2x USB-C PORTS (1x 3.2 and 1x 4.0)</li>
+<li>Bluetooth 5.3; WiFi 6E; Gigabit Ethernet</li>
+<li>RGB top lid lighting (user-customizable)</li>
+<li>Multi-function status OLED display</li>
+<li>Dual Microphones (Stereo)</li>
+</ul><p><span class="bold">Different AMD models to choose from:</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49070512">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/070/512/896b49b58788750748a420dac3156bd6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745839871&amp;width=680&amp;sig=WVr0I9%2BtlyRpbf4oPfhUngg7cXzsHhQrn8mB3bbt7is%3D"/>
+</figure>
+</div>
+<p>Choose one of the above variants. Upgrade your tiny computing game today!</p><p><span class="bold">Introducing the AMD 8840u CPU - Powering AI-enabled mobile computing</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49070357">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/070/357/68d9b3b299db72904f3949958ab65108_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745838566&amp;width=680&amp;sig=%2FQdqia5vUKwWMn2m7ErGuw97OHteHt4zWAm8qDXtqG0%3D"/>
+</figure>
+</div>
+<p><span class="bold">WHAT’S NEW? </span></p><p><span class="bold">Pantera 1 vs Pantera2</span></p><p>The first iteration of the Pantera uses an Intel J4125. It is a low-power processor designed for entry-level computing tasks. It has a modest clock speed and limited graphics performance, suitable for basic tasks like web browsing, office productivity work, and media playback. It is designed during the pandemic to be the perfect basic setup for those who just started working from home.</p><p>The new Pantera 2, however, is a huge upgrade, and now uses the AMD Ryzen 7 7840U with AI capabilities, which is a much more powerful processor, based on AMD’s latest Zen 4 architecture and built with a 4nm process. Far superior to the basic Intel UHD graphics on the J4105, this Ryzen chip is capable of running demanding tasks such as video editing, multitasking, and gaming, thanks to its integrated Radeon 780M GPU.</p><p><br/><span class="bold">Why choose Pantera 2? </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49070514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/070/514/1c886969ff69d96590a1a47c2f1a9137_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745839890&amp;width=680&amp;sig=VfYryKr50so4xmg2eGp9GlqNjkwN0B0%2BSFZ%2BmRBQORs%3D"/>
+</figure>
+</div>
+<p>We collected Pantera 1 backer feedback and morphed it all together. Hence, the Pantera 2 was born!</p><p><span class="bold">Here are just a few of the Pantera 2 upgrades!</span></p><ul>
+<li>RGB top lid lighting (user-customizable)</li>
+<li>Multi-function status OLED display</li>
+<li>Dual Microphones (Stereo)</li>
+<li>AMD AI CPU</li>
+<li>USB4.0 (Thunderbolt equivablent)</li>
+<li>Supports USB C Power Delivery</li>
+<li>Giga ethernet port</li>
+<li>Unlocked BIOS with updates (one click updates)</li>
+<li>User replaceable SSD and RAM</li>
+<li>Faster memory (PCIe4 + DDR5)</li>
+<li>Dual tube copper heatsink</li>
+<li>adjustable PWM powerful fan &amp; DDR5 Fan</li>
+<li>Improved design for superb cooling</li>
+<li>Easy to assemble and disassemble! </li>
+</ul><p>And much much more!</p><p><span class="bold">Why is USB4.0 so big?</span></p><p>We actually had to remove dual ethernet ports in order to allow enough PCIe lanes to be freed up to support USB4.0 module. While it slowed our development down, it ensured we future-proofed the Pantera 2.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49075524">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/075/524/189881e3e2f22999cdf46679c38557aa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745866514&amp;width=680&amp;sig=DQzkM1AMUPmF0IlGRdgtRfRbh%2BlCXvqZx2EHjcNenyE%3D"/>
+</figure>
+</div>
+<ul>
+<li>Supports lightning fast data transfers</li>
+<li>Drive an 8K resolution monitor</li>
+<li>Connect up to two 4K displays at 60fps</li>
+<li>Power your Thunderbolt 3 and 4 peripherals.</li>
+<li>Connect eGPU - external graphics cards<br/> </li>
+</ul><p><span class="bold">Which eGPU is recommend for use with Pantera 2?</span></p><p>XDO has partnered with BoostR for the the Pantera2 Launch. We're co-branding and you can pick up your eGPU at a discounted price when you order BoostR eGPU as an add-on, or, in the All-Star pack.</p><p>Our PCB engineers have run full compatibility tests with BoostR and the results are impressive. A review will be coming online soon.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49070370">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/070/370/306f0ccb7108400acc4781ddbdf0c528_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745838673&amp;width=680&amp;sig=UHkpZHcEW1w%2BnOhr3%2F0rseVzAvXFvMgjDRc%2Ff1wFGoM%3D"/>
+</figure>
+</div>
+<p>Pair your Pantera2 with BoostR! BoostR gives your higher frame rates while gaming or while video editing / designing. </p><p>Check out the BoostR review below:</p>
+<p><span class="bold">Need to give a presentation?</span></p><p>Looking for a projector for your Pantera2? We have the PicoProjector in the All-Star pack.</p><p>If you need a more powerful projectr, check out the Pantera2 + Blaze1K combo. The Blaze1K is a little bigger, but has true 1K Lumens. Blaze1K is currently only available through perks on this campaign. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49070431">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/070/431/d8c73cbc08b08d5fead72a4baee69794_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745839093&amp;width=680&amp;sig=G7UEeucNxrHAMEcUI%2BDXoqEfuF9hYM2Dk8LAm3tGJ5k%3D"/>
+</figure>
+</div>
+<p>Read Blaze1K specs: <span>Blaze1K</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49076161">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/076/161/de2ea1ba75ba60e7d0003abc9416ea68_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745869790&amp;width=680&amp;sig=J0qmBpm%2FwqqcmrQjLuPMxEhLBqsLri4vVGFvEeYcA2U%3D"/>
+</figure>
+</div>
+<p><span class="bold">Looking for XR glasses for use with the Pantera 2? </span></p><p>Pair your Pantera2 with AR/VR glasses. Alternately, we have XR glasses for a fraction of the cost of leading smart glasses brands. SpeX AR glasses are available as add-ons during checkout. We may add a bundle if enough people as for it. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49133941">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/133/941/3290bd548899e8447ded84c1d95c2848_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746218480&amp;width=680&amp;sig=8Qwe6VBn1Ol9ROaj0j26GtIPAB%2FMvVyK4ULUeeVWtew%3D"/>
+</figure>
+</div>
+<p><span class="bold">Versatile accessories ecosystem</span></p><p>We have other accesorries like portable HDMI screen, keyboards, cables, carry cases and mice. Add them as add-ons during checkout. We'll also have these add-ons in our Pledgebox backer survey.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195241">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/241/bc3029a56e42b7efcebe34e584594422_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1731009430&amp;width=680&amp;sig=6YtAb0GWuVopDqqySeFgoc%2FaCD7DrZWdm3eoGf0gg1c%3D"/>
+</figure>
+</div>
+<p><span class="bold">Massive power. Compact cube. Endless possibilities!</span><br/> </p><p><span class="bold">WHO IS THE PANTERA 2 MINI PC FOR?</span></p><p><br/><span class="text-italic"><span class="bold">Home Office Users</span></span> - Fit desktop-level performance into your home office with minimal space.</p><p><span class="text-italic"><span class="bold">Video Editors </span></span>- Handle 4K footage and long editing tasks with ease using the AMD Ryzen7 processor and up to 64 GB of RAM.</p><p><span class="text-italic"><span class="bold">Photographers</span></span> - Quickly process and edit RAW photos in Photoshop and light room with optimized hardware.</p><p><span class="text-italic"><span class="bold">Programmers</span></span> - Enjoy seamless coding and testing with dual channel RAM and Ryzen processing power.</p><p><span class="text-italic"><span class="bold">Streamers</span></span> - Stream smoothly without performance drops using our enhanced cooling system and high processing capacity.</p><p><span class="text-italic"><span class="bold">Graphic Designers</span></span> - Work with high-resolution designs and large files without performance bottlenecks.</p><p><span class="text-italic"><span class="bold">3D Modelers/Animators </span></span>- Create and render 3D models smoothly.</p><p>YouTubers - Record, edit, and produce high-quality content on a reliable machine.</p><p><span class="text-italic"><span class="bold">Web Developers</span></span> - Run local servers and test multiple development environments seamlessly.</p><p><span class="text-italic"><span class="bold">YouTubers</span></span> - Record, edit, and produce high-quality content on a reliable machine.</p><p><span class="bold">WHY CHOOSE A PANTERA 2?</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49133953">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/133/953/d217ce8917cd02c5935373fc1730186b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746218549&amp;width=680&amp;sig=QJ96Fsq3FmDJY5TVrlr4CRVzRNGV%2B4A0LFAQiQhlJAw%3D"/>
+</figure>
+</div>
+<p>1. <span class="text-italic"><span class="bold">SMALL FORM FACTOR</span></span></p><p>Its compact design frees up desk space, providing more room for other essentials. Unlike traditional desktop towers, the Pantera 2 is compact enough it fits right on the palm your hand, making it easy to slip into a bag or backpack.</p><p>2. <span class="text-italic"><span class="bold">HOME ENTERTAINMENT HUB</span></span></p><p>Enjoy your favorite content on a big screen, watch 4K movies, view family photos, and stream music. With a reliable internet connection, the Pantera 2 becomes a versatile media-streaming device, letting you watch Netflix, Amazon Prime, or YouTube. You can expand storage either using the front MicroSD slot, or upgrade the SSD yourself for more capacity. We recommend opting for a higher SSD capacity than you initially think, as storage needs tend to grow rather quickly.</p><p>3. <span class="text-italic"><span class="bold">ENHANCED CONNECTIVITY OPTIONS</span></span></p><p>Despite its small size, the Pantera 2 offers a variety of connectivity options. It includes multiple USB ports, HDMI 2.1, Bluetooth 5.3 and WiFi 6e support, allowing seamless connection to various devices. This flexibility lets you quickly connect external peripherals, monitors, and accessories to suit your setup, transforming your workspace with minimal hassle.</p><p>4. <span class="text-italic"><span class="bold">ENERGY EFFICIENT DESIGN</span></span></p><p>Designed with energy efficiency in mind, the Pantera 2 consumes significantly less power than traditional desktop computers. This compact computer's lower power draw not only reduces your electricity bills but also makes it an eco-friendly option. You’ll save energy while enjoying a fully functional desktop experience without sacrificing performance.</p><p>5. <span class="text-italic"><span class="bold">CUSTOMIZABLE RGB LIGHTING AND FRONT OLED STATUS DISPLAY</span></span></p><p>The Pantera 2 features customizable RGB lighting, letting you personalize the look to match your workspace or mood. Change the lighting to whatever color you wish. The front OLED status display shows you critical system information like time, CPU usage, and system temperature, so you don’t have to switch screens when you’re heavy at work on a project.</p><p>6. <span class="text-italic"><span class="bold">EASILY UPGRADABLE STORAGE AND MEMORY</span></span></p><p>The Pantera 2 is built for easy upgrades, allowing users to replace or expand the dual-channel RAM and PCIe SSD without hassle. Its accessible design means you can customize storage or memory yourself as your needs evolve, extending the device’s longevity. Anyone who has replaced RAM or SSD before will find the Pantera 2 a breeze in serviceability. This flexibility makes the Pantera 2 a future-proof investment, adapting with you as your storage and performance needs grow.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195326">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/326/e0a174660f07d598b7c2f9307c0cfd2f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1731009792&amp;width=680&amp;sig=0vXE8Lmo1LWSxwTgpS2%2FBZzkvHqXGg5AwHhO78%2FqWI8%3D"/>
+</figure>
+</div>
+<p><span class="bold">COLORS TO MATCH YOUR STYLE!</span><br/><br/>The XDO Pantera 2 comes in 6 colors of hard-anodized aluminum that not only adds ruggedness, better heat dissipation, scratch-resistance, but also makes for a perfect centerpiece on your desk. Choose your favorite color!</p><p><span class="bold">What's your flavor?</span></p><p>Choose from cobalt blue, lumi green, mandarin orange, rose gold, sky blue, and stormtrooper white!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49090564">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/090/564/21d1d74758ee1cbc38eb549709531c13_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745947582&amp;width=680&amp;sig=GbZ7t%2Fwk5aqpEzXXOaW5EF1i7TgcnFm77tqS0qlrqrU%3D"/>
+</figure>
+</div>
+<p><span class="bold">How Pantera 2 was born</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49075791">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/075/791/64035659ccc9e7dd7cb78833771f2d0b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745868156&amp;width=680&amp;sig=k57LSzXXEQR6qJYlNvdqPBQUYVeenCyJlIiX5F8ehSI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Pantera-2-Timeline"><span class="bold">Pantera 2 Timeline</span></h3><p>We hope the three year wait for the Pantera 2 was worth it! As mentioned above, we cherry-picked the wishlists of many of our loyal Pantera 1 fans. The results of this great feedback is the culmination of the ultra-Tiny, yet powerful, Pantera 2 mini PC beast!</p><p>We're proud to show you just some of the process we used while creating Pantera 2.</p><p><span class="bold"> Oct 2023 </span> Industrial Design</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195353">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/353/d8460405aedc62151cf2757976c92eb6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1731009886&amp;width=680&amp;sig=WEro0ia2O1D%2F%2FPLf9ct0emIvd3REJyK2Ht90%2FgEOm%2FU%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Dec 2023</span> PCB design layout</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195358">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/358/c0d6d6d32db52b58d4b19ee9239226de_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1731009911&amp;width=680&amp;sig=Cto6zs23IVXDHPzZz9fj8jMV7vpHbRkyLpK7OHMUdzk%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Jan 2024</span>  Mechanical design</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195372">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/372/02aa43536cc0ffec24e2ca6fe672801f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1731009946&amp;width=680&amp;sig=zTxwbsEy9TNVEYO9hPOGOQlzXFEAwe3jb6tnBvBxVqk%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Feb 2024</span>  PCB Assembly </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195376">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/376/0ec8d79dd4c8cb36652f177888abc43b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1731009966&amp;width=680&amp;sig=RqnYB3WNkiGtnj3ajk1PjAMIIxDhP%2BFp9K7dGP5S778%3D"/>
+</figure>
+</div>
+<p>  <br/><span class="bold">Mar 2024</span> Prototyping</p><p><img src="https://i.kickstarter.com/assets/047/195/380/1ff6e172abf783ca09a27399c7ec2583_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;width=1137&amp;sig=GLElvpKzyuFu%2Be9xDkgtOdBp9NbzevlGLTBUaS2wNqM%3D"/> </p><p><span class="bold">April 2024</span>  Tooling</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195377">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/377/b5917485047d57e1a29d414cb36453ab_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1731009980&amp;width=680&amp;sig=EsebFFEUwYmLAlZctp2ANFgM5GIcbEKBEz7hcC44osk%3D"/>
+</figure>
+</div>
+<p><br/><br/><span class="bold">May 2024</span> RGB programmed</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195393">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/393/bc3029a56e42b7efcebe34e584594422_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1731010085&amp;width=680&amp;sig=AmHsrbOGB6DOBxFMpq9Ld0UC%2BYM6foR23uxl7ext%2BVw%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Jun 2024 </span>BIOS optimized</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195395">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/395/00785454afd31eeb4631a28d78d07255_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1731010095&amp;width=680&amp;sig=O1TfgIwAtZbhbkFna47YzcjUYs18l6LtoTDBlndu%2Fkg%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">July  2024 </span>Six pilot test units</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195397">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/397/b9d517075462f9fcbde3406cd0145638_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1731010110&amp;width=680&amp;sig=DvIGnnQa6oQ%2FhaBwuR0tbKWub%2Bz%2BTl3ZNsmUfRoFWck%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">July 2024</span> Photo shoot </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195399">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/399/e0a174660f07d598b7c2f9307c0cfd2f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1731010120&amp;width=680&amp;sig=RpP4YGzgMSU0iWjBHhHI0zBDlX5tszJbzIs64Ac8LhQ%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Aug 2024 </span>Mechanical design updated</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195402">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/402/414cb8d2239a1ded9cf778312c36d6ac_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1731010131&amp;width=680&amp;sig=YsYsy6V4%2FdzoZRpxTMS9y19Y1FdzCgG%2FC7C4pRdEMQ4%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Sept 2024</span> Marketing slide deck designed</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195406">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/406/3c2fd00636c0cab72a458c5f17ed35b7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1731010153&amp;width=680&amp;sig=B7g3EtO5flyF7fzhTXE0T6h8%2B0gplQ4DaAnrh1nJucU%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Oct 2024 </span> Review Online</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195409">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/409/a645660487d39c37d37b22118d2c4138_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1731010166&amp;width=680&amp;sig=%2FBrHr9iEvBPN0gVJl2pI6klJwIbPdPBSjFfQ%2FxP37Rw%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Jan 2025 - XDO exhibits at CES 2025!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49076651">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/076/651/6867d66c7d19967dff7bbfe1680080f4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745872125&amp;width=680&amp;sig=yp6WBM%2B3ukk4yqSgJEbTnM7%2Fs%2Bd2OT9lKSn%2BuOHyfbg%3D"/>
+</figure>
+</div>
+<p><span class="bold">Feb - April 2025</span> -  We took longer than expected preparing this campaign and the acessories. We also ran internal tests on the additional CPU models we added.</p><p><span class="bold">May 2024</span> Kickstarter Launch </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195889">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/889/be059f59204aeee7e41b9696359547c0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1731013166&amp;width=680&amp;sig=HhqF4PomSJDZmwo%2FlPtZzxEztoKyU%2Fjgv3Rf3w8%2BRFg%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">August 2025</span> Shipping begins!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195896">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/896/db1f248e96fc86da341b23bcb194f630_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1731013196&amp;width=680&amp;sig=fGAit8DqdYNqBI7eiqiRr01L1C5GRh%2BqY%2FJK%2BNpt6zY%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">Factory Direct Savings</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49090521">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/090/521/98cc3c111df85d1e553dabf6b40f6fad_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745947394&amp;width=680&amp;sig=QhSijYpDhMnvxDz%2BYOdRkjx76tUVP1m9Nj%2FHJLFLoJw%3D"/>
+</figure>
+</div>
+<p><span class="bold">WHY CROWDFUNDING</span></p><p>Crowdfunding for the Pantera 2 allows you, our supporters, to connect directly to our team, to have access to the step-by-step process of development while enjoying exclusive factory-direct savings!</p><p>Your feedback from the Pantera 2 campaign isn’t just heard, it helps shape the final output product, to make sure that your ideas come to life in the production units.</p><p><span class="bold">WHY WE NEED YOUR SUPPORT</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49075928">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/075/928/4002f7520301c2d0e28f094243b9ad8d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745868754&amp;width=680&amp;sig=cdeDZ%2BR8MQG%2By6z7saDxdjUkLQteMVCoqefd4pk%2FC34%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-We-Need-Your-Support">Why We Need Your Support</h3><p>We’ve already handled all hardware and firmware issues, ironed out quirks from our first working prototype, optimized production-line methods to produce the best quality output, and have already built 20 units to be sent out for testing by experts in different fields.</p><p>Now, for the Pantera 2 Mini PC to be available for mass-production and available to the market, we need your support. Visit our Indiegogo launch page to explore our Pantera 2 packages and early-bird offers, and join us as we bring to you one of the most promising computes yet.</p><p><br/> </p><h3 class="page-anchor" id="h:Our-Team">Our Team</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47195431">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/195/431/73dfd2f6ab52e247e35617a20f942521_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1731010309&amp;width=680&amp;sig=zS8b1Xx8JbT9GS%2BBhJOK8BRzhWZTWN%2Fw8S73GXpCzwc%3D"/>
+</figure>
+</div>
+<p><span class="bold">WHO IS XDO?</span></p><p>Based in Hong Kong, XDO is a team of mini PC enthusiasts. Our mission is to develop affordable yet feature-rich computing devices and peripherals. We’ve worked relentlessly for nearly a year developing our cameo model, the Pantera Pico PC.</p><p>The Pantera 1 raised over $1 million USD on Kickstarter, Indiegogo and Campfire (Japan). Pantera 1 was even features on Linus Tech Tips (LTT Youtube Channel) and gained over 3 million views!</p><p>We took many backer suggestions and product development requests into consideration when developing the Pantera 2.</p><p>We believe that everyone has a right to a personal desktop PC and other cool computing peripherals. </p>
+<p><span class="bold">We'd love to hear from you!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49075981">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/075/981/6dd3ab5a80d735179399bf50c1ea7871_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745868984&amp;width=680&amp;sig=%2FVAdJWpJKTkhcM0nffO4Dev7FCJ7dY4onu8VAQClayw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Useful Resources links:</span></p><p><span>Pantera2 Tiny Desktop Introduction (PDF)</span></p><p><span>Pantera Pico PC Frequently Asked Questions (FAQ)</span></p><p><span>Updating your Pantera Pico PC's BIOS</span></p><p><span>Try our Ubuntu Linux on your Pantera Pico PC</span></p><p><span>Enabling virtualization on your Pantera Pico PC</span></p><p><span>Join us on Facebook!</span></p><p>Follow us on <span>Youtube</span></p><p>Follow us on <span>X (Twitter)</span></p><p>Got questions regarding XDO products or distribution inquiries?</p><p>Please contact us via email: <span>info@xdo.ai</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49076656">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/076/656/fdc476f316495abb03706e11ab69c077_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745872150&amp;width=680&amp;sig=zQBw%2BisKJguHrodv6bilHtcmCfFMubQYPQjCfpRnqds%3D"/>
+</figure>
+</div>
+<p><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Please understand that like with any endeavor, there are risks and challenges.
+
+We have a proven track record of producing and shipping over 4000 Pantera 1 units.
+
+We've fully tested and many benchmark tests on the Pantera 2. We have a solid supply chain, and suppliers from production of the Pantera Gen 1.
+
+Reviewers and testers will be receiving a pre-production Pico PC unit and will be giving us feedback. 
+
+We’ll be monitoring the feedback, as an unexpected issue, or bug, is the only challenge we can see in the foreseeable future.
+
+We’ve secured resources for components, so we don't foresee any possible delays.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

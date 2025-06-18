@@ -1,0 +1,698 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Revopoint Trackit - Optical Tracking 3D Scanner</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/606/498/2b76e6a438ab2b88371e43b0ff2a680b_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749482685&width=560&sig=V0jvOjKJaNAAl5244bk7bM7GiyOdoG9OXMVK2SdZReU%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Revopoint Trackit - Optical Tracking 3D Scanner</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Marker-free Scans | Capture Small to Big Objects | CNAS Certified Industrial-level Accuracy | Auto Calibration | Blue Multi-Line Lasers</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 60,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>42 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49469274">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/469/274/7bcdd0ca73ec4acc762dca47cbf9a667_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748523245&amp;width=680&amp;sig=ePpo0Jp%2BqXHpsjK9NzEn7EqPd1ld0eMgoOqR%2F6yOLys%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49606470">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/606/470/dcf1e67b69f0c6e6953ed89cdb8ac467_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749482562&amp;width=680&amp;sig=0DRp3Lgr4Zq%2FZJuVSRySXlpZGXpb4zmwFq6ns2kpaMA%3D"/>
+</figure>
+</div>
+<p><span class="bold">Are you sick of sticking and peeling off markers for 3D scans? </span></p><p>Then, meet Revopoint Trackit! It's an advanced optical tracking and blue laser 3D scanning system designed for <span class="bold">marker-free</span> industrial scanning that ensures volumetrically accurate measurements while significantly reducing cumulative errors. </p><p>Whether you're scanning coins or cars, Trackit simplifies your process, making it more efficient than ever.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49453096">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/453/096/cb95720fd22b3c247d9ba5ae1ff9594b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748428568&amp;width=680&amp;sig=ehYRsqQPGwBzsfURBNlTb%2FJGYIuiu0Gp8q3ndRRUXao%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439133">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/133/476d808aebf5044c447bf252a3e7e952_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748352898&amp;width=680&amp;sig=pVIAhSa6gRdtB8EsSTQI9Sxjv2iSLh2MOh%2BzoN4agLo%3D" src="https://i.kickstarter.com/assets/049/439/133/476d808aebf5044c447bf252a3e7e952_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748352898&amp;width=680&amp;sig=pVIAhSa6gRdtB8EsSTQI9Sxjv2iSLh2MOh%2BzoN4agLo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49569165">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Livestream-Rewind">Livestream Rewind</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/569/165/08accdcf235f9a56ba18a0c0bf573305_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749182004&amp;width=680&amp;sig=j9PLM7sADHAUfxr52W5GhIpiREFk3HXU9x7YI4rjdAA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438704">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Reviews-Are-In">The Reviews Are In</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/704/475d1a4919a6a31d309838cf439ab201_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748350883&amp;width=680&amp;sig=F8xpqhQhl6x1unTeGF4PzAYk13rKwReKnQ4etiC2sQA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49523107">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/523/107/3259699ca9aabc234b743719575c1139_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748919456&amp;width=680&amp;sig=Jex2OrH8QWscnna0QGEI8z8OToObvaW4afsMHggWtxE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49523113">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/523/113/75d37bdc1336626e2a11edfcb7f3864e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748919470&amp;width=680&amp;sig=Udb3lUek0sp8oLCAWqBE39qYpopVs4FSqKXrOMTkpz4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49523102">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/523/102/fad4361ef1035ff01578adefcd53a631_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748919441&amp;width=680&amp;sig=C6%2BS9q508sAl99%2BCD16W9FkpEm3C1RPM3A379%2F43u%2BQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49523119">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/523/119/f6d94ee6e3be311ff66d05e0130cbdcb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748919486&amp;width=680&amp;sig=cagRXFCJJfkhE%2F4cbiVlGm4LgH4wsGEDADYgd11I9Ro%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438820">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-Our-Beta-Testers-Say">What Our Beta Testers Say</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/820/476b41991d99ace0d9721d48fc8554ef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351491&amp;width=680&amp;sig=kYLpuSdK5oY12zYy%2FBs3SidIZ3o2SRWnTh%2Fav%2BhrXTY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439359">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/359/14f83d9aa72ec943a2a335126e7f580b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353656&amp;width=680&amp;sig=b4%2FUOJFuwkvePkuOQQLLtzWRhozs2N9E3qVrHQQaJik%3D"/>
+</figure>
+</div>
+<p><span>For more Beta Testers’ cases, please visit the forum.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439672">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-Trackit-Stacks-Up">How Trackit Stacks Up</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/672/7435227a024902fbc830db6defc87254_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748355017&amp;width=680&amp;sig=cUq6fm8WioLBh%2BNDHphF4EwPAPfnEE4OEX%2FzSNixB10%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49542140">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/542/140/44dc67d95ebbd466377f8d31242d29a5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749027153&amp;width=680&amp;sig=wlz2MXcqlML6zkEBQ9fbeEGY2A8cq7pQNSVbk3DRYak%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438384">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Choose-Trackit-">Why Choose Trackit? </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/384/23230b006d4e0bfa6348dd4d900399d6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748349429&amp;width=680&amp;sig=cxgjryacW0oTkEfqt1MTkW77vXG1WPYBcY01HPLpoLU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438391">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/391/2e7582d161420607b4f7709f02a7c8d2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748349466&amp;width=680&amp;sig=0QTXciyVTRP4zEHto9%2Biyn8MQMjKy0nOsQJcujRENd0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439197">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/197/95b239363b3f90fcb1bc56a9c94a6421_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353076&amp;width=680&amp;sig=0RQxWAmwkCyN9NPKDlq%2F2gF034R0WeYeZ5oXaF9%2BGzw%3D" src="https://i.kickstarter.com/assets/049/439/197/95b239363b3f90fcb1bc56a9c94a6421_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353076&amp;width=680&amp;sig=0RQxWAmwkCyN9NPKDlq%2F2gF034R0WeYeZ5oXaF9%2BGzw%3D"/>
+</figure>
+</div>
+<p>Supercharge your 3D laser scanning efficiency for workpieces ranging from 10 mm to 6 meters with Trackit's dual-camera base station. It tracks the scanner's real-time spatial movement, letting you create accurate 3D models with no markers and no clean-up.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439141">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/141/3f10dfaa6c8bdfd3da377d4cd85d94d1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748352919&amp;width=680&amp;sig=nkLBUvxu3p72YFlX%2FVLXIa9TLLyOIhm3Er%2FTAC2T45c%3D" src="https://i.kickstarter.com/assets/049/439/141/3f10dfaa6c8bdfd3da377d4cd85d94d1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748352919&amp;width=680&amp;sig=nkLBUvxu3p72YFlX%2FVLXIa9TLLyOIhm3Er%2FTAC2T45c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438423">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/423/054af481a7f3bf90dfc199ab7f2d5e26_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748349589&amp;width=680&amp;sig=OnjWplM%2FVA95LxUdxPrE5GKxpkipHJMYAoZvaJMN1cA%3D"/>
+</figure>
+</div>
+<p>Effortlessly capture large workpieces by leapfrogging* Trackit's base station around them as you rapidly capture their surfaces at up to 1.5 million measurements per second. Trackit's anchor block system ensures flawless frame stitching with every leapfrog, enabling you to efficiently create professional 3D models. The highly adjustable tripod lets you easily position Trackit to meet multiple capture scenarios.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439200">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/200/c11754f7fc9a41de514f012a669396b7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353090&amp;width=680&amp;sig=85Wr%2BzQ1LarBTPzREwoZn1UOh1gMje81zgi1kflpyIY%3D" src="https://i.kickstarter.com/assets/049/439/200/c11754f7fc9a41de514f012a669396b7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353090&amp;width=680&amp;sig=85Wr%2BzQ1LarBTPzREwoZn1UOh1gMje81zgi1kflpyIY%3D"/>
+</figure>
+</div>
+<p><span class="bold">Maximum Tracking Frame Area: </span>2800 x 2800 mm @ 4000 mm</p><p><span class="bold">Easily Maneuver:</span> 6-meter cable</p><p><span class="bold">Tracker Working Distance:</span> 1.5 to 4 m</p><p>*Moving the base station around large objects to fully capture them.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439151">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/151/f6182952747b8fefdb5f052a2e6b82af_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748352953&amp;width=680&amp;sig=KOe003HjVJMnFGsQdVqcjiCkH6zzAD7WnGUXrsdYVJY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438427">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/427/f86590dbb1439ef27c25702023b9109d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748349610&amp;width=680&amp;sig=wxobXXwh%2FpSLkgHbPPITk92S0iKvgO6AeXVL4Cf4oGc%3D"/>
+</figure>
+</div>
+<p>Create detailed 3D models ready for dimensional inspection in quality control or scan-to-CAD conversion for reverse engineering.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49454057">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/454/057/2620900e6d5cecf7a9b2c3be001f14a6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748434033&amp;width=680&amp;sig=futXSwEuuSWjICgAf7m8mcWXBlex4lMuHIGSZ75YUB0%3D"/>
+</figure>
+</div>
+<p><span class="bold">Volumetric Accuracy:</span> 0.025 + 0.04 mm × L (M)</p><p><span class="bold">Scanner Accuracy:</span> Up to 0.02 mm</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49481797">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/481/797/666b525a8b9f166852d51c5c14a02534_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748597653&amp;width=680&amp;sig=piGXyM7eestYCvdi6bPKr7SO%2F2YENBYK%2Bb4YCSYZ5xs%3D"/>
+</figure>
+</div>
+<p>Reference documents for the test: JJF 1951-2021 C.S. for Optical 3D Measuring System Based on Structured Light Scanning</p><p>Certificate No. GFJGJL1001251723746</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438432">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/432/7da3d4a9324f9dcc5f0a3b05679780fa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748349626&amp;width=680&amp;sig=71YDlRhqfZE%2FncyuKuhjuwSiGQ5BRDUcZgajlXylEnk%3D"/>
+</figure>
+</div>
+<p>Skip complex and lengthy calibration processes and get perfect multi-pose calibrations free from human errors. Trackit’s smart auto-calibrating dual-axis gimbal system does all the hard work with total precision, so you'll always have a reliable, accurate, and easy calibration process.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448625">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/448/625/545b51987cbaae6aeb3bdb2d83836c41_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748402067&amp;width=680&amp;sig=JydwCMp9T4RJzDQ0hXEdzQu0mLP%2B250%2FMM1ueRNQM54%3D" src="https://i.kickstarter.com/assets/049/448/625/545b51987cbaae6aeb3bdb2d83836c41_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748402067&amp;width=680&amp;sig=JydwCMp9T4RJzDQ0hXEdzQu0mLP%2B250%2FMM1ueRNQM54%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438443">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/443/56271a90ea83444a80d253ae30101d25_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748349656&amp;width=680&amp;sig=TsGNIi%2F%2Fsr%2F7%2F%2BXtQLcovFESfKoSu3ItUhjVihdxUKQ%3D"/>
+</figure>
+</div>
+<p>Ensure consistent scan data every time with Trackit's durable one-piece carbon fiber frame, eliminating accuracy errors due to frame deformation shifting markers. Designed for demanding environments, its sturdy yet lightweight construction is comfortable for long scanning sessions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448626">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/448/626/06315be45c58f5fd1048cf95c478d4f6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748402078&amp;width=680&amp;sig=tmHojyaejaoMzxyhFpTv5xjAIrG39tiOk7QKeHN%2Bpqw%3D" src="https://i.kickstarter.com/assets/049/448/626/06315be45c58f5fd1048cf95c478d4f6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748402078&amp;width=680&amp;sig=tmHojyaejaoMzxyhFpTv5xjAIrG39tiOk7QKeHN%2Bpqw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438445">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/445/ea23d6082178451682d55c7711d1ee16_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748349669&amp;width=680&amp;sig=BHuyitrzB4zLutWZ0aKcVcMh7PP%2B2SVhZnNtC87p9xQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49455360">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/455/360/21ce854bef3b5d9d38b9174a4db9a02c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748440187&amp;width=680&amp;sig=uCEt0UpqjONCRobL1BfIQRw%2FlYxPSYQ1luqwLqY3Icg%3D"/>
+</figure>
+</div>
+<p>Adapt to multiple scanning scenarios by switching between Trackit’s dual blue laser capture modes on the fly in both optical tracking and standalone handheld 3D scans. Easily capture obscured or interior areas that the base station can't see using Trackit’s standalone capabilities.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439267">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/267/e2f54e5fbc673b196033d84b52af10e2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353330&amp;width=680&amp;sig=TlBE%2FCUiqncPY7vWx1NIk1xYc8lOQvLptwgd8JSmA4A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438723">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/723/2465e527dfe083e90497a7e73569f0b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748350986&amp;width=680&amp;sig=T%2FRQcrx31yIu%2BP%2Bkl3XMwLWck%2FnFQyy1YRXlJijg6rc%3D"/>
+</figure>
+</div>
+<p>Create photorealistic 3D models and exportable standardized texture reports, integrating with Revo Measure. After the point cloud scan, use the Scanner's high-resolution RGB camera to capture the object's surface color. The images align with the 3D model, ensuring accurate texture alignment and color details.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439275">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/275/2670b18c23adf369e08e158acc95f0a4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353346&amp;width=680&amp;sig=zr%2B2JHXfzrWyC6d8ydPhKGHqnbhM1Wo4oRzCxn2btgQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438739">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/739/e89065ebc2b7171b5b9b0b6899ef6a48_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351026&amp;width=680&amp;sig=Y6EHFHJd5tEk0%2F2XwGRkNvz6rsMCbxqjCIhWYVYOjGM%3D"/>
+</figure>
+</div>
+<p>Trackit's high-sensitivity temperature sensors monitor fluctuations, showing the Tracker and Scanner's current temperature in real time. This ensures optimal operation and prevents temperature-related accuracy drift, maintaining high 3D scanning accuracy.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439277">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/277/ab9f3dbdbfd2fdfdc641178640186acd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353364&amp;width=680&amp;sig=WX3rDhQKnaSmshIxTMhIP2I9OaZBUCaRwsPnQwRwq2w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438766">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Top-tier-Free-Software-Revo-Trackit">Top-tier Free Software: Revo Trackit</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/766/1a6f2eacd12513c3f1d48b44f4414aa6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351231&amp;width=680&amp;sig=g2xSeBSFywMG2xU6JDATM%2BawayZvowO%2BHe0ZkduLz1w%3D"/>
+</figure>
+</div>
+<p><span class="bold">Revo Trackit</span> is easy-to-use and free software for scanning, editing, processing, and calibrating.</p><h4 class="page-anchor" id="h:Scan"><span class="bold">Scan</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439282">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/282/f41be6be523e064692a9cef30f1330c1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353388&amp;width=680&amp;sig=U6iGznOd4SvyuL94cCvTwpwOaphPz3PRmGs6k9YJeQI%3D" src="https://i.kickstarter.com/assets/049/439/282/f41be6be523e064692a9cef30f1330c1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353388&amp;width=680&amp;sig=U6iGznOd4SvyuL94cCvTwpwOaphPz3PRmGs6k9YJeQI%3D"/>
+</figure>
+</div>
+<p>Granular scan settings let you control every aspect of the scanning process, ensuring optimal point cloud capture. Always ensure you have the perfect scan with real-time point cloud monitoring, showing if you've captured enough data.</p><h4 class="page-anchor" id="h:Process">Process</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439286">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/286/961d69e099da4b79d146858b40f8ecbe_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353406&amp;width=680&amp;sig=9vAnbZNlEzFcYbQEmI11LNgvBFeHK79MOFUrqG0%2FTuA%3D" src="https://i.kickstarter.com/assets/049/439/286/961d69e099da4b79d146858b40f8ecbe_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353406&amp;width=680&amp;sig=9vAnbZNlEzFcYbQEmI11LNgvBFeHK79MOFUrqG0%2FTuA%3D"/>
+</figure>
+</div>
+<p>Process your raw point cloud automatically with one-click editing or fully fine-tune it with fusion, and meshing tools.</p><h4 class="page-anchor" id="h:Edit">Edit</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439289">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/289/00ad147eb56ba8981b48d63ce6455acc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353412&amp;width=680&amp;sig=xWgbGaeAWLungr2%2FMMPtvLdkpK0Cn9b3ne6f1wsmvUA%3D" src="https://i.kickstarter.com/assets/049/439/289/00ad147eb56ba8981b48d63ce6455acc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353412&amp;width=680&amp;sig=xWgbGaeAWLungr2%2FMMPtvLdkpK0Cn9b3ne6f1wsmvUA%3D"/>
+</figure>
+</div>
+<p>With versatile selection and clean-up tools, you can swiftly remove unwanted data, fill holes, smooth, and simplify your 3D model.</p><h4 class="page-anchor" id="h:Merge">Merge</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439293">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/293/296b80dfa3ba22f0c5b922b9fdff7ec7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353420&amp;width=680&amp;sig=rzTOPYE20S1%2FzbUKZJSzVpz5U5Q4FYTuyrfGi%2FyoFr0%3D" src="https://i.kickstarter.com/assets/049/439/293/296b80dfa3ba22f0c5b922b9fdff7ec7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353420&amp;width=680&amp;sig=rzTOPYE20S1%2FzbUKZJSzVpz5U5Q4FYTuyrfGi%2FyoFr0%3D"/>
+</figure>
+</div>
+<p>Scan large complex projects in sections, then combine the scanned data automatically or manually to create a complete model.</p><h4 class="page-anchor" id="h:Export"><span class="bold">Export</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439294">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/294/e510cdd038f2c691eca02f61b92e641c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353429&amp;width=680&amp;sig=7Uf6geDHZ59%2Bl0tZo%2B1joELsa55BHTvLnCwLS%2BGnNAA%3D" src="https://i.kickstarter.com/assets/049/439/294/e510cdd038f2c691eca02f61b92e641c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353429&amp;width=680&amp;sig=7Uf6geDHZ59%2Bl0tZo%2B1joELsa55BHTvLnCwLS%2BGnNAA%3D"/>
+</figure>
+</div>
+<p>Export your scans in formats supported by all major quality control, CAD, 3D slicing, and 3D modeling professional software for seamless integration into your existing workflows.</p><p><span class="bold">Output Formats:</span> PLY, OBJ, STL, ASC, 3MF, GLTF, FBX</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438768">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Revo-Measure">Revo Measure</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/768/e9877b077e3e63362c484f41bb10f430_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351255&amp;width=680&amp;sig=YBom6p7dmkCO0FKtwREevlRicJm%2Ft10Y219i5Wklpdc%3D"/>
+</figure>
+</div>
+<p>Every Trackit unit backed on Kickstarter comes with a free one-year license (worth $499) for Revopoint Measure. It's 3D metrology software that analyzes the shape, dimensions, and quality of objects by comparing point cloud or mesh data to CAD models or drawings.<img class="image" data-id="49439300" src="https://i.kickstarter.com/assets/049/439/300/f7af5f59d7ddc115152f1e31b70d16f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353450&amp;width=680&amp;sig=2c7zP2iZFX5I3uJ06nMXdbrrblLmZSv%2BTeLitoqWeY8%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438795">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/795/28c237da974602ac801ade0fd3fc2487_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351390&amp;width=680&amp;sig=Mn7oYYxV6UmXrrBX0lSAwzS%2BO2L3mpL0Sr94B5f7hv0%3D"/>
+</figure>
+</div>
+<p>Ensure your project is within tolerances with Revo Measure's high-accuracy measurement of point clouds and mesh models, which enables the extraction of dimensions, angles, and volume measurements. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439301">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/301/a41cc14404a12a6174f42721b9a815f0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353458&amp;width=680&amp;sig=AnvStKGbAph2Zf9evjkmg162XI7RiUJldjkzrOs1dOo%3D" src="https://i.kickstarter.com/assets/049/439/301/a41cc14404a12a6174f42721b9a815f0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353458&amp;width=680&amp;sig=AnvStKGbAph2Zf9evjkmg162XI7RiUJldjkzrOs1dOo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438801">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/801/1bddeb94174bf7f98760354f3a59b3cd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351410&amp;width=680&amp;sig=dGb80ezhvZJK%2Brc1U%2FDr0DSPMvHkajWHS8pvULGiUXI%3D"/>
+</figure>
+</div>
+<p>Efficiently compare scanned data with CAD design models and analyze discrepancies, including overall and local deviations. Helping you to quickly identify any issues between the actual object and the intended design.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439306">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/439/306/2a14fa0c4cfc937b4f0326ee3c38af68_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353482&amp;width=680&amp;sig=t3bfsIsxTTwhWeK6sYuTSo09%2F0%2FeJXyuVsT0MeNCVy8%3D" src="https://i.kickstarter.com/assets/049/439/306/2a14fa0c4cfc937b4f0326ee3c38af68_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748353482&amp;width=680&amp;sig=t3bfsIsxTTwhWeK6sYuTSo09%2F0%2FeJXyuVsT0MeNCVy8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49447835">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/447/835/b94c5a2b3d92d2d5b249d9190cc28cee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748397557&amp;width=680&amp;sig=zTCjzJQoaJXF9RdsNJ40ZbhdaijpMshqylMO5Hl3ljM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49478383">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Revo-Design">Revo Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/478/383/a76ccc5ecd3015f304091b35bc048254_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748575787&amp;width=680&amp;sig=pTKp8MZQlMhH6V6eT0vHIvn5Qb54eWz1icq75AtjklA%3D"/>
+</figure>
+</div>
+<p>Revo Design (identical functions to QUICKSURFACE Lite) bridges the gap between 3D scanning and engineering design, streamlining the conversion of 3D scan data into CADs. With robust tools for mesh editing, freeform and parametric modeling, and scan-to-CAD workflows, Revo Design is ideal for reverse engineering, product development, and industrial design.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49478395">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/478/395/8bf1eaa8fcd23db0eda22e6e1a0ac7bc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748575858&amp;width=680&amp;sig=Hdk2bZXED5RGMYUIPc6FEox%2B9AOG3cVLk268cd6MhyI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49478404">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/478/404/6c19f0fc124ec081f3020e66a746675f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748575908&amp;width=680&amp;sig=Rlx9a6HlEKSNPqCdFPZyQ3T4U6lCddTmUsPa7sUr8RE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49478407">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/478/407/bd9a808f2283941bec75f466c968303e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748575921&amp;width=680&amp;sig=QPGL9Ni29x%2FLRHXi565N%2Bdb1P12wsG0ud4gSYcdZY7c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49478419">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/478/419/e72b8e08ca23cf0341caeb8eff2c2b49_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748575965&amp;width=680&amp;sig=ksDQO7etykWeDSBGys2ca%2B9BMd7ImH8%2BLezlpAB3cw0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438812">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Trackit-Robot-3D-Scanning-System">Trackit Robot 3D Scanning System</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/812/85ab7423a274736454883786b18c6a5d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351462&amp;width=680&amp;sig=Hcnc2Nhi5kg%2F%2BfSalDS07A151e0tnZ2Sb9mOUDN19ic%3D"/>
+</figure>
+</div>
+<div><p>Fully realize automated, batch object 3D scanning and measurement at laboratory and industrial production line levels using the new collaborative Trackit Robot 3D Scanning System. It enables complex automated 3D scans with manual drag-to-teach, CAD-to-path, or real-time vision-to-path automation. Work safely alongside it, as its sensitive force sensors detect even the slightest contact, preventing collisions immediately.</p></div>
+<div><p>Its TCP/IP software control protocol allows easy integration into third-party control software for factory automation, inspection, batch 3D scanning, and other applications</p></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438920">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/920/403461a76536f9247fc326801d0e0271_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351860&amp;width=680&amp;sig=Ae1R5nEjGGQHi1IQmRjx%2B%2BrLVqb0I2ADXO2br6F4iUY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439350">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/350/555e2cc40452b7939873e7cce251da4c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353636&amp;width=680&amp;sig=q6z5slkYRkl2GfFfw%2BUIcxTwZC6gFrp10F0KFe4FW40%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49524586">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/524/586/43f7c55b6eb89dbc8c2bdb7244d11f2e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748929134&amp;width=680&amp;sig=R7QnkQrbOCUzvGh1TSo6N5duByPvBtDLF%2Flz9G%2BDtjo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="3D Model Gallery" data-caption="" data-id="49438829">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:3D-Model-Gallery">3D Model Gallery</h3>
+<img alt="3D Model Gallery" class="fit" src="https://i.kickstarter.com/assets/049/438/829/f21752f69a01d2f020f96f4d4ba198eb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351526&amp;width=680&amp;sig=buYKznKZ8q4fCqnhjpZHLzdls%2FdXw8ff6lA9%2FrwxPGk%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438838">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-Trackit-Helps-You">How Trackit Helps You</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/838/198a8013da73186629a7bac6cf7abe17_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351567&amp;width=680&amp;sig=F23MWBrj7HBqYJSpYNXC1UeCwtD8qZxmRe4bFOdXRmc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438845">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/845/5a5cb84e12150a7b2d843e1d82f95a0d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351605&amp;width=680&amp;sig=ljdiuJgtnK8JjageOASdNGEeTPnAn%2Bvy2YWhpfQquu4%3D"/>
+</figure>
+</div>
+<p>Efficiently capture complete vehicles or components without the hassle of time-consuming marker placement for repair, reproduction, prototyping, or quality control.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439371">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/371/758d947d0ba5355118dcb9d1d7e5fc6c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353697&amp;width=680&amp;sig=q3MV%2Bxf%2B876UCzt3l7lCGL9aoaPk3IxgqQ8EuvDbFTc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438847">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/847/15fb09ba72106073a24b9e31846195d3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351614&amp;width=680&amp;sig=1hvmkfTGqSI2jx2dTYth%2BVf00MHcA68Q3aB24Va9eTA%3D"/>
+</figure>
+</div>
+<p>Ensure product quality and streamline quality control processes with rapidly created 3D models ready for dimensional inspection.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439372">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/372/40b3e3465aa5353e6eaf05c92ed099c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353700&amp;width=680&amp;sig=loWmDXB60SuiKM3R4clAAmBK0qLrO%2FE%2BL4sWgA4LnI4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438853">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/853/b5be9a5d6011b5fde8202766a018237a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351636&amp;width=680&amp;sig=quNaU6eao7QXiOg4HYwZc%2BkWC1%2F7ewherjUYsVrhxME%3D"/>
+</figure>
+</div>
+<p>Evaluate and fix aircraft efficiently using Trackit’s optical tracking systems to rapidly capture parts to check wear and fatigue or create replacement components.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439374">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/374/862d5546a5c3eb29b122b37a67747731_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353708&amp;width=680&amp;sig=8%2BYdtpoglVTmSC2iAJopfONLGOcgQkaiFN8QgHgFSL4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438856">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/856/cd7304997a7c10e523c07ef3bc131cc4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351653&amp;width=680&amp;sig=%2BbIM%2BD9L5x52E5bpPGwy%2B2xz%2FbPKqY1DMYiXIvWsSwI%3D"/>
+</figure>
+</div>
+<p>Trackit provides accurate 3D scanning for quick prototyping and design validation. It efficiently scans complex geometries, streamlining prototyping and reducing time to market.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439376">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/376/3a56a8615afbf69017b1b82bcd3e53a8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353712&amp;width=680&amp;sig=EOM3f3%2FWeEnqOGXdiU%2FGlHpSiwwrsV7l4xTcwSlMMKk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438858">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/858/3359c234532c27527107f1cdc501cc05_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351661&amp;width=680&amp;sig=3KtYnO6qHBLGUePQaOJZK%2BP3wAEaGnB63VPubcY%2BY2w%3D"/>
+</figure>
+</div>
+<p>Ensure mold accuracy and quality with Trackit’s powerful single-line mode. It can accurately capture deep holes and narrow areas, ensuring precise mold reproduction.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439381">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/381/86ade747c22d0af0e74b93abe0661850_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353727&amp;width=680&amp;sig=FVeUOEFDwOElfqJ0hiwz3HpqwXmpcXX3kSZEej8NOA8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438863">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/863/75cf20a433ddebcef2e9c7b0d9b815ad_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351676&amp;width=680&amp;sig=9Igl23ogvmcO%2BNQcyX3kTY2Pl5%2BvGQcvecxy3T3lmgk%3D"/>
+</figure>
+</div>
+<p>From small artifacts to entire displays, Trackit is ready to create 3D models unblemished by markers for reproduction, restoration, XR, and design applications.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439383">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/383/dc3755ae9237885d9a5c5de151408b88_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353731&amp;width=680&amp;sig=FrVkuSpSKmwZn27SksBu9PCBaI5RhJ85%2Fnq61JkTqx0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="What’s in the Box" data-caption="" data-id="49438867">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box">What's in the Box</h3>
+<img alt="What’s in the Box" class="fit" src="https://i.kickstarter.com/assets/049/438/867/7cb76dc6838d9f8d10fc8b05e60aaa37_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351693&amp;width=680&amp;sig=okPTxDimML2mgfUfN0u68wByKjbWpJAuEnd1aA4JM30%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449193">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/193/cbd49bb6289a9a0ea0952f169831089e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748405144&amp;width=680&amp;sig=4efy8Gpl0qS3IWtqtqBBZjYqFOwY1sR55RVb4QD4cKM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438733">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/733/92176597bc505b0a82e658d53ef8b777_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351009&amp;width=680&amp;sig=GagVQPQMgywEdhEvYszv%2BNQ%2F9JUM%2FNtwMKj1TrXrHqo%3D"/>
+</figure>
+</div>
+<p>Take Trackit everywhere with its wheeled protective carry cases, ensuring convenient and safe transportation and setup at worksites. Upgrade to Aluminum Alloy Four-wheel Carry Cases for only $228, and enjoy enhanced durability and smoother mobility.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49452607">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/452/607/96d11ab1457e08578108b465dec3fc79_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748425715&amp;width=680&amp;sig=EPy7N6GKhS6pBmMTYuuSYl5KbqxueIKUx7k1wraMTow%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438880">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/880/d4a4d15a1ef32b7441d7e642c3b60345_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351735&amp;width=680&amp;sig=uQWDXR9OkXRPmL2qhIJNlP6eIkCveHscZrjxLI9fttI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49456300">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/456/300/ea31fdc8cb92cee27410fa31beeff880_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748443725&amp;width=680&amp;sig=N%2BgyfGy%2FPPmOjFUR%2FeMLP%2F%2F9rnJOb7sGRk9JHrOzDFM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49606480">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/606/480/ffea9d19eace31666938f1cae7bead2f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749482614&amp;width=680&amp;sig=hc1YK1MiN76j2JmK1cFdNQmRsnA9vJHn2NUWSt7aD6U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49457269">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/457/269/80efeb523ba6af749c4cb6929f4a1895_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748447792&amp;width=680&amp;sig=ysVaDGbE6UXHqVQ%2Fcw%2FdV%2BTLvV0cJ0fP5HU95sGbNpo%3D"/>
+</figure>
+</div>
+<p><span class="bold">Payment Options: </span>Full or Pledge Over Time to split your pledge into three equal payments. Check this FAQ for more details: <span>https://help.kickstarter.com/hc/en-us/articles/33915468199835-Pledge-Over-Time-FAQ</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438890">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-ons">Add-ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/890/1aa4f0683a83eea6e921dc01dd8c91bb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351769&amp;width=680&amp;sig=EvFTiUshEHI%2BBtB1qycnnvdnrSycwPpqxFYqSeV%2FuZQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439424">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/424/a8eaefbf95e5c595d6169eef6a78cd5f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353903&amp;width=680&amp;sig=grYKIUsrDWJEvhTciF4AXMYgh1NKyKMHl%2BUL82yU3VA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439432">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/432/ef0786da700518634b0921dd7d22e260_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353926&amp;width=680&amp;sig=gBq0B6CplL8UibdveCRhIBqTFPXDdJxXM2HV8VyR3w0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49454469">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/454/469/b64524b1724de0d45353a1518b9373fa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748435951&amp;width=680&amp;sig=3Hx5llHcZGzCLPsBtvU1bvpn6byYoWqlpquCSx3ih1w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439440">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/440/854144cb9f3896d8d615c7706d5ef5e0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353956&amp;width=680&amp;sig=u2uozKs8AEbYcnkK%2FVHCILms4LRM0ojUY%2Bdl8CgbIEs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49454474">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/454/474/03fc99f2b1a5744d5aaebe5381e497a1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748435967&amp;width=680&amp;sig=ff4pBfOps1OiaPxYWNVBQr2XybZYJ1%2FeKGTDUg%2FELMg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49455507">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/455/507/1543183d448d6b1e29799b1b9fc34a4a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748440675&amp;width=680&amp;sig=6aR7nGMVEJFqyNNqvG1z4jT2PB9R2zLIqM9j0xSnDs0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439448">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/448/46076cf58994b6282b0760c8e2d5c36b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353976&amp;width=680&amp;sig=huA%2Bz65IptBRwCUglM5J9IBJV%2Fn9IezI8W8dURR%2FZuQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439452">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/452/75f985de56ed185e94bd541585406ae1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748353981&amp;width=680&amp;sig=fd%2FB4eKSuB8RHiEucYb2tFdaGAPczgm0vuqWGbycE%2BM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Shipping-Fees"><span class="bold">Shipping Fees</span></h3><p>Backers of the <span class="bold">Trackit Standard and Design Editions</span> can now choose between standard and fast shipping options. <span class="bold">Shipping fees are collected after the campaign ends via the Pledge Manager Survey.</span></p><p>$100 VIP Benefits purchasers can immediately access fast shipping and warranty benefits without additional purchases. <span class="bold">But you still need to pay the Standard Shipping Fee.</span></p><p>See the shipping fee chart below for estimated costs. Final shipping fees will be based on the Pledge Manager Survey.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49457578">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/457/578/7f945937cb5b60b28a8c773d5477fd50_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748448996&amp;width=680&amp;sig=WIsZPkRGC%2BG92XK%2FJvJr1rUyPHYWI4eYs9T9dlwmYnc%3D"/>
+</figure>
+</div>
+<div>In other regions, only express air shipping is available due to logistical constraints.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438913">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Strech-Goal">Strech Goal</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/913/6f898ff797ccc9d5aaf618998d66513e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351836&amp;width=680&amp;sig=WKSasrROPieuur%2Bx%2ByvmE4%2Fsa%2F398MV7aQ2Z4XMeYRw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49455452">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/455/452/a2b69885f0b7c2cda41c4c6c96643aef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748440542&amp;width=680&amp;sig=gU2MWBYyYQxIObwKX4kTqtZ3WX%2BoJql8Vxt7CKM1v5U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438941">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Warranty-Policy">Warranty Policy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/941/0dab751d768cc807b989317d95e1b52f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351934&amp;width=680&amp;sig=RSPX%2BVonb49ygQ4bgTqcbK%2BKUWWENIAxC%2B4RNOte7MI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448840">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/448/840/7011fb0c4940b70a19f17b8f1db6346c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748403403&amp;width=680&amp;sig=MEuwbBZ4wTEraE3pj5%2Fr8N42m2wmxXnVMYsRXntvCE0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438948">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/948/db537cc94e2f341a5800742f88992628_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748351969&amp;width=680&amp;sig=pwVO9R2xoxvJpD2qmDxrGZbezHbGuepYJSCt13EhmmI%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><p>Whether you’re new to 3D scanning and eager to learn or a seasoned pro wanting to discuss techniques, you’re welcome to join the Revopoint forums, Facebook, and Discord groups. Here, you’ll find tips and tricks, giveaways, scanning showcases, and much more to aid your 3D scanning journey.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439499">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/499/c3e3ce7ca2c93fe66d463043a0815a28_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748354158&amp;width=680&amp;sig=zJYpyyQ19yAt92L516f7Vf3pz4IKbdyL09vw6NbqBos%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49467035">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/467/035/be6573650d33f913a477da2d934d2f53_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748509468&amp;width=680&amp;sig=%2F7ynhxNYo2it35%2FdpwACdOLARCJQ06s5GcoaYTHslVI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49467051">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/467/051/a5f7a4795fef527d990ff834b78c375b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748509528&amp;width=680&amp;sig=P%2BJaN%2FxeRbCvQekL80FRXRtayIYvOd8dAU2RtIh8CdE%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Who-We-Are"><span class="bold">Who We Are</span></h3><p>Founded in 2014, Revopoint is committed to making 3D scanners accessible to designers, makers, engineers, car enthusiasts, and various others, enabling them to benefit from the time and cost efficiencies of 3D model creation.</p><p>We've been busy over the last 11 years with 13 major product launches, including seven Kickstarter projects, with the support of over 31 thousand backers.</p><p>Our team of Ph.D. experts from top research institutions drives innovation in the 3D scanning sector. With outstanding performance, portability, and ease of use, our range of 3D scanners has established us as a market leader, catering to end-users across more than 150 countries and regions worldwide.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439502">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/502/1d73bb024309db8a252d520008b0b714_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748354182&amp;width=680&amp;sig=2D5J%2FlWDwQS%2BXLsGJaLxz94hTaJWBjnyCox4j0tb%2BXs%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Trackit-s-R-D-Process"><span class="bold">Trackit’s R&amp;D Process</span></h3><p>Trackit is the culmination of extensive market research and comprehensive feedback from professionals across various industries, which helped shape its development throughout the R&amp;D process.</p><h3 class="page-anchor" id="h:Follow-Us"><span class="bold">Follow Us</span></h3><span></span><span></span><span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49439899">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/439/899/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748356026&amp;width=680&amp;sig=Ba2SIy3aRuDgEYY2pnBqGYhneVOd6fb%2Ft3%2Ff8H5G7is%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49448857">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/448/857/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748403479&amp;width=680&amp;sig=qKrK2TliKrsU92wNl%2FNfTySet3AwTEMjiYn8qEz29qU%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">This marks Revopoint’s eighth Kickstarter campaign and thirteenth significant product launch. Given our experience, we’re confident we’ll deliver Trackit on schedule. Trackit’s design and engineering are complete, and our dedicated beta testing team has conducted comprehensive testing. We have our own manufacturing facilities and dependable supply chain processes to ensure a highly-quality controlled production. While there could be some logistical challenges, we are committed to solving them promptly.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">Revopoint guarantees that all articles (i.e., material, products, and packing) we use or are supplied by our suppliers are in compliance with the environmental laws and regulations applicable to optical equipment, including but not limited to:
+
+a. List of Restricted Substances
+b. The European Directive 2006/66/EC on batteries dangerous substances.
+c. The European Directive 94/62/EC &amp; 2004/12/EC on packaging and packaging waste.
+d. Administrative Measures on the Control of Pollution Caused Electronic Information Products.
+e. Directive 2011/65/EU of the European Parliament and of the Council of 8 June 2011 on restricting the use of certain hazardous substances in electrical and electronic equipment.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

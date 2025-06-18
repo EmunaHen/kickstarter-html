@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cerebro; the next generation clusterboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/048/640/216/8f394181c5ee2c1f0f96c2e6cee03f25_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1742823860&width=560&sig=r8RnuK8AIqD0rEU4ZgaQkGpH0XulYyscw%2B1ZRI9koSo%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Cerebro; the next generation clusterboard</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Use Pi CM4 & CM5, NVIDIA Jetson or Radxa CM5 modules for your project. Internal HDMI and 10Gbs USB multiplexer and up to 3x M2 per node</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,214,601</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48784995">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Cerebro-Next-gen-intelligence">Cerebro; Next gen intelligence</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/784/995/009038855ad95a94ce53d88120489558_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743776029&amp;width=680&amp;sig=bEop8NlEqzasv44ajuwZBb3fLGA0nJRpe5eCfGbvqWo%3D"/>
+</figure>
+</div>
+<p>Imagine a world where your AI, machine learning, robotics, home labs and edge computing projects run seamlessly, without limitations, without compromise. A world where high performance computing meets efficiency in a single, compact solution.</p><p>Meet <span class="bold">Cerebro</span>. A clusterboard created for innovators, builders and visionaries like you. Designed to fit effortlessly in a micro ATX case or a sleek 1U server chassis, Cerebro unifies what others fragment, <span class="bold">bringing raw power, intelligent design and limitless scalability right within your reach</span>. <br/><br/>Stop struggling with scattered components, inefficient setups or space-consuming alternatives. Choose a single solution that supports up to<span class="bold"> 4x NVIDIA Jetson NX</span> modules, alongside <span class="bold">Raspberry Pi CM4/CM5</span> and <span class="bold">Radxa CM5</span> compatibility.</p><p>Cerebro isn’t just a motherboard. It’s <span class="bold">the missing piece in your ultimate setup</span>. The tool that will accelerate your projects, refine your workflow, and push your innovations further than ever before.</p><p>It’s time to supercharge your potential. It’s time to introduce you properly to Cerebro.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48785160">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:More-about-Cerebro">More about Cerebro</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/785/160/f10c0fa69289f7826d6e6a74f6bda6c7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743776902&amp;width=680&amp;sig=g2qEI8MGnZG5h623us4xWBck5Su2oZzuJjW97yewxqc%3D"/>
+</figure>
+</div>
+<p>Development boards on today’s market didn’t fully meet our needs. When we set out to build our own AI and cluster computing setup, we quickly ran into <span class="bold">frustrating limitations</span>. The available development boards were powerful, but <span class="bold">they weren’t designed to work together seamlessly.</span> We needed multiple carrier boards, separate networking solutions, and additional peripherals just to get a functional system running. The result? A cluttered, inefficient setup with too many cables, too much power consumption, and constant compatibility headaches.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48818285">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/818/285/9c17c011050432c2dce6ff132a6f9744_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744049044&amp;width=680&amp;sig=wM6YO41WA1IZZe%2B6LQ%2FTfccAl48M5X0Z9I1va8MC6jk%3D"/>
+</figure>
+</div>
+<p>That’s why we engineered Cerebro. I<span class="bold">t’s the board we wished we had from the start</span>. With support for up to four <span class="bold">Jetson NX, Raspberry PI CMx, Radxa CM5 modules</span>, it eliminates the need for multiple separate carrier boards, reducing complexity while maximizing power. Its M.2 expansion slots give you the flexibility to add WiFi, USB, Bluetooth, NPUs, and more, without worrying about compatibility.</p><p><img class="image" data-id="48785112" src="https://i.kickstarter.com/assets/048/785/112/3f83b9595dd701c17fea6aff1c4a7b36_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743776583&amp;width=685&amp;sig=cAF0JUjfeoSgYx2Z9Xp0nhEQbHO1bNmCnfxCQKQTX3c%3D"/></p><p>But most importantly: Cerebro integrates seamlessly with NVIDIA Jetson developer kits, so you can <span class="bold">focus on building, experimenting, and innovating, without wasting time troubleshooting hardware conflicts</span>.</p><p>We came up with Cerebro because we needed it. Now, we’re bringing it to you!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48785424">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/785/424/bbcbbf7c432f62000f2223db6d553074_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743778664&amp;width=680&amp;sig=N8BGoIssirZ44O3fo7VG%2F5SQ9qHMXoRfGiymoj4bNnE%3D"/>
+</figure>
+</div>
+<p>We’ve named our product “Cerebro”, a subtle nod to pop culture. In the comics, Professor Xavier used a device by that name to locate others like him. Cerebro also means brain, and this links neatly to the many use cases this board can occupy. So we thought the name Cerebro completely fits the bill.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48794970">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/794/970/2247da35fc19398e3bce01df61907cae_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743861825&amp;width=680&amp;sig=wLR7PKfUKsrU2nLz8en5o0dIiMtm3GcxYkeoijxm1Q0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48785427">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Save-money-with-Cerebro">Save money with Cerebro</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/785/427/524dc538bec350543fb6e97954f54032_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743778684&amp;width=680&amp;sig=VZ35ZDCfRQ1ASNUOoQ1d0N2y825eUTc2B9ZE033KhYk%3D"/>
+</figure>
+</div>
+<p><span class="bold">Building a system with Cerebro’s capabilities using off-the-shelf components would cost you around €850,- to €905,- </span>and that’s before factoring in the space, power, and setup time needed to make everything work together.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48785209">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/785/209/2f42632691810dff5bfce421c84d4983_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743777094&amp;width=680&amp;sig=AFu0RAPbNZy56j9ZtjAmtOj1A5WTeWLq6DMzq4NfgW0%3D" src="https://i.kickstarter.com/assets/048/785/209/2f42632691810dff5bfce421c84d4983_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743777094&amp;width=680&amp;sig=AFu0RAPbNZy56j9ZtjAmtOj1A5WTeWLq6DMzq4NfgW0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48785415">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/785/415/2e3c52f5bef2ed0ac0220648f2d68d68_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743778572&amp;width=680&amp;sig=5T2W%2B4%2BolMTkpbj9Qcbhxb9XLLh1Y%2BbjBUvqoxPa8bQ%3D"/>
+</figure>
+</div>
+<p>With Cerebro, you get seamless integration, high-performance scalability, and clean, compact efficiency all for up to <span class="bold">€450 less </span>than piecing it together yourself.</p><p>More power. More flexibility. No headaches.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48785439">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Current-Status">Current Status</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/785/439/c7f249376ce35bcf95f5c19f06ccfcdd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743778761&amp;width=680&amp;sig=w34ScX6JVF7LnMnr33kB8z9M%2BjTrIBb20Q67Fbkdi7I%3D"/>
+</figure>
+</div>
+<p>We've already come a long way. The Cerebro clusterboard is <span class="bold">fully designed, and we already have a working prototype</span>. While this early version doesn’t yet include every final feature, it proves our concept and showcases the power of Cerebro.</p>
+<p>To ensure the highest quality and a smooth production process, <span class="bold">we’ve partnered with a leading PCB design and manufacturing company</span>. They will refine the final design and handle production, guaranteeing that Cerebro meets our exact standards and is delivered on time.</p><p>With a solid foundation, a working prototype, and an experienced manufacturing partner, <span class="bold">Cerebro isn’t just a concept it’s on his way</span>!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="The prototype" data-id="47675744">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/675/744/4807592985516fe7f739274fedfbcf97_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1735393950&amp;width=680&amp;sig=TUaJknUsXKMmJ5t2W23ir8MrUAqXIzb%2FDeQRgIvCTtk%3D"/>
+<figcaption class="px2">The prototype</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="The prototype " data-id="48794565">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/794/565/5c9828734cfc5fdc63c9d0fdec571687_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743858995&amp;width=680&amp;sig=tU%2By7FtbaIq2SE5YzlCc2dYII2R14H4sOrtnkJzW31k%3D"/>
+<figcaption class="px2">The prototype </figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="The prototype" data-id="48794573">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/794/573/d9c2f88b01675dfa9be11470af007956_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743859071&amp;width=680&amp;sig=ripYJeADS%2FU3UPoeqDRiE%2BEyFEluvlEdDfPjc4mSe%2Bc%3D"/>
+<figcaption class="px2">The prototype</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48794308">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/794/308/f53cb51c9db48b0a42d9c6bd42fb4c9d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743856372&amp;width=680&amp;sig=kXD2es%2FeOKEDAdbNQX75ahEehB%2BH6ui8UsKm0jD0uuU%3D" src="https://i.kickstarter.com/assets/048/794/308/f53cb51c9db48b0a42d9c6bd42fb4c9d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743856372&amp;width=680&amp;sig=kXD2es%2FeOKEDAdbNQX75ahEehB%2BH6ui8UsKm0jD0uuU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48785562">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Funding-goal-explained">Funding goal explained</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/785/562/f7332c2491453c08035358c9f801e38f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743779474&amp;width=680&amp;sig=Ps58zKBy3JoMRuTXq%2BwNiPthnVCVdsim6D1mRkWr%2FPk%3D"/>
+</figure>
+</div>
+<p>Innovation takes more than just a vision it takes dedication, precision, money and the right support. To make Cerebro a reality, we need €1,081,284 in funding. So this is where you come in. The cost are based on the PCB development, testing and total production of 2500 Cerebro boards! </p><p>We are <span class="bold">committed to top-tier quality</span> by designing and manufacturing Cerebro in the <span class="bold">Netherlands</span>, <span class="bold">using premium components</span>. This means no compromises, no unreliable third-party suppliers, and full control over every detail. By keeping production local, we eliminate communication barriers, avoid time-zone delays, and ensure that every board meets our high standards.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49057387">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/057/387/663fc1b45382953efc3f645eb82ee7be_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745739214&amp;width=680&amp;sig=ANYXWfrXgl3gaioB7mmCH5aUDvJkiUviga%2FT3xDUQCs%3D" src="https://i.kickstarter.com/assets/049/057/387/663fc1b45382953efc3f645eb82ee7be_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745739214&amp;width=680&amp;sig=ANYXWfrXgl3gaioB7mmCH5aUDvJkiUviga%2FT3xDUQCs%3D"/>
+</figure>
+</div>
+<p>Backing Cerebro means more than just funding a product, you’re fueling innovation, reshaping AI and cluster computing, and being part of something groundbreaking. Join us and bring the future of scalable computing to life!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48785618">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/785/618/128c0e5424053e580a9edced4743b76f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743779882&amp;width=680&amp;sig=j%2FubWZZSsVDlDydz%2FuKWmI9z%2BsyRpn%2BbpEVKPgSZ5yg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48785591">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-information">Shipping information</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/785/591/05a1fdf6a3708e73098e665be6d05538_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743779712&amp;width=680&amp;sig=zdI4lNEko33pPFEkfSbl%2B7OaNjnLcGSTEJmqaLa1IPA%3D"/>
+</figure>
+</div>
+<p>Shipping will be charged via our pledge manager <span class="bold">after the campaign</span>. All shipping will take place from the Netherlands!</p><p>We <span class="bold">ensure a secure, premium packaging</span> to deliver your Cerebro clusterboard intact. <br/><br/>The following shipping costs are based on current UPS rates (April 2025) and may vary over time due to location or other factors:</p><ul>
+<li>Europe: €15,50</li>
+<li>USA: €27,00</li>
+<li>Rest of the world: €62,50</li>
+</ul><p>Keep in mind that Cerebro will be manufactured &amp; shipped from the EU. Backers outside the EU are responsible for any local taxes or customs fees, as outlined on Kickstarter’s support page.</p><span>Roadmap(click to enlarge)</span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48794396">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-tech-specs">The tech specs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/794/396/70776e501d42876e6e9573b3d6abd5d7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743857504&amp;width=680&amp;sig=4%2BNGh3i5qgKzuuG1dZXu%2BXoXAwuIC04W8lrjyW0w8eM%3D"/>
+</figure>
+</div>
+<p><span class="bold">Cerebro</span> is a powerful and flexible platform designed for developers, tinkerers, and professionals working with technologies like<br/> <br/><span class="bold">Machine Learning</span> <br/><span class="bold">Home Labs</span><br/><span class="bold">Edge Computing</span><br/><span class="bold">Robotics</span><br/><span class="bold">Kubernetes/Cluster environments</span></p><p>Built to scale and adapt, Cerebro offers a range of technical features to support demanding and innovative projects.</p><p><span class="bold">Board Dimension:  190mm x 244mm </span>(height varies upon cooling solution)</p><span>Overview front (click to enlarge)</span><span>Overview back (click to enlarge)</span><span>Diagram (click to enlarge)</span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48795030">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/795/030/ae4c54839c93c076ccd4143114d6755a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743862336&amp;width=680&amp;sig=37ZibMN4nXvO4FEgAArQP6GRpPghrB1iIkIdPx7cd44%3D"/>
+</figure>
+</div>
+<p><span class="bold">Customize your cluster, your way</span><br/>Cerebro is designed to grow with you. <span class="bold">Choose the compute modules that match your needs</span> from low-power nodes to high-performance options.<br/><br/><span class="text-italic"><span class="bold">Note:</span></span> <span class="text-italic">No modules included with the Cerebro board shipment.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48918812">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/918/812/2aa4cfe210b9dcdbf2a8441b2b0a6f7c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744738693&amp;width=680&amp;sig=z0mVEB8e8ey%2FdZHQFJTRBULYeFuTypp6StkbrYv9dHA%3D"/>
+</figure>
+</div>
+<p><span class="bold">Advanced control when you need it</span><br/>Cerebro supports optional, upgradeable BMC modules for enhanced remote management, security, and flexibility <span class="bold">perfect for serious cluster setups</span>.</p><p><span class="text-italic"><span class="bold">Note:</span> BMC modules not included with Cerebro board shipment.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48496165">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/496/165/9e8d0bb5bfc30d3aceff6b2b30061cc2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741786899&amp;width=680&amp;sig=U99pQRZy0G1I6dEdSK8evmebClaKURK%2BLH4VzbZB7Uo%3D"/>
+</figure>
+</div>
+<p>Cerebro has <span class="bold">a total of 13 M2 ports</span>. You can use 3rd party extension boards such as cellular, WIFI, USB, Bluetooth, NPU and other M2 peripherals. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48551735">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/551/735/fc348e20a0028d85314570b6f2b0f87a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742202252&amp;width=680&amp;sig=Rfy89i2Grz5Hx7Gv7QErXSWntOQrBnQHG%2FBNspAwBXo%3D"/>
+</figure>
+</div>
+<p><span class="bold">Works with a wide range of software solutions</span>, including popular Linux distributions, Kubernetes setups, and containerized environments</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48551634">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/551/634/4606d3f608601931cb87b9744bcd878e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742201406&amp;width=680&amp;sig=FDCc6CcfOwsFMe7M5ZKu2Ln3q03an1urYhL9eFFl%2BHc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47491539">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/491/539/5d6cabfa6780a09232ee25286dbf21e7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1733410751&amp;width=680&amp;sig=2BwKwM7P9b6q4jQxXGNes%2FdCxce9ssbUMMZ3X8niYu8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48794674">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Join-our-discord">Join our discord</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/794/674/e47e3675d02fbce8018f3f457dcde4e5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743859859&amp;width=680&amp;sig=OnpnnG9acwkBSJumG%2BDSbrBlPxzzup8if2zYGv8eL3Y%3D"/>
+</figure>
+</div>
+<p>We invite you to join our Discord for technical updates, product renders, project discussions and direct interaction with our team and fellow backers. Be part of our journey and help shape the future of AI computing. </p><span>Click to join our Discord community!</span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48794742">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-us">About us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/794/742/20a4eb32566a99b2956b4501cacb6c98_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743860452&amp;width=680&amp;sig=woK3Ja2sCCueOi58Qswq%2BqYlxzSWfXYrZpYLTeZEhso%3D"/>
+</figure>
+</div>
+<p><span class="bold">Born from Frustration. Built with Love.</span><br/>At Cerebro, we’re not a faceless tech company, we’re makers, just like you. Tinkerers, dreamers, builders. We've spent over 20 years in IT and Security, always chasing that spark: the moment when a piece of hardware unlocks something bigger: an idea, a solution, a future.</p><p>We’ve always had a soft spot for development boards. But too often, they left us feeling boxed in. The boards on the market were great, but not quite <span class="text-italic">right</span> for what we needed. Not flexible enough. Not complete enough. Not open enough.</p><p>So we did what makers do: we built our own.</p><p>Cerebro was born out of a real-world need, late-night sketches, community feedback, and a stubborn belief that we could make something better. Something that gives you, the developer, the enthusiast, the home lab hero, real creative power.</p><p>This project is personal. It’s the board we always wished existed. And now, we’re sharing it with you, not just as a product, but as part of a movement of people who believe that building things should feel exciting again.</p><p><span class="text-italic"><span class="bold">Cerebro doesn’t just consolidate.</span></span><br/><span class="text-italic"><span class="bold">It unifies, simplifies, and supercharges your setup.</span></span></p><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">When launching a new product, there are always risks involved.  We as a team have a lot of experience with launching products and we believe we can handle all possible challenges. 
+
+We are a Dutch company and for the final design and manufacturing of our board we chose a Dutch partner. This way we can easily be actively involved in the complete process and mitigate possible setbacks and problems very quickly. Also there will be no language barriers that could create problems in the process. 
+
+Our philosophy is to be clear and transparent during the whole process. 
+Possible setbacks and problems (and solutions for that problems) will be communicated quickly. All via Kickstarter updates, mailing and within the Discord community. 
+
+We're developing this product using our company name, and we take this very seriously. We want to deliver a high quality product, and make sure our customers are satisfied.
+
+Pledgers need to keep in mind that the product will be manufactured &amp; shipped from the EU. Possible local taxes / customs fees outside the EU are the responsibility of the backer. As mentioned on the Kickstarter support page.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">We've designed the PCB in such a way that it's compatible with NVIDIA developer kits. No means there is no need for recoding you're precious code. We used the NVIDIA development kits as a reference for our hardware design. This means future modules compatible with the genuine NVIDIA development kit will also be compatible with Cerebro.
+
+The PCB will be manufactured in the Netherlands using premium components.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">We choose a local Dutch partner with a factory that focuses on a low carbon footprint. The manufacturing process is fully automated with minimal personnel involved. Also the factory uses solar energy as an additional power source. Our partner uses state of the art machinery and a fully automated process to limit waste &amp; access material.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">We're using recyclable &amp; sustainable packaging to ship our product. Shipping will take place directly from the factory in the Netherlands.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

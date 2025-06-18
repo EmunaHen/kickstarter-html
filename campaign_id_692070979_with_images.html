@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smartlet: One Wrist. Two Watches. No Compromise.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/546/135/f1c9e25cad5810c6c991b91ace17eac5_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749047187&width=560&sig=M%2BBrPZRceJaVCNce%2Bl6HeS96f%2BYsS2qpXyVnUHrf5K4%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Smartlet: One Wrist. Two Watches. No Compromise.</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">You love your watch. You need your smartwatch. So why should you have to choose? Smartlet is your new solution.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,367</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Smartlet-One-Wrist-Two-Watches-No-Compromise-"><span class="bold">Smartlet: One Wrist. Two Watches. No Compromise.</span></h3><p>We all have that one watch — a gift, an inheritance, a reward. But today, we’re asked to trade it for a screen. <span class="bold">You love your watch. You need your smartwatch.</span> So why should you have to choose? </p><p>Smartlet is the first bracelet that allows you to <span class="bold">wear both a traditional timepiece and a connected device together, on one wrist.</span> It’s the meeting point of elegance and innovation, offering a refined solution to a modern dilemma.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49356350">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/356/350/f3a6726e3603034b1c406e428e3e13f1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747772376&amp;width=680&amp;sig=arABlnwGZtxyIqWrsIMTn4qqtvPLgvA4raqV4jvVlno%3D" src="https://i.kickstarter.com/assets/049/356/350/f3a6726e3603034b1c406e428e3e13f1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747772376&amp;width=680&amp;sig=arABlnwGZtxyIqWrsIMTn4qqtvPLgvA4raqV4jvVlno%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335687">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/687/646909a76b724fcf91bc82b70a182051_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665573&amp;width=680&amp;sig=%2BcRbYsf3dbpkXjxQEHHAd3M2lWN7qqDZRCJnIh61THo%3D"/>
+</figure>
+</div>
+<p><span class="bold">Smartlet is designed in Paris</span> and embodies a standard of <span class="bold">French precision</span> and refinement. From materials to finish, it reflects the values of enduring <span class="bold">craftsmanship</span>. With Smartlet, we’re not just adapting to modern life, we’re <span class="bold">redefining the way we wear time</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49473061">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/473/061/f2033e4fc342f8c7aa12dbb498417de1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748541622&amp;width=680&amp;sig=8uuKEbJy%2BiXeOkTUX2g0vrnggmdXShG56lKLMy5YB6U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335598">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/598/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665293&amp;width=680&amp;sig=of0iGEcHRxjrjeQBuT7Vj%2FzC77ad19RDGNIJgJ8eMrg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Designed-for-the-real-world"><span class="bold">Designed for the real world</span></h3>
+<p>Smartlet was made to <span class="bold">integrate effortlessly into everyday life</span>. Whether you're working, training, or moving through the city, it adapts to your routine with clarity and purpose.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335694">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/694/2e92e62c52454ba1a5cfd92999df9c75_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665592&amp;width=680&amp;sig=m9wQKc41AysTc8kbWg%2FOQzu39DC9RNNNa2anFzXpuxo%3D"/>
+</figure>
+</div>
+<p>Imagine this: It’s 8am. You wear your vintage Omega for an important meeting. At lunch, you jog with your smartwatch to track your progress. At dinner, you want to look sharp — but still get that message from your kids. <span class="bold">With Smartlet, no compromise.</span></p><ul>
+<li>
+<span class="bold">Track your health</span> and activity continuously with your smartwatch or fitness tracker worn comfortably on top</li>
+<li>Stay connected throughout the day with <span class="bold">discreet access to notifications</span>
+</li>
+<li>
+<span class="bold">Make contactless payments</span> with a natural, fluid gesture that fits seamlessly into your movements</li>
+<li>
+<span class="bold">Manage multiple watches, classic or connected</span>, with a single modular bracelet that adjusts to your needs</li>
+<li>Keep your traditional timepiece tucked discreetly underneath when commuting, adding <span class="bold">an extra layer of security in public spaces</span>
+</li>
+</ul><p>This is a new standard of elegance and utility, designed to reflect the way we really live.</p><h4 class="page-anchor" id="h:Smartlet-looks-just-as-sharp-with-a-suit-as-it-does-with-jeans-or-sports-outfit-">Smartlet looks just as sharp with a suit as it does with jeans or sports outfit.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49474028">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/474/028/c255158e5f5772cf4079fdaa21ea42f1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748546135&amp;width=680&amp;sig=MYPZrVC2FGnz4k0fp8yEkg9PnqUgwMo2fc8YJnmoO2A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49473036">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/473/036/dd2b6bb61887cce46cb557673030d5fe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748541533&amp;width=680&amp;sig=ND07TW%2FzNRapIhGD223Q88tY3bdqpic7zACTkSz67O8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49474040">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/474/040/8dcbff59c24a213089e7984100bfc61d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748546187&amp;width=680&amp;sig=ZhX3Mm9oVW83coW28Ck9aEPRoaCjvZKB%2BW0fU5622oQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335584">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/584/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665269&amp;width=680&amp;sig=zfh4V2JbRQp1Bp179n620%2FCoB%2Bp9za8jO6jDsJTXEsg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:A-vision-born-from-frustration"><span class="bold">A vision born from frustration</span></h3>
+<p>David, the founder of Smartlet, spent years <span class="bold">switching between elegance and functionality.</span> ‘I wore my smartwatch to track my sleep, but I missed my father's timepiece. That’s when I realised — I don’t have to choose. I can build the bridge.</p><p>Mechanical marvels carry <span class="bold">identity, emotion, and a unique story</span>. But as the world evolved, so did our wrists. From fitness tracking to payments and notifications, <span class="bold">smartwatches and fitness trackers became part of daily life</span>. Yet most of them look and feel the same, defined more by their digital ecosystem than by any real sense of uniqueness. They may be functional, but they lack the emotion and character that define true horology.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49372603">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/372/603/97b3f83b0a7e19efe4485b94a549473e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747860460&amp;width=680&amp;sig=G4wvnVhTTwxbaG8eOFW4mPvpmGwcUgDjGENsfYy3FHg%3D"/>
+</figure>
+</div>
+<p>In contrast, <span class="bold">traditional watches have a soul</span>. They speak of history, craftsmanship, and individuality. But as digital convenience took over, these heritage objects were slowly pushed aside. Smartlet was born from this tension. David began with a simple question: <span class="bold">why choose between timeless tradition and cutting-edge technology?</span></p><p>What followed was not the design of another gadget, but the creation of a new category. After months of sketches, prototypes, and refinement, <span class="bold">Smartlet came to life in Paris</span>, a city where horological culture meets industrial elegance. The result is a modular bracelet, patented, that <span class="bold">lets you wear a classic watch and a smartwatch on the same wrist</span> with balance, intelligence, and style.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335590">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/590/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665279&amp;width=680&amp;sig=hvScDbVUVGrQ3G7TQkOFGfrVpkoJ9E4bCMGGCBLqj%2Fw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:From-idea-to-reality"><span class="bold">From idea to reality</span></h3><p>Bringing Smartlet to life has been a long and demanding journey. From the very first sketches to a fully functional modular bracelet, every phase required precision, iteration, and care. We weren’t just building a wearable, <span class="bold">we were developing a new way to carry both time and technology on the same wrist.</span></p><p>We’ve gone through multiple stages of prototyping to test proportions, mechanical integrity, and overall comfort. At each step, we asked tough questions: <span class="bold">Is this intuitive enough? Elegant enough? Reliable enough for daily life?</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49428150">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/428/150/21babeb84a3df3f4735a01db80e460f1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748284556&amp;width=680&amp;sig=t3fuL%2BB2oV%2FjrM0%2FTBNePCAg0oqsdVGHslnlabe%2FBB0%3D"/>
+</figure>
+</div>
+<p>To help answer them, we involved a panel of early users, watch enthusiasts, athletes, and connected lifestyle advocates, <span class="bold">who tested Smartlet in real conditions</span>. Their feedback played a key role in refining ergonomics, improving balance, and making sure the product felt natural on every wrist.</p><p>Beyond the technical development, we placed particular emphasis on the experience itself. Adjusting your Smartlet, assembling it, changing modules, <span class="bold">it all had to feel smooth and satisfying.</span> The included toolset, link system, and adapters were fine-tuned to make the setup as elegant as the design.</p><p>We have been back to the whiteboard at several stages to make sure the product would be in line with our  expectations.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335584">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/584/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665269&amp;width=680&amp;sig=zfh4V2JbRQp1Bp179n620%2FCoB%2Bp9za8jO6jDsJTXEsg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Testimonials"><span class="bold">Testimonials</span></h3><p><span class="bold">Here is a testimonial by Christopher, International Tech Executive: « Smartlet is a real Innovation, because it marries two quite distinct, different worlds. »</span></p>
+<p><span class="bold">Here is a testimonial by Mehdi, Entrepreneur in the Crypto industry: « It allows me to track my entire day in terms of health, sleep, without switching between my watch and my smartwatch … »</span></p>
+<p><span class="bold">Here is a testimonial by Germain, Founder of a consulting company: « I don’t feel like i’m actually wearing an additional weight, that seems pretty surprising! »</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335598">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/598/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665293&amp;width=680&amp;sig=of0iGEcHRxjrjeQBuT7Vj%2FzC77ad19RDGNIJgJ8eMrg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Become-an-innovation-pioneer-"><span class="bold">Become an innovation pioneer!</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49372468">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/372/468/0f40e705863bc9a334284970267de190_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747859721&amp;width=680&amp;sig=%2FOvyjma13WsT%2FM1%2BUsu3Z8sAYg9yxdmPWvA%2FBL2c%2BBM%3D"/>
+</figure>
+</div>
+<p>Smartlet has just been awarded the <span class="bold">Bronze Medal</span> at the <span class="bold">Concours Lépine International Paris 2025</span>, a prestigious innovation competition that has been celebrating the world’s most groundbreaking inventions for over 124 years. Recognized for its innovative concept and its new way of wearing both classic and connected watches, <span class="bold">Smartlet proudly carries this mark of excellence born in the heart of Paris.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49457883">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/457/883/c5a563cf5682368b66f9781d2114bf59_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748450983&amp;width=680&amp;sig=4PvqqXmC7WTUKL6VyjzidSwiUSMQs3Sq%2FFLM7cZNd40%3D"/>
+</figure>
+</div>
+<p><span>Le Figaro:</span><span class="text-italic">"A French engineer has created the Smartlet, a <span class="bold">most innovative double-sided bracelet.</span>"</span></p><p><span>WatchPro:</span><span class="text-italic"> "<span class="bold">Smartlet solves the challenge</span> of wearing a prestigious timepiece and a connected smartwatch at the same time."</span></p><p><span>European Watch</span><span class="bold">: </span><span class="text-italic">"Can a Dual-Watch Bracelet <span class="bold">Change the Watch Industry</span>? »</span></p><p><span>World Wrist Watch</span><span class="bold">: </span>"One of the bracelets created by them happens to be <span class="bold">a very creative solution</span>, featuring the ability to wear two very different watches on the same hand and still look stylish at the same time."</p><p><span>Neozone</span><span class="bold">:</span> "An idea <span class="bold">as elegant as it is clever</span>, just waiting to be discovered."</p><p><span>Passion Horlogère:</span><span class="text-italic">"This could well become the <span class="bold">must-have watch accessory</span> of the moment” or “The best of both worlds on the wrist, at the same time..."</span></p><p><span>Business Montres</span><span class="bold">: </span><span class="text-italic">"It's very clever, especially as <span class="bold">no one had thought of it before</span>".</span></p><p><span>Montres de Luxe:</span><span class="text-italic"> "A brand-new steel watch bracelet that should <span class="bold">reconcile lovers of mechanical watches and all those who can no longer do without their smartwatch</span>."</span></p><p><span>Glass Almanac:</span> <span class="text-italic">"<span class="bold">Revolutionary Bracelet </span>for Wearing Two Watches Enters Lépine Contest"</span></p><p><span>WatchGeneration</span>: <span class="text-italic">"This concept is <span class="bold">a rarity on the market</span> for traditional watch amateurs"</span></p><p><span>MSN</span>: <span class="text-italic">"<span class="bold">You can have your cake and eat it too</span>: a "real" watch on the top of your wrist and a smartwatch or fitness tracker below"</span></p><p><span>20 minutes:</span> <span class="text-italic">“<span class="bold">This revolutionary bracelet </span>for wearing two watches is connected to the Lépine competition.”</span></p><p><span>MCGST</span><span class="bold">: </span><span class="text-italic">"This innovative set up allows you to <span class="bold">benefit from the advanced features</span>  of a smartwatch while <span class="bold">enjoying the timeless charm </span>of your favorite mechanical watch »</span></p><p><span>Mobil Mania</span>: <span class="text-italic">"How to wear Apple Watch and Rolex on one wrist. <span class="bold">A special strap connects them together </span></span>»</p><p><span>FNAMAC:</span><span class="text-italic"> “With the Smartlet bracelet, wear a classic watch and a smartwatch together, <span class="bold">without compromise</span> ...”</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335590">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/590/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665279&amp;width=680&amp;sig=hvScDbVUVGrQ3G7TQkOFGfrVpkoJ9E4bCMGGCBLqj%2Fw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Who-is-Smartlet-for-"><span class="bold">Who is Smartlet for?</span></h3><p><span class="bold">The Entrepreneur</span><br/>He moves between meetings, airports, and afterworks. Smartlet lets him track his health discreetly during the day, while keeping his mechanical watch visible when it matters most.</p>
+<p><span class="bold">The Fashionista</span><br/>For him, every detail counts. Smartlet allows him to wear technology without compromising his style, one wrist for his favorite connected functions and his classic watch, the other free for jewelry.</p>
+<p><span class="bold">The Runner</span><br/>Performance is part of her routine. Smartlet lets him train with precision using his smartwatch, while keeping his classic watch close for everyday wear, without switching straps.</p>
+<p><span class="bold">The Tech Lover</span><br/>He’s always connected, always optimizing. Smartlet fits perfectly into his ecosystem, letting him switch between devices and experiences without ever sacrificing his passion for design.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335601">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/601/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665301&amp;width=680&amp;sig=hYfkWt2GzGzYkzEB7fJAk9oZfMcJ%2F4%2B%2BqDAZdjxDKuk%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Product-features"><span class="bold">Product features</span></h3>
+<p>Smartlet is more than a strap. It's a precision-built system designed for versatility and elegance.</p><ul>
+<li>
+<span class="bold">Dual-wear functionality</span>: Holds one classic watch and one smartwatch or fitness tracker at the same time</li>
+<li>
+<span class="bold">High-end material</span>: Made of stainless steel 316L or titanium for durability and style, according to version</li>
+<li>
+<span class="bold">Comfort &amp; adjustability</span>: Includes an adjustment kit with 4 extra links</li>
+<li>
+<span class="bold">Secure fastening</span>: Patented double-lock system for optimal safety</li>
+<li>
+<span class="bold">Fast Connect:</span> After removing your original watch strap, just place the Smartlet connectors in 2s</li>
+</ul><h4 class="page-anchor" id="h:Smartlet-brings-together-the-best-of-design-intelligence-and-versatility-all-in-one-bold-accessory-">Smartlet brings together the best of design, intelligence, and versatility — all in one bold accessory.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49473438">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/473/438/6c2cccae1ce809f4dbd011988adbafc3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748543369&amp;width=680&amp;sig=%2Bm37c%2B2khmzT1q6I9KtfJxcbZOqfJ0XsjJHlZ7rY6Ks%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Assembling-Smartlet-is-child-s-play-just-like-Lego-">Assembling Smartlet is child's play — just like Lego.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49473200">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/473/200/a72b023dbf800795680db8a7fed38c2c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748542178&amp;width=680&amp;sig=QR20fMvz7jKxNK4mbFtZ4G7IyLK6cuL5teh748NUqqY%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:A-patented-system-designed-for-speed-and-security-locking-has-never-been-so-intuitive-">A patented system designed for speed and security — locking has never been so intuitive.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49473093">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/473/093/bfaf72a8afeb24f3b952cece0f3a9d18_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748541728&amp;width=680&amp;sig=2tAXZePx%2FkJ06n1Ab7Tgx%2BknYGDuHcr7gd8Zi61K7Os%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Broad-compatibility-">
+<span class="bold">Broad compatibility</span>:</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335717">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/717/ebe73d68912a7ccd92d88dbb7d8f93c2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665665&amp;width=680&amp;sig=O7v1vruQ%2FJxfLck4rvejI%2FdeXB9AeuGu7CiuRzb4PVw%3D"/>
+</figure>
+</div>
+<p><span class="bold">For your traditional watch:</span></p><ul><li>Select your choice of 20mm or 22mm lug connectors</li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49372647">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/372/647/555de48d52c4e31a18a568dd3c395c6e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747860655&amp;width=680&amp;sig=v%2FuwckVYF4bgT3WF4f1U96ZmTktnVodv0QFCZbTJzA0%3D"/>
+</figure>
+</div>
+<p><span class="bold">For your smartwatch or fitness tracker:</span></p><ul>
+<li>Apple Watch (for all models, although we do not recommend the ultra version for reasons of comfort)</li>
+<li>Google Pixel Watch (all models 41mm &amp; 45mm)</li>
+<li>Samsung Galaxy Watch (all models 40/41/44m</li>
+<li>Garmin (Vivoactive 5, Fenix 8 – 43mm, Forerunner 165 and all models with a 20/22mm lug width)</li>
+<li>Fitbit Charge 5 &amp; 6</li>
+<li>Whoop 4 (Whoop 5.0 &amp; MG coming soon)</li>
+<li>All Smartwatches and Fitness trackers working with a standard 20mm or 22mm lug width strap</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49356607">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/356/607/e7be9fc50b1f5a97290dac2a94fd5c2f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747773676&amp;width=680&amp;sig=oi3d8IbCpaPkweuU%2FYI9qOzsuSjoOGpHPNnPHFctV8o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335604">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/604/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665308&amp;width=680&amp;sig=zCc3%2F2BnjfFrzFUQ3hUcS8ODeR7uWulIuQXbq97gxH4%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Design-and-craftsmanship"><span class="bold">Design and craftsmanship</span></h3><p>Smartlet isn’t just functional. It is <span class="bold">born from a French design philosophy</span> that values discretion, balance, and timeless elegance. Designed in Paris, the world’s capital of style, Smartlet carries within it the codes of contemporary sophistication and classical restraint. Its silhouette is minimalist yet assertive, <span class="bold">with clean lines and subtle contours</span> that let your timepieces speak for themselves.</p><p>This is not a tech accessory. It’s a statement of taste. Every element of Smartlet has been engineered with intention, from its curvature to its finishes, <span class="bold">to gracefully complement both modern smartwatches and traditional horology.</span></p><p>At the heart of Smartlet lies modularity, not just as a mechanical feature, but as a mindset. It’s about freedom of expression. <span class="bold">We set out to reinvent the bracelet not as a strap, but as a platform.</span> One that evolves with your style, your needs, and your daily life. A canvas where the past and future can finally coexist with elegance.</p><p><span class="bold">How to assemble - You’ll see — it’s simpler than you think… and it changes everything!</span></p>
+<p><span class="bold">How to wear Smartlet - step by step. It’s easy, intuitive, and made to fit seamlessly into your everyday life.</span></p>
+<p><span class="bold">How to take off - Designed with thoughtful ergonomics, Smartlet is as easy to remove as it is to wear.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335608">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/608/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665316&amp;width=680&amp;sig=fETs2cxWMjIQ4gMRQAUVhAUBijRKg9aKjEkpr0lSbSA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Available-colors-and-materials"><span class="bold">Available colors and materials</span></h3><p>Smartlet is available in two materials, chosen for their durability, comfort, and timeless appeal.</p><p><span class="bold">1- Stainless Steel 316L</span><br/>Known for its strength and corrosion resistance, SS316L is the gold standard for high-end watchmaking. This hypoallergenic steel combines robustness with a silky touch against the skin, offering everyday elegance without compromise.</p><p>Available in two finished metal options:</p><ul><li>
+<span class="bold">Classic </span>(Brushed Metal): A sophisticated satin texture that plays subtly with light, highlighting every curve of the bracelet.</li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335357">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/357/8585a956f0c113ef4c3fccec289823e0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747664210&amp;width=680&amp;sig=Zw8VUkumAoY2fAMmtKcoYgPCjo%2F8mpqaJ%2BC3bn2x2Xo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49473204">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/473/204/4bc4764844360fc4158b900baaef56c1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748542188&amp;width=680&amp;sig=jgOBPfBZ3wfNg6DI1sqQFzuDxgDvegJw0sO9c1IxMc4%3D"/>
+</figure>
+</div>
+<ul><li>
+<span class="bold">Shadow </span>(Matte Black Metal): A deep, understated finish that adds a bold, contemporary edge to your style.</li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335359">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/359/170d9c99e927ed7b978daca33988506a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747664215&amp;width=680&amp;sig=7zjEMo2lJngA%2B5Dz4QdRZIdDoHacNMbBGRO1zga2Gpg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49474131">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/474/131/e1ad06b2e190a370838c0ead0ee593c0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748546629&amp;width=680&amp;sig=2ezcpcbENSX%2FgT5xTGh6ADtCc%2Blv13jscPgu%2F97mll4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49473239">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/473/239/6438be87d07a571ebb068fc47623586c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748542446&amp;width=680&amp;sig=MpnDi476qzMrgHdtG%2F47Bj7qOPK2nzngkO6kHdKK%2FKk%3D"/>
+</figure>
+</div>
+<p><span class="bold">2- Titanium</span><br/>Lighter than steel but just as strong, titanium brings a new level of comfort to the wrist. Its natural resistance to corrosion and its refined, understated appearance make it the material of choice for those seeking ultimate performance and a modern aesthetic.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335361">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/361/bae6b0778d01778c94ac50ca8e058c8e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747664226&amp;width=680&amp;sig=4KKGQy2PIgeH%2FP9vj2txXXhuxxh%2BnMEJkq6ru9VuVt8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49469842">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/469/842/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748526173&amp;width=680&amp;sig=19J8g8apjNVVwDNxyZv6Nmc0w6oU4N2ACzNzLr4tUMc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:What-s-in-the-box-"><span class="bold">What's in the box?</span></h3><p>Each Smartlet set includes:</p><ul>
+<li>1 modular bracelet (left + right parts)</li>
+<li>1 set of connectors for classic watches (20mm or 22mm)</li>
+<li>1 set of adapters for your selected smartwatch (Apple, Pixel, Fitbit, etc.)</li>
+<li>1 adjustment tool</li>
+<li>1 Smartlet-branded jewelry module (for single-watch wear)</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335740">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/740/2695b2fdd455eb71f5804fec696bd61d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665769&amp;width=680&amp;sig=UnEbkDHyXB0EZBPf5oQxuZW1yGAZ4Jx4ZZc8gyCeejQ%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="49335744" src="https://i.kickstarter.com/assets/049/335/744/c6be9452e6f34e7085197fbdb5145680_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747665786&amp;width=612&amp;sig=8pRivTDueLdqiN7giEKjwEzQA8i%2F%2FEQhAnWfLMjeQC0%3D"/></p><p>You can also select additional accessory sets in the material or colour of your choice :</p><ul>
+<li>
+<span class="bold">Set of traditional watch connectors</span><br/>Compatible with standard 20mm or 22mm lug widths, perfect for switching between multiple mechanical timepieces.<br/> </li>
+<li>
+<span class="bold">Set of smartwatch/fitness trackers connectors</span><br/>Designed for a seamless fit with the most popular connected devices:<ul>
+<li>
+<span class="bold">Apple Watch</span> (All sizes)</li>
+<li>
+<span class="bold">Google Pixel Watch</span> (All sizes)</li>
+<li>
+<span class="bold">Fitbit Charge</span> (5 and 6)</li>
+<li>
+<span class="bold">Whoop 4.0</span> (5.0 and MG versions coming soon)</li>
+<li>Other smartwatches with standard 20mm or 22mm strap attachment systems</li>
+</ul>
+</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49516675">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/516/675/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748880696&amp;width=680&amp;sig=%2FrFDvQJ1%2B8HKOEc8x%2F%2Fp4OiST%2FoL0T%2BT1NHP2v5Qu24%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Choose-your-reward"><span class="bold">Choose your reward</span></h3><p>With all packs, you can choose a 20 or 22mm adapter for yout classic watch AND an adapter for your brand of smartwatch or fitness tracker.</p><h4 class="page-anchor" id="h:Early-bird-USD-converted-from-"><span class="bold">Early bird (USD converted from €)</span></h4><ul>
+<li>
+<span class="bold">Early Bird Classic – $339</span><br/>Be among the first 70 backers and get your Smartlet at an exclusive launch price. Original version</li>
+<li>
+<span class="bold">Early Bird Shadow – $439</span><br/>Be among the first 20 backers and get your Smartlet at an exclusive launch price. Black version.</li>
+<li>
+<span class="bold">Early Bird Titanium – $569</span><br/>Be among the first 10 backers and get your Smartlet at an exclusive launch price. Titanium version.</li>
+</ul><h4 class="page-anchor" id="h:Standard-Offer-USD-converted-from-"><span class="bold">Standard Offer (USD converted from €)</span></h4><ul>
+<li>
+<span class="bold">Classic – $399</span><br/>One Smartlet in brushed stainless steel, our original edition.</li>
+<li>
+<span class="bold">Shadow – $509</span><br/>One Smartlet in stainless steel matte black.</li>
+<li>
+<span class="bold">Titanium – $679</span><br/>A premium Smartlet crafted in titanium, ultra-light and ultra-strong.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49512960">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/512/960/d37253afcf536dfb3df5fbfc1c220442_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748862356&amp;width=680&amp;sig=I7spRpIbf6I8b%2FQwIrBzfy1tHIeFxD7nExjnv8qnIfg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Product-Packs"><span class="bold">Product Packs</span></h4><ul><li>
+<span class="bold">Smartlet Duo –  get your second Smartlet at Early bird price</span><br/>Two Smartlets. Save around 15% on a Smartlet Solo</li></ul><h4 class="page-anchor" id="h:Accessories"><span class="bold">Accessories</span></h4><ul>
+<li>
+<span class="bold">Traditional watch connectors – Starting from $34</span><br/>Get an additional traditional watch connector set in 20mm or 22mm lug width in the material and color of your choice.</li>
+<li>
+<span class="bold">Smartwatch / Fitness trackers connectors – Starting from $39</span><br/>Get an additional traditional Smartwatch or Fitness tracker connector (Apple watch, Google Pixel, Whoop 4.0, Fitbit Charge 5/6) in the material and color of your choice.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335618">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/618/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665337&amp;width=680&amp;sig=rceTF7EFX4Hha9sWRDDzhSeNvysBKr8RS2tj%2Ft9GIpQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-Kickstarter-and-where-your-support-goes"><span class="bold">Why Kickstarter, and where your support goes</span></h3><p>We chose Kickstarter because we believe great products deserve to be built with their community, not just for it. This campaign is more than a launch. <span class="bold">It’s the first step in bringing Smartlet into the world</span> with the right partners, pace, and purpose.</p><p>The funds raised through this campaign will be allocated as follows:</p><ul>
+<li>
+<span class="bold">65%</span> will go toward production and initial inventory</li>
+<li>
+<span class="bold">15%</span> will support ongoing R&amp;D and product evolution</li>
+<li>
+<span class="bold">15%</span> will be dedicated to activating a network of ambassadors and early adopters</li>
+<li>
+<span class="bold">5%</span> will cover Kickstarter fees</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49457706">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/457/706/bcf5fbb74bac6b6651c1c105e24d406f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748449710&amp;width=680&amp;sig=ahZjLXRrhVuPkbrYtLy9ykaf1v0gml5%2FQ9eyNzSlyjM%3D"/>
+</figure>
+</div>
+<p>This structure ensures that we can deliver Smartlet at the highest standard while laying the groundwork for its future growth.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49425302">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/425/302/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748268269&amp;width=680&amp;sig=DqsZyr%2B%2BROUMIZhKVDZeEr7S4kJcw4dfuoBJkeSa6rg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Stretch-goals"><span class="bold">Stretch goals</span></h3><p>If the campaign reaches <span class="bold">100%, we'll launch the first production run thanks to you!</span> And if the campaign exceeds our initial target, you'll unlock all the following bonuses:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49619379">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/619/379/97140793bc9e41c53fb190cff338edd9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749553272&amp;width=680&amp;sig=oaM9I2ffpiCpu1sHoWVyU%2FKNuqWQVtG0QFfGHk2sRRg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49619384">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/619/384/9b87746fcfab45a2488e3c22ba043b7a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749553281&amp;width=680&amp;sig=XhNOqEfxr%2BBC%2BYTr7U0R9XB%2B%2FIhymAoa6Mpcl707ulk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49619387">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/619/387/55645f111ecf743b363e90e8f02af9eb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749553289&amp;width=680&amp;sig=DwJhw9fAWdXAcxzj%2F%2FQaVTFfKgLAXZfxVu%2FtxveYoKU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335622">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/622/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665343&amp;width=680&amp;sig=7Szki6SNIWjglVjuCobBCK3yRLDjZjZegu%2FE9Nqw4ZU%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Reinsurance-elements"><span class="bold">Reinsurance elements</span></h3><ul>
+<li> 2-year product warranty</li>
+<li> Free shipping (excluding purchases of accessories only) to Europe (including Switzerland and UK) and North America.</li>
+<li>As items are exclusive to the Kickstarter, returns will not be possible.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335415">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/415/7c181ca3c94d2f36c3fcce94ead6cd39_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747664510&amp;width=680&amp;sig=AwibNivtFA86zmiIP9Gk4gppZXzFhcvVej%2Fae9NbhRI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335627">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/627/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665353&amp;width=680&amp;sig=hUc3KLXKtBFuOe1itTZLu4A%2B9KmZpbPQpTbu3ldVg9w%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:The-road-ahead"><span class="bold">The road ahead</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49372919">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/372/919/cb2ce40f39323b66d978dfcda382af24_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747861840&amp;width=680&amp;sig=417MurXuocxuYbxFf4RnPyHLo5rvzK%2Bc%2BCH6fEROLT0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335629">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/629/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665360&amp;width=680&amp;sig=m0n86gE3m18xAtY97jU8BO82pN%2BKL19w0rg27bI9VRg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Meet-the-Team-Behind-Smartlet"><span class="bold">Meet the Team Behind Smartlet</span></h3><p>At the heart of Smartlet is our founder, <span class="bold">David</span>, supported by a dream team of seasoned entrepreneurs and creative minds. Together, we’ve built and launched multiple successful ventures — and now, we’re bringing that same dedication to redefining the way we wear watches.</p><p>We’re not just passionate about innovation — we’re obsessed with <span class="bold">craftsmanship</span>, <span class="bold">customer experience</span>, and creating products that feel both <span class="bold">timeless and essential</span>.<img class="image" data-id="49450516" src="https://i.kickstarter.com/assets/049/450/516/aa0a565d5ce458eeb3355434b370e4f4_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748414929&amp;width=3840&amp;sig=Yyo8MZI0F9g5H0NSm9mhF35sarpZwAdddwvYqsWEK3U%3D"/></p><p>Behind the scenes, you’ll also find:</p><p><span class="bold">Matthieu</span>, our precision-obsessed product designer</p><p><span class="bold">Mad</span>, our artistic director with a flair for storytelling</p><p><span class="bold">Linda</span>, our operations powerhouse and production lead</p><p><span class="bold">Quentin</span>, our strategic mind for crowdfunding</p><p><span class="bold">William</span>, our advertising and performance marketing expert</p><p><span class="bold">Virginie, Melody</span>, <span class="bold">Isabelle</span> and <span class="bold">Thierry</span> our super advisors providing real life experience, connections and invaluable insights and support.</p><p>They’re not in the spotlight — but they’re the engine behind Smartlet’s elegance, ingenuity, and momentum.</p><p>This is more than a team. It’s a <span class="bold">culture of excellence</span> built to serve one purpose:</p><p><span class="bold">Deliver the strap that finally does your watch — and your lifestyle — justice.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335629">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/629/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665360&amp;width=680&amp;sig=m0n86gE3m18xAtY97jU8BO82pN%2BKL19w0rg27bI9VRg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Founder-s-message"><span class="bold">Founder's message</span></h3>
+<p><span class="text-italic">"Innovation isn’t about choosing between tradition and modernity—it’s about creating the bridge that unites them. Smartlet is the intersection of my engineering background and my passion for horology. I wanted to reconcile tradition with modernity, to build a connection between classic watchmaking and the needs of today’s world. Smartwatches have revolutionized the industry, but they often require us to abandon traditional timepieces or resort to clumsy solutions to wear one on each wrist. With Smartlet, I aimed to offer an elegant and clever alternative: a modular bracelet designed to evolve and adapt to both classic and smartwatches.</span></p><p><br/><span class="text-italic">For me, innovation isn’t just about technology; it’s about how technology integrates seamlessly into our everyday lives. Smartlet is still a work in progress—a project driven by research and development, a continuous reflection on what watchmaking can be in the digital age, without sacrificing its heritage. My journey has been one of experimentation, trial, and adaptation. Smartlet follows the same path: evolving, testing, refining. Because, above all, innovation is about asking the right questions.”</span>  </p><p>- David Ohayon, founder</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335633">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/633/e4ad40b7d104a5d78e6fd8ae2acad14e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747665366&amp;width=680&amp;sig=yevOd33h9hnwI43xt4MO7iUXmIy%2FW7fgefDBUPQxARk%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Thank-you"><span class="bold">Thank you</span></h3><p>Thank you for believing in a vision where elegance and innovation no longer compete, but complement each other</p><p><span class="bold">You’re not just buying a watch strap. You’re joining a statement.</span><br/>Smartlet is for those who believe in timeless elegance, in heritage and innovation walking hand in hand. For those who refuse to compromise. Wear your past. Embrace the future. On the same wrist.</p><p>With your support, <span class="bold">Smartlet is ready to redefine what it means to wear time</span>. Backing this project will help us continue our R&amp;D efforts and turn into reality the product roadmap we have in mind one step at a time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49040177">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/040/177/a0395af2a338f890bef02d4836aca811_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745592412&amp;width=680&amp;sig=TRmkuJZVWZ3awaNhHcymMpK586umBn9Pqq26tEj3YUI%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Like any crowdfunding campaign, this project carries a few inherent risks, but the path ahead is already well prepared. Our prototypes have been finalized, tested, and validated. We’ve also secured our manufacturing and logistics partners, ensuring that production is ready to begin as soon as funding goals are met. Smartlet ships from the European Union. Backers are responsible for any applicable taxes, duties, or import fees upon delivery. These charges are not included in the pledge amount.
+
+That said, unforeseen delays in material sourcing or shipping logistics can never be entirely ruled out. We’ve worked to anticipate and minimize these variables, and our team is experienced in managing timelines and quality control under real-world conditions.
+
+Throughout the process, we’ll maintain full transparency and provide regular updates. We view this campaign as a collaborative journey. Your support means you’re part of this innovation story from the inside out.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">Stainless steel and titanium are durable and easy to care for. Unlike leather or silicone bracelets, they won't lose their shine or fray, guaranteeing comfort and practicality for every occasion.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

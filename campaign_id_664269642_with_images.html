@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sovol SV08 Max: High-Speed Large-Size 3D Printer Open-Source</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/522/271/df2e827f42c892d3e5cccd855ef0cf07_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1748913400&width=560&sig=8QW5SnLy657t8P8m8pXMdzTPUe69WDye3ylNUQobMBQ%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Sovol SV08 Max: High-Speed Large-Size 3D Printer Open-Source</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Up to 700mm/s | 500*500*500mm³ | CoreXY Kinematics | Eddy Current Scanning | Linear Rails | Open Source | High-precision Printing</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 19,113</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449061">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Large-Build-Volume">Large Build Volume</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/061/203759a308591b6341bdd96c77e70bb7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404534&amp;width=680&amp;sig=ascCV07DsvmLGyD9a4pURt%2FVoWcoNZ7FL0L3gzg2%2B20%3D"/>
+</figure>
+</div>
+<p>With up to 500×500×500mm³ of print space, SV08 Max empowers you to tackle industrial parts, full-scale prototypes, and oversized props — all in one go.</p><p>It’s a next-generation productivity tool built for makers, engineers, and creators who demand more from their 3D printer.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49569046">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/569/046/388d02f4ada349f5977281cac98e7d35_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749181235&amp;width=680&amp;sig=IWeepTGor594vvJZ7aG%2B96sZAFW5oSu5Q6XDFxm%2FHVI%3D"/>
+</figure>
+</div>
+<p>Go Big Without Slowing Down — SV08 Max redefines true large-format printing, slashing print times by up to 50%. From furniture and industrial parts to oversized collectibles, it brings blazing-fast performance with <span class="bold">40,000 mm/s²</span> ac</p><p>celeration and a powerful <span class="bold">50mm³/s</span> high-flow nozzle. Less waiting, more creating</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522772">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:High-Speed-Printing-">High Speed Printing </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/522/772/2e8a684da61f745c4ef1b028b01f5a91_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748916719&amp;width=680&amp;sig=Lg40MRL%2BC%2FuGmK3z%2FqRe9vwbj5j7KA%2FEJF8UhYGjM4o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522445">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/522/445/9fc9b4e9c7a19b4d523fc70d3a2d4ddc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748914652&amp;width=680&amp;sig=Litjc36zqJ00y%2B69WR7xzaypaNrQCAUPPJcHiNXoGzM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449082">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Quick-Eddy-Current-Leveling">Quick Eddy Current Leveling</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/082/953f41c47740f5e292f64f8b556961a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404657&amp;width=680&amp;sig=us0jjN9AE0NdUb4z9uQWWsmBNYmKQ6SSxSjpxMx%2BReo%3D"/>
+</figure>
+</div>
+<p>SV08 Max is equipped with an advanced <span class="bold">Eddy Current Scanning</span> system that delivers high-speed, contactless bed leveling with exceptional accuracy. It detects even the smallest surface deviations to ensure a perfectly leveled bed before every print. Capable of scanning a <span class="bold">500×500mm² bed in just 80 seconds</span>, it drastically reduces setup time and enhances first-layer consistency.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522449">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/522/449/a652f6b1ce3e11c72d2c85f08c5f067d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748914681&amp;width=680&amp;sig=FZ5nmpEMqzw3HCsjrZDygwgFVAt5yQH72S4LJVUB%2Fy4%3D" src="https://i.kickstarter.com/assets/049/522/449/a652f6b1ce3e11c72d2c85f08c5f067d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748914681&amp;width=680&amp;sig=FZ5nmpEMqzw3HCsjrZDygwgFVAt5yQH72S4LJVUB%2Fy4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449705">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:CoreXY-Kinematics">CoreXY Kinematics</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/705/ea501ac59383fa423e5aa05a94ac9f45_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748409432&amp;width=680&amp;sig=V%2BGnETpbFczKBkv12PItZFxzEM2LiUichNo3NBvzn%2FU%3D"/>
+</figure>
+</div>
+<p>With its compact design, minimal moving mass, and optimized motion path, the CoreXY system enables faster acceleration, reduced vibration, and unmatched print precision. Experience smoother, high-speed printing; perfect for large, complex models.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522785">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/522/785/50534ef9e1af43b5ae489b7c1d844af6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748916809&amp;width=680&amp;sig=bCGL3O0YW7qQrobu2PQSXdis8QTG8KkazrwVseK5coY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449086">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Efficient-Cooling">Efficient Cooling</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/086/18717293b953a5a1da71f637b2dd964c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404677&amp;width=680&amp;sig=CgZgaJJuLPO%2BF%2BD7BChL4Y69YGXsVWBmUOlsYlUBKo8%3D"/>
+</figure>
+</div>
+<p>The SV08 Max extruder is equipped with three powerful fans — 2 part cooling fans and 1 heatsink cooling fan — ensuring efficient heat dissipation and rapid cooling of extruded material for improved print quality.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522481">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/522/481/62e82c1912b8fe3c99150439266b40b7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748914958&amp;width=680&amp;sig=mRvEky8iaTGxUMne%2BuFmL1RoAP6zAD9wmcN5azqhz0s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449108">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:High-Temp-Nozzle">High-Temp Nozzle</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/108/168a2abde2b1a4fd2220cd005ba30003_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404812&amp;width=680&amp;sig=adIRld8FvTItA7ybrMWADQrBVBZ3SUp%2Bi%2F5zcpVpsjY%3D"/>
+</figure>
+</div>
+<p>The hotend supports a maximum temperature of <span class="bold">300°C</span> and comes with 2 standard 0.4mm nozzles. Optional nozzle sizes include <span class="bold">0.4mm, 0.6mm, and 0.8mm</span> (sold separately).</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522793">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/522/793/8558406a79055740350a50142e3c1b8f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748916863&amp;width=680&amp;sig=gLSOyFsrrA5eHFqmYJ53TTUK5cCpB0TFLxFb8n4qYhc%3D" src="https://i.kickstarter.com/assets/049/522/793/8558406a79055740350a50142e3c1b8f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748916863&amp;width=680&amp;sig=gLSOyFsrrA5eHFqmYJ53TTUK5cCpB0TFLxFb8n4qYhc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449109">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:High-Power-Hotbed">High Power Hotbed</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/109/ca4481560b2ba833c7126ba9396c53d9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404813&amp;width=680&amp;sig=bp%2Bfe%2F2DIY5aTti9XGLK0dgHDftFPNTjw1X1VJWGW9Q%3D"/>
+</figure>
+</div>
+<p>Equipped with an <span class="bold">8mm thick aluminum bed and 1300W of power</span>, the SV08 Max’s hotbed delivers rapid and even heating across the entire surface. The reinforced structure minimizes warping, ensuring consistent adhesion and reliable prints — even on large models.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522483">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/522/483/be0060aec5e3009b8043182f8028be7d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748914978&amp;width=680&amp;sig=BR42O26VQ0p8MMa8OK96ba6gwywcMBbgz3SZlbBiEGQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49524028">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Optional-Heated-Chamber-Upgradeable-">Optional Heated Chamber (Upgradeable)</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/524/028/7fa0acd1562ff067364882a71c9782e7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748925192&amp;width=680&amp;sig=Afkl%2Beks4OF%2Bm%2BKwL4%2F7zBZ6vN2GaT2%2BscEuXpeJ0PI%3D"/>
+</figure>
+</div>
+<p>SV08 Max is designed with a reserved interface for a Heated Chamber module, allowing users to upgrade their printer for high-temperature filament compatibility in the future. The module will be available for purchase separately on the Sovol official website after the campaign.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49524030">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/524/030/2cc338d4a5f784c69dffcbe0fcf162d7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748925196&amp;width=680&amp;sig=ylbLDiIoIK1R14a70aJmIX6wiLIA5G4ycV72iSD9b%2Fk%3D" src="https://i.kickstarter.com/assets/049/524/030/2cc338d4a5f784c69dffcbe0fcf162d7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748925196&amp;width=680&amp;sig=ylbLDiIoIK1R14a70aJmIX6wiLIA5G4ycV72iSD9b%2Fk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49452834">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Industrial-Grade-Linear-Rails">Industrial Grade Linear Rails</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/452/834/1c0b3cd26a5d9a4aba8c5d33a3ca2838_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748426942&amp;width=680&amp;sig=BScEuvNjQo%2Fxgj2Jy8bleYn7YqSc0dFB8oe8b6RwrbI%3D"/>
+</figure>
+</div>
+<p>Industrial Grade Linear rails ensure smoother motion and superior control, enhancing print quality and reliability by minimizing artifacts. With greater rigidity and corrosion resistance, they offer extended durability for long-term performance.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522487">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/522/487/069945458e0b1460b8b61aebe18b667e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748915009&amp;width=680&amp;sig=K0Zz%2FPdqlQqlaadImqhdE1kt%2FFtE6xLePD7WzWFmB%2FA%3D" src="https://i.kickstarter.com/assets/049/522/487/069945458e0b1460b8b61aebe18b667e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748915009&amp;width=680&amp;sig=K0Zz%2FPdqlQqlaadImqhdE1kt%2FFtE6xLePD7WzWFmB%2FA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449131">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Filament-Feed-Auxiliary-Box">Filament Feed Auxiliary Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/131/79875da2f18fa047a4f83b8e9e17d547_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404880&amp;width=680&amp;sig=6A3IMRhcI26v79fmVi%2BP6ir5n7f0AFxH2G64A7%2FllaU%3D"/>
+</figure>
+</div>
+<p>The Smart Auxiliary Feeder System not only assists with smooth <span class="bold">filament feeding</span>, but also features <span class="bold">tangle detection and clog detection</span> to ensure uninterrupted printing. It actively monitors filament flow and prevents issues before they affect your print.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49436325">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/436/325/f93f310e0c2eb8b18236d3a1bd314612_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748338786&amp;width=680&amp;sig=SYwJQ9goMsyZtPBlO8BdEEqbmQRl%2FsMeuY2kWVFGobE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449135">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Camera-Remote-Monitoring">Camera &amp; Remote Monitoring</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/135/563c3598c7a1775ab8626db36178a706_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404913&amp;width=680&amp;sig=EaBuKsPmF5Q5TXFjH2k3sdSPJJWLVzCfQjL0XXgA1Mk%3D"/>
+</figure>
+</div>
+<p>SV08 Max comes equipped with a built-in 1280×720 HD camera, enabling seamless remote monitoring, time-lapse recording, and integration with Obico for advanced cloud-based control and intelligent print failure detection.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49510917">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/510/917/bbf3f180a7f66227ca7bbe61b7f34097_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748846542&amp;width=680&amp;sig=mbpEHz8m14DFaAtOMBBg2EiE3wwU254lpave5bhFI%2FA%3D" src="https://i.kickstarter.com/assets/049/510/917/bbf3f180a7f66227ca7bbe61b7f34097_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748846542&amp;width=680&amp;sig=mbpEHz8m14DFaAtOMBBg2EiE3wwU254lpave5bhFI%2FA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522797">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Advanced-Features">Advanced  Features</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/522/797/1f1bddbe726efaffc64b1a0f6c2b7eea_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748916884&amp;width=680&amp;sig=wY6TwR6bHZteEQyefPEOxcb%2B18YakcCc%2FUmByh5Ouz8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49522883">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/522/883/589b16d93fefc2ee1b193257f77bc7dd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748917766&amp;width=680&amp;sig=UrO2sWjnOawGd2oDaVlxM2JWGrxURi0E5GM7jI1V8cw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49523017">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Review">Review</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/523/017/cf5bbb8031e82bed09fb3e99a1c6877d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748918842&amp;width=680&amp;sig=eZgnXa9xBJlBc4zIuUzZHUdIVYv0AnxLXrwJbVRtn0E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449139">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:For-AII-Your-Needs">For AII Your Needs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/139/975c182a06de84d645206088e71bc9e8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404930&amp;width=680&amp;sig=2iZ3B53Pgct88yRK%2FrouPIfUxXDSP%2Bi4%2B8mUIODRjwc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449711">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/711/67c5b43308acc10e5679dc2123fe2343_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748409464&amp;width=680&amp;sig=G1ohS27zJLw5%2F3QsrGZkuB8weyGAPk5Ru51Ndfj6tps%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49451377">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/451/377/8fe870061366b07393067d9a3d9dc057_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748419452&amp;width=680&amp;sig=JXHIMENGN8oDJpvif13pKAQnx912vANAiAyvU4EyFqg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634670">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Perfect-PETG-Prints">Perfect PETG Prints</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/670/48d25434262d37c7231a054c9bb8e101_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632808&amp;width=680&amp;sig=d6cAacwKzAIXxqsHU7waariORIvNqPX%2FSPBZlpDTdoY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634787">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/787/6e3d23e508831b9614a72b554864ce31_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749633571&amp;width=680&amp;sig=Ja6ZEV6qcAeypfC1k6WBHRMQ8tAM6RWikc%2BkrdMuEjY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449144">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Choose-Us">Why Choose Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/144/8e657ce6a22a2d62bb21bb68fa2e4da5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404940&amp;width=680&amp;sig=7N6k5uNsRzrHkI3oZCV3l%2BM%2BIJOsApJqtd3TpIc%2BD2U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49436401">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/436/401/f64ed24519e3f371b4695913932f024e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748339135&amp;width=680&amp;sig=YG7ypePGAndt3cuiobtnJWq6cxymRH17mfWv8v6smmg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449161">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Featured-on">Featured on</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/161/956204f975769037f89139b9215c0fa5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404982&amp;width=680&amp;sig=48L2umll%2Fhcc91Y2cjsbMaRlBBcIm%2FWvKIC1SwL%2B86s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49436444">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/436/444/68a203c28660f9a6ff49883b26568a0b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748339248&amp;width=680&amp;sig=c0oeveYwn85mFbhdWP4%2BxEwIp3YtIfslyuDHFynAUFo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49436449">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/436/449/19130a319315b81884c460a0fa2b6334_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748339256&amp;width=680&amp;sig=8E7YALwNOZduP4i9oczJj9mlJLPQCGu%2FSui%2F0h6CZu4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49436450">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/436/450/74a16cd172bcd43605dfccd144656d89_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748339256&amp;width=680&amp;sig=tE14CVDHnH%2BedxRHfn%2BLiV2tGGev1g3cUPGMX9p9YwQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49452903">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/452/903/cea7282e98618c352cd35cfef563eee3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748427438&amp;width=680&amp;sig=%2FccbU%2B9CQDwUCITn776UItOhru%2BNj5GwkeuPw7HJvlU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449447">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Project-TimeIine">Project TimeIine</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/447/334a9ce5792a75d95b17aa7c6cffcaf7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748406997&amp;width=680&amp;sig=Rtvrgz4m62p9aP%2B7HlCDNxa29yrSwBWMuBGrftF0T88%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449453">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/453/2155c945e30a7d34ba4edaf5bbac44c2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748407022&amp;width=680&amp;sig=ac3RPNJyAk4I87aKRPbvCQpeRWEdCfT9rGCTzWjWJHI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449157">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-box">What's in the box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/157/fcc0e897aa9f6147a6f3c9cddcde1538_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404974&amp;width=680&amp;sig=hTfKewmHhmplMCYPw3xsZK5BqsyfF%2B1VKxvEH9wNd70%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49436405">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/436/405/58afb95080ff240eb6100fc06c07d3d0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748339149&amp;width=680&amp;sig=Kne093YKOvYkvtx2l4XyPeu7QXfGGzJ0fkY5XDpglR0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49452842">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Product-Specification">Product Specification</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/452/842/dcf4557453436318df6a87f322a85cfc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748427008&amp;width=680&amp;sig=wbMjXTao5HTyxp0u0KL9ZhCbTY%2BpdFb58j6vlz%2BZWjY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49452700">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/452/700/02dab5bb4b53d2effecf9f449c40b933_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748426313&amp;width=680&amp;sig=xyTRtuAma1x788oL3hydXy0fZDsKvpl2o8xwBibgu0Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450307">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Warranty">Warranty</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/307/9fdbca1e44d9830bda98732638f30333_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748413729&amp;width=680&amp;sig=QECzn%2FVukTu1pddqbOpTF9eDT2Av2qkeQOUwZQg233Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49450309">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/450/309/ca730584878a8571fd34e0dba2178113_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748413747&amp;width=680&amp;sig=0q9CAjBmL4VXAWj69LCP1Wf%2BE%2FBWVQDKUvsz1tSJOtE%3D"/>
+</figure>
+</div>
+<p><span class="bold">Warranty Details</span><br/>1. 1-year warranty for the printer, effective from the shipping date (date of dispatch from our local warehouse).<br/>2. 3-month warranty for the nozzle and PEI plate.<br/>3. No warranty for product gifts (USB, tools, wrench, spatula, pliers, etc.).</p><p>Any extended warranty applies only to the printer unit.<br/>The nozzle and PEI plate retain their original 3-month warranty period and are not extended.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449458">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Fee">Shipping Fee</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/458/fe0c6c6a66a6ffd4119cb7f3ee5a4ee1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748407040&amp;width=680&amp;sig=%2FIiyduvW8kzYOi7S6fR8uzxqP1iFgKhwozlcAFKs7V0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449460">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/460/76011df66cd8bc6fa223c78a6dd74f12_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748407058&amp;width=680&amp;sig=ebskZ3ijaTJolvj8%2FiSnuEDMUr03LwznP37zxBhHJsk%3D"/>
+</figure>
+</div>
+<p><span class="bold">All shipping fees will be collected after the campaign via the post-campaign survey.</span></p><p><span class="bold">Note：</span><br/>1. Shipping fees are for <span class="bold">reference only</span> and may be adjusted based on actual shipping costs.</p><p>2. For regions not listed, shipping charges will be calculated according to r<span class="bold">eal-time rates</span>.</p><p><span class="bold">3. Orders from the United States, European Union, Canada, Australia, and the United Kingdom will be fulfilled from local warehouses</span> to ensure faster delivery and avoid additional customs duties.</p><p><span class="bold">4. Orders to all other countries and regions will be shipped directly from our warehouse in China.</span> Backers in these areas <span class="bold">may be responsible for additional import duties, VAT, or customs fees</span> based on local regulations.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449158">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Us">About Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/158/6a0712d1224a5f2ff3c836f2aa5ab6a0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404975&amp;width=680&amp;sig=4SlGgsJ7xMODRYigoBfarDaMgnxSYtIEBr4%2BW04DaQc%3D"/>
+</figure>
+</div>
+<p>Sovol is a trusted name in open-source 3D printing, with over 10 printer models launched since 2019. Our mission is to empower makers with reliable, powerful and cost-effective machines while continuously contributing to the open-source community. </p><p>We’re excited to introduce the SV08 Max to you here on Kickstarter. Together with creators, developers, and engineers, we’ll keep pushing the boundaries of what's possible. The SV08 Max represents the next evolution of that journey — engineered for speed, built for scale, and made for the future of open 3D printing.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49436416">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/436/416/031ce24e0f1101dcc4e9fac25a2dc01d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748339172&amp;width=680&amp;sig=u05SvuX%2FWcS244BVGdvGYsd1K9ZsHzQI9ZZq2k5DJos%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Production-Progress"><span class="bold">Production Progress</span></h3><p>As the launch of the Sovol SV08 Max 3D printer approaches, our team has been in constant communication and close collaboration with the manufacturing department. Our production team has already begun pilot batch production and testing to ensure a smooth transition to mass manufacturing.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49511505">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/511/505/7b21ae4b9f34b5bed68cc249cd30e000_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748851686&amp;width=680&amp;sig=2EakPQkVfINCjQBlcJLIVu1TX%2Bwx5tY8T1nQ%2BXsUbps%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49449159">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Join-our-Community">Join our Community</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/449/159/acea8ef46ac5b1dc94a651fc0d4def97_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748404975&amp;width=680&amp;sig=6G0ZmXFXbbQ7xsaO3X7krm9sdyP4zOwSUi3it7cPMLk%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><h3 class="page-anchor" id="h:Project-Collaborators">Project Collaborators</h3><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We’ve spent the past few months designing, prototyping, and thoroughly testing SV08 Max to ensure it meets our high standards for performance, stability, and print quality. Unlike many hardware projects, we own and operate our own manufacturing facility, which gives us greater control over the entire production process—from material sourcing to final assembly and quality assurance.
+
+That said, as with any large-scale hardware rollout, there are still potential risks we want to be upfront about:
+
+Production Scheduling &amp; Scaling
+
+Although we have full control over production, unexpected demand surges or adjustments in tooling and calibration may impact our output pace. We’ve already completed small-batch trial production to validate our processes.
+
+Supply Chain Volatility
+
+While core manufacturing is in-house, we still rely on key components such as stepper drivers and chips, which are subject to global supply chain fluctuations. Shortages or shipping delays of these parts could impact timelines.
+
+Quality Assurance at Scale
+
+We’ve built a dedicated QA system in our factory to catch and correct any deviations. However, as we scale up from prototypes to full production, unforeseen issues may occasionally arise and require adjustments.
+
+International Shipping &amp; Customs
+
+Even with prompt production, delivery times may vary based on regional customs clearance and local policies. We’re partnering with trusted logistics providers to streamline this as much as possible.
+
+We’ve taken active steps to mitigate these risks—by pre-ordering long-lead components, optimizing production scheduling, and building redundancy into logistics planning. Most importantly, we are committed to clear, consistent communication with our backers. Should any delays or issues arise, we will provide honest and timely updates throughout the process.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">At Sovol, we believe that sustainability starts with longevity. SV08 Max is built with an open-source, modular design, allowing users to easily upgrade and customize components over time—rather than replacing the entire printer when technology advances.
+
+The core structure features a rigid aluminum alloy frame and industrial-grade linear rails, engineered for long-term durability. These high-quality materials extend the machine’s operational life and reduce waste generated from frequent replacements.
+
+By supporting community-driven upgrades and repairability, we aim to reduce electronic waste and promote a more sustainable approach to 3D printing. Whether it’s swapping in a new hotend or adding future innovations, SV08 Max is designed to evolve with you, not become obsolete.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

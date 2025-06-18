@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yonbo: Smartest Home Robot That Grows with Your Family</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/378/283/2640fe3b782b6fb9eac0e28559ff82c5_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747900057&width=560&sig=H%2FPNUcMTvbo4tMR1Y%2Fj2XDfouiC386HaZ5x1%2FFVneu8%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Yonbo: Smartest Home Robot That Grows with Your Family</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Proactive Emotion Detection | Long-Term Memory | Human-like Perceptions | Interruptible Conversation | CDK Reprogramming Access</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 8,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49376785">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/376/785/97f7c0418e434742685c8e5fd1e3552d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747889909&amp;width=680&amp;sig=pWXzi7qKHZD%2FoUrDuaE6ZrQGZbm1VrBy%2FvQqPDsfx%2FI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49198892">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/198/892/2ca3868a99a910c3eb8a85e44aeaa6d4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746688429&amp;width=680&amp;sig=Z96CiDMpjIeRDUR9y%2BS48sBK9%2BSsF2M7a6glhrdeOq0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49378933">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/378/933/c5ceb70357cdf40fbedb3777cf69f977_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747904250&amp;width=680&amp;sig=wu7MgIeM%2F5QNlMKWPp70bFx135HYKc8auMFUXGKSSeA%3D"/>
+</figure>
+</div>
+<p>Meet X-Origin Yonbo, the next-gen AI companion robot for kids and families. Using <span class="bold">advanced multimodal AI</span>, Yonbo listens, sees, thinks, remembers, and learns from you, <span class="bold">accepting multiple inputs and process them at the same time to perform complex tasks.</span> </p><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313402">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/313/402/ad27cda2201455a96acdb5ce4d59a52d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747483955&amp;width=680&amp;sig=O7Y6Ic7PoGyLBpakMhZpL83s9AIMfitPMbaYxwLTiu0%3D" src="https://i.kickstarter.com/assets/049/313/402/ad27cda2201455a96acdb5ce4d59a52d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747483955&amp;width=680&amp;sig=O7Y6Ic7PoGyLBpakMhZpL83s9AIMfitPMbaYxwLTiu0%3D"/>
+</figure>
+</div>
+<p>He remembers your favorites and important dates, evolving his personality to match yours over time. With these innovations, Yonbo offers warm, personalized companionship that's truly emotional and supportive.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331368">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/368/9a3051a4ff90ecc939ea36bfa1d892d9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747643978&amp;width=680&amp;sig=%2B%2F6oJHVukQHkfW%2BetJblRtIcGSBJ2EbSWUNNIIYlqHE%3D"/>
+</figure>
+</div>
+</div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331437">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-the-Pros-Say">What the Pros Say</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/437/93fdad8b884998dbe13179a586a1945d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747644298&amp;width=680&amp;sig=qd8wAwAiJIw%2FQJcEI3PCQTnikHLnEevP%2FSPJ27CHEV4%3D"/>
+</figure>
+</div>
+<p>Tech reviewer <span class="bold">@Andru Edwards</span> demonstrates in his video what makes the X-Origin Yonbo AI Companion Robot truly unique. Discover <span class="bold">how Yonbo stands out from other robots</span> and why it could be the one-of-a-kind companion your family needs — get inspired by Andru’s insights!</p>
+</div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313412">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Traditional-Companion-Robot-VS-X-Origin-Yonbo">Traditional Companion Robot VS X-Origin Yonbo</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/412/d36bea23ab62ba1ebe7fb31612e6fcfb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484056&amp;width=680&amp;sig=EO6FtgxFRxAzmBi3yES59%2Bd1UuSYBZTConlvRfGKTPM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328681">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/681/594354c23cce588f03cea108f922f3ec_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747625108&amp;width=680&amp;sig=3pdQQNzETG1AqCZV4WWdn0MZMaMfwqF%2BNwrJwXo71Pw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331439">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Families-Love-Yonbo">Families Love Yonbo</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/439/dc4f5d16ff329cf851801fb2419ac78b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747644306&amp;width=680&amp;sig=BgId9uKhjZcg3ASJC04YCG6Ad7VmMMbs98rfE6nM7co%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328345">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/345/7c44d6207a94a7a8e02d7a9eb7b6efd2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747622783&amp;width=680&amp;sig=f0nQf8iKuoyTwVBj8jQms1ImY8WCp4GMVRDXtccS6e0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331474">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:An-Ideal-Home-Companion-That-Grows-Over-Time">An Ideal Home Companion That Grows Over Time</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/474/37ca7db0c35c292b30bf07fb2783b339_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747644414&amp;width=680&amp;sig=XMxtqRdnKyIosZgR2axqA3JGx9E5Q6YiKVxQyvjJj8E%3D"/>
+</figure>
+</div>
+</div><div>
+<div>
+<div>
+<p>Yonbo <span class="bold">mimics human perceptions</span>, <span class="bold">growing and evolving through continuous interactions</span>. Powered by a <span class="bold">Consistency Personalized Large Language Model (CLLM)</span>, the more you engage with Yonbo, the deeper his understanding becomes, transforming him into your uniquely personalized companion.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313418">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/418/dfd73a6a4756c137c06d8370b9ac4a66_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484092&amp;width=680&amp;sig=i8p8IyXWuzbloEDQ46JD1Krg3hGXmnR9zSAxiFKv%2BtU%3D"/>
+</figure>
+</div>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313419">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:See-Hear-Then-Think">See, Hear, Then Think</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/419/ae4fdef082d485e9c9ef3d910c5f1675_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484098&amp;width=680&amp;sig=1sGh86DUAPXUY6AdHriD1Z%2FVO4pMwT3%2BC1Idg5RvJKQ%3D"/>
+</figure>
+</div>
+<div>
+<p>Yonbo sees, hears, and thinks like a real companion. With a high-resolution camera, he recognizes <span class="bold">people, objects, and his surroundings</span>. A four-microphone array enables precise directional hearing, so he <span class="bold">knows who's speaking</span> and where the sound is coming from. By combining what he sees and hears, Yonbo uses an <span class="bold">intelligent AI analysis system</span> to understand the user's mood and state.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313425">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/313/425/dbb269e140c7c9a38bb0d5f6baa910f5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484128&amp;width=680&amp;sig=nZ1ZV1DW6GxyZcXO55abs4CGMI%2Fq58p3tvtaGYE8Zy4%3D" src="https://i.kickstarter.com/assets/049/313/425/dbb269e140c7c9a38bb0d5f6baa910f5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484128&amp;width=680&amp;sig=nZ1ZV1DW6GxyZcXO55abs4CGMI%2Fq58p3tvtaGYE8Zy4%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313424">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/424/bbb587a70d4436f64c1e6f8df41d2039_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484128&amp;width=680&amp;sig=EQubSpmdBsNYJ3zbtGoA2%2BROnY%2FSyUuxSn3py7Cmq0c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313428">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Remember-and-Remind">Remember, and Remind</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/428/7b856c72a85fa1551b8cec5141c13d14_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484149&amp;width=680&amp;sig=o0gzwuJFUNrP%2FAb92XxWG%2FEm%2Fj%2FzDrHOpNDtR%2ButMhw%3D"/>
+</figure>
+</div>
+<div>
+<p>Yonbo comes with <span class="bold">long-term memory </span>that evolves with you. He summarizes your daily conversations and updates key topics to better understand your needs, habits, and moods. You can also ask him to remember important things, and he’ll make sure you don’t forget.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49379501">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/379/501/e9086fadba97a25e33bf17cb2417338a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747907404&amp;width=680&amp;sig=1GI7O2ozJKcVVUU0%2Bb0%2FXtNWhsIDljnLUcGCLaQnbJ4%3D" src="https://i.kickstarter.com/assets/049/379/501/e9086fadba97a25e33bf17cb2417338a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747907404&amp;width=680&amp;sig=1GI7O2ozJKcVVUU0%2Bb0%2FXtNWhsIDljnLUcGCLaQnbJ4%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313431">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Communicate-like-A-Human">Communicate like A Human</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/431/752beaf5376e25816b8c812b0995d564_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484177&amp;width=680&amp;sig=ib4bYsGlncpoSW%2F9sB1qOjmpgmIIRvHiMRBER1nscks%3D"/>
+</figure>
+</div>
+<div>
+<p>Yonbo communicates like a real human - natural, responsive, and context-aware. Powered by <span class="bold">ChatGPT</span> and <span class="bold">local speech-to-text</span>, he understands not just your words but the flow of conversation. <span class="bold">You can interrupt him mid-sentence</span>, and he’ll pause, listen, and continue seamlessly.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313434">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Feel-Show-Vivid-Emotions">Feel &amp; Show Vivid Emotions</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/434/6eb1915b643f6b3333b25f631d9ef031_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484194&amp;width=680&amp;sig=CF6leDOnwDxjVBIiOWW5WeAOXLLIylxJQm7By1nl1CM%3D"/>
+</figure>
+</div>
+<div><p>Yonbo actively senses your feelings by analyzing your <span class="bold">facial expressions, tone of voice, and words</span> in real time. He creates an emotional model from what he sees and hears, then responds with matching emotions through facial expressions, body language, and speech, making every interaction feel genuine, lively, and deeply engaging.</p></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49362335">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/362/335/c380ae0e7cae30ab8ba211a1f0727bf0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747809201&amp;width=680&amp;sig=p2LN2ON4ixf25pdaz7zsS7G9zdwkvULrBbiatEkU7Rk%3D" src="https://i.kickstarter.com/assets/049/362/335/c380ae0e7cae30ab8ba211a1f0727bf0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747809201&amp;width=680&amp;sig=p2LN2ON4ixf25pdaz7zsS7G9zdwkvULrBbiatEkU7Rk%3D"/>
+</figure>
+</div>
+<div>
+<p>With <span class="bold">600+ combinations of facial expressions and movements</span>, Yonbo actively expresses a wide range of emotions. You’ll never get bored talking with him - he shows excitement or shyness when praised, and genuine concern when you share that you’re feeling sad.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313442">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/313/442/cc792644302b3e8a02ca9b413bd16a2e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484241&amp;width=680&amp;sig=wgJawivel0uxRvREwdgzrZ56wHCxjS4swC4SvUjiNp8%3D" src="https://i.kickstarter.com/assets/049/313/442/cc792644302b3e8a02ca9b413bd16a2e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484241&amp;width=680&amp;sig=wgJawivel0uxRvREwdgzrZ56wHCxjS4swC4SvUjiNp8%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313443">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Grow-Evolve-Personalize">Grow, Evolve, Personalize</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/443/7bea16fa2b8e5cf0c9a078bd4e06dc82_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484242&amp;width=680&amp;sig=v87VpLw8ubsSYwHcq5WxJsl6Bsgu3zQp5NGeLQ7sW9w%3D"/>
+</figure>
+</div>
+<div>
+<p>Yonbo grows with you, becoming a truly <span class="bold">personalized companion</span>. Powered by a Consistency Large Language Model, he remembers past conversations, learns from interactions, and continuously adapts to better understand and support you.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328384">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/384/d8f27e15851b4d525f70666d3bcb155d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747623061&amp;width=680&amp;sig=%2FTZGt7x1Fud6nowffFqNcx4IPlBdX2fFiaayY%2Fakvcw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313446">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:A-Partner-for-Every-Moment">A Partner for Every Moment</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/446/d4890a42a2c98ebb6d3ae85163bc6693_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484262&amp;width=680&amp;sig=fimMZKPqkrNQa6qpJ6VU8bDT3azwyw9yPu4JeUY6ymU%3D"/>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49376611">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/376/611/9464d730ae58b2f483e4b4ad235b1c77_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747888478&amp;width=680&amp;sig=Nen%2BBTbvmQYB5Aj2ad3iUb54OmmVb8ciUFKVXP9%2FnVY%3D" src="https://i.kickstarter.com/assets/049/376/611/9464d730ae58b2f483e4b4ad235b1c77_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747888478&amp;width=680&amp;sig=Nen%2BBTbvmQYB5Aj2ad3iUb54OmmVb8ciUFKVXP9%2FnVY%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313448">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/448/6cdede06f0274665bb81dbbe9dca76ba_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484280&amp;width=680&amp;sig=%2FF7WFvNxLmNg0MOEgv03%2FgLFMUNMLsbmKGMlsj2E6hU%3D"/>
+</figure>
+</div>
+<div>
+<p>Yonbo is the perfect playmate with built-in games and storybooks that make learning fun and engaging. </p>
+<p><span class="bold">What to play with Yonbo:</span></p>
+<ul>
+<li>Physical Games Under Storybooks' Storylines</li>
+<li>Online Games that Support Multiple Players</li>
+<li>Limited Edition Games that Update Each Quarter</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49361990">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/361/990/ac2cecb16a7c6d3b275952abaf29ccff_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747806657&amp;width=680&amp;sig=9cAemlUVwt9xAdfhgtxLFuaRqEoFNRI3L7kQ%2B5YaNc8%3D" src="https://i.kickstarter.com/assets/049/361/990/ac2cecb16a7c6d3b275952abaf29ccff_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747806657&amp;width=680&amp;sig=9cAemlUVwt9xAdfhgtxLFuaRqEoFNRI3L7kQ%2B5YaNc8%3D"/>
+</figure>
+</div>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313450">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/450/1443c4f57d4ed5ebaec7ad0f61cd21ea_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484295&amp;width=680&amp;sig=lT%2Fm%2BNUcHNtIlMTbEBJ%2Fg8OfWAsme0PqKKjA3hIboFE%3D"/>
+</figure>
+</div>
+<div>
+<p>Yonbo is a patient teacher, offering<span class="bold"> language translation, homework guidance, and story interpretation</span>. He helps children learn better while making it engaging and accessible.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49363141">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/363/141/e0ed1f4aae69f0bfc1957c2f1646b974_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747814652&amp;width=680&amp;sig=0fB%2BTNci4pJBIjEc05vhMywS81tZKqnppy8JtHGRGpI%3D" src="https://i.kickstarter.com/assets/049/363/141/e0ed1f4aae69f0bfc1957c2f1646b974_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747814652&amp;width=680&amp;sig=0fB%2BTNci4pJBIjEc05vhMywS81tZKqnppy8JtHGRGpI%3D"/>
+</figure>
+</div>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313451">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/451/ba7b22ca1f192ff96bd59efbe01a770c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484297&amp;width=680&amp;sig=M54qZfTCjgp2r%2B3LopPlXU89JnHyNEej52CT8O%2BeXZY%3D"/>
+</figure>
+</div>
+<div><div>
+<p>Yonbo is a compassionate mental wellness mentor, using <span class="bold">30+ psychological assessment tools</span> and <span class="bold">20+ guidance models</span> to evaluate your mental state, detect early issues, and provide genuine, personalized support.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313460">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/313/460/579499b860a605d305072aee7124efb1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484373&amp;width=680&amp;sig=6GvwsFR4nTG%2FG0NXQ26RitmTwVRwGtK19JzJdbwJ9xc%3D" src="https://i.kickstarter.com/assets/049/313/460/579499b860a605d305072aee7124efb1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484373&amp;width=680&amp;sig=6GvwsFR4nTG%2FG0NXQ26RitmTwVRwGtK19JzJdbwJ9xc%3D"/>
+</figure>
+</div>
+</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313461">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/461/ff7f1226f553cc7be8b7c3fd617ecb51_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484387&amp;width=680&amp;sig=vOgCdYJ9kdXBGw3tN9VB5X675glLqFXKhuXRhG%2BbdbE%3D"/>
+</figure>
+</div>
+<div><p>Yonbo is a lovable and dependable member of your family who <span class="bold">recognizes and interacts with multiple family members</span>, bringing joy, comfort, and meaningful connection to your family life.</p></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49362097">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/362/097/3b026cb2c76c885651d17cc5953515a3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747807372&amp;width=680&amp;sig=L8kiweqLBknAlZocZRJVUPVZwZFDWXvb14SST7j%2BNjc%3D" src="https://i.kickstarter.com/assets/049/362/097/3b026cb2c76c885651d17cc5953515a3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747807372&amp;width=680&amp;sig=L8kiweqLBknAlZocZRJVUPVZwZFDWXvb14SST7j%2BNjc%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313463">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Built-Tough-for-Smooth-Moves">Built Tough for Smooth Moves</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/463/ccb5cb756c063f71580f6ef166d52a4b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484411&amp;width=680&amp;sig=Zch3ajR4vi2MGQyAqh6Rwl0uw82aZcnCOpNFLH7bv8E%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49376793">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/376/793/d1028029a9e9acea76009ae5c968dea1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747890002&amp;width=680&amp;sig=RhLKvLveE%2FmGAbfVqaBx0N9DZr109jztWTZFb%2BL22uQ%3D"/>
+</figure>
+</div>
+<div>
+<p><span class="bold">Voice Command: </span>Powered by a four-microphone array, Yonbo can accurately hear, recognize, and understand voice commands, and respond with intelligent, timely feedback.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49376601">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/376/601/8d915883a01877fc7bcb02a124846161_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747888397&amp;width=680&amp;sig=q8%2B9m%2FumRCVtLFfNr%2BqWcjPfi8XT5GFQB813LPRi6Og%3D" src="https://i.kickstarter.com/assets/049/376/601/8d915883a01877fc7bcb02a124846161_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747888397&amp;width=680&amp;sig=q8%2B9m%2FumRCVtLFfNr%2BqWcjPfi8XT5GFQB813LPRi6Og%3D"/>
+</figure>
+</div>
+</div>
+<div><div>
+<div>
+<p><span class="bold">Wristband Control: </span>With an optional wristband, you can guide his movements smoothly.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313471">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/313/471/4ba7fc18156dbc41b96fd25264ee8ac0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484470&amp;width=680&amp;sig=XdQ6YGVZxCJEuLq8jnKhArMD72BFtpRUIZQxqrVipdc%3D" src="https://i.kickstarter.com/assets/049/313/471/4ba7fc18156dbc41b96fd25264ee8ac0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484470&amp;width=680&amp;sig=XdQ6YGVZxCJEuLq8jnKhArMD72BFtpRUIZQxqrVipdc%3D"/>
+</figure>
+</div>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313472">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/472/979c068416f41a92750ca56cd6ddc625_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484470&amp;width=680&amp;sig=XjhyhsTHC6rZ8Vrk6ZvNBggFiQA0SEhOYKSqTItBAoc%3D"/>
+</figure>
+</div>
+<div>
+<p>Yonbo moves with remarkable agility, powered by <span class="bold">12 degrees of freedom</span> and <span class="bold">ultra-low latency</span> as low as 60 ms. Whether turning around or dancing, his smooth, responsive motion makes every interaction feel natural and lifelike.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313477">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/313/477/906a7b595397fe44b6d2af8a49738222_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484531&amp;width=680&amp;sig=Vp4Aq%2FVyqpsPCTxxAa9NkfY0cnIwAVJKAVJoHW0bNyM%3D" src="https://i.kickstarter.com/assets/049/313/477/906a7b595397fe44b6d2af8a49738222_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484531&amp;width=680&amp;sig=Vp4Aq%2FVyqpsPCTxxAa9NkfY0cnIwAVJKAVJoHW0bNyM%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331812">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Intelligently-Tailored-System-That-Adapts-to-Your-Needs">Intelligently Tailored System That Adapts to Your Needs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/812/f56d502a1edd4cc44c9aa6e3b2f2323b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747645728&amp;width=680&amp;sig=KhT8vrtT4sOndWTXUMk%2FOvdveKQLSejNkBt8yVcbY6w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313480">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/480/5d68798f27ff2825de7ba69a16534c9c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484543&amp;width=680&amp;sig=5ycUgZUB4nExC3WtYXxv6gh01Dw11LrHMmnqz3HZEew%3D"/>
+</figure>
+</div>
+<div><p>Our app offers useful features like <span class="bold">growth logs, reminders, birthday &amp; name settings</span>, and more, making it more personalized for each user. Kids and parents can create their own <span class="bold">AI characters</span>, making Yonbo a companion for the whole family. It also sends <span class="bold">timely alerts</span> if emotional risks are detected, helping parents offer support when needed.</p></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Compatible with Android and iOS systems." data-id="49328403">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/328/403/f7db0575b478077376d4fb4f64ce2c03_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747623209&amp;width=680&amp;sig=5hLg13fcGybonWnqreDNQvsPjA9F5uKp4gSXq0tQStg%3D" src="https://i.kickstarter.com/assets/049/328/403/f7db0575b478077376d4fb4f64ce2c03_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747623209&amp;width=680&amp;sig=5hLg13fcGybonWnqreDNQvsPjA9F5uKp4gSXq0tQStg%3D"/>
+<figcaption class="px2">Compatible with Android and iOS systems.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313481">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Regular-OTA-Updates">Regular OTA Updates</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/481/7636785e1d6ceff1e98050874ae17d26_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484560&amp;width=680&amp;sig=%2FmmkKfDr90JlAl%2FfrxQu9TPYH%2BaUkjbdomKMb1zTXnI%3D"/>
+</figure>
+</div>
+<div>
+<p>Yonbo regularly receives over-the-air (OTA) software updates via Wi-Fi, enhancing existing features and adding new storybooks, games, and interactions. Auto-following and remote calling are in development, making Yonbo smarter and better suited to your family’s needs every day</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49376798">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/376/798/52b2318348c47084b5302d8e5e0082d7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747890054&amp;width=680&amp;sig=AoyMZ%2F7GJx%2FeBagDEdK%2FCahSEQIYjlVQMaRunBxnaGM%3D"/>
+</figure>
+</div>
+<div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313491">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Uncompromised-Data-Security">Uncompromised Data Security</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/491/e01eeb119e38269ef38175cdc7cc7e6f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484654&amp;width=680&amp;sig=lDnkKPweYMCOL06cJikVG7gTiQxAwfLOztJ9IaEpWlU%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49313495">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/313/495/a6ff68f4bf2ec4d889f4fc65ed527364_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747484668&amp;width=680&amp;sig=p63a%2FJs%2B4or999Nw8N7qYPSm0XrNCv3EKLB7EYWkQQk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49420260">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/420/260/d3b746c84928842e81fb50ffa241aabf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748231103&amp;width=680&amp;sig=7FRhQ4LAp0YQHqh8TPPBkl%2B7tudoPb1HA5uhn6kVI38%3D"/>
+</figure>
+</div>
+<div>
+<p>Yonbo supports <span class="bold">reprogramming</span> through a dedicated CDK, allowing beginners, advanced users and developers to <span class="bold">personalize functionalities, create new behaviors</span>, or <span class="bold">integrate with other systems</span> to make Yonbo truly unique. This development platform is set to launch this year, and we're working hard to bring it to you as quickly as possible.</p>
+<p><span class="text-italic">*Developer Access is available exclusively for Developer and All-in-One Bundle backers. </span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49380220">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/380/220/b70a763640e7b14492565a5e3ffeb476_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747911559&amp;width=680&amp;sig=hF2qjwUNFUHXYkyOL1mvjnZRy8m13VpZkqsavzrKGgk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49378850">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/378/850/f7d00270106f0782935cf8b0f00c8316_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747903797&amp;width=680&amp;sig=eCZNw9KayBUsNwMN4MOF%2BVx%2FLcR%2FXi%2FCTvoXjgCwLPg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49378832">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/378/832/9b99e7d61002766a0740c0ee82a5f52a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747903643&amp;width=680&amp;sig=mupbZZgJYU3qsL6jHKzUD7n66ZE7iJNOePTCbzgCOMI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354414">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Tech-Behind-Yonbo">Tech Behind Yonbo</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/414/b708c6c7990473e1a1a3f4a7d7fa36a8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763632&amp;width=680&amp;sig=iuqMNIG7YHPWjbniZ0y9IkuqD1O4kmwC9wTxupUWmrM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49362267">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/362/267/07c4fb3e7dd8512a126fd75ea7e78292_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747808699&amp;width=680&amp;sig=yK8jmRiIZKe%2BKx9zDMvDalTlKoqcbRbxEHw331OxKZY%3D"/>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div></div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354500">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/500/592c9fc58e401359f5a617793be72d84_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763994&amp;width=680&amp;sig=KW6HZTDZNkuGl%2BqpRrErSwrw5IstCmIDm5hqllBObTI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49364095">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/364/095/8d6a59251b1db9e2d583cfb9dc4ee845_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747820942&amp;width=680&amp;sig=TU%2B%2FJwJQEk%2Bcil4H%2F4nM63JKs2SYeiZ3qWlfSMVWEcY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354492">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box">What's in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/492/3e31b22a1cf17641f6101c885ca886c1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763962&amp;width=680&amp;sig=qaZxDGEfWJ33tqYPGF6OSKYPiWPusvjwylv9mREzqLM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49362851">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/362/851/2052af4d9e824d297e90da3ce1c6968d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747812912&amp;width=680&amp;sig=FuBX0BnK0896sy56f9knMrjutEr4xYWgzOZQhMgJG18%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354467">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Which-Bundle-is-Right-for-Me">Which Bundle is Right for Me</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/467/4774c60e1d2f6fef6c8b8440de1e0140_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763826&amp;width=680&amp;sig=LIPanTEBxDILyw6Qcu1yi40OzkEsvGhHtunogP4cCgQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49364033">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/364/033/d1b267bedbe825da6ea399286d0b3de8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747820579&amp;width=680&amp;sig=3pzxmPiytGSploAXl805foGxNsMgwTzZIf0L3sr1v2I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49378953">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/378/953/ea2294925cf61d419f0856a4ad1d698e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747904317&amp;width=680&amp;sig=3YDR2YHPsMMd1mzmCmq4g%2F7IZ7OABag06djet7mdkag%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354354">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:See-the-Differences">See the Differences</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/354/f20950bc5d46a2eddd7095a85407c6a8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763359&amp;width=680&amp;sig=HYjHLmQV7%2BH8pXcTMfJGEX5t3cKm64%2FeSstjBwUp4LA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49378894">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/378/894/783261e497375b887afa48e0dead8093_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747904062&amp;width=680&amp;sig=0rHLsN3NTO2390L66DGohMWAlsQ8S6hXPcmqqVC1QqQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354303">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Perks-We-Offer">Perks We Offer</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/303/ece1653ecb2565fdca77064bff3dc2c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763203&amp;width=680&amp;sig=YRKbCmC1LYh3c6gVXP0dKbOgt29BKKfR0r0K8l1DzEQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49368139">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/368/139/e1a8e62275b06d8ad157dc46d12ede82_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747840262&amp;width=680&amp;sig=WY4nsG5sj8f%2BgLr92BDpi7pxb2cr%2BA0wBEgrdBLee%2Bc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354310">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-ons">Add-ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/310/cd45bb4739904a2c4ca2b7b71d527c2f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763214&amp;width=680&amp;sig=yz4Wk49qZUuWXB6ku%2FpQJZ4%2BM1tR07g8siNAfOy4KSo%3D"/>
+</figure>
+</div>
+<p>We offer two add-ons:</p><ul><li>
+<span class="bold">Mini Yonbo AI Camera:</span> A <span class="bold">portable AI learning camera</span> designed for 4-8-year-olds. Mini Yonbo blends fun and learning in one smart device. It recognizes over a million objects, helps with homework, answers questions, enables video calls, and tracks learning progress. Perfect for curious kids, anytime, anywhere.</li></ul><ul><li>
+<span class="bold">Wristband: </span>You can use an optional wristband to control Yonbo's movements.</li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49368149">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/368/149/ebd656877b169a58d15a3864fab0476f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747840301&amp;width=680&amp;sig=sZPIWRndAawn1Rc9ohxY741COhc43XPt6NTL329NP90%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354422">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:X-Origin-Aftercare">X-Origin Aftercare</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/422/a3df71acdfe3b19e6a7dbebecaae883d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763669&amp;width=680&amp;sig=jAFH9pXnHutX7akeo20HS%2BjovzjRr4SCcTaH5Wii1qE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49360292">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/360/292/dc3727e31694c7bda98cb13d2e838ed5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747794937&amp;width=680&amp;sig=UeumQOFbi9A5oTyvXmFMJcr6Zh9FWJA1z4DQOo353%2Fs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354423">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Policy">Shipping Policy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/423/1c34e825da649fc682bac4547f43dfcb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763674&amp;width=680&amp;sig=YGROzkp%2FMcdAco4dFOPePt9Vua3lhEYyz%2FFlrvuiqrc%3D"/>
+</figure>
+</div>
+<p>We’re thrilled to deliver Yonbo to you! Here’s what to expect for shipping: </p><ul>
+<li>
+<span class="bold">Shipping Costs: </span>Shipping to US is free. For other countries and regions, refer to the table below. Final shipping fees will be shown at checkout based on your selected reward. </li>
+<li>
+<span class="bold">Customs Fees: </span>Covered by us for all Kickstarter backers—no extra charges. </li>
+<li>
+<span class="bold">Worldwide Delivery:</span> We ship globally so you can enjoy Yonbo no matter where you are! </li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49376585">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/376/585/2ae7effed22bee2fde9fed8f608fdaaf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747888237&amp;width=680&amp;sig=klZdgEWjDlkn7XZD9a8eyStc1kKzuNQP7x%2BEriK29t8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49376499">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/376/499/2de7660b04bfb6e3003ece48f341efa3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747887231&amp;width=680&amp;sig=lTRm%2F3Ui8V9jlmH3QR3voNF8mkQ6DNjD%2FPtcpU1XRzE%3D"/>
+</figure>
+</div>
+<p>We’re thrilled to announce that Yonbo has officially entered small-batch production ahead of large-scale manufacturing! The first batch is expected to leave the factory in <span class="bold">July</span> and arrive at local warehouses in <span class="bold">August</span>. Stay tuned as we move closer to bringing Yonbo to you!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49368150">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/368/150/b938a4b6139aeb6b40a0b741140461e3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747840312&amp;width=680&amp;sig=DiwiHtLNNPKxcRmEhFJyG4EK6h6cwFB6VFYp3XAxwZk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354412">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Demo-Videos">Demo Videos</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/412/53bcb62d4da2c39cc113911101837424_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763624&amp;width=680&amp;sig=TwhbzCPzRI4Y358X1hJgj1hKXuFS4YfNhLom4A50c40%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49384079">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/384/079/846fadb640522043b2bb79613791eaea_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747930461&amp;width=680&amp;sig=AbQ%2BJRt7NqLUE8Qnt9buoAVLb31opxuwhRUGO%2FOPydA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49384081">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/384/081/12994d5f86174817b74c4cf1ad9ff836_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747930473&amp;width=680&amp;sig=IEDBqchYkBgqdjbMNS1hLWAzC%2BlSoDrJgM6y8BdN2Rw%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354428">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Project-Timeline">Project Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/428/fa1c92cd9cc76c79ca9145f5f29b320c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763689&amp;width=680&amp;sig=bfdNQ2Kx1HiyAMz4HbhmYLH4ymWzrStvF%2BR9l5I6bEo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49413172">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/413/172/ad0337646b97886d4016829e76f1d469_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748166897&amp;width=680&amp;sig=KD%2Ff8rzVg7R0uxyT1HdPE1IqGy3eGl6APJvp59AGPhM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354395">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/354/395/34940b8dfe607c55be4f2fbd39ae5403_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747763514&amp;width=680&amp;sig=PvbQnprGjhWJtYys9f9nOGrZpUDSYVyIz5Sy7Y621eI%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><p><span class="text-italic">This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them.</span></p>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347807">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/807/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747733772&amp;width=680&amp;sig=2RU3Rx5QaMHJHRRJTalTZ%2F2sOsyHxJis8zu6IhUvEMs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347810">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/810/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747733776&amp;width=680&amp;sig=UIk57%2BaUuBti9z%2BcKBRDihKt2wBqV0UiSApUrH2sPiU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49347835">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/347/835/2a4fb6dfdad3e0851c68f4eb1ca9f1c5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747733957&amp;width=680&amp;sig=bOL2UoFK53Jqsy6oKssXCXlqnNJIq%2FSObnbMvDCng%2BA%3D"/>
+</figure>
+</div>
+<span></span><p>For those who wish to report on X-Origin Yonbo, please feel free to utilize the materials in the <span>Media Kit.</span></p>
+<p>Use of AI: Yonbo employs advanced artificial intelligence technologies, including speech-to-text conversion, large-language-model-based dialogue, multimodal recognition, and facial recognition. For speech-to-text conversion, an offline model is used, which effectively safeguards data security. Unlike cloud-based speech-to-text services that require an internet connection, the offline model can perform speech recognition and convert speech signals into text on local devices without relying on an internet connection. This means that during the entire speech-to-text conversion process, data does not need to be uploaded to the network, fundamentally avoiding the risk of sensitive information leakage that may occur during internet transmission and greatly protecting users' private data. </p>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Every Yonbo Robot embodies the passion and expertise of our team, ensuring outstanding quality and reliable delivery. While we strive for perfection, we also recognize the potential challenges posed by supply chain disruptions or unexpected shipping delays, which may be beyond our control.
+
+It’s natural to encounter surprises during the launch of any new product. One of Kickstarter’s unique aspects is the opportunity it offers backers to become part of this creative journey, providing you with a behind-the-scenes look into the intricacies of product development and manufacturing.
+
+As we move through the final stages of development and production, we are committed to keeping you informed through transparent updates and regular communication. Your trust is our greatest motivation, and your success remains our ultimate goal.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18">My project seeks funding for AI technology.</h3><div class="flex flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p style="margin-bottom: 1.5rem;">For the database or source that I will use or will create, the consent of the persons whose works or information incorporated have been obtained.</p></div></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

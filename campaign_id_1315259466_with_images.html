@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Axmac A1: Your Ultimate Smart Macro Dock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/274/863/fdd6586467528c6a5eb096a9e13a569f_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747226841&width=560&sig=e%2BUDcCv9ogpE%2BmS00%2BVHok3iLK4rlYK5nARsykUjcjk%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Axmac A1: Your Ultimate Smart Macro Dock</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">8-key macro keyboard, real-time PC status display, dual display expansion, multi-function expansion function enhance your workflow</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,548</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>33 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p>🎉 Introducing <span class="bold">Axmac</span> – the revolutionary 8-key macro dock that’s more than just a keyboard. It’s your portable automation center, smart control panel, and real-time system monitor. Whether you’re a streamer, developer, designer, or gamer — Axmac puts power at your fingertips.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49310646">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/310/646/fee067f1a625a5d4f42914ebfe33b681_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747452175&amp;width=680&amp;sig=chAxpTUCJiXo1YArxXD%2Bb8vrwxilwOoWQvzU0EIg7h4%3D"/>
+</figure>
+</div>
+<p>Modern digital workflows are full of distractions and repetitive steps. Switching apps, launching tools, checking system performance — they slow you down and break your flow.</p><p>We wanted something more powerful, more modular, and truly cross-platform.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49310746">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Four-Exclusive-Features-Axmac-Offers">Four Exclusive Features Axmac Offers</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/310/746/5e722cc1717e6d7acd70a474fcd54507_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747452847&amp;width=680&amp;sig=gSn27wUK%2BXEnLan1wn1NrIH%2BTVaY2gapbfVZBPjp%2Bvk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:1-USB-Side-Display-Real-Time-System-Monitor"><span class="bold">1️⃣USB Side Display – Real-Time System Monitor</span></h4><p>Axmac A1 can be connected to a computer as an independent secondary screen to display CPU, GPU, memory usage, temperature, and other system monitoring data in real time. No need to install drivers or additional software, plug and play, easily control the system operation status.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49310779">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/310/779/6b80a19d95bacf436d3d7c1e9451634a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747453105&amp;width=680&amp;sig=GOxTpUooP2JBiv0n6ilOBg0mKiM8Lbbgu8%2F89tN7sT4%3D" src="https://i.kickstarter.com/assets/049/310/779/6b80a19d95bacf436d3d7c1e9451634a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747453105&amp;width=680&amp;sig=GOxTpUooP2JBiv0n6ilOBg0mKiM8Lbbgu8%2F89tN7sT4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:2-One-Click-Actions-Customize-Your-Workflow"><span class="bold">2️⃣One-Click Actions – Customize Your Workflow</span></h4><p>Customizable button functions enable one-click app launch, folder opening, automatic account/secret entry, web page loading, and even multi-action combination tasks. Compared to traditional macro keyboards, <span class="bold">Axmac A1 offers greater flexibility and freedom</span>, allowing you to tailor every button to your unique workflow.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49321279">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/321/279/bc327db257be65cbb82582c82f20442d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747565075&amp;width=680&amp;sig=X1L8yLRzjape4ErcqVFfcytNh%2B6g95%2F%2FBhiyrVArByw%3D" src="https://i.kickstarter.com/assets/049/321/279/bc327db257be65cbb82582c82f20442d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747565075&amp;width=680&amp;sig=X1L8yLRzjape4ErcqVFfcytNh%2B6g95%2F%2FBhiyrVArByw%3D"/>
+</figure>
+</div>
+<p>Whether you're working or relaxing, Axmac A1 supports additional smart actions like:</p><p><span class="bold">•</span>🎵 Play/Pause music, switch tracks</p><p><span class="bold">•</span>🔍 Launch instant web search or search engine shortcuts</p><p><span class="bold">•</span>🖥️ Open frequently used tools or software in one press</p><p><span class="bold">•</span>💻 Run terminal commands, scripts, or batch files</p><p><span class="bold">•</span>🔄 Combine multiple steps into a single trigger</p><p><span class="bold">•</span>✨ Switch between task profiles with a single click</p><h4 class="page-anchor" id="h:3-Virtual-Input-Sequences-Full-Mouse-Keyboard-Emulation"><span class="bold">3️⃣Virtual Input Sequences – Full Mouse &amp; Keyboard Emulation</span></h4><p>It can simulate complex sequences such as clicking, dragging, typing, key combinations, delayed operations, etc., and is suitable for automated testing, script execution, repetitive work or game operations.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49433853">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/433/853/d3d4cb9b534beda50f5e70200e162778_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748325321&amp;width=680&amp;sig=hoAxozTqOqI70fWTKS%2BKBFHhcQqmtNEG8z1GKx4CEPk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354801">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/354/801/0bb1c48005f9ca9bd9121049aca51a34_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747765130&amp;width=680&amp;sig=AdT%2FWo6VPAR2e4Avv50QEtl%2F9D%2Fa69Rv8%2BcY0qvHYRU%3D" src="https://i.kickstarter.com/assets/049/354/801/0bb1c48005f9ca9bd9121049aca51a34_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747765130&amp;width=680&amp;sig=AdT%2FWo6VPAR2e4Avv50QEtl%2F9D%2Fa69Rv8%2BcY0qvHYRU%3D"/>
+</figure>
+</div>
+<p>Axmac A1 is a programmer's right-hand man. It supports saving commonly used code snippets or instruction templates, without having to re-enter them each time. When you are writing code, just tap the set button, and Axmac A1 will automatically write the preset code snippet to the location quickly. Whether you are using VS Code, Sublime Text, Notepad++ or other mainstream programming software, it can work seamlessly.</p><p>For example:</p><p>You can insert standard function structures, HTML templates, comment header formats with one click;</p><p>Or quickly call debugging statements, API interface call templates, etc.</p><p>With Axmac A1, daily coding is more efficient, repetitive work is greatly reduced, and you can focus on logic and innovation.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49354913">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/354/913/5595e2fca29f2dac48a76901f584b2fa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747765621&amp;width=680&amp;sig=j70N1WBHgM2bUpu442Wj%2Bk9D6gkV%2Bh47ncjEPRO1UKk%3D" src="https://i.kickstarter.com/assets/049/354/913/5595e2fca29f2dac48a76901f584b2fa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747765621&amp;width=680&amp;sig=j70N1WBHgM2bUpu442Wj%2Bk9D6gkV%2Bh47ncjEPRO1UKk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344443">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/344/443/0afad5d5c20fbe72a9265bed1529d58d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747710564&amp;width=680&amp;sig=%2BzFfVBz87dBjC4AccnoWeJKXxnnzKPbEMOemMIRN7R8%3D" src="https://i.kickstarter.com/assets/049/344/443/0afad5d5c20fbe72a9265bed1529d58d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747710564&amp;width=680&amp;sig=%2BzFfVBz87dBjC4AccnoWeJKXxnnzKPbEMOemMIRN7R8%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:4-Programmable-Macros-40-Keys-Driver-Free-Cross-Platform"><span class="bold">4️⃣Programmable Macros – 40 Keys, Driver-Free, Cross-Platform</span></h4><p>Axmac features a built-in ESP32-S3 chip with storage support, allowing you to create, save, and run advanced macro scripts without the need for external software or drivers. Configure it once, and it works across any Windows, macOS, or Linux system.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49366575">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/366/575/b6bb0ebac4f53f79b213da9373e89511_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747834177&amp;width=680&amp;sig=y%2BK4NXxnKNjCyneT5sdStdrLyDsMi7tiUFMXGCWAgkc%3D"/>
+</figure>
+</div>
+<p>You can customize up to <span class="bold">8 keys per page</span>, and store <span class="bold">5 profile pages</span> — totaling <span class="bold">40 programmable macros</span> that can include hotkeys, text strings, mouse movements, command sequences, or even complete workflow automations.<br/>This makes Axmac an ideal tool for developers, automation engineers, power users, and anyone who wants full control over repetitive tasks or complex operations.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49366698">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/366/698/7a7788e66ab94e3befddf70592feee24_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747834643&amp;width=680&amp;sig=NLaqB2JcBzAojhBjpgIwKQlpDcb%2FRsO9xwPSn1KYbxU%3D" src="https://i.kickstarter.com/assets/049/366/698/7a7788e66ab94e3befddf70592feee24_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747834643&amp;width=680&amp;sig=NLaqB2JcBzAojhBjpgIwKQlpDcb%2FRsO9xwPSn1KYbxU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:5-Dual-Display-Expansion-Boost-Your-Visual-Workspace"><span class="bold">5️⃣Dual Display Expansion – Boost Your Visual Workspace</span></h4><p>Axmac supports HDMI + DP dual video output interfaces, can connect two monitors at the same time, and supports up to 8K/30Hz resolution, allowing you to easily expand your workspace and perform multi-tasking, streaming monitoring, editing and arrangement, and other scenarios.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49369320">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/369/320/4c356d35cf2e5cf413301c4a5e606513_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747844859&amp;width=680&amp;sig=F30CrgMrj6JwBLi577DR6977ulzQIsjMRsS4qAh%2FBeo%3D" src="https://i.kickstarter.com/assets/049/369/320/4c356d35cf2e5cf413301c4a5e606513_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747844859&amp;width=680&amp;sig=F30CrgMrj6JwBLi577DR6977ulzQIsjMRsS4qAh%2FBeo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328321">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hardware-Highlights">Hardware Highlights</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/328/321/892c399a0ad75f9dd8131a85501cf7bb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747622701&amp;width=680&amp;sig=GETvQbpqZ%2Fxj%2Fs2%2BeGLzVb2GZbYzwb2B263VaMN8gNw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-The-Central-Hub-for-Your-Setup"><span class="bold">• ✅ The Central Hub for Your Setup</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349677">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/677/82da49f51ccb85a4bcf26f6923c4a0af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747744398&amp;width=680&amp;sig=XvgUAN3W3w5uxSUdCwbk7swF2K%2FvmAzKSp5kYKFUU6k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49366238">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/366/238/c317c540e8fcf05ed745fb2538957748_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747833315&amp;width=680&amp;sig=f0uK1h75ACn7Yhb1CfjB9F09CfVL%2BF8GVs2kVMAHjQo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49366240">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/366/240/be2b84e1761a310bdbb53c838204fa56_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747833331&amp;width=680&amp;sig=Kh04XxDrd%2FtmbOlZMWZkzXu%2BaTtY%2BR2nHOvaQyvGFfE%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-8-Hot-Swappable-Mechanical-Keys"><span class="bold">• ✅ 8 Hot-Swappable Mechanical Keys</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328393">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/328/393/f8a368bd853109c7da4e23bb73bb85c5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747623101&amp;width=680&amp;sig=Zs0ZxCeBL8QO1lSdRqPrPVSlUOrrlxrdS0XiA%2FwvBFc%3D" src="https://i.kickstarter.com/assets/049/328/393/f8a368bd853109c7da4e23bb73bb85c5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747623101&amp;width=680&amp;sig=Zs0ZxCeBL8QO1lSdRqPrPVSlUOrrlxrdS0XiA%2FwvBFc%3D"/>
+</figure>
+</div>
+<p>Axmac features <span class="bold">8 high-quality mechanical keys</span> with <span class="bold">hot-swappable support</span>, allowing you to freely change switches and keycaps without any soldering. Whether you prefer smooth red switches, tactile browns, or clicky blues, your typing and triggering experience is fully customizable.</p><p>Each key is fully programmable — launch apps, trigger hotkeys, input text, or execute powerful macros. Combined with optional backlighting and custom labeling, every press is intuitive, responsive, and visually distinct.</p><p>Perfect for streamers, video editors, developers, and gamers who demand fast, repeatable actions in their daily workflow.</p><h3 class="page-anchor" id="h:-Built-in-ESP32-S3-MCU-">• ✅ <span class="bold">Built-in ESP32-S3 MCU</span>
+</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49328600">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/328/600/ac740c467671404e3a9d4d6942b418c9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747624670&amp;width=680&amp;sig=dJWBSaL9uU0Qcxy8yHAJrrus%2BBxTbCmzK4rUxu3ruKk%3D" src="https://i.kickstarter.com/assets/049/328/600/ac740c467671404e3a9d4d6942b418c9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747624670&amp;width=680&amp;sig=dJWBSaL9uU0Qcxy8yHAJrrus%2BBxTbCmzK4rUxu3ruKk%3D"/>
+</figure>
+</div>
+<p>Axmac is powered by a built-in <span class="bold">ESP32-S3 microcontroller</span> with onboard storage, enabling a true <span class="bold">plug-and-play experience</span> — no drivers, no background software, no limitations. Once configured, Axmac can run independently across <span class="bold">Windows, macOS, and Linux</span> platforms.</p><p>Thanks to the powerful ESP32-S3 architecture, Axmac executes <span class="bold">complex macros, scripts, and key sequences locally</span>, even without an internet connection or host software. It ensures fast, reliable, and flexible control in any environment.</p><p>Switch between computers? Work remotely? No problem. Your setup stays with the device — <span class="bold">configure once, use anywhere.</span></p><h3 class="page-anchor" id="h:-2-5G-Ethernet-Port-">• ✅<span class="bold"> 2.5G Ethernet Port</span>
+</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349282">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/282/ac78233c4294e3973a646c1e344c27ed_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747742190&amp;width=680&amp;sig=r%2BAhIOs7AbTA1ujoanWBuWsTmzDeWhBCI0QZktWkgKs%3D"/>
+</figure>
+</div>
+<p>Axmac brings professional-grade expansion ports to your desk, including:</p><p><span class="bold">🚀 2.5G Ultra-Fast Ethernet Port</span></p><p>Equipped with a <span class="bold">2.5Gbps RJ45 port</span>, Axmac delivers <span class="bold">2.5x faster</span> speeds than standard Gigabit Ethernet — ideal for high-bandwidth workflows like remote editing, large file transfers, low-latency streaming, and enterprise-grade networking.</p><p>• Auto-adapts to 10M / 100M / 1G / 2.5G</p><p>• Ultra-stable, ultra-fast wired connection</p><p>• Outperforms Wi-Fi for critical applications</p><h3 class="page-anchor" id="h:-Dual-USB-A-Ports"><span class="bold">• ✅ Dual USB-A Ports</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49355050">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/355/050/100ed778c14510bbb606c8b3a3fbb38f_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747766365&amp;width=680&amp;sig=CmN9GbicN90Q7YMxJogvTfaoctQr9sUgF5uOKJ65P4M%3D"/>
+</figure>
+</div>
+<p>Two reliable USB-A ports allow seamless connection of peripherals such as keyboards, mice, USB drives, and external hard disks.</p><p>• Compatible with USB 3.0 / 2.0 devices</p><p>• Provides stable power and fast data</p><p>• Plug-and-play convenience for all your essentials</p><h3 class="page-anchor" id="h:-USB-C-10Gbps-High-Speed-Port"><span class="bold">• ✅ USB-C 10Gbps High-Speed Port</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49355069">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/355/069/aeed9e2a81b6d979c675378620befd96_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747766448&amp;width=680&amp;sig=BjpeVdwrqZUVwIRfqx1pY3yQxYFCaRp0Q7mu91vW0RQ%3D"/>
+</figure>
+</div>
+<p>Axmac includes a USB-C port with <span class="bold">10Gbps ultra-high-speed transfer</span>, perfect for handling large media files, professional gear, and power-hungry devices.</p><p>• Fast file transfer for video, audio, and data</p><p>• Supports power + data simultaneously</p><p>• Tailored for creatives, coders, and heavy users</p><h3 class="page-anchor" id="h:-HDMI-DP-Dual-Display-Expansion">• ✅HDMI + DP Dual Display Expansion</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49330121">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/330/121/65d615fa42e59b0055372ffdc0d9ab94_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747636658&amp;width=680&amp;sig=YNbnsF4qqqIcwp3Qndp4y8laUmLLRBYu0A%2FTLTS5O2c%3D"/>
+</figure>
+</div>
+<p>Axmac features both HDMI and DisplayPort outputs, allowing dual-monitor setup and smooth desktop expansion to boost your workflow.</p><p>• 🌟 <span class="bold">8K@30Hz ultra-HD single display support</span>, perfect for high-precision visual tasks</p><p>• 🌈 <span class="bold">4K@60Hz dual-screen output</span>, ideal for side-by-side multitasking and screen segmentation</p><p>• 🎮 HDR supported for richer colors, deeper contrast, and excellent compatibility with modern displays</p><p>Enjoy enhanced screen real estate, ultra-sharp visuals, and seamless connectivity in every scenario.</p><h3 class="page-anchor" id="h:-Up-to-100W-PD-Fast-Charging-Support-">• ✅ <span class="bold">Up to 100W PD Fast Charging Support</span>
+</h3><p>Axmac delivers <span class="bold">up to 100W Power Delivery</span> through its USB-C port, ensuring fast, stable, and sufficient charging for laptops, tablets, and other power-hungry devices.</p><p>Whether you’re editing large files, compiling code, or running multiple apps at once, Axmac keeps your workflow powered without cluttering your desk.</p><p>• 💡 PD 3.0 compatible with smart power negotiation</p><p>• 🔋 Supports fast charging for most laptops and peripherals</p><p>• 🔌 Charge and use simultaneously — no extra adapter needed</p><p>• 📉 Safe and efficient power with protection against overheating and overload</p><p>More than just a dock — it’s your power hub.</p><h3 class="page-anchor" id="h:-Cross-Platform-Compatibility-Plug-and-Play-">• ✅ <span class="bold">Cross-Platform Compatibility – Plug and Play</span>
+</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349781">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/781/9f362f832f5766b4b5e5c51b71348358_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747745141&amp;width=680&amp;sig=%2FYMHKGyXl9KGDGPTKxpHGyut38kOXpt0svjIgKIJRo8%3D"/>
+</figure>
+</div>
+<p>Axmac is fully <span class="bold">compatible with Windows, macOS, and Linux</span>, offering a seamless cross-platform experience without the need for additional drivers — simply plug and play.</p><p>Whether you’re working on a PC, creating on a Mac, or developing on a Linux machine, Axmac integrates effortlessly into your workflow with consistent performance across all platforms.</p><p>• ✅ Supports all major operating systems</p><p>• 🔌 Driver-free setup — ready to use out of the box</p><p>• 🔁 Retains configurations across devices and platforms</p><p>• 🖥️ Works with laptops, desktops, Raspberry Pi, and more</p><p>One dock. All systems. Axmac adapts to your workflow, not the other way around.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49350266">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Built-for-Every-Productive-Mind">Built for Every Productive Mind</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/350/266/51368ba3997c914a571eef512e4fabb7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747747681&amp;width=680&amp;sig=OTSv4qm1jblFkkHbKmuMCgAjhQ1u0cxcpdI6U5O7Tlk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349842">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/842/eff78de2ebdda3de91331d6a4043771c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747745519&amp;width=680&amp;sig=DW8Vwk3iA2A%2B9EnTFzOFe1T%2BOi%2BXDawSbxpP%2FNbTkgQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49330208">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/330/208/912952e14a112b6423ab8ddd38fa73d5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747637368&amp;width=680&amp;sig=A8qu%2BpFuKu%2BmHXNRnbCMld%2B33mzxa5ZSl0DJKI8cTjs%3D"/>
+</figure>
+</div>
+<p>Whether you’re editing videos or producing content, <span class="bold">Axmac A1 streamlines your workflow</span> and frees your hands from repetitive tasks.</p><p>Assign macros to frequently used editing actions — cut, trim, export, add transitions — and trigger them with a single tap. Monitor system performance on the built-in <span class="bold">secondary display</span>, ensuring smooth operation of your editing software.</p><p>With <span class="bold">dual card slots</span> for SD/TF and <span class="bold">high-speed USB-C</span>, importing large media files becomes faster and more efficient.</p><p>• 🖱️ One-touch access to editing commands</p><p>• 📺 Onboard display shows real-time system performance</p><p>• ⚡ Fast media file imports and exports</p><p>• 🎛️ Fully customizable macros to suit your workflow</p><p>• 🔄 Compatible across platforms — work wherever you need</p><p>Edit faster. Work smarter. Let Axmac A1 power your creativity.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349851">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Developers-DevOps-Professionals">Developers / DevOps Professionals</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/851/41726c5587a67053933e2753cb9258f0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747745579&amp;width=680&amp;sig=vkt1p53ZvVeAw630WPW703s7caRCRMj2LUoTTLdc2BQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49330215">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/330/215/c17e1815d317b4af85cd539dac9aed2d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747637433&amp;width=680&amp;sig=W4GvOPfD%2FhHO5Oh2WOtx9l4f5%2BHl5Mg5oSxSFbc1dLw%3D"/>
+</figure>
+</div>
+<p>In the fast-paced world of coding, debugging, and deploying, <span class="bold">Axmac A1 becomes your trusted tool for simplifying complex workflows</span>.</p><p>With a single tap, trigger custom commands or full automation sequences — no more typing the same scripts over and over. When multitasking, the secondary screen gives you a constant overview of your system status, helping you catch performance bottlenecks early.</p><p>Designed for flexibility, Axmac lets you carry your configuration across different machines and OS platforms without hassle. Whether you’re writing code, running builds, or managing servers, it adapts to your style and workflow seamlessly.</p><p>Automation. Portability. Performance insight. Axmac delivers what engineers really need.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49350086">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/350/086/f202b818fc26c43ed5f6317310af60cd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747746877&amp;width=680&amp;sig=x1NcQdZkZWFqAEol%2Fq4ZhNwZTdo%2FW4RIXruWHmOu688%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49350088">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/350/088/9a2008936807fe74e53fb0e4805163cf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747746883&amp;width=680&amp;sig=bfEj%2F%2FSe6OTcGvyf%2BmcXW8eG%2Fwu%2FL7C9NIjRIAaAF10%3D"/>
+</figure>
+</div>
+<p>When working on automation testing, firmware flashing, or embedded system development, <span class="bold">Axmac empowers your workflow with precision and speed</span>.</p><p>With programmable script macros, you can automate repetitive tasks—such as code compilation, terminal commands, or test execution—<span class="bold">all with a single keystroke</span>. No more manual inputs, no more switching tools—just streamlined, hands-free productivity.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349864">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/864/fa196109c243a5a4c6c7dae7215f96ee_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747745622&amp;width=680&amp;sig=Aw6fXdQOgWB1m0Y6wcWN1bpXPSQU1%2Bi8%2FC67eD6ROwk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49330228">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/330/228/8666fc369f9af5e4a8b99d248e035b81_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747637506&amp;width=680&amp;sig=IbaaLCi56htojCsZqpVZgnf2Ao1agmeASECUuu1Lhvw%3D"/>
+</figure>
+</div>
+<p>Live streaming is fast-paced and timing is everything — <span class="bold">Axmac helps you stay in control with ease and confidence.</span></p><p>Customize each key to launch OBS, switch scenes, mute audio, play intros, manage transitions, or run chat commands — all with a single press. Say goodbye to scrambling through multiple windows or missing your cue.</p><p>The built-in display keeps an eye on system load, so you’re always aware of your performance and can avoid frame drops or crashes mid-stream.</p><p>Axmac gives you the extra hand you need on your desk — a smart, silent partner that ensures everything runs smoothly, while you stay focused on engaging your audience.</p><p>Scene changes, audio controls, media triggers — all under one fingertip. Axmac powers your perfect stream.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49349872">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Gamers-Sim-Enthusiasts">Gamers / Sim Enthusiasts</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/349/872/8926da976fdd8621c3d879e86206becd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747745662&amp;width=680&amp;sig=RCPQuQhR1hcETfgNsVCfD3s9tV3g5H8obmVUqOL02fg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49330240">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/330/240/a80b6a59cc0d8ae29321e22b5fedcbd4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747637573&amp;width=680&amp;sig=Lo56FoCTrDdWfv%2B2fSYDO10Y99cyw9IBzzr11KT70Jo%3D"/>
+</figure>
+</div>
+<p>Tired of spamming keys for complex combos or grinding actions? <span class="bold">Axmac lets you automate the tedious, so you can focus on the thrill.</span></p><p>From skill rotations in MMOs to loadout swaps in shooters and intricate sequences in sim games — set up your macros once, and execute them with a single tap.</p><p>The hot-swappable mechanical keys give satisfying tactile feedback, perfect for fast-paced, high-stakes gameplay.</p><p>Execute combos, switch gear, manage cooldowns — all from one powerful deck.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332103">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/103/e0df831d1f4805491906d68d98a98036_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647121&amp;width=680&amp;sig=cwbiu2A3xYW3wRIIUEwtEy6b1gVwVHYI1p1DY0S0SmM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49331985">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/331/985/6470359f6023574cf3584cd6fea7178c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747646616&amp;width=680&amp;sig=oVWi%2B4LXlGD8uG0nAd431OqY0wDX6HXASOuoIMNszcQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332082">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/082/5d223dab7b5f34b7999ff0dbee75ad2e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747647073&amp;width=680&amp;sig=OqY4d2%2Fz2Q5Zk81U59ADvNB15NWMAlVQxr2H%2BPjmZXs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49344351">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/344/351/8f31c317d05dd2f08432c9fe2bc75ce1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747709987&amp;width=680&amp;sig=3gt6%2Bf%2B3hDZ327ygPjGec%2BxxSEJp718X1dJkFvGsCvw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332051">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Prototype-Introduction">Prototype Introduction</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/051/ae46e553b716d86d2deb640f2d12fcc0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747646986&amp;width=680&amp;sig=skXwZGqZ%2BauCqyWv757RQkGnbu2OAbyTZXIynn200UQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49350443">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/350/443/515a5d053d4a4597b8d167c486146883_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747748527&amp;width=680&amp;sig=ioG58jj1jx0i1K2wAm8Y3jDvGwF0ecv9WAh7J3uN6ps%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49368060">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/368/060/d1b518274cd5c80518997022fa5b1c5f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747840014&amp;width=680&amp;sig=F4vvnN3AFsJPkpbGXVdXcOD12mQQq1Qnt09IEzSeOAE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49368142">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/368/142/a1ddda67ec71150af7c9d2fbc77a1586_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747840272&amp;width=680&amp;sig=HoxjB9PtrwOX9Nix6GwnvV6Vix81rEIPLMs3%2BfDSpcw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332035">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Us">About Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/035/34e0f7a69698a670425ee44126619328_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747646879&amp;width=680&amp;sig=2KTKF1kX%2BUYcZS6YUPPKt%2BJEdbhlo8t%2B69%2FxACxW3sY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49330384">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/330/384/b54e549af5afae52a9317e715bd6f12c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747638472&amp;width=680&amp;sig=iiocxr5i4J5dUJdBBxH90oRJsszhuWqzRJf3PvI5z4Q%3D"/>
+</figure>
+</div>
+<p>We are a small team of makers, tinkerers, and automation enthusiasts from backgrounds in hardware engineering, UI design, and software development. For years, we’ve been searching for a smarter, faster, and more intuitive way to interact with our digital world—so we built it ourselves.</p><p>Axmac-A1 is more than just a product. It’s our interpretation of what <span class="bold">freedom in control</span> should feel like. We built it to be the heart of your creative setup—whether you’re a designer, developer, gamer, or streamer—so you can focus on what truly matters.</p><p>Because we believe: <span class="bold">The best tools should feel like an extension of your own hands.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49423419">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/423/419/cf0e4142f153c7ff6df371d9b47c5afc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748255736&amp;width=680&amp;sig=UtsR5X6kWi3dHLzeJ1Y10wSm2PJ5ZxU%2FYtxP5aheOTo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49427469">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/427/469/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748280410&amp;width=680&amp;sig=QNuwc%2BRR39QVUgG4On0Hhzf2Wx8ifMNp8l8ZwyxSPbo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49435997">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/435/997/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748337305&amp;width=680&amp;sig=eFvlRx4%2FKOBWMlJrqpp0M%2BNsYd%2FXly2xqzjCadecTww%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49435999">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/435/999/dc7de5df7f4ddb2ecb146ea3a437eec3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748337316&amp;width=680&amp;sig=IibJmKlpwFs6FKINbbScS6hrTvYq5Kvep5XGVMkHR4s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49438935">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/438/935/54781de5c0e9a9ee87c9f5c58f7dff5b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748351924&amp;width=680&amp;sig=7CIGVxeK0Ax7ZMQPyxIzuRuADpu16uuY51pnB9omvHc%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We’ve taken great care to prepare for the successful production and fulfillment of Axmac. Our manufacturing partners, supply chain plans, and logistics network are already in place. Once we reach our funding goal, production will begin immediately to meet the delivery timeline.
+
+The funds raised will be allocated toward tooling, component sourcing, production setup, and the first batch of manufacturing. While we do not anticipate any major risks, unforeseen challenges such as supply delays, component shortages, or global logistics issues may arise.
+
+We are fully committed to transparent communication throughout the process and proactive problem-solving. Our goal is to deliver on time—or even ahead of schedule—bringing you one of the most thoughtfully crafted desktop tools we’ve ever built.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

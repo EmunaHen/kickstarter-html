@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SourcePure: Portable Power Supply fully charges in 1 minute</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/045/769/673/59a06a79cdc2ba7ea41ebbb893699c13_original.jpeg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1721295107&width=560&sig=vcJRxPU1%2FI672WojNC%2B7VwkbVpOp3lMauBiJntMUadw%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>SourcePure: Portable Power Supply fully charges in 1 minute</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">The portable power supply that turns a one-minute charge into an hour of clean power</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Stretch-Goal-20-000-Turn-SourcePure-into-a-Full-DC-Analyzer"><span class="bold">Stretch Goal: $20,000 – Turn SourcePure into a Full DC Analyzer</span></h3><p>We’ve hit our funding goal — thank you! Now, it’s time to take SourcePure Super-Capacitance to a whole new level.</p><p>If we reach <span class="bold">$20,000</span>, we will upgrade SourcePure into a <span class="bold">professional-grade DC analyzer</span>, unlocking a whole new class of features:</p><h3 class="page-anchor" id="h:Embedded-High-Precision-Measurement-System"><span class="bold">Embedded High-Precision Measurement System</span></h3><p>Measure <span class="bold">current down to micro-amp level</span></p><p>Track <span class="bold">voltage with nano-volt resolution</span></p><p>Analyze <span class="bold">power and energy usage in real-time</span></p><h3 class="page-anchor" id="h:-Professional-Software-with-Oscilloscope-View">🖥️ Professional Software with Oscilloscope View</h3><p>Connect via USB for advanced power analytics</p><p>Visualize data with <span class="bold">oscilloscope-style interface</span></p><p>Export logs and insights directly to your PC</p><h3 class="page-anchor" id="h:-Precision-Configurable-Output-Port">⚡ Precision-Configurable Output Port</h3><p>One output port, <span class="bold">fully configurable</span> up to <span class="bold">30V / 10A</span></p><p>Embedded directly with the analyzer for synchronized data</p><p>Eliminate the need for a separate power supply or test rig</p><p>💡 <span class="bold">This means SourcePure will not only power your project — it will also give you the full visibility and control of a high-end benchtop DC analyzer, in a compact, portable form.</span></p><h3 class="page-anchor" id="h:Comparing-the-new-SourcePure-to-Joulescope"><span class="bold">Comparing the new SourcePure to Joulescope</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49381025">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/381/025/0e80977c9aa5f581e3bd8adee830793d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747916985&amp;width=680&amp;sig=KFUHBYFLQUKdR0O%2Fczj1UhDZn7xH1pqtzxeiu9aGZkc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49381033">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/381/033/d807ec64aeca639c75671ed90cd03f74_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747917044&amp;width=680&amp;sig=YXpBH%2B0fZvntZzJX%2FmttJiLVeiasd2eQt3QxGbBA7ew%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:SourcePure-Super-Capacitance-The-Ultimate-Portable-Power-Supply-for-Developers">SourcePure Super Capacitance: The Ultimate Portable Power Supply for Developers</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898134">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/134/4ba9a7369091c468688ef13007292c70_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722340564&amp;width=680&amp;sig=ikvDXQzj065E8nsuKiLhEGfVPiXzp8lUoQZiQ2SKrJI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Introduction: A New Era in Power Supply</span></p><p>Welcome to the next revolution in power supply technology! Meet SourcePure Super Capacitance, a breakthrough device that combines portability, precision, and unparalleled efficiency. Engineered for developers, engineers, and tech enthusiasts, SourcePure Super Capacitance is designed to deliver stable, low-noise power in the most demanding environments. With our innovative super capacitor technology, charging is no longer a hassle—it less than 1-minute task that powers your projects for more than an hour.</p><p><span class="bold">The Challenge: Traditional Power Supply Limitations</span></p><h3 class="page-anchor" id="h:Everyday-Struggles">Everyday Struggles</h3><p>Every developer has faced the frustration of unreliable power supplies. Cheap, noisy power sources can compromise the integrity of your projects, leading to inaccurate readings and subpar performance. Conversely, traditional high-end lab equipment, while reliable, is bulky, expensive, and impractical for fieldwork or quick setups.</p><h3 class="page-anchor" id="h:The-Lab-Conundrum">The Lab Conundrum</h3><p>Imagine having to halt your progress, gather your equipment, and make a trip to the lab every time you need to test your circuit. This process is not only time-consuming but also disruptive to your workflow, slowing down innovation and productivity.</p><p><span class="bold">Our Vision: Precision Meets Portability</span></p><h3 class="page-anchor" id="h:Bridging-the-Gap">Bridging the Gap</h3><p>At RFOXiA, we envisioned a power supply that could bridge the gap between portability and professional-grade performance. SourcePure Super Capacitance is the realization of that vision, offering a compact, reliable, and incredibly efficient power source that can be used anywhere, anytime.</p><h3 class="page-anchor" id="h:Revolutionary-Technology">Revolutionary Technology</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898140">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/140/59a06a79cdc2ba7ea41ebbb893699c13_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722340593&amp;width=680&amp;sig=uNNvwdhCmwLd1oahGTQn08mpsmNg1Y9H7GPlBhMzPNY%3D"/>
+</figure>
+</div>
+<p>SourcePure Super Capacitance stands out with its integrated super capacitor system. Unlike traditional batteries that take hours to charge, our super capacitors fully charge in just in less than 1 minute and can sustain a continuous power supply for more than an hour of continuous 1A draining. This means less downtime and more productivity.</p><p><span class="bold">Key Features of SourcePure Super Capacitance</span></p><h3 class="page-anchor" id="h:1-Ultra-Low-Noise-Output">1. Ultra-Low Noise Output</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898144">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/144/bafa4b86774198d286afc0df7eb610e4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722340613&amp;width=680&amp;sig=iN1J5dgNriEphaiZeTB5i%2BKcmFSY2hUOdSRM4BPgKeY%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">Precision Engineering:</span> Ensures precise measurements with minimal interference.</li>
+<li>
+<span class="bold">Multiple Output Channels:</span> Provides 5V, 3.3V, and 1.8V outputs, catering to a wide range of applications.</li>
+</ul><h3 class="page-anchor" id="h:2-Super-Capacitor-Technology">2. Super Capacitor Technology</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49300981">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/300/981/8cfc2ec3b989c99061e962c1ffe4dba9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747388070&amp;width=680&amp;sig=sPE%2FQQlXMTsosxffy7wwp2pecrIe3Gu3I%2BgJR9GJ%2BFA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898310">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/310/be9b79872ad2cf4bc877d4c50dd14bbd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722341765&amp;width=680&amp;sig=33YInrCcrfKD0KCHMJDXTQY3xMUquck%2F%2F3YmuUBNaSc%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">Rapid Charging:</span> Fully charges in just less than 1 minute, using 120W 12V 10A charger.</li>
+<li>
+<span class="bold">Long-Lasting Power:</span> Supports continuous current supply for more than 1 hour.</li>
+<li>
+<span class="bold">Durability:</span> Unlike traditional batteries, super capacitors have a longer lifespan and can endure more charge cycles.</li>
+</ul><h3 class="page-anchor" id="h:3-Versatile-Input-Sources">3. Versatile Input Sources</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898334">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/334/6ad22bff8a7effd8588041298ee53a59_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1722341903&amp;width=680&amp;sig=nHnVz9Z3hkj96TpROsYomya%2BT7sEHzAAKWaeKg0VBrs%3D"/>
+</figure>
+</div>
+<ul><li>
+<span class="bold">Flexible Powering Options: </span>Accepts inputs from 8V to 28V, allowing you to use cheap power supplies and turns it to stable noise filtered source.</li></ul><h3 class="page-anchor" id="h:4-Durable-and-Portable">4. Durable and Portable</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898271">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/271/acb9da81dc0592d036c732588f1718c0_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722341556&amp;width=680&amp;sig=mDfiFXUMQxcZDxrRrReCFY26oTnMS7pP9pLw%2B0ASNT0%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">Compact Design:</span> Measures just 10cm x 8cm x 4cm, making it easy to carry in a backpack or toolkit.</li>
+<li>
+<span class="bold">Robust Construction:</span> Encased in a durable aluminum metal case that withstands the rigors of daily use.</li>
+</ul><h3 class="page-anchor" id="h:5-Comprehensive-Protection">5. Comprehensive Protection</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898276">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/276/94a7def4d40494d11bc39ee5ef3841b8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722341589&amp;width=680&amp;sig=IzcyZp%2BZeHgoNosSMxCazE3iHEMgELr6NOt7ulLXFcQ%3D"/>
+</figure>
+</div>
+<ul><li>
+<span class="bold">Safety First:</span> Features built-in over-current and over-temperature protection to safeguard both the device and your projects.</li></ul><h3 class="page-anchor" id="h:6-Complete-Cable-Kit">6. Complete Cable Kit</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898286">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/286/ce645d591c368e85acaf6e3a67b1dcdb_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722341628&amp;width=680&amp;sig=MsMM%2FRa3ppNw%2BXuXPQtCx9oXiQGH8Zkqsh1oBZyTwjo%3D"/>
+</figure>
+</div>
+<ul><li>
+<span class="bold">Ready for Any Task:</span> Comes with eight different cables and accessories, including banana to pin header (male and female), banana to alligator clamp, and banana to banana jack combined with a smart clamp.</li></ul><h3 class="page-anchor" id="h:7-Real-Time-Performance-Testing">7. Real-Time Performance Testing</h3><ul><li>
+<span class="bold">Reliable Outputs:</span> Tested using a Fluke 289 TRMS Industrial Logging Multimeter with TrendCapture, ensuring:<ul>
+<li>
+<span class="bold">1.8V Output:</span> Ultra High PSRR with Ultra Low Noise (9 uVRMS).</li>
+<li>
+<span class="bold">3.3V Output:</span> Ultra High PSRR with Ultra Low Noise (30 uVRMS).</li>
+<li>
+<span class="bold">5.0V Output:</span> Super high efficient switching mode power supply capable of delivering 3A.</li>
+</ul>
+</li></ul><h3 class="page-anchor" id="h:8-Integrated-Rechargeable-Battery">8. Integrated Rechargeable Battery</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898327">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/327/8a033ad03505271bd837073a20107329_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722341877&amp;width=680&amp;sig=xeREvaVWs1pT4bmi1gDPLg6xbL2IiGTvanU3lrT4W5M%3D"/>
+</figure>
+</div>
+<ul><li>
+<span class="bold">Convenience on the Go:</span> Includes a 9V 3000mAH rechargeable battery, adding to its portability and ease of use.</li></ul><p><span class="bold">Why SourcePure Super Capacitance Stands Out</span></p><h3 class="page-anchor" id="h:Unmatched-Efficiency">Unmatched Efficiency</h3><p>Imagine charging your power supply in less than 1 minute and having it last for more than an entire hour. SourcePure Super Capacitance makes this possible, offering an unparalleled level of efficiency and convenience.</p><h3 class="page-anchor" id="h:Versatility-at-Its-Best">Versatility at Its Best</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898368">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/368/2d9478571e70e9af3c09408579ebe35f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1722342117&amp;width=680&amp;sig=vuNoyc%2BwsHWr3Z%2FBxk2gQ3npEFtDy85apreIJLd8V2A%3D"/>
+</figure>
+</div>
+<p>Whether you're in the lab, at your desk, or out in the field, SourcePure Super Capacitance adapts to your needs. Its versatile input range and comprehensive cable kit make it suitable for a variety of applications, from powering development boards to running high-frequency RF amplifiers.</p><h3 class="page-anchor" id="h:Durability-You-Can-Trust">Durability You Can Trust</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898376">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/376/a0bb04dd1b4ce9db5f87e49c55c00dca_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722342150&amp;width=680&amp;sig=X6DswtuZfqvdmC4ZNayH1p7eEyviHp52IzrFBFHvQEw%3D"/>
+</figure>
+</div>
+<p>Housed in a durable aluminum case, SourcePure Super Capacitance is built to last. Its robust construction ensures it can withstand the demands of daily use, providing you with a reliable power source wherever you go.</p><h3 class="page-anchor" id="h:Real-World-Applications">Real-World Applications</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898378">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/378/60f9b9c31bb1667fe9e49402ab98776b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722342174&amp;width=680&amp;sig=ccd7rhhC1Um0wrqjEEt%2FF7ilDtsTcH0IU1IyfSNGpFM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898382">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/382/e61b237b4c690dffe6c222ba1039e789_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722342195&amp;width=680&amp;sig=t%2BeYR5W5W1EiHqMKvCOf7tH5eeVWtHD1Vdw1dKfK5tg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898383">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/383/94a7def4d40494d11bc39ee5ef3841b8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722342218&amp;width=680&amp;sig=NEBt5e0GvlKta%2FGUS7NsNYSUazmZK8h6qiS%2FD93u3%2Fg%3D"/>
+</figure>
+</div>
+<p>SourcePure Super Capacitance isn’t just a theoretical innovation; it’s been put to the test in real-world scenarios. With reliable outputs and comprehensive protection features, it ensures your projects run smoothly and efficiently.</p><p><span class="bold">Fully tested</span></p><h3 class="page-anchor" id="h:Using-Fluke-289-TRMS-Industrial-Logging-Multimeter-with-TrendCapture-"><span class="bold">Using Fluke 289 TRMS Industrial Logging Multimeter with TrendCapture:</span></h3><p><span class="bold">Measuring output 5.0V while connecting a dynamic load</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="42828130">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/042/828/130/8d48e8916bfef395ac6eedcca2f9e2da_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1698250001&amp;width=680&amp;sig=Q50enRHEURoCIj0jUjvjqNf6qV6gerlN4X6B5O71bno%3D"/>
+</figure>
+</div>
+<p>3A Super high efficient switching mode power supply (switching frequency 50kHz - 1.5MHz) </p><p><span class="bold">Measuring output 3.3V while connecting a dynamic load</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="42828141">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/042/828/141/c471caf0fe32ec18b7fd813e4f99c328_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1698250032&amp;width=680&amp;sig=U1nCZcOyuwzJCploWwgzHpSBsZbaQ1%2BTZOFgBc0ztEQ%3D"/>
+</figure>
+</div>
+<p>Ultra High PSRR (Power supply noise rejection ratio): (Measured at Iout=1A): 60dB @1KHz, 45dB @100KHz, 30dB @1MHz. Ultra Low Noise: 30 uVRMS</p><p><span class="bold">Measuring output 1.8V while connecting a dynamic load</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="42828166">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/042/828/166/910c0faca8dc6b33035760b0cb29a3ec_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1698250073&amp;width=680&amp;sig=yJ6z39h10%2BvOiywzUfAJ3Ea6F%2BRoa14luGBioGrJMjs%3D"/>
+</figure>
+</div>
+<p>Ultra High PSRR (Power supply noise rejection ratio): (Measured at Iout=10mA): 83dB @100Hz, 85dB @1KHz, 80dB @10KHz, 61dB @100KHz. Ultra Low Noise: 9 uVRMS</p><h3 class="page-anchor" id="h:It-s-been-a-challenging-journey-"><span class="bold">It's been a challenging journey!</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898544">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/544/730dccd6a0c0af4616d6ab27b9bae494_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722343382&amp;width=680&amp;sig=O5wfaZs6NuV71ERwxsRfNoMxbuuqveCA14aiJKq3n9o%3D"/>
+</figure>
+</div>
+<p>We started 3 years ago as we believed Power supply is the primary key unit for any developer, whether we make a new design or do a measurement the experiment starts with a good power supply unit, so we created <span class="bold">SourcePure</span> to enable you to have a reliable stable ultra-noise filtered power supply output quality!</p><h3 class="page-anchor" id="h:These-are-early-versions-"><span class="bold">These are early versions:</span></h3>
+<p><img class="image" data-id="43041044" src="https://i.kickstarter.com/assets/043/041/044/a160436367cf8f77e34905a8d02f5cd8_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;width=1440&amp;sig=zoPAfFlAThcjqxz7drkLIuhC%2FItI5zxCmOieGwdl6wU%3D"/>Having the 3 standard output voltages we use for almost all our circuits 5V, 3.3V, 1.8V makes <span class="bold">SourcePure</span> the most easy to use professional tool, you need no expensive power supply unity any more!</p><p><img class="image" data-id="43041058" src="https://i.kickstarter.com/assets/043/041/058/8e33f2f0f6723daf3ecdb841b0d7a3d5_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;width=2475&amp;sig=RXVJ1EJ5x8gaJwJTzuEvIGmtkOBbhCVSVoux22RyLlo%3D"/>Enjoy testing analogue circuits even with the ultra low current sensitive circuits without worrying about the power source injected noise, <span class="bold">SourcePure </span>can run RF circuits as Pro!</p><p><img class="image" data-id="43041073" src="https://i.kickstarter.com/assets/043/041/073/9d72a8c454ba8350a376bafe6e5bc618_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;width=2496&amp;sig=RUchQErYEtzB5m9OFqbYEag5mDEq5o3RH7qnPtSr7dQ%3D"/>Use <span class="bold">SourcePure</span> with any cheap power supply or a battery, it accepts wide input range from 8V to 28V, it can simply be powered by a common 9V battery which makes <span class="bold">SorucePure</span> very portable!</p><p>Affordable tool offers professional quality grade! </p><p><img class="image" data-id="43041245" src="https://i.kickstarter.com/assets/043/041/245/6d4d8aac2332643d23d5e50f9596ce42_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;width=1280&amp;sig=8zSN30vw0Tf9zgYfXHHR7YfHMj4AZyXRfbMoxObUxCI%3D"/><span class="bold">SourcePure </span>turns any noisy power supply to noise-filtered stable output power supply!</p><p><img class="image" data-id="43041261" src="https://i.kickstarter.com/assets/043/041/261/b9bf1552213d365e8509a9da61c4edec_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;width=1280&amp;sig=xMI5SEMSLZbTcN4Mig2sYlPcI%2FPlpFcXxShdBXFmwYA%3D"/>Use <span class="bold">SourcePure</span> with any battery from 8V to 28V.</p><p><span class="bold">Allows you to test RF circuits and analog circuits specially with low current like ADCs circuits</span> <span class="bold">where noise filtering is a MUST!</span></p>
+<p><span class="bold">You don't need super expensive power supplies any more from Keysight nor Anritsu nor Rohde and Schwarz.</span></p><p><span class="bold">Accepts inputs between 8V and 28V</span> <span class="bold">form any source doesn't matter its quality!</span></p><p><span class="bold">Outputs 3 standard Voltages 5V, 3.3V and 1.8V needed</span> <span class="bold">for our designs</span> <span class="bold">ultra noise filtered!</span></p>
+<h3 class="page-anchor" id="h:Until-we-finally-managed-to-create-SourcePure-Super-Capacitance-"><span class="bold">Until we finally managed to create SourcePure Super Capacitance!</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="45898596">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/045/898/596/59a06a79cdc2ba7ea41ebbb893699c13_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1722343738&amp;width=680&amp;sig=KjFnl8jZHjUQzwqh8bjyQic2WWssBHH6akrrnUyzWdo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Join-Us-in-Revolutionizing-Portable-Power"><span class="bold">Join Us in Revolutionizing Portable Power</span></h3><h3 class="page-anchor" id="h:Be-a-Part-of-the-Future">Be a Part of the Future</h3><p>By backing our Kickstarter campaign, you’re not just purchasing a product; you’re joining a community of innovators who believe in the power of precision and portability. Together, we can revolutionize the way developers approach power supply challenges, making high-quality, portable power accessible to everyone.</p><h3 class="page-anchor" id="h:Rewards-for-Our-Backers">Rewards for Our Backers</h3><p>We have exciting rewards for our early supporters, including discounted pricing, exclusive accessories, and more. Don’t miss out on the chance to be among the first to experience the future of portable power supplies.</p><h3 class="page-anchor" id="h:Ready-to-Transform-Your-Workflow-">Ready to Transform Your Workflow?</h3><p>Join the SourcePure Super Capacitance revolution today. Back our campaign on Kickstarter and take the first step towards a more efficient, portable, and reliable power solution for all your projects.</p><h3 class="page-anchor" id="h:Thank-You-for-Your-Support">Thank You for Your Support</h3><p>At RFOXiA, we are passionate about empowering developers with the tools they need to succeed. Your support will help us bring SourcePure Super Capacitance to life, ensuring that precision, portability, and performance are always within reach. Together, we can power the next generation of innovation.</p><p><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We always have the challenge to deliver our product on time, We have alternative plans for each manufacturing stage, our team take the quality assurance procedure seriously. From December 23 till January 24 some suppliers are on holiday in the US, also next February 24 is holiday in China where many suppliers and factories are off work so we will do our best to make sure we can meet our timeline.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">We apply high quality assurance standards to make guarantee the quality of each single item.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">We use electronic components in Aluminum metal case.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">We use materials that are RoHS compliant.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">We only deal with factories that proved to have a good environmental impact.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
