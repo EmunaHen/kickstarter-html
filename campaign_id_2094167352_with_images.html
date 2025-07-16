@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KETTLEBELL MONSTER a social network for working out</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/781/143/fa7978bc5c256a944738a5433cc35319_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750680562&width=560&sig=gDv1AZsPeXirvdF9A9Q9qDodfRzCDOnhh5oYz9HIQFc%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>KETTLEBELL MONSTER a social network for working out</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A unique project that revolutionizes working out and will radically change the way the world works out with a kettlebell.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>21 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p>Become part of a revolutionary project that builds on a unique and effective way of exercise! This will radically change the way the world works out with a kettlebell from home or in the gym. This project brings people of all colors, ages, and genders together with one objective: to become stronger, fitter, happier, and more flexible.</p><p>This project will be its first in what it does, being a social network for people to work out with the highly popular and versatile kettlebell, and share that journey with others. Your backing of this project can give you lifetime access to the mobile app, website, and additional rewards suitable for anyone wanting to start training with a kettlebell.</p><p><span class="text-italic">This project is for people from across the world, the USA, Europe, Asia, and more. There are no limitations to access or delivery. We have been serving all these locations for the past two decades.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794972">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/972/74dcd39c523abe656573e668840e001d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750764485&amp;width=680&amp;sig=QRVTPPCzGKFUbc732XjcA8H5pNaxES0So8EA24VIGoM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:A-SOCIAL-NETWORK-FOR-WORKING-OUT">A SOCIAL NETWORK FOR WORKING OUT</h3><p><span class="bold">A social network where people from across the world can:</span></p><ul>
+<li>Create and share workouts</li>
+<li>Track their workouts and share their results</li>
+<li>Share their workout stories</li>
+<li>Learn about correct form and technique to stay safe</li>
+<li>Access hundreds of intelligently designed workout sessions</li>
+<li>Learn how to train effectively</li>
+<li>Access over 1,000 kettlebell exercise photos</li>
+<li>Avoid common mistakes</li>
+<li>Interact with like-minded people</li>
+<li>Have access to highly professional coaches and trainers</li>
+<li>Create meet-ups</li>
+<li>And so much more</li>
+</ul><p>Hello! My name is Taco Fleur, and the kettlebell has been my passion for over 2 decades now. I have coached over 20,000 students worldwide. I've owned 3 functional fitness gyms, and I can say so much more about my background, but the important thing is that there is something unique that helps people across the world to:</p><ul>
+<li>Enjoy working out</li>
+<li>Avoid injury</li>
+<li>Learn new and fun kettlebell exercises</li>
+<li>To get strong</li>
+<li>To get fit</li>
+<li>To feel good</li>
+</ul><p>And most importantly, focus on longevity with just one popular tool (the kettlebell) and the only support they need in one place (KETTLEBELL MONSTER).</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796128">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/128/85bd13f3c2f933d7dbc0fc7c59ea897d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750770550&amp;width=680&amp;sig=a90ZFbhi7Y9L8KPW9XB509ALNaOdAUl8xuLzpvPcGnY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:WHAT-WE-PROVIDE-OUR-BACKERS">WHAT WE PROVIDE OUR BACKERS</h3><p>For those who back this project, here's what to expect in return:</p><ul>
+<li>2-Year or Lifetime App and Website Access (valued from <span>$718.80 for 2 years to $599.40 a year</span> multiplied by years in a lifetime)</li>
+<li>
+<span>Beginner Kettlebell Workout Bundle</span> (valued at $55.85)</li>
+<li>
+<span>Kettlebell 4-Day Split Strength Program</span> (valued at $65.95)</li>
+<li>
+<span>NEO Kettlebell Strength, Power, Cardio, and Flexibility Program</span> (valued at $219.80)</li>
+<li>
+<span>NASM Accredited Kettlebell Course with CEUs</span> (valued at $99)</li>
+<li>
+<span>Kettlebell Sport for Beginners Online Course</span> (valued at $199)</li>
+</ul><p>This offering is worth over $1,499 and more if you go for a lifetime reward. Back our project and get some or all of the above rewards for a one-time payment. <span class="bold">Help make KETTLEBELL MONSTER the success that it deserves to be, so it can change the lives of millions around the world.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794456">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/456/73a014fa7a8633cfe692119743a3fc21_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750761778&amp;width=680&amp;sig=ZZNzibHt14dJC14l8PuEOqZiSSgrL4Ugp092s%2FL4Cyw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:UNIQUE-OFFERINGS">UNIQUE OFFERINGS</h3><p>The <span>mobile app's</span> unique offerings are that it allows people to create their customized kettlebell workouts for free, explore hundreds of free kettlebell exercise photos, complete hundreds of uniquely designed workouts, and more.</p><p>But on top of that, we deliver way more for little money but huge value. You can see our current matrix above that explains the features delivered by the app. As a backer, you will get access to member videos, full workout access, courses, certifications, ebooks, and more depending on the level chosen (Bronze, Silver, Gold, or Platinum).</p><p>Members will be able to view professionally produced videos for each session (currently works on the website), which include many of or all of the following: introduction, warm-up technique, workout technique, common mistakes, alternatives and progression, programming, follow-along warm-up, follow-along prep work, follow-along workout, and follow-along cooldown. </p><p>Then we go further and include copies of our popular ebooks that cover kettlebell technique, exercises, workouts, and more. These books have been sold on <span>Amazon</span> and many other places for the past decades.</p><p>We don't stop there, as we also include courses and certifications in some of the memberships. This means that people can get certified online through our website. We have NASM-accredited courses. We have certifications that we've been offering through our other websites for years, and have created many experienced kettlebell users.</p><p>Some levels of our memberships even include personalized coaching, i.e., working with a real professional human being. This means you don't need to spin your wheels anymore by taking on board thousands of different opinions from every internet user who may or may not have any credibility or knowledge.  </p>
+<p>Future items not listed in the feature matrix are Advanced Workout Timer and integration with custom-created workouts, Kettlebell Challenges, Kettlebell Sport Tracking functionality, and all that's in the pipeline.</p><h4 class="page-anchor" id="h:Support-and-Judges">Support and Judges</h4><p>Because our application places emphasis on education and we also provide certifications, another unique feature is that people can become certified and then list themselves as a judge on the network. Judges can be called upon to count valid reps for challenges, competitions, and even workouts.</p><h4 class="page-anchor" id="h:Accurate-and-Qualified">Accurate and Qualified</h4><p><span class="bold">But there is so much free kettlebell and workout stuff out there!?</span> Yes, there are a lot of run-of-the-mill slapped-together workouts. There are a lot of Men's Health Magazines with information. But most of these highly popular magazines or YouTube channels just put incredibly bad form and technique out there. Most of these trainers go through a 1 to 2 hour online kettlebell certification (if even that) and then believe to be qualified<span class="text-italic">—but they have a six-pack and huge biceps</span>. Once you experience KETTLEBELL MONSTER and the quality of IKU™, you will know what you've been missing out on. We deliver highly accurate content through qualified coaches and bring all that content to the world via a social network that interacts with the exercises, combos, complexes, flows, hybrid workouts, and more. </p><h4 class="page-anchor" id="h:Got-no-kettlebell-yet-">Got no kettlebell yet?</h4><p>The beauty is that you can easily buy yourself one kettlebell to start with. I have written a lengthy article on how to make an informed decision on <span>what kettlebell to buy</span>, and when you join this campaign, with the ebooks, videos, instructionals, etc., you will have everything to start your kettlebell journey and become addicted to KETTLEBELL MONSTER. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793519">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/519/4acd16acb61414c6ea97ca1c11a9d33d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750756485&amp;width=680&amp;sig=OVs%2FeKZQGZHbE4vOkVDgoZWTLkTw9LlQKDupP6m9p7g%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:OUTDATED-AND-TOO-BUSY">OUTDATED AND TOO BUSY</h3><p>Facebook is the social network that everyone uses. This won't change. Everyone has their friends on there, their photo albums, and basically their life experiences. But... however great Facebook is, it is full of political stuff, keyboard warriors, and people with big egos.</p><p>When you want to work out, interact with people, track your progress, share your progress, gain knowledge, ask questions, and more, then you want to be able to do that in an environment where people are interested in your progress, <span class="bold">where you inspire others</span>, where you can get knowledge from people that actually know about the topic you are interested in.</p><p>Sure, you have to pay to get the full benefits<span class="text-italic">, while Facebook is free, </span>but we're all willing to pay a reasonable price to be able to interact with like-minded people and have access to all the latest tools and premium content to be able to track our progress.</p><p>Who isn't willing to pay to also be able to actually contact the company they contract a service from? Rather than typing in long sentences and having an AI trying to be smart and deliver you <span class="text-italic">'an answer'</span>, when in my case, it never does.</p><p>One guarantee is that we will not outsource our support to 10th-level support peeps who read a script and have no idea how to answer when you go off-script (it's not in their little database), and then you go back and forth 10 times before you get so angry that they finally put you through to 9th-level support, and one year later you are finally speaking to a person who understands how to fix your issue or answer your question.</p><p>The whole social aspect of working out, sharing, interacting, and more is what's currently missing from our Web and App. A large part of this campaign is to fund that.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793539">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/539/6c7d26da1f6cc8acee5e6e6da6474d09_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750756606&amp;width=680&amp;sig=8ir0kupk88NAxmo3rQ6qMkhY0NhmlC79obYgjse4VBU%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:THE-MARKET">THE MARKET</h3><p>Sure, these are just some stats taken from the internet, but we all know that kettlebells are on the rise. They are THE tool to work out with at home and be able to work for generic fitness, strength, hypertrophy, power, flexibility, endurance, mental toughness, and so much more.</p><p><span class="text-italic">The global kettlebell market is experiencing substantial growth, driven by increasing fitness awareness and the popularity of home workouts. The market is projected to reach $1.5 billion by 2033, with a 7.2% CAGR from 2025 to 2033. This growth is fueled by the versatility of kettlebells, their cost-effectiveness, and the rise of online fitness trends.</span></p><p><span class="text-italic">In 2024, the number of kettlebell users in the United States peaked at roughly 15.6 million. This was an increase over the previous year's figure of 14.5 million. </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795852">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/852/ef22edfdfd3c11135f3d48da8383cd5e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750769122&amp;width=680&amp;sig=zrmjf4Y%2FNeqtT6PWF73TQRi0CvdElDjK0qOoyzS4ttQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:THE-REWARDS"><span class="text-italic"><span class="bold">THE REWARDS</span></span></h3><p><span class="text-italic"><span class="bold">The biggest reward is that you are part of helping create a new one-of-a-kind social network that will revolutionize working out and online interaction.</span></span></p><h4 class="page-anchor" id="h:Bronze-Reward">Bronze Reward</h4><div>
+<ul>
+<li>2 Years Website and Mobile App Access at Bronze Level</li>
+<li>
+<span class="bold">Digital copy of Kettlebell Workouts and Challenges 5</span><br/>Discover effective kettlebell workouts perfect for beginners and advanced fitness enthusiasts. Tailored options for all fitness levels.</li>
+<li>
+<span class="bold">Beginner Kettlebell Workout Bundle</span><br/>This is the perfect workout bundle for any beginner with one or no kettlebells to start with, and includes the following:  Kettlebell Home Workout for Beginners + Journal, Workout Follow-Along Videos, Kettlebell Training Fundamentals Instructional Video, and Kettlebell Training Fundamentals Ebook.</li>
+<li>
+<span class="bold">Kettlebell Strength 8 or 12-week Program</span><br/>This kettlebell strength program is an intelligent split that’s about simplicity, low volume, full control, perfection, slow exercise execution, power, strength, flexibility, mobility, and cardio.</li>
+</ul>
+<h4 class="page-anchor" id="h:Silver-Reward">Silver Reward</h4>
+<div>
+<ul>
+<li>2 Years Website and Mobile App Access at Silver Level</li>
+<li><span class="bold">Everything from the Bronze Reward included</span></li>
+<li>
+<span class="bold"> Kettlebell 4-Day Split Strength Program</span><br/>The Prometheus Phase II Program is a 3-day, 4-day, or 6-day, 12-week split program that works your full body. A 12-week fixed kettlebell routine with measurable strength progression.</li>
+</ul>
+<h4 class="page-anchor" id="h:Gold-Reward">Gold Reward</h4>
+<div>
+<ul>
+<li>Lifetime Website and Mobile App Access at Gold Level</li>
+<li><span class="bold">Everything from the Silver Reward included</span></li>
+<li>
+<span class="bold">Kettlebell Sport for Beginners Online Course</span><br/>Learn one of the most awesome disciplines in kettlebell sport and get super fit.</li>
+</ul>
+<h4 class="page-anchor" id="h:Platinum-Reward">Platinum Reward</h4>
+<div><ul>
+<li>Lifetime Website and Mobile App Access at Platinum Level</li>
+<li><span class="bold">Everything from the Gold Reward included</span></li>
+<li>
+<span class="bold">NASM Accredited Online Kettlebell Course Enrollment</span><br/>This online course includes CEUs, a certificate of completion, exams, videos, and study material.</li>
+</ul></div>
+</div>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793548">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/548/83293edac1f2b733dedef0e20e4f93cb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750756641&amp;width=680&amp;sig=%2FsfK2uptO2J0U3iaI4QrzGKc1rToz5gWA0rkYzJb8vQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:SINCE-2009">SINCE 2009</h3><p>In reality, we've been working on this project since 2009 in some form or another, as everything that is offered to its members is intellectual property that has been created with blood, sweat, passion, and tears. For years, we've been working to gather knowledge and produce:</p><ul>
+<li>1,000+ kettlebell exercise photos</li>
+<li>200+ unique workout sessions</li>
+<li>20+ kettlebell workout books</li>
+<li>10+ kettlebell courses and certifications</li>
+<li>1,000+ hours of additional kettlebell video content</li>
+</ul><p>All the books, videos, courses, and more have been created with my hands and brain. There is no AI involved. I have extensive knowledge and a unique approach to teaching people. I have translated these things into content and functionality that people from across the world can use. </p><p>Think of it like this. There is a huge amount of unique kettlebell-related content, and on top of all that content is the NETWORK. A network that focuses on:</p><ul>
+<li>Accountability</li>
+<li>Motivation</li>
+<li>Progression</li>
+<li>Safety</li>
+</ul><p>And sharing stories. Interaction. <span class="bold">Creation</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49783681">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/783/681/208c3bab1202bf2346d48a0d619be25a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750694122&amp;width=680&amp;sig=QY5hr7TiDXn1nASQ6M90arN4hNHKPa1%2BGrK6v5KyBQQ%3D"/>
+</figure>
+</div>
+<p>By the way, when I say "created with blood, sweat, passion, and tears", I mean that we've been all over the world with our kettlebells and dragged our kettlebells to places no kettlebell has gone before. I know this is corny, but here's a video of one of our experiences going up the highest mountain in mainland Spain.</p>
+<p>We also went up there all the way to the top on our flip flops, carrying our 16kg kettlebell, tent, and more. When we got up there, people asked to take photos with our kettlebell, and we exchanged a photo for some chocolate. It was awesome. There is so much more adventure that I want to share with you, and this is just the tip of the iceberg.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793573">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/573/6c9eafe6432c3a3e06c27df09b4ab998_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750756773&amp;width=680&amp;sig=X33y%2F7EdHjSVJ%2F%2BOYLQ8Q5%2BbGTkuwccY50QuctsWk%2B8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:REVOLUTIONAIRY">REVOLUTIONAIRY</h3><h4 class="page-anchor" id="h:Why-is-the-funding-required-">Why is the funding required?</h4><p>What the website provides is already revolutionary in the fitness space. Those are not my words, but from the people who use the website. However, what's there is only a small percentage of what needs to be developed, and at the pace I am going and the money I can put into it each month, we will be 3 to 4 years down the track before the final project is completed. With your backing, we will be able to reduce that time to less than a year and potentially even less than 6 months. What we still have in the pipeline is, but not limited to:</p><ul>
+<li>Social interaction (huge project)</li>
+<li>Porting the application to iPhone (huge project)</li>
+<li>Mobile app workout timer for:<ul>
+<li><span class="text-italic">AMRAPs</span></li>
+<li><span class="text-italic">FOR TIMEs</span></li>
+<li><span class="text-italic">EMOMs</span></li>
+<li><span class="text-italic">Intervals</span></li>
+<li><span class="text-italic">And more...</span></li>
+</ul>
+</li>
+<li>Creating and sharing workouts</li>
+<li>Tracking progress</li>
+<li>Challenges</li>
+<li>Gamification</li>
+<li>Deck of Cards game</li>
+<li>Kettlebell Sport</li>
+<li>And so much more...</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793625">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/625/874a003a120fe536db414e35d4afa95f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750757076&amp;width=680&amp;sig=5RS5zam3METutfIo5FeLEkoFpqqrIsPEoukUBJ0g9Yw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:FOR-EVERYONE">FOR EVERYONE</h3><p>This project is for everyone, from young to people with many years (like me), for males and females, for beginners to advanced. This project is about becoming part of the user's life, from the start of their fitness journey until the grand finale. This project is about making fitness fun and addictive, which is something that the kettlebell can and will deliver, it has for me, and I'm over half a century of age. The same goes for my wife. We both still learn, we are both still entertained by the kettlebell, and we still have so many different goals to reach with the kettlebell. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793638">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/638/74972d421761bf7ccf5a49365442837a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750757196&amp;width=680&amp;sig=iTFmkBp%2BwK9PQHsG7xCyehvJ2ZcEXm28R7b8eUBMAyA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:DIFFERENT">DIFFERENT</h3><p>KETTLEBELL MONSTER™ is different. It's a friendly monster. It's for everyone. It includes all types and forms of kettlebell training. The norm out in the world and gyms is usually that one does Hardstyle, Sportstyle, or Freestyle. We have all those, we promote all those, and we deliver much more. We don't limit the knowledge and fun to just one, as there is so much more to explore outside of those, and then combining them. We also place a high focus on longevity with our workouts, which means we provide hybrid workouts that include a lot of mobility work.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793647">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/647/1abbcf482d98f3461243cb93d5c72224_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750757306&amp;width=680&amp;sig=fz1Eveg9pWIUi1AJPnio1PysWsjeZPRYBpKDFModMWA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:LIVE-AND-WORKING">LIVE AND WORKING</h3><p>KETTLEBELL MONSTER™ is already live and working. There is a <span>mobile app</span> and <span>website</span> that are functional. The website already provides 25% of the documented functionality. The mobile app already provides 7% of the documented functionality. This Kickstarter project has been created to speed up the process of delivery. Right now, the project has solely been dependent on my investment and time, which is currently over $100,000 in money and uncountable in time. </p><p>One month on the Play Store and these are our install stats.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49784320">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/784/320/f5a016e0b21e3eb5914f0760ec294b1d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750697320&amp;width=680&amp;sig=pP6oivNd4eCPwss4VwSuEqK1WuOnzq1Rmlp0Cd8kc3w%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:KETTLEBELL-MONSTERTM">KETTLEBELL MONSTER™</h3><p>We picked the name KETTLEBELL MONSTER to stand out and have something memorable. We've not created a logo and just keep it as text, as we don't want to associate scaryness or anything other than what it is. An incredibly cool application that provides everything one needs to work out and stay motivated.</p><p>We are different. We don't beat around the bush, and we say it as it is. Feeling old is not due to age. It's due to inactivity and/or incorrect training. We're here to help everyone take the right road and enjoy their life with added mobility, strength, endurance, and more. If you see older people struggling to move, it's usually not because they're old. It's generally because they stopped moving, aren't moving enough, or aren't moving correctly with the right program and progressions. We're here to help change the myth that getting older means not being able to do stuff like you did at twenty years of age.</p><h3 class="page-anchor" id="h:NOT-A-FAD">NOT A FAD</h3><h4 class="page-anchor" id="h:In-business-since-2009">In business since 2009</h4><p>This is not some fad. This is not something that might go away. This is not something that will not succeed. </p><p>My wife and I have been operating in the fitness industry since 2004; she has even been in it longer than that. In 2009, we created our first online presence with Cavemantraining™, which is still and will always be operating. In 2024, we started IKU™, which stands for International Kettlebell University. We did this for several reasons. To sound more professional, and I say 'sound', as we have always been professional, and reach a wider audience.</p><p>To make it simple: Cavemantraining™ created the content over 2 decades. IKU™ is a legal company registered in the USA. KETTLEBELL MONSTER™ is the one and only thing that matters in regard to this Kickstarter, as it's the project that will deliver everything mentioned.</p><p>We've sold thousands of books on Amazon.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49782067">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/782/067/8cc47448c7a707e016c6a6a3c4bb9049_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750685400&amp;width=680&amp;sig=Qd8XRGuhI9wmEOcZD1viDNaA1ZHLMJO0f%2F1db0iq2kg%3D"/>
+</figure>
+</div>
+<p>We've helped thousands of people across the world lose weight, squat better, swing better, and make progress.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49782074">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/782/074/d22162d901806b08e08cc964a3c8fcf9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750685443&amp;width=680&amp;sig=ef%2FSf8zzmYEM59xmqkgeSDGhP502AyuBGvKcP7R3kTU%3D"/>
+</figure>
+</div>
+<p>We've sold hundreds of t-shirts that people wear.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49782089">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/782/089/043158d17ff38859d85be7f98cba6b5e_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750685497&amp;width=680&amp;sig=t0H9irCx0lgbtSV6lzpE%2B1ExGbxstO1lLGDGyL5iVJs%3D"/>
+</figure>
+</div>
+<p>These videos are not related to KETTLEBELL MONSTER, but interesting to see where it all started to take shape. Here is a very old video where we started our project of getting people together from across the world. KETTLEBELL MONSTER will be 1000 times more exciting.</p>
+<p>Here is another <span>video</span>, which BTW is part of our YouTube channel, which has over 68,000+ subscribers.</p><p>On one network where we have been providing online courses, I have a star rating of 4.7 out of 5 with over 1,052 reviews. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49782636">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/782/636/88e99e07f0ce693090a951aa1849b535_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750688494&amp;width=680&amp;sig=IAkyYWpiwLS5PsdNV5SW%2Fa4iABq0YLOH91H53o3ljdo%3D"/>
+</figure>
+</div>
+<p>One of our websites has a 4.81, which is very close to a perfect 5-star rating.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49782668">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/782/668/7fcfbb9c45a6287d73a397384c57ebd9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750688627&amp;width=680&amp;sig=%2F%2FHHfulQeTf0vZh1M4bhGem5JRUKIPpnkSLb%2BD0Uh1Y%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:ABOUT-TACO-FLEUR">ABOUT TACO FLEUR</h3><p>StrongFirst Certified Kettlebell Instructor (SFG2), Russian Girevoy Sport Institute Kettlebell Coach, IKSFA Kettlebell Sport Coach, IKFF Certified Kettlebell Teacher, Kettlebell Sport Rank 1, HardstyleFit Kettlebell Level 1 Instructor., CrossFit Level 1 Trainer, CrossFit Judges Certificate, CrossFit Lesson Planning Certificate, Kettlebells Level 2 Trainer, Kettlebell Science and Application, MMA Fitness Level 2, MMA Conditioning Level 1, BJJ Purple Belt, and more. Owner of Cavemantraining and IKU™ (International Kettlebell University). Featured in 4 issues of the Iron Man magazine.</p><p>Not only do I have an extensive amount of experience in the health and fitness industry, with the kettlebell and coaching, but I also have an extensive background in the IT industry as an owner of several IT companies, having worked for the government in Australia, banks, mining companies, and so on. I mention this only to allow your confidence in the delivery of this project. </p><p>I hope you'll come and join me to be part of something unique and amazing. I'm available to answer any questions we may have. </p><h3 class="page-anchor" id="h:PROJECT-BUDGET-AND-RISK">PROJECT BUDGET AND RISK</h3><p>The project budget is over $80,000, but I have set the goal to raise less than the budget, as I want to make sure we can deliver the rewards to our backers. Everything is LIVE and ready to deliver, apart from some of the App and Web functionality mentioned above. Those will become accessible to you as we release them, which we usually do every 3 to 4 weeks. </p></div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div class="relative flex justify-center items-center h50"><svg height="250" preserveaspectratio="xMinYMid" viewbox="0 0 250 250" width="250"><g transform="translate(125, 125) scale(2.5, 2.5)"><defs><pattern height="1" id="bg1" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/xglb1yux-hatch_light_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=clgJlzhY3k416hIJWrLOR2MdAEuRyBIYLy5Q4Y0qGuE%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg2" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/qm5rth84-dot_line_white_2_pattern_overlays_20190901.png?origin=static&amp;sig=X4u8yLPJQSLFYyFAWhfks%2Bb0l7JvccL9Ns4mZ%2BdcX%2Fs%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg3" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/2pgrzep-scattered_dots_black_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=7dYAvrHvJlUMrHNcRby2NfD16BbES28QnocyMYhS%2BjU%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg4" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/l9o3ber7-grid_dark_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=w1sAH2Z8b0%2Bm44c8oN%2BES4hwspBpkhrrhc1YpFJSPyQ%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg5" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/v0js8b2e-dot_line_white_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=j1%2Biz4vH2TtOn5EX0sEl2Xque0oEBcJupM5qVbNe8CM%3D" width="160" x="0" y="0"/></pattern></defs><path class="innerArc innerArc0" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-40.35943506867905,-17.016345111012527L-32.30386587330647,-13.340267974798154A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="#059968" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc1" d="M-39.30094758721165,-19.335860951797372A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-31.24537839183908,-15.659783815583003Z" fill="#71A0FF" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArcTexture" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-40.35943506867905,-17.016345111012527L-32.30386587330647,-13.340267974798154A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="url(#bg1)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-39.30094758721165,-19.335860951797372A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-31.24537839183908,-15.659783815583003Z" fill="url(#bg2)" style="opacity: 1;"></path><path class="outerArc" d="M1.274808758606064,-49.983745984359565A50,50,0,0,1,49.99972380122147,0.16619206228742053L46.199965277829435,0.05664209878687248A46.2,46.2,0,0,0,1.2748087586060677,-46.18240858410247Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M49.99919393169767,-0.2839122760418498A50,50,0,0,1,29.28328119850735,40.527638004812786L27.136250708780633,37.39069265833682A46.2,46.2,0,0,0,46.19970386730318,-0.16541636404097332Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M29.646924544830846,40.26238772145918A50,50,0,0,1,-7.921903700766313,49.36844581061657L-7.224127547536348,45.63169930187705A46.2,46.2,0,0,0,27.315653739646542,37.25983173305717Z" fill="#003322" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-7.477167875621412,49.437758449992195A50,50,0,0,1,-22.779388054330926,44.50954369424838L-20.961831335418527,41.170883243688934A46.2,46.2,0,0,0,-7.004717634575457,45.665894613593935Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-22.37779006683775,44.71280031181829A50,50,0,0,1,-35.410380658190135,35.3002116373553L-32.65069410897188,32.685962953573046A46.2,46.2,0,0,0,-20.763703425546574,41.27115966453991Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-35.09117330143159,35.617545624718375A50,50,0,0,1,-44.58030924218432,22.64058364687659L-41.1482287887945,21.006267339654237A46.2,46.2,0,0,0,-32.493213522963224,32.84251931492346Z" fill="#003322" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-44.374692324714196,23.04097830142964A50,50,0,0,1,-48.63184052042898,11.616543702649325L-44.91320435524673,10.827930298253985A46.2,46.2,0,0,0,-41.04678791667517,21.20380158659031Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-48.52529786720352,12.053856930425768A50,50,0,0,1,-49.963387619950936,1.9130858680502634L-46.16236026599534,1.8645360475074495A46.2,46.2,0,0,0,-44.860641658586964,11.043678281254484Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-49.94414155902374,2.3627788580816373A50,50,0,0,1,-49.64822530093176,-5.9206185882827125L-45.886335708458276,-5.374401850500906A46.2,46.2,0,0,0,-46.1528652437504,2.0863915721208737Z" fill="#003322" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-49.69951103175183,-5.4734452774078095A50,50,0,0,1,-48.60922653949714,-11.710811040736964L-44.93752662397908,-10.726541890058105A46.2,46.2,0,0,0,-45.911637465364635,-5.15378940673043Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-48.71267769230854,-11.272756186721438A50,50,0,0,1,-46.89736239427732,-17.338898478848748L-43.36667707000935,-15.930201502351618A46.2,46.2,0,0,0,-44.98856413242954,-10.510428026596966Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-47.051546963170985,-16.916025785405857A50,50,0,0,1,-46.00198222397858,-19.59126416198707L-42.54371357915637,-18.013118411166523A46.2,46.2,0,0,0,-43.44274385151913,-15.72157774052264Z" fill="#003322" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-44.94349474251119,-21.910780002771897A50,50,0,0,1,-29.21963219676921,-40.57355165973923L-27.07752815921471,-37.43324015880718A46.2,46.2,0,0,0,-41.48522609768897,-20.332634251951372Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-29.58369143688141,-40.308872484446766A50,50,0,0,1,-15.244130360038064,-47.61949694784864L-14.177850676091373,-43.97076927012371A46.2,46.2,0,0,0,-27.25713637080774,-37.30266098903924Z" fill="#3B3BCC" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-15.672183483535937,-47.4803397719349A50,50,0,0,1,-1.2748087586059813,-49.983745984359565L-1.2748087586060015,-46.18240858410247A46.2,46.2,0,0,0,-14.389030197189554,-43.90211623583045Z" fill="#00007D" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><text font-size="8" height="250" style="opacity: 1;" text-anchor="middle" width="250" x="-1" y="3">$80,060</text></g></svg></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Funding</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$65,500</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Development</div><div class="m0 type-16 text-nowrap">$20,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Employ support people</div><div class="m0 type-16 text-nowrap">$12,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Legal</div><div class="m0 type-16 text-nowrap">$10,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Accounting</div><div class="m0 type-16 text-nowrap">$4,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Graphic Design</div><div class="m0 type-16 text-nowrap">$4,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Port to iOS</div><div class="m0 type-16 text-nowrap">$4,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Advertising/Marketing</div><div class="m0 type-16 text-nowrap">$3,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">UI/UX Design/Testing</div><div class="m0 type-16 text-nowrap">$2,500</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Testing +  Release</div><div class="m0 type-16 text-nowrap">$2,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Documentation/Project Management</div><div class="m0 type-16 text-nowrap">$1,500</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">UI/UX Design/Testing</div><div class="m0 type-16 text-nowrap">$1,500</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Hosting upgrade</div><div class="m0 type-16 text-nowrap">$1,000</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$14,560</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">$6,550</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">$4,005</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">$4,005</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated June 23, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">When you back us, there is no risk of not getting your rewards, as the rewards offered are already live, apart from some of the App and Web upgrades (mentioned above), which will be released to you regularly.
+
+As Gold includes 15 minutes of coaching, and Platinum includes 30 minutes of coaching, which requires human time, the risk is that we don't get qualified trainers in place to handle these requests. Therefore, we have to put a caveat on this small part of the web membership that's included. If the app receives the same functionality in the future, this caveat will apply to that as well. In other words, we will provide the service as intended, but as we get overwhelmed with thousands of people requesting coaching at the same time, and we don't have the qualified staff in place to handle the volume, the caveat will apply. NOTE: This caveat has absolutely no impact on all other rewards offered, only on the web and app for Gold and Platinum, and only for the coaching part.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

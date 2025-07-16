@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAST – Das sichere, modulare Web-Framework aus Rust</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/934/478/651da2b6ea81c54eef295accc83799db_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751748078&width=560&sig=%2BcqxiMmeD9J9ubBG9zbnfa3u%2Fp00SYR3pdab8ObBUlc%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>FAST – Das sichere, modulare Web-Framework aus Rust</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Headless Plattform für CMS, SaaS & Tools – plugin-fähig, sicher und entwickelt in Rust</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 11,681</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p>--- <span class="bold">🟦 DEUTSCH</span> ---</p><h3 class="page-anchor" id="h:-Was-ist-FAST-"><span class="bold">🚀 Was ist FAST?</span></h3><p><span class="bold">FAST ist ein modulares Ökosystem für moderne Websysteme – bestehend aus Framework, API-Plattform und optionalem CMS.</span><br/>Es richtet sich an Entwickler, Plattformbetreiber und Agenturen, die skalierbare Webanwendungen oder SaaS-Produkte erstellen, betreiben oder weitergeben wollen.</p><p>FAST selbst ist kein CMS, sondern ein <span class="bold">strukturiertes Framework mit Lizenzkontrolle, Plugin-Architektur und klarer Trennung zwischen Core, Webinterface und Sicherheitsschicht.</span></p><h4 class="page-anchor" id="h:-FASTcore-engine"><span class="bold">🔧FASTcore::engine</span></h4><p>Das <span class="bold">technische Herzstück</span>.<br/>Ein modulares Backend, das Inhalte, Funktionen, Authentifizierung und Geschäftslogik verarbeitet.<br/>Du kannst eigene Frontends (PHP, Next.js, React usw.) damit verbinden oder das optionale Web-Modul verwenden.</p><h4 class="page-anchor" id="h:-FASTcore-gate"><span class="bold">🔐 FASTcore::gate</span></h4><p>Meine <span class="bold">eigene zentrale Kontrollinstanz</span> zur Verwaltung von:</p><ul>
+<li>Lizenzstatus &amp; Maschinenbindung</li>
+<li>Plugin-Signaturen &amp; Registry-Zugriff</li>
+<li>Instanzverifizierung &amp; OEM-Schlüssel</li>
+</ul><p>gate ist <span class="bold">nicht Teil einer normalen FAST-Installation</span>, sondern mein eigenes Admin-Tool für Lizenzprüfung und Sicherheit – optional whitelabelbar für OEM-Nutzung oder externe Partner.</p><h4 class="page-anchor" id="h:-FASTcore-web"><span class="bold">🌐 FASTcore::web</span></h4><p>Ein optionales CMS-Modul für visuelle Inhaltsverwaltung: Seiten, Menüs, Medien, Blöcke etc.<br/>Es ist vollständig über engine angebunden und kann durch Plugins erweitert oder ersetzt werden.</p><h4 class="page-anchor" id="h:-Erweiterbar-durch-Plugins"><span class="bold">🧩 Erweiterbar durch Plugins</span></h4><p>Alle FAST-Module sind durch ein gemeinsames <span class="bold">Plugin-System</span> verbunden:</p><ul>
+<li>Du kannst <span class="bold">eigene Plugins entwickeln und lokal nutzen</span> – ganz ohne Prüfung oder Signatur.</li>
+<li>Öffentliche Plugins für andere Nutzer (über die Plugin Registry) müssen <span class="bold">signiert, kompatibel und geprüft</span> sein.</li>
+<li>Themes, Auth-Provider, API-Erweiterungen, DB-Modelle, UI-Komponenten: alles ist modular und ergänzbar.</li>
+</ul><h3 class="page-anchor" id="h:-Warum-dieses-Projekt-"><span class="bold">💡 Warum dieses Projekt?</span></h3><p>Ich entwickle FAST seit längerer Zeit als Einzelprojekt – aus realem Bedarf, nicht als Marketingidee.<br/>Die Kernarchitektur steht – jetzt soll daraus ein stabil nutzbares, erweiterbares System werden, das Entwicklern wirklich hilft.</p><ul>
+<li>Mit eurer Unterstützung kann ich:</li>
+<li>die Admin- &amp; Setup-UI fertigstellen</li>
+<li>die Plugin Registry aufbauen</li>
+<li>eine saubere Dokumentation liefern</li>
+</ul><p>und FAST so weiterentwickeln, dass es produktiv einsetzbar wird</p><h3 class="page-anchor" id="h:-Warum-keine-Screenshots-oder-Demos-"><span class="bold">❗️Warum keine Screenshots oder Demos?</span></h3><p>Weil ein <span class="bold">schickes UI leicht zu zeigen – aber technisch bedeutungslos ist.</span><br/>Ich baue kein Dashboard zum Vorzeigen – ich baue ein Framework, das <span class="bold">Logik, Kontrolle und Erweiterbarkeit ermöglicht</span>.</p><p>Was FAST ausmacht, liegt im Core:</p><ul>
+<li>Lizenzlogik</li>
+<li>Maschinenbindung</li>
+<li>API-Steuerung</li>
+<li>Plugin-Handling</li>
+<li>Flag-basiertes Berechtigungssystem</li>
+</ul><p>Natürlich wird es eine Oberfläche geben – aber erst, wenn sie auf einem funktionierenden Kernsystem basiert.<br/>Ich veröffentliche kein Frontend-Clickbait – sondern ein echtes Werkzeug.</p><h4 class="page-anchor" id="h:-FAST-ist-kein-CMS-Klon-"><span class="bold">🧱 FAST ist kein CMS-Klon.</span></h4><p>Es ist ein skalierbares, erweiterbares und kontrollierbares System für Menschen, die ernsthaft Webplattformen bauen wollen.</p><h4 class="page-anchor" id="h:-Ein-Blick-in-die-Entwicklung"><span class="bold">🔍 Ein Blick in die Entwicklung</span></h4><p><span class="bold">FAST ist kein theoretisches Konzept – hier ein Blick in die bereits strukturierte Projektbasis:   </span></p><h4 class="page-anchor" id="h:-Echtzeit-Einblick-API-in-Aktion"><span class="bold">🧠 Echtzeit-Einblick: API in Aktion</span></h4><p>Der Screenshot zeigt einen realen Ausschnitt der <span class="text-italic"><span class="bold">FASTcore::gate</span></span> API –  <br/>eine der zentralen Schnittstellen für Geräteprüfung, Rechteabfrage und Vertrauensbindung.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Implementierung der `list_devices` und `trust_device` Logik mit Permission-Checks, HeaderMap-Verarbeitung und strukturierter Response." data-id="49942744">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/942/744/6bce584fcce743a3b4162cd903eebd6b_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751840193&amp;width=680&amp;sig=xHX4kIpbZPerDTub2vAKmFRjEsDlYRLGE17juOutZ7w%3D"/>
+<figcaption class="px2">Implementierung der `list_devices` und `trust_device` Logik mit Permission-Checks, HeaderMap-Verarbeitung und strukturierter Response.</figcaption>
+</figure>
+</div>
+<p>Alle APIs sind so aufgebaut, dass sie auch innerhalb von <span class="text-italic"><span class="bold">engine</span></span> wiederverwendet oder gemeinsam betrieben werden können.  <br/>Dies ist ein konkreter Proof-of-Code – kein Konzept, sondern aktiver Systemcode.</p><p>So wird kontrolliert, welche Geräte vertrauenswürdig sind, welche Rollen erlaubt sind und wie Maschinenbindung erfolgt.</p><h4 class="page-anchor" id="h:-FASTcore-gate-Lizenzpru-fung-Sicherheitsschicht"><span class="bold">🛡 FASTcore::gate – Lizenzprüfung &amp; Sicherheitsschicht</span></h4><p><span class="text-italic"><span class="bold">gate</span></span> ist mein eigenes Kontrollmodul für Lizenzstatus, OEM-Instanzen, Token-Validierung und Signaturprüfung.</p><p>Die Screenshot zeigt den aktuellen Stand:  <br/>Ein voll strukturiertes Backend mit Modulen für Authentifizierung, Lizenzvergabe, Gerätebindung, Migrationen, Services und API-Zugriff.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Das System wird aktuell von Stub-Daten auf eine echte DB-Anbindung umgestellt – die Kernfunktionen sind bereits vollständig definiert." data-id="49942756">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/942/756/3b2dc6cb71e4f86d93211fa6f04b3b77_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751840323&amp;width=680&amp;sig=GRaMGkEAIh2KVDyP%2BQdqfawKrGSLypT1em1JRNc4Wis%3D"/>
+<figcaption class="px2">Das System wird aktuell von Stub-Daten auf eine echte DB-Anbindung umgestellt – die Kernfunktionen sind bereits vollständig definiert.</figcaption>
+</figure>
+</div>
+<p>Jede Datei enthält produktiven Rust-Code mit klarer Datenstruktur und eingebautem Schutzsystem.  <br/><span class="text-italic"><span class="bold">gate</span></span> steuert später nicht nur eigene Instanzen, sondern dient auch als Whitelabel-Tool für Partner-Deployments.</p><p>Zusammen mit <span class="text-italic"><span class="bold">engine</span></span> bildet es das technische Herz von FAST.</p><p>Die <span class="bold">FASTcore::engine</span> ist vollständig modular aufgebaut – mit Dokumentation, Services, Auth-Logik, Lizenzschicht und Plugin-System. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Die zentrale Struktur zeigt, wie Dienste, Schnittstellen, Signaturen und Datenfluss in FAST aufeinander abgestimmt sind." data-id="49942694">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/942/694/9879b2d9e7e2f7a13ea5af4050ace671_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751839647&amp;width=680&amp;sig=%2FyC8iwkDpwp82GRlwulKlMLdBINkfUECUXIR3LhdqcI%3D"/>
+<figcaption class="px2">Die zentrale Struktur zeigt, wie Dienste, Schnittstellen, Signaturen und Datenfluss in FAST aufeinander abgestimmt sind.</figcaption>
+</figure>
+</div>
+<p> Jede `.md`-Datei steht aktuell für ein Modul oder Interface – voll dokumentiert und mit funktionalem Code ausgestattet.  <br/>Das System enthält bereits Helfer, Tokenlogik, Rollen, Setup-Handler, Storage-Schicht und Testtools (watchdog).</p><h3 class="page-anchor" id="h:-Wofu-r-FAST-gedacht-ist"><span class="bold">🎯 Wofür FAST gedacht ist</span></h3><p>FAST ist für Entwickler und Betreiber gedacht, die mehr wollen als ein klassisches CMS – und volle Kontrolle über <span class="bold">Backend</span>, <span class="bold">Erweiterbarkeit</span> und <span class="bold">Lizenzmodell</span> brauchen.</p><p>Egal ob du eigene Webprojekte umsetzen willst oder Software-as-a-Service-Produkte entwickelst:  <br/>FAST bietet dir eine modulare, technisch klare Plattform – mit offenem Plugin-System und (je nach Lizenz) sogar Whitelabel-Option.</p><h4 class="page-anchor" id="h:-Mo-gliche-Einsatzszenarien"><span class="bold">✅ Mögliche Einsatzszenarien</span></h4><ul>
+<li>Eigene Webprojekte oder Produkte – mit API-Backend und optionalem CMS</li>
+<li>Entwicklung von SaaS-Plattformen – modular erweiterbar, klar strukturiert </li>
+<li>Agentur-Setups für Kunden – mit Plugin-Auswahl und skalierbarer Verteilung  <br/>OEM-Nutzung – z. B. als Whitelabel-Lösung für Plattformanbieter  </li>
+<li>Eigenentwicklung mit PHP/JS-Frontend – nur mit `FASTcore::engine`, ohne Web-Modul </li>
+<li>Erweiterung durch eigene Plugins – lokal oder öffentlich registriert</li>
+</ul><p>FAST ist nicht für Endnutzer oder Redakteure gedacht, sondern für Entwickler mit Fokus auf <span class="bold">Struktur</span>, <span class="bold">Sicherheit</span> und <span class="bold">Kontrolle</span> .</p><p>Du entscheidest, wie du es einsetzen willst:  <br/>Lokal, selbstgehostet, OEM – als internes Tool oder kommerzielle Basis.</p><h3 class="page-anchor" id="h:-Was-passiert-mit-dem-Geld-"><span class="bold">💰 Was passiert mit dem Geld?</span></h3><p>Die 10.000 € ermöglichen mir, die Entwicklung für mehrere Monate vollzeitig voranzutreiben.  <br/>Konkret fließt das Geld in:</p><ul>
+<li>Entwicklung der Setup-UI &amp; Tokenverwaltung</li>
+<li>Aufbau der Plugin Registry &amp; Signaturprüfung </li>
+<li>Erste Beispiel-Plugins &amp; Erweiterungs-Dokumentation  </li>
+<li>Hosting &amp; Infrastruktur (Registry, Lizenzgate, Testinstanzen)  </li>
+<li>Zeit, Fokus und Durchgängigkeit – ohne Projektbrüche durch Nebenjobs</li>
+</ul><p><span class="bold">📈 Roadmap bei erfolgreicher Finanzierung</span></p><p>- ✅ Alpha-Zugang (nach ca. 1–2 Monaten)  <br/>- ✅ Plugin Registry Testinstanz  <br/>- ✅ Setup UI mit Tokenverwaltung  <br/>- 🔜 Beta-Version (nach ~3–4 Monaten)  <br/>- 🔜 Erste öffentliche Plugins &amp; Themes  <br/>- 🔜 OEM-Testlauf bei 25K Stretch Goal</p><p>--- <span class="bold">🟥 ENGLISH</span> ---</p><h3 class="page-anchor" id="h:-What-is-FAST-"><span class="bold">🚀 What is FAST?</span></h3><p><span class="bold">FAST</span> <span class="bold">is</span> <span class="bold">a</span> <span class="bold">modular</span> <span class="bold">ecosystem</span> <span class="bold">for</span> <span class="bold">modern</span> <span class="bold">web</span> <span class="bold">systems</span> – consisting of a framework, API platform, and optional CMS.  <br/>It’s built for developers, platform providers, and agencies that want to build, run, or distribute scalable web apps and SaaS products.</p><p>FAST is not a classic CMS – it’s a structured framework with <span class="bold">licensing control</span>, <span class="bold">plugin architecture</span>, and a clear separation between core logic, admin layer, and content interface.</p><h4 class="page-anchor" id="h:-FASTcore-engine"><span class="bold">🔧 FASTcore::engine</span></h4><p>The technical core of FAST.  <br/>A modular backend that handles content, logic, authentication, and data flow.  <br/>You can connect your own frontend (PHP, Next.js, React etc.) – or use the optional web module.</p><h4 class="page-anchor" id="h:-FASTcore-gate"><span class="bold">🔐 FASTcore::gate</span></h4><p>My own central control layer – responsible for:</p><p>- License validation &amp; machine binding  <br/>- Plugin signatures &amp; registry access  <br/>- Instance verification &amp; OEM key management  </p><p>`gate` is <span class="bold">not part of a typical FAST installation</span> – it’s my secure admin tool for license validation, signature checking and optional whitelabel control for partners.</p><h4 class="page-anchor" id="h:-FASTcore-web"><span class="bold">🌐 FASTcore::web</span></h4><p>An optional CMS module for visual content editing – including pages, menus, media, blocks etc.  <br/>Fully integrated with the `engine` and extendable via plugins.</p><h4 class="page-anchor" id="h:-Plugin-Architecture"><span class="bold">🧩 Plugin Architecture</span></h4><p>All FAST modules are connected by a shared plugin system:</p><ul>
+<li>You can build and run your <span class="bold">own local plugins</span> – without any signature or registry approval.  </li>
+<li>Public plugins (available through the registry) <span class="bold">must be signed and verified</span>.  </li>
+<li>Themes, auth providers, APIs, DB models, UI components – all extendable and modular.</li>
+</ul><h3 class="page-anchor" id="h:-Why-this-project-"><span class="bold">💡 Why this project?</span></h3><p>I’ve been building FAST as a solo project for quite some time – not as a startup idea, but from real technical needs.  <br/>The core architecture is solid – now it’s time to turn it into a usable, scalable platform for developers.</p><p>With your support, I can:</p><ul>
+<li>Complete the Setup UI &amp; Token management  </li>
+<li>Build the Plugin Registry &amp; signature validation  </li>
+<li>Provide example plugins and documentation  </li>
+<li>Focus full-time on development – without breaks or side projects</li>
+</ul><h3 class="page-anchor" id="h:-Why-no-screenshots-or-UI-demos-"><span class="bold">❗️Why no screenshots or UI demos?</span></h3><p>Because a shiny UI is easy to fake – but a working core system is not.  <br/>I don’t want to show fancy dashboards that don’t mean anything.</p><p>Instead, I’m focused on what matters underneath:</p><ul>
+<li>Licensing logic  </li>
+<li>Machine binding  </li>
+<li>API control  </li>
+<li>Plugin handling  </li>
+<li>Flag-based permissions</li>
+</ul><p>That’s where FAST lives.  <br/>The UI will come – but only when it’s connected to a real, working core.  <br/>No frontend clickbait. No fake visuals. Just real tech.</p><h4 class="page-anchor" id="h:-FAST-is-not-a-CMS-clone-"><span class="bold">🧱 FAST is not a CMS clone.</span></h4><p>It’s a scalable, modular, and secure system – designed for developers who want to build serious web platforms, not just themes or templates.</p><h3 class="page-anchor" id="h:-A-look-inside-the-code"><span class="bold">🔍 A look inside the code</span></h3><p><span class="bold">FAST is not just a concept – here's a real look at the project’s internal structure: </span></p><h4 class="page-anchor" id="h:-Real-API-Logic-in-Action"><span class="bold">🧠 Real API Logic in Action</span></h4><p>This screenshot shows a working API snippet from <span class="bold">FASTcore::gate</span> –  <br/>part of the core system that handles device verification, trust logic, and permission control.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Code section for `list_devices` and `trust_device` – with header permission checks, structured responses, and database query logic." data-id="49942792">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/942/792/6bce584fcce743a3b4162cd903eebd6b_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751840611&amp;width=680&amp;sig=QU6u6sptLqNB%2F2dxSDp44c%2B4gUsP5lWR9Wd%2FMDJnBxA%3D"/>
+<figcaption class="px2">Code section for `list_devices` and `trust_device` – with header permission checks, structured responses, and database query logic.</figcaption>
+</figure>
+</div>
+<p>All API components are designed to be reusable within `engine`, enabling cross-module logic and shared control.</p><p>This is actual system code – no mockups, no prototypes.  <br/>It handles real security functions like trusted devices, machine verification, and scoped access.</p><h4 class="page-anchor" id="h:-FASTcore-gate-Licensing-Protection-Layer"><span class="bold">🛡 FASTcore::gate – Licensing &amp; Protection Layer</span></h4><p><span class="text-italic"><span class="bold">gate</span></span> is my dedicated module for license validation, OEM instance control, token binding, and signature verification.</p><p>This screenshot shows the current status:  <br/>A fully structured backend with modules for authentication, licensing, user-device binding, DB migrations, services, and API access.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="The system is currently being migrated from stub data to full database integration – all logic and modules are already defined." data-id="49942808">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/942/808/3b2dc6cb71e4f86d93211fa6f04b3b77_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751840753&amp;width=680&amp;sig=OJGdqEJuoe71PkVzm01rXhD4lfGlzNA3q0NpsD%2BhC0A%3D"/>
+<figcaption class="px2">The system is currently being migrated from stub data to full database integration – all logic and modules are already defined.</figcaption>
+</figure>
+</div>
+<p>Every file contains real, functional Rust code – with typed structures and protection logic built-in.  <br/><span class="text-italic"><span class="bold">gate</span></span> will not only manage licenses for my own system but also act as a whitelabel tool for external deployments.</p><p><br/>Together with <span class="text-italic"><span class="bold">engine</span></span>, it forms the secure foundation of FAST.</p><p>The <span class="text-italic"><span class="bold">FASTcore::engine</span></span> is fully modular – with documented services, auth logic, license layer, and plugin support.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="You can see how the system connects services, API layers, token handling, plugin loaders and license control." data-id="49942818">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/942/818/e9a52fc9dfb5670fadb24f7b759a7a57_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751840871&amp;width=680&amp;sig=TDLLC5SePBMs4AuzZBgye9ucerNvgGt%2BR0yFHW53A28%3D"/>
+<figcaption class="px2">You can see how the system connects services, API layers, token handling, plugin loaders and license control.</figcaption>
+</figure>
+</div>
+<p>Every `.md` file is a real documented module with working logic and typed inputs.  <br/>The system already includes helper tools, watchdogs, migration setup, and service logic.</p><h3 class="page-anchor" id="h:-Who-is-FAST-for-"><span class="bold">🎯 Who is FAST for?</span></h3><p>FAST is for developers and technical operators who want full control – over the backend, licensing, plugins, and deployment.</p><p>Whether you're building your own project or a SaaS platform:  <br/>FAST gives you a clean, extendable base – with optional whitelabel licensing and plugin support.</p><h4 class="page-anchor" id="h:-Example-use-cases"><span class="bold">✅ Example use cases</span></h4><ul>
+<li>Your own project or product – API-based with or without CMS  </li>
+<li>SaaS development – scalable and modular  </li>
+<li>Agency solutions – with custom plugin support and flexible setup  </li>
+<li>OEM use – whitelabel backend for larger platforms  </li>
+<li>Pure backend development – using `FASTcore::engine` only  </li>
+<li>Extend with your own plugins – local or registry-ready</li>
+</ul><p>FAST is not built for editors or casual users – it’s for developers who want structure, control and reliability.</p><p>You choose how to use it:  <br/>Self-hosted, internal tool, whitelabel product – or all three.</p><h3 class="page-anchor" id="h:-What-will-the-funding-be-used-for-"><span class="bold">💰 What will the funding be used for?</span></h3><p>The 10,000 € goal will help me work on FAST full-time for several months.  <br/>Specifically, the funding enables:</p><ul>
+<li>Development of the Setup UI &amp; token system  </li>
+<li>Plugin registry infrastructure &amp; signature checking  </li>
+<li>First example plugins &amp; full technical documentation  </li>
+<li>Hosting &amp; test environments (gate, registry, CI)  </li>
+<li>Full focus &amp; continuity – no time loss due to client work</li>
+</ul><p><span class="bold">📈 Roadmap if funding succeeds</span></p><p>✅ Alpha access (1–2 months after launch)  <br/>✅ Plugin Registry test instance  <br/>✅ Setup UI with license &amp; token handling  <br/>🔜 Beta version (~3–4 months in)  <br/>🔜 First public plugins &amp; themes  <br/>🔜 OEM test builds (stretch goal: 25K)<br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">FAST ist ein komplexes technisches System, das von Grund auf entwickelt wird – modular, sicher und ohne bestehende Framework-Abhängigkeit.  
+Das bedeutet: Ich bin nicht auf ein bestehendes CMS angewiesen, sondern baue zentrale Komponenten wie Lizenzkontrolle, Plugin-Loader, Web-API und Setup-Tools selbst.
+
+💡 Technisches Risiko  
+Alle Kernmodule sind bereits strukturiert. Die Architektur steht, ist getestet und durchdacht.  
+Das Risiko liegt eher in der Integration und Vollendung einzelner Tools – vor allem im Webinterface, im Registry-System und im Plugin-Lifecycle.  
+Hier kann es zu Verzögerungen oder Nachbesserungen kommen.
+
+🧑‍💻 Solo-Projekt-Risiko  
+Ich entwickle FAST aktuell alleine. Sollte es zu Krankheit, unvorhersehbaren Verpflichtungen oder anderen Störungen kommen, kann sich der Zeitplan verschieben.  
+Ich halte die Architektur aber bewusst so modular, dass Erweiterung oder Community-Beteiligung in Zukunft möglich ist – ohne Risiko für das System.
+
+🔐 Lizenz- &amp; Distributions-Risiko  
+Da FAST ein lizenziertes System mit Schutzmechanismen ist, sind gewisse Features bewusst eingeschränkt.  
+Sollte ein Konflikt mit Plattformrichtlinien (z. B. GitHub, Hostinganbieter) auftreten, kann das alternative Vertriebswege notwendig machen – das wird transparent gelöst.
+
+🔧 Wie ich mit Risiken umgehe  
+- Strukturierte Roadmap und Priorisierung  
+- Fokus auf Release-Version 1.0 als klares Ziel  
+- Regelmäßige Updates für Backer (Entwicklungsstand, Einblicke)  
+- Modulweise Fertigstellung statt „Big Bang“  
+- Dokumentation für jedes veröffentlichte Element
+
+✅ Was ich verspreche  
+Ich verspreche kein perfektes System von Tag 1 – aber ich verspreche Transparenz, technischen Fokus und echten Fortschritt.  
+Mit eurer Unterstützung wird FAST nicht nur fertig – es wird solide, sicher und skalierbar.
+
+🧩 Risks and Challenges
+
+FAST is a complex technical system, built from the ground up – modular, secure, and fully independent of existing frameworks or CMS architectures.  
+This means I’m not reusing external platforms, but implementing core components like license control, plugin loading, web APIs, and setup tools myself.
+
+💡 Technical Risk  
+All core modules are already designed and structured. The architecture is tested and well thought through.  
+The risk lies mainly in the integration and completion of key tools – especially the web interface, registry system, and plugin lifecycle.  
+Delays or refinements may occur.
+
+🧑‍💻 Solo Developer Risk  
+I’m currently building FAST as a solo developer.  
+In case of illness, personal obligations, or unexpected events, the timeline could shift.  
+However, the system is intentionally modular – allowing for future expansion or even community involvement without compromising the core.
+
+🔐 License &amp; Distribution Risk  
+Since FAST uses a protected licensing system, some features are intentionally restricted.  
+If platform policies (e.g. GitHub, hosting services) conflict with distribution, alternative release methods may be needed – and will be handled transparently.
+
+🔧 How I manage risk  
+- Structured roadmap and clear priorities  
+- Full focus on version 1.0 as a defined milestone  
+- Regular updates for backers (progress, insights, access)  
+- Modular completion strategy – no “big bang” delivery  
+- Complete documentation for every released element
+
+✅ What I promise  
+I don’t promise a perfect system on day one – but I do promise transparency, technical clarity, and real progress.  
+With your support, FAST won’t just get finished – it will become stable, secure, and scalable.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

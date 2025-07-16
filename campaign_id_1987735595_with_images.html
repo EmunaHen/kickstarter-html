@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VitaLink: Qi2 Wireless Charge Station with Bluetooth Phone</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/720/914/1e42a16d99b39de3179c175dc6bcfd4c_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750216920&width=560&sig=%2BnrsXMf290wCdLCwkEOO5hKr%2BNA5jplCSHIx5LhNCOo%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>VitaLink: Qi2 Wireless Charge Station with Bluetooth Phone</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Dual-Zone Charging, Bluetooth 5.4 Handset (48H Standby), Qi2 Wireless Magsafe 15W Fast Charging, Foldable Design, Siri One-Tap</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,273</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>40 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736101">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/101/fa90f4ef5b466e69ee89d98fd79d5c15_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750314048&amp;width=680&amp;sig=dEvjIJxCB0axJU1xxiRDwuPuEpiqbH1T%2BOPv2IM37Co%3D"/>
+</figure>
+</div>
+<p><span class="bold">Hi Guys!</span></p><p>Welcome to our second Kickstarter project! Inspired by the success of our first campaign and the invaluable feedback from our amazing backers, we’re excited to introduce our latest one: <span class="bold">VitaLink: Qi2 Wireless Charge Station with Bluetooth Phone</span></p><p>VitaLink Provides <span class="bold">Worldwide Guaranteed Delivery </span>and<span class="bold"> 1-Year Warranty!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736108">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/108/1d7847145a160adc15c94307e3bae991_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750314098&amp;width=680&amp;sig=coNx4dHPKaqS%2FMriVlSm%2B8rSYbwi%2FOXsQ3U7yu%2BPHbM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Love-By-Backers"><span class="bold">Love By Backers</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736103">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/103/b6297fa710329844f2286c33510c9314_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750314068&amp;width=680&amp;sig=wexmrr3SMwZ6BIH4aYXCY7wV8rkJ%2Fi%2BmGy2TpzLtAec%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Introducing-VitaLink-Gen2"><span class="bold">Introducing VitaLink Gen2</span></h3><p><span class="bold">VitaLink Gen2</span> isn’t just a charger — <span class="bold">it’s a creative fusion of a Bluetooth phone and wireless charging station</span>, designed exclusively for <span class="bold">Apple users</span>. At its core is a foldable <span class="bold">Qi2 15W</span> magnetic charging zone with a retractable design that ensures a perfect, secure connection with your iPhone every time. It also features a dedicated <span class="bold">5W magnetic charging module for AirPods</span>, delivering fast and efficient power without interruption. A separate <span class="bold">3W charging area supports either the included Bluetooth handset or your Apple Watch</span>, achieving an impressive 85% overall charging efficiency. Powered by advanced <span class="bold">Bluetooth 5.4</span>, the handset allows you to answer calls, activate Siri, and adjust volume effortlessly with intuitive one-tap and double-tap controls, making everyday communication seamless.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49720980">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/720/980/b624e47373e8e2e361f61c92e8340fea_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217189&amp;width=680&amp;sig=m1D8Tl9t52DZ0dmPzhLYVN8Xeg%2FgpAId3aF8KhCzQew%3D"/>
+</figure>
+</div>
+<p>Wrapped in a sleek Space Gray finish inspired by Apple’s signature aesthetic, VitaLink Gen2 blends functionality with style. Its compact, <span class="bold">travel-friendly form factor (17cm × 8cm × 1cm, 300g)</span> fits perfectly on your <span class="bold">desk, bedside table, or in your carry-on bag</span>. Whether you're powering through a workday or relaxing at home, VitaLink keeps your Apple devices charged and accessible while doubling as a modern, minimalist accessory. <span class="bold">It’s the perfect blend of performance and elegance for those who value both utility and design.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721076">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/721/076/50ba5aaa48b29ece621f5719f7203aec_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217747&amp;width=680&amp;sig=8IggsJZ65L0P7ty4EkyQ3PXDwlvwtU76hbXhqmsxR%2Fc%3D" src="https://i.kickstarter.com/assets/049/721/076/50ba5aaa48b29ece621f5719f7203aec_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217747&amp;width=680&amp;sig=8IggsJZ65L0P7ty4EkyQ3PXDwlvwtU76hbXhqmsxR%2Fc%3D"/>
+</figure>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="feature-card transition-all duration-500 opacity-100 translate-y-0">
+<h3 class="page-anchor" id="h:Powerful-Dual-Zone-Wireless-Charging"><span class="bold">Powerful Dual-Zone Wireless Charging</span></h3>
+<p>VitaLink Gen 2 supports simultaneous wireless charging for <span class="bold">two devices</span>, including <span class="bold">smartphones, AirPods, Apple Watches, and the included Bluetooth handset</span>. One compact device meets the daily charging needs of your essential smart devices — no more hunting for multiple chargers or dealing with messy cables. <span class="bold">Thoughtfully divided charging zones keep each device organized and interference-free, ensuring efficient, hassle-free charging. </span>Simplify your routine, declutter your workspace, and boost both productivity and convenience with VitaLink Gen 2</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721059">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/721/059/cb91840c164be036e9dfaa8a41a0dad1_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217638&amp;width=680&amp;sig=2VrfOMvioBuuAmOsvw3kCHsKe5NBaz%2BpmbAvn2MSZvY%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">15W</span> Fast Wireless Charging for iPhone</li>
+<li>
+<span class="bold">5W </span>Wireless Charging for AirPods</li>
+<li>
+<span class="bold">3W</span> Wireless Charging for Apple Watch</li>
+<li>
+<span class="bold">3W </span>Wireless Charging for Bluetooth Phone</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721073">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/721/073/c094aab52741afed4ed17f205c584279_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217728&amp;width=680&amp;sig=EIVrFds3riKwPYqoNanF34k8cp5wnJxLimiip5Hy4A8%3D" src="https://i.kickstarter.com/assets/049/721/073/c094aab52741afed4ed17f205c584279_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217728&amp;width=680&amp;sig=EIVrFds3riKwPYqoNanF34k8cp5wnJxLimiip5Hy4A8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Bluetooth-Phone-Design-for-Easy-Calls-Constant-Charging"><span class="bold">Bluetooth Phone Design for Easy Calls &amp; Constant Charging</span></h3>
+<p><br/><span class="bold">VitaLink’s integrated Bluetooth 5.4 handset</span> delivers <span class="bold">crystal-clear audio quality</span>, ensuring every conversation sounds sharp and natural. With an impressive <span class="bold">48 hours of standby time</span> and a <span class="bold">stable connection range of up to 10 meters</span>, you can move freely while staying effortlessly connected. Even better — <span class="bold">your phone continues charging wirelessly while you take calls</span>, so you’ll never have to choose between power and convenience.</p>
+<p><span class="bold">Bluetooth device name:</span> <span class="text-italic">VW201-B</span> — easy to find, easy to pair.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721157">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/721/157/1396c51d01aadbb56ba47d12d7e777ed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750218386&amp;width=680&amp;sig=6dTD21pvygJ5dWaVwCZ1r2gIJhka3PQaiJcBKjDD8ac%3D" src="https://i.kickstarter.com/assets/049/721/157/1396c51d01aadbb56ba47d12d7e777ed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750218386&amp;width=680&amp;sig=6dTD21pvygJ5dWaVwCZ1r2gIJhka3PQaiJcBKjDD8ac%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Take-calls-without-picking-up-your-phone-"><span class="bold">Take calls without picking up your phone.</span></h4>
+<p>The <span class="bold">VitaLink Gen2 Bluetooth handset</span> lets you <span class="bold">answer calls while your phone stays charging</span> securely on the <span class="bold">Qi2 magnetic charger</span> — perfect for desks, bedside tables, or workspaces. Its <span class="bold">lightweight, stable design won’t easily slide around</span>, helping prevent your phone from slipping or falling during use. A thoughtful, practical solution for seamless charging and communication.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721152">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/721/152/bab866b2fe92fa49749e1a4577f0e1bc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750218367&amp;width=680&amp;sig=gwr58gBoob5KIzwB9i1Q7J8QvQStTjTyUqZ5RdcFpnE%3D" src="https://i.kickstarter.com/assets/049/721/152/bab866b2fe92fa49749e1a4577f0e1bc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750218367&amp;width=680&amp;sig=gwr58gBoob5KIzwB9i1Q7J8QvQStTjTyUqZ5RdcFpnE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:One-touch-call-answer-end"><span class="bold">One-touch call answer/end</span></h4>
+<p>When a call comes in on my iPhone, I don't need to fumble around or pick up the device. With just a simple press of the round button in the middle, I can answer or hang up the call instantly with one click. It’s quick, convenient.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721981">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/721/981/96d45a74218daf05ada335e653aa2248_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750226554&amp;width=680&amp;sig=GTLi9nbguTlXq40%2B404ed5oSpnVsK8lm%2FPk188u%2FnmI%3D" src="https://i.kickstarter.com/assets/049/721/981/96d45a74218daf05ada335e653aa2248_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750226554&amp;width=680&amp;sig=GTLi9nbguTlXq40%2B404ed5oSpnVsK8lm%2FPk188u%2FnmI%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Double-tap-to-redial-last-contact"><span class="bold">Double-tap to redial last contact</span></h4>
+<p>On my Bluetooth phone, you only need to <span class="bold">double-click the round button to instantly redial your last call.</span> It’s perfect for those moments when you suddenly remember something important right after hanging up. No need to unlock your phone or search through your call history — just a quick double-click, and you’re reconnected in seconds.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721975">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/721/975/75f0c8325ddf4c83c733898bf114753e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750226503&amp;width=680&amp;sig=fDNOnVIY7IlnpSRJ9Xx5glR0B8U6cK%2BSbx3HxC%2BeSVc%3D" src="https://i.kickstarter.com/assets/049/721/975/75f0c8325ddf4c83c733898bf114753e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750226503&amp;width=680&amp;sig=fDNOnVIY7IlnpSRJ9Xx5glR0B8U6cK%2BSbx3HxC%2BeSVc%3D"/>
+</figure>
+</div>
+<p>Enjoy the convenience of one-touch answering, side volume controls, and a quick double-tap to redial your last contact — bringing the familiar ease of desk phones into the wireless era.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721162">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/721/162/de74675f10fb489c6fcbcb1138c71e32_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750218415&amp;width=680&amp;sig=EPcMyFczDUyZNemHm5ibeByeY3DZQnKTC8b%2BHvSFDZ8%3D" src="https://i.kickstarter.com/assets/049/721/162/de74675f10fb489c6fcbcb1138c71e32_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750218415&amp;width=680&amp;sig=EPcMyFczDUyZNemHm5ibeByeY3DZQnKTC8b%2BHvSFDZ8%3D"/>
+</figure>
+</div>
+</div>
+<div class="feature-card transition-all duration-500 opacity-100 translate-y-0">
+<h3 class="page-anchor" id="h:Siri-Voice-Control"><span class="bold">Siri Voice Control</span></h3>
+<p><span class="bold">Your Voice, in Control.</span><br/>Activate Siri instantly with the dedicated button on the Bluetooth handset.<br/>From playing music to managing your smart home, enjoy true hands-free convenience — all without touching your phone.</p>
+<p>🎵 <span class="text-italic">“Hey Siri, play my chill playlist”</span> — done.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721960">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/721/960/01728ea583d2b009ede5d9a3abf32e09_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750226376&amp;width=680&amp;sig=KQ4gu4njJjhegRTvTmmn%2FcSIgddrQqBpC25PS7eQPwQ%3D" src="https://i.kickstarter.com/assets/049/721/960/01728ea583d2b009ede5d9a3abf32e09_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750226376&amp;width=680&amp;sig=KQ4gu4njJjhegRTvTmmn%2FcSIgddrQqBpC25PS7eQPwQ%3D"/>
+</figure>
+</div>
+<p><br/>💡 <span class="text-italic">“Turn off the lights”</span> — done.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721965">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/721/965/fb7405f2a65d64249b615ee52bc7a8da_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750226399&amp;width=680&amp;sig=LFXoYW0v5llfOg0vGCs396q5E50kDzKcrnsWQmxRXAo%3D" src="https://i.kickstarter.com/assets/049/721/965/fb7405f2a65d64249b615ee52bc7a8da_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750226399&amp;width=680&amp;sig=LFXoYW0v5llfOg0vGCs396q5E50kDzKcrnsWQmxRXAo%3D"/>
+</figure>
+</div>
+<p>Control music, lights, and more — just with your voice.</p>
+</div>
+<div class="feature-card transition-all duration-500 opacity-100 translate-y-0">
+<h3 class="page-anchor" id="h:Thoughtful-Small-Design"><span class="bold">Thoughtful Small Design</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49734170">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/734/170/356b34cc29baf0a5761a9a728797ebfb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750298220&amp;width=680&amp;sig=rEwb9G3FKIWBuQh3c5icV08tm0cRzVvQJphF1XZIxMQ%3D" src="https://i.kickstarter.com/assets/049/734/170/356b34cc29baf0a5761a9a728797ebfb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750298220&amp;width=680&amp;sig=rEwb9G3FKIWBuQh3c5icV08tm0cRzVvQJphF1XZIxMQ%3D"/>
+</figure>
+</div>
+<p>The Qi2 magnetic mount features a <span class="bold">telescopic design</span>, making it perfectly compatible with both standard and Pro Max-sized phones</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736750">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/750/43560f26d49d1f2ccbc3735914b53922_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750318737&amp;width=680&amp;sig=RJH4J9NqEvkeCj1E9EQK0FkyvacM1ADIiTO7RKj%2FZDI%3D"/>
+</figure>
+</div>
+<p>The base features a tripod design and ventilation holes to prevent overheating during charging</p>
+<h3 class="page-anchor" id="h:Multiple-Certifications-Perfect-for-Travel"><span class="bold">Multiple Certifications - Perfect for Travel</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49734855">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/734/855/4e87cba35a64f7f2674c0c9dfa580ad5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750303076&amp;width=680&amp;sig=58A1%2Fo5FlKRU8N4BToQTxoqui5o04RomFZn4XrriK9c%3D"/>
+</figure>
+</div>
+<p>VitaLink is internationally certified, including <span class="bold">CE, FC, and RoHS</span>, guaranteeing adherence to the highest safety and quality standards. It also complies with airline regulations for carry-on devices, ensuring you can take it anywhere and use it anytime with complete confidence and convenience.</p>
+</div>
+</div><div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="scenario-card transition-all duration-500 opacity-100 translate-y-0">
+<h3 class="page-anchor" id="h:Seamless-Charging-Connectivity"><span class="bold">Seamless Charging &amp; Connectivity</span></h3>
+<p><span class="text-italic"><span class="bold">Stay Powered &amp; Connected: Effortless Multitasking for Meetings &amp; Tasks</span></span></p>
+<p>Keep your iPhone and Apple Watch charged while managing calls hands-free during meetings.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49734184">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/734/184/ca17f65f643b4b6a06fb6c60f109e516_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750298290&amp;width=680&amp;sig=fWj8pgeu7gNcYhI%2FsojdWbevUt%2BdkqKX7QIRDign9Z8%3D" src="https://i.kickstarter.com/assets/049/734/184/ca17f65f643b4b6a06fb6c60f109e516_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750298290&amp;width=680&amp;sig=fWj8pgeu7gNcYhI%2FsojdWbevUt%2BdkqKX7QIRDign9Z8%3D"/>
+</figure>
+</div>
+<ul>
+<li>Answer calls without interrupting your workflow</li>
+<li>Control volume and mute with intuitive buttons</li>
+<li>Use Siri to set reminders or check the calendar</li>
+</ul>
+<div class="flex items-center text-sm text-gray-500"><span class="bold">Perfect for home offices and conference rooms</span></div>
+</div>
+<div class="scenario-card transition-all duration-500 opacity-100 translate-y-0">
+<h3 class="page-anchor" id="h:Test-Video"><span class="bold">Test Video</span></h3>
+</div>
+<div class="scenario-card transition-all duration-500 opacity-100 translate-y-0">
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49481512">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specification">Specification</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/481/512/9f5e5a824e89e88bd064dbbd556d4303_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748595945&amp;width=680&amp;sig=BcG6aqYqC8%2BzEjXj%2F3W%2BAjTM10g9jb3tRMhvIQVITSM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49734755">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Compatibility">Compatibility</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/734/755/2b5b3a557ca4473bf7045fcc3cc7a018_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750302378&amp;width=680&amp;sig=7gY%2FpukePV449opXMvTW4L8e8BMUy%2BWtzdb2G%2Fr9pU8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Reward"><span class="bold">Reward</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736116">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/116/d33cb382ed48bab1161ba90e140667a1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750314152&amp;width=680&amp;sig=ihaj6ukDmy5Y9jpC0lyVlX%2Byd3nOR7oHH0dJx2u0WTk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736923">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/923/0e057e6c175b8c8a1bd04824f8388b82_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320019&amp;width=680&amp;sig=qjU471JWzIVqD91CeGcaxMoiNICgWrthbZAAKgzahm8%3D"/>
+</figure>
+</div>
+<p>We are offering a<span class="bold"> High-Quality GaN+ Power Adapter</span>, designed specifically for our Backers, with a competitive price advantage.</p>
+<p><span class="bold">Please note: </span><br/><span class="bold">100W</span> power adapters only provide <span class="bold">US standard plugs</span>.</p>
+<p><span class="bold">65W</span> power supply we provide <span class="bold">US, EU, AU, and UK standard plugs.</span> We will ask you the type of plug you need in the survey after the project is completed. Thank you!</p>
+<h3 class="page-anchor" id="h:About-Shipping"><span class="bold">About Shipping</span></h3>
+<p>Due to the high uncertainty of cross-border transportation, the exact amount will be determined based on the actual freight costs at the time of reward shipment. We assure you that any increase in freight costs will not<span class="bold"> exceed 10%.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722954">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/954/3b1ab90df0ea451c0053d9898b0bf3c2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232799&amp;width=680&amp;sig=kZLnZgrfypaKkn4uPK8RVc4eXc4Scr880AMRQ1%2BXUdk%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:What-s-in-the-Box-"><span class="bold">What's in the Box？</span></h3>
+<p><span class="bold">VitaLink Gen2 Wireless Charger*1 + Type-C Cable*1 </span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722949">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/949/8d9c1d1fd8bbd62a21bf69e77a2013ba_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232748&amp;width=680&amp;sig=PzJMKMFwSOoy9NPBUyfcokEOkAPFc4%2FECRz9jyIMABw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Design-Process"><span class="bold">Design Process</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49481898">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/481/898/29118edbdda351dad447d53ec9e400a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748598319&amp;width=680&amp;sig=nHuVteMpkrTSzFaVReixGolIfk5jtpXx9Mb6i1LPcTQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:About-the-Team"><span class="bold">About the Team</span></h3>
+<p>We're an enthusiastic and innovative team, whole - heartedly devoted to crafting outstanding wireless chargers. Our drive stems from a passion for redefining device charging experiences and addressing the evolving needs of modern users.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49481837">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/481/837/e59a39f7049d68957540b9a80ce547b2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748597886&amp;width=680&amp;sig=hTTSXVYtbeLFFFExf9TRp9xWphAD3tHbQsz%2FdTYE2BY%3D"/>
+</figure>
+</div>
+<p>Function Integration Philosophy：We firmly believe in simplifying life through integrated functionality. When conceiving VitaLink, we merged <span class="bold">wireless charging with Bluetooth - enabled calling features</span>. The dual - zone setup for charging different Apple devices was a strategic move to eliminate charger clutter. By combining these elements, we aimed to streamline users' daily tech interactions. </p>
+<p>Solving User Problems：VitaLink addresses key pain points. Many users juggle multiple chargers for various Apple devices and struggle with inconvenient charging setups. With VitaLink, they can charge their iPhone, Apple Watch, and use the Bluetooth handset for calls, all in one place. It also eliminates the hassle of fumbling for phones during calls, offering hands - free convenience. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49481840">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/481/840/77892ce68caff0367f581894714bc9fb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748597904&amp;width=680&amp;sig=TFmaFJnUQLY0nQpKOcVyHdiPEnK37P%2FiEDLLY%2FZ9Uic%3D"/>
+</figure>
+</div>
+<p>Use Scenarios：In a busy workday, VitaLink sits on your desk, keeping your devices charged while you handle calls hands - free during meetings. At home, it serves as a <span class="bold">central hub</span> in the living room or kitchen, allowing you to charge devices and control smart home features via Siri. In the bedroom, it powers your devices overnight and enables easy communication in the morning.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49481842">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/481/842/68a4f361dc470f9a9c989afcfb857720_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748597930&amp;width=680&amp;sig=yLmR52bun7Puz0agZZrcNjlnPo8gRkKJna850GO%2F4Vo%3D"/>
+</figure>
+</div>
+<p> VitaLink is a stylish yet practical companion, reflecting our commitment to quality and innovation. We're eager to connect with you. For inquiries or collaborations, reach out at <span class="bold">VitaLink - KS@outlook.com</span>.</p>
+<h3 class="page-anchor" id="h:TimeLine"><span class="bold">TimeLine</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736111">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/111/a8e9975b6eefcf2f04e926cd3b8c972b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750314126&amp;width=680&amp;sig=X2kOlqlFy%2BZRGnyxcfnYzN%2B5sdoKly%2FwZXhXiZy5Zgo%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736126">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/126/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750314258&amp;width=680&amp;sig=EoLFkM6z1VfBHSXLlnjTREKpYYfScbcBEYuuNtF%2FeS0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736128">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/128/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750314278&amp;width=680&amp;sig=BY9D0aHwNxtix21Aejv2oxlOwKE%2FtBt%2F4UsNlpGnsaM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736130">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/130/8b819faf1685e3837a3211fe7a10e5da_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750314306&amp;width=680&amp;sig=gRXnadnQJyw701GfvOCJhRjnRTwyvHt7HMLSdD9sM8Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736140">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/140/ac882060b218b1bb7a271d97181e251c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750314377&amp;width=680&amp;sig=9P7fGgnS5appXKt4oae%2BVWS4Ji%2FUbBmTnx9uLzPwaZg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736135">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/135/54781de5c0e9a9ee87c9f5c58f7dff5b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750314339&amp;width=680&amp;sig=zoGVWi64FAljR75tvcSLQDeiqWKzkL0yqVpu43Av01A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736136">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/736/136/2a4fb6dfdad3e0851c68f4eb1ca9f1c5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750314354&amp;width=680&amp;sig=jC%2BCyEhT0FZ%2BDfRqmRtsykA09AZv3RyhEJ90kMiHDNw%3D"/>
+</figure>
+</div>
+</div>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">1. Supply Chain Disruptions and Delivery Delays
+Despite our meticulous planning, external factors such as global logistics issues, component shortages, or unforeseen geopolitical events can disrupt the supply chain. Since VitaLink integrates multiple functions, including specialized wireless charging components and Bluetooth modules, any delay in sourcing critical parts could impact production schedules. This, in turn, may lead to delivery delays for our customers. To mitigate this risk, we have established partnerships with multiple suppliers, maintain safety stock of key components, and continuously monitor the supply chain to proactively address potential bottlenecks.
+
+2. Meeting High - Volume Demand
+As we aim to meet the market's enthusiasm for VitaLink, scaling up production to fulfill high - volume orders presents a significant challenge. Ensuring that our manufacturing facilities can handle increased production while maintaining the same level of product quality and functionality is crucial. We've invested in upgrading our production lines and training our workforce to adapt to higher output requirements. Additionally, we have a contingency plan to collaborate with contract manufacturers if necessary, enabling us to respond promptly to surges in demand and uphold our commitment to timely delivery.
+
+3. Technical Complexity and Quality Assurance
+Given the integrated nature of VitaLink, which combines charging, Bluetooth communication, and multi - device compatibility, ensuring seamless performance across all functions is demanding. Technical glitches during the production process could result in product returns or negative feedback, affecting our delivery reputation. To tackle this, we've implemented rigorous quality control processes at every stage of production, from component testing to final product inspection. Our R &amp; D team also continuously optimizes the product design to minimize potential technical issues, ensuring that each unit delivered meets our high - quality standards.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
