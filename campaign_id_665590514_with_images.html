@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkippyFit Community</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/718/384/990e6ea0b92d2e2d9ac3fc1c16405ead_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750198661&width=560&sig=X0ujbuyjD4hxKSlRRnwqnwNcr%2FkjVOd8PVDG4LLvXh4%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>SkippyFit Community</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">SkippyFit Community – Connecting Experts with Everyday Fitness</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 6,838</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:-SkippyFit-Community-Connecting-Experts-with-Everyday-Fitness"><span class="bold">🏋️‍♀️ SkippyFit Community – Connecting Experts with Everyday Fitness</span></h3><h4 class="page-anchor" id="h:-1-What-Is-SkippyFit-">💡 <span class="bold">1. What Is SkippyFit?</span>
+</h4><p>SkippyFit is a powerful mobile fitness app that helps users <span class="bold">plan workouts</span>, <span class="bold">build diets</span>, <span class="bold">track progress</span>, and even interact with an AI fitness assistant called <span class="bold">Skipper AI</span>, which provides helpful fitness guidance like training tips or reminders based on your progress. It’s live on Android and iOS—and it's only the beginning.</p><p>Now, we’re taking the next step by launching <span class="bold">SkippyFit Community</span>—a dedicated platform to connect fitness experts with users who need personalized support and real-life results.</p><h4 class="page-anchor" id="h:-2-What-Is-SkippyFit-Community-">🤝 <span class="bold">2. What Is SkippyFit Community?</span>
+</h4><p>SkippyFit Community is a new mobile and web app we’re building to bring <span class="bold">real, qualified experts together with people who want to get healthier</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49827131">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/827/131/45cbe4d5362d03f0b1720b0872a28d8c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750952837&amp;width=680&amp;sig=j5vBa1eA2WltR6G58mG0JZNop0nbu0g1nGj%2FDPKts3M%3D"/>
+</figure>
+</div>
+<p>It’s a platform designed for:<br/>✔️ <span class="bold">Personal trainers</span><br/>✔️ <span class="bold">Dietitians</span><br/>✔️ <span class="bold">Physiotherapists</span><br/>✔️ <span class="bold">Wellness coaches</span><br/>✔️ <span class="bold">Yoga and pilates instructors</span><br/>✔️ <span class="bold">Mental wellness &amp; mobility experts</span></p><p>Everyday users can browse local or remote experts, book sessions, chat, and receive personalized training or diet plans. It works online or offline—some consultations can even happen in local gyms or expert offices.</p><p><span class="bold">Experts will be able to:</span></p><ul>
+<li>Set up their professional profile</li>
+<li>Offer services at chosen prices</li>
+<li>Send workouts and diet plans directly through the app</li>
+<li>Analyze user performance (especially when used with SkippyFit)</li>
+<li>Chat and manage their clients from one place</li>
+</ul><p><span class="bold">Users will be able to:</span></p><ul>
+<li>Subscribe or book sessions with experts</li>
+<li>Choose from a wide range of professionals</li>
+<li>Chat, get notes and detailed training plans</li>
+<li>Meet in real life or work fully remotely</li>
+</ul><h4 class="page-anchor" id="h:-3-How-Will-SkippyFit-Community-Work-With-SkippyFit-">🔄 <span class="bold">3. How Will SkippyFit Community Work With SkippyFit?</span>
+</h4><p>SkippyFit Community will be a <span class="bold">separate but integrated app</span>, designed to work seamlessly with SkippyFit.</p><p>🔐 <span class="bold">Unified Login</span>: Users log in with their existing SkippyFit account.<br/>📅 <span class="bold">Sync Plans</span>: Training and diet plans from experts can be imported directly into the SkippyFit calendar.<br/>🧠 <span class="bold">Enhanced Skipper AI</span>: Both experts and users will gain new features powered by an upgraded Skipper AI designed for personalized recommendations and data insight.<br/>🧰 <span class="bold">For Experts</span>: Full use of SkippyFit’s planning tools to build training and diet programs.<br/>📲 <span class="bold">For Users</span>: Combine expert support with all the progress tracking and tools in the SkippyFit app.</p><p>🧠 <span class="bold">About Skipper AI</span><br/>Skipper is a smart assistant that provides <span class="bold">non-creative, fitness-focused guidance</span> based on user data and expert input. It’s built using ethically licensed technologies and <span class="bold">does not create original content or creative works</span>. All proposed exercises, ready training plans and other services are human-created or expert-reviewed.</p><h4 class="page-anchor" id="h:-4-What-We-re-Raising-Funds-For-">💰 <span class="bold">4. What We’re Raising Funds For</span>
+</h4><p>We’re raising funds to bring this platform to life—from backend architecture to a polished, easy-to-use interface:</p><ul>
+<li>☁️ Cloud services (Spring backend + NoSQL database)</li>
+<li>🧱 Implement the <span class="bold">SkippyFit Community backend service</span>
+</li>
+<li>📱 Build Android and iOS apps</li>
+<li>💻 Launch a web portal for broader access</li>
+<li>🎥 Create high-quality <span class="bold">exercise videos</span> for visual guidance</li>
+<li>📣 Marketing, partnerships &amp; onboarding experts</li>
+</ul><h4 class="page-anchor" id="h:-5-What-We-Plan-to-Do-">🛠 <span class="bold">5. What We Plan to Do</span>
+</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49827149">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/827/149/c3c69046640eb65dad0f27aceef81023_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750952888&amp;width=680&amp;sig=aLQt3wwiK7z5RzO27Qeinr%2BlEU4w3kZ8rdQKe6x6gt8%3D"/>
+</figure>
+</div>
+<p>Our development plan is broken into <span class="bold">seven agile iterations</span>:</p><p><span class="bold">1️⃣ Initial Setup</span></p><ul>
+<li>Connect to our SkippyFit authorization system</li>
+<li>Create login &amp; registration flows for users and experts</li>
+</ul><p><span class="bold">2️⃣ Expert Profile &amp; Service Browsing</span></p><ul>
+<li>Let experts fill out profiles (location, specializations, pricing)</li>
+<li>Allow users to search and browse expert pages</li>
+</ul><p><span class="bold">3️⃣ Bookings &amp; Communication</span></p><ul>
+<li>Users reserve services, view calendars</li>
+<li>Notes from experts and <span class="bold">chat functionality</span>
+</li>
+</ul><p><span class="bold">4️⃣ Account Management</span></p><ul>
+<li>Users and experts manage their personal data</li>
+<li>Account deletion module</li>
+</ul><p><span class="bold">5️⃣ Deep Integration with SkippyFit App</span></p><ul>
+<li>Experts can send training/diet plans through SkippyFit</li>
+<li>Users import those plans seamlessly</li>
+</ul><p><span class="bold">6️⃣ New Version of Skipper AI</span></p><ul>
+<li>Special mode for experts - add tools that assist experts (not replace them)</li>
+<li>Smarter interactions and suggestions for users</li>
+</ul><p><span class="bold">7️⃣ Final UI Polish &amp; Home Dashboard</span></p><ul><li>Create a beautiful, intuitive home screen for both experts and users</li></ul><h4 class="page-anchor" id="h:-5-Rewards-Back-the-Future-of-Fitness"><span class="bold">🎁 5. Rewards – Back the Future of Fitness</span></h4><p>We’ve designed two reward tracks—<span class="bold">one for everyday users</span> and <span class="bold">one for fitness experts</span>—so whether you're starting your health journey or supporting others in theirs, there’s a tier made for you.</p><p>Your support brings <span class="bold">SkippyFit Community</span> to life—and we’ll thank you with early access, exclusive perks, and lasting recognition.</p><h4 class="page-anchor" id="h:-Flexible-Activation"><span class="bold">⏳ Flexible Activation</span></h4><p>All <span class="bold">Premium subscriptions</span>—for both users and experts—can be <span class="bold">activated whenever you're ready</span>, after our official launch. Whether you want to dive in immediately or wait for the perfect time, it’s completely up to you.</p><h4 class="page-anchor" id="h:-Backer-Recognition-SkippyFit-Wall-of-Glory"><span class="bold">🏆 Backer Recognition – SkippyFit Wall of Glory</span></h4><p>All backers will be honored on our digital <span class="bold">Wall of Glory</span> – a public tribute hosted on our website and app. Your name (or business name) will be shown based on your support level:</p><p>⭐ <span class="bold">SkippyFit Trailblazer</span><br/><span class="text-italic">For backers in Tiers 1, 2, 6, and 7</span><br/>Your name listed among our early adopters and supporters of smarter fitness.</p><p>🌟 <span class="bold">SkippyFit Champion</span><br/><span class="text-italic">For backers in Tiers 3, 4, 8, and 9</span><br/>You’ll be highlighted as a major supporter of SkippyFit Community, helping us grow with real impact.</p><p>💎 <span class="bold">SkippyFit Founding Legend</span><br/><span class="text-italic">For backers in Tiers 5 and 10</span><br/>Top-tier recognition on our platform forever. Your name will shine in a special section with founding badge status.</p><h4 class="page-anchor" id="h:-FOR-NORMAL-USERS"><span class="bold">🧍‍♂️ FOR NORMAL USERS</span></h4><p><span class="bold">🎟 Tier 1 – "Early Access: 1-Month Premium"</span><br/><span class="bold">Reward:</span> 1-Month SkippyFit Premium<br/>Preview the Premium Zone before anyone else. Try AI-powered workouts, smart diet tools, and progress tracking—all designed to help you stay consistent.<br/>⭐ <span class="bold">SkippyFit Trailblazer</span></p><p>🏋️ <span class="bold">Tier 2 – "Year of Smart Gains"</span><br/><span class="bold">Reward:</span> 1-Year Premium Access<br/>Enjoy an entire year of smarter training and healthy routines. Plan, train, track, and stay inspired—anytime, anywhere.<br/>⭐ <span class="bold">SkippyFit Trailblazer</span></p><p>👕 <span class="bold">Tier 3 – "Year &amp; Gear"</span><br/><span class="bold">Reward:</span> 1-Year Premium + Exclusive T-Shirt<br/>Get the benefits of Tier 2 plus a <span class="bold">limited edition SkippyFit shirt</span> delivered to your door. Show off your support in style.<br/>🌟 <span class="bold">SkippyFit Champion</span></p><p>🎁 <span class="bold">Tier 4 – "Power Starter Pack"</span><br/><span class="bold">Reward:</span> 1-Year Premium + T-Shirt + 1 Random Fitness Gift<br/>Everything in Tier 3, plus a surprise fitness item like a bottle, band, or smart accessory—because staying motivated is easier with the right tools.<br/>🌟 <span class="bold">SkippyFit Champion</span></p><p>🛡 <span class="bold">Tier 5 – "Founder's Lifetime Pack"</span><br/><span class="bold">Reward:</span> Lifetime Premium + T-Shirt + 3 Fitness Gifts<br/>Become a SkippyFit legend. Get <span class="bold">lifetime access</span>, a t-shirt, and a trio of curated fitness gifts. One pledge, lifelong benefits.<br/>💎 <span class="bold">SkippyFit Founding Legend</span></p><h4 class="page-anchor" id="h:-FOR-FITNESS-EXPERTS"><span class="bold">🧑‍⚕️ FOR FITNESS EXPERTS</span></h4><p>🎟 <span class="bold">Tier 6 – "Expert Early Access"</span><br/><span class="bold">Reward:</span> 1-Month SkippyFit Expert Premium<br/>Be one of the first to test SkippyFit Community’s tools for scheduling, client management, and service delivery. Build your expert profile before launch.<br/>⭐ <span class="bold">SkippyFit Trailblazer</span></p><p>🏋️ <span class="bold">Tier 7 – "Pro Presence: 1 Year"</span><br/><span class="bold">Reward:</span> 1-Year Expert Premium<br/>Get one full year of access to expert-level tools that help you attract clients, deliver plans, and manage your fitness business effectively.<br/>⭐ <span class="bold">SkippyFit Trailblazer</span></p><p>👕 <span class="bold">Tier 8 – "Brand &amp; Build"</span><br/><span class="bold">Reward:</span> 1-Year Expert Premium + SkippyFit T-Shirt<br/>Show you’re a founding professional. Get platform access + a stylish SkippyFit tee that identifies you as part of our expert community.<br/>🌟 <span class="bold">SkippyFit Champion</span></p><p>🎁 <span class="bold">Tier 9 – "SkippyFit Starter Kit"</span><br/><span class="bold">Reward:</span> 1-Year Expert Premium + T-Shirt + 1 Random Gift<br/>Everything from Tier 8 plus a surprise gift to boost your client work—like gym tools, accessories, or coaching resources.<br/>🌟 <span class="bold">SkippyFit Champion</span></p><p>🛡 <span class="bold">Tier 10 – "Pro Legacy Pack"</span><br/><span class="bold">Reward:</span> 2-Year Expert Premium + T-Shirt + 3 Fitness Gifts<br/>Leave your mark as a founding expert. This premium bundle gives you 2 years of access, exclusive merch, and 3 curated gifts to grow your brand and business.<br/>💎 <span class="bold">SkippyFit Founding Legend</span></p><h4 class="page-anchor" id="h:-6-Why-We-Care-">❤️ <span class="bold">6. Why We Care</span>
+</h4><p>There’s no tool like this—one that truly bridges the gap between fitness experts and users with real, practical needs. Most platforms are generic or too complex.</p><p>We know how hard it is to stay consistent with fitness goals, especially without support. SkippyFit Community will make it easier to:</p><ul>
+<li>Find trustworthy experts</li>
+<li>Stay motivated with real guidance</li>
+<li>Get smarter insights with AI-powered tools</li>
+</ul><p>We’re building something that gives both <span class="bold">users and experts the platform they deserve</span>—and we believe it can truly reshape digital fitness.</p><h4 class="page-anchor" id="h:-7-Who-We-Are-">👥 <span class="bold">7. Who We Are</span>
+</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49827153">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/827/153/18043bab93f56823749e332f85c2851d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750952909&amp;width=680&amp;sig=wFCaeAqOlxDpZek%2BTaTJCvzNo9qb%2FTV6O9WanBvrEPQ%3D"/>
+</figure>
+</div>
+<p>We’re a passionate team of <span class="bold">developers, fitness fans, and tech entrepreneurs</span>. We've already built and launched SkippyFit and are deeply committed to fitness innovation.</p><p>We know how to build scalable apps, work with users, and listen to feedback—and now, we’re ready to grow SkippyFit into something truly revolutionary.</p><h4 class="page-anchor" id="h:-8-Let-s-Build-the-Future-of-Fitness-Together-">🌟 <span class="bold">8. Let’s Build the Future of Fitness—Together</span>
+</h4><p>We believe fitness should be <span class="bold">smarter, more personal, and truly connected</span>. SkippyFit Community brings everything together—experts, users, and AI—into one seamless experience.</p><p>With your support, we can launch this project, grow our network, and help millions train better, live healthier, and stay consistent for life.</p><p>👉 <span class="bold">Back us today</span> and help us bring SkippyFit Community to the world.</p><p>📲 Try SkippyFit today:</p><p>Android: <span>Google Play</span></p><p>iOS: <span>App Store</span></p><p>Web: <span>skippyfit.com</span></p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">🚧 Risks and Challenges
+As with any ambitious digital platform, SkippyFit Community faces some technical and strategic challenges. However, our experienced team is prepared to address them with transparency, agility, and proven development methods.
+
+🧱 1. Technical Complexity
+Building a multi-platform ecosystem (backend + Android + iOS + web) that integrates with the existing SkippyFit app and services is complex. We mitigate this by:
+
+Following an iterative development model with defined milestones
+
+Using proven frameworks (Spring Boot, Firebase, MongoDB)
+
+Relying on our prior success delivering and maintaining SkippyFit across platforms
+
+🔐 2. Security &amp; Data Handling
+Handling sensitive user and expert data—especially health-related information—requires strong security practices.
+We’ll ensure this through:
+
+Centralized secure authentication
+
+Encrypted data transmission and storage
+
+Regular security reviews and updates
+
+📱 3. Cross-Platform Synchronization
+Seamless integration between SkippyFit and SkippyFit Community (training plans, diet imports, chat, Skipper AI) will require tight coordination across services.
+Our backend is already structured with microservices in mind, and we’re building the community module as a dedicated microservice for smooth interaction.
+
+📣 4. Building Expert Network &amp; User Adoption
+The value of SkippyFit Community relies on a growing base of trusted professionals and active users.
+We plan to:
+
+Allocate funding to marketing &amp; partnerships
+
+Offer early onboarding and profile-boosting tools for first experts
+
+Incentivize users with features like expert matching, easy scheduling, and Skipper AI integration
+
+🕒 5. Delivery Timeline Risks
+Development schedules may shift due to dependencies, testing, or platform-specific review processes (e.g., Apple App Store).
+We mitigate this by:
+
+Dividing the project into clear, deliverable phases
+
+Maintaining open communication with backers and adapting based on feedback</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18">My project seeks funding for AI technology.</h3><div class="flex flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p style="margin-bottom: 1.5rem;">For the database or source that I will use or will create, the consent of the persons whose works or information incorporated have been obtained.</p></div><div class="flex flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p>There is or will be an opt-in or opt-out for those owners.</p></div></div><div class="border-bottom mb2"><h3 class="normal type-18 mt5">I plan to use AI-generated content in my project.</h3><h4 class="bold lh4" style="margin-bottom: 1.5rem;">What parts of your project will use AI generated content? Please be as specific as possible.</h4><p class="border-left border-create-700 border-left5px pl3">SkippyFit Community is primarily a human-designed mobile and web application built by our team of developers and fitness experts. AI is not used to generate creative content (e.g., visuals, designs, stories) for the campaign or platform interface.
+However, the application incorporates a feature called Skipper AI, which provides users with fitness-related assistance such as: answering frequently asked fitness questions, 
+providing basic workout and diet suggestions based on user goals,
+interpreting user data (e.g. weight, reps, progress trends) to offer tips.
+
+All responses from Skipper AI are generated using custom, rule-based prompts and models trained to offer informational assistance, not creative works. All final fitness plans, expert insights, and user content are human-curated or provided by verified professionals.</p><h4 class="bold lh4" style="margin-bottom: 1.5rem;">Do you have the consent of owners of the works that were (or will be) used to produce the AI generated portion of your projects? Please explain.</h4><p class="border-left border-create-700 border-left5px pl3">Yes. Our AI assistance feature does not use copyrighted third-party datasets or creative works. It is based on: open-source language models integrated securely through licensed APIs; internally developed, structured prompts authored by our team; data provided by SkippyFit users themselves (with consent through terms of service); data provided by SkippyFit team: exercises database, ready fitness plans, other useful data - no user specific content is shared; fitness logic, calculations, and recommendations drawn from standard public-domain knowledge in fitness, nutrition, and wellness.
+
+No private or copyrighted content is used to train or feed the AI. Where any third-party databases are referenced, we ensure they are either publicly available under open licenses or explicitly permitted through API agreements (e.g. OpenAI API with usage terms).</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">"Our platform is built to last, not to waste."
+SkippyFit Community requires only minimal cloud infrastructure to operate: a few optimized servers and backend services. Our codebase is designed for efficiency, with long-term maintainability in mind—reducing the need for constant redeployment or overuse of server resources.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">"We keep physical products minimal, useful, and reusable."
+We’re offering only a small number of physical reward items (like t-shirts and fitness accessories), and we carefully select items that are durable, multi-use, or made from recyclable materials. Packaging will be kept to a minimum, using recyclable content where possible.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">"Wearables with purpose—and responsibility."
+For our branded SkippyFit t-shirts, we plan to work with suppliers who offer sustainably sourced or organic cotton options, and print only in small batches to avoid overproduction. We are actively seeking eco-friendly printing partners.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">"We partner with responsible manufacturers."
+All physical products will be sourced through partners that maintain ethical and environmentally conscious manufacturing practices. Where available, we’ll favor certified facilities (such as OEKO-TEX or GOTS) with low emissions and reduced water usage.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">"No wasteful shipping. Just what’s needed."
+We’ll avoid bulk production and ship rewards only as needed, using batch fulfillment to reduce shipping frequency and emissions. Packaging will be minimal, recyclable, and plastic-free wherever possible.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">Low-Carbon Digital Development: "Our biggest product is data—not waste."
+As a software platform, we avoid the emissions and materials that come with traditional product development. We use cloud providers with net-zero or carbon-neutral goals (like Google Cloud or AWS), and optimize our backend to minimize server time and energy consumption.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

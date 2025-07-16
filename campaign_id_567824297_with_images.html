@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentinel XR Gaming Glasses: Game & Watch Movies Anywhere</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/951/342/4acf1c268ec401b67374162181b07165_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751904175&width=560&sig=WS6sLlSgbUXEFsYd5EnjAyLvPQRprF4c31Zr%2B59gs2Q%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Sentinel XR Gaming Glasses: Game & Watch Movies Anywhere</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Wearable 180” display | 1080p FHD | 120Hz refresh rate | Switch 2 & Steam Deck | PS & Xbox & Remote Play | Netflix & Multimedia</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>41 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50002978">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/002/978/b0b95c3f27a6d104ad3556fca95cba5a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752244691&amp;width=680&amp;sig=9OmiZ1K80iX3B2WAChGZtMkDm0Ssbi22vZhnUtft0%2Bk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812173">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/173/b596e1d0f73d154430c2eaafbdc4ff3b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750860382&amp;width=680&amp;sig=0nNMizfxas29MjHdcKqK%2Fdl4QtuklayWjB12G6GC9hs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812186">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-180-Screen-On-The-Go">Your 180" Screen On The Go</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/186/9bb07ac4ff101478cfb80e8023648153_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750860440&amp;width=680&amp;sig=9BtXNSY5dy3wrwwbwkYujCxuzWNh%2FmIt5If05STdJOA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49811035">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/811/035/dc86ce190cf41c606ae8cb4564d65466_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855215&amp;width=680&amp;sig=eTqCwG9mnF6fo%2FS8ZJh62x1RzXj4JdAH61ihzijFN8I%3D" src="https://i.kickstarter.com/assets/049/811/035/dc86ce190cf41c606ae8cb4564d65466_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855215&amp;width=680&amp;sig=eTqCwG9mnF6fo%2FS8ZJh62x1RzXj4JdAH61ihzijFN8I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812208">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/208/75f21f10c59fa1ae01290f9707416a92_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750860529&amp;width=680&amp;sig=3Newb1CeDrcJq9q%2F7Uv0vgSoXz5hCuweEzMnOW1aqAw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792597">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/597/6212c034329f1e6ab9954aa618ee034d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750751295&amp;width=680&amp;sig=Pv9atehwLeWDHCAg%2BF84WRKEX3TttnxFGra0eDDMZWs%3D"/>
+</figure>
+</div>
+<p>Sentinel XR Gaming Glasses turn any moment into a <span class="bold">full-scale immersive experience.</span></p><p><span class="text-italic">Games pull you in deeper. Movies hit harder. And everyday productivity just feels easier.</span></p><p>Wherever you are — at home, on a plane, at the local cafe — Sentinel XR gives you a <span class="bold">cinematic 180” display </span>that moves with you. </p><p>Want even more?</p><p>Pair Sentinel XR Gaming Glasses with Vagabond V2, our pro-level mobile controller, and OmniBase, the all-in-one Android hub with power, storage, and control — and you’ve got a complete portable entertainment system in your pocket.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812218">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:1080p-FHD-120HZ-Gaming-Monitor">1080p FHD 120HZ Gaming Monitor</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/218/3ddb549297f12eee8f36d639e2a7c0b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750860570&amp;width=680&amp;sig=fl6jkzjrAIGfPT4%2F%2Fi08iYZakA%2BuSSnJBL8f0yuhGNs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49811044">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/811/044/fe6eedb44379fd7d09cc529940d73c6e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855245&amp;width=680&amp;sig=7j9wbqZcwppCt%2FL6GHtJenK881hRZDuUGilKNM%2BK5VM%3D" src="https://i.kickstarter.com/assets/049/811/044/fe6eedb44379fd7d09cc529940d73c6e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855245&amp;width=680&amp;sig=7j9wbqZcwppCt%2FL6GHtJenK881hRZDuUGilKNM%2BK5VM%3D"/>
+</figure>
+</div>
+<p>Sentinel XR Glasses are optimized for high end competitive gaming and smooth multimedia experience.</p><p>With <span class="bold">1080p Full HD optical modules</span>, 120Hz refresh rate and 1ms response time — Sentinel XR Glasses become your portable, lightweight gaming monitor.</p><p>Thanks to a 55 PPD (Pixel Per Degree), <span class="bold">every frame stays crisp</span> — no distortion gaming, no pixelation in movies, no ghosting, screen tearing or lag. </p><p>A premium monitor that matches the way you game and stream!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49909419">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/909/419/518faed43dc84dbc6cda3a28d43b504c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751545056&amp;width=680&amp;sig=ieR3aEmmEbfGmWNhGrB1a0fo9X0GBiSZP0kS4IKM%2Bo0%3D" src="https://i.kickstarter.com/assets/049/909/419/518faed43dc84dbc6cda3a28d43b504c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751545056&amp;width=680&amp;sig=ieR3aEmmEbfGmWNhGrB1a0fo9X0GBiSZP0kS4IKM%2Bo0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812821">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Tested-and-Trusted-By-Gamers">Tested and Trusted By Gamers</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/821/477baceafb726701333379a0042806fa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750863077&amp;width=680&amp;sig=ukWLammBvK0LD3kxR0htViFb97UZN2RI1cioyu0fI58%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">"I’m super excited to have an XR solution that is<span class="bold"> tailored for gamers</span>, and as a gamer myself, I didn’t think I needed that until I got it in my hands."</span></p><span>Watch the review - https://youtu.be/mv-MPDSUH-A</span><p><span class="text-italic">"The ELO Sentinel XR Glasses is going to be packed with so much amazing tech that it will blow your mind."</span></p><span>Watch the review - https://youtu.be/R7FsytgHY4A</span><p><span class="text-italic">"Gaming on the go is a bit annoying because of the small smartphone screen, but with  Sentinel, you can have <span class="bold">a console-like experience wherever you are</span>. Glasses display an image equivalent to a TV in front of you, improving your experience a lot."</span></p><span>Watch the review - https://youtu.be/zxHKaNMQS-M</span><p><span class="text-italic">"Honestly, these are gonna be <span class="bold">absolutely awesome</span>. These are gonna be <span class="bold">game-changing </span>in how you can play <span class="bold">big-screen gaming on the go</span>. You can use this on an airplane."</span></p><span>Watch the review - https://youtu.be/4WJ9-LifAXQ</span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795475">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Level-Up-Your-Switch-2-Experience">Level Up Your Switch 2 Experience</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/475/8401245163ea8384398b4f7643512dfd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750767411&amp;width=680&amp;sig=yGvwLj4D2sJacDks7NH13LR2GT88ImDNXPi12t4oz%2FA%3D"/>
+</figure>
+</div>
+<p>Sentinel XR Gaming Glasses give your Nintendo Switch and <span class="bold">Nintendo Switch 2 a larger screen</span>, higher FPS and more battery life.</p><p><span class="bold">Play on a massive 180” display</span> — wherever you are. </p><p>Connect easily using a docking set or the OmniBase — our own all-in-one companion hub.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792668">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/668/9e97ad61987c76535b3480900d31e075_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750751723&amp;width=680&amp;sig=z1xjh4mjo7S2zh43ZjWGpX5cROPnwyDQVmVW5YT%2Bm5g%3D"/>
+</figure>
+</div>
+<p>Use the OmniBase to connect two pairs of Sentinel XR Gaming Glasses to <span class="bold">play co-op games anytime, anywhere.</span></p><p>Upgrade your Nintendo Switch in mobile mode with the OmniBase.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49910574">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/910/574/072ceb9323025bf1c8b364809e17dcd3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751552337&amp;width=680&amp;sig=DhsMjFHdUKFu7tKA5a5GfxcSJvJhYrGJe%2BTwuo9791s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49909030">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/909/030/a397b9709406c14d06901e6c26fea829_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751542552&amp;width=680&amp;sig=AqfboDjCmyZdPFuGbNdHgeqZcRaFCZrAMiStBDI8mJo%3D"/>
+</figure>
+</div>
+<p><span></span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812233">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/233/c52bb5df0c0bcb277b55037982b6b399_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750860606&amp;width=680&amp;sig=%2BYu59HOdlsVe7M6oE4KHe2UB6RPjEjQ8OL8jAvlv0YA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49811050">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/811/050/0e5ee83ab00c24d107d55ac117121f05_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855273&amp;width=680&amp;sig=qG8j3bRPTEHC0pQJiuyUYZHX3rVzdgP58aEPFcTtiuM%3D" src="https://i.kickstarter.com/assets/049/811/050/0e5ee83ab00c24d107d55ac117121f05_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855273&amp;width=680&amp;sig=qG8j3bRPTEHC0pQJiuyUYZHX3rVzdgP58aEPFcTtiuM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792679">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Remote-Play-Cloud-Gaming-Emulation-Gaming">Remote Play|Cloud Gaming|Emulation Gaming</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/679/7b2dfc4d48343d695bcf8d6f7488edc9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750751799&amp;width=680&amp;sig=eUQl%2FF7AWPr9bft2PzWBvKjgc8d73VoSBamSkFMguNc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792684">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/684/468f224d7d4cd855c6add96a22bde7c1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750751836&amp;width=680&amp;sig=9xZ1IoIK92rF44Mx77Hh9EZXGSA%2FMc8KBTbLHmkS07Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792693">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/693/b55c9400d5ca461fad0b326c653d3cf3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750751905&amp;width=680&amp;sig=KWzGEAQLObH6RQKzPqcFbtdHzSqR9M4fqjjDb4KnUu8%3D"/>
+</figure>
+</div>
+<p><span class="bold">Emulate your favorite retro console </span>and arcade games in full-size clarity. Sentinel XR Gaming Glasses work with all major emulators via any device or our preloaded emulator on the OmniBase.</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812248">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/248/4dc37e46acc5956f4d00126e860f47f7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750860646&amp;width=680&amp;sig=yKL21vcuwL2Gf8R%2BEoA8%2FBg21JRq9nco9ruIUfIOLTc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812252">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/252/20c662cf30e9a029635ebfd1855fc154_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750860655&amp;width=680&amp;sig=6PsfNXatQ700mTIqwAb%2FHnn0Fuxn%2FDKCXaP0kLP3wyg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812265">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Cinematic-Streaming">Cinematic Streaming</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/265/cd5fa69f8334461f53a7d3fee96ebab6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750860690&amp;width=680&amp;sig=OhRTyBaXWPJ7RqYi5TIeoQvO%2FDHRh5DR260GWZi7ZFE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49811068">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/811/068/2f35bb9d59dc0f0ca0478a25816a1d1f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750855351&amp;width=680&amp;sig=DHJTUXCkWmJmvOV9%2FIfnCA1C03gSEHcUzlIyBYhEOIM%3D"/>
+</figure>
+</div>
+<p>Sentinel XR Glasses aren't just for gaming — they’re your personal <span class="bold">immersive</span> <span class="bold">screen</span> for <span class="bold">streaming movies </span>and binge-watching<span class="bold"> shows.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812268">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/268/d54b8bfce3e49b3971fe658ed3cc35a1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750860708&amp;width=680&amp;sig=C5loL2nJr8dvyZkv0mqQj9R8ElXi5FwvLSU3%2FnBkTQo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793528">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/528/69aad6f35e22ef37ff4204e9531cbf47_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750756523&amp;width=680&amp;sig=RAnboeaJvDV4d0oOGd7uo2rQEo5You4J6HCdDyI0CE4%3D"/>
+</figure>
+</div>
+<p>Connect Sentinel XR to your PC or Mac and <span class="bold">turn any space into a private office</span>. On a plane, during your commute, or working from a cafe — you’ll have a private 180” screen to review documents, have conference calls, answer emails, or edit documents with zero distractions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812324">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Compatible-with-All-Your-USB-C-Devices">Compatible with All Your USB-C Devices</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/324/08f97c04251d2554b59fec61c25fa8d2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861023&amp;width=680&amp;sig=F%2BIZYwSN4FVgATC2FmK7XMB%2BQXipARfhUL%2BzhlG%2F40I%3D"/>
+</figure>
+</div>
+<p>No need to check for compatibility — it just works.<br/><br/>Sentinel XR Glasses connect easily via USB-C and work with Nintendo Switch 2,Steam Deck, ROG Ally 2, all USB-C iPhones, iPads, Android devices and Laptops.. <br/><br/>If your device uses USB-C, you’re good to go.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49924104">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/924/104/385553f683ab893c388ebca8e5dbcf60_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751645498&amp;width=680&amp;sig=qcF35BD1OMCIQq8qbUZxoA%2BX9Gi2ijscRwV6hPaNpwA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49924137">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/924/137/0002825f638c1a1d7889e97453dd8cad_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751645692&amp;width=680&amp;sig=g7yn9tuNyH%2BcUwWxossyoY3O%2FrToc%2BfZrUxJTBiuoqk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812327">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/327/69e436893bb84c3f7409dd1cfb0ab818_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861048&amp;width=680&amp;sig=AT%2FAOls8NRyAANMv%2BiloJdrbmOiIouGZyDyEdNAwzWw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49811079">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/811/079/12f5e9ffa305fd371bebd7ee1f9bd05a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855382&amp;width=680&amp;sig=DhecKk6%2FfLp0OlOR5%2BbRSXzbkr6mStZzcQaD%2Fhk%2BJI8%3D" src="https://i.kickstarter.com/assets/049/811/079/12f5e9ffa305fd371bebd7ee1f9bd05a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855382&amp;width=680&amp;sig=DhecKk6%2FfLp0OlOR5%2BbRSXzbkr6mStZzcQaD%2Fhk%2BJI8%3D"/>
+</figure>
+</div>
+<p>Take everyday gaming and streaming to a cinematic scale.</p><p>With a 180'' screen, Sentinel XR Glasses transform every moment into a full-blown adventure. </p><p>Mid-flight, on your way home, or just in bed? You never have to pause your movies and games!</p><p>You get the view of a 27-inch monitor from just 80 cm (2.6 ft) — or a 180-inch screen from 3 meters (9.8 ft) away.</p><p><span class="text-italic">* You can freeze, scale, and position your screen with OmniBase only. Full details on OmniBase below.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864118">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/864/118/d0789956d30b87aaa0b33cf73e3dba0c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751267930&amp;width=680&amp;sig=oJoa5MYkXNUFVaTB5oyCwqChIpRAU8gYzOv1XCCkgbQ%3D" src="https://i.kickstarter.com/assets/049/864/118/d0789956d30b87aaa0b33cf73e3dba0c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751267930&amp;width=680&amp;sig=oJoa5MYkXNUFVaTB5oyCwqChIpRAU8gYzOv1XCCkgbQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49911058">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/911/058/072ceb9323025bf1c8b364809e17dcd3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751554704&amp;width=680&amp;sig=e703ZSrkuWqVjW7AzRuacE4TDU%2BaNvkBBdE22hFGywI%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794162">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Widest-Field-of-View">Widest Field of View</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/162/f74d09b09701cb0235e68d25575c2dc8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750760062&amp;width=680&amp;sig=rraYFNymvV6kuGzlPaUskxh0%2F2Qr9BE3Ip4B1WK0LbE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795578">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/795/578/6226bfd2696a164437f33e1f2f425010_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750767896&amp;width=680&amp;sig=Kd0QA%2BqBn%2B0efW4IZNvXvSDY0N6Gwwl407%2BtJHnqY14%3D" src="https://i.kickstarter.com/assets/049/795/578/6226bfd2696a164437f33e1f2f425010_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750767896&amp;width=680&amp;sig=Kd0QA%2BqBn%2B0efW4IZNvXvSDY0N6Gwwl407%2BtJHnqY14%3D"/>
+</figure>
+</div>
+<p>When your view gets cropped, your awareness drops — and your body takes the hit. All that head-tilting? It stacks up. Neck strain, discomfort, motion sickness.<br/><br/>Sentinel XR Gaming Glasses feature Sony’s latest 0.68” OLED modules — the largest modules in the category — delivering<span class="bold"> 52° field of view </span>— the widest you’ll find in XR glasses. Optimized for individual clarity and comfort, the display eliminates distortion and edge cut-off.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812332">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Built-in-Myopia-Adjustment">Built-in Myopia Adjustment</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/332/b22e557211ae78da810c33f3cbfc89ae_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861077&amp;width=680&amp;sig=QyorRKG9FGZ8C8G%2FqWL6HUvcAOXyDflpZ9kdb6sAMY0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794200">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/200/1721b38da41edbfcbe872808ff337083_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750760279&amp;width=680&amp;sig=Ax%2F5yb2cAqcQVLNRLSYVpRQuiqt0HiLDAPIGzxRW9sI%3D"/>
+</figure>
+</div>
+<p>Clear visuals, no extra lenses needed.</p><p>Sentinel XR Gaming Glasses feature built-in myopia adjustment with diopter correction from 0 to -5.0D, users with mild to moderate myopia (near-sightedness) can fine-tune their focus directly.</p><p><span class="text-italic">*For other prescription needs, custom magnetically attachable prescription lenses are also available as a separate add-on — $20 during the campaign.</span></p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812352">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Lightweight-and-Universal-Fit">Lightweight and Universal Fit</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/352/d863d2836e247e704848e9ef36bfa8c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861131&amp;width=680&amp;sig=SuS2X8092WeZ2IbtA4%2BQQXvr6eerlREWBXUPjjd9EEc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794209">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/209/0cd8a308df59393b8cc86a7cfed1720f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750760349&amp;width=680&amp;sig=mbv38XwUNO0LaicgWuOM6sIPCjMLK5E%2Bgksi4O2XQeY%3D"/>
+</figure>
+</div>
+<p>If it doesn’t fit right, it won’t feel right.</p><p>Sentinel XR Gaming Glasses weigh 80g and comfortably fit all head sizes — with flexible hinges that put minimal pressure on the head and a moldable nose pad that can adapt to different face shapes. So even during long sessions, it stays comfortable without pressure or slipping.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864107">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/107/b3c7fcf44792759174abfbb34d61808f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751267893&amp;width=680&amp;sig=hAIhk5BSszMCngosADcTFH6B4LhzHSmwk1DKA2g5QwI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864084">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/864/084/2d5db308dfeb9fc4932da739fe67cfae_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751267748&amp;width=680&amp;sig=BTPLlrjmd37LrvG0XNa8kBgQC64PIQgOqIlWQMOfzzU%3D" src="https://i.kickstarter.com/assets/049/864/084/2d5db308dfeb9fc4932da739fe67cfae_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751267748&amp;width=680&amp;sig=BTPLlrjmd37LrvG0XNa8kBgQC64PIQgOqIlWQMOfzzU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864090">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/090/e5a7fea804ad294f6531085cbf4557cb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751267781&amp;width=680&amp;sig=N5CrlZntMCNtkwP1RFnAdRLXJUISAnYvQuYOli3rUlw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864072">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/072/d203fe908127500f707e32add1e30b2c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751267631&amp;width=680&amp;sig=%2BMo8x8JciXyY1ps1NlV33dVQRPwELdn68wgTN09KaLs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864077">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/077/60c760a3527a8cbca81968b58b20387e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751267682&amp;width=680&amp;sig=36NXpDas%2FMxaJkSxFNerEBpcuFyLbzNq6c6pGJZlwFE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864078">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/078/cb31d119751b751a932743f97f6a51cf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751267699&amp;width=680&amp;sig=lfiQmj1xDIogY3IKDEgNLhgU1OeiICZT%2BGg7C3bXuTw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864081">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/081/6720566231f3ce4be2e30a69bf479679_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751267716&amp;width=680&amp;sig=OMXorsba4UoMzN0dEWglV5ihuQsnjVXGsWZXBotnyz8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812357">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:1ms-Latency">1ms Latency</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/357/d4f65b6be28e6b21735f4ab3ac788c3a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861152&amp;width=680&amp;sig=sTsrA2wd4ua1NLc5U4oMYwRq0qT%2BoxQinq9CyV21j0I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795665">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/795/665/fbc0f7dbef92a2d2b3d1c9a1972953a1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750768271&amp;width=680&amp;sig=ed4gvq5KYHVORb6%2Br2XABUWd29gKkazdWvoUXMfUm6I%3D" src="https://i.kickstarter.com/assets/049/795/665/fbc0f7dbef92a2d2b3d1c9a1972953a1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750768271&amp;width=680&amp;sig=ed4gvq5KYHVORb6%2Br2XABUWd29gKkazdWvoUXMfUm6I%3D"/>
+</figure>
+</div>
+<p>When every second counts, delay isn't an option.</p><p>Sentinel XR Gaming Glasses deliver real-time responsiveness with 1ms latency, a 120Hz refresh rate, and a USB-C connection that keeps your gameplay sharp and seamless.</p><p>The custom magnetic Pogo Pin cable locks in fast and stays stable — so your connection never breaks before your streak does.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49811099">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/811/099/86470da7914e71840aef6b53e9e39d18_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855468&amp;width=680&amp;sig=25wxWb8xfHdxSBw1TfHip4B1peXGFHQLu772%2FuhYJTU%3D" src="https://i.kickstarter.com/assets/049/811/099/86470da7914e71840aef6b53e9e39d18_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855468&amp;width=680&amp;sig=25wxWb8xfHdxSBw1TfHip4B1peXGFHQLu772%2FuhYJTU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812360">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Up-to-99-7-Light-Blocking">Up to 99.7% Light Blocking</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/360/dcfbbaec53bee32a70699516e59cae07_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861174&amp;width=680&amp;sig=o7TDbWXIWVAIosbC7Tk2pbUnbEj4n5ZdrOCzjJMxMyk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795696">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/795/696/307e5c19ddc0f931294d21f8e8c8ee74_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750768393&amp;width=680&amp;sig=OCQhBSVcBaOv40XBexw2VwgPPuZPh20mVMnqFMgkqbM%3D" src="https://i.kickstarter.com/assets/049/795/696/307e5c19ddc0f931294d21f8e8c8ee74_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750768393&amp;width=680&amp;sig=OCQhBSVcBaOv40XBexw2VwgPPuZPh20mVMnqFMgkqbM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812379">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/379/8408daa1c7b1c3dc7a4e5b1b6ff0433a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861274&amp;width=680&amp;sig=qv7GQ9iPG%2FgFU3Myv5bnHDgiodfmhu38qHwSBWPLhUc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49909030">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/909/030/a397b9709406c14d06901e6c26fea829_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751542552&amp;width=680&amp;sig=AqfboDjCmyZdPFuGbNdHgeqZcRaFCZrAMiStBDI8mJo%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812728">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:No-Overheating">No Overheating</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/728/514ea5c1ec798dd7b58fb09e0c1e8ab0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750862710&amp;width=680&amp;sig=9Gptym0E0R0HSK76VUla1AmSvqf7DnAsQeWt8J%2Bvsls%3D"/>
+</figure>
+</div>
+<p>Heat can build up fast — unless your gear is built right.</p><p>Sentinel XR Gaming Glasses stay cool during extended use thanks to its aircraft-grade aluminum frame, passive cooling design, and multi-layer thermal structure.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812402">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/402/bb2095a335e92fd8ed524330e16a82b1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861364&amp;width=680&amp;sig=QiGQ7Jd3Pa47J1wtyokGYiL974JzDLzQxpJvTYqo1bE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812408">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-Gaming-Setup">Your Gaming Setup</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/408/36cac40e3d671fdc91b6b74e013e9cc5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861387&amp;width=680&amp;sig=Di9l5kLgYKk3wiKv05hR7aavB50okwCPeW4OxNtWnVw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794385">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/385/c324476063b04ce43584744c2a9a86d2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750761384&amp;width=680&amp;sig=D%2BNj3QkIa4bnXMMXkBfBGBEUs%2BFNiWA2biKfC2%2FNlzw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49811107">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/811/107/d5cf937c674f2077294a13698f82424d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855520&amp;width=680&amp;sig=4rW0R73JO%2Fgefmz0x8Lu3R8EBqR5Rn0e2bKczpXSals%3D" src="https://i.kickstarter.com/assets/049/811/107/d5cf937c674f2077294a13698f82424d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855520&amp;width=680&amp;sig=4rW0R73JO%2Fgefmz0x8Lu3R8EBqR5Rn0e2bKczpXSals%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812422">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Vagabond-V2">Vagabond V2</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/422/822966163e3433568f030cd189dc1623_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861458&amp;width=680&amp;sig=QbzXK1kk3RaG80HA%2FOK6i417%2BbhVF%2B5zPMCol6tzXJE%3D"/>
+</figure>
+</div>
+<p>Snaps on like a case. Plays like a console.<br/><br/>Touchscreens weren’t built for real gaming. Vagabond V2 was. Feel the difference the moment you grip Vagabond V2’s full-sized Hall-sensor joysticks — pixel-perfect precision with zero stick drift. </p><p>Vagabond V2 keeps your game going with fast passthrough charging and a stable data and display support for your Sentinel XR Glasses.</p><p>Connect via USB-c or play wirelessly via Bluetooth 5.2 — available via the added Bluetooth adapter.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812523">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/523/7cd6f149b9fa7e331a76f507f44ec40e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861778&amp;width=680&amp;sig=Zjn%2B4pof4d34imf%2FF79UjPbAXobFQQfTuY6U8w%2BpSr4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794409">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/409/ea90142d9ee4f6cd1b0e960678eaa618_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750761514&amp;width=680&amp;sig=IltWSpvTDI7bZJGnjgK1CdZYlKKUvcf0a8fOqOgLRE8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49811116">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/811/116/25eb866aca7564eb694d3e7b0dab42fb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855566&amp;width=680&amp;sig=uhtSehI%2BBu1nO7Sz%2BYxti7wlPeIO6CS5OoXpWHBKMqM%3D" src="https://i.kickstarter.com/assets/049/811/116/25eb866aca7564eb694d3e7b0dab42fb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855566&amp;width=680&amp;sig=uhtSehI%2BBu1nO7Sz%2BYxti7wlPeIO6CS5OoXpWHBKMqM%3D"/>
+</figure>
+</div>
+<p>Vagabond V2 isn’t locked to phones. It’s fully compatible with larger devices like the ROG Flow Z13,Nintendo Switch 1 &amp; 2, and all iPads, giving you console-grade controls across your entire setup.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794414">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/414/af32b07a57b84792ee69e140f1536cc6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750761547&amp;width=680&amp;sig=jEOGIN4ZS7L1h6057E9JTe6TQqgnt9Y1QV1TlqPB5KU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794425">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/425/419092aabbb1912885f659c3c4c4be6e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750761609&amp;width=680&amp;sig=5uSHSBfvRZ45UFR0YlMLwzVKw9OZyxMmfDn75AEXvvs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49811122">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/811/122/7f9724cc6e91c333afe588b6f35316f0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855595&amp;width=680&amp;sig=zdsM%2FRN434D4XJCe8chqHwXJcPxmGDAwKgZdwqP9ZMM%3D" src="https://i.kickstarter.com/assets/049/811/122/7f9724cc6e91c333afe588b6f35316f0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750855595&amp;width=680&amp;sig=zdsM%2FRN434D4XJCe8chqHwXJcPxmGDAwKgZdwqP9ZMM%3D"/>
+</figure>
+</div>
+<p>Vagabond V2 gives you console-level experience on your phone or tablet..</p><p>It supports any USB-C device up to 13″ (330 mm), so you dive right in — whether you’re playing on a Galaxy Fold, Pixel Tablet, or iPad Pro. The left-side USB-C port ensures upward-folding compatibility.</p><p>Full support for iOS, Android, PC, Mac, Xbox, and PlayStation means your setup works anywhere, anytime.</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794437">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/437/2b802cc155b03d3813b990dc86847ad0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750761686&amp;width=680&amp;sig=SuCp0hIq924cGmRsbSTE5RP%2FIOMN7dIJSQ3smLwOsBk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794441">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/441/31dd0607730d5122838630bedb236672_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750761707&amp;width=680&amp;sig=kCyXqTff1oSkvC1L%2BhD90x%2FhHPAtZqjYWQELFBqqEsU%3D"/>
+</figure>
+</div>
+<p>Vagabond V2 is built to fit your setup, not the other way around. </p><p>Thanks to the long-reach USB-C connector and adaptive clamping system, it works perfectly with any phone case — including OtterBox Defender, QuadLock, Spigen Tough Armor, SUPCASE Unicorn Beetle.</p><p>No need to remove your case. Just snap in and play.</p><h4 class="page-anchor" id="h:Choose-Your-Button-Layout"><span class="bold">Choose Your Button Layout</span></h4><p>Choose between <span class="bold">PlayStation-style (△○×□)</span> or <span class="bold">Xbox-style (ABXY)</span> button layouts and swap in your preferred D-pad.</p><p>You also get 4 programmable macro buttons:<br/>2 back buttons + 2 trigger macros = full control, fully customized.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794626">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/626/8736eb0d88569acb75dbcd7091c3ea99_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750762467&amp;width=680&amp;sig=eVODZ91dj%2B%2B7M9sRPyuqRLBdrFMD%2FRURToAxOxO6Vmo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794662">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/662/dac322e83e1049bb4aafedadee2d37bf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750762643&amp;width=680&amp;sig=%2F%2BaRAuPb%2FOKnelWOoJer%2BDltJogR01j8oKfaG646qto%3D"/>
+</figure>
+</div>
+<p>Connect Vagabond V2 to your device wirelessly with our Bluetooth adapter — it powers the controller while maintaining a stable Bluetooth connection.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794466">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/466/3a787ca3316fb4899cee0a9e7fd13d43_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750761836&amp;width=680&amp;sig=e0ejWvLlb2Qd8mTBpcC5MFTyk%2FLjf56%2B%2BUJm2%2B5tzgY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812532">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-OmniBase">The OmniBase</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/532/7778a20866fe8617382a208bcb482b87_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861824&amp;width=680&amp;sig=r7jR5gRxDqiWCF%2Fh%2BGs8zbdbAQslSzdUAcSIQDQXq%2F0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794573">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/573/dbb03fbe1fc5895b2e55dd79bc3b2bdf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750762223&amp;width=680&amp;sig=4IN9fe%2F4y61g9%2BDYSSJ4BiKX1cQimaOIDpNgOpKC4wU%3D"/>
+</figure>
+</div>
+<p>The OmniBase is your portable processing unit for the Sentinel XR Gaming Glasses — a compact, Android-based hub that adds brains, battery, and control to your setup.</p><p>Load games and media directly to its 128GB internal storage (expandable via SD card), navigate and control through OmniBase, and connect to your phone or Vagabond V2 controller for a full mobile gaming setup.</p><p>It powers your glasses, charges your phone up to 3 times, and with docking mode, makes Sentinel XR Glasses compatible with the Nintendo Switch 2.</p><p>OmniBase supports dual-glasses connection, letting you plug in two Sentinel XR glasses at once and jump straight into multiplayer gaming, co-op sessions, or shared streaming.</p><p><span class="bold">Anchor &amp; Control Your Screen</span></p><p>With the OmniBase, you’re not just watching — you’re in control. Easily anchor the floating screen of the Sentinel XR Glasses in one place with 6DOF so it doesn’t move with your head. </p><p>Want a bigger view? Expand it to cinema size. Need to stay focused? Shrink it down to just what you need. OmniBase helps you shape your screen to fit your space and your moment.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794587">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/587/2d3c19f30b823ce916ff51411f871ab0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750762268&amp;width=680&amp;sig=hMI%2BZg33m4bH2wGy3tXlvFx2dDgHyO2Uv5cDOoPxP9E%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812536">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/536/ad1071429c52c6c88c59e56278eea741_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861852&amp;width=680&amp;sig=TQmypcR8VXcMRLwDlBFuPqzk5Nc3Hg8Eog%2FTDhRcfTk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794678">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/678/609664a205298ed3db93de4508430e20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750762762&amp;width=680&amp;sig=Z8bq7RPtF0nxIPWvg1Kzj0Gvr7PdikwLvtX3bdZCPeM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812541">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/541/f9979506855db38f2e26692973804519_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861867&amp;width=680&amp;sig=11gYYBW2wogbXBwb1Z1suEUBOcR2vnf62K25x6k0ZwA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794692">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/692/e91ee1059a401761e2d72a5b2f763ae6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750762854&amp;width=680&amp;sig=UbknjM83JAKonZtGD5EejEvGyXp5Cay6k3Ybet9GmM0%3D"/>
+</figure>
+</div>
+<p>I’m a gamer. Always have been.</p><p>That means I know what it’s like to squint at a small screen mid-flight, to feel the lag throw off your timing, or to fumble with gear that was not built for real gamers.</p><p>At ELO Gaming, we don’t accept that.</p><p>We believe portable gaming should feel just as immersive, responsive, and powerful as console gaming — maybe even better. That’s what pushed us to create Vagabond V2, the controller that brought console-level precision to mobile. And that same drive led us here: to Sentinel XR Gaming Glasses.</p><p>We didn’t build this just to look futuristic — we built it to perform.</p><p>We use only the best materials. We work with top engineers. And we never settle for “good enough.”</p><p>This isn’t just hardware — it’s a system made by gamers, for gamers. Built to elevate every moment of your gaming experience. Built to help you play at your highest level — on the road, at home, or anywhere in between.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794698">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-In-The-Box">What's In The Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/698/13ed71c5d348369314dc79509104ae15_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750762903&amp;width=680&amp;sig=9EIyGbGIfoPBzE8QnJ0klJAaf6hdu0wjFBFDtEZzFCg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825171">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/171/84d338455a9a24b75e2f9a8d789c0634_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750941581&amp;width=680&amp;sig=0WEtpN9dvbVbZA2vA%2F0rd5Ts05xDPjObXGdZqmVR7uY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796091">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/091/67f21a5616850ffa3f3e9888e9a1e309_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750770282&amp;width=680&amp;sig=vTMbC%2BiJumuhtxOkC%2BurJgwsZxNBm4V7rzRJihSn3is%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794714">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/714/928ffea456ad1b76cdae443b789a6f0d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750763011&amp;width=680&amp;sig=E0aelFJKld%2Fvmt2Co7yX8XWqdGXfyR4X4OYRiwfDIa8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794762">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/762/101b0a0b6a72aba9ef139e6808b8b64b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750763247&amp;width=680&amp;sig=DhfvQe0TJVy3uZ1WwRoN66YwlZqUCV3zBRcLnfoKjW8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796158">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/158/67adfbd16aed4245cbc80584d8b33618_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750770681&amp;width=680&amp;sig=9JmXtJfUZrCy%2FHQ8aBpitKxNDk1dq9mQJZI6Ya0Ewjk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794764">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/764/be2a9fe8fc6060fb9003f566d5d27ea9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750763258&amp;width=680&amp;sig=RW62oXTSALwE4Pv65OCgETqXZeTX5yjCZ7muDPYwzqk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50002860">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/002/860/ff2f43f8dd2472393b52f4375f3f3bb7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752244111&amp;width=680&amp;sig=bWjK3MPr2uiozUP%2FGN5u7xqkd%2B29qYQmbtYzq8RYFLQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49812545">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping">Shipping</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/812/545/eacc13f7241777970da83d8249e9cfdf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750861910&amp;width=680&amp;sig=8jBAHigTUeD2rfkw5J9d9pl%2FZRAwnMG6b3xayriRJAA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49836741">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/836/741/b4107c04e70d5e4933b8612e58c3b652_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751015722&amp;width=680&amp;sig=Pt1I4sfnM02LN%2Bq6%2BHZmBREH3wcK0qZZePaSkKFHYGM%3D"/>
+</figure>
+</div>
+<p>*The shipping prices listed above apply to <span class="bold">The Sentinel</span> only. <span class="bold">The Vagabond</span> and <span class="bold">The OmniBase</span> have a <span class="bold">flat $10 shipping fee</span> for all countries mentioned in this table. All other add-ons will ship <span class="bold">free of charge</span>.</p><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49798016">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/798/016/9d00d50af766e8129f0e84ccc8b00929_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750778301&amp;width=680&amp;sig=e5Z%2BER2Ukb%2Fez%2FRJ5RiFKr%2Ff9P2AfYFVsWLg3CzyHM8%3D"/>
+</figure>
+</div>
+<p><span class="bold">The Sentinel XR Gaming Glasses</span> Kickstarter campaign is designed and fully managed by <span>TCF (The Crowdfunding Formula)</span>, <span class="text-italic">a leading, award-winning crowdfunding marketing agency. We team up and help companies to build global brands.</span><br/><span class="text-italic">With the largest team and the largest crowdfunding ecosystem on the market, </span><span>TCF</span><span class="text-italic">offers a wide range of crowdfunding services.</span><br/><span class="text-italic">We manage campaigns all the way from product concept to market validation, lead generation to email marketing, SMM and influencer marketing, PR and direct sales, video, design, and advertising - leading to the ultimate success of campaigns.</span></p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Our team is well-prepared for this campaign. We built smooth relationships with manufacturing partners to solve problems and get ready for any issue that may occur while scaling up. Meanwhile, like any project, there are potential risks associated with this campaign. Due to supply chain issues and other reasons, the final manufacturing schedule may be delayed. However, we will be as transparent as possible to keep you informed and work to resolve any issues that may arise. If you have any questions or concerns, please feel free to contact us.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

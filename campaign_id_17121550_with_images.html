@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loomlite: A modern campaign management app</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/846/444/4c99c81b87d52585432e76a16fa41350_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751079508&width=560&sig=%2BcK58XV5sKagryOuk9G%2FNG17oOHUid%2FHGtHoKr3uoXI%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Loomlite: A modern campaign management app</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Weave your stories with Loomlite. Create and manage your TTRPG campaigns with ease.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>31 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862345">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Loomlite">Loomlite</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/345/e5c441b8ebd328784264dfa51d2dfb4e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751251135&amp;width=680&amp;sig=mxQc%2BCm55hnbYlvDp2CFc6OKmok9v85Pl6%2BVO9ww%2Fu4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609650">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/650/06c011a9d91eaa06226ae4af3ea0b5ab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749496370&amp;width=680&amp;sig=pOw7%2FSH6YT0sb6H0jm%2FvNgwW2aYe3ngG1xAzE2%2FG3pI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Imagine a world where building, running, and visualizing your tabletop roleplaying game campaign is as easy as opening an app.</span> Loomlite is here to make that dream a reality—a powerful, intuitive app designed to bring your TTRPG adventures to life, whether you’re at the table or on the go.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609927">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/927/9dd7e88d2fa252e2b387c4fa21ebeeca_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749497559&amp;width=680&amp;sig=1OMKLNH%2B%2Btz9TIiuzBaHVMR2ev2cLKN67ty4EcXr5Bs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609203">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Loomlite-">Why Loomlite?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/203/38143c7ffc9e92a78e58cb57fd27ac34_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749494497&amp;width=680&amp;sig=meTZ32W7pOqX3WbyJH1rEOhEFBZU%2BgHtQ0hoq2BVqjY%3D"/>
+</figure>
+</div>
+<p>Loomlite is more than just another tool for Game Masters. It’s a complete campaign management suite that helps you:</p><ul>
+<li>
+<span class="bold">Design campaigns</span> from scratch or using templates.</li>
+<li>
+<span class="bold">Keep your notes</span> <span class="bold">organized </span>with a simple and easy-to-use note system which you can tie to your campaign, players, and each specific session.</li>
+<li>
+<span class="bold">Create characters and NPCs</span> with rich profiles and dynamic relationships.</li>
+<li>
+<span class="bold">Build custom items</span> <span class="bold">and manage inventories</span>. Let your players craft their own items through our own innovative item crafting system.</li>
+<li>
+<span class="bold">Customize every hex of your maps</span> and visualize your world like never before.</li>
+<li>
+<span class="bold">Design and run encounters</span> with integrated initiative tracking and encounter flow.</li>
+<li>
+<span class="bold">Keep track of your story.</span> Visualize your campaign as a flowchart, making it easy to track branching storylines, player decisions, and plot twists.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609943">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/943/d8ed49e95e4f57c7d150a84d50a86032_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749497636&amp;width=680&amp;sig=ketfUdly50ZmEGGC2Ish4BiapGPsDsddqKqg49aMoxI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49787845">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Premium-Features">Premium Features</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/787/845/7e32ae90b356700aa3784333b312186d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750716828&amp;width=680&amp;sig=3OQG8EZ2glTfOcE2KZmv%2BYaWze5vTE91Uo2qlkaOQVI%3D"/>
+</figure>
+</div>
+<p>At Loomlite, our aim is to provide high-quality tooling and features for every GM and players need. Tired of another note-taking system for campaign management? We're so much more!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49874878">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/874/878/268402822a767f4f02a9f7c91289eb8d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751327070&amp;width=680&amp;sig=kIwZWM1HWRWl87tI0d%2BuM0ZsPCowv%2FHHt%2BoP3dWwA8I%3D"/>
+</figure>
+</div>
+<p><span class="bold">Keep track of your campaign: </span>Take notes, not just for your campaign, but for each individual session too. Add notes to specific quests and locations, and query for later in case you need it!</p><p><span class="bold">Deep dive into your campaign setting: </span>With Loomlite, you don't have to just write a campaign. You can design worlds, countries, cities. Go into as much detail as you want! Then create and assign your campaign. Tie your quests directly to specific landmarks and locations, so you are never scrambling to figure out where to go next.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49874877">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/874/877/94bdb50da8836af00f9da27972aba176_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751327065&amp;width=680&amp;sig=6pOY%2FoOtnyWU5UAMKNBywwXj7Wcyz7DnslySA8V1Ono%3D"/>
+</figure>
+</div>
+<p><span class="bold">Never forget another session</span>: Tired of always forgetting when your next session is? Or trying to find a time that works for everyone? Use our calendar system to help co-ordinate your entire group!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49874641">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/874/641/26ef3cf5938f020768c11bb203f5f75b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751325417&amp;width=680&amp;sig=jGqJdylsqES7frlPUeg2BlGGvB66VimcHujugePRSPo%3D"/>
+</figure>
+</div>
+<p><span class="bold">Tired of the plain old encounter system?</span> Loomlite's encounter system is designed to be simple to use, modular based on the RPG System, and easy to run and modify. Rolling initiative and choosing monsters are the bare minimum; get recommendations on which monsters to choose based on biome and environment! Easily scale your encounter difficulty with just a few settings. At our advanced tier, we can even suggest the more personalized encounters for your campaign and party</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49874640">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/874/640/62b5e535716ee23520295a7b7ffeed71_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751325417&amp;width=680&amp;sig=%2Fv6VNJsM5EsXy7U3gjMp9mx2XJHW0T1CYrzbhvdfzt8%3D"/>
+</figure>
+</div>
+<p><span class="bold">Never scramble to find a roll table again</span>: Setup and save your roll tables with ease. You can set what dice to use, what the results are, and link the table across your campaign</p><p><img class="image" data-id="49874646" src="https://i.kickstarter.com/assets/049/874/646/57d240294cf88420c3c4c2354011a8b4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751325420&amp;width=4321&amp;sig=AfdswHuUfyMRS%2F%2FQVF20aGgx6IpuMf9bwRtjvTaoDDY%3D"/></p><p><span class="bold">Don't just look at a map, interact with it: </span>We don't want to be a VTT; let's make that clear. We do however, want to improve how maps are handled. Don't just look at a map, set up your encounters, NPC's, loot, etc. right on the map itself. Click on a grid and view what that grid contains! You can even link your roll tables straight onto the grid so you can easily roll your encounters without having to switch screens.*</p><p>*Our free tier will only allow roll tables and NPC's. Our Pro tier will have access all described features. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49874643">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/874/643/d555f9709cdb9c4ecda5488eb200d662_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751325418&amp;width=680&amp;sig=kcddltYSGkAqotjWqhyHmg8IqxRw4Erxpv9%2BFnl%2B0lI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Keep your items organized: </span>With Loomlite, you can create items that are as varied and diverse as your imagination. You can define your own custom attributes and effects. Organize these items by type, effects, collection; and assign them to your players and NPC's.</p><p>We've gone one step further, allowing you to take advantage of your items by assigning them to dedicated shops, letting your players interact with your world without you having to remember and explain every detail (unless you want to that is!). You can also create randomized treasure chests for your players to find!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49874642">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/874/642/23d05757f41ceef3a0c2eb80266352c5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751325417&amp;width=680&amp;sig=KdArMhLkCxOSJF6i6edXai3pN1Pu3LXjyzCmN6awHP8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49874647">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/874/647/b1dcd80491787f536604d1aff6e9e80d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751325420&amp;width=680&amp;sig=EhikVKdFC5weUSH2FHHpj8Qg%2BUXwisqykftvzMfgbO8%3D"/>
+</figure>
+</div>
+<p>We also have a slew of other features planned that don't have screenshots or UI/UX for yet. This includes:</p><ul>
+<li>
+<span class="bold">Item Forging</span>: Let your players forge items using recipes and ingredients! Use our own forging system, or design your own and watch your players brew up trouble</li>
+<li>
+<span class="bold">Story Flow: </span>Don't just read your campaign notes, visualize your campaign and your player's progress through it with an interconnected flow chart. Create and edit your campaign with a new perspective</li>
+<li>
+<span class="bold">Backstory Generation: </span>Tired of trying to come up with an interesting backstory? We've done the hard work for you! Choose settings for your character, and watch as we write a backstory for you from the 100+ of backstories painstakingly written by our resident DMs. We plan to update our list regularly as well, adding even more potential options.</li>
+</ul><p>Be the master of your campaign!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609923">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/923/40d01bb3f1fcc473e768011cc2fc0f30_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749497539&amp;width=680&amp;sig=PPeDGI49r7mbflBnQZxzQNJuiepfgu%2FmzutTbpMcurU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49787844">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Designed-for-everyone-not-just-GMs-">Designed for everyone (not just GMs)</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/787/844/ce50eefd8fa01dcc5aa7167c6d183cef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750716812&amp;width=680&amp;sig=u7Cc9gENbT3EvZsYHnUxVMdqkrIjGIUKGGunpe7oGKw%3D"/>
+</figure>
+</div>
+<p>Not a GM or running your own game? No problem! Loomlite is also meant for players! Create and manage your characters with our easy-to-use tools. Interact with your GM's campaign and world at your own pace. You can suggest actions, write notes, and store your character assets on our system.</p><p>Loomlite is built for both online and offline users, with plans to integrate with major Virtual Tabletop (VTT) platforms like Foundry. This means you can seamlessly move between Loomlite and your favorite VTT, streamlining your workflow and making game night smoother than ever.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862384">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/384/e104b22eefcce88be55e67c2910c40a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751251526&amp;width=680&amp;sig=1G0SVg9zto2SxtDQFzbBHUktfA%2F32%2FOybxa2q57z81Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609635">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Subscriptions">Subscriptions</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/635/dc048f3c4ea2be6d80079eecb850c5e3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749496300&amp;width=680&amp;sig=KacTaGxV1P9Ft01F6JPOn2AOsFaZEX9qKCkqjSt%2Bfic%3D"/>
+</figure>
+</div>
+<p>Our hope is for Loomlite to continue long after this Kickstarter project has ended and, as such, there will be different levels of service we will be able to provide to our backers both old and new. There will be 3 tiers of Subscription available, which are described below.</p><ul>
+<li><span class="bold">Free Tier</span></li>
+<li>
+<span class="bold">Pro Tier</span> ($50-one-time-fee)</li>
+<li>
+<span class="bold">Advanced Tier</span> ($10/month OR $100/year)</li>
+</ul><p>These tiers come with different levels of functionality, which we've expanded upon below:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49883662">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/883/662/97bd254003b1c25cb5b3bdf5b5cadba8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751381009&amp;width=680&amp;sig=GEJWKmsqbKh2JMjWikMuUmFNX5P2T7vDXEKKGUhU%2Fvo%3D"/>
+</figure>
+</div>
+<p>Loomlite has a generous free tier, but our $10 <span class="bold">Advanced </span>tier supercharges your membership. With a premium subscription, you’ll unlock:</p><ul>
+<li>
+<span class="bold">No limits: </span> Use all our tools with zero limits; unleash your creativity!</li>
+<li>
+<span class="bold">Exclusive monthly content:</span> New campaigns, characters, items, and stunning artwork—all ethically procured from real creators, not AI.</li>
+<li>
+<span class="bold">Larger cloud storage for all your assets:</span> Upload and re-use your assets wherever you need them.</li>
+<li>
+<span class="bold">AI-assisted tooling (optional):</span> Smart suggestionsand automation to speed up your prep, but always under your control—turn it off anytime you want. We offer a cheaper subscription for users who don't want to use these features.</li>
+<li>
+<span class="bold">Offline mode (stretch goal):</span> Take your campaigns everywhere, even without an internet connection.</li>
+<li>
+<span class="bold">VTT Export (stretch goal): </span>Export your creations to VTT's with ease!</li>
+</ul><p>Don't want to be tied to a subscription but still like Loomlite's offering? Join our <span class="bold">$50 lifetime license</span> and access everything but our most advanced features forever!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49875250">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Monthly-Content">Monthly Content</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/875/250/ee336f9df4c988743c28e068b934a875_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751329693&amp;width=680&amp;sig=nTjySfQ1c4swqAGQbt5ZNlwzVw%2FfloHgfKVBoCpBxZc%3D"/>
+</figure>
+</div>
+<p>As part of our <span class="bold">Advanced </span>subscription tier, we're committed to providing you a monthly drop of art and content (quests, characters, one-shots). We've partnered with artists who are great at their craft, as well as content writers (including our own founders) to deliver on this. </p><p>We plan to start providing our monthly drop from our official launch date onwards!</p><p>If you are a content creator or artist and are interested in working for us on a commission basis, reach out to <span>adiradh@loomlite.co</span><span class="bold"> .</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609642">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/642/7e9397985feccd9965a577cf77ef2862_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749496333&amp;width=680&amp;sig=D8rMFto08gT1Ld4HsGq0wNfjzC20Hls%2BFbRQ7Nuwq5w%3D"/>
+</figure>
+</div>
+<p><span class="bold">$1  Thread Tier: </span>Become part of the Loomlite tapestry from the very beginning with our “Thread” tier. All Backers get exclusive <span class="bold">Beta Access</span>, giving you a first look at Loomlite before it officially launches.</p><p><span class="bold">$5 Stitch Tier: </span>At this level, your support gets immortalized with a <span class="bold">Thank You Page Mention</span> on our website. We’re thankful for all supporters and everyone who backs us at this level or higher will be recognized as a supporter within the Loomlite app itself.</p><p><span class="bold">$25 Weave Tier: </span>In addition to the <span class="bold">Thank You Page Mention, </span>Weave level backers will receive <span class="bold">Early Beta Access</span> to get in on your adventure early!</p><p><span class="bold">$50 Quilt Tier: </span>Wrap yourself in rich campaign tools and content. This tier includes all previous rewards, plus <span class="bold">Loomlite Adventure #1</span> (an exclusive campaign from the Loomlite team).</p><p><span class="bold">$100 Tailor Tier: </span>At this level you’ll receive everything from the <span class="bold">Quilt tier</span> along with <span class="bold">Loomlite Adventure #2</span>, another Loomlite-exclusive campaign to run with your friends!</p><p><span class="bold">$250 Embroidery Tier: </span>Along with all Tailor Tier items, this tier awards a <span class="bold">Custom Loomlite Hoodie </span>(estimated delivery before January 2026).</p><p><span class="bold">$500 Grand Master of the Loom: </span>Our highest honor. Master Loom backers receive <span class="bold">ALL previous rewards</span> along with <span class="bold">Loomlite Adventures #3 and #4</span>, a <span class="bold">Custom D20</span> with the Loomlite logo and a <span class="bold">Metallic Art Piece</span> for a custom character of your choice. Our team will partner with you to create <span class="bold">RPG stats</span> for this character within the system of your choosing. Finally, our development team will record <span class="bold">Custom Thank You Videos</span> just for you to show their appreciation for the support you've given us. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862452">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/452/b439bd5550d9cf81561b6745d723b23c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751252360&amp;width=680&amp;sig=gva9YYluE34DpCD8io%2BuRCWDiMN1NTZ3AWJjvCGuFuk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609644">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Team">The Team</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/644/ed16a9a3280f21e7ac5f8dfc7b2ad540_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749496354&amp;width=680&amp;sig=1eMOd0O404CcsQAqkePq6FITXsMtRvHc%2BUSc5p8JVJ0%3D"/>
+</figure>
+</div>
+<p><span class="bold">Adi - Loomlite CEO</span>:</p><ul>
+<li>Adi is the founder of this project; his initial idea led to the creation of the Loomlite Project and team. A backend developer who dabbles in the land of front-end, he blows off steam by GM-ing multiple campaigns, reading fantasy books, and plotting on how to make his players have fun (evilly). Passionate about both technology and TTRPGs, he decided to combine his two past-times! When not working or gaming, you can find Adi on the climbing walls at his local rock gym, or fencing with historical weapons as a HEMA practitioner.</li>
+<li><span class="text-italic">Favorite RPG Class: Barbarian</span></li>
+</ul><p><span class="bold">Brian - Loomlite CTO:</span></p><ul>
+<li>Brian brings constant outside the box thinking and problem solving to the team. He’s one of our full-stack developers that has been writing web-based software since the dawn of the internet. Ok, maybe not quite <span class="text-italic">that </span>long, but for a very long time. Brian is passionate about making life easier through technology and, when he’s not working on getting through his timelines, you can typically find him cooking at the family restaurant. </li>
+<li><span class="text-italic">Favorite RPG Class: Paladin</span></li>
+</ul><p><span class="bold">Doug – Loomlite COO/ Project Manager:</span></p><ul>
+<li>Doug brings a steady hand and sharp focus to Loomlite as our Project Manager. <br/>With years of experience managing teams to hit strict deadlines, he’s passionate about building a tool to help sew together the threads of your campaign using Loomlite. <br/>When he’s not managing timelines and deliverables, Doug enjoys movie nights, improvisation in TTRPGs and analyzing Excel spreadsheets to help his MMO team.</li>
+<li><span class="text-italic">Favorite RPG Class: Fighter</span></li>
+</ul><p><span class="bold">Dawn - Marketing Manager:</span></p><ul>
+<li>Dawn has had over 5 years experience in Marketing from Video work to hosting 3 different Podcasts. Excited to delve into her nerdy roots, she’s all about getting Loomlite to any TTRPG player out there. A lover of movie franchises like Lord of the Rings, Jurassic Park, Gremlins and Star Wars, she loves a good beach walk and taking candids with her camera. </li>
+<li><span class="text-italic">Favorite RPG Class: Sorcerer</span></li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49787841">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-">Why?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/787/841/b2d3b16fb2ea2ca47eab52d6f4ac20c1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750716800&amp;width=680&amp;sig=LnZMojNHaVRn8h1ykKnOYwK1i4fwOs12j7Y0RgjC%2Fb4%3D"/>
+</figure>
+</div>
+<p><span class="bold">All-in-one solution:</span> No more juggling multiple apps or notebooks. Loomlite brings everything together in one easy-to-use interface.</p><p><span class="bold">Premium content by real creators:</span> We believe in supporting artists and writers. Your subscription funds new content made by real people, not AI.</p><p><span class="bold">Offline mode (stretch goal):</span> With your support, we’ll develop a robust offline mode so you can prep and play anytime, anywhere. Your support will mean we will achieve this goal even sooner.</p><p><span class="bold">Community-driven:</span> We listen to feedback and are committed to making Loomlite the best tool for TTRPG creators and players.</p><p>Your support will help us bring Loomlite to life. We’re launching this Kickstarter to fund development, hire artists and writers for premium content, and—if we reach our stretch goal—build the offline mode that will take your campaigns everywhere.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609163">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/163/32abce71cf4adf4ba1dd8296a88ebc30_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749494207&amp;width=680&amp;sig=KAQ9RS8bnS3NLb5ZcCw0tW8NHpkFjfuDL6allCiy0HA%3D"/>
+</figure>
+</div>
+<p>**And thank you to our partners who have suffered us spending time on this for the past year.</p></div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Funding</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">50%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Content Commissions</div><div class="m0 type-16 text-nowrap">50%</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">32%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Development</div><div class="m0 type-16 text-nowrap">16%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Manufacturing</div><div class="m0 type-16 text-nowrap">16%</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">18%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">8%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">5%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">5%</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated June 9, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Our development will be on-going regardless of the Kickstarter results; we WILL release this app for you! We are close to an alpha product currently, so we hope to have early access Beta ready by October. Your support however, allows to work more actively with our artists and writers, design better UI, and polish our features further. If we reach our stretch goals, we will be able to put more resources into the project and deliver you premium features and tools even sooner!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Loomlite includes opt-in AI tools designed to help inspire creativity and get past writer’s block when it may occur. All features laid out below require a direct opt-in and are 100% optional within our site. 
+The following features have optional AI attached: 
+- Name Suggestions 
+- Item Creation Ideas 
+- Plot Point Prompts 
+- Roll Table Generation 
+- Quick Loot Chests 
+
+Our current plan is to use the Perplexity Sonar models for these features, which can work with an offline mode that doesn't crawl through the internet. If these plans change, we will notify users before any changes occur so that user's can make conscious and ethical choices.
+
+WE WILL NOT be using AI-generated images, videos or large AI-written creative content in our site, Kickstarter, or in any content that is directly published or distributed by Loomlite. Every image/video you see that is published by us is directly created or commissioned by us, or officially licensed for commercial use from artists.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

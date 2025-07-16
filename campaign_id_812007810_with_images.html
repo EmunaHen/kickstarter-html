@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Einsen: The Future of Ironing. Automated</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/895/477/5d86de969468c9e408077f194c15dfbc_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751455005&width=560&sig=T6cMWHNV6HbPV%2BIDDSEQHiweFkyBV43HMRu%2BX3g%2B9yc%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Einsen: The Future of Ironing. Automated</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Automated | Patented 3D Ironing System | Superheated Steam | Professional Finish | Smart Control | Safe by Design | Presses and Steams</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>41 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49884285">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/884/285/2d7560c21ca7c955997d6e880b5cd84c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751383629&amp;width=680&amp;sig=PVZtztwVMfTv1%2BvlibRWqIFMuNEcd21JF%2FKBR%2BtUkDs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882272">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/272/5c9b7475b6f2372e48e321541d883a4b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751375508&amp;width=680&amp;sig=0i5NqfKZIDNvYjKOKVUnm69NrdFNkCzqYunc366yw00%3D"/>
+</figure>
+</div>
+<p>Introducing the new era of ironing, without the time, effort or set up. Meet Einsen, the world’s first automated ironing device. <br/><br/>Einsen simultaneously steams and presses your garments using patented technology, for an exceptional level of precision and smoothness.  </p><p>Gone are the days spent at the ironing board. With Einsen, there’s just one motion, one minute, one perfect finish. It’s more than innovation, it’s a revolution.<br/><br/><span class="bold">Welcome to the smart era. Welcome to Einsen.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880977">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/977/ce65c61488a88cc568ee9922a01bd1b4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368564&amp;width=680&amp;sig=u8p6zceEetP58s5%2FJx1E9xmP%2Bp1iECbbFigpKKvljns%3D" src="https://i.kickstarter.com/assets/049/880/977/ce65c61488a88cc568ee9922a01bd1b4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368564&amp;width=680&amp;sig=u8p6zceEetP58s5%2FJx1E9xmP%2Bp1iECbbFigpKKvljns%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882658">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/658/d109aa2072530194b71b1d657ad137f0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377080&amp;width=680&amp;sig=BqoMb5Mx12qN%2Fe9MifydEX1gcDMbCiy%2Fqc0H8AB7slA%3D"/>
+</figure>
+</div>
+<p>You may have already switched to a steamer or another device to escape your ironing routine. But it remains a routine. Waiting for the steam to build, working each wrinkle by hand, and wrestling with the garment.<br/><br/>Einsen doesn’t just improve. <span class="bold">It relieves – handling the entire process for you.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882306">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/306/0a459930f090bf33ea8e0c93a66c7e19_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751375576&amp;width=680&amp;sig=KI85MEM6A4ILjbM26LC6meP0n%2Fmghu5yQU0PfOcesPM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882659">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/659/f93be239c029dc8d12346e95805a19e9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377083&amp;width=680&amp;sig=DZpb8Oj5ncKlhk3WhXgV7gEaSbubipToGNjHzGRqlOE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881008">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Ready-in-60s">→ Ready in 60s</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/008/82d0887eb34fe7337fd24313c2347534_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368778&amp;width=680&amp;sig=gouWTn82oGx79PacI4%2Ff1ZHplgiZ7mTYzqcAyz6LN4I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880978">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/978/a62ee9263c2c7370196529945e23fc2a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368568&amp;width=680&amp;sig=ozT1NOCAp8o8ygtU7FOOFmnyOSvi9LQtHM76y%2F%2Frui0%3D" src="https://i.kickstarter.com/assets/049/880/978/a62ee9263c2c7370196529945e23fc2a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368568&amp;width=680&amp;sig=ozT1NOCAp8o8ygtU7FOOFmnyOSvi9LQtHM76y%2F%2Frui0%3D"/>
+</figure>
+</div>
+<p>Time is your most valuable asset. That's why <span class="bold">Einsen is engineered for speed.</span><br/>With Einsen, the entire ironing process is automated and designed for simplicity.<br/><br/>Simply place the wrinkled garment, let the system do its work, then collect your crease-free and ready to wear piece. <span class="bold">Done in 1 minute</span>. <br/><br/>Now you can put your time where it really matters. Experience ironing at the speed of seconds.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881011">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Automated-Ironing">→ Automated Ironing</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/011/5c6f3aef7c28a49c6a956b2f4e4b34a4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368800&amp;width=680&amp;sig=uFG6tmu4y5Uh8r5hQMETjEFuK%2BZUTkvVB6m02gPR0y4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880980">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/980/a7157e031b6b09eaea579e81fff8b4bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368576&amp;width=680&amp;sig=B0VBjD%2Fg3BLk8CWIoAj1dt6pTHKzOfLA%2BAnuHM3ddYg%3D" src="https://i.kickstarter.com/assets/049/880/980/a7157e031b6b09eaea579e81fff8b4bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368576&amp;width=680&amp;sig=B0VBjD%2Fg3BLk8CWIoAj1dt6pTHKzOfLA%2BAnuHM3ddYg%3D"/>
+</figure>
+</div>
+<p>Ironing never evolved.<br/><br/>Traditional ironing is repetitive – a series of manual maneuvers, constant flipping and repositioning in the pursuit of perfect results. It’s a process built and stuck in the past. <br/><br/>Einsen is designed to<span class="bold"> automatically feed, steam and press your garments</span>. Achieve smoothly ironed clothes without manual adjustments or extra effort.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881017">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Safe-Design">→ Safe Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/017/9cfa671fe10591df134f4e214579f9e9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368837&amp;width=680&amp;sig=2j1FUdDx5jqLmsDXTqK1EBcHoaGqoBaA3EXGc7Ut3RE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881019">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/019/3faa6519c2a34d06cceb1310a39706b8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368842&amp;width=680&amp;sig=b%2BvX%2BHH6o7qw9VzBxPkChrXPkrjI8%2FqWxsEbsk9eENg%3D"/>
+</figure>
+</div>
+<p>The iron has always been one of the more dangerous household items. A piping hot plate used on a thin board, spraying hot steam inches away from your fingertips.<br/><br/><span class="bold">With Einsen, there is no risk of burns. </span>Neither for you, nor for your garments. Einsen is built with layered safety features that make it smart, secure, and family-friendly.<br/><br/>The exterior stays cool to the touch, with no exposed hot plates. If left unattended, Einsen automatically shuts off.<br/><br/>Inside, smart thermal sensors monitor temperature in real time. This means internal temperatures are safe and your garments are protected.<br/><br/><span class="bold">Longer lasting garments for your wardrobe.</span><br/><span class="bold">Safety and peace of mind for your home. </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881022">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Professional-Grade-Steam">→ Professional Grade Steam</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/022/5bb1e664cfc6fe01dd7b05599d298ee1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368864&amp;width=680&amp;sig=FyLz%2FucQdnxSG3fuaHtI5FSO2yX029bonn3ZtO4X%2FCI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880981">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/981/160a1c7f0fa6ac7a0b58195e53bd5cd1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368580&amp;width=680&amp;sig=g9%2F%2FqcNcBAp%2BDmgJQ1R68Weu18aGfKK9E3yOr6WqX3w%3D" src="https://i.kickstarter.com/assets/049/880/981/160a1c7f0fa6ac7a0b58195e53bd5cd1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368580&amp;width=680&amp;sig=g9%2F%2FqcNcBAp%2BDmgJQ1R68Weu18aGfKK9E3yOr6WqX3w%3D"/>
+</figure>
+</div>
+<p>Using advanced superheated steam technology, Einsen delivers powerful dry vapour that <span class="bold">penetrates deeper into fabric layers</span>, soothing out even the toughest wrinkles. <br/><br/>Unlike traditional steamers, it doesn’t leave garments damp – meaning <span class="bold">no drying time, no water spots, and no compromise on finish.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881025">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Sleek-Compact">→ Sleek &amp; Compact</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/025/96afb117f8399bc664b2e69a9212e6e8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368887&amp;width=680&amp;sig=zb5rq2JKTPLQC%2FKZgK1UEA3pwY%2B376BSmxnrYvMSkkw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882743">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/743/d0a4a31f08c63a304cbffbc26795f9c0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377407&amp;width=680&amp;sig=h7%2FVLPjzrz0HCde4EnMWtFr9hZ47FOzxrB3%2FhZK8GYk%3D"/>
+</figure>
+</div>
+<p>Traditional irons aren’t designed to complement the modern home.<br/>With a form factor close to the size of a home printer, Einsen fits on a shelf and is designed to blend in with the modern setting.<br/><br/>Compact. Clean. Minimal..</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882661">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-A-Winning-Formula">→ A Winning Formula</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/661/94461e6afd135f4c26a770caad4679ea_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377094&amp;width=680&amp;sig=lvHoagxDwe27y%2FPDcZbXl3PZJUffOL0W7t93aeV3110%3D"/>
+</figure>
+</div>
+<p>At the heart of Einsen lies a carefully calibrated system working in harmony:<br/><br/>Superheated steam that penetrates deep into the fabric. <br/>Dynamic pressure applied with precision rollers and springs.<br/><br/>This powerful combination outperforms traditional ironing systems – delivering crisp, dry and ready to wear clothes in a fraction of the time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881040">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/040/f5ea595eff0a56156b64b1ea3855643f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368936&amp;width=680&amp;sig=8sYOF0js1qRnoy1wP31h8cUnTPj5xfXEoQyX5z8xqYA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882662">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Iron-in-One-Pass">→ Iron in One Pass</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/662/8411fdf279471bb191a9891ef19cfc13_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377100&amp;width=680&amp;sig=UaU23sHHZeWsQzGPWXFmCk34WIL3v%2FmlFftXK6nhiOg%3D"/>
+</figure>
+</div>
+<p>Simply hang your shirt on the Einsen hanger, insert it into the machine, and let<span class="bold"> Einsen take care of the rest, </span>while you get ready or enjoy your morning coffee.</p><ul>
+<li>Turn Einsen on and let it preheat (2–3 minutes).</li>
+<li>Put your shirt on the special hanger.</li>
+<li>Slide the hanger into the machine.</li>
+<li>Use the app to select the type of fabric + mode.</li>
+<li>Collect your perfectly ironed garment on the other side.<br/><br/><span class="bold">Yes. It’s that easy.</span>
+</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880982">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/982/32837c8f38d15f9a598e325d3618b652_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368591&amp;width=680&amp;sig=7L7f5hJMXEocCRa7mehYWqZ2tWBrth2evZe7C4xA0uY%3D" src="https://i.kickstarter.com/assets/049/880/982/32837c8f38d15f9a598e325d3618b652_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368591&amp;width=680&amp;sig=7L7f5hJMXEocCRa7mehYWqZ2tWBrth2evZe7C4xA0uY%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882663">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-More-Than-Garments">→ More Than Garments</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/663/74c78bfdbb90ce09c6b1266fa9ae200e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377106&amp;width=680&amp;sig=j7d2qPXNF44hZS3oZWD82OUc2IzrREyTTVEW09slcoY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880983">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/983/0cc3b1f261d4590193568d13e6dc7e58_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368596&amp;width=680&amp;sig=R%2B5ZuSW6lBlr22LJeotKlvpNMFMweIyoHRUL1Nie9ks%3D" src="https://i.kickstarter.com/assets/049/880/983/0cc3b1f261d4590193568d13e6dc7e58_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368596&amp;width=680&amp;sig=R%2B5ZuSW6lBlr22LJeotKlvpNMFMweIyoHRUL1Nie9ks%3D"/>
+</figure>
+</div>
+<p><span class="bold">From dress shirts to pillowcases. From XXS to XXL. From cotton to denim to wool.</span><br/><br/>Einsen’s isn’t limited to just clothes.<span class="bold"> It smoothes out a wide range of fabric type</span>, style, size, and materials. Non-clothing items like pillowcases and scarves can be placed directly into the machine.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881051">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/051/3237274a95c492cf8d0b73a26edf6983_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368994&amp;width=680&amp;sig=S61rNoNWBBvZECBW3%2BEN1mOPhdujnETIQYMsBmBDm5Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882670">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-3-Smart-Modes">→ 3 Smart Modes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/670/bcfe086630e7f4bb39dc40d4cae20655_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377160&amp;width=680&amp;sig=8G8vJKiTuQQshVG%2Bjj0%2BbLljjamOMgCyYsPL6lYZeGk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880984">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/984/e79fdee5f832224ea0c51164edce4d73_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368602&amp;width=680&amp;sig=Fx8k9df51ysKb5VHPL8CqsPfDcIK55TGBUWqedOod5A%3D" src="https://i.kickstarter.com/assets/049/880/984/e79fdee5f832224ea0c51164edce4d73_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368602&amp;width=680&amp;sig=Fx8k9df51ysKb5VHPL8CqsPfDcIK55TGBUWqedOod5A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49885292">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/885/292/9d8f236b0ed580e1d063b4ae1e420905_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751388076&amp;width=680&amp;sig=qJecRrzON3SRkNMvP5THp%2Fhbe%2BUoF7UxOuZo%2BL5SZoo%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882671">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Intelligent-Chipset">→ Intelligent Chipset</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/671/da207181a84d94c333cbc311fe712d73_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377165&amp;width=680&amp;sig=Uu6YucIjjCo0hKGMA1WyUFx%2BQO6UXEKIPqPch90nz%2B0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880988">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/988/979ceabf9128df7a809127e451d0cc83_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368627&amp;width=680&amp;sig=EBA9gsf9RuvDxloUu97SZasVTIBELwPk43yhnLBDEqc%3D" src="https://i.kickstarter.com/assets/049/880/988/979ceabf9128df7a809127e451d0cc83_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368627&amp;width=680&amp;sig=EBA9gsf9RuvDxloUu97SZasVTIBELwPk43yhnLBDEqc%3D"/>
+</figure>
+</div>
+<p>No two garments are the same, and Einsen knows it. <br/><br/><span class="bold">Einsen’s intelligent chipset responds to real-time data. It adjusts performance with precision to suit every fabric type and structure – balancing temperature, pressure, speed, and its use of steam.</span><br/><br/>Thanks to ongoing support for software updates, Einsen will continuously improve performance.<br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880991">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/991/392848d560e282e464c7f03370a5f9e0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368633&amp;width=680&amp;sig=FjwfQtxy6qj6tQNptjX0bzl0Ow7e3SOphudNlVw2bU8%3D" src="https://i.kickstarter.com/assets/049/880/991/392848d560e282e464c7f03370a5f9e0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368633&amp;width=680&amp;sig=FjwfQtxy6qj6tQNptjX0bzl0Ow7e3SOphudNlVw2bU8%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882677">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-How-It-Works">→ How It Works</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/677/4d69836ba78bc72787540bd1aa06b506_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377173&amp;width=680&amp;sig=OQ6YRcsB5cJmGHMKGUfdZPp11UmpLy5VGUVjCN8RXjY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881078">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-3D-Ironing">→ 3D Ironing</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/078/f10b031fb4bf2170bbefb1ba510e1887_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751369121&amp;width=680&amp;sig=pPbbfyu1AJVOD4Y7QVZQj7eiBKg2nLWlElNHKRlwBHY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880994">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/994/49ded08d7674fc6fe08e7f52ee5039ee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368642&amp;width=680&amp;sig=q4J8EzSq44ESAvwJDO0jq7iwkQXE8gXMVNiFD88ljNc%3D" src="https://i.kickstarter.com/assets/049/880/994/49ded08d7674fc6fe08e7f52ee5039ee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368642&amp;width=680&amp;sig=q4J8EzSq44ESAvwJDO0jq7iwkQXE8gXMVNiFD88ljNc%3D"/>
+</figure>
+</div>
+<p>Clothes are three-dimensional. Seams, sleeves, collars, and cuffs all come in different shapes. Traditional irons struggle to treat these surfaces evenly.<br/><br/><span class="bold">Einsen’s patented 3D ironing system solves this by using separate plates at multiple levels inside the machine, to turn the 3D structure of your garment into a 2D outcome.</span> This architecture transforms the natural 3D shape of garments into a treatable format – allowing Einsen to treat all surfaces simultaneously.<br/><br/><span class="bold">Here’s what happens:</span><br/><br/>When you insert your garment into the auto-feeding mechanism, the sleeves are redirected to the lower channel.<br/><br/>Einsen then flattens and presses them separately, with controlled pressure while applying superheated steam.<br/><br/><span class="bold">The result: all surfaces are treated at once, whilst ensuring garments are free from bunching. </span>A marvel of engineering, exclusive to Einsen.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881087">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Superheated-Steam">→ Superheated Steam</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/087/76f508ed31da81e4045218ea23e7883d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751369154&amp;width=680&amp;sig=S9po%2FmnXqoK9gLHW30nSLJJP%2BvPDCJu2cZrvkYeXhj0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880996">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/996/e56a3d2d0b0cacae135f5a69648967d6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368648&amp;width=680&amp;sig=GT8JklefNiXgqhpO96EqRgzJgzPjppVnCyB9F%2Fnv5zU%3D" src="https://i.kickstarter.com/assets/049/880/996/e56a3d2d0b0cacae135f5a69648967d6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368648&amp;width=680&amp;sig=GT8JklefNiXgqhpO96EqRgzJgzPjppVnCyB9F%2Fnv5zU%3D"/>
+</figure>
+</div>
+<p><span class="bold">Einsen produces steam that reaches up to 200°C (392°F). But unlike ordinary steamers, it’s dry, superheated steam. </span>This enables multi layer penetration, releasing even the most stubborn wrinkles without leaving garments damp.<br/><br/>This results in no additional drying time, humidity stains and improved fabric preservation.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881214">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Dynamic-Pressure">→ Dynamic Pressure</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/214/d1c86f2858b06ea19a967d497d330b98_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751369933&amp;width=680&amp;sig=puZw%2F85pMR7%2Fa1%2FFfHyI4tMevthKOFHIynt1sbHEde0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880997">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/997/b42923d789e6fa8108a62ff849f0138d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368660&amp;width=680&amp;sig=m8%2FfPnOgSrX5fj2bG0ItEEXPTW1Qn1LZhqUx%2FwYJQSk%3D" src="https://i.kickstarter.com/assets/049/880/997/b42923d789e6fa8108a62ff849f0138d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368660&amp;width=680&amp;sig=m8%2FfPnOgSrX5fj2bG0ItEEXPTW1Qn1LZhqUx%2FwYJQSk%3D"/>
+</figure>
+</div>
+<p><span class="bold">Einsen’s spring-mounted pressing system adapts pressure in real time.</span> This helps Einsen maintain just the right amount of pressure – never too little, never too much – for a professional-level press across various parts of the fabric.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881219">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Auto-Feeding">→ Auto-Feeding</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/219/8793dccab9d8fc30061b5f6bd731e2a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751369951&amp;width=680&amp;sig=jCUXqyFItTUJSOXOOBVA2wMNPjFenHGOgi4SmTDiP9g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49880999">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/880/999/1a149110e4bb7dde5901574e85ccd1da_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368674&amp;width=680&amp;sig=r67Z4RP%2FKCJYRzyvBPL12xLUxhOoeNM0wdUTZQYLF9w%3D" src="https://i.kickstarter.com/assets/049/880/999/1a149110e4bb7dde5901574e85ccd1da_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751368674&amp;width=680&amp;sig=r67Z4RP%2FKCJYRzyvBPL12xLUxhOoeNM0wdUTZQYLF9w%3D"/>
+</figure>
+</div>
+<p><span class="bold">Einsen’s auto-feeding system uses internal rollers to guide garments through the machine with calibrated control.</span> Once inserted, the hanger is automatically driven forward, sleeves are rerouted to a lower track, and the fabric is kept wrinkle-free throughout. Einsen manages the entire journey automatically.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882682">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Sustainable">→ Sustainable</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/682/ddf72fff672a377f7df7ed11b24eec44_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377184&amp;width=680&amp;sig=BXE%2FFZsoFthut6nASUl85gJN7W5U9U9IhP10AedFCbM%3D"/>
+</figure>
+</div>
+<p><span class="bold">Einsen’s energy-efficient system is engineered to do more – with less.</span><br/><br/>On the one hand by completing garments in a fraction of the time.<br/>On the other hand, by its use of efficient superheated steam.<br/><br/>Lower your electric bills, reduce your water, and make a conscious shift to care for what you wear and how you live.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49884044">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/884/044/804f1826e7ac8a5145d97b405b146081_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751382695&amp;width=680&amp;sig=1DS6uNRmEHoFN%2FXpJGHs6VfgxsWoI79J8f00n5uvuW4%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882700">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-App-Controlled">→ App-Controlled</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/700/4563666acf922500dcded08e6ff5acd2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377253&amp;width=680&amp;sig=ruhkaN3ArFyXJNI4MilTcyx1evAXrCbCa7lGLKsmCD8%3D"/>
+</figure>
+</div>
+<p>Einsen connects seamlessly to your smartphone via Bluetooth, giving you full control through the Einsen App. <span class="bold">Simply select the fabric type, garment size, and your preferred mode - Einsen handles the rest.</span><br/><br/>Einsen adjusts temperature, speed, and steam to deliver optimal results.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881254">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/254/cc497d308dfac620f67c30cbb9b8572c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370128&amp;width=680&amp;sig=1%2FQUvE8kNo69JFKzCli%2B0WlZ3RT8BAI7YGW4Yer%2FtTM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882696">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Continuously-Evolving">→ Continuously Evolving</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/696/a041f6074940940905c885efc9339085_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377238&amp;width=680&amp;sig=yJLGAIQg0IS12CP0CviIsrUP2xII1CWKvF7WcIQPgKE%3D"/>
+</figure>
+</div>
+<p>With support for over-the-air (OTA) software updates, Einsen is designed to evolve – getting smarter with time. <br/><span class="bold">As we continue to innovate, and as new features are developed, they will be delivered directly to your device – enhancing performance,</span> unlocking new capabilities, and keeping your Einsen at the cutting edge of garment care</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881260">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/260/9de55109651b7a6ae3cf19b58dddbe58_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370160&amp;width=680&amp;sig=6CBH2wMErBB4KtHXemin%2Fan%2Bg%2BKKTq8cJejHLTDhBU8%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882701">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Story-Behind">→ Story Behind</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/701/01cba7bbe21f5466e4156e389793584a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377261&amp;width=680&amp;sig=kz2u0JnOU26qWjdJLQa%2B%2FWm9ZRbGsLfgqQPgGzUQRFM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881268">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/268/abf7c4d770982cd31aa0ac3b9e0dd41f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370184&amp;width=680&amp;sig=1Bne066h2HZHFsRQY%2BfDt3EHs1oSaqTxnDdMes6AaEk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881273">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/273/ac959a6c2a010ee9cb61a4e9c2da0432_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370207&amp;width=680&amp;sig=U9GqnpMi3XobJVdJzc37IMiWpGE2AQUWm%2BuE8ZfwcCY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881354">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/354/600b3d8e8c7897d07505fff6a968d029_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370639&amp;width=680&amp;sig=2B%2FQnIGRJojyHgEebv%2FPN3NjcKpxuBb6Xx45yT70zYs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49883100">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Product-Iterations">→ Product Iterations</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/883/100/98fc40b8a9e8db190bf1345daaef6426_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751378875&amp;width=680&amp;sig=IVFYmK6Q573i%2Flm7TOW%2BkLV2n0ZCPvDb2iqoTSdLPq8%3D"/>
+</figure>
+</div>
+<p>Following my experience in Japan I searched for an iron that was automated - frustrated with the research and lack of options in the market, I started Einsen. Since its inception, our early prototypes could successfully move garments between two points, or remove wrinkles, but not both. Through these failures we were confronted with a realization for why automation in ironing does not exist. By understanding the barriers to automation, we began developing the core technology to enable automation. After 100’s of iterations and 1000’s of models we developed and filed a patent for our 3D technology. Through engineering optimization and the continued evolution of our technology, we’ve refined the product. <span class="bold">Prototype III reflects 4 years of development, streamlined into one machine.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881401">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/401/f95ea5d610afda6272f5961a17392f2b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370830&amp;width=680&amp;sig=0pArYF59pX2MNjIG8H5m7r1W01tssRqEX8npFUVnWNg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881404">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/404/c67dc7d377f82ccb5ad9cd221ffef715_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370834&amp;width=680&amp;sig=mTYVfaX4QcAzUqeO1LC%2B%2F7EbWRTDgMzosoEOA2hY%2FFI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881406">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/406/1da0f6ae3367dd27ff541a4cc64aeb9a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370839&amp;width=680&amp;sig=EsOnJ%2FLl1O1odTStNvVud1ACzWpZ49ZUVLmeTDsC4DM%3D"/>
+</figure>
+</div>
+<p>                                 <span class="text-italic">  From early testings of the technology of Einsen </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49883104">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Patented-Technology">→ Patented Technology</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/883/104/7d81c6bbb74cd75a929a30ce0481c38e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751378886&amp;width=680&amp;sig=vM5WfKjR7vXxS%2BO%2BtW%2FbsDASyoVi39U%2B4UhZzTQwNu4%3D"/>
+</figure>
+</div>
+<p>Einsen’s internal architecture is built on a proprietary multilevel system that translates complex three-dimensional garments into treatable surfaces. Using a combination of top-mounted and lower plates, the system simultaneously presses these complex areas such as sleeves and cuffs in a single pass. Integrated roller systems drive the garment forward while the sleeves are redirected onto a separate lower track. This ensures each surface receives dedicated treatment without overlap or fabric distortion. Dynamic, spring-mounted pressure adapts to fabric thickness and garment irregularities such as buttons, while superheated dry steam penetrates deep into fibers for precise, dry results. This system is protected under patent application WO2021243413A1.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881390">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/390/514bec198fe1c9b7476a1d2691a3ebf6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370764&amp;width=680&amp;sig=bdTVr7nFOmDiObOPIFsBQKSkZbJ%2BRK61BAIie3aSgUs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882704">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Our-Team">→ Our Team</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/704/ed348803391a9816a2a5dfc2be83718d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751377269&amp;width=680&amp;sig=TVz6fqtwAW8k6kVnegz5rSNkH93J6zRPbxhCUULhM4I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881362">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/362/55143c56896fd6a88e2355c4b7039efa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370664&amp;width=680&amp;sig=pR6aXrJ3Yyh1npe3dPuG4vN9eyvrRLZKSBE7TfN90Bg%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49883993">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Timeline">→ Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/883/993/a78f3025afa5ee77711bf92d6ccbe139_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751382539&amp;width=680&amp;sig=vW512xy%2F9q5MUf4sctjmS%2FGk6yBitwZbGUxGI%2FHjHQg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881366">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/366/9d5f09c50a72473877479d80376aeb5a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751370685&amp;width=680&amp;sig=kUAJWOs5p2XgC0tyYhP%2FuqlwjhOufe%2BYWvzrgm51iyA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49883165">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Specifications">→ Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/883/165/5b1560a458a7a3973bc8eecadb352632_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751379089&amp;width=680&amp;sig=d5FPBmJpDB70i5l3qgsoe0C5nJjpC4OLZUqqeDaNOvE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49883979">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/883/979/419ce34b4dd4d3e8e315a46770a8fbcf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751382432&amp;width=680&amp;sig=InMoz0dsuXFcinfsTTUPJuTpqd5fwDkDL3h0TKuxloQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49883986">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Rewards">→ Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/883/986/5b6d60cdca3961abec674263ae9fa0c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751382454&amp;width=680&amp;sig=FB5nHENMqG%2BtIZpV4alsqnraexJINCndVerq48boKts%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49933697">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/933/697/5e5af18b24dda564ad4e7b92338e0c42_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751741227&amp;width=680&amp;sig=529N%2FVVZ1BHiDSFmfrgxIozRhAc1aeecvxjlh%2FtQPuc%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49883160">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Add-Ons">→ Add-Ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/883/160/0173402d74c1edeb7365af4a6f51d695_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751379076&amp;width=680&amp;sig=AlP2BC%2Bh4bcsn%2BtYilxPzfeD1KDw7zqOJb0Ee6ysZs4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882712">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/712/4664279f529a0a4d2b7c2a4ce0db3aa1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751377307&amp;width=680&amp;sig=zClEQe1zj%2FHPYdrORQFn3Fu%2FQlzVj04aWpLvDYOrQBk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49881381">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-What-s-In-the-Box">→ What's In the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/881/381/a7542850ca8b054a9d3cf346608b6378_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751370730&amp;width=680&amp;sig=pTB9yRYQvIu2TCdLkk%2BlHgBQppFY8FvnhORzGxPJa7Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49883196">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/883/196/5b2330a2c91b59ce871aff4921161438_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751379193&amp;width=680&amp;sig=hfr2%2FHMDCRJLvTQq0ZBgm9Iic%2Bas37m5EiUSqoRSAEM%3D"/>
+</figure>
+</div>
+<p><span class="bold">Einsen </span><span class="text-italic">campaign is designed and fully managed by </span><span>TCF (The Crowdfunding Formula)</span><span class="text-italic">, a leading, award-winning crowdfunding marketing agency. We team up and help companies to build global brands.</span><br/><span class="text-italic">With the largest team and the largest crowdfunding ecosystem on the market, </span><span>TCF</span><span class="text-italic">offers a wide range of crowdfunding services.</span><br/><span class="text-italic">We manage campaigns all the way from product concept to market validation, lead generation to email marketing, SMM and influencer marketing, PR and direct sales, video, design, and advertising - leading to the ultimate success of campaigns.</span></p><span></span><span></span><span></span><span></span><span></span><span></span><p><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Bringing Einsen to market involves a combination of precision hardware, software, and smooth logistics. To minimize risks, we are working closely with experienced manufacturing partners and suppliers who specialize in consumer electronics.  We are committed to keeping our backers informed every step of the way, and we won’t ship a unit until it meets our quality standards. Your support helps us make effortless ironing possible — and we’re incredibly grateful to have you on this journey.
+
+The Einsen automated iron showcased in this campaign is a prototype currently in development. The final product may undergo further refinements, optimisations, and modifications before mass production.  While we are committed to bringing Einsen to market, unforeseen challenges in R&amp;D, manufacturing, or supply chain logistics may impact timelines or product specifications.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

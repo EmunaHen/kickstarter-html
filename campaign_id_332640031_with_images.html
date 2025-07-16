@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Praxitron: Affordable 3D-Printer with Two Extruders</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/725/582/d8b16b0104062376f5a0b282df23f163_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750251118&width=560&sig=PIgQOvMJxuFmiu5afBMZ3a%2BzS%2Flj0crckEYOOFq1Qg4%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Praxitron: Affordable 3D-Printer with Two Extruders</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Dual Print Head (IDEX) | 350x350x450mm³ | Multi-Material | Multi-Nozzle | Auto-Leveling | Unibody | No Setup | 7" Touch Screen | ±0.1mm</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 9,936</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725980">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/980/e5f91c3a87ea72d0c09de1c7f92c28c4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750253386&amp;width=680&amp;sig=ahio90YV4kOiDcTLgHcBqCVgg6vh3ybNcjf5ra7iqM0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49720486">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/720/486/dc3802c440df484c0a64c890f86d4f46_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750213870&amp;width=680&amp;sig=twas2yZI61ZhrGqia34RK9kIwbwgdcs5Hkn0tKkRQvM%3D"/>
+</figure>
+</div>
+<p>Praxitron, with its advanced dual-head design, is the next evolutionary step in additive manufacturing. Engineered for superior performance, it delivers unparalleled speed, precision, and versatility, significantly outpacing current single-head 3D printers.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705839">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/839/4fe701fd32a3f5626cc1a977ce1d9af2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750137772&amp;width=680&amp;sig=vtECq7UGg5L6%2BJoJyGeJO3jVSUxwFj7VTtZO9mgz%2FJ4%3D"/>
+</figure>
+</div>
+<p>The IDEX, independent dual extruder, design enables simultaneous printing with multiple materials or colors, which streamlines complex projects and reduces production times. Praxitron will empower makers with efficiency and flexibility they’ve never experienced before, setting a new standard in the 3D printing industry.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49821739">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/821/739/73323f01bb9594ad2a2d14398a81f28e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750918417&amp;width=680&amp;sig=ZknK0Pg%2BSDitjX9apgdVhQE30lY0lSlgdBqVU4VyIBI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705843">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:1-Mixed-Material-Capabilities">1. Mixed Material Capabilities</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/843/c3fef0544f856b6e6d2aa7818968a989_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750137794&amp;width=680&amp;sig=AWtPZC8hgnEB%2BOr03r7JVZgpMCAvXNxXzXoFPDEG4EI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Printing with multiple materials opens whole new doors of possibilities. " data-id="49492193">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/492/193/02f04d8bf88f80d604537e9954a004ee_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748664149&amp;width=680&amp;sig=aQVshmpBsdYiqgvt%2FsBhjSI12xdl8WjP8s5zexnTVw0%3D"/>
+<figcaption class="px2">Printing with multiple materials opens whole new doors of possibilities. </figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Stronger-Structural-Integrity"><span class="bold">Stronger Structural Integrity</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706043">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/043/569b2b089a3202b2d5ab46fabad88fe1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750139131&amp;width=680&amp;sig=dS673S0yzbXCEcfZcKfSm%2BSZ%2BsR8a0pfTEQl%2BLtGc4M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710274">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/274/424add8731ce6a2b1ea9748b4782fa47_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163170&amp;width=680&amp;sig=644y61V4G7ro8bQn3SdfEqarp3vqg9ShgFtXpJDiEj8%3D"/>
+</figure>
+</div>
+<p>One of the most overlooked advantages of printing with dual extruders is creating stronger overall prints. For example, by using a thinner nozzle (0.4mm) to print walls and a thicker nozzle (0.8mm) to print infills, you can maintain the details of a finer print and the strength of a courser print. The enhanced structural integrity to your prints will allow you to construct truly functional creations. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49704933">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/704/933/80c517e4351cfc68eea6b69cfcf04f5a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750130926&amp;width=680&amp;sig=IpO3X3UCCDW7%2B90t2fMTnJGYmMAgkibAg8d1hWfQsy0%3D" src="https://i.kickstarter.com/assets/049/704/933/80c517e4351cfc68eea6b69cfcf04f5a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750130926&amp;width=680&amp;sig=IpO3X3UCCDW7%2B90t2fMTnJGYmMAgkibAg8d1hWfQsy0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Complex-Design"><span class="bold">Complex Design</span></h3><p>Praxitron’s dual extrusion allows you to print intricate designs that may require varying properties, like heat resistance, durability, or flexibility, in different parts of the same object.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710279">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/279/759f625f464f52fca993e7d7841a5aab_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163206&amp;width=680&amp;sig=8DVuNvie5YZWOeePcxiRPcuP45nadu5k8zH6MBaDOpE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49720485">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/720/485/d2647932b11085cd3b91cf882c7af31c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750213868&amp;width=680&amp;sig=wGP5nxmw%2FKf4QU%2FdQrG%2F2N1vzzyIDNADaWaTHZ89PuE%3D" src="https://i.kickstarter.com/assets/049/720/485/d2647932b11085cd3b91cf882c7af31c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750213868&amp;width=680&amp;sig=wGP5nxmw%2FKf4QU%2FdQrG%2F2N1vzzyIDNADaWaTHZ89PuE%3D"/>
+</figure>
+</div>
+<p>Combining two materials also allows you to make functional parts, such as printing with a flexible filament for certain areas and rigid material for others or you can print a a single object with different textures, such as rubber grips on a plastic handle.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710287">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/287/e088e7320d6fd4db0bd75e598dcfcb0e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163241&amp;width=680&amp;sig=gqId4tKwqG6ev%2FTRawIHR5CkuDIH0A%2FoX5y2F5PxJ00%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49720969">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/720/969/64ad2ae1221517048ee3161719780be6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217153&amp;width=680&amp;sig=9bFQkDM4clDiAOoJ%2FIU0LHx%2F0OIrS9xf4JBfQ2RzCmo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Streamlined-Support-Structures"><span class="bold">Streamlined Support Structures</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49492185">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/492/185/d8c24a902d7e54f0944c067e9acf18c2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748664071&amp;width=680&amp;sig=rhz34NxIHIS8oDi5MPK6NidVu0%2BxLk0S7ygjCRJt0Fs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721034">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/721/034/6b524a029118fc56a91a94830527159d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217502&amp;width=680&amp;sig=2qiQVJnZraIzxWSuynshrWMzt5NOUA7zF6Hkq76DmKU%3D" src="https://i.kickstarter.com/assets/049/721/034/6b524a029118fc56a91a94830527159d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217502&amp;width=680&amp;sig=2qiQVJnZraIzxWSuynshrWMzt5NOUA7zF6Hkq76DmKU%3D"/>
+</figure>
+</div>
+<p>Praxitron helps you streamline support structures for all your prints, by printing with a combination of materials, such as a strong structural material, like PLA or ABS, and a support material like PVA or HIPS, which dissolves in water or limonene. The ability to print easily removable supports make creating complex geometries and overhangs extremely easy.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705849">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:2-Multi-Color-Printing">2. Multi-Color Printing</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/849/48f075cb231f55850d95eafad393bd4e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750137817&amp;width=680&amp;sig=KF2HGLAF0tUeS%2BX0juLMekj3tVTaKFrV2Vyum9trI20%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49495154">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/495/154/2c98efba15392ef71d4fa74c3a3feb6b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748700976&amp;width=680&amp;sig=Kj%2FDUnrc2U43G5wWIFmwORx%2Bf%2B9NpD9f0qEOlpxmAX8%3D"/>
+</figure>
+</div>
+<p>You can create visually striking multi-colored projects with Praxitron, as it supports different-colored filaments. There is no need for manual filament swaps during printing.</p><h3 class="page-anchor" id="h:95-Waste-Less-Time-Materials"><span class="bold">95% Waste Less: Time &amp; Materials</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49720953">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/720/953/8ff1423cc78f64b8e273077d02d6d36b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217068&amp;width=680&amp;sig=RoavaVkANEkJnGnI5%2FW3W60eeASLh1HzHOrYUg9USjg%3D"/>
+</figure>
+</div>
+<p>With two print heads, the Praxitron can switch seamlessly between materials or colors without pausing for manual intervention, speeding up the process significantly. And at the same time, you won’t waste materials like traditional automatic material systems.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705868">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:3-Unibody-Design">3. Unibody Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/868/74e127bc5b300920ab5cf967baf8b49b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750137891&amp;width=680&amp;sig=efYLpYkEcivMcDd9UrOlkd116Xj5cOYQI6gWK4brHcs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710308">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/710/308/a942d24dbb43fbb2670e50af6323ee07_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163367&amp;width=680&amp;sig=idQU2z5c3HsbmzguAVD9GVlELqgZegxPYP9e4dbcor4%3D" src="https://i.kickstarter.com/assets/049/710/308/a942d24dbb43fbb2670e50af6323ee07_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163367&amp;width=680&amp;sig=idQU2z5c3HsbmzguAVD9GVlELqgZegxPYP9e4dbcor4%3D"/>
+</figure>
+</div>
+<p>Praxitron’s single-piece chassis enhances sturdiness, reducing vibrations for higher print accuracy. It simplifies maintenance and there is no assembly required, making it super user-friendly. The compact design even improves portability, reliability, and calibration precision.</p><h3 class="page-anchor" id="h:Increased-Stability-Precision">Increased Stability &amp; Precision</h3><p>The one-piece chassis design boosts structural integrity and minimizes vibrations during printing, significantly reducing mechanical stress. This enhances Praxitron's durability and extends its lifespan. The custom designed belt also enhances precision of every print. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706714">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/706/714/db9c12b61425c6424f1bfef81843c5f6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750144169&amp;width=680&amp;sig=twYkst4hJyll%2B5sNqCiFAyX2rX1cGY3cW2I0GIHS08Q%3D" src="https://i.kickstarter.com/assets/049/706/714/db9c12b61425c6424f1bfef81843c5f6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750144169&amp;width=680&amp;sig=twYkst4hJyll%2B5sNqCiFAyX2rX1cGY3cW2I0GIHS08Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705871">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:4-Zero-Setup">4. Zero Setup</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/871/e6bc5d4a30c7775fa4e9db04362f3da8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750137905&amp;width=680&amp;sig=YAxSwYCkIpKtM%2B3n5cDaNesKM9tgmiC28%2FJegND%2BXZo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49720415">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/720/415/0780f0d5c3cc1878efcc4028f24de0a1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750213446&amp;width=680&amp;sig=0jRvA14z38PmwsRfOmDsAIupEz74HFms7dt1y1DttuM%3D" src="https://i.kickstarter.com/assets/049/720/415/0780f0d5c3cc1878efcc4028f24de0a1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750213446&amp;width=680&amp;sig=0jRvA14z38PmwsRfOmDsAIupEz74HFms7dt1y1DttuM%3D"/>
+</figure>
+</div>
+<p>Praxitron comes as is without any set-up needed, there's no assembly required. Just remove it from the box, plug it in (don't forget the filaments), and you're ready to go. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49492204">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/492/204/52aa2a7edc14a41ef46891bbd620fc81_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748664220&amp;width=680&amp;sig=OhEHnD6RufgfVnWIMoB4X9TQ9FTMxv1tLWyrtG2KcNo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Auto-Bed-Leveling"><span class="bold">Auto Bed Leveling</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722679">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/722/679/d007a2dc048d9e24e6ccedf5c66e5595_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750231343&amp;width=680&amp;sig=n8sXwzC1nw2XbZrzEJPmv%2FgyZK8uCn6GMvbixjUdk3o%3D" src="https://i.kickstarter.com/assets/049/722/679/d007a2dc048d9e24e6ccedf5c66e5595_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750231343&amp;width=680&amp;sig=n8sXwzC1nw2XbZrzEJPmv%2FgyZK8uCn6GMvbixjUdk3o%3D"/>
+</figure>
+</div>
+<p>Praxitron's Auto Bed Leveling feature, powered by piezo sensors, improves print reliability by automatically adjusting for any unevenness on the print bed. It ensures a consistent first layer, which is key to preventing print failures and improving overall quality. Plus, it removes the hassle of manual calibration, making it a truly plug-and-print machine. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705872">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:5-Real-Time-Monitoring">5. Real-Time Monitoring</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/872/2539dfa090718ad0f5854eaeb3efa566_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750137919&amp;width=680&amp;sig=bRHIgEPesSMqoQ%2B4N2UDMLIKjTyLtN41O%2B0WytzKa1I%3D"/>
+</figure>
+</div>
+<p>The Built-in camera lets you monitor your prints in real time, even when you're away from the printer. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706910">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/706/910/6a801174280a94607c02a88f589e9b06_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145492&amp;width=680&amp;sig=UgrCYlmis9geUInUjbWagtdKtGVyCl%2FCA6WUSu2bCZg%3D" src="https://i.kickstarter.com/assets/049/706/910/6a801174280a94607c02a88f589e9b06_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145492&amp;width=680&amp;sig=UgrCYlmis9geUInUjbWagtdKtGVyCl%2FCA6WUSu2bCZg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725673">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/673/7c750c985ff53551ce6c42b25bc2a270_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750251582&amp;width=680&amp;sig=XEIBk2xVCdc8s9YU%2FAw0fQOanOkNvO%2F9EdkW9ZtuXwA%3D"/>
+</figure>
+</div>
+<p>The filament feed box features filament detection, which helps with smooth filament feeding and also ensures uninterrupted printing. It monitors filament flow and prevents issues, such as clogging, before they can affect your prints. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706912">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/706/912/ccff80e465db109230a2dcbf77e80147_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145503&amp;width=680&amp;sig=qyk330HzwoyeNy2yU%2Fshqg38qdLUX2ATJuHkS21izEc%3D" src="https://i.kickstarter.com/assets/049/706/912/ccff80e465db109230a2dcbf77e80147_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145503&amp;width=680&amp;sig=qyk330HzwoyeNy2yU%2Fshqg38qdLUX2ATJuHkS21izEc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705878">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:6-Modular-Design">6. Modular Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/878/fe616a173dee76808ab1e62093684118_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750137951&amp;width=680&amp;sig=TgI5P%2Be8t0MTvs%2BLozqhe33%2BwmN6dnOi7dBsSZvpBKY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49720377">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/720/377/83d157f41c1659001376557af5ae2a3f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750213130&amp;width=680&amp;sig=4OauSVfT6zYX42%2FcV96PXFG2MGe%2BObx%2Ffm4L3Hz6JPM%3D" src="https://i.kickstarter.com/assets/049/720/377/83d157f41c1659001376557af5ae2a3f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750213130&amp;width=680&amp;sig=4OauSVfT6zYX42%2FcV96PXFG2MGe%2BObx%2Ffm4L3Hz6JPM%3D"/>
+</figure>
+</div>
+<p>Praxitron is designed for easy routine maintenance. The extruders are easy to remove and replace in whenever you need to change nozzle sizes or refill filaments.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705883">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/883/56f850424f0c874d6de73f362b59af44_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750137973&amp;width=680&amp;sig=11SonbEEqWJyzuvMpqe6axh7fRIwIvn9PDE5frLl77Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="* The final size of the XL may vary slightly but differences will be minimal" data-id="49821755">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/821/755/26d85dfd42d02e9ead273b39b9c8af0c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750918498&amp;width=680&amp;sig=ddQYdR0h7ZKqre9lFuLqGK3WAfRggbgfXzjWkraYm1U%3D"/>
+<figcaption class="px2">* The final size of the XL may vary slightly but differences will be minimal</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705888">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/888/64777f6860c2af3bc5c3f08fd039ffe9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138011&amp;width=680&amp;sig=amd58%2BqEnvGA%2BvNsO7sGCAUV%2B9wyKxtdD%2Fsi%2FcBYJ%2Fo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49821761">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/821/761/958488ec0e4279cfe3efab2a7620ea78_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750918523&amp;width=680&amp;sig=XB%2Bw6ljU0RkVfLioXZ5qZZaXWBf1%2BoWJiqnueoIADRY%3D"/>
+</figure>
+</div>
+<p>Two Hardened Steel Nozzles are included with every Praxitron unit. In the post-campaign survey, backers will be able to choose any combination of the available nozzle sizes: 0.2, 0.4, 0.6, 0.8mm. The nozzles will be preinstalled before shipping. All add-ons such as additional nozzles, filaments, and other accessories will be available for purchase in the post campaign survey. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705903">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-and-Taxes">Shipping and Taxes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/903/e80721d0ec671faa041e585951b14f8d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138082&amp;width=680&amp;sig=CK%2FC14lU2YvmJ%2Fiv4yfuzpMIlWCfQL6TqMHsu6cNk0A%3D"/>
+</figure>
+</div>
+<p><span class="bold">Shipping:</span> Shipping fees will be calculated and collected for your pledge via the post-campaign fulfillment survey. You will be required to provide us with a detailed shipping address and contact information before we can ship your pledge. The table below provides the approximate charges for your region; however, please note that this may vary based on the add-ons selected. Charging for shipping closer to the delivery date once the campaign has closed ensures that we’re able to secure the best and most accurate pricing at that time, rather than overcharging or undercharging during the campaign.</p><p><span class="bold">Customs Duties and Taxes: </span>The estimated shipping fees already includes the customs duties and taxes of each region. We will mark the package is worth US$300 to ensure all costs are covered. If the fees exceed the upper bound of our estimate for your region, we will cover the extra cost out of pocket.</p><p><span class="bold">Tariffs for US Customers: </span>The current tariffs are already included into our costs and we are fully prepared to cover all additional tariff should that be added between the start of the campaign and the ship date. With that being said, the global trade situation has settled down and negotiations have been going well so we are confident this will not be an issue when shipping time arrives. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725993">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/993/d46f59689a70a4392a8c39d8755592d6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750253432&amp;width=680&amp;sig=MBfqs5sXqcQEm6jWOArj8Ut5M4Ije%2B7vpA4QQM%2BzXyM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705890">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Design-Pre-Production">Design &amp; Pre-Production</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/890/953357d702581fa81b1c07b3453835b8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138023&amp;width=680&amp;sig=EtpUGjgHdlB95tGdXemc1B2M49Os2hZrfm%2Ba2kfFYIM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710358">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/358/27e743ecb2c486c802ad4977b046f360_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163604&amp;width=680&amp;sig=B3J%2BAUwwRI6tZku0XCJkUHqDDLWMUDOSk9WOH2%2B5H3I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705893">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Demo">Demo</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/893/e16d2cbbe25a3169f4be942b8c6e7748_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138037&amp;width=680&amp;sig=M%2B0Uj2OcMhFRYDds%2FLiiHxtOtYmWzUvET7pBXvCyR9c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705901">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Us">About Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/901/46f534a6e347d154e81cfcbeae2a95f3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138060&amp;width=680&amp;sig=qiPhcsYuKMzJBUi1j0pQe%2FZ3jI8VNM7d0mUCvEM9RpU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49492081">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/492/081/b0d11bf6e45038b3747bcde8300cb936_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748662980&amp;width=680&amp;sig=t8w1PP2aPyTj%2BtXLY6GFWRTEUdzVPDZOezjlhzJ6vPw%3D"/>
+</figure>
+</div>
+<p><br/>We love 3D printing. We’re a team of makers obsessed with additive manufacturing, from FDM to SLA. Our core members include Julian Ma, Edwin Ho, Cassie Wong, and Sara Li. Over the past year, our team has poured our hearts and souls into bringing Praxitron to life. We have completed a fully functional prototype that is ready for mass production. We have also gained lots of feedback from some of our early testers and also from interacting with potential users at trade shows and exhibitions. We are ready to show Praxitron to the world!</p><h4 class="page-anchor" id="h:Special-Thanks-">Special Thanks:</h4><p>Jerome S - For lending his 3D printing expertise<br/>Nelson F - For filming and editing the campaign video<br/>Jackie P - For Kickstarter campaign design and management<br/>Foshan Wenhe Accessories Co. - For helping with all the prototyping and iterations<br/>Jellop - For lending their hand in online marketing, campaign page optimization, and spreading the word about Praxitron</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705905">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/905/3df07940c81b91c8641d9e8e9a00c068_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138098&amp;width=680&amp;sig=JvU3zoMnqsgDsS2LDa6iCdRuxQgMm2tem5W909p%2BeKU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710453">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/453/01bbeab0cdf37142912aa009b79b5d7f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163912&amp;width=680&amp;sig=WZv%2Bcel04GWCNMcOTqFuoxkNXZ2meaFwL2E7fJLj04I%3D"/>
+</figure>
+</div>
+<span></span></div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div class="relative flex justify-center items-center h50"><svg height="250" preserveaspectratio="xMinYMid" viewbox="0 0 250 250" width="250"><g transform="translate(125, 125) scale(2.5, 2.5)"><defs><pattern height="1" id="bg1" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/xglb1yux-hatch_light_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=clgJlzhY3k416hIJWrLOR2MdAEuRyBIYLy5Q4Y0qGuE%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg2" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/qm5rth84-dot_line_white_2_pattern_overlays_20190901.png?origin=static&amp;sig=X4u8yLPJQSLFYyFAWhfks%2Bb0l7JvccL9Ns4mZ%2BdcX%2Fs%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg3" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/2pgrzep-scattered_dots_black_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=7dYAvrHvJlUMrHNcRby2NfD16BbES28QnocyMYhS%2BjU%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg4" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/l9o3ber7-grid_dark_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=w1sAH2Z8b0%2Bm44c8oN%2BES4hwspBpkhrrhc1YpFJSPyQ%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg5" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/v0js8b2e-dot_line_white_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=j1%2Biz4vH2TtOn5EX0sEl2Xque0oEBcJupM5qVbNe8CM%3D" width="160" x="0" y="0"/></pattern></defs><path class="innerArc innerArc0" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-43.781307493312035,1.2794976264376083L-34.9266060712689,1.2785493116819122A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="#059968" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc1" d="M-43.78158055050322,-1.270119876152689A43.8,43.8,0,0,1,-19.346693490790333,-39.29561618009585L-15.668395983271376,-31.24106059837606A34.949999999999996,34.949999999999996,0,0,0,-34.92687912846009,-1.2710681909083879Z" fill="#71A0FF" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc2" d="M-17.02746950932261,-40.354742993966504A43.8,43.8,0,0,1,-7.2458294463475035,-43.19650397467882L-6.035784778007586,-34.42487185326289A34.949999999999996,34.949999999999996,0,0,0,-13.349172001803613,-32.30018741224673Z" fill="#a3a3a3" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc3" d="M-4.720130869163336,-43.54492352247241A43.8,43.8,0,0,1,-1.2748087586060215,-43.7814442729906L-1.2748087586060486,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-3.5100862008233777,-34.77329140105648Z" fill="#37d893" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArcTexture" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-43.781307493312035,1.2794976264376083L-34.9266060712689,1.2785493116819122A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="url(#bg1)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-43.78158055050322,-1.270119876152689A43.8,43.8,0,0,1,-19.346693490790333,-39.29561618009585L-15.668395983271376,-31.24106059837606A34.949999999999996,34.949999999999996,0,0,0,-34.92687912846009,-1.2710681909083879Z" fill="url(#bg2)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-17.02746950932261,-40.354742993966504A43.8,43.8,0,0,1,-7.2458294463475035,-43.19650397467882L-6.035784778007586,-34.42487185326289A34.949999999999996,34.949999999999996,0,0,0,-13.349172001803613,-32.30018741224673Z" fill="url(#bg3)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-4.720130869163336,-43.54492352247241A43.8,43.8,0,0,1,-1.2748087586060215,-43.7814442729906L-1.2748087586060486,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-3.5100862008233777,-34.77329140105648Z" fill="url(#bg4)" style="opacity: 1;"></path><path class="outerArc" d="M1.274808758606064,-49.983745984359565A50,50,0,1,1,-14.298689510183522,47.91187199735957L-13.119088080103364,44.29818876598106A46.2,46.2,0,1,0,1.2748087586060677,-46.18240858410247Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-13.866807385190574,48.03864749284709A50,50,0,0,1,-49.98360916911132,1.2801618762996883L-46.182271790654575,1.2797547632695105A46.2,46.2,0,0,0,-12.90601952547727,44.36073331233378Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-49.9838822263025,-1.2694556262905874A50,50,0,0,1,-43.42914055424948,-24.777202237525593L-40.17646548461379,-22.809901822753137A46.2,46.2,0,0,0,-46.182544847845755,-1.2698627393207937Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-43.65042527540417,-24.385249091948133A50,50,0,0,1,-33.644613899622534,-36.98702415098201L-31.159250162085257,-34.1107186868965A46.2,46.2,0,0,0,-40.2856360498416,-22.616532184658706Z" fill="#3B3BCC" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-33.9762079174683,-36.68265660429959A50,50,0,0,1,-21.923167807381084,-44.9374533467286L-20.344068847634368,-41.47961984785677A46.2,46.2,0,0,0,-31.32284169323791,-33.960559304292346Z" fill="#00007D" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-19.60394382591334,-45.996580160599265A50,50,0,0,1,-8.09340879617786,-49.34061951433069L-7.573934698958504,-45.574943918516375A46.2,46.2,0,0,0,-18.024844866166603,-42.538746661727444Z" fill="#cccccc" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-5.567710218993676,-49.68903906212429A50,50,0,0,1,-1.2748087586060701,-49.983745984359565L-1.2748087586060834,-46.18240858410247A46.2,46.2,0,0,0,-5.048236121774292,-45.92336346630997Z" fill="#c7f5df" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><text font-size="8" height="250" style="opacity: 1;" text-anchor="middle" width="250" x="-1" y="3">HK$ 146,670</text></g></svg></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">HK$ 110,000</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Research &amp; Development</div><div class="m0 type-16 text-nowrap">HK$ 80,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Manufacturing</div><div class="m0 type-16 text-nowrap">HK$ 30,000</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">HK$ 26,670</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">HK$ 12,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">HK$ 7,335</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">HK$ 7,335</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Multiple/Other</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">HK$ 6,800</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Labor</div><div class="m0 type-16 text-nowrap">HK$ 6,800</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Fulfilling</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">HK$ 3,200</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Packaging &amp; Shipping</div><div class="m0 type-16 text-nowrap">HK$ 3,200</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated May 31, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">The Praxitron has gone through numerous iterations and is now ready for mass production. We expect shipment and delivery will be on time. However, like many new projects, unexpected issues such as supply chain and assembly line interruptions may occur. We promise, should any unexpected issues occur, we will handle the situation swiftly, and communicate transparently with all our backers.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The one-piece chassis design boosts structural integrity and minimizes vibrations during printing, significantly reducing mechanical stress. This enhances Praxitron's durability and extends its lifespan.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Conventional multi-material and multi-color printers relying on tool change and material change systems waste too much material while performing the changing action. Praxitron, with its two print heads, uses minimal materials when alternating print heads, keeping waste out of landfills.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

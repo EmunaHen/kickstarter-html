@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drive Stories : Location-Based Audio Stories</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/011/973/d1f13d5013561bf68f768eafc8cb1fbf_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752329781&width=560&sig=tolZDgfnPzzvmvvqYdsjEKyjI1h13ajxbB0fdJpztsc%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Drive Stories : Location-Based Audio Stories</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Drive Stories is an audio app that intelligently plays you stories about the area around you.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 26,963</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49339726">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Introduction">Introduction</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/339/726/a9adf34da989a2ae38c822af96718005_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747684108&amp;width=680&amp;sig=7PZu5oBepsF9tX4s5XK005ZVvVcFSaHgPruwQSwvVvc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Drive-Stories-is-an-audio-app-that-intelligently-plays-you-stories-about-the-area-around-you-"><span class="bold">Drive Stories is an audio app that intelligently plays you stories about the area around you.</span></h3><p>Drive Stories is a passionate return to the open road and the driving experience, helping unlock location stories from all around the world - allowing us to create enjoyable moments of open-road freedom and a leading example of how technology can help unlock knowledge and information in an exciting new way.</p><p>The idea for the app was inspired by traveling in various locations around the world and wondering about the story of the places we were driving through. Maybe we saw old historical towns and wondered about it's past and the people that came from it, or saw deserted factories and wondered, 'what type of industry was here in the past?', or drove through beautiful natural landscapes and thought 'what types of wildlife are in those hills?', or saw amazing buildings in a new city and asked 'I wonder about the architectural history and influence here?'. The list goes on.</p><p>What we found is that information on locations (specifically information about cities, villages, towns, etc) around the world IS available, but the way to tap into it is cumbersome, complicated, un-curated and requires sifting through hundreds of confusing Google search results. It's simply not easily accessible while driving, as a passenger, or even walking around a city.</p><p>We're done with the head-down-in-phone thing while the world passes us by. We want to be present, windows down, music on, enjoying (and learning) about what's around us. The world is outside our window, and we want to know about it.</p><p>What we've created with Drive Stories is a hyper-easy, on-demand and intuitive interface to access and enjoy all of this phenomenal data in an incredibly easy way : <span class="bold">just hit 'play' and drive and listen. It's that easy</span>.</p><p>The result: one of the world’s most robust and comprehensive location-information platforms available on the market</p><h3 class="page-anchor" id="h:Audio-stories-on-demand-for-any-location-anywhere-in-the-world-"><span class="bold">Audio stories, on demand, for any location, anywhere in the world. </span></h3><p>The app taps into over 4 million cities, towns and villages from all around the world, in over 50 languages - dynamically playing you audio stories from 15 categories, <span class="bold">whenever and wherever you want</span>.</p><ul>
+<li><span class="text-italic">Audio stories, on demand, for any location, anywhere in the world.</span></li>
+<li><span class="text-italic">Over 4 million cities, towns &amp; villages from around the world</span></li>
+<li><span class="text-italic">Available in over 50 languages</span></li>
+<li><span class="text-italic">15 story categories to choose from</span></li>
+<li><span class="text-italic">Available on Apple CarPlay &amp; Android Auto, as well as Apple iOS and Android Phones Apps</span></li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49383686">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/383/686/718a6b9066475c341813b9291a84e84f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747928685&amp;width=680&amp;sig=5yg4DquLGokguAQ0SO8MGBdAmBqHa1%2FkNm7xxXaPSGY%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Integrated-directly-on-your-vehicle-s-Apple-CarPlay-Android-Auto-system-for-ease-of-use-and-simplicity-Just-tap-the-icon-select-a-location-and-hit-play-">Integrated directly on your vehicle's Apple CarPlay &amp; Android Auto system for ease of use and simplicity. Just tap the icon, select a location and hit play. </h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49379614">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/379/614/89eff50fc75f482ecbd259f00678f143_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747907985&amp;width=680&amp;sig=wJ%2BfMB%2BM%2Bkb8%2FHuhOv6Icj3ayi8aWADZuhtFJV7Z%2FiQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:You-can-also-use-the-native-iOS-and-Android-app-directly-on-your-phone-The-interface-features-large-visual-category-cards-and-an-easy-location-list-just-select-the-category-you-are-interested-in-for-your-location-and-hit-play-The-audio-will-play-over-your-car-s-speakers-and-you-re-good-to-go-">You can also use the native iOS and Android app directly on your phone. The interface features large visual category cards and an easy location list - just select the category you are interested in for your location and hit play. The audio will play over your car's speakers and you're good to go! </h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49383843">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/383/843/ac49838d19a5c2a025130b76761451db_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747929385&amp;width=680&amp;sig=HpXhA10TIqibN%2ByKYp01S1FKlVh%2B%2FVDl3HbYDud5g0w%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Your-Ultimate-Road-Trip-Companion"><span class="bold">Your Ultimate Road Trip Companion</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49383724">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/383/724/e672543c0508722fea68744c7219eca2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747928896&amp;width=680&amp;sig=ABQ3ROX3xwKIHyZ7F8leSc%2FEW8KVcKuC8Xse7DgaYbo%3D"/>
+</figure>
+</div>
+<p>As we've prototyped and built the app, our excitement has grown over using Drive Stories as a frequent resource and companion on drives (we're even using it while walking around cities). It becomes a quick audio reference and storytelling resource when you're curious about the area you're in. We're excited to hear how you use it and all the ways we can continue to grow and refine the experience. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49383854">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/383/854/b32b6b4d8724cff313a6311833204b9d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747929452&amp;width=680&amp;sig=kBslUg3DNgh4YNT9pjBeGn0DHtD407cIGIfIQc5Gd5w%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Anywhere-in-the-world-Drive-Stories-works"><span class="bold">Anywhere in the world, Drive Stories works</span></h3><p>The app will automatically find your GPS coordinates and based on your geolocation, will identify 10 of the nearest cities, towns and villages near you. This gives you control and granularity if you are curious or have a specific location in mind. The possibilities are pretty staggering: there are roughly 4 million cities, towns and villages in the world. Multiply that by 15 story categories for each location, and you can see Drive Stories has the potential of delivering well over a potential of 60 million unique stories.</p><p>The Drive Stories platform is delivered on both iPhone and Android and natively integrated on Apple CarPlay and Android Auto. We have built a bespoke platform that leverages a phenomenal amount of location data and through clever use of technology and robust data sources, delivers audio stories in a way that emphasizes the enjoyment, romance and experience of a road trip.</p><h3 class="page-anchor" id="h:Bringing-History-Wildlife-Hidden-Tales-and-more-To-Life-As-You-Drive"><span class="bold">Bringing History, Wildlife &amp; Hidden Tales (and more) To Life As You Drive</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49383736">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/383/736/cef11f6c46497ba81061c47361f54951_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747928923&amp;width=680&amp;sig=idqKoMaoCX8LNuRZ3e1fsSKITkcXXwT2ESlHU%2BDIve0%3D"/>
+</figure>
+</div>
+<p>Within the app, you simply tap ‘play’ or choose from one of 15 categories, and the app plays you audio stories - from History, Arts &amp; Culture, Literature, Architecture, Wildlife &amp; Nature, Important People and more. You can choose from one of around 10 voices that you prefer, as well as from 50 languages - thereby making <span class="bold">all of our stories accessible to pretty much anyone, anywhere, in the world</span>.</p>
+<h3 class="page-anchor" id="h:15-Categories-to-Choose-From"><span class="bold">15 Categories to Choose From</span></h3><p>We have built the capability to create compelling stories from across 15 categories, enabling a wide variety of information and knowledge to be played while exploring different locations. Just swipe through the category list, tap one and it will play you a story immediately!</p><p><img class="image" data-id="49371713" src="https://i.kickstarter.com/assets/049/371/713/314abd605032704dc20bbcb5616212b8_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747856130&amp;width=2400&amp;sig=uhsq0G9%2F30iBCMQjB6y4A%2FDKJOY%2FweW6xNu0mu9mLPQ%3D"/></p><ul>
+<li>Introduction (of Location)</li>
+<li>Important People</li>
+<li>Wildlife &amp; Nature</li>
+<li>Economy &amp; Industry</li>
+<li>Food</li>
+<li>Architecture</li>
+<li>Sport</li>
+<li>Political &amp; Social</li>
+<li>For Kids</li>
+<li>Points of Interest</li>
+<li>Art, Literature &amp; Music</li>
+<li>Science &amp; Innovation</li>
+<li>Entertainment</li>
+<li>Local Language</li>
+<li>Weird &amp; Wonderful</li>
+</ul><h3 class="page-anchor" id="h:Making-Every-Road-Trip-an-Adventure"><span class="bold">Making Every Road Trip an Adventure</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49383834">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/383/834/9d49c9628916765ad83a17061033bfe2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747929363&amp;width=680&amp;sig=vjYReT7MBY7EQu1Z96yrfzc%2FC1HgbSdXtiKeuKPFHBc%3D"/>
+</figure>
+</div>
+<p>The Drive Stories platform values experience over technology: imagine putting your finger anywhere on the map, anywhere in the world, and hearing stories from 15 categories, in over 50 languages, of that location. This literally unlocks 10’s of millions of factual stories around the world.</p><h3 class="page-anchor" id="h:Unlocking-the-Stories-of-the-Location-Around-You"><span class="bold">Unlocking the Stories of the Location Around You</span></h3><p>The experience becomes something of an expert companion with you along your driving adventures. You may have Maps up for directions, or Spotify playing music. But with Drive Stories, it's always there - ready to play you a story on-demand, in any location. Simply swipe over to the app on CarPlay or Android Auto (or on your phone), select your location and category, and hit play. </p><p>It's like an expert location guide sitting next to you in the passenger seat, ready to tell you stories about the location you are driving through!</p><h3 class="page-anchor" id="h:Available-Globally-in-Over-50-Languages"><span class="bold">Available Globally, in Over 50 Languages</span></h3><p>We are incredibly excited to build in language support for over 50 languages across the world. This allows phenomenal global access to our app and an incredibly robust library of content at your fingertips regardless of where you are in the world. This not only allows our app to be enjoyed by people all over the world, but also unlocks exciting potential for travellers in foreign-speaking countries, unlocking story content in your native language in any location in the world.<br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49379565">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/379/565/625a83a9f270482802c763f98abe799f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747907780&amp;width=680&amp;sig=CZDPKejOF0YO5NuRXgGAJRJ3gbI2vdMhdrq5EzKI%2Fkg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Easy-Intuitive-Integrated"><span class="bold">Easy, Intuitive &amp; Integrated</span></h3><p>Our belief is that technology should power experiences and be invisible and seamlessly integrated into ‘moments’ that can enhance and add value. Drive Stories wants to make every drive a memorable one, no matter where the road takes you.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49383897">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/383/897/fce59f597f3070ff2e88444f362c9c64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747929588&amp;width=680&amp;sig=XsyvOYMnvX8GXt5jBhswBnxZ5NHguAiP%2B5DE4MIsThg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:London-England-Walkthrough"><span class="bold">London, England : Walkthrough</span></h3><p>This is a sample walkthrough (using actual story content from our in-development app) for London, England. It shows selecting a few different categories and how the audio would play as you are driving through the city.</p>
+<h3 class="page-anchor" id="h:Lisbon-Portugal-Walkthrough"><span class="bold">Lisbon, Portugal : Walkthrough</span></h3><p>This is a sample walkthrough (using actual story content from our in-development app) for Lisbon, Portugal. It shows selecting a few different categories and how the audio would play as you are driving through the city.</p>
+<h3 class="page-anchor" id="h:Bøyabreen-Norway"><span class="bold">Bøyabreen, Norway</span></h3><p>This is a sample walkthrough (using actual story content from our in-development app) for Bøyabreen, Norway. It shows selecting a few different categories and how the audio would play as you are driving through the city.</p>
+<h3 class="page-anchor" id="h:San-Francisco-USA"><span class="bold">San Francisco, USA</span></h3><p>This is a sample walkthrough (using actual story content from our in-development app) for San Francisco, USA. It shows selecting a few different categories and how the audio would play as you are driving through the city.</p>
+<h3 class="page-anchor" id="h:Osaka-Japan"><span class="bold">Osaka, Japan</span></h3><p>This is a sample walkthrough (using actual story content from our in-development app) for Osaka, Japan. It shows selecting a few different categories and how the audio would play as you are driving through the city.</p>
+<h3 class="page-anchor" id="h:Drive-Stories-Timeline"><span class="bold">Drive Stories Timeline</span></h3><ul>
+<li>
+<span class="bold">August 2024 - February 2025: </span>Proof of concept and functional prototyping</li>
+<li>
+<span class="bold">December 2024 - June 2025: </span>Development &amp; refinement of app architecture and interface</li>
+<li>
+<span class="bold">January 2025 - March 2025: </span>Engineering proprietary platform architecture and AI capabilities</li>
+<li>
+<span class="bold">January 2025 - July 2025: </span>iOS &amp; Android application development</li>
+<li>
+<span class="bold">March 2025 - July 2025:</span> Apple CarPlay &amp; Android Auto integration</li>
+<li>
+<span class="bold">June 2025 - August 2025:</span> Testing, QA, QC and Launch Prep</li>
+<li>
+<span class="bold">August 2025: </span>Launch target</li>
+</ul><h3 class="page-anchor" id="h:What-Comes-Next-"><span class="bold">What Comes Next?</span></h3><ul>
+<li>
+<span class="bold">Weekly Updates</span><ul><li>Once the project is funded, we'll aim to provide written and video updates to the entire group, showing live progress of the app, testing in various locations, and will focus on stretch goals of more category and language support. We'll also provide feedback mechanisms so the entire backer group can help co-create and refine the app, helping to leverage all the power of insights and great ideas from a group accustomed to travel, roadtrips and life on the road!</li></ul>
+</li>
+<li>
+<span class="bold">Video Updates</span><ul><li>Video updates will be important, as we can show live and real-time functionality and behavior of the app and CarPlay and Android Auto integrations. We already have some travel planned, and we'll ensure we test in various dense and remote locations around the world to ensure testing is robust and comprehensive.</li></ul>
+</li>
+<li>
+<span class="bold">Help Guide Improvements &amp; Features</span><ul><li>As part of the backer community, we want to embrace and engage everyone to help us guide the experience of the app and get the most out of it. We'll provide feedback links and comment forms so you can review demo/prototype builds, walkthroughs and sample location stories and send us thoughts, insights and recommendations on how it can be improved. </li></ul>
+</li>
+<li>
+<span class="bold">Be Part of the Community</span><ul><li>We are already growing an active community that is excited to enhance their road trips and adventures with Drive Stories. As the community grows, we'll be able to share trips, interesting stories, new insights and discoveries and ongoing improvements to the app. We'll keep you updated via Kickstarter, email, website and our social channels!</li></ul>
+</li>
+<li>
+<span class="bold">Rewards, Add-On's and Swag!</span><ul><li>For those that sign up for the Drive Stories swag, we'll get those to you quickly so you can get up and running and feeling the Drive Story vibes. As you've seen, we've got a ton of great fun items to share with everyone and we'll ensure those get bundled up nicely and sent over early in the process.</li></ul>
+</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49541598">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/541/598/8206b11911d864fb858625d66f32d3e1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749023849&amp;width=680&amp;sig=Tfc52pyNo2Qz3SnlGLFo%2Fd9SeAcz%2FpXpC%2FZmyXclmzI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49879819">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/879/819/d9400eb569317dd827f3941fe341111f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751361945&amp;width=680&amp;sig=pzWIwe7QbT%2BOojnZp91FVGAm1MwR67TuTzbVgdV5BbA%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">At the moment, the risks appear low. We have built a working platform that is operational - and our proprietary backend system and app architecture has been validated and working. The main areas that will be funded by this campaign are about refining and improving the overall experience, ensuring that integrations work seamlessly (CarPlay &amp; Android Auto) and that performance is optimized across all touchpoints. We are confident the platform will launch this summer, and feel like all the areas of concern have been resolved and validated.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18 mt5">I plan to use AI-generated content in my project.</h3><h4 class="bold lh4" style="margin-bottom: 1.5rem;">What parts of your project will use AI generated content? Please be as specific as possible.</h4><p class="border-left border-create-700 border-left5px pl3">Our app has been built as a bespoke and proprietary platform leveraging the best artificial intelligence large language models on the market, utilizing the best of the industry's most robust, validated, and comprehensive publicly available data.
+
+Our platform uses this publicly-available data to formulate highly accurate and well formed and curated data that are then formatted into compelling stories relating to the category requested by the user.</p><h4 class="bold lh4" style="margin-bottom: 1.5rem;">Do you have the consent of owners of the works that were (or will be) used to produce the AI generated portion of your projects? Please explain.</h4><p class="border-left border-create-700 border-left5px pl3">All data that we base our stories from is publicly available on the internet or agreed by specific partner licenses.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

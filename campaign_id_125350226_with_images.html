@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WURKKOS HD02: Magnetic Deformation Flashlight with 4 Beams</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/616/495/53b7eba00f462747a268adfa3f20f016_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749537464&width=560&sig=ATLLzruB%2F2rtfcymRPsEcoHspvjFhh8uSErjZKQKhlY%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>WURKKOS HD02: Magnetic Deformation Flashlight with 4 Beams</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Spotlight/UV Light/Green Laser/Folding Wing Lights | 3200LM & 330m Throw | 5000mAh | Magnetic Base&Clip&1/4"-20 Threaded Hole| IPX6</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,273</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634607">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/634/607/42e85052caaa3d0c4e44f44d2fdcf892_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632512&amp;width=680&amp;sig=jykCm%2Bnl8WJFhuOcf3Nsyu%2BcFYGNFnLpBoKPB4tUWW8%3D" src="https://i.kickstarter.com/assets/049/634/607/42e85052caaa3d0c4e44f44d2fdcf892_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632512&amp;width=680&amp;sig=jykCm%2Bnl8WJFhuOcf3Nsyu%2BcFYGNFnLpBoKPB4tUWW8%3D"/>
+</figure>
+</div>
+<p>You're in a tight spot as night falls. Quick, you need proper illumination. You scramble to grab your flashlight, but its beam is weak. The laser pointer's range is too short, and the UV light's function is too basic. Power's low, and they just won't cut it.</p><p><br/>Just now, the WURKKOS HD02 shows up. the WURKKOS HD02 emerges like a star in the dark, combining all the best features and instantly lighting up your path ahead. A brand - new lighting saga is about to unfold.</p><h3 class="page-anchor" id="h:Unveiling-the-WURKKOS-HD02-"><span class="bold">Unveiling the WURKKOS HD02!</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634659">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/634/659/b29dc2f11668c8ca426b3614f2440fe5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632757&amp;width=680&amp;sig=ShdXl9kLZRQohWwXR7YKzVeLyyc%2BBHrlTXrCHh%2Ba5BM%3D" src="https://i.kickstarter.com/assets/049/634/659/b29dc2f11668c8ca426b3614f2440fe5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632757&amp;width=680&amp;sig=ShdXl9kLZRQohWwXR7YKzVeLyyc%2BBHrlTXrCHh%2Ba5BM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49704062">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/704/062/18c118a4864c0eb522f04114f43310c1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750126942&amp;width=680&amp;sig=lP0SjIVtG8sMO7Iqr3hhkxZzA1aNhorvxxt3rglCOuI%3D" src="https://i.kickstarter.com/assets/049/704/062/18c118a4864c0eb522f04114f43310c1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750126942&amp;width=680&amp;sig=lP0SjIVtG8sMO7Iqr3hhkxZzA1aNhorvxxt3rglCOuI%3D"/>
+</figure>
+</div>
+<p>Through in-depth user research, we found a demand for a multifunctional light with white/flood/UV/laser beams for outdoor, home, camping, detection and command use, plus strong/soft lighting, long battery life and rugged metal build. Driven by this, we analyzed scenarios, optimized design and functions, and after 2-3 months of development and testing, created the HD02 to meet users' ideal.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706902">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/706/902/8d9dce67cddce94917110567711087d2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145449&amp;width=680&amp;sig=nkLztTHZKrLeWEKt0CIreXMh4JfTwnvgT9SiIJN%2BFrw%3D" src="https://i.kickstarter.com/assets/049/706/902/8d9dce67cddce94917110567711087d2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145449&amp;width=680&amp;sig=nkLztTHZKrLeWEKt0CIreXMh4JfTwnvgT9SiIJN%2BFrw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634617">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/617/519ca5cd3197e2d1103b414b73636331_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632566&amp;width=680&amp;sig=rYz3A1p%2BFog5YPUfYqJkzPJVJfRQslyeX9%2FVTQyYwsc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:HD02-Conquers-All-No-Need-for-Multiple-Tools-"><span class="bold">HD02 Conquers All, No Need for Multiple Tools.</span></h3><p>HD02 isn’t just a tool; it’s a catalyst for curiosity — empowering you to break routines, explore freely, and see the world through fresh.</p><p>Most flashlights focus on single-function brightness, forcing users to carry multiple tools for floodlight, UV, camping light, or laser needs.  Now, we bring 4-in-1 Lighting flashlight: spotlight, floodlight, 365nm UV, and green laser, eliminating the need for separate tools.</p><p>The dual-switch system — a magnetic dial for mode selection and a touch button for brightness adjustment — eliminates complexity. No menus, no delays: just instant, instinctual control when every second counts.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49633133">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/633/133/5648b42e0bb07b12a36a691d904279eb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749625054&amp;width=680&amp;sig=%2BtpFvaeXrCP%2FfXjCQ0%2Bl%2FiHWuZ4Wc%2BySxUfH9OJMF14%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:One-Light-Four-Beams-"><span class="bold">One Light. Four Beams.</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49760996">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/760/996/33ec41aea821dfa47e1ad614bef5fae0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750488237&amp;width=680&amp;sig=1KBGFWRSzkM5nomafutbOiv9yA5K2I7eDlkmber8yaM%3D"/>
+</figure>
+</div>
+<p>A triple-head system (floodlight, spotlight, UV light, green laser) paired with dual-side glowing panels creates a 360° lighting ecosystem, adapting seamlessly from urban navigation to wilderness adventures.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706932">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/706/932/b4b625aeb6543b0539350b42be1a35d1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145658&amp;width=680&amp;sig=0yBkIHTgxOIl3q8gNnFS9yoKoRJ%2FMCYDOdR0vce04MM%3D" src="https://i.kickstarter.com/assets/049/706/932/b4b625aeb6543b0539350b42be1a35d1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145658&amp;width=680&amp;sig=0yBkIHTgxOIl3q8gNnFS9yoKoRJ%2FMCYDOdR0vce04MM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:3200LM-Spotlight"><span class="bold">3200LM Spotlight</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634672">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/634/672/b2462e6539269109690ef6f972a2b93a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632844&amp;width=680&amp;sig=sD3nIDygxcvw7vtUO5b1sLUhKKAp%2Bc1%2BZyWSGi8uuxs%3D" src="https://i.kickstarter.com/assets/049/634/672/b2462e6539269109690ef6f972a2b93a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632844&amp;width=680&amp;sig=sD3nIDygxcvw7vtUO5b1sLUhKKAp%2Bc1%2BZyWSGi8uuxs%3D"/>
+</figure>
+</div>
+<p>Equipped with a 6500K LUMINUS SFT70 2nd Generation white LED and a 13° TIR lens, it blasts out a maximum brightness of 3200 lumens and reaches an astonishing throw of 330 meters. Whether you're on an outdoor adventure, conducting a long - range search and rescue mission, or in need of emergency lighting, it can clearly illuminate targets up to 300 meters away, banishing the darkness.</p><h3 class="page-anchor" id="h:365nm-UV-Light"><span class="bold">365nm UV Light</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49647761">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/647/761/59258cd56ba2043fb2474796e79affe2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749714024&amp;width=680&amp;sig=%2BjZKgfznpzBXUqexX%2BF3ouIwqTS2CaTXM3jDSn5%2B0XM%3D"/>
+</figure>
+</div>
+<p>Featuring a LUMINUS SST08 - UV LED with a wavelength of 365nm, it offers two power levels. The low - power 0.8W mode lasts for 15 hours, while the high - power 3W mode runs for 5 hours. It's not only great for detecting counterfeit money, mineral fluorescence, and bodily fluids but also handy for quickly identifying poison ivy and venomous insects in the outdoors, reducing your exposure risks.</p><h3 class="page-anchor" id="h:520nm-Green-Beam"><span class="bold">520nm Green Beam</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49647760">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/647/760/6cac04ded0ca85964e41e059e246fd4f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749714008&amp;width=680&amp;sig=GoV9Q1nATQyEUYWw5FxZ8Hkp9IVC2XQ4KYEFBIJnQfc%3D"/>
+</figure>
+</div>
+<p>With 0.3mW output and 60h battery life, it features 4-click lock to prevent accidental activation. Ideal for precise constellation pointing or architectural survey marking. Meets Class 2 laser safety standards, safe under normal use with blink reflex protection—avoid intentional direct viewing or use with optical devices.</p><h3 class="page-anchor" id="h:Folding-Wing-Lights"><span class="bold">Folding Wing Lights</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49647596">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/647/596/3c93c83e00fa1437e694e04101a25b15_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749712514&amp;width=680&amp;sig=H0zOHjGSEMVWP750xkkB24CtQB4qyaypHQumX7UAjbk%3D" src="https://i.kickstarter.com/assets/049/647/596/3c93c83e00fa1437e694e04101a25b15_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749712514&amp;width=680&amp;sig=H0zOHjGSEMVWP750xkkB24CtQB4qyaypHQumX7UAjbk%3D"/>
+</figure>
+</div>
+<p>Boasting 64 3014 LEDs on each side, it provides stepless color temperature adjustment from 3000K to 6000K. Thanks to the Hall - effect sensor, it turns on as soon as you open the wings and reverts to the previous mode when closed. Use the warm 3000K light for cozy campsite illumination, the cool 6500K light for detailed repair work, or match the natural light for photography fill.</p><h3 class="page-anchor" id="h:Integrated-Heat-Dissipation"><span class="bold">Integrated Heat Dissipation</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49647379">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/647/379/70b2f7d69f61619c38457440201be120_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749710494&amp;width=680&amp;sig=D9cXXM8OkoSeOvwM7qobTRvvta52rjt1jv6XVICJDE0%3D" src="https://i.kickstarter.com/assets/049/647/379/70b2f7d69f61619c38457440201be120_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749710494&amp;width=680&amp;sig=D9cXXM8OkoSeOvwM7qobTRvvta52rjt1jv6XVICJDE0%3D"/>
+</figure>
+</div>
+<p>The HD02 features a single- piece machined aluminum body with no joints or seams. This unified structure minimizes thermal resistance, allowing heat from the LED to transfer directly to the external surface. As a result, the flashlight maintains stable high-output performance without throttling during extended use. </p><h3 class="page-anchor" id="h:21700-5000mAh-battary"><span class="bold">21700 5000mAh battary</span></h3><ul><li><span class="bold">140 hours battery life (low light mode, 10 lumens)</span></li></ul><p>The HD02 is powered by a 21700 5000mAh battery and uses a boost driver for stable, flicker - free output to protect your eyes. On the low - brightness spotlight mode of 10 lumens, it can run for up to 140 hours, reducing the need for frequent recharging. It also supports Type - C bidirectional charging with 5V/2.4A fast - charging, getting a full charge in just 2.5 hours. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49647782">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/647/782/65c5ea178286609b49e842ef453ddda6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749714282&amp;width=680&amp;sig=iHvQ20kM5eJibcZAQzIQZv%2BKEqqT5YSSJqhBF2rnW9Q%3D" src="https://i.kickstarter.com/assets/049/647/782/65c5ea178286609b49e842ef453ddda6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749714282&amp;width=680&amp;sig=iHvQ20kM5eJibcZAQzIQZv%2BKEqqT5YSSJqhBF2rnW9Q%3D"/>
+</figure>
+</div>
+<ul><li><span class="bold">Doubles as a power bank</span></li></ul><p>And it can even reverse - charge your phone, GPS, or other devices, seamlessly switching between charging and discharging modes without affecting the lighting function.</p><h3 class="page-anchor" id="h:Three-Placement-Options-Adapt-to-Any-Scenario"><span class="bold">Three Placement Options: Adapt to Any Scenario</span></h3><p><span class="bold">No matter where you are or what you're doing, the HD02 fits right in. It offers three convenient placement options:</span></p><ol><li><span class="bold">Magnetic Mount</span></li></ol><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634699">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/634/699/3386e9c90e674fdfb6d0e9f00e58dd36_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749633048&amp;width=680&amp;sig=LPMjnUGhcYifKtkgo6LLLkxkTDWa39UqpGwHvqDpvo4%3D" src="https://i.kickstarter.com/assets/049/634/699/3386e9c90e674fdfb6d0e9f00e58dd36_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749633048&amp;width=680&amp;sig=LPMjnUGhcYifKtkgo6LLLkxkTDWa39UqpGwHvqDpvo4%3D"/>
+</figure>
+</div>
+<p>The tail end provides a strong vertical magnetic force, allowing it to stick firmly to any ferromagnetic surface, like car roofs, pipes, or tool racks. Whether you're working on your car or in the kitchen, you can free your hands and let the light do its job.</p><ul><li>
+<span class="bold">Threaded Mount</span>:</li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634690">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/634/690/2db1ce242f14e1681368c4cbd30e1fc3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632941&amp;width=680&amp;sig=6RO2%2B2SVHuD0gI3J%2Bb95KWOCWT8VynQFLy7bn99kSpI%3D" src="https://i.kickstarter.com/assets/049/634/690/2db1ce242f14e1681368c4cbd30e1fc3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632941&amp;width=680&amp;sig=6RO2%2B2SVHuD0gI3J%2Bb95KWOCWT8VynQFLy7bn99kSpI%3D"/>
+</figure>
+</div>
+<p>With a 1/4"" - 20 UNC tripod socket at the tail and a magnetic base, it can be seamlessly attached to GoPro or DSLR mounts, instantly transforming into a professional photography fill light. Pair it with a tripod for long - exposure shots or campsite illumination.</p><ul><li><span class="bold">Clip - on</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49720894">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/720/894/fb9802dcb787ed2253d35d1073f384a4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750216768&amp;width=680&amp;sig=vB3LV93saea5NoikRk1Xk5jhpyI1aRr3BAXmRDdZHME%3D" src="https://i.kickstarter.com/assets/049/720/894/fb9802dcb787ed2253d35d1073f384a4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750216768&amp;width=680&amp;sig=vB3LV93saea5NoikRk1Xk5jhpyI1aRr3BAXmRDdZHME%3D"/>
+</figure>
+</div>
+<p>The back clip features a non - slip, high - grip design that can securely attach to your backpack straps or belt. It's perfect for easy access during hikes or daily carry.</p><h3 class="page-anchor" id="h:Ergonomic-Design-Comfort-in-Your-Hand"><span class="bold">Ergonomic Design: Comfort in Your Hand</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49660680">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/660/680/d622f9fe5ab618a2e03f579ae474ebab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749797452&amp;width=680&amp;sig=GVLRYuCaxy%2BvVd6JOYFms2ahVqbX%2FM2lKgZ8EYl67Os%3D" src="https://i.kickstarter.com/assets/049/660/680/d622f9fe5ab618a2e03f579ae474ebab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749797452&amp;width=680&amp;sig=GVLRYuCaxy%2BvVd6JOYFms2ahVqbX%2FM2lKgZ8EYl67Os%3D"/>
+</figure>
+</div>
+<p>The HD02's flat and ergonomic design gives you a comfortable and secure grip. Weighing only 195g (excluding the battery) and with dimensions of 126×41×26mm, it's easy to operate with one hand and stable enough for long - term use. You can carry it around all day without feeling a thing.</p><h3 class="page-anchor" id="h:1-Meter-drop-proof"><span class="bold">1 Meter drop-proof</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49647813">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/647/813/6710e704a976c25c3e338fe9322cc939_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749714609&amp;width=680&amp;sig=cGT%2Fa%2Fjdtn79zdPCbAf4ShRKLzbOxa9gfnTg3oqQEQE%3D" src="https://i.kickstarter.com/assets/049/647/813/6710e704a976c25c3e338fe9322cc939_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749714609&amp;width=680&amp;sig=cGT%2Fa%2Fjdtn79zdPCbAf4ShRKLzbOxa9gfnTg3oqQEQE%3D"/>
+</figure>
+</div>
+<p>HD02 is crafted from 6061 aircraft aluminum (oxidized for scratch resistance) and a tempered coated glass lens, surviving drops, impacts.</p><h3 class="page-anchor" id="h:IPX6-waterproof"><span class="bold">IPX6 waterproof</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634704">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/634/704/34759846e86b7add3e5148f6d71f0881_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749633089&amp;width=680&amp;sig=HlTYv4QrRl2c4OWA8PFdQQYBajifTwgfiiisWEuYRmQ%3D" src="https://i.kickstarter.com/assets/049/634/704/34759846e86b7add3e5148f6d71f0881_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749633089&amp;width=680&amp;sig=HlTYv4QrRl2c4OWA8PFdQQYBajifTwgfiiisWEuYRmQ%3D"/>
+</figure>
+</div>
+<p>The HD02 is IPX6 certified, designed to resist high- pressure water jets from any direction. Its sealed construction prevents water ingress, ensuring operation during heavy rain or exposure to powerful water streams.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691961">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/961/1b61c03aa00880077ff70bc9a265b9a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750062486&amp;width=680&amp;sig=5fnqr2n6GLKv0VCCyx%2BaeF5LrZRmn23WncO6qpMmGd8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691994">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/994/f56d1a7bff58ae67650e6394f1cceed7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062595&amp;width=680&amp;sig=hreRh5jF3av7hy1E0Z0Ur9nboTVOhF32a7wwvF96K6Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722493">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/493/f64aa7fc57d097011abb4811e9b6cf51_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750229967&amp;width=680&amp;sig=f5H1lB7xuKcj75BMesjS6LqEoTIW8FDBMRJv8dkEIxI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691979">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/979/9b1d1e2130ee52518fa107b5ba6171ca_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750062544&amp;width=680&amp;sig=KQ7hS7JG6WrYRgUUA%2BvoIJiJLVI3jPh90%2FC1dV7vy98%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49720735">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/720/735/58b76d980df4abd4a9a5d823b20c80c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750215593&amp;width=680&amp;sig=joT4Io0xvyfsps9xHgr5YbGNzCIUgLCIswOQK1DpavM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49704574">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/704/574/6e1e80874d962048ead9266e27200357_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750129448&amp;width=680&amp;sig=IRZUWwSxnFGk5RmJfqmwwynwUK5bw8XZOzEXAkOC4JI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:HD02-Design-Development"><span class="bold">HD02 Design &amp; Development</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49734536">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/734/536/fb644046452d4c24e7cb95edd777602d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750300687&amp;width=680&amp;sig=JmNq0VmEFmtddWXY9GtjbT0ZMxSeNVwIFvcKadtvstY%3D"/>
+</figure>
+</div>
+<p>The birth of HD02 has gone through more than half a year of rigorous cooperative research and development and multiple designs. It has been upgraded to a head-mounted triple light source (flood light + spot light + UV light + green laser), double-sided luminous wall lamp, which can be used in multiple scenes. This is not just an ordinary flashlight - it is a battle-tested photon architecture.</p><p>HD02's development journey reflects a meticulous commitment to user-centered innovation. From October 2024 to now, our concept design phase dissected diverse scenarios—outdoor adventures, home use, camping, and professional tasks—to craft a dual-module lighting system: a powerful headlight for focused illumination and hidden side panels for soft ambient light. Rigorous testing from April to June 2025 ensured resilience, with prototypes enduring 200+ drop tests, 72-hour salt exposure, and extreme temperature cycles (-20°C to 60°C). Key refinements like shifting UV wavelength from 395nm to 365nm for purer light, upgrading to 30W white spotlight, and integrating hidden magnetic mounts were validated through 3 design iterations, culminating in a product that balances 3200-lumen intensity with 195g portability.</p><h3 class="page-anchor" id="h:Wurkkos-Team"><span class="bold">Wurkkos Team</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706865">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/865/b9da70fa6a85a55077a7729e4b34c145_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750145173&amp;width=680&amp;sig=JE5iOgrjuE0yzP4Tmw5yp5T3nq2D8k4mGv1MPFso8Js%3D"/>
+</figure>
+</div>
+<p>Founded in 2019, WURKKOS is a Leap-Class EDC Expert in Lighting World, devoted to redefining portable lighting by reimagining product form, functional logic, and aesthetic expression through its tactical design language that challenges industry conventions, enhancing lighting experience and meeting the growing diversified needs of EDC fanciers.</p><p>We have successively established sample laboratories, performance testing labs, and product experience rooms. Collaborating with experienced electronic and circuit structure engineers from both domestic and international backgrounds, we have formed a top-tier R&amp;D expert team of over 100 professionals. Additionally, we partner with high-quality Lumen Labs and global research institutions to jointly develop innovative lighting solutions. Our product range spans diverse lighting tools, including diving lights, EDC gear lights, tactical flashlights, mini flashlights, high-powered headlamps, and more. </p><p>WURKKOS isn’t just crafting portable lighting; we’re rewriting the rules of how light integrates into everyday life. As a lifestyle disruptor, we’re on a mission to transform human-light interaction through products that blend uncompromising performance with trendsetting style, elevating your everyday carry (EDC) from functional to iconic. </p><h3 class="page-anchor" id="h:Certification"><span class="bold">Certification</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706876">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/876/cd6afa9b1d504bde70125d3b6819f821_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145253&amp;width=680&amp;sig=AgaVcbTJ0WdCLbkVoYOY6OpdJXm2yIp%2FC7x8eLdIX4U%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Factory"><span class="bold">Factory</span></h3><p>We operate a well - established production base in Dongguan, Guangdong, a key manufacturing hub in China. Our facility includes a 10,000 - square - meter high - tech precision processing workshop. It’s equipped with 85 sets of precision equipment like CNC machining centers and numerical control machines. We also have specialized systems such as optical integrating spheres, laser engraving and etching devices, and constant temperature, humidity, and salt spray testing systems.<br/>Our core production management team has over 15 years of experience in the lighting industry, and we have more than 170 professional production staff. With a monthly production capacity of over 150,000 units, this mature setup ensures efficient, high - quality manufacturing of our flashlights, backing our ability to fulfill HD02 orders reliably.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706934">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/934/452b1f376c706fb6836ad7a651d2dab7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750145692&amp;width=680&amp;sig=ydtmoF4foDhL2bpl8%2F5EqBsAtBRLRoCvergx72Y6clQ%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Despite our thorough preparations, crowdfunding projects can face several risks. Potential challenges include supply chain delays for certain parts of the product, which could be affected by global shortages or logistics delays; manufacturing complexities due to the intricate design of our triple-light module, potentially impacting production timelines; and unforeseen regulatory hurdles during the certification process.
+
+However, we've taken proactive steps to mitigate these risks. Our prototype has undergone extensive validation, and our in-house R&amp;D team, with 6 years of flashlight industry experience, has refined the design to ensure manufacturability. We have a mature factory production line and have obtained key component reserves from long-term cooperative suppliers. To account for uncertainties, we've set a conservative delivery timeline. You'll receive weekly updates on Kickstarter, and we will notify you in advance if any delays occur. We're committed to transparent communication at every stage, from final testing to shipping, and we actively welcome your feedback to refine the product and ensure it meets your expectations.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

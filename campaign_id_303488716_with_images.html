@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jurnit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/832/838/62677bb014d5d78c481dbc203ea87e92_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750987608&width=560&sig=vJahC9ZRpns%2BjWPKIRSNLJ6HhpvKr9skRHEL0V4wAp8%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Jurnit</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Jurnit turns your passions into real world missions. Complete offline challenges, earn rewards and turn your life into a game.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 116,812</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:-How-it-started">📜 How it started</h3><p>You know that moment when you look at the time on your phone and realize, somehow, you’ve lost two hours just scrolling? That’s pretty much when Jurnit was born.</p><p>I kept seeing it in myself and everyone around me: life shrinking down to a screen, trading real experiences for endless feeds. We used to chase new things, get lost in the city, turn nothing into an adventure. But lately, it felt like we were watching life instead of living it.</p><p>I kept asking myself— why does it feel so easy to lose entire evenings to scrolling? Why have we started running from real life, hiding out in curated feeds instead of chasing moments that actually mean something? And most importantly, what could I build that would genuinely pull me (and maybe everyone else) back into the world, back into our own stories?</p><h3 class="page-anchor" id="h:-What-we-are-doing">🧰 What we are doing</h3><p>We’re building an experiential tech platform that helps the next generation shift from passive consumption to active creation through gamified missions rooted in their passions.</p><p>Think of it like this: what if the world around you became your game board? Whether it’s a street photography hunt in Tokyo, hike the highest mountains of Chile challenge, travel in all the countries of Europe itinerary or a quest to play music in every metro station of Paris — if you can imagine it, you can turn it into a mission, play it ans challenge others to do it.</p><p>Jurnit lets you create, join and share missions that push you physically and mentally. It transforms everyday life into a multiplayer experience, where creativity, curiosity and courage are the only entry tickets.</p><p>And the twist? You’re not just doing it alone. You can challenge others to complete your missions, compete for XP, unlock rewards and leave behind a trail others can follow.</p><p>Jurnit was born from the conviction that the world needs less passive digital consumption and more authentic, real-life experiences. We are raising funds to complete the development of the app, bring it to market, and make it possible for anyone to turn their passions into missions turning our everyday life into a game. Our team combines proven experience in digital development, design, and startup management, but above all, we are people who have personally experienced the social distance and alienation of recent years.</p><p>We want to build a real alternative to isolation and social media addiction. Jurnit is not a traditional social network: it’s an experiential tech platform that challenges you to discover real world missions, take on creative challenges, push your limits and build connections through doing, not scrolling. We believe true social innovation comes from tools that inspire action, engagement, and personal growth — not just more consumption.</p><p>Jurnit will be realized thanks to the direct support of backers, with no shortcuts and no compromises to advertising logic or attention-based business models. The funds will be used for advanced technology development, security, user and community support, and building a reward system that values real participation.</p><p>We will complete the project transparently: sharing every phase with our community, listening to real feedback and adapting development to user needs. Our roadmap is clear, we are already building our MVP, private alpha within 3 months, public beta in 6, global launch in 12. Every backer will be an active part of this transformation, with priority access, digital rewards and the opportunity to leave a concrete mark on the future of Jurnit.</p><p>Jurnit is not just our job — it’s a response to an urgent and personal need. We’re here to restore value to time, relationships, and passions. Who are we? People who refuse to settle for living online. And with your support, we’re ready to change the rules.</p><h3 class="page-anchor" id="h:-UX-UI-mockups-"><span class="text-italic">🖌️ UX/UI mockups </span></h3><p><span class="text-italic">You can find below some of our UX/UI mockups - final screens may slightly change as we refine the MVP</span></p><h3 class="page-anchor" id="h:-Onboarding"><span class="text-italic">🤝 Onboarding</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862115">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/115/82455ac245fd783530bf1587e5dc8768_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249387&amp;width=680&amp;sig=Ib5WmJTe6NEGeodiCHH8HccOJa704moTzIjozXfDM2k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862114">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/114/484b41d72ac42ecdb691961b28851477_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249387&amp;width=680&amp;sig=n4I0GhSt%2BmBe6JuaIti1A0k8E%2Fx5eWHnUJHMNdyJjNY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862116">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/116/ed1b5b359505ea2f24363c65226e0dac_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249387&amp;width=680&amp;sig=Y0qXSRjGrkdBZSKw6JL4d4TOQUeLIFsl%2FsgrPv4dr4s%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Homepage">🏠 Homepage</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49833615">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/833/615/aa462bfae99f434ae404a4af5cb86a29_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750992748&amp;width=680&amp;sig=iGRDLdT4fWxLOno%2Be3AxBGNcrMWgM%2BSoTTUqJ%2BjtqXA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Mission-Builder">🛠️ Mission Builder</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862153">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/153/b57713946511e0971b7ae2f468cc016d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249621&amp;width=680&amp;sig=wLntotgCSR5Hb48i4HG31ncpgH8CHhDOOfQp5pCms7Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862151">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/151/177f28efded0d45078a44f009b46c6e5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249621&amp;width=680&amp;sig=IACekETtQ%2FKp5WuQ9gL8kxOdoGvpSmFLSar12tmk7go%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862158">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/158/bea740cf8a23bdd73151e0dc0b247709_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249622&amp;width=680&amp;sig=4CJg4kXIyJ%2BUgLolFm6jDOkS84auEDbQl59%2BrORhtz0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862150">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/150/24de9979a00d73bbe2a1bb285c2191b6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249622&amp;width=680&amp;sig=I1VnrtUOlR65Jw4igFUhDHcV%2FXIbZrqg4aM%2FSyGELgQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862154">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/154/d79339bb0bffd2fb63e83bd8b67c2d69_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249622&amp;width=680&amp;sig=BlXosJFZPzlLzqDiIIDimGnmN1NtyGdw6gZa7k7B0KY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862152">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/152/cbe11806d96169ae30a5c10b492a7d93_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249621&amp;width=680&amp;sig=%2F8MG3c4aBIXnfl%2FPO2sLOzF3DJhtRNCY5vEHw%2BB5d%2FA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862157">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/157/912055081f7433366d3c3653f754b137_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249622&amp;width=680&amp;sig=Cnpu1nTjQGrQ116wg8lwBFrEOTITTBd85EfqYixAlBs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862156">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/156/fb7a861f7ad673208b2557637e6bdc82_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249622&amp;width=680&amp;sig=K8sg9Mg7bNyn6hm0dQOgslFsKQW14Bc2FB%2FolmRvwTw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862155">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/155/df30c17046788126a6462829544a58c2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249622&amp;width=680&amp;sig=QdoaFz5zDvPf1%2BtknS8UY1zLgMf%2F7YqrJCq5oYlozg0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862159">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/159/b81650f1fdd8f7da51291c27b092cba5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249622&amp;width=680&amp;sig=4ayjQDtSPxpEFDlTn6O0vvMnnd9AdE6dav5MzhPGoNc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862160">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/160/5525ee061edcc6b53631c154f5be963f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249622&amp;width=680&amp;sig=I4n5fLkCYEYuH6jPROpDd2BZ1NhjKkiuP%2B2wKe%2Fz43U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862161">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/161/427d0825ab5ce55d28ae635200687d41_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249622&amp;width=680&amp;sig=9ETYyfpp%2BtI5rkPiVAQTQcNpAbN8Gvfs%2B7gitDHNsvo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862162">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/162/ade4f0b2387fa993e55a6b1d7803bf2d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249622&amp;width=680&amp;sig=wCFUC7cedNCvzjUQ7qSt6IqnBHcJcVbSybUXX%2FoNgRo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862163">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/163/44b47487f20eb0ff6c603de877f9ba76_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249623&amp;width=680&amp;sig=oajNU38ns40cv8zzArkTkhDcwFq831kUHnwqHMBHHQE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862164">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/164/01f3289b44622f8426439813d5355fa0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249623&amp;width=680&amp;sig=1SV35PzBE3PtOMP2nfcO%2FXpV8s%2BQGTWotTaVgLAK0Gw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Live-Mission">🚀 Live Mission</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862192">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/192/367017c49217af59db3b7ab256fd932c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249762&amp;width=680&amp;sig=%2Bsm9oc%2Fndfelq%2FZSzUx68aJTMlPYE%2BmbuJlUV3E7em4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862193">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/193/44d4dd4f5e4ba85f1f9f5312c1dadf67_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249762&amp;width=680&amp;sig=xLFXe%2F%2BPmv7qb%2FgPFZuuCPSm%2FIQYXtxLNT5g2FrQR4s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862196">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/196/999d4998236957bd602686b8d7623940_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249762&amp;width=680&amp;sig=yUDxjC%2BddzFquN485%2FM9nTBc3bsZReMp7MzxgYJj2BQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862197">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/197/eb2ff724f90503ebe2b19ac4a4077ad0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249763&amp;width=680&amp;sig=1xOXsfp05EcT%2BRrB6vVaU5Xr%2BiyNqVn2I%2F1d2h1Wz9s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862195">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/195/5bbd266f801368798016dc19cb853b97_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249763&amp;width=680&amp;sig=FsR9TmQtNYAJ5a5pCH1vTZ56Ss2KJ94MOoCXJ4VLdvs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862199">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/199/743675898201d6a8c9bcede49a726f11_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249763&amp;width=680&amp;sig=OBMc5D%2FdbDhDz0qxLi25hYsGWKz86QAZ79Ws9C%2FsRoE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862198">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/198/43fe1b9bc78ef87836f0b9f667f2ae23_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249763&amp;width=680&amp;sig=%2BkYVy2Sk7VPIhvrVmoUgopnS1Dq2RH2pPUiZ1MgYstU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862200">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/200/47e6b21892f8b5f0e66e89bf24c51d07_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751249763&amp;width=680&amp;sig=ci7BAVS94yjAStv33teIYJg0PVm3xNp36S4ly1PoCcQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-User-Profile-">👤 User Profile </h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49862273">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/862/273/bf662c6f5f5e2bb0d5d0735445c0120e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751250493&amp;width=680&amp;sig=NMX%2BE4CYLW%2B085oZmEoP3P7cNTW2OW%2BEslbTIBvQmSY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Where-We-Are-Now">🧪 Where We Are Now</h3><p>We’re building the MVP, functional and grounded in reality. The core features are in development: a clean home interface, the Mission Builder for creating experiences, and Live Mission mode for real-world play. We’re integrating gamification algorithms and a personal profile system to track engagement and progress. Partnerships with local brands and communities are in progress to anchor the experience in everyday life. We recently graduated from the Founder Institute accelerator and are preparing to go live with our MVP. The goal is to shape the final product through direct user feedback, not assumptions</p><h3 class="page-anchor" id="h:-Where-We-Want-to-Go-">🎮 Where We Want to Go<br/> </h3><p>Once the foundation is stable and we’ve earned our place in the market, we’ll expand the experience. That means immersive audio-guided missions, spoken validations, time-based checkpoints, conditional unlocks, dynamic difficulty and more interactive layers. Long-term, we aim to integrate AR and VR to let users simulate and experience each other’s missions in fully immersive ways. But beyond features, our ambition is deeper: to build a movement around real-world action —a platform that activates people, not distracts them. Not just an app but a shift in how we live.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Jurnit’s vision is bold and with that comes a clear-eyed understanding of the risks and obstacles ahead.
+
+Technical and Product Risks:
+App development is complex. Unexpected bugs, performance issues, and integration challenges are inevitable, especially as we strive for a seamless, gamified experience across devices. Scaling infrastructure to handle growth, ensuring user data privacy and building secure validation for real-world actions all require rigorous oversight. Delays are possible, and some features may need to be prioritized or postponed to ensure quality and reliability.
+
+Community Adoption and Engagement:
+While our partnerships with universities, brands, and local organizations are strong, true adoption is never guaranteed. User motivation can fluctuate, and growing a healthy, engaged community requires constant effort. There is always a risk of slow initial uptake or lower-than-expected retention. We are mitigating this through direct collaborations, pilot programs, and ongoing user feedback loops — but market sentiment can change rapidly, and competition for attention is intense.
+
+Market and Behavioral Trends:
+Jurnit directly addresses well-documented issues — social media fatigue, the desire for offline experiences, and the search for meaningful challenges — but cultural trends evolve. What excites users today may change and shifting user expectations or external events (economic downturns, public health issues) could impact engagement or limit offline activity. We need to be attentive on new trends and be flexible at every stage.
+
+Operational and Resource Risks:
+As a lean, founder-led team dependent on Kickstarter support, we must allocate every resource with care. There is little margin for error. Cost overruns, team burnout, or loss of key personnel could threaten our timeline or deliverables. We have built a buffer for contingencies, but unexpected legal, regulatory, or technical hurdles may arise.
+
+Revenue and Sustainability Risks:
+We are committed to an ethical, ad-free, community-driven business model. If user growth or paid conversions are slower than planned, future development could be at risk. We will not pivot to exploitative monetization or sell user data. This means we are relying on our ability to deliver value and earn support from our community, not from external investors with conflicting interests.
+
+Transparency and Communication:
+We believe in radical honesty with our backers. If we encounter setbacks, budget challenges, or are forced to make hard choices, you will be the first to know. Regular updates, open financial reporting, and real-time involvement of the community are core to how we operate.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>For checkpoint validation, AI is used to analyze videos and photos submitted by users as proof of mission completion. Computer vision algorithms compare user uploads with reference images or locations, confirming authenticity and context while detecting potential fraud or manipulation. This ensures that real-world actions are accurately verified without relying on manual review or easily gamed GPS data alone.
+
+Beyond validation, AI will also help personalize the experience for each user. Recommendation algorithms will suggest missions based on individual interests, location, and participation history, ensuring that every user receives relevant, motivating challenges. AI-powered moderation will flag inappropriate content, maintain community safety, and streamline support.
+
+As the platform grows, AI will be used for analyzing engagement data, identifying patterns in successful missions, and optimizing both the reward system and onboarding process. This allows the team to continually adapt Jurnit to user behavior, maximizing participation and impact without compromising privacy or transparency.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">We avoid unnecessary hardware, printed materials, or merchandise, keeping our footprint digital-first.
+
+In building our community, we prioritize partnerships with local businesses and organizations that share our values of responsible, positive impact. We encourage missions that promote wellbeing, environmental awareness and support for local economies.
+
+Our development process relies on efficient, open-source technologies to reduce waste and duplication. We foster an inclusive culture, pay fair wages and reinvest in our team’s growth rather than extractive practices.
+
+We are transparent about our supply chain, data practices and decision-making. As we grow, we will measure, report, and continually improve our sustainability across every aspect of the business.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LifeShip: Pyramid on an Asteroid — community space mission</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/742/853/cebe4c948dcf1e3281fd2a6fa285d8bf_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750355989&width=560&sig=Vw%2FnltOJKXb%2FlpCq2yQNRfTiJR3mIfpBZZbWV%2Fsl9ZY%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>LifeShip: Pyramid on an Asteroid — community space mission</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Add your art, photo, signature, and more to a pyramid bound for an asteroid. Imagine your forever legacy and join a space community!</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>22 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:-Join-a-Space-Community-Placing-a-Pyramid-on-an-Asteroid"><span class="bold">🚀 Join a Space Community Placing a Pyramid on an Asteroid</span></h3><p>Take part in a <span class="text-italic">bold and beautiful chapter</span> of humanity’s story—one that honors ancient legacies while reaching for the stars. Together, we are placing a <span class="bold">pyramid on an asteroid</span>—a monument to Earth—and <span class="bold">you are invited to include something from you in the pyramid</span>.</p><p>Imagine looking to the stars and knowing an imprint of you is out there for billions of years.</p><p><span class="bold">LifeShip</span> is more than a mission—it’s a <span class="bold">movement</span>. We are a <span class="text-italic"><span class="bold">community-powered initiative</span></span><span class="bold"> to preserve Earth, continue humanity’s story, and eventually carry the seeds of life to the stars</span>. Most creations disappear. Art fades. Platforms crash. Stories vanish. But a few things—if designed with precision and purpose—can outlast everything. </p><p>What will you send to an asteroid? Join the mission! </p><p>This isn’t just a concept. After landing <span class="bold">our first LifeShip </span><span>Pyramid on the Moon</span><span class="bold"> in March 2025</span> onboard Firefly Aerospace’s Blue Ghost lander, we now look farther. We partnered with <span>AstroForge</span> to send a LifeShip Pyramid to deep space aboard their Vestri mission, launching February 2026. This spacecraft will leave Earth’s orbit and attempt to land on an high value metallic M-type asteroid—remaining there forever in heliocentric orbit.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49904319">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/904/319/468ec6bbabfe2df394084b68001d486d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751508706&amp;width=680&amp;sig=iCjTcKiBuc%2FJt1iFKgZi3zlKacbgH%2BK%2FkZRFqDjUZ1Q%3D"/>
+</figure>
+</div>
+<p><br/><span class="bold">🖖 Hi! I’m Ben Haldeman, founder of LifeShip.</span><br/>I’ve worked on over 300 satellites that have gone to space, built dozens of telescopes that have found new planets, and created the first ever Pyramid on the Moon.<br/>With this new mission, we’re placing a golden pyramid on an asteroid, and I hope you’ll join us by leaving an everlasting memory of yourself inside it.<br/>I’m on a mission to help Earth and continue life beyond—and your support means the world to me.</p><h3 class="page-anchor" id="h:-The-Offer">
+<br/>🔥 The Offer</h3><p>You’re not backing a product.<br/>You’re backing your place in humanity’s permanent story.<br/>You choose what to send:</p><ul>
+<li>Your legacy: a name, message, photo, and signature</li>
+<li>Your masterpiece: art, an image, small object, song, or book</li>
+<li>A project: a collection, archive, document, brand, or mission</li>
+<li>Your mark: a design or signature on the inner walls of the pyramid</li>
+</ul><p>We archive it. We install it. We launch it.<br/>And you get to say: I’m part of the longest-lasting mission ever created by humans.</p><h3 class="page-anchor" id="h:-How-It-Works">📦 How It Works</h3><p>1. Choose your tier<br/>2. Get an email to upload your content: name, signature, artwork, or message<br/>3. We preserve it using long-endurance technology<br/>4. We install it in the LifeShip Pyramid<br/>5. The mission launches in 2026<br/>6. Your contribution orbits the Sun for billions of years</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49520710">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/520/710/99118daa2c24fb0c8941a1e1dd4b8b72_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748902622&amp;width=680&amp;sig=wc1O6OgN9iTzBgdyJw4DcI%2F2pHUqjRTt5jDmH0DEE7s%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">We've already successfully landed a LifeShip Pyramid on the Moon in March 2025 onboard the Firefly Aerospace Blue Ghost lander. </span></p><h3 class="page-anchor" id="h:-LifeShip-s-Vision">🌟 LifeShip's Vision</h3><p>Our Pyramids are a <span class="bold">timeless archive</span>: filled with art, stories, music, books, sacred knowledge, the encoded blueprint of life, and the collective expressions of our global community. It’s a <span class="text-italic">cultural time capsule</span> to which you can add your mark—crafted using advanced archival technologies designed to preserve content for <span class="bold">billions of years</span>.</p><p>LifeShip is a community-powered mission and we are using the Kickstarter platform to make it easier for our community to be part of! Instead of just backing a project, you are:</p><p><span class="bold">✨ Joining a movement to preserve Earth and continue life</span><br/><span class="bold">🪙 Becoming a Citizen of a growing planetary community with dreams of populating space</span><br/><span class="bold">🪧 Creating an enduring legacy by leaving your unique mark in a pyramid on an asteroid</span></p><p>We start with pyramids, but LifeShip dreams bigger of a future where our community flourishes in space and stewards the expansion of life. Together, we’re dreaming of ways to get our community to the Moon and beyond.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49956848">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/956/848/dea8ac6152ab50433939e8377a91b8d1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751935554&amp;width=680&amp;sig=1KMYKY8%2FvFZqaDi13v515BA99qP943ZRCXTfLzbk55k%3D"/>
+</figure>
+</div>
+<p>We start with pyramids and dream of a community on the Moon. Be an early pioneer and founding citizen in the LifeShip movement.</p><h3 class="page-anchor" id="h:-WHY-WE-RE-DOING-THIS">🌌 WHY WE’RE DOING THIS</h3><p>Space is no longer reserved for governments and billionaires—it <span class="bold">belongs to </span><span class="text-italic"><span class="bold">all of us</span></span>. With four successful space missions already delivered, LifeShip is proving that a <span class="bold">global community</span> can impact space exploration and continue Earth’s legacy to the stars.</p><p>For millennia, great civilizations have built pyramids that would outlast them. From the Nile to the Andes, they held <span class="bold">culture</span>, <span class="bold">knowledge</span>, and <span class="bold">cosmic ambition</span>. </p><p>Now, we carry that tradition beyond Earth. A new kind of civilization—our collective of communities and creativity—is <span class="bold">building pyramids in space</span>, filled with meaning, memory, and myth. Imagine ancient stargazers dreaming of the sky—we are that dream made real.<br/><br/>The LifeShip Pyramid is engineered to carry:</p><ul>
+<li>Art, music, literature, and memory</li>
+<li>A digital record of DNA from Earth and humanity</li>
+<li>Sacred texts, declarations of rights, and human knowledge</li>
+<li>Your name, message, photo, and laser etched signature</li>
+<li>GAIA AI — an AI trained to speak for Earth</li>
+</ul><p>Preserved on advanced archival substrates—this may become the most enduring human artifact ever built.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49889344">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/889/344/b3f996e4429d0842bc9bd1e6d76dfcf2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751411226&amp;width=680&amp;sig=vH3YfwJUCgLX%2FABCGnAUwx9HYPyTb5ecLemOvE8ltqY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Why-Now">⏳ Why Now</h3><p>Because this isn’t theory—it’s in motion. We are going to the asteroid with or without you. <br/>🌌 Space and time are limited.<br/>If you want to be part of the longest-lasting story ever created—now is the time.</p><h3 class="page-anchor" id="h:-Three-Ways-to-Join">🌍 Three Ways to Join</h3><p>We designed this with three paths, each created for a different kind of legacy:</p><p><span class="bold">🎨 Creators: Immortalize Your Work</span><br/>You don’t just create—you encode meaning. That deserves permanence.</p><p>Add your art, music, books, photos, or 3D creations to be printed on metal plates, stored in eternal crystal storage, and/or placed as objects within the pyramid. </p><p><span class="bold">🌟 Citizens: Join the LifeShip Pioneering Community or be a Founding Citizen</span><br/>Be one of the few pioneering humans to leave a forever legacy. Have your name, image, and message saved in eternal crystal inside the pyramid. </p><p>As a Founding Citizen, get your signature laser-etched inside the wall of the pyramid. Get a token showing your Founding Citizen support and giving future benefits in our long-term vision.</p><p><span class="bold">🤝 Partners: Organizations, Brands, and Communities</span><br/>Place your collection, object, archive, or digital art into the pyramid. Let’s align your mission with this asteroid mission. Email us to discuss (partners@lifeship.com). Tiers are not for commercial use unless agreed upon.<br/> </p><h3 class="page-anchor" id="h:-MISSION-AT-A-GLANCE">🛰️ MISSION AT A GLANCE</h3><ul>
+<li>Mission Partner: AstroForge – VESTRI Mission, Launch planned for February 2026</li>
+<li>Destination: Landing on an asteroid in a Heliocentric Orbit around the sun</li>
+<li>Payload: LifeShip Pyramid – containing art and ultraendurance archival technologies</li>
+<li>Duration: Potentially billions of years</li>
+</ul><p>AstroForge’s Vestri mission will analyze M-type asteroid composition to validate sustainable mining that would benefit Earth. LifeShip’s pyramid will be mounted on the spacecraft that will land on the asteroid and remain there forever orbiting the sun in deep space. </p><p>LifeShip is already under contract to be on this mission and will do the mission even if this Kickstarter does not reach our target. This Kickstarter expands the archive—bringing more art, technology, and citizen contributions into this historic deep-space journey.</p><h3 class="page-anchor" id="h:-What-s-Inside-the-Pyramid-">🌍 What’s Inside the Pyramid?</h3><ul>
+<li>Deep Space Gallery – mosaic of global art</li>
+<li>LifeShip Citizens Registry – a wall of stars with names, messages, and photos</li>
+<li>Partner Collections – archives and content from amazing mission-aligned partners</li>
+<li>Digitized DNA – human genome etched into ceramic to last a billion years</li>
+<li>Earth Life Archive – imagery, info, and the digital genome of plants, animals, fungi</li>
+<li>Foundational Texts – constitutions, human rights, treaties</li>
+<li>Cultural Treasures – music, myths, sacred knowledge</li>
+<li>GAIA AI – language model encoded as a communicator from Earth to future civilizations</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49718773">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/718/773/a5ad4fffc3dbdad573ddea507192015a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750201021&amp;width=680&amp;sig=SvTsmKrlLqCDiyz9QAcNcWeRMxuMutN%2Fi304fqHYmVg%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Sampling of contents of the LifeShip Luna Pyramid, LifeShip's second pyramid planned for launch to the Moon in late 2025. Inside the pyramid are custom art plates, miniature objects and sculptures, a nickel EternityPlate micro-archive, and more.</span></p><h3 class="page-anchor" id="h:-CALLING-ALL-CREATORS">🎨 CALLING ALL CREATORS</h3><p>Do you dream of your creativity traveling beyond Earth? LifeShip’s Deep Space Gallery is the most remote art museum ever conceived—floating in orbit for billions of years.</p><p>Submit your work to be printed on your own Art Plate or included in a shared mosaic. Add your book, album, or message, and we’ll preserve it using ultra-endurance <br/>technologies.</p><p><img class="image" data-id="49967248" src="https://i.kickstarter.com/assets/049/967/248/cafe6e8166f85ac5bc997270dd750d1f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751998023&amp;width=3088&amp;sig=DVju0rPlButsoNUeESuJZR4eJGEHEKJiTihglMNe6dM%3D"/><span class="text-italic">Join featured artist, astronaut, and LifeShip community member Dr. Sian Proctor, who is creating original art for the mission. Sian made history as the first African-American woman to pilot a spacecraft when she flew to space on SpaceX’s Inspiration4 mission.</span></p><p>Our artist community holds regular calls and partners with major global showcases to feature our community’s art at top events like Art Basel and in Davos. Join the Space Art Revolution.</p><p>The LifeShip Luna Gallery features art from over 100 artists in our community. It launches to the Moon in December 2025.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49967297">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/967/297/651e4be743d980b5b81973e140d969bc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751998310&amp;width=680&amp;sig=Vyp2aP7cNUFHY7VY8RfRSXx04zpV%2BtV6OowoKIQbdAg%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Add art to a Deep Space Art Gallery. Your art gets printed in full color and also archived in billion-year archival technologies.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49492017">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/492/017/19bba8ec6a0b17276ebf58bc36d64cf2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748662273&amp;width=680&amp;sig=sB6UD9T1dfYJkywAWku%2B%2FEtgJdMgvxIN61S0KGeMrr0%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Featured artists can have their own dedicated Art Plates printed on a 25mm metal plate in full color. Copies delivered to you. Your own masterpiece on an asteroid.</span></p><h3 class="page-anchor" id="h:-BECOME-A-FOUNDING-CITIZEN">🌍 BECOME A FOUNDING CITIZEN</h3><p>By joining now, you help build the LifeShip movement—backing up Earth in monuments across space and laying the foundation for future space communities.</p><p>Depending on your tier, you can:</p><p>🧑‍🚀 Etch your photo, message, name, and signature into eternity inside the archive<br/>🎥 Join our insider community with early access to new missions and opportunities<br/>🛕 Have your signature engraved on the wall or base of the pyramid—and receive a replica of your etched plate<br/>🪙 Receive a LifeShip Token—a transferable key representing your early support, unlocking future benefits and deeper connection to the mission<br/>△ Design your own triangular wall tile—add your symbol, message, or family's signatures<br/>▲ Get a limited, numbered edition of the pyramid with exclusive artwork by a renowned space artist</p><p>This is more than supporting a mission—<br/>It’s becoming part of birthing a cosmic community.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49789244">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/789/244/932f26a2030c65f68488fdaf976c9522_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750727092&amp;width=680&amp;sig=SAOKyLq7p4UFjfwrqsTzWhNmB0vOjXj8qhrqsvy8%2FB4%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Have your signature etched into the inner wall of the pyramid. You get a copy of a plate with your signature. </span></p><p><span class="bold">--- Note: Artist and Citizen Tiers are not for Commercial Use ---</span></p><h3 class="page-anchor" id="h:-BRAND-MISSION-PARTNERS">🤝 BRAND &amp; MISSION PARTNERS</h3><p>Join as a bold mission partner. Add a collection, archive, or symbol to the pyramid. Receive recognition and the opportunity to include your brand in a permanent monument on an asteroid.</p><p>Let's explore a partnership that can include:</p><ul>
+<li>Furthering your space mission by going to an asteroid</li>
+<li>Your own archive collection or asset placement in the pyramid</li>
+<li>Logo and description on the website and mission blog</li>
+<li>Featured partner spotlight in launch party, livestreams, website, and community events</li>
+</ul><p>Let’s co-create a meaningful partnership for your mission. Email: <span>partner@lifeship.com</span> to align on a package. Rewards are by default not for commercial use unless agreed upon in writing.</p><h3 class="page-anchor" id="h:-TIMELINE">🔭 TIMELINE</h3><ul>
+<li>Campaign Launch - early July 2025</li>
+<li>Campaign Ends - late July 2025</li>
+<li>Manufacturing of Archives - August 2025</li>
+<li>Pyramid Assembly and Delivery to AstroForge - September 2025</li>
+<li>Integration &amp; Testing by AstroForge - Q4 2025</li>
+<li>Rocket Launch - February 2026</li>
+<li>Asteroid Landing - 2027</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719109">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/109/9be4dac441c3f5f53819e0a4d4f4497b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203472&amp;width=680&amp;sig=DwxG17hZgEAIw46HoMfsp8P3UmcEhnjCkaiYWCOdreo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-TECHNOLOGY-SUMMARY">
+<br/>✨TECHNOLOGY SUMMARY</h3><h4 class="page-anchor" id="h:To-preserve-stories-for-the-ages-LifeShip-uses-advanced-archival-technologies-">To preserve stories for the ages, LifeShip uses advanced archival technologies:</h4><p>🖼️ Full-color Art Plates – For beautiful full color artistic prints <br/>🔷 Digital Crystal Storage – high-durability digital storage in memory crystal<br/>◼️ Ceramic Etching – Encoding digital and analog information <br/>🧊 Nickel EternityPlates – ultra-fine grayscale etching using nanolithography</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719139">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/139/d774c1a4f2347125d41c11ca6858a587_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203687&amp;width=680&amp;sig=PEbknTTqGB3ykA8EQshhxQNi%2FrDdEV2zSlaAu0q6LBI%3D"/>
+</figure>
+</div>
+<p>Together, these technologies create a multi-layered time capsule—blending science, story, and spirit into one eternal offering to the cosmos.</p><h3 class="page-anchor" id="h:-WHO-WE-ARE">👩‍🚀 WHO WE ARE</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719434">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/434/85be4ae2d38d64a1fe672bfd9a3b5f36_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750206105&amp;width=680&amp;sig=o5nIZudOmNQwtNzSANljB3Q2a65gKSm3l4wOs%2BeGIac%3D"/>
+</figure>
+</div>
+<p>LifeShip is a community-powered space movement to preserve Earth, continue humanity’s story, and spread life to the stars. We believe in our shared responsibility to extend life beyond.</p><p>Founded by <span>Ben Haldeman</span>, LifeShip now includes tens of thousands of participants across four successful space missions. Ben is a spacecraft architect who previously built dozens of big telescopes to find new exoplanets, designed and launched hundreds of satellites to help Earth at Planet Labs, and now leads LifeShip’s community space mission. Ben lives in an intentional community in San Diego and frequently visits other communities, festivals, and new pop-up cities around Earth. He cares deeply about envisioning, creating, and connecting people with better ways to live and flourish on Earth and beyond.</p><p>LifeShip is a collective of individuals, entrepreneurs, communities, and other initiatives collaborating toward collective monuments in space—and one day, communities in space. LifeShip hosts regular calls and gathers at events—both online and in person for core community members. Our long-term vision includes creating intentional communities on Earth, the Moon, Mars, and, one day, building homes among the stars.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49520698">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/520/698/0e19568d7c2d9be88619b1dfe20a37ea_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748902575&amp;width=680&amp;sig=XbHnH1chK%2FZAcy%2FRl6IvhBr7ZSTsq%2BxISY5lQwZUm9M%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Firefly Blue Ghost landed on the lunar surface in March 2025 and took this image of it's own shadow with the Earth in the background. LifeShip's Pyramid on the Moon is onboard (Credit: Firefly). </span></p><h4 class="page-anchor" id="h:-Sign-up-now-to-receive-LifeShip-Launchpad-newsletter-emails">
+<span>Sign up now</span> to receive LifeShip Launchpad newsletter emails</h4><h3 class="page-anchor" id="h:-CALL-TO-ACTION">📢 CALL TO ACTION</h3><p>Join us to create the most enduring human artifact ever made. This is <span class="text-italic">not</span> science fiction—it’s your invitation to make your eternal mark.</p><p>Add your name, quote, art, story, or object to this cosmic pyramid. Become a founding citizen. Place a symbol that will orbit the Sun long after Earth itself has changed.</p><p>You’re not just supporting a mission—you’re helping launch a movement for life.</p><p>Take your step to the stars.</p><p><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Spaceflight is inherently risky. Potential issues include:
+
+Launch Delays – rocket launch dates can often slip weeks or months. We are optimistic about this launching in early 2026 but are realistic that space missions are complex and delays occur in space exploration. 
+
+The mission could be cancelled or for some unforeseen reason our payload could not be included on it. LifeShip has successfully delivered four payloads for space already and we do not see any reason why this would occur.
+
+Space missions are risky and not all launches, spacecraft deployments, and missions are successful. We are flying on the most successful rocket ever built and do have high confidence this will make it to Deep Space.
+
+The spacecraft with LifeShip Pyramid could leave Earth's orbit and go into Deep Space without successfully landing on the asteroid. If this happens then we will still consider the mission a huge success—a monument in orbit around the sun that could last for billions of years.
+
+If for any reason the collections do not make it to deep space then LifeShip will make a best effort to fly content again on one of our future missions to the Moon or to another destination.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>This project leverages AI for various tasks to help with our workflow. We use AI to generate some images and help with some copy editing. We add the code for an AI LLM to our archive.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

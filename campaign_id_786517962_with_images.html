@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SYUL: Solar Powered 15,000mAh Power Bank with LED & Speaker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/824/334/8faaf2e552c89ab8aa8894cf2fa51a8f_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750935931&width=560&sig=YH9uWSY3wJjmB7d8nYFo1qfc5ARetVC%2BBR7x9abflNw%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>SYUL: Solar Powered 15,000mAh Power Bank with LED & Speaker</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">15,000mAh Power Bank | 45W Type C Fast Charging | Solar Powered |20W Speaker | Adjustable Stand | Travel-Ready | 3 Mode LED Light |</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 500</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>35 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825343">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/343/72626de4b60eb9f8ef280f622f46ebbb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750942386&amp;width=680&amp;sig=eRjCfl8lrOIJiJVNM0P%2BPKYrUP48ccxrkskrYD3oYpw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825214">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/214/0e081635404fcd4ee5148d8b51a37a1e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750941766&amp;width=680&amp;sig=f%2FP9n%2BuCa%2B89M6yOoAC3yhE3mJQv4U54rttTaJ4J67I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825446">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-SYUL-overview-">⭐️| SYUL overview </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/446/f22cf22cf269388af45b131fe3438f9e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750943043&amp;width=680&amp;sig=c0tF%2BeGlYRYIYmOWyToIjEiJFGFd1L9GCBOauFar1Ug%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825208">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/208/1f2226901111e43ee4783ed314026732_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750941741&amp;width=680&amp;sig=BAsdwxCE3vnhPTLgXX4Cb1dwko9%2FLi9I2Wp87V5Dv70%3D"/>
+</figure>
+</div>
+<p><span class="bold">SYUL is a next-generation power bank designed for more than just charging.</span><br/>Equipped with a <span class="bold">15,000mAh battery</span> and <span class="bold">ultra-fast 45W Type-C</span> output, it charges laptops, tablets, and phones with ease. It also features a <span class="bold">20W Bluetooth speaker</span> for <span class="bold">rich sound</span>, a <span class="bold">solar panel </span>for sustainable recharging, and a <span class="bold">built-in 3 mode LED light</span> to brighten any space. Whether you're at home, in the office, or off the grid, SYUL brings power, light, and sound wherever life takes you — all in one compact design.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825394">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/825/394/902bba608deebdef4edeeb9edacef923_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750942616&amp;width=680&amp;sig=lfneOcbXpPNHzBoyKRGdJLKN3bhlDaTk8Q%2FBbnykMss%3D" src="https://i.kickstarter.com/assets/049/825/394/902bba608deebdef4edeeb9edacef923_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750942616&amp;width=680&amp;sig=lfneOcbXpPNHzBoyKRGdJLKN3bhlDaTk8Q%2FBbnykMss%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825347">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/347/c19c5a2ef49b899fe3ce92a07213cc5e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750942401&amp;width=680&amp;sig=eJYRHa%2F8W8h4uBKI9DwTKg4lcIFrN%2B%2Fg52Mz98XrN%2B0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826494">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/826/494/faab83ba4dc95dcd79e0ddc2cdf6f513_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750949291&amp;width=680&amp;sig=F57Lf%2BmwYWgiu7cOigqS2PtNtF04oLLoeG0Wz2laouQ%3D"/>
+</figure>
+</div>
+<p>Syul blends powerful functionality with <span class="bold">eye-catching design</span>, making it more than just a tech tool — it’s a <span class="bold">stylish companion</span> that fits effortlessly into your daily routine. Whether clipped to your bag or hanging from your wrist, its sleek, solar-paneled body adds a touch of innovation to your look while staying ready to charge, play, or light up your space whenever you need it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825632">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Stay-Charged-Anywhere-with-15-000mAh-of-Power-">🔋| Stay Charged Anywhere with 15,000mAh of Power </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/632/a87c996d268b0a5a84a1a028e132ab95_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750944130&amp;width=680&amp;sig=ow%2BiJGLvtYJ%2BLUjWf%2BGA2ZjxA%2B2kCMNPnItT1PfFzLA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49829896">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/829/896/7fbaf3d2b0e69f4d262f88fa87183f67_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750967406&amp;width=680&amp;sig=kkMsULgxaKqtn2CzaMEOQuLW68nOaM1Q9BwDiLMNNKk%3D"/>
+</figure>
+</div>
+<p><span class="bold">Never run out of power with Syul’s high-capacity 15,000mAh battery.</span><br/>Equipped with a fast-charging <span class="bold">45W Type-C port</span>, Syul delivers quick and efficient energy to your devices—whether you're on a hike, in the office, or relaxing at home. Stay connected and powered up, wherever life takes you.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825677">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/825/677/4745f2db5bef92299cbd57524922a8b3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750944446&amp;width=680&amp;sig=QU7lUECRo69mx%2BdHn3PDV%2B7AJa0LfoBHpWcBunn%2BOrw%3D" src="https://i.kickstarter.com/assets/049/825/677/4745f2db5bef92299cbd57524922a8b3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750944446&amp;width=680&amp;sig=QU7lUECRo69mx%2BdHn3PDV%2B7AJa0LfoBHpWcBunn%2BOrw%3D"/>
+</figure>
+</div>
+<p>Whether it's your <span class="bold">phone</span>, <span class="bold">tablet</span>, or <span class="bold">laptop </span>— <span class="bold">Syul </span>delivers fast, reliable charging with its <span class="bold">45W Type-C output</span>. Designed for modern life, it keeps your devices alive and ready, wherever your day takes you. No outlet? No problem. Syul's got your back.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49828364">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/828/364/333610ff7cc499e671e2c5f0815bbb1b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750959078&amp;width=680&amp;sig=qvn%2FVQ9%2FTK3JTquGhaZ4a6uEqiURLEWkBDFP4528Ntk%3D"/>
+</figure>
+</div>
+<p><span class="bold">Power your focus.</span> Whether you're charging your iPad, enjoying soft background music, or getting lost in a good book — Syul makes it seamless. With its built-in speaker and power bank, it lets you recharge both your device and your mind at the same time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826007">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Built-In-20W-Speaker-">🔊| Built-In 20W Speaker </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/826/007/4ddb96143d9ca160bad20afe9dbef8ef_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750946142&amp;width=680&amp;sig=PEtrlBxmrQYZL2mK33JautF%2FRmdrrHonZHpyd50oOCw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826021">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/826/021/f53dd656296711b2b33ba86ce828c683_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750946239&amp;width=680&amp;sig=bif8z72ubUokjXWd0ijmmO7%2FzGEP00dW6g%2BOfeXOvZE%3D"/>
+</figure>
+</div>
+<p>Syul delivers bold, room-filling audio through its <span class="bold">built-in 20W Bluetooth speaker</span> — perfect for workouts, relaxation, or outdoor gatherings. Enjoy up to <span class="bold">24 hours</span> of continuous playback on a full charge, and take the experience even further with <span class="bold">dual-sync mode</span> that lets you pair two Syul devices for immersive stereo sound. Whether you’re setting the vibe at a picnic or pushing through a hike, Syul turns every moment into a rich audio experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826235">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/826/235/d62541bad610dd5bab3e0a9a5dd9e3af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750947696&amp;width=680&amp;sig=d6ON1V3jnouO6Cuy5bFPuJjB46F1bDetCnsKFmEkLug%3D" src="https://i.kickstarter.com/assets/049/826/235/d62541bad610dd5bab3e0a9a5dd9e3af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750947696&amp;width=680&amp;sig=d6ON1V3jnouO6Cuy5bFPuJjB46F1bDetCnsKFmEkLug%3D"/>
+</figure>
+</div>
+<p><span class="bold">Instantly pair </span>your <span class="bold">device </span>to Syul via <span class="bold">Bluetooth </span>and elevate your yoga practice with <span class="bold">crystal-clear</span>, <span class="bold">20W audio</span> that fills your space with relaxing, <span class="bold">vibrant sound</span>. The sleek <span class="bold">adjustable stand </span>provides stable support, allowing you to position Syul at the perfect angle for ideal acoustics and easy access. Connect, unwind, and immerse yourself fully—with Syul, your sessions sound better and feel effortless.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826390">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/826/390/aef8025691e4bebc4909742e65b86050_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750948709&amp;width=680&amp;sig=bu4PN7LzRbtAcnum8imrCtA4VVG7eAAgMmAJzQOpcvw%3D" src="https://i.kickstarter.com/assets/049/826/390/aef8025691e4bebc4909742e65b86050_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750948709&amp;width=680&amp;sig=bu4PN7LzRbtAcnum8imrCtA4VVG7eAAgMmAJzQOpcvw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Syul’s 20W</span> <span class="bold">speaker </span>with <span class="bold">rich bass</span> doesn’t just play music — it fuels your momentum. Dive into every rep, punch, and push with <span class="bold">immersive sound</span> that keeps your energy sharp and your focus unbreakable. Built for those who train hard and never settle.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826140">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/826/140/5ef384fff9aa8a07fe77a00df948e999_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750946981&amp;width=680&amp;sig=ukK9QuLqzR78vQnpsuqjCWhcbbyTsW%2FjxRLWxzaUukc%3D"/>
+</figure>
+</div>
+<p>With <span class="bold">Syul’s </span>advanced <span class="bold">sync technology</span>, you’re not limited to just two—connect as <span class="bold">many </span>Syul <span class="bold">speakers </span>as you want for a truly <span class="bold">immersive sound experience</span>. Host a backyard party with full surround sound, set the mood across multiple rooms at home, or build a wall of sound for your next outdoor adventure. Wherever you are, Syul scales with your vibe—wirelessly, effortlessly, and in perfect harmony.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49873885">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Cozy-Light-">💡| Cozy Light </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/873/885/f32fc34c01de437b5cc5e066833c58fc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751320969&amp;width=680&amp;sig=RjwqLwB6DZSQK%2BQPnr8rXCBYHsHW7iTY6%2Bo4SIofE90%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49873890">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/873/890/b8dde50e968bed1c03ecac7cb379ebc6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751320981&amp;width=680&amp;sig=WWh%2FncF358bWgyfFyaGq0NooDE0lHt1EDL6WPtSExGY%3D"/>
+</figure>
+</div>
+<p>Let <span class="bold">Syul </span>bring a <span class="bold">soft</span>, <span class="bold">ambient glow </span>to your <span class="bold">workspace</span>.  Whether you're grinding through charts or powering through creative tasks, its <span class="bold">warm LED </span>light creates a cozy and calming atmosphere that enhances concentration and keeps stress at bay. Make your office feel less like a task zone and more like your personal zone of inspiration.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49873948">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/873/948/beb9e2cc0887fd9af04150a9ef63bba3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751321167&amp;width=680&amp;sig=Camid9ZAMR%2F98Y%2BjhF0eunTV04sSReSUmvrEMnUatKo%3D"/>
+</figure>
+</div>
+<p><span class="bold">Sleep Easy with Syul by Your Side</span><br/>Set the mood with <span class="bold">Syul’s soft, warm glow</span> — perfect for a calm and cozy bedroom vibe.  No need to hunt for a socket — Syul <span class="bold">powers your phone up to 100%</span> while the ambient light stays on till morning. It’s your peaceful night companion that keeps both your space and your devices fully charged.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49969062">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/969/062/3231aa5c133e1ff15113c305b9f9912c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752008441&amp;width=680&amp;sig=MaDrmivhBQLPrKYdxFZhclJVpF%2B8hYpZALh0BZxFIb0%3D"/>
+</figure>
+</div>
+<p>Whether you're camping deep in the woods or enjoying a cozy evening outdoors, <span class="bold">SYUL is your perfect companion</span>. With its warm ambient glow, it provides up to <span class="bold">32+ hours of continuous light</span> on a single charge—perfect for late-night conversations, food prep, or simply setting the mood.</p><p>Thanks to its <span class="bold">15,000mAh high-capacity battery</span>, SYUL doesn't just light your space—it <span class="bold">powers your journey</span>. Easily charge your smartphone or other devices while enjoying the outdoors, and stay connected no matter where your adventure takes you.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830371">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Power-in-Your-Pocket-">💼| Power in Your Pocket </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/830/371/d61b0edbe82bcdd0aa3efa16c762c690_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750969512&amp;width=680&amp;sig=YflB5g2blH%2BZTWn0FbJ2OZsZT5%2FX8eKsedIx7PfgIAw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830376">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/830/376/c19b68a8fed0ed2df8e4ff3b2dc602ef_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750969532&amp;width=680&amp;sig=qJQ2FAtrVsVNNMyYMSHJPLAvK%2FcTaX%2FmI7iyzsNvLXk%3D"/>
+</figure>
+</div>
+<p>Syul delivers massive functionality — 15,000mAh battery, immersive 20W sound, LED lighting, and solar charging — all in a sleek, pocket-sized body. It’s compact enough to go anywhere, yet powerful enough to keep everything running. Your all-in-one companion, always within reach.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49828688">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/828/688/615a09edee0b8855b44f219753e85f32_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750960604&amp;width=680&amp;sig=OP73tsW0P%2BpeewTCo2NNiULsszj7M7WXP0eochMPMs8%3D"/>
+</figure>
+</div>
+<p>Syul’s <span class="bold">compact size </span>and <span class="bold">lightweight design </span>make it <span class="bold">effortlessly portable</span>—just slip it into your bag and take it anywhere. Whether you're heading to the gym, office, or a weekend adventure, Syul is always ready to power your day.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49828524">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Solar-Power-On-the-Go-">☀️| Solar Power On the Go </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/828/524/eedfea9e0dd61ea268c354f666316d13_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750959730&amp;width=680&amp;sig=fkzdhl1p9kxLc11qIscimvpgJp1W0fJETnZFvsCwMs8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49828532">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/828/532/85e834e4f6a8617356a31da3881bcc01_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750959751&amp;width=680&amp;sig=bmjTUCS4l5UGfYLRlKFdc0hSzbHzFJmP%2FTS91GL%2Fz%2BA%3D"/>
+</figure>
+</div>
+<p>With Syul’s built-in 500mAh <span class="bold">solar panel</span>, you can recharge using nothing but sunlight—perfect for life on the go. It’s an eco-conscious solution that reduces your dependence on outlets while keeping your devices powered anytime, anywhere. Stay connected, stay green.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49829573">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/829/573/0734cba41db5a48dcfedf9a8e00c913a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750965504&amp;width=680&amp;sig=SMDI0sl%2FdMvRReO81RXCxntjFMRrD0I46KdiBvVJGxs%3D"/>
+</figure>
+</div>
+<p>With its <span class="bold">built-in solar panel</span>, Syul taps into the power of the sun—giving you an <span class="bold">extra boost </span>of <span class="bold">energy </span>wherever you are. Just place it under sunlight and let nature top you up. It’s the perfect backup when you’re off the grid or on the go.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49829661">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Adventure-Ready-Gadget-">🏕️| Adventure-Ready Gadget </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/829/661/c8902bcde6e6b4cc4d5ec49f24d52112_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750966109&amp;width=680&amp;sig=RX4XUQwtSKw%2BvK01EtKFRqs5weh4ji994of9Cmb2AAc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49829665">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/829/665/7cc66d1ce7a476c70aaf20256398cab1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750966130&amp;width=680&amp;sig=f6o93Vp658JXlx7UVqPjmXQJxoMDz2rJCm9pYSBg8TU%3D"/>
+</figure>
+</div>
+<p>Take Syul anywhere — without holding back. Engineered to be <span class="bold">shock-proof, waterproof, and dust-proof</span>, this all-in-one gadget is built for real adventures. Whether you’re hiking rugged trails, caught in the rain, or just living life to the fullest, Syul can handle it. No stress, no limits — just power, sound, and light that won’t quit.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830015">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/830/015/2aaf7234debf64f58f6977a1420a7678_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750967937&amp;width=680&amp;sig=mc8bxS4JqxE1yFCz1m0x%2BctJI1BCtkhEgOh9XsTPdJE%3D" src="https://i.kickstarter.com/assets/049/830/015/2aaf7234debf64f58f6977a1420a7678_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750967937&amp;width=680&amp;sig=mc8bxS4JqxE1yFCz1m0x%2BctJI1BCtkhEgOh9XsTPdJE%3D"/>
+</figure>
+</div>
+<p><span class="bold">Who knew your speaker could open bottles too? </span><br/>Syul isn’t just about power, light, and sound — it’s got party tricks too. Crack open a cold one wherever you are and keep the vibes flowing without missing a beat. Function meets fun, all in the palm of your hand.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49829944">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/829/944/232bc414c418328f9e970a90c31ea6f4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750967629&amp;width=680&amp;sig=ScaJIL55%2FUvBAo1RTwVhAcF7wHA4PdHlBjbQvUKoD5I%3D"/>
+</figure>
+</div>
+<p>Whether you're setting the mood or lighting your path, Syul’s <span class="bold">built-in LED light</span> delivers. Choose from <span class="bold">3 brightness modes</span> to suit any moment — soft glow for winding down, <span class="bold">balanced light </span>for reading, or full beam for late-night adventure. Reliable, adjustable, and always within reach.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830116">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/830/116/98bc9c3d468cc931ceb05c75177719cf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750968516&amp;width=680&amp;sig=e3p7rTNHXmS6%2B1%2BDYw6Yivr8YZucNuYUqkTPtOZqqQY%3D" src="https://i.kickstarter.com/assets/049/830/116/98bc9c3d468cc931ceb05c75177719cf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750968516&amp;width=680&amp;sig=e3p7rTNHXmS6%2B1%2BDYw6Yivr8YZucNuYUqkTPtOZqqQY%3D"/>
+</figure>
+</div>
+<p><span class="bold">Do it all, all at once.</span><br/>Syul is built for multitasking without limits. Its powerful <span class="bold">15,000mAh</span> battery lets you <span class="bold">fast-charge</span> your tablet, stream <span class="bold">immersive audio </span>through <span class="bold">synced 20W speakers</span>, and light up your surroundings with a <span class="bold">3-mode LED</span> — <span class="bold">all at the same time</span>. Indoors or outdoors, Syul keeps you powered, connected, and illuminated.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830202">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/830/202/14dcf3b3c63fe22f52766162a2b9ad6d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750968883&amp;width=680&amp;sig=hfairgzn2L7P%2FEGV1XiXpqVq1oMU2IYfY8nghNPuJk4%3D"/>
+</figure>
+</div>
+<p>Whether you’re on a road trip, waiting in a dark parking lot, or just want to set the mood inside your car — <span class="bold">Syul’s warm LED</span> glow transforms your vehicle into a cozy, well-lit space. Need to charge your phone, play music, and light up the cabin? Do it all at once. With Syul by your side, every drive feels safer, brighter, and way more stylish.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830546">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Lanyard-Designed-">🔗| Lanyard Designed </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/830/546/639e8b48dd3b675c67654edcab8e3ec7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750970460&amp;width=680&amp;sig=F5MbVuxVaeHr1M7OwZjRtCXGNZw%2FKHGwRfgC1XRkToM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830552">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/830/552/3654cf980f9d4a1d975e8f5772abf2cf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750970506&amp;width=680&amp;sig=lkzIR4gRSUK7RDMKRKLs0ufX1scpRdU%2FU7cDI%2B4KDbU%3D"/>
+</figure>
+</div>
+<p>The Syul comes with a smart and <span class="bold">stylish lanyard design </span>that makes it incredibly <span class="bold">easy to carry</span> on the move. Whether you're heading out for a <span class="bold">hike</span>, <span class="bold">catching a flight</span>, or <span class="bold">commuting through</span> the city, you can simply <span class="bold">clip it </span>to your <span class="bold">backpack</span>, <span class="bold">belt</span>, or <span class="bold">gear</span>. It’s the perfect mix of functionality and grab-and-go convenience, built for everyday explorers.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830707">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/830/707/b6cc8803a8ffceb91ad163c49aad9124_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750971382&amp;width=680&amp;sig=LVfqBK6cAjRTgs%2BXXyjiVRNewAfO%2BJr%2FtUwPgREXDOw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Hang it. Light it. Use it your way.</span><br/>Thanks to Syul’s practical <span class="bold">lanyard loop</span>, you can easily tie it to a <span class="bold">tree</span>, <span class="bold">tent</span>, or <span class="bold">backpack </span>— transforming it into a<span class="bold"> hands-free lantern</span> wherever you are. Whether you're setting up camp or just need quick overhead lighting, Syul is always ready to hang out and shine.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830735">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/830/735/4f4e9e8a3f6eb3db69ffb3637b7e9009_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750971554&amp;width=680&amp;sig=kxfPJ220iHyANeB%2Btp2Wm%2BPMx6qst%2FHoG7oAtKFjSlk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49831318">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-SYUL-Unboxing-">📦| SYUL Unboxing </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/831/318/5b5852b6aa8664d5ded17382787dc450_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750975375&amp;width=680&amp;sig=eDyHqJS85MlooyMfvbWOXcaFUq61JmIUO94frPnLhmA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830748">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/830/748/11984b75d0dfea658882af1be2b8d144_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750971660&amp;width=680&amp;sig=SknLAEY6sBER1BXXvzYcIKXWf0apkdJ0hy3YppU8COE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830941">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/830/941/5dba36515687628d13b9b9d6a168de06_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750972874&amp;width=680&amp;sig=ARkx7Qos1wjajsErpJwqhMW6Kcg%2BdQI4AJ34hzCVy9w%3D"/>
+</figure>
+</div>
+<p>Behind Syul stands a passionate team of professionals, innovators, and everyday enthusiasts — united by a shared mission to build products that truly matter. With backgrounds spanning engineering, design, and technology, we bring a diverse mix of skills and perspectives to every challenge.</p><p>We don’t just aim for functionality — we obsess over the details to create something reliable, thoughtful, and built to last. Our goal isn’t to chase trends; it’s to design real, usable tools that improve everyday life.</p><p>Driven by purpose and inspired by our community, we’re more than a team — we’re a family of creators dedicated to making a genuine impact and delivering quality you can trust.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49830990">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/830/990/51c437c4a0653d48349b0aa8f464610e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750973102&amp;width=680&amp;sig=MMNOazswXlmXqEGhIrEy%2B2LH9W9CkE%2BvGkxg6Pgf1Wk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49831197">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/831/197/3468d96fd10d96abdea3eb436f69e44e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750974437&amp;width=680&amp;sig=tDkxVBsRQWz1UWl9BzdrYaHz8wle0R95smxv5PlADU8%3D"/>
+</figure>
+</div>
+<p>Every great product starts with a solid idea, but turning that idea into reality takes time, precision, and testing. At Syul, we began with detailed sketches and concept designs, focusing on real user needs and multi-functionality. From there, we built and tested several prototypes, refining every detail—from the solar panels and speaker to the LED lighting and power bank. Each version brought us closer to the final product you see today. This process ensures that Syul isn’t just an idea—it’s a reliable, well-designed solution built for everyday use.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49831203">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/831/203/00c9ad3a96e308ecaeee52ad397843fc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750974471&amp;width=680&amp;sig=P5h6GkOj2J7JjaL9Bhb0r1wFqlkXy%2BBwETzYoPycJcM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49843973">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/843/973/b298768f25e2fb7917f886d3c684fd1f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751059161&amp;width=680&amp;sig=dds0kgBdJ3HxhOb7OhnEZlCPw%2BPLZLUDiK5jp8Qd8MM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49843975">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/843/975/445d053c46ace46b0d78c942390efe65_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751059171&amp;width=680&amp;sig=b8qoGUxHu%2F0bH5yblffWac6TiHOO%2BvrUNYNhqod%2Byrw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49952056">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/952/056/307d470266ba82957f827a73c8b0c123_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751908166&amp;width=680&amp;sig=CuuXPvtT5t1FV7DqJ4DbBx%2BJfkV0Y6zJJrvCIiMEATs%3D" src="https://i.kickstarter.com/assets/049/952/056/307d470266ba82957f827a73c8b0c123_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751908166&amp;width=680&amp;sig=CuuXPvtT5t1FV7DqJ4DbBx%2BJfkV0Y6zJJrvCIiMEATs%3D"/>
+</figure>
+</div>
+<p>This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882895">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/895/2a4fb6dfdad3e0851c68f4eb1ca9f1c5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751378045&amp;width=680&amp;sig=BW72wdYzXPzjGDinhwBCWCQ3goOa341pBZSxt6UYTg8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882897">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/897/54781de5c0e9a9ee87c9f5c58f7dff5b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751378052&amp;width=680&amp;sig=Lr8z5BIpyXVmQ3VESPPjUv6x2sG45NK6QwnxxjyGqKg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49882899">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/882/899/8b819faf1685e3837a3211fe7a10e5da_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751378060&amp;width=680&amp;sig=5%2FBvdXqJ03AdHxDpljGPo42%2FN%2FEjm3yCOvfdHEjfrA0%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Bringing Syul to life has been a long and thoughtful journey. Over the past two years, we’ve invested significant time in researching, testing, and refining every detail of the product. From material selection to feature integration, we’ve tested multiple prototypes and worked closely with engineers and product designers to ensure top performance and quality.
+While we're confident in Syul’s design and functionality, we understand that any hardware project can face challenges — such as production delays, supply chain disruptions, or unexpected shipping issues.
+
+To reduce these risks, we’ve taken proactive measures well before launching our crowdfunding campaign. We've partnered with dependable manufacturers, vetted component suppliers, and secured trusted shipping partners to ensure smooth coordination across the entire process.
+
+Our team has thoroughly planned and structured every phase — from sourcing to logistics — with precision and flexibility. We're fully committed to delivering Syul on time, without compromise, and will keep you informed every step of the way.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">We’ve designed Syul with longevity at its core — not just in battery life, but in overall durability and usefulness. From the sturdy outer shell to the high-efficiency internal components, every part of Syul is built to handle real-life use. Whether you drop it in a backpack, set it on a rough surface, or take it into unpredictable weather, it’s made to stay strong and reliable.
+
+Its 15,000mAh capacity delivers long-lasting power, while the carefully engineered charging system protects against overuse and wear. We didn’t just want to make a cool gadget — we wanted to make one that stays with you for the long haul. With Syul, you’re not just buying functionality — you’re investing in something that’s built to last.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">Because Syul integrates eco-conscious features like a built-in solar panel, it’s important for us to reflect those same values in our manufacturing choices. We’ve made it a priority to partner with factories that follow environmentally responsible practices — from minimizing waste and emissions to utilizing renewable energy where possible. Our commitment to sustainability extends beyond the product itself, ensuring that Syul is built with care for both people and the planet.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

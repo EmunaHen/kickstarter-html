@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parentul – Your Everyday AI Parenting Assistant</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/133/221/fde07653865b7e6025a70fedd6f7dde1_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1746214764&width=560&sig=EnAe3Chadp51ZlBHHSRChi4GdoWuvsCm%2Brqm3cyfbNE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Parentul – Your Everyday AI Parenting Assistant</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A parenting assistant that’s there for you 24/7 | Behavior help | emotional support | routines | relief | all powered by AI.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 15,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49157677">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/157/677/f1395216aaa01bb6d3c69f55d2f8e2c0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746439628&amp;width=680&amp;sig=18TU9l77ghJO8IZvbIbyvexwgF2LFEQEJp1ep6MeP54%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49157693">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/157/693/fec1398dca7d94fcb43d9595524e1ef3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746439840&amp;width=680&amp;sig=%2BkzHFPpB80qOB%2BmavlpMFryV8S0fjnOeY3NEb8PAn4Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49158111">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/158/111/b4cdb2a1425926d205236b9e484c6ed1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746442892&amp;width=680&amp;sig=KBBlumLbKIgPM9KEiuZenvSIBsyma7qj9y6hCEuC1UM%3D" src="https://i.kickstarter.com/assets/049/158/111/b4cdb2a1425926d205236b9e484c6ed1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746442892&amp;width=680&amp;sig=KBBlumLbKIgPM9KEiuZenvSIBsyma7qj9y6hCEuC1UM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49157792">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/157/792/9c3f35ba676d614c10b88e87c0bfa568_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746440810&amp;width=680&amp;sig=WGekE2R6uHqo2XpFtiCtFT79817MICwn6LXo%2BSIZd8s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49157917">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/157/917/7d125ea4a3766bcddb6f01338e6adcec_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746441674&amp;width=680&amp;sig=a3bI94jdrRD%2BmVwsQPA9OWJyLnYD40O6tBx8xCoguOY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49157923">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/157/923/b9e8b9df9bca1c33eb4cf45c55611424_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746441718&amp;width=680&amp;sig=EzPdQytD1hCrytgawgS%2FUiPWmaaN0XJ1LfRGJr%2F7KnU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49157930">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/157/930/339ee49a0d4240c32b419ce45ea3df9f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746441791&amp;width=680&amp;sig=GqPDjywamQuysX%2B2g6q%2FC%2BwFkZvGRtrpL4cBP6VmS38%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49158831">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/158/831/57156904dfc6b1aef9304f9dd73e3538_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746448210&amp;width=680&amp;sig=OTmgCdz%2BLA2cNsKVW5TJT2CfxhA4RUHrGRzY9tizTZE%3D" src="https://i.kickstarter.com/assets/049/158/831/57156904dfc6b1aef9304f9dd73e3538_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746448210&amp;width=680&amp;sig=OTmgCdz%2BLA2cNsKVW5TJT2CfxhA4RUHrGRzY9tizTZE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49150591">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/150/591/2fe1400849b2a39491b121624bc3dcc1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746380096&amp;width=680&amp;sig=9TVTOfgtsBrm3YeTO3%2BxYdPMn%2F70G2TJ54dHof9K6OA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49152683">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/152/683/5daf071e68ed591c6be459b6127ed7a7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746393594&amp;width=680&amp;sig=HfH%2B2Rnixm58GvDdi3EEtQE2h44KhDZ%2FJZraITNLPzk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49152760">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/152/760/887908519289e39856c25e6de1543c2f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746394193&amp;width=680&amp;sig=1kBbOojTCWgJOYDgKbRZ23nCBMOilxHV%2B%2B7yKd5pp6I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49153034">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/153/034/10fbd5f20b2c2878976e9c77b1e8733b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746395871&amp;width=680&amp;sig=VCcsarW3F87zk9NIS5DWp%2B9K8UBHmHpJCQxNtM4CdpY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49158850">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/158/850/d528a95b80abd579c86b463348d290c3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746448308&amp;width=680&amp;sig=IIi9Ewt4yJ84YHN3BkyLNX8LOGm6D03sBbAQChAqJTs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49158877">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/158/877/b94545d82ad0997959c12893084f302c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746448537&amp;width=680&amp;sig=vFYaaOsOPst7nAJrxlBN9FyxK%2BQMZT%2BgaHylL4fUBmA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49154923">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/154/923/cb9e581aad1fba0e877805f8233f0e6f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746413373&amp;width=680&amp;sig=u6p93mbXgVTnBHwB%2B3Eyq8F0NHcYlogPY9GPYvc2GKg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49159112">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/159/112/19a7d83ae729cb0edcc9e5f121ead17b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746450337&amp;width=680&amp;sig=8PYq007F165JR%2F4jyjx7exE%2BvRHYANzVL7AUr2SRZQ0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49159102">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/159/102/867aefc2abc5bb060a528335709d7c89_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746450272&amp;width=680&amp;sig=PapWi0KyXxBODODZQQDfDBc3yavStY%2BF9Id%2FtUBnCiU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49159083">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/159/083/f807e8675d426ddcab310e6cda8d1dd9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746450124&amp;width=680&amp;sig=2Y39C%2BlBBp8krVzPrYxoZPRKwAalBWy4CWFfqzcS4%2F4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49158096">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/158/096/1794d7a5de1370613dee595a7035713b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746442827&amp;width=680&amp;sig=65JeznPb5t0EVi1mNiHNkeVQYHqy7peY1w3Z5gABpnw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49159131">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/159/131/d88b622183657811d7193ecbc24bdd1e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746450460&amp;width=680&amp;sig=SVn4R05TIOg8hsTeEzEsOb0483QtW3qNryx74J1E4xc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49154920">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/154/920/a18118ee5f3b9848677caf1be125755a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746413347&amp;width=680&amp;sig=aoxpzqc9hMjUgs98y5NtMY%2FliUCri9Zg9byFsiHu9pI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49162205">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/162/205/9630c61af273f35ab9e5b69327eb6c10_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746467175&amp;width=680&amp;sig=KCz5B2zlhmrAwzkH1neZ%2Fz5Kp%2BGP%2Bxp1WWCBOZqjqL4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49158887">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/158/887/5aa6a2f00753a94fbbd9435e8197532e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746448593&amp;width=680&amp;sig=D1hDjSQSChD810Rr7J48TQDGHg2VQdRVGpI6%2F%2BNoT6A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49161351">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/161/351/7b8e2cf4aa4c7552542e4e5a561787bf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746462218&amp;width=680&amp;sig=LP%2BPZkjhmHZWCKsDT3AzK2muq2xb1jQauqZ%2BzVHB8go%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49161363">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/161/363/b82f0d72b5f9a7b35f578f0439e6d956_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746462300&amp;width=680&amp;sig=T1vjeFvVPidlYfjZcxLF1NdbuMXmNGkhhHQ8U2Pe2ZU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49161405">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/161/405/fb900c20b0b1e785640a79395db86b77_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746462584&amp;width=680&amp;sig=fpjzSZVyEYfadJDMA2y4YzmQLEAZssDMNa45HMTxdcA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49161429">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/161/429/4689fd5503ec6bc60505ebc4346c92f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746462742&amp;width=680&amp;sig=TeGP5H4%2FZjAxDAegknJTyZI%2FS65xmOzgNQqTPXi%2BTD0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49205604">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/205/604/4ffb07caf033cf752a994a5b57558341_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746729547&amp;width=680&amp;sig=Z88LEPdJAQe3%2F3RGp44ztGClFN0SqN6hzJ2LD8TBPIs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49161476">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/161/476/19c7fade4b9f011c5a6d78feeb905e20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746463027&amp;width=680&amp;sig=iZilfPdyjAF5dB24GVWefPbq9EfF%2BwjxC9UBShYAYcI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49161798">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/161/798/ffbf599ff7f820a921fb2c83bc754d0f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746464860&amp;width=680&amp;sig=6dyzSgUzanSJYi3ccVA7ZD8yBaNpk1tPPb%2FJ1y0inh4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Already-raised-5-000-high-five-Still-needed-25-000-to-hit-GO">Already raised: $5,000 (high five!)<br/>Still needed: $25,000 to hit GO</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49161912">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/161/912/848de9c72df49c334c6ed3392e0f8a87_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746465501&amp;width=680&amp;sig=MYJgOl7QKC%2BtMunii5HMFdKy5403jH8VISmZw38ckoA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49161913">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/161/913/63613cb39ca54c0cc42880d9b4727a0d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746465502&amp;width=680&amp;sig=n77wfjUwru8Rv2wW%2BvBA1nObD4Q0DrDaJkBjusna3lA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:What-Parents-Are-Already-Saying"><span class="bold">What Parents Are Already Saying</span></h3><p>“My teenager’s mood swings were wrecking our relationship. Parentul gave me advice I could <span class="text-italic">actually</span> use. Not fluff. Not theory. Real help.”<br/>— <span class="text-italic">Mom of two teens</span></p><p>“Nothing ever fit my foster kids. This adapts. It doesn’t lecture—it listens.”<br/>— <span class="text-italic">Foster parent of 3</span></p><p>“My ADHD son was melting down. I was crying. Parentul helped us both calm down within minutes.”<br/>— <span class="text-italic">Kinship caregiver</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49162011">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/162/011/18a5068bec3b87e08ec51a660d919a3f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746466112&amp;width=680&amp;sig=PtH9axYQhOivTxOjhwIO2Ly3UF7Xy8yeNTIFel7AXv0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-FAQ-Let-s-Keep-It-Real"><span class="bold"> FAQ—Let’s Keep It Real</span></h3><p><span class="bold">Is this therapy?</span><br/>Nope. It’s behavior and emotional support, backed by science, but not a replacement for licensed therapy.</p><p><span class="bold">Is my data safe?</span><br/>Yup. Encrypted. No selling. No creepiness.</p><p><span class="bold">When do I get access?</span><br/>Beta rolls out late summer 2025. You’ll be first in line.</p><p><span class="bold">Can I sponsor someone else?</span><br/>Absolutely. At the $200 tier, you will receive your hoodie AND sponsor app access for a parent who may not be able to afford it.</p><h3 class="page-anchor" id="h:-AI-Disclosure-How-Parentul-Uses-AI">📘 AI Disclosure: How Parentul Uses AI</h3><p>Parentul is powered by advanced AI to provide personalized, supportive parenting guidance that feels human, empathetic, and effective, because parenting doesn’t wait for office hours.</p><h4 class="page-anchor" id="h:Here-s-how-AI-is-used-in-Parentul-"><span class="bold">Here’s how AI is used in Parentul:</span></h4><p><span class="bold">🔍 What elements are created using AI?</span></p><p>Conversations with the AI assistant are generated using large language models (LLMs) like GPT-4 or similar transformer-based models.</p><p>Suggested scripts, calming techniques, co-regulation tools, and personalized parenting advice are generated dynamically in real time.</p><p>Mood tracking and behavior insights are learned over time via feedback loops to make the system smarter and more tailored with use.</p><p><span class="bold">🧠 What is original and what is AI-generated?</span></p><p>The parenting methodology, known as the 3C+ Framework, is completely original and based on founder Richard Dixson’s trauma-informed coaching experience.</p><p>All guidance is rooted in real psychological and parenting science, including Trust-Based Relational Intervention (TBRI®), trauma-informed care, and conscious parenting practices.</p><p>Visual assets, illustrations, and narrative content are created by humans. AI is employed solely to assist with text responses and conversational flows.</p><p><span class="bold">📊 Data and sources:</span></p><p>Parentul uses no public user data for training. All AI models are used under proper licensing.</p><p>Any behavioral data collected is anonymized, encrypted, and never shared or sold.</p><p>Consent is requested during onboarding, and users can opt out of data-driven personalization if they choose.</p><p><span class="bold">🛠️ AI Tools Used:</span></p><p>Generative AI: for dynamic dialogue generation, personalized advice, and parenting script suggestions</p><p>Machine Learning: for pattern recognition, outcome prediction, and user feedback learning</p><p>Natural Language Processing (NLP): for interpreting tone, emotional cues, and user intent</p><p>Our goal is simple: to offer the most accessible, private, and effective parenting support, without sacrificing humanity.</p><h4 class="page-anchor" id="h:-Final-Word-Let-s-Not-Parent-Alone-Anymore"><span class="bold">📣 Final Word: Let’s Not Parent Alone Anymore</span></h4><p><span class="bold">Parentu</span>l isn’t just another app. It’s a parenting movement.</p><p>We believe support shouldn’t depend on privilege or proximity to a therapist. It should be <span class="bold">instant, honest, and human</span>.</p><p>Your support brings peace, clarity, and hope to families everywhere.</p><p>So:</p><ul>
+<li>Back this project 🙌</li>
+<li>Share it with friends 👨‍👩‍👧</li>
+<li>Help build something real 🌱</li>
+</ul><p><span class="bold">Let’s show parents they’re not alone anymore.</span></p><h3 class="page-anchor" id="h:BACK-THIS-PROJECT-"><span class="bold">BACK THIS PROJECT!!!</span></h3></div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div class="relative flex justify-center items-center h50"><svg height="250" preserveaspectratio="xMinYMid" viewbox="0 0 250 250" width="250"><g transform="translate(125, 125) scale(2.5, 2.5)"><defs><pattern height="1" id="bg1" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/xglb1yux-hatch_light_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=clgJlzhY3k416hIJWrLOR2MdAEuRyBIYLy5Q4Y0qGuE%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg2" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/qm5rth84-dot_line_white_2_pattern_overlays_20190901.png?origin=static&amp;sig=X4u8yLPJQSLFYyFAWhfks%2Bb0l7JvccL9Ns4mZ%2BdcX%2Fs%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg3" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/2pgrzep-scattered_dots_black_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=7dYAvrHvJlUMrHNcRby2NfD16BbES28QnocyMYhS%2BjU%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg4" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/l9o3ber7-grid_dark_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=w1sAH2Z8b0%2Bm44c8oN%2BES4hwspBpkhrrhc1YpFJSPyQ%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg5" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/v0js8b2e-dot_line_white_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=j1%2Biz4vH2TtOn5EX0sEl2Xque0oEBcJupM5qVbNe8CM%3D" width="160" x="0" y="0"/></pattern></defs><path class="innerArc innerArc0" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-40.800583684604156,15.929606743281928L-32.46201560330458,12.950677317067619A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="#059968" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc1" d="M-41.65833486581844,13.528604370271749A43.8,43.8,0,0,1,-31.425000643210993,-30.510806848954164L-25.25427164693533,-24.160386246556534A34.949999999999996,34.949999999999996,0,0,0,-33.31976678451886,10.549674944057436Z" fill="#71A0FF" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc2" d="M-29.596464282134338,-32.28760291499427A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-23.42573528585867,-25.937182312596633Z" fill="#a3a3a3" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArcTexture" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-40.800583684604156,15.929606743281928L-32.46201560330458,12.950677317067619A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="url(#bg1)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-41.65833486581844,13.528604370271749A43.8,43.8,0,0,1,-31.425000643210993,-30.510806848954164L-25.25427164693533,-24.160386246556534A34.949999999999996,34.949999999999996,0,0,0,-33.31976678451886,10.549674944057436Z" fill="url(#bg2)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-29.596464282134338,-32.28760291499427A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-23.42573528585867,-25.937182312596633Z" fill="url(#bg3)" style="opacity: 1;"></path><path class="outerArc" d="M1.274808758606064,-49.983745984359565A50,50,0,1,1,-45.566617001720935,20.583571483551548L-42.06356244768969,19.107504133436937A46.2,46.2,0,1,0,1.2748087586060677,-46.18240858410247Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-45.379477347433486,20.99292823009146A50,50,0,0,1,-46.64135824258776,18.01620662866051L-43.06159772674007,16.737347496554374A46.2,46.2,0,0,0,-41.97123731232341,19.309459818250524Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-47.49910942380203,15.615204255650347A50,50,0,0,1,-49.232694916454996,-8.725924092224657L-45.507824257801,-7.967303892854832A46.2,46.2,0,0,0,-43.91934890795435,14.336345123544186Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-49.30925084932268,-8.282377718902397A50,50,0,0,1,-44.1205719098721,-23.52392684790967L-40.81291731329381,-21.650537646401364A46.2,46.2,0,0,0,-45.545593040115,-7.748480794596337Z" fill="#3B3BCC" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-44.33054662769853,-23.12580021727781A50,50,0,0,1,-35.7473059328311,-34.95897765302324L-33.098202177906636,-32.23273200630714A46.2,46.2,0,0,0,-40.91650810125715,-21.45412232648445Z" fill="#00007D" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-33.91876957175446,-36.735773719063324A50,50,0,0,1,-1.2748087586060701,-49.983745984359565L-1.2748087586060834,-46.18240858410247A46.2,46.2,0,0,0,-31.269665816829978,-34.00952807234724Z" fill="#cccccc" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><text font-size="8" height="250" style="opacity: 1;" text-anchor="middle" width="250" x="-1" y="3">$36,670</text></g></svg></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$25,500</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Manufacturing</div><div class="m0 type-16 text-nowrap">$25,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Research &amp; Development</div><div class="m0 type-16 text-nowrap">$500</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$6,670</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">$3,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">$1,835</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">$1,835</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Fulfilling</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$4,500</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Packaging &amp; Shipping</div><div class="m0 type-16 text-nowrap">$4,500</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated April 21, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">⚠️ Risks &amp; Challenges (Real Talk)
+Okay, let’s be honest. We’re building a powerful AI tool to help parents who are overwhelmed, under-resourced, and running on cold coffee and panic. That’s no small task. Here’s what might come up—and how we’re planning to handle it like grown-ups.
+
+🧠 “Will the AI really get me?”
+That’s the big question, right? We’ve trained Parentul on proven behavioral science and trauma-informed strategies, but no AI is perfect out the gate.
+
+How we’ll handle it:
+We’re constantly feeding it real feedback from parents like you—so it gets smarter, more helpful, and more human with time.
+
+🐞 “Tech always bugs out…”
+Yeah. New apps sometimes break or act funky—especially when you ask them about screaming toddlers at 3AM.
+
+How we’ll handle it:
+We’re launching in phases so we can spot the weird stuff early. You tell us what’s not working—we fix it fast. Promise.
+
+🔐 “Is my info safe?”
+Parenting is personal. We take privacy seriously. Like, Fort-Knox serious.
+
+How we’ll handle it:
+We use end-to-end encryption and will never sell or share your data. You’re not a product. You’re a parent. Huge difference.
+
+💰 “What if the campaign doesn’t hit the goal?”
+We’re not backed by some big Silicon Valley venture bros. We’re community-funded. If we don’t raise enough, progress slows down.
+
+How we’ll handle it:
+We’ve already raised $5,000 privately and built the guts of the app. This campaign just helps us finish strong—with features you’ve actually asked for. If needed, we’ll phase things in and keep everyone updated.
+
+We know this isn’t easy. But we’re here for the long haul—with parents, for parents.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18">My project seeks funding for AI technology.</h3><div class="flex flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p style="margin-bottom: 1.5rem;">For the database or source that I will use or will create, the consent of the persons whose works or information incorporated have been obtained.</p></div></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">We’re not just building another app—we’re creating a long-term support system for parents. That means everything we design must be useful, durable, and future-proof.
+
+Here’s how we’re making Parentul last:
+� Built to Grow With Families
+Parentul’s AI learns and adapts the more it’s used. It doesn’t expire after one phase of parenting—it evolves from tantrums to teen years.
+
+� Modular Development = Long-Term Value
+We're building the app in flexible phases, allowing us to continuously add features (like live chat, neurodiverse tools, and multilingual support) without having to start from scratch.
+
+� Community-Driven Feedback Loop
+Every backer, parent, and tester helps shape the product. We're building with you—not just for you—which ensures it stays relevant and valuable for years to come.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Our physical rewards (tote bags, mugs, hoodies) are intentionally chosen to be useful, high-quality items that won't just end up in a drawer. No fluff. Just function—with heart.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cook Well: Home Cooking Companion</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/812/363/d252577ffe56a8dc7a5e1044e576322d_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750861197&width=560&sig=yTHOyxKrUfqJyCAnvkB87aKaSzlV0MQz0Ur6iCX%2BJNs%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Cook Well: Home Cooking Companion</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Learn intuition and flexibility without relying on recipes.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 100,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49714808">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-it-s-hard-to-be-a-home-cook">Why it’s hard to be a home cook</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/714/808/00e576806e3b69354b03ac81d2d58157_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750180931&amp;width=680&amp;sig=12DUO4V511YvEqsH%2B03UWbWodQs%2BF9Rt9XUF7rCLaFA%3D"/>
+</figure>
+</div>
+<p>Home cooks have one of the hardest job in the world. Because cooking is much more than following a recipe. It's figuring out:</p><ul>
+<li>What are you in the mood for?</li>
+<li>What ingredients are already in your fridge that you need to use up?</li>
+<li>How many people are you cooking for?</li>
+<li>How do you figure out what to make in the first place?</li>
+<li>How do you grocery shop efficiently?</li>
+<li>How do you feed yourself and others with different preferences?</li>
+</ul><p>And home cooks have to navigate these questions based on their unique constraints — like juggling work schedules, multiple mouths to feed, changing moods, health goals, cuisines, preferences, and budgets.</p><p>This is why we are building the <span class="bold">Cook Well companion app,</span> which will teach you how to think like a home cook. Our core features are designed around these beliefs:</p><ol>
+<li>Why home cooks should learn <span class="bold">frameworks</span> first, before recipes.</li>
+<li>Why <span class="bold">grocery shopping</span> matters as much as cooking.</li>
+<li>Why every home cook needs a personalized <span class="bold">cooking system.</span>
+</li>
+</ol><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49717084">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/717/084/abbbe10f2f52c050a667edc3fb54b11f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750192115&amp;width=680&amp;sig=a%2F57zXDwIs7e%2Bnn5%2FgHm5tzHXOmzfAmfw3wP2EEnzro%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-home-cooks-should-learn-frameworks-first-before-recipes-">Why home cooks should learn frameworks first, before recipes<img class="image" data-id="49785426" src="https://i.kickstarter.com/assets/049/785/426/57b924554cc2cfd9cbda17ece19977e5_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750703585&amp;width=2390&amp;sig=xcn4TxQuZueOs1PU%2Ba6V3RK%2BmfKKNClgAX%2BY2xO2G6w%3D"/>
+</h3><p>For 99% of us, recipes are our first introduction to cooking, and while recipes can be great for inspiration, most are written in a way that makes you reliant on specific steps and ingredients.</p><p>Frameworks, on the other hand, are a new cooking format that’s flexible, intuitive, and customizable with different ingredients. Think of these as “plug-and-play” blueprints.</p><p>❌ Recipes focus on teaching 1 specific meal<br/>✅ Frameworks teach you a formula for creating hundreds of meals</p><p>And what you learn with frameworks will change how you navigate the kitchen:</p><ul>
+<li>Instead of staring into your fridge feeling stuck, you start thinking in terms of possibilities.</li>
+<li>Instead of trying to justify why you can’t cook, you’ll start asking, <span class="bold">“What can I make with what I already have?”</span>
+</li>
+<li>You’ll waste less food. You’ll shop more efficiently.</li>
+</ul><p>And when you do go back to recipes? You’ll understand them on a much deeper level.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49803321">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/803/321/7995780b940bc6535afa052431847601_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750800636&amp;width=680&amp;sig=U6ldAdesTW3C65BLptBacM3DvjD5mwXXJWmG5ZYEgNA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49803312">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/803/312/c5b57dd2b5ed1bffce48a75fcb8dcf24_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750800596&amp;width=680&amp;sig=OvMZ8Ft7AQBFgUOudp0c49642EcYvzI0Q0Bz56UuVU4%3D"/>
+</figure>
+</div>
+<p>Just like recipes, frameworks will be woven throughout the app — you can discover them on the home feed, browse or search through our collections, favorite and save them, add components to your grocery list, and write notes to make them your own.</p><h4 class="page-anchor" id="h:Built-on-recipes-fundamentals">Built on recipes &amp; fundamentals</h4><p>Frameworks work hand-in-hand with recipes, too: they help you understand recipes, and recipes help you cook through frameworks. We’ll connect relevant recipes to each framework so you can put them into action and try out a few specific examples.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49727469">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/727/469/11645696d0d708b44ba0a45324f50057_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750260564&amp;width=680&amp;sig=TV4%2BvEAbuLC10l3jjYK%2BTIu%2Bo3VhPCxpeFhi1qn506M%3D"/>
+</figure>
+</div>
+<p><span class="bold">Of course, no ads, and no life story.</span> Just concise, easy-to-read content with clean instructions and our signature Cook Well fundamentals.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49717175">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/717/175/abbbe10f2f52c050a667edc3fb54b11f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750192568&amp;width=680&amp;sig=m8cslLm2I9VkmT3wJMip4sdWGdmo8db%2FwI%2FsTwhaNVE%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-grocery-shopping-matters-as-much-as-cooking-">Why grocery shopping matters as much as cooking<img class="image" data-id="49785441" src="https://i.kickstarter.com/assets/049/785/441/45c0f6b90d17005ab3150c7fe4f97707_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750703670&amp;width=2299&amp;sig=Y7%2F6DZ68kGdLSUf2omOGczPODpi25ucThuX8iT5Lgmc%3D"/>
+</h3><p>Frameworks can teach you how to cook — but <span class="bold">grocery shopping</span> decides what you can cook. The ingredients you have (or don't have) are the invisible force shaping every meal. Grocery shopping isn’t just an errand, it’s a skill just like cooking. A skill that sets you up to succeed before you even step into the kitchen.</p><p><span class="bold">That's why we're introducing grocery templates</span>, which simplify the grocery shopping experience.</p><ul>
+<li>Shop lists directly</li>
+<li>Edit and customize them to your liking</li>
+<li>Use templates as inspiration</li>
+<li>Learn to shop efficiently </li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49803251">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/803/251/9e34f7e1f7e12fc0ee877fa8e85d44ae_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750800347&amp;width=680&amp;sig=%2BFocEC01n3YM9wUT9%2BtAUi7uQsb3dghYbKdr9IsQv3o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49803235">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/803/235/7973bba7a634496b6900b6119d8e9115_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750800252&amp;width=680&amp;sig=mtaq4LqaoKPMaWpsBeD57u%2BGhX5ZEMkNnQa0TN1bkuo%3D"/>
+</figure>
+</div>
+<p>Once you have your ingredients, we’ll provide relevant recipes or framework ideas to help you cook through the list and <span class="bold">actually use up the food you bought.</span></p><p>Grocery templates are part of our grocery hub where you can here you can put them to use:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49785682">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/785/682/9d72f14ac31138199569c2f6c9427c27_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750704801&amp;width=680&amp;sig=DbF2Os9Zhhp6vP7SglhF4g3x%2F2Ss0LWE28pQTIGUOTM%3D"/>
+</figure>
+</div>
+<p>But even with the right ingredients and smart grocery planning, the real question remains — how do you actually <span class="text-italic">use your groceries</span>, day after day?</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49717312">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/717/312/abbbe10f2f52c050a667edc3fb54b11f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750193431&amp;width=680&amp;sig=5mnh688YQk%2BTFe4fT6uIVvt2DxDAEuRiKXa8OSpvCAY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-every-home-cook-needs-a-personalized-cooking-system">Why every home cook needs a personalized cooking system</h3><p>After 7 years of listening to home cooks all around the world, one of the biggest lessons that we’ve learned is:</p><p><span class="bold">No two home cooks are the same.</span></p><p>You have your own schedule, your own tastes, your own way of doing things. That’s why every home cook needs a system — not a rigid routine, but a flexible way to bring your ingredients, ideas, and habits together in a way that works <span class="text-italic">for you day after day.</span><img class="image" data-id="49785463" src="https://i.kickstarter.com/assets/049/785/463/128c26aa6cb942bb45d9837519cbdf36_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750703823&amp;width=3840&amp;sig=q3Hy2ajEoY3EnuqfkYnrFc581W8zLA1AY0eLBFnNn4I%3D"/></p><p>We built Cook Well around four core areas:</p><ul>
+<li>Feed</li>
+<li>Grocery Hub</li>
+<li>Calendar</li>
+<li>Profile</li>
+</ul><p>All designed to support your personal cooking system, not someone else’s:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725749">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/749/72375798562c58d7451cf466d8073e2d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750252093&amp;width=680&amp;sig=aMd3ufrrFiN180G9YLuJKn3q3s5Lt7cLDg9yGwUvKt0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725802">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/802/f906310a27c7dc7497982ade9045143b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750252464&amp;width=680&amp;sig=tSmUpM6pSJKRjsuWHHLonoKKmxavq03V6cB1w28FX8M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725804">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/804/1c319d583e29a54ed06845b1650b872f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750252470&amp;width=680&amp;sig=g6jVaFVzM4hzAeo9f%2BxpFG7hMHUWTq37k%2FjnK6q3Hjw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725801">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/801/0a315f297ab47199158c6f11b4992cd3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750252461&amp;width=680&amp;sig=9aqllyytiGQdWy29PKs6D25geAZi7QJT%2BYkvhfxkFoM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725824">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/824/abbbe10f2f52c050a667edc3fb54b11f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750252589&amp;width=680&amp;sig=Y7IXuFnCHWYqvAbeixxSC8fYWyvOHd10VZX5evJNIGc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:What-rewards-are-available-">What rewards are available?</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49802891">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/802/891/4bb184da33740df6a047e0aaf3decf2f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750798691&amp;width=680&amp;sig=Hg%2FWqoMghW9ZV69ur1XMfaNFNPCIwHmDZlj4j2hCnhg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Exclusive-Merch-Add-Ons-US-Only-">Exclusive Merch Add Ons (US Only)</h4><p>As a thank you to Kickstarter supporters, we’re excited to offer exclusive Cook Well merch while supplies last, plus a reserved batch of our <span>Foundations Cutting Boards</span> &amp; wood care kits.</p><ul>
+<li>US shipping only (although the app is available worldwide)</li>
+<li>Limited quantities</li>
+<li>Ships upon campaign completion</li>
+</ul><p><span class="bold">Cook Well Flavor Pills Comfort Color Tee</span></p><ul>
+<li>High quality Comfort Color heavyweight fabric</li>
+<li>Features our logo on the front and the 5 flavor pills on the back</li>
+<li>Available in S, M, L, &amp; XL sizing</li>
+</ul><p><span class="bold">Cook Well Signature Hoodie</span></p><ul>
+<li>High quality heavy fabric with a comfortable fit</li>
+<li>Features our logo on the front and technique illustrations on the back</li>
+<li>Available in S, M, L, XL sizing</li>
+</ul><p><span class="bold">Cook Well x Baggu Tote</span></p><ul>
+<li>Roomy. Carries 2-3 plastic grocery bags worth of stuff</li>
+<li>Super strong. Holds up to 50lbs</li>
+<li>Compact. Folds into its own flat 5" × 5" pouch</li>
+<li>Machine washable recycled ripstop nylon</li>
+</ul><p><span class="bold">Cutting Board Care Kit</span></p><ul>
+<li>8oz Wood Conditioner</li>
+<li>Easy Applicator Bottle</li>
+<li>Fine Grit Sanding Sponge</li>
+<li>Mineral Oil Free: MCT Fractionated Coconut Oil, Organic Carnauba Wax, Essential Oil, Beeswax. <span>Read more info here.</span>
+</li>
+</ul><p><span class="bold">Foundations Cutting Board (Maple)</span></p><ul>
+<li>24x18” USA Maple Butcher Block (Made from American Hardwoods)</li>
+<li>Reversible &amp; generous workspace for comfortable prep</li>
+<li>Sturdy 1.5” thick edge grain construction</li>
+<li>These are large boards! Make sure they fit in your kitchen before ordering. <span>Read more info here.</span>
+</li>
+</ul><p><span class="bold">Foundations Cutting Board (Walnut)</span></p><ul>
+<li>24x18” USA Walnut Butcher Block (Made from American Hardwoods)</li>
+<li>Reversible &amp; generous workspace for comfortable prep</li>
+<li>Sturdy 1.5” thick edge grain construction</li>
+<li>These are large boards! Make sure they fit in your kitchen before ordering. <span>Read more info here</span>.</li>
+</ul><p>While the app won’t be done until late Fall 2025, we’ll be able to ship out the merch and cutting boards upon completion of the campaign so you can enjoy a physical product while you wait.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725824">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/824/abbbe10f2f52c050a667edc3fb54b11f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750252589&amp;width=680&amp;sig=Y7IXuFnCHWYqvAbeixxSC8fYWyvOHd10VZX5evJNIGc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-trust-us-to-make-this-app-">Why trust us to make this app?</h3><h4 class="page-anchor" id="h:About-our-founder">About our founder</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49802635">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/802/635/4427d48e4571372e664767d20b937923_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750797663&amp;width=680&amp;sig=Fb0QJKOhEQpaXRnKJW3iegFIilFYqNoJ6bXiNx8F9cM%3D"/>
+</figure>
+</div>
+<p>A self-proclaimed home cooking nerd, Ethan Chlebowski is a former consultant and <span>YouTuber</span> who lives in Austin, TX. His ultimate goal is to empower people to cook well for themselves every day.</p><h4 class="page-anchor" id="h:Years-of-rethinking-food-education">Years of rethinking food education</h4><p>Ethan’s home cooking journey started early on with family, but teaching people about food and cooking began 7 years ago when he launched his <span>YouTube channel.</span></p><p>A few years in, Ethan realized his audience craved more than just recipes—they valued the <span class="text-italic">why</span> behind techniques, the frameworks behind meals, and tips for reducing friction in the kitchen.</p><p>He and his team began shaping these insights into a platform focused on the science, lifestyle, and inspiration of cooking well. After the successful launch of <span>cookwell.com</span> last year, the team set out to build a full-featured app to bring these ideas to life.</p><p>Now, we need your support to help us bring it across the finish line.</p><h4 class="page-anchor" id="h:We-re-not-doing-this-alone">We’re not doing this alone</h4><p>We’re not doing this alone or trying to make this happen out of thin air.</p><p>The app is brought to you by the same team, seasoned developers, and award-winning design agency that made <span>cookwell.com</span>. We’ve been working for the past two years to design the app UI, and now we’re ready for beta testing and your feedback.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725826">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/826/abbbe10f2f52c050a667edc3fb54b11f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750252596&amp;width=680&amp;sig=UgCP%2FIWZJ7gOFr%2BCDwZ7boO11atJzi1tjB4lPSMzJOs%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:When-do-you-expect-this-to-go-live-">When do you expect this to go live?</h4><p>The Cook Well app will be launching on both iOS and Android (Google Play) Late Fall 2025.</p><p>Beta testing will be on iOS only via TestFlight.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725827">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/827/abbbe10f2f52c050a667edc3fb54b11f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750252601&amp;width=680&amp;sig=eq7soiFqXct3ZQJ8B37ReNbB56LJpoI82KhFlo3d4zQ%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Building an app is complicated, and even though we have prepared thoroughly and are partnering with seasoned engineering and design firms, you never know what issues might pop up during development. We are confident in our ability to see this project through, but there might be delays for us to ensure that you get the best version of the app you deserve.
+
+Kickstarter is an all-or-nothing model. If the campaign goal isn’t reached, you won't be charged and all orders will be cancelled.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

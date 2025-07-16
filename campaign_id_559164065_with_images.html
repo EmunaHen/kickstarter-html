@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MILENAS – The world’s smallest NAS cloud drive</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/634/771/9b0405372756716e0f08bdeb6b1a1c6c_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749633471&width=560&sig=ReLILARrWuhdJtambbIa8FUKiiOvs55sHNUgPz47GJs%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>MILENAS – The world’s smallest NAS cloud drive</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Your Private Cloud Hub | 2TB Capacity | Remote Access Anywhere | Secure Sharing via Link or QR | Multi-Device Sync | One-Click Backup</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>34 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634135">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/135/9b0405372756716e0f08bdeb6b1a1c6c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749630262&amp;width=680&amp;sig=U7s18DZ4lbzgomkLxSDPsyDFM7vE4CFV0zLeYCwZAh8%3D"/>
+</figure>
+</div>
+<p>At MILENAS, we believe portable storage should be powerful, private, and effortless. Meet <span class="bold">MILENAS</span>—your pocket-sized personal cloud NAS, built for creators, teams, and everyday users who demand secure and seamless access anywhere.</p><p>With built-in storage (up to 2TB), automatic USB/cloud mode switching, and support for multi-user private and group spaces, MILENAS transforms file management into a smart, mobile experience. Share, back up, and access your data across devices—whether you’re offline using the built-in Wi-Fi hotspot or connected remotely via SMB/WebDAV.</p><p>More than just storage, <span class="bold">MILENAS</span> is your always-on, anywhere-access workspace—designed for the way you work, move, and share today.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634144">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/144/31df99d3a24a56b39751d85d66eadf8a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749630332&amp;width=680&amp;sig=djmmUW5FT1IIg%2Bc0AcchKy86659wW9kKZ6dndwSWL5Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634146">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/146/39da186c6935ae1f8061f198443b3736_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749630351&amp;width=680&amp;sig=%2Bg1navm0kEs6TwNVNq6TwNW12I4C%2BhTma%2BRpZ8TauT0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634152">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:In-the-data-age-storage-methods-must-evolve">In the data age, storage methods must evolve</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/152/6184299ddfdc81ca66a469e487e3df65_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749630398&amp;width=680&amp;sig=3DBo%2Fp8znhFeCOUlWZs8AVHbKOncgosn70j%2F3nXLxXU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634157">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/157/9dbc972fa71e9fcfa28734a7ef03970c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749630427&amp;width=680&amp;sig=LadYUQlnIuO%2F6FDqvfwH0p3ZLx6EJG1KSEYF0L0ywCI%3D"/>
+</figure>
+</div>
+<p>Traditional storage struggles to keep up in today’s mobile, data-intensive world.<br/>Cloud services become increasingly expensive as your data grows. External drives are fragile and prone to loss or damage, putting your critical files at risk. Conventional NAS setups are bulky, complex, and locked to one location — far from ideal in a fast-moving digital era.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634166">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Power-Behind-MILENAS-MT7628-Inside">The Power Behind MILENAS: MT7628 Inside</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/166/9bacf8733156a9151886a50b61fc55de_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749630462&amp;width=680&amp;sig=eRCZzyHTP5UC%2BzrXyYQ9cSYdjrI6MkHg0tOsqcpx1zM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49804516">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/804/516/6312d3377c2b59c28ead98428f2c8722_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750807491&amp;width=680&amp;sig=HbGYTBaC3Vem7xT8Q1YYwGKP5zVsMptvpJ28Qr5bOsM%3D"/>
+</figure>
+</div>
+<p>MILENAS, a compact, quiet, and energy-efficient personal cloud storage device, is powered by the MT7628 chip — enabling the following key benefits:</p><p><span class="bold">1. Ultra-Compact with High Integration</span></p><p>MT7628 integrates Wi-Fi, USB, and Ethernet controllers in one chip, allowing MILENAS to achieve its truly palm-sized design.</p><p><span class="bold">2. Low Power for Silent 24/7 Operation</span></p><p>The chip consumes very little power and requires no fan, enabling MILENAS to stay online quietly around the clock — ideal for home or office.</p><p><span class="bold">3. Multi-Device Access Anytime, Anywhere</span></p><p>With built-in Wi-Fi and network port, MILENAS connects easily to phones, PCs, and smart TVs for seamless file access and sharing.</p><p><span class="bold">4. Flexible Expansion — Wi-Fi 5 &amp; 6 Ready</span></p><p>USB ports allow connection of Wi-Fi 5/6 adapters, external drives, or gigabit network dongles to meet advanced connectivity needs.</p><p><span class="bold">5. Open-Source Friendly, Personal Cloud Ready</span></p><p>Supports OpenWrt and other systems, with SMB, FTP, web UI, and remote access pre-enabled — making it easy to build your secure, private cloud.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634178">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-World-s-Smallest-Personal-Cloud-NAS">The World’s Smallest Personal Cloud NAS</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/178/85b34ee7e551ef1d1d77d1bf38295d60_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749630537&amp;width=680&amp;sig=8iHjMbd5P9B78IJOVPZWM9QX0L4MjEjeAsCFDONdb0M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634199">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/199/2b3b1c124d83eabe91950ee1c8f82c69_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749630586&amp;width=680&amp;sig=ODHqHAKJZIv0nvVYH7bVL67%2BNjjQCP0WrY81G3cSRU4%3D"/>
+</figure>
+</div>
+<p>Don’t let its compact form fool you. With just a cable, <span class="bold">MILENAS</span> transforms into your personal <span class="bold">Mini NAS</span> — no setup headaches, no bulky enclosures. Its sleek, pocket-sized design runs whisper-quiet, with <span class="bold">no fans</span> or noise to distract you. Paired with its built-in system, <span class="bold">MILENAS</span> offers a plug-and-play private cloud experience that’s simpler, smarter, and more elegant than traditional NAS solutions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634313">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Remote-Access-Real-Freedom">Remote Access, Real Freedom</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/313/6d0b50de1a54c482997eabb9c102d88f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631075&amp;width=680&amp;sig=2VObyVLsVMmVP9BtkK0G6ChtsYJtpN086J7XyP5efmQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634220">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/220/1d8331ef38f20095e642f8e07a5e9dfe_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749630674&amp;width=680&amp;sig=l9CpifSXKjAs6I8qnzwOQYGQypDoiRsFg0A8fblG1Ao%3D"/>
+</figure>
+</div>
+<p><span class="bold">With MILENAS, your personal cloud is just a tap away.</span></p><p>Whether you’re traveling, working remotely, or relaxing outside, MILENAS lets you access all your files at home—directly from your phone or laptop.</p><p>Stream music and videos instantly, no downloads needed. Back up documents, open folders, and share content anytime.</p><p><span class="bold">Forget the bulk. Access everything, anywhere.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634323">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:QR-Code-or-Link-Download-with-One-Tap">QR Code or Link, Download with One Tap</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/323/aaafce981593319e1753844e256a3a31_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631137&amp;width=680&amp;sig=p8OTEXMeJnikGUUe53Novj4UDrStHOYUW%2F1CYcOBXeQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634328">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/634/328/5a88258c2b02dd0c239a857bbb60259e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631185&amp;width=680&amp;sig=52Wr3AN0gxETIU1IAj8E781f6KTPLxfovd7pC2FCONI%3D" src="https://i.kickstarter.com/assets/049/634/328/5a88258c2b02dd0c239a857bbb60259e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631185&amp;width=680&amp;sig=52Wr3AN0gxETIU1IAj8E781f6KTPLxfovd7pC2FCONI%3D"/>
+</figure>
+</div>
+<p><span class="bold">With MILENAS, sharing is truly effortless.</span></p><p>Generate a QR code or shareable link in seconds—no app install, no login required.Send photos, videos, or documents to anyone, across phones, tablets, and computers.Want more control?</p><p>Set an expiration time, limit the number of downloads or plays, or add a password for extra privacy.</p><p><span class="bold">Fast, flexible, and secure—file sharing, your way.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634352">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Direct-Plug-or-Remote-Link-You-Choose">Direct Plug or Remote Link—You Choose</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/352/a468cea9a58fdcc2500f7323c494237a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631373&amp;width=680&amp;sig=63lQjPLJQyosHkCpPjLvvsu9mFJ%2BuJ6A7OfEA2g%2FzBs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634341">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/634/341/ee0974ed66748c930aa16778a48ad39d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631277&amp;width=680&amp;sig=W8sD4DuO6yTExVZzKp6ahkJRQRIrI4HnrBQ0aMdEdgY%3D" src="https://i.kickstarter.com/assets/049/634/341/ee0974ed66748c930aa16778a48ad39d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631277&amp;width=680&amp;sig=W8sD4DuO6yTExVZzKp6ahkJRQRIrI4HnrBQ0aMdEdgY%3D"/>
+</figure>
+</div>
+<p><span class="bold">MILENAS adapts to how you work and where you are.</span></p><p>Need fast, local access? Just plug in via USB and use it like a regular external drive—instant, smooth, no setup.</p><p>No matter where you are or how you connect, your data is always right at your fingertips.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634356">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Real-Time-Backup-Ready-When-You-Are">Real-Time Backup, Ready When You Are</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/356/979c30001a9b36bb6b5e397a2cece208_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631406&amp;width=680&amp;sig=leTAQ6pM6hhqtbU4LcI8P6LDS1szdA6Iym9egtSxgs8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634360">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/634/360/b4f0cb21d507e219bc07690edb70d692_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631424&amp;width=680&amp;sig=SmMYh%2BKamBNFcsLG4Vvl2uY74V3Dt7lVLLYNFpXHGUc%3D" src="https://i.kickstarter.com/assets/049/634/360/b4f0cb21d507e219bc07690edb70d692_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631424&amp;width=680&amp;sig=SmMYh%2BKamBNFcsLG4Vvl2uY74V3Dt7lVLLYNFpXHGUc%3D"/>
+</figure>
+</div>
+<p><span class="bold">Back it up. Walk away. It’s already there.</span></p><p>You’re deep into editing a 12GB 4K video on your desktop. Suddenly—meeting call.</p><p>No panic. Just hit backup.</p><p><span class="bold">MILENAS kicks in instantly</span>, pushing your files across the network at up to <span class="bold">300MB/s</span>.</p><p>You grab your laptop, head down the hall, open the lid—</p><p>Boom. Your project is already there, waiting for you.</p><p>No cables. No waiting. No second-guessing.</p><p>Just lightning-fast backup, synced across your devices like magic.</p><p><span class="bold">MILENAS keeps your workflow flowing—even when you’re on the move.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634366">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Backup-Photos-Videos-On-the-Go">Backup Photos &amp; Videos On the Go</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/366/c5dde57b840577b1d83ae7833b9978dc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631471&amp;width=680&amp;sig=yyl8JW6Yp%2BhhNXhkvzZxQSc7qhd98NIDTZsJtkygWf8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634382">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/382/2d37a5d8502b572b7d8c5bcc190f1df7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631509&amp;width=680&amp;sig=gNZLVRzoyDSkziAssuqGzgqKtOpbhNVSNA0Z%2Bvty9TQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">MILENAS makes it easy to back up your phone anytime, anywhere.</span></p><p>Using Wi-Fi or mobile data, your photos and videos are automatically saved to your personal MILENAS cloud.</p><p>After backup, you can free up valuable phone storage in one tap—never miss a moment due to lack of space.</p><p><span class="bold">Smart, secure, and cable-free. Back up with ease, wherever life takes you.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634388">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Multi-User-Access-Private-Storage">Multi-User Access, Private Storage</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/388/7c821766db12730b776f2f39e155dc7d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631539&amp;width=680&amp;sig=7dvspD42fYuEjgh64C3H%2BhbJ8z0ylCLks4sm0xpwvWQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721839">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/721/839/36cdc081bef585ea00ef07c893356d1b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750225082&amp;width=680&amp;sig=YrcDrfeJzl9D9oBQ5WgPcGxSe7yVkhBcNxsNlUghDWw%3D"/>
+</figure>
+</div>
+<p><span class="bold">MILENAS is built for multi-user access with fully independent storage spaces.</span></p><p>Multiple authorized users can log in to the same device using their own accounts, each enjoying a private and secure storage area.</p><p>Administrators can easily create shared folders and assign access rights, perfect for family use or team collaboration.</p><p>Whether it’s backing up personal files or sharing work resources, MILENAS keeps everyone organized and in control.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659005">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:2TB-of-space-to-accommodate-your-entire-life">2TB of space to accommodate your entire life</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/005/0b11045c768470ca20d2dd1c06a0f883_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749782853&amp;width=680&amp;sig=R9714YrceEZUkeWoNQqn8qAuO0LYrmpLMwqTibnjqGY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634430">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/430/1c72e71198e023b9c797831c5d95e3b6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631673&amp;width=680&amp;sig=bEKyY%2FLo7qqv7Ahw56fBl56HuQ3kYWDvW9VIeAUosqU%3D"/>
+</figure>
+</div>
+<p>From years of travel photos and 4K videos, to work files, apps, and your favorite music playlists —</p><p>MILENAS gives you 2TB of secure, private storage that moves with you.</p><p>Back up everything from your phone, tablet, or computer at high speed, access files remotely, and share them easily when needed.</p><p>No more storage anxiety. Just peace of mind, wherever life takes you.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659030">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Multiple-Power-Modes-One-Secure-Cloud">Multiple Power Modes, One Secure Cloud</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/030/4298867307aafb06ca4062b48351699f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749782997&amp;width=680&amp;sig=4LSwFUSc31uy%2FXh%2FkOd9kDJwTvmARM3712rnjmwtyko%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49725995">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/725/995/f08934f0fcf8f7591d968972b87072bf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750253445&amp;width=680&amp;sig=u%2BXuu12QqhRRZW7tp5bpjBbn8J1gd6fCKcJ0EAbAj9U%3D"/>
+</figure>
+</div>
+<p>MILENAS is equipped with multiple intelligent power and security modes for a safer, quieter, and more energy-efficient experience:</p><p><span class="bold">One-Tap Sleep</span>: Instantly enter low-power mode with a single press</p><p><span class="bold">Auto Sleep</span>: Automatically saves energy when idle</p><p><span class="bold">Scheduled Sleep</span>: Set your own time window for sleep mode</p><p><span class="bold">Power Saving Mode</span>: Reduce energy use during extended standby</p><p><span class="bold">Fanless &amp; Silent</span>: Zero noise design—perfect for night use</p><p><span class="bold">Secure Standby</span>: Even in sleep, your data stays safe and protected</p><p>MILENAS smartly balances performance, energy, and peace of mind—all in one quiet, reliable device.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659065">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Unified-storage-easy-control">Unified storage,easy control</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/065/245b59e827a6206e239ba0e9f590fa7b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783148&amp;width=680&amp;sig=MnOhMd%2F3BqTTTduh0ZgAR6NOuUthUpeonNTVVNNj%2B8g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634444">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/444/6d05453c8e3d47e09bc13ed8f4156f45_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631776&amp;width=680&amp;sig=TVZYnCXB88odUBKO%2BOfLaQzj5TZQWR2tZAYRrr8tPjY%3D"/>
+</figure>
+</div>
+<p><span class="bold">MILENAS centralizes all your data into one secure, accessible hub.</span></p><p>With just a click, you can gather files from USB drives, Samba LAN, local disks, and cloud services—no more switching apps or digging through devices.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634454">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/454/c3da72ef7c8b6095811670e0df62e99d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631825&amp;width=680&amp;sig=fpHqimYWpB8O0EiFXD8UXbT%2FOa%2FbsTsbB8PXn%2FcZxXw%3D"/>
+</figure>
+</div>
+<p>Built-in support for the professional <span class="bold">SMB</span> protocol ensures seamless compatibility with PCs, smartphones, and smart TVs. One-click setup, no complex permissions required.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659081">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Remote-Access-Rael-Freedom">Remote Access, Rael Freedom</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/081/6d0b50de1a54c482997eabb9c102d88f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783242&amp;width=680&amp;sig=qWa0D6Em%2BtE7r8KNTJAU7rpLdoP%2BA5cKnWxKKipyk9M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721706">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/721/706/56c88f463a7b633b1a4d75879630a381_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750223832&amp;width=680&amp;sig=GBF2jBaReVkF%2BlqJTcEhTjKS1qPPcMAiWsJqdsaoMI4%3D"/>
+</figure>
+</div>
+<p><span class="bold">MILENAS</span> maps remote folders as local drives—making file access feel truly native.</p><p>Browse and edit Office files, PSDs, CADs and more directly online—no downloads, no delays.</p><p>Perfect for remote work, real-time collaboration, or on-the-go edits.</p><p>Powered by the <span class="bold">SMB</span> protocol with secure encryption and user-level controls,</p><p><span class="bold">MILENAS</span> combines speed with enterprise-grade reliability.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659107">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:File-Updates-Instantly-Clear">File Updates, Instantly Clear</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/107/d88212c56d796247d3b8b1996e345da8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783502&amp;width=680&amp;sig=juSKmk%2BKps0pdUHS7SySGvbXGAwd6cHE%2B%2FeXzgVLOCk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634479">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/479/c906433a7c02d34205a67fae4403d02e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749631993&amp;width=680&amp;sig=qcIKxpsKnCwOmPKATeEGpBmqc9DA4VmJyPbOyafPU5U%3D"/>
+</figure>
+</div>
+<p><span class="bold">MILENAS</span> makes team collaboration more transparent and efficient than ever. Every file added, changed, or deleted in the shared space appears as a real-time update in each team member’s app—just like scrolling through a Facebook feed. No need for manual check-ins or repeated notifications. Stay aligned, stay productive, and keep your workflow seamless.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659118">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Not-Just-Storage-A-Smarter-Wi-Fi-Hub">Not Just Storage — A Smarter Wi-Fi Hub</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/118/a407bc0777e4a0256d3fd7f397e5eb66_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783563&amp;width=680&amp;sig=B4cvKy%2Ff3qiLicAK5H0BpLjn8joqxjgUM8KrHFkJF80%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634485">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/485/d815bacb80edbf19a24b055d47125d4a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632050&amp;width=680&amp;sig=ZZmW6puIsBnlI3MVWmwF%2Blm3QIjACfanxtXWKY9cq9o%3D"/>
+</figure>
+</div>
+<p>MILENAS features a built-in Wi-Fi module, allowing it to create a dedicated hotspot.</p><p>No router required—connect your phone, laptop, or other devices directly.</p><p><span class="bold">It also works as a Wi-Fi extender, boosting coverage in low-signal areas</span></p><p>for a more stable and reliable network experience.</p><p>Combining storage and connectivity in one smart, portable device.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659125">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:MILENAS-Specifications">MILENAS Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/125/8a90a568264128cb17ec02a4a13b6835_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783600&amp;width=680&amp;sig=rBNYqbcN5dKy%2BFzf3LgNmFBlkze7UlvSh3zjgdgX0BE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634494">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/494/b6cc505cc29225841659f571b4634e9e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632088&amp;width=680&amp;sig=bFMnxhIOdMRS%2F0GUQZSqGv1EUTPMlhe4fEMP8Dl5SFI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659126">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/126/71d787b69c55101497e7d5d6c1efdb16_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783622&amp;width=680&amp;sig=1otUTBdERvki87wU2y1aR9Rmd49r%2Byn1LCsPIbwWh9Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659150">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/150/cc89153508adbe1c8bef874102014ae7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783807&amp;width=680&amp;sig=P%2Fy1s%2Bvtd8mHUqeSUH%2B7uTy%2F4eh%2BMFPjKgfDd5ioMBA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634508">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:ADD-ON">ADD-ON</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/508/243c147ab448e1f89ab4e293e62d3c3c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632132&amp;width=680&amp;sig=15JN79YjVe%2Fl1T61s8fZ%2BrSuAyFssOJPoO2jE8gUafM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634510">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/510/1de598da8735409772dc133b645585d6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632133&amp;width=680&amp;sig=prueSDttek45YVYaumY%2BIY7W%2Bz4Hf6oyxbgIomPVqvU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659132">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/132/156df030e7684d46a23503133b72e701_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783649&amp;width=680&amp;sig=omsTI59%2Br6FIfiqb0MEYZaTHfmbc1KiDoYMdchmBfQI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49634551">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/634/551/3004412810bef8053257aac2283071c7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749632266&amp;width=680&amp;sig=bF6gd7gPvC8xkWXricbVNMfjm827Mz7HlTVp%2BdiZ%2Bc0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659136">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:3D-Prototype">3D Prototype</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/136/81177ccf19ae42b95e9ada2b0546db20_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783666&amp;width=680&amp;sig=HYpsybY1rAVD5%2BKe%2Bqp6jBM3Ij5fqC9xf5ruYWkfSQ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721869">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/721/869/fa7ab64365b36ff4cee3bf01cdff18f5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750225398&amp;width=680&amp;sig=JznqkXafuDpJvk4Om%2BqLBfhEKxF%2B1A%2B7QVdF5CJPhyY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Prototype-demonstration">Prototype demonstration</h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659140">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Us">About Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/140/0c955b792b8d57a1154a8490bb309c09_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783685&amp;width=680&amp;sig=upDtuz3i8Q%2FyF0uGhesiIjv4IDcSHjv88GdYmeGytzE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659161">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/161/935c0b1aa3e899be4bd74d0c5101f915_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749783895&amp;width=680&amp;sig=Ki1%2FfkJeeskIG4O7lq3nxNOtknlb3TGLk%2FcXd9DMHu4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Born from the idea that everyone should have full, easy control of their data,</span></p><p><span class="bold">MILENAS</span> is redefining how we store and access information in a connected world.</p><p>We create compact, secure, and smart personal cloud devices that simplify your digital life. Whether you’re backing up files, streaming videos remotely, or sharing content with your team, MILENAS gives you high-speed, app-free access—anytime, anywhere.</p><p>Forget bulky drives and scattered files. With MILENAS, your private cloud travels with you—secure, seamless, and always within reach.</p><p><span class="bold">Secure. Efficient. Designed to connect your digital world.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49819938">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/819/938/54781de5c0e9a9ee87c9f5c58f7dff5b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750903507&amp;width=680&amp;sig=zY9bBfbuogKwxekKs24bvPo4GD4JJxlS5HpzGwdYKic%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49820108">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/820/108/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750904466&amp;width=680&amp;sig=kcjYYGKgB6x4BWnJcw1SF3d9uTaXcRFM2R5s1QvzBDU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49836109">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/836/109/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751011753&amp;width=680&amp;sig=PcQkubAxcHcfD%2FHe382eyj7%2FbaeivcnMJTHnWpfIu3c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49930111">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/930/111/2a4fb6dfdad3e0851c68f4eb1ca9f1c5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751704162&amp;width=680&amp;sig=56FLVQba84ZedqYGOVFzTGyBVwR21%2FKVPmrsXCitwS8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49930676">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/930/676/6538e83f9ff37276e48829b47f6e018d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751709752&amp;width=680&amp;sig=N2s9Y7o72s8WvMn9xxAWiW6yj33Ijxh4BML9VttgDgA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49961120">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/961/120/dca85caa45a76bc75377292a19bac2c1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751963135&amp;width=680&amp;sig=49IdL%2FPeh%2FG%2FWDbp9CYCuYQhVlzPuyHRVWJ0gM7kzLI%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We’re thrilled to bring MILENAS to life on Kickstarter! After months of development and testing, we’re confident that MILENAS will be delivered to every backer in its best form — reliable, refined, and on schedule.
+
+That said, as with any hardware project, there are still a few challenges we’re actively managing. Global logistics disruptions, flash memory price fluctuations, and the sourcing of key components like chips could potentially impact our production timeline. To stay ahead, we’ve secured key suppliers early and expanded investment in production planning.
+
+We’ve built MILENAS with care — and we’ll deliver it with the same dedication. With regular updates and open communication, we’ll keep you informed every step of the way. Your trust means everything to us, and we’re committed to honoring it with a product that exceeds expectations.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

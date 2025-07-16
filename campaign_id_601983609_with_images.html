@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hengbot Sirius: The World's First Trainable AI Robotic Dog</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/993/210/eb0ec273d78e2fc17ba604bcb4b6d415_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752173052&width=560&sig=A4kdhjRZc0xCEDtMH9D3QwTu9k%2FD8IuQEvVZWpU9QoY%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Hengbot Sirius: The World's First Trainable AI Robotic Dog</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Super Agile Robot in 1KG | 1000+ Motion Library | AI Multimodal Interaction | 5 TOPS AI Processor | Bionic Design | Creator-Friendly</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991519">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/519/882b1afacccea8150e63935f1684b23a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752165286&amp;width=680&amp;sig=WNm2kgebEgcWwKKj3MfRGmnMqnMNWU8n%2FDnKVlXnTzI%3D" src="https://i.kickstarter.com/assets/049/991/519/882b1afacccea8150e63935f1684b23a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752165286&amp;width=680&amp;sig=WNm2kgebEgcWwKKj3MfRGmnMqnMNWU8n%2FDnKVlXnTzI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49993026">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:As-Seen-On">As Seen On</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/993/026/aa4021ecd85b37d6aa5e05aacec3ea7a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752172142&amp;width=680&amp;sig=2w5soeBHWLRaIXRyDvTE%2Bu3Ew2%2BR4ykeVcmke9szWZw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990485">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-Sirius-Your-Story">Your Sirius. Your Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/485/0505eb83a640a4b58008e8869f235255_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752159994&amp;width=680&amp;sig=nzTwIWFsDXDeZRO1Fdvc87j4hretYzGai1sZg%2BgVLEk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991468">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/468/43aae3481778f7ae1c9505f3c9f5a781_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752165103&amp;width=680&amp;sig=UG7zfpTUO6FKjIS9kUbhWi2XunVwXwWj%2FV1yzETeSDI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990498">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sirius-Core-Capabilities">Sirius Core Capabilities</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/498/3dbd3e311adcb2d770e7644d748eedb4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752160033&amp;width=680&amp;sig=qP%2FmF8AnelHWtEDiGb9z9%2B434jw7A1mQkxLqVA51E2M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991091">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rich-Behaviors-Agile-Movements-Just-Like-a-Real-Dog-">Rich Behaviors. Agile Movements. Just Like a Real Dog.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/091/4e144f0c8c561276f83a431e4246730d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752163080&amp;width=680&amp;sig=u6GxeIyY6onpd3JPVZBLPza6MoZeFnZ7jr%2FX1ONFQm4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991097">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/097/98dc5b34d315c63527002622c5aa8973_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752163112&amp;width=680&amp;sig=NVazWFTFm8ecLk6VTpzfcDF7rLesRg76TDD5m52AWU0%3D" src="https://i.kickstarter.com/assets/049/991/097/98dc5b34d315c63527002622c5aa8973_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752163112&amp;width=680&amp;sig=NVazWFTFm8ecLk6VTpzfcDF7rLesRg76TDD5m52AWU0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990511">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/511/63a728e81fd0528524f9b1c93541c28b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752160073&amp;width=680&amp;sig=5aoayxnUlKUEI%2BquvazpNJDX1bJ5OuJjGaoB6hYp5V0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990649">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/649/577505d67d4f66b9aa82560b081ce6bb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752160718&amp;width=680&amp;sig=Nm%2BySxpqSL9kb0upkNtjLqI2qwcjFxsHbsUDQjCPhs4%3D" src="https://i.kickstarter.com/assets/049/990/649/577505d67d4f66b9aa82560b081ce6bb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752160718&amp;width=680&amp;sig=Nm%2BySxpqSL9kb0upkNtjLqI2qwcjFxsHbsUDQjCPhs4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990512">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/512/72106c1a1cd69cadee1a99f676616b3a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752160083&amp;width=680&amp;sig=gZlhgQW%2Fz7jsK2g28PjIsyYf0%2BjVPHQlEfuWIgivSoc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990713">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/713/e907a1cae95e1eba05082b4c8c5af335_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752161093&amp;width=680&amp;sig=k3fl%2FNU8Se%2BkJIpg9mxx4lSyjnLBAk8gDLabDAFWxCc%3D" src="https://i.kickstarter.com/assets/049/990/713/e907a1cae95e1eba05082b4c8c5af335_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752161093&amp;width=680&amp;sig=k3fl%2FNU8Se%2BkJIpg9mxx4lSyjnLBAk8gDLabDAFWxCc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990513">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:A-Burst-of-Joyful-Energy-">A Burst of Joyful Energy.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/513/1cd489808677db827dc48339c2b535d5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752160093&amp;width=680&amp;sig=ovCXbEzPEq%2FChoonivJX2boQV4BhwY88Ih4DjdDtVn4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990599">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/599/0c88488e90169dc673f4321ea67c1eab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752160494&amp;width=680&amp;sig=uMBa1btqzdAhRvKS3vF3kqKMnuu%2BwlrlypHNEHoJ6Gw%3D" src="https://i.kickstarter.com/assets/049/990/599/0c88488e90169dc673f4321ea67c1eab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752160494&amp;width=680&amp;sig=uMBa1btqzdAhRvKS3vF3kqKMnuu%2BwlrlypHNEHoJ6Gw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990516">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/516/4e62866c364778d51ca4619e33f8d659_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752160108&amp;width=680&amp;sig=v7PcLWAY3igwx50ycRrkxvX%2FtTKJJffgCFIJknDQr5Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50029128">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/029/128/199269c1d2b9cae8ba343dbfc0c1dbb5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490737&amp;width=680&amp;sig=T7n1bCuAPNjcdreEdzXicb2glF6X56qEzABnNsKInus%3D" src="https://i.kickstarter.com/assets/050/029/128/199269c1d2b9cae8ba343dbfc0c1dbb5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490737&amp;width=680&amp;sig=T7n1bCuAPNjcdreEdzXicb2glF6X56qEzABnNsKInus%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990519">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/519/1581c9334ff73f0e560f93bf801e258d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752160126&amp;width=680&amp;sig=GaDhBNyev8bZfvAi4q5IfQU%2F7pWmXExhfyHh6jtDS2w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49993269">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/993/269/0ed4045c610f35e767e8865673263805_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752173239&amp;width=680&amp;sig=vXjC%2FX0bJwiA58SSgXteQ5vzpCd%2B2vy6h1%2BEEI%2FFLzU%3D" src="https://i.kickstarter.com/assets/049/993/269/0ed4045c610f35e767e8865673263805_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752173239&amp;width=680&amp;sig=vXjC%2FX0bJwiA58SSgXteQ5vzpCd%2B2vy6h1%2BEEI%2FFLzU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990522">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/522/699b9c46bd9ba7de2eb1fcb33228b90d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752160131&amp;width=680&amp;sig=jiGkYo52%2FzzMehm2gdV%2F%2BtgcWTYJR6QTFVxb4X036hM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50029212">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/029/212/06fb65d450c980f58694804f334c7202_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752491103&amp;width=680&amp;sig=zlxouwEyto95%2Fq2ZLpZbZ1u3rPPFzzc4sXaI3qxR6%2BY%3D" src="https://i.kickstarter.com/assets/050/029/212/06fb65d450c980f58694804f334c7202_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752491103&amp;width=680&amp;sig=zlxouwEyto95%2Fq2ZLpZbZ1u3rPPFzzc4sXaI3qxR6%2BY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990710">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/710/ef25ea89460c1d8a122e16a61441932a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752161062&amp;width=680&amp;sig=6Y8ZHBeybT20JTL4TvtXpIrTIvQVDkLxzou0MI9%2BMd4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990726">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/726/39ad271ca7e487749d38b1b8e0740328_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752161150&amp;width=680&amp;sig=lJB9zz5tl2ML94Um7VX2PEfLwYEznH3L3hVDsCMJdsU%3D" src="https://i.kickstarter.com/assets/049/990/726/39ad271ca7e487749d38b1b8e0740328_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752161150&amp;width=680&amp;sig=lJB9zz5tl2ML94Um7VX2PEfLwYEznH3L3hVDsCMJdsU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990733">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Multimodal-Interaction-Re-engineered-">Multimodal Interaction. Re-engineered.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/733/4f510bd79bff91314aef8b0de2bcb8ab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752161195&amp;width=680&amp;sig=ntHPKQSyDyRK3atBlNFYiLJoKApGDpw3ayk6uwsmgqM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990740">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/740/4f46c7e1f8b114fe89ac435baa6820d2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752161223&amp;width=680&amp;sig=11vIpf2HLrK3NGn%2FVMNEQJXDZexl85Mm5JTh9kajQug%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990750">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/750/e153e997c2ef8fa1b26ae2561be402c3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752161267&amp;width=680&amp;sig=H6PDnM%2FEEI7A9Zfe630yrveeCulw16frJ7twJ0R6QhQ%3D" src="https://i.kickstarter.com/assets/049/990/750/e153e997c2ef8fa1b26ae2561be402c3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752161267&amp;width=680&amp;sig=H6PDnM%2FEEI7A9Zfe630yrveeCulw16frJ7twJ0R6QhQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990768">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/768/4811acbd690efa9b45dee216d3ac85d4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752161402&amp;width=680&amp;sig=c%2BZsskikrmYXemVYAjqtEYul0vkG8x0jdwAaCueXuLQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50029160">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/029/160/65b4599741886438b2a450ac6f3cbcee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490867&amp;width=680&amp;sig=tgVLrwUSpBsDMZLj8kvfKlRTxgOVan4ftQmuYCxTCC4%3D" src="https://i.kickstarter.com/assets/050/029/160/65b4599741886438b2a450ac6f3cbcee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490867&amp;width=680&amp;sig=tgVLrwUSpBsDMZLj8kvfKlRTxgOVan4ftQmuYCxTCC4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990770">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/770/26c3c515917a61406a4036061ad0b959_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752161413&amp;width=680&amp;sig=eQDtK%2BHYS75l7%2FfkzWkw2LpX6Tk4cnEKy7L6X1gN19Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50029157">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/029/157/cef2db2c1ad93efc84326ac3633dec34_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490860&amp;width=680&amp;sig=1wFzOgGVU07F%2FXqixzF%2FmRrmZaLZ64N4QTEUCW7RpW0%3D" src="https://i.kickstarter.com/assets/050/029/157/cef2db2c1ad93efc84326ac3633dec34_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490860&amp;width=680&amp;sig=1wFzOgGVU07F%2FXqixzF%2FmRrmZaLZ64N4QTEUCW7RpW0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990797">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/797/443af83518f34aa31a7751dc0ba36ff3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752161549&amp;width=680&amp;sig=5LCy6BhGgrh0RV12dRsYINwdZU1MvHH8J62VOpHUP9Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49999532">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/999/532/d201f71bfde9016ff96ffb40d2bc5a59_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752222030&amp;width=680&amp;sig=yryMxFb36DEiAfgqax1bzXmmpQMM1wTCCHmgtB6fSNg%3D" src="https://i.kickstarter.com/assets/049/999/532/d201f71bfde9016ff96ffb40d2bc5a59_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752222030&amp;width=680&amp;sig=yryMxFb36DEiAfgqax1bzXmmpQMM1wTCCHmgtB6fSNg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990803">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/803/4f966aa7da26418f28fa5d60e1eb51af_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752161591&amp;width=680&amp;sig=7EXa%2B5kWd7WyqEg77aoSD%2FpTN3dr90tex43%2BLcBxAQI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990805">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/805/528ac2106ce781f0193255d96223e549_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752161602&amp;width=680&amp;sig=hAIQ1bVGvKcksRoQWYxn2x8sGkWpDvstJaC1jzIxMSs%3D" src="https://i.kickstarter.com/assets/049/990/805/528ac2106ce781f0193255d96223e549_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752161602&amp;width=680&amp;sig=hAIQ1bVGvKcksRoQWYxn2x8sGkWpDvstJaC1jzIxMSs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990808">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/808/6e7bacbd6d25db071a99dc6afa8d30ba_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752161635&amp;width=680&amp;sig=9aA2ABdJnv4BUt5naW8OQvPs7bN%2FSQwKW4294n4I0E0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50029143">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/029/143/43fc853576fbece805c07805fe96bdc6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490804&amp;width=680&amp;sig=oznFzplUXOeuwGpEuDUxZMKsw3%2BjUVpJNsoOs8foEK4%3D" src="https://i.kickstarter.com/assets/050/029/143/43fc853576fbece805c07805fe96bdc6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490804&amp;width=680&amp;sig=oznFzplUXOeuwGpEuDUxZMKsw3%2BjUVpJNsoOs8foEK4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990825">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/825/d356ee4886773c42df1049e9d797115d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752161719&amp;width=680&amp;sig=MO0%2BUQDD2imSqgF4WhutWfOjbdBTryqs8hXsbzP6kuw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991117">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/117/3c821538126da733f01e8d76f88dcb83_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752163248&amp;width=680&amp;sig=Zn1zeYSWr7CmupwUw2a%2FJagtHqZcg12ZNkyoxFYa6c4%3D" src="https://i.kickstarter.com/assets/049/991/117/3c821538126da733f01e8d76f88dcb83_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752163248&amp;width=680&amp;sig=Zn1zeYSWr7CmupwUw2a%2FJagtHqZcg12ZNkyoxFYa6c4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991082">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/082/01573c387b30aa1bed9993c3a13a3d69_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752163033&amp;width=680&amp;sig=Fh8LE3dIdKcuxlZJ4lDfGB8FWS1uz0lbc%2FKRT0NzkJU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50029141">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/029/141/7d805a229f0a101ee89db99257b3ee22_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490794&amp;width=680&amp;sig=BjufcGX2foARBYHwoCs6p69zRge1%2F8AsbOIuKKVsM3U%3D" src="https://i.kickstarter.com/assets/050/029/141/7d805a229f0a101ee89db99257b3ee22_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490794&amp;width=680&amp;sig=BjufcGX2foARBYHwoCs6p69zRge1%2F8AsbOIuKKVsM3U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990876">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/876/790effe4dea27012d182f7cad65ee3d3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162021&amp;width=680&amp;sig=QLkfOgkaoX3I%2Bt7uXQ2Fc0vJ%2BBxMf3uXl%2FML%2BEYDFXU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990887">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/887/c3addaa39aef4382fc2c802a2ff2f0bf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162068&amp;width=680&amp;sig=ocnDpqYaO6dRgGTtTBnlKA5zfsmaVIE5LcSvyU5NcAQ%3D" src="https://i.kickstarter.com/assets/049/990/887/c3addaa39aef4382fc2c802a2ff2f0bf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162068&amp;width=680&amp;sig=ocnDpqYaO6dRgGTtTBnlKA5zfsmaVIE5LcSvyU5NcAQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990890">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/890/1dbf8036dbd74ca4b9c0473a158f3070_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162073&amp;width=680&amp;sig=GQPKVG6YLn4OwMs9QqEYgVs8uWexfc46Evs%2FBOfasl0%3D" src="https://i.kickstarter.com/assets/049/990/890/1dbf8036dbd74ca4b9c0473a158f3070_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162073&amp;width=680&amp;sig=GQPKVG6YLn4OwMs9QqEYgVs8uWexfc46Evs%2FBOfasl0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990895">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/895/2ecd43deb5eb7e25e732b442814c2508_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162098&amp;width=680&amp;sig=DSFQre5dLpSP0r8xTrK8av1QXhRfR57Li%2F93oWun0wo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991198">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/198/76762136aafbbf1390039e6721807160_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752163592&amp;width=680&amp;sig=2L83l585EgHJYMrL8IsZfG8aOIaLxWjQi9IvHfPFJKo%3D" src="https://i.kickstarter.com/assets/049/991/198/76762136aafbbf1390039e6721807160_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752163592&amp;width=680&amp;sig=2L83l585EgHJYMrL8IsZfG8aOIaLxWjQi9IvHfPFJKo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990898">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/898/568fa4f978ce20730858d45ecbcfa2d4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162122&amp;width=680&amp;sig=idmuROZeugaLcNT0NSW0JgmWv65xn9C9I7Jo3BReEI8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990903">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/903/568cf3d577e7e6f774656fd67d8ee935_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162154&amp;width=680&amp;sig=Wk6CpQNss34ONcOfCc2M9RQXerMfkSacBSJM86jslwA%3D" src="https://i.kickstarter.com/assets/049/990/903/568cf3d577e7e6f774656fd67d8ee935_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162154&amp;width=680&amp;sig=Wk6CpQNss34ONcOfCc2M9RQXerMfkSacBSJM86jslwA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990909">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/909/a499c7590dc9ce8fde27d8358322f048_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162175&amp;width=680&amp;sig=8oJ6BDW1C7xTU4TaHHFf7L%2B1edx9ORQthRI%2BkfUeWHw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990918">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/918/da9825e52017c70e1d5137fee2551a38_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162186&amp;width=680&amp;sig=Ypqtzfhys6HNG9VzajCnIYl7Rl6bb9EMbDMTk1fSJrA%3D" src="https://i.kickstarter.com/assets/049/990/918/da9825e52017c70e1d5137fee2551a38_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162186&amp;width=680&amp;sig=Ypqtzfhys6HNG9VzajCnIYl7Rl6bb9EMbDMTk1fSJrA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990922">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/922/f3caf1df3003fe0a4b7e875ff1700185_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162221&amp;width=680&amp;sig=WPQGj7te1PZcbHyGSzCVbVRg8ZnDvI41x17YydJ93wg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50029190">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/029/190/3695672c7653d267502827e1d7e76a60_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490968&amp;width=680&amp;sig=HzCA5vNEl7w%2FhXKUZbkF3U%2FWcEuRItgBbtRX0ZXDdJg%3D" src="https://i.kickstarter.com/assets/050/029/190/3695672c7653d267502827e1d7e76a60_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490968&amp;width=680&amp;sig=HzCA5vNEl7w%2FhXKUZbkF3U%2FWcEuRItgBbtRX0ZXDdJg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990925">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/925/9be8741824e7696e8c74fe5738af9feb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162245&amp;width=680&amp;sig=dxKuVId7RsiS5txBiqO4jmX13K40JprEnPnkeIVRm0U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990928">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/928/c1db90b69a7d81a84f20033a5049be0c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162269&amp;width=680&amp;sig=LWD1oiq25PA%2Bq9A82Cnfq96dz9kiNzlZLsGpg17PiEY%3D" src="https://i.kickstarter.com/assets/049/990/928/c1db90b69a7d81a84f20033a5049be0c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162269&amp;width=680&amp;sig=LWD1oiq25PA%2Bq9A82Cnfq96dz9kiNzlZLsGpg17PiEY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990934">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/934/e88776b19727305086a1c186cd917fec_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162302&amp;width=680&amp;sig=1U6TM0b3bT%2FcqIOOP6aNNYbNdvvjRZRUJwbf7LfvBho%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991202">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/202/ec419fd9e4a1a2d9492209ac91fbd04c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752163618&amp;width=680&amp;sig=DSQ2bI31KSKdEwTjT3v6RifNBFpXUuZe7yoXmEGq7ZE%3D" src="https://i.kickstarter.com/assets/049/991/202/ec419fd9e4a1a2d9492209ac91fbd04c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752163618&amp;width=680&amp;sig=DSQ2bI31KSKdEwTjT3v6RifNBFpXUuZe7yoXmEGq7ZE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990974">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/990/974/8e450fb29ff5a80c2558b7d7f4852a77_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162475&amp;width=680&amp;sig=4chWGLeWDGWhwB45XjoxUJIUYlW86mAJDY%2FMg6Dm5sU%3D" src="https://i.kickstarter.com/assets/049/990/974/8e450fb29ff5a80c2558b7d7f4852a77_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162475&amp;width=680&amp;sig=4chWGLeWDGWhwB45XjoxUJIUYlW86mAJDY%2FMg6Dm5sU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990981">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Create-a-Sirius-in-Your-Own-Image-">Create a Sirius in Your Own Image.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/981/83543d2009e600be765f7fc06fdfa2c7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162499&amp;width=680&amp;sig=1vjqPP45nsAtuOHATqb5xNspLRatgqHC9CRLZKU4BOs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49990984">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/990/984/6be31b297b4d96a52deb1f7dee1c0d41_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162511&amp;width=680&amp;sig=HVS0eEmP1ODpVeRgstZHlMwmv1DvT6HO7JGfUl865Q0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991007">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/007/beb118902f10574d2a017c60482f11cc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162636&amp;width=680&amp;sig=IIfvpfA90DAA%2Br7Q6eEceQH5uRBx2VOJx%2FzOwF0H8Ww%3D" src="https://i.kickstarter.com/assets/049/991/007/beb118902f10574d2a017c60482f11cc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162636&amp;width=680&amp;sig=IIfvpfA90DAA%2Br7Q6eEceQH5uRBx2VOJx%2FzOwF0H8Ww%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991001">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/001/a8f30f78b1147c79e74c28f400c78a60_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162612&amp;width=680&amp;sig=JAi20ELvoWhTbco7A%2FSLbHt47qQnCUI8EXaBONelS%2Fc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991016">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/016/77194956cac88d9416f1fa243a66261b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162675&amp;width=680&amp;sig=SLVYM6A8AHou6OUQ3gzC7ImoMoatt3KVGP8TyFEL9gc%3D" src="https://i.kickstarter.com/assets/049/991/016/77194956cac88d9416f1fa243a66261b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162675&amp;width=680&amp;sig=SLVYM6A8AHou6OUQ3gzC7ImoMoatt3KVGP8TyFEL9gc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991022">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/022/d8e3d05aa5af435abb9397f0edc38c9e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162697&amp;width=680&amp;sig=LEQliAayPY0wjIRtfPbGqlH8FceOhyNao%2BlP%2BTszAKs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991338">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/338/61190f415d72719b798ef1f8c3f6145e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164239&amp;width=680&amp;sig=W3P3vi%2FeBqRUP0lz0aNUFmxcwsvzHicEKBigpZYmHz0%3D" src="https://i.kickstarter.com/assets/049/991/338/61190f415d72719b798ef1f8c3f6145e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164239&amp;width=680&amp;sig=W3P3vi%2FeBqRUP0lz0aNUFmxcwsvzHicEKBigpZYmHz0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991030">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/030/4d274169485f9be22056d0829a308c7f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162750&amp;width=680&amp;sig=oN3UsdBFAA5EX9gQi%2BKy5UezQvJS3chfw6mX%2FpqmxYg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991340">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/340/b386d585624b37bfe742fd4d4badfd7e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164248&amp;width=680&amp;sig=Un511%2Fb2iGY46SYjuFTix5bMOsWj6XCMB5vnkoah8WQ%3D" src="https://i.kickstarter.com/assets/049/991/340/b386d585624b37bfe742fd4d4badfd7e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164248&amp;width=680&amp;sig=Un511%2Fb2iGY46SYjuFTix5bMOsWj6XCMB5vnkoah8WQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991034">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/034/1706c8d8ee698e8a6c0f27001aec9283_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162782&amp;width=680&amp;sig=fYfdHGFmCqMmdYDTeg7hksJwo2O2Ud1E%2BfeuXCZPghI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991042">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/042/8dd1da9092424ade2dc3c13067660c13_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162815&amp;width=680&amp;sig=wYw2vuXYWl0I7a3%2FWpbqMc5%2B%2FTDMXTSlJvnAm8cwXoM%3D" src="https://i.kickstarter.com/assets/049/991/042/8dd1da9092424ade2dc3c13067660c13_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162815&amp;width=680&amp;sig=wYw2vuXYWl0I7a3%2FWpbqMc5%2B%2FTDMXTSlJvnAm8cwXoM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991051">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/051/fc16fcab28872b21bc26a760fb5685b5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752162839&amp;width=680&amp;sig=3QF5OE6N4yyzUjQjUzAnm7FZo%2FQc09q74EVl5trn%2FVQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991059">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/059/d8f3ab179041f887dcd7b42dab2d18cc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162892&amp;width=680&amp;sig=x0P2w0J4u3E3Epi6qtHOpd2sIH%2BnfrDSZrUsS9eI0pI%3D" src="https://i.kickstarter.com/assets/049/991/059/d8f3ab179041f887dcd7b42dab2d18cc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752162892&amp;width=680&amp;sig=x0P2w0J4u3E3Epi6qtHOpd2sIH%2BnfrDSZrUsS9eI0pI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991219">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/219/36422ad72fbe4c9e04e8577f971542c2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752163706&amp;width=680&amp;sig=QVUiejKBB2iaRs77MXYsKlnvJ6FAxDh1dvXQUDeccqM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991226">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/226/811cb0b99dd55f014987f65ae57c51ab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752163734&amp;width=680&amp;sig=x6DmzQEKrxRn1kI4ZKf%2FJnFUraPQMXaisTopPAM7VCk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991244">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/244/96c25fe0a084483a0d8486a7772556a3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752163822&amp;width=680&amp;sig=YiyJNka3CGSPrtOp3Kob%2FzwAWFZxmFvk8ZDMGgVREEU%3D" src="https://i.kickstarter.com/assets/049/991/244/96c25fe0a084483a0d8486a7772556a3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752163822&amp;width=680&amp;sig=YiyJNka3CGSPrtOp3Kob%2FzwAWFZxmFvk8ZDMGgVREEU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991345">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/345/a9767864ac8a499df0f16bb6e9a09593_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752164294&amp;width=680&amp;sig=GB1keoY3%2B9epNNu0E8pcqTuWERep3BXwSVfLrkr%2Fk3A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991347">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/347/9d8246de8ccab6863ab8d6e9a19e8e31_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164304&amp;width=680&amp;sig=IVqeiky1oVjqaB8%2FM08yStgh3OtaLay9vij3bU%2Fe9i0%3D" src="https://i.kickstarter.com/assets/049/991/347/9d8246de8ccab6863ab8d6e9a19e8e31_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164304&amp;width=680&amp;sig=IVqeiky1oVjqaB8%2FM08yStgh3OtaLay9vij3bU%2Fe9i0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991262">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sirius-Creator-Studio-Pro-The-Power-to-Create-">Sirius Creator Studio Pro. The Power to Create.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/262/a4297ed399717524607b84db8fbf6342_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752163883&amp;width=680&amp;sig=Terund92WU6GBBrfJivG1gDDHxSqsI0rKhwZhNUQNL8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991271">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/271/16bcfd077a3f37c941e4ac1dc5da982a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752163936&amp;width=680&amp;sig=WSOjUdC1ciWNbyBMqndHHtzEsN4L6LJt%2Fw3ee2Yjvn8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991276">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/276/18aa08bda358581b6ba69255270856a0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752163969&amp;width=680&amp;sig=%2Bgf2e9Xco%2Bx27W7MtI9%2BIzcvZ4P7yfxi7iFcm6It6VA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991287">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/287/15e79ca7f844a2f0b4b705b2b849d151_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752163996&amp;width=680&amp;sig=m74Fjlr7e7ZDP9gtff13YoJR3BOdFAa6HrqOHiR0SRA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991296">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/296/27ff7b5265e3039823a3db664b820831_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164018&amp;width=680&amp;sig=4JTF8WDtHZoqoJnPEGRn5GIaeo9bJVwuAWezUc8OVU0%3D" src="https://i.kickstarter.com/assets/049/991/296/27ff7b5265e3039823a3db664b820831_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164018&amp;width=680&amp;sig=4JTF8WDtHZoqoJnPEGRn5GIaeo9bJVwuAWezUc8OVU0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991300">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/300/08522586aa0d5537db47b1e6fba9f1ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752164046&amp;width=680&amp;sig=9CCDVhLTZhT6ClBPLFCGRnlWNVvz4wyRcuK1yZyKurA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991309">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/309/906f9cec159c7f96b2cd36f87bb151e9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164068&amp;width=680&amp;sig=4RGImzUWYmFuDaaIuX4wnIvPcY7exnp19JlS%2F7zv%2Bd0%3D" src="https://i.kickstarter.com/assets/049/991/309/906f9cec159c7f96b2cd36f87bb151e9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164068&amp;width=680&amp;sig=4RGImzUWYmFuDaaIuX4wnIvPcY7exnp19JlS%2F7zv%2Bd0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991314">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/314/144f33a9a81aca1cd6a05005b9d5970c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752164099&amp;width=680&amp;sig=toH7FW3yYtE7EEQDL%2FJwwolnqG27WDLZbGmXnp8Xoc0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991319">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/319/1412ef71d9bc62c884aa53ecedfba465_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164112&amp;width=680&amp;sig=e8PWI45LRUEH0swMdCxloQG34MMSHKki58m7sZ0iTAY%3D" src="https://i.kickstarter.com/assets/049/991/319/1412ef71d9bc62c884aa53ecedfba465_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164112&amp;width=680&amp;sig=e8PWI45LRUEH0swMdCxloQG34MMSHKki58m7sZ0iTAY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991327">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/327/396d68d09163e3f964d9dc1e9cab6267_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752164151&amp;width=680&amp;sig=CIFjsHUYFZLPywaiiMwkuh3aq2Ky8vSgZru2eU%2BMlpQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991329">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/329/2efd969a9e819770755ee9fe41fc398b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164187&amp;width=680&amp;sig=Xr7djQ1c%2B0sOJr%2BTf%2F1I7tBXFODjaFhMCOIH72V9psE%3D" src="https://i.kickstarter.com/assets/049/991/329/2efd969a9e819770755ee9fe41fc398b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164187&amp;width=680&amp;sig=Xr7djQ1c%2B0sOJr%2BTf%2F1I7tBXFODjaFhMCOIH72V9psE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991332">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/332/4a0bdbeffdff4fb28767e267332f92ef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752164213&amp;width=680&amp;sig=BPA%2F5QqS%2BKlU26ZMnPbeCaZzuXyEPVkoBK8RG%2F9fp%2FY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991353">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/353/266c6d52a20a6b292f1aa440de2c0ac4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164370&amp;width=680&amp;sig=%2Bx2TB0TrAk0kzza58I5wC%2FZbh25E4s4HEgVzFoGHbSA%3D" src="https://i.kickstarter.com/assets/049/991/353/266c6d52a20a6b292f1aa440de2c0ac4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752164370&amp;width=680&amp;sig=%2Bx2TB0TrAk0kzza58I5wC%2FZbh25E4s4HEgVzFoGHbSA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991379">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/379/d1081b924a87bcb075be0ea8eea2a910_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752164598&amp;width=680&amp;sig=M9Yaucwf3cN9VW6s5gVVjEhi6kUg1jUPOyp1yLaitSk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991487">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/487/595a0275fd32b8465d370f5726acca13_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752165185&amp;width=680&amp;sig=hMz7v0yeKzS8KpEslAcOKQYCKBoJoSzMyeMFCxA1EWI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991480">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/480/08cc6b45b4136e7deee0311c5322cc21_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752165154&amp;width=680&amp;sig=NcCk8RMxKa2wqBYbz4eWSMduXHlLDQk8PI9hCBT6Tgg%3D" src="https://i.kickstarter.com/assets/049/991/480/08cc6b45b4136e7deee0311c5322cc21_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752165154&amp;width=680&amp;sig=NcCk8RMxKa2wqBYbz4eWSMduXHlLDQk8PI9hCBT6Tgg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991491">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/491/8831e78309a82aa44ccca5c30478b994_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752165201&amp;width=680&amp;sig=%2FqnLPAuyVtRbQlZem4uzwuCgM0wofv7YDQSPDP7qPK0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50029133">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/029/133/cdc531258b8561fcd9529afabd5ebeb1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490761&amp;width=680&amp;sig=1PmHvtFdh%2Bpond7WCjXcqZ4H%2FhmUozPmK%2FAKZnAnTUk%3D" src="https://i.kickstarter.com/assets/050/029/133/cdc531258b8561fcd9529afabd5ebeb1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752490761&amp;width=680&amp;sig=1PmHvtFdh%2Bpond7WCjXcqZ4H%2FhmUozPmK%2FAKZnAnTUk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991516">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/516/6876302aaceba8de90fcd64c5881c4bb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752165266&amp;width=680&amp;sig=rX2MGMbc3ibIpJbbygMk0Uteuf17RSikZHn20888zzo%3D" src="https://i.kickstarter.com/assets/049/991/516/6876302aaceba8de90fcd64c5881c4bb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752165266&amp;width=680&amp;sig=rX2MGMbc3ibIpJbbygMk0Uteuf17RSikZHn20888zzo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991988">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Tech-Breakdown-What-Makes-Sirius-Revolutionary">The Tech Breakdown: What Makes Sirius Revolutionary</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/988/03b6bf2b9a82fc0f2038556049cd6585_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752167773&amp;width=680&amp;sig=duF2ghhcCGFFH4IKxMU8pGOPLIYFaIO4UFpWgsrNieo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991989">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/989/63899fb1cd76b45e048a82ce33552b66_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752167792&amp;width=680&amp;sig=DSY9MccVUzPc2kDLrsH3TjyouluWivzGaO5DshAVFG0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991992">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/991/992/3a71615e7f3f377e70fa360df4bbd67e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752167814&amp;width=680&amp;sig=yxAA5yQmMj2d5CmrgxEdoQ2Fd%2FyaV1d%2Br%2Bvk52Tofxc%3D" src="https://i.kickstarter.com/assets/049/991/992/3a71615e7f3f377e70fa360df4bbd67e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752167814&amp;width=680&amp;sig=yxAA5yQmMj2d5CmrgxEdoQ2Fd%2FyaV1d%2Br%2Bvk52Tofxc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49991996">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/991/996/3151c0d2ef566fb7e488fc3884af62bb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752167838&amp;width=680&amp;sig=Bm08pNctN60L%2FP6zdKfTdvADgFSk%2FAZ8IwByGjasKI8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992004">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/992/004/81c2b9410cd323da6a45168af5fe57e8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752167868&amp;width=680&amp;sig=kF8vIybP8cSiknYRem1q5jguAfwueuCnMwl8jX6orrA%3D" src="https://i.kickstarter.com/assets/049/992/004/81c2b9410cd323da6a45168af5fe57e8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752167868&amp;width=680&amp;sig=kF8vIybP8cSiknYRem1q5jguAfwueuCnMwl8jX6orrA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992000">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/000/0e981f177da532def5759d11b39ba977_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752167858&amp;width=680&amp;sig=OawRnJqDPevzNE3YRXufwIe6zaUhokkBeiuj2ft%2B1Y0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992022">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/992/022/8f9a4b86cd9ce329a464035339f781ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752167929&amp;width=680&amp;sig=sX%2FGRySO2wVlVR4iRD%2F7QgCP70YbgGRafQ2hAHe7nkQ%3D" src="https://i.kickstarter.com/assets/049/992/022/8f9a4b86cd9ce329a464035339f781ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752167929&amp;width=680&amp;sig=sX%2FGRySO2wVlVR4iRD%2F7QgCP70YbgGRafQ2hAHe7nkQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992016">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/992/016/ff5d7857d84bc2c6d2001fb85080c256_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752167916&amp;width=680&amp;sig=g%2Fg5fsWhbEzJl9GKk04iQHXsWDDoGC3w%2F03drRC%2FEZk%3D" src="https://i.kickstarter.com/assets/049/992/016/ff5d7857d84bc2c6d2001fb85080c256_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752167916&amp;width=680&amp;sig=g%2Fg5fsWhbEzJl9GKk04iQHXsWDDoGC3w%2F03drRC%2FEZk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992026">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/026/b0d43398bd2ca749c24a9dce11c5c106_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752167953&amp;width=680&amp;sig=4Mc1GNiVlzsuoICjhDq8jQq0bhkqIZhI4ImFUB%2BRN2o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992029">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/992/029/ed6740545e56970d8b055d9ee04d0660_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752167971&amp;width=680&amp;sig=YssV6kH2CCx%2FK5lm0cIwG8tVMMcyMBDgMwSJ4BoOvmE%3D" src="https://i.kickstarter.com/assets/049/992/029/ed6740545e56970d8b055d9ee04d0660_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752167971&amp;width=680&amp;sig=YssV6kH2CCx%2FK5lm0cIwG8tVMMcyMBDgMwSJ4BoOvmE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992113">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/113/fd8d26b521316a09226758bccc48dcd6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752168520&amp;width=680&amp;sig=Yat2isrCOzn8Yo%2BX5mkioSwxF9Mj1Z%2FkCKqh4Cscuf8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992117">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/992/117/38bf7bcb40aaabee6e479de678ad2bfd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752168536&amp;width=680&amp;sig=JdQfm93xiAjL6k9DjzXjs75rWoHSauAkJ3KYTURkdlA%3D" src="https://i.kickstarter.com/assets/049/992/117/38bf7bcb40aaabee6e479de678ad2bfd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752168536&amp;width=680&amp;sig=JdQfm93xiAjL6k9DjzXjs75rWoHSauAkJ3KYTURkdlA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992129">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/129/13e15fac7f33b19e07f9626fb8e839d9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752168564&amp;width=680&amp;sig=6OhW4HaSN2KbAH24Sz1j%2BcjxRk9l3DBjdvmLKcDcVwY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992277">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/992/277/69cccb55dfe0ee5f6260cc8b2c99eb42_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752169033&amp;width=680&amp;sig=Hg6GsZUWyOMUyFwctXtghrm2MF5evETeHmRn5FSwKKw%3D" src="https://i.kickstarter.com/assets/049/992/277/69cccb55dfe0ee5f6260cc8b2c99eb42_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752169033&amp;width=680&amp;sig=Hg6GsZUWyOMUyFwctXtghrm2MF5evETeHmRn5FSwKKw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992162">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/162/1ed0aafcd69b45a26ec2b6757a6ec48a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752168681&amp;width=680&amp;sig=GH8ioHnk8BfFj9%2B6icCUHLJbrj0gfjteazuXXZFg9Dw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992164">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/992/164/61a34967d48c49d6739964be13d38c08_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752168688&amp;width=680&amp;sig=geIPcBOOCeJos7RuZbs3NDh3WHSyCAKl8WCcX09uBYU%3D" src="https://i.kickstarter.com/assets/049/992/164/61a34967d48c49d6739964be13d38c08_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752168688&amp;width=680&amp;sig=geIPcBOOCeJos7RuZbs3NDh3WHSyCAKl8WCcX09uBYU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50027422">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/027/422/9efcb0e80ee60592f6ee43473a2a509a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752479933&amp;width=680&amp;sig=VZsyhpTjL6ooVhvWm9A3PTkRHLPsUEokNKMKOW0331Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50027420">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/027/420/af9e90db032ad48f6bbe49b02b4c1a39_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752479919&amp;width=680&amp;sig=B57nRW8ERs795h4kO3L6CbzyJlH8tJFoEloAvm0NtUk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49993620">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-to-Pledge">How to Pledge</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/993/620/0c27b11bc81d4e6ee0de10a0f56f0796_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752175544&amp;width=680&amp;sig=a9oOlPFh3vvexUmAy4sRFX9%2F2%2BCBxf2CH3fjJjb7bkg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49993443">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/993/443/fae9caebd71556ae8768dec3cfba4dcb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752174360&amp;width=680&amp;sig=cgtvHfedOArGjmK168hxFwNn%2FJa%2Byyg%2BOmQfZbGHVZs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50001360">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/001/360/dfe05f13b5ad4e7ae5558f936c0f811a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752234610&amp;width=680&amp;sig=5Q%2BdKJcv3xCKpwnkIDNc7lA601jEDPvLGxETEsN0tO4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992267">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/267/69271ac0ff404c4aad99d6c2c7851e70_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752168983&amp;width=680&amp;sig=npk%2FvbrxkrjmfSG6qDbQE0gAV1Iv6rG45CSWHopdy4s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49993530">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box">What's in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/993/530/47d8096db71930481cee1606dea0f31f_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752174851&amp;width=680&amp;sig=dsFRDMF5HUQN19kqh5y4dEd%2BWfQ%2FILiKzFOUr7jG124%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49993488">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/993/488/72b0d30a1afedbc1eca7e85999a49ff3_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752174605&amp;width=680&amp;sig=BCjQB4r6NHrJrfRNiSiHLbL9uY0raM%2BCpO6twztng24%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992373">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hengbot-s-Story">Hengbot's Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/373/b2e1d627cc97d0ed44becceefc75e072_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752169396&amp;width=680&amp;sig=5TFx7ftrgZ96MxivuPGZMiwWEpx27IYB1V2fnWEN8L0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49999469">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/999/469/0ebd736dc0ab158ffa7a293d9b01d55f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752221428&amp;width=680&amp;sig=jSnCtskeveusdI0cO2XZ1CGkkp0bzQLXRlTvHXoOz%2FM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992361">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Developing-Story">Developing Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/361/f261688af23b72321989ab44dc2a991a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752169328&amp;width=680&amp;sig=atKi3A%2BjXE2EJle3hMcsR81%2Bg0mxbn99QxWBCkG5e9Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992320">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/320/0f893e96cd4acb79317e108303bc6467_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752169218&amp;width=680&amp;sig=6A%2BdMx5SjTY4nFLTw%2F2AXr43fTtFcuIJmIVOqR2xTkw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992321">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/321/6bb6ce3872513dc84177975cd8ba4e7d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752169223&amp;width=680&amp;sig=R97iJm7TJYv7rlT5VZItd%2FPNiHLRmm1yb5uifVvlfjM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49999230">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/999/230/741f8434a6c38c4fe9fafc2bed71c464_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752219687&amp;width=680&amp;sig=lxh11NKebORdBVuvY5783X7RtYc5y11lAZyCbhyg79w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49992336">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Spread-the-Word">Spread the Word</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/992/336/b9d3320731468762265f3f9848766d66_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752169264&amp;width=680&amp;sig=FD7XXHKpLlMitZu%2F2C5%2F1NfbY70WvtPIqHdpcSuKx98%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">With any crowdfunding project, especially one pushing boundaries like Sirius, there are always going to be some risks and challenges we need to be open about. That's just part of the deal. But honestly? Our team's got a ton of experience in getting things made. That background gives us a lot of confidence that we can handle whatever unexpected stuff pops up during manufacturing and figure out how to work around it.
+
+Launching a new product is kind of wild – you almost expect a few surprises along the way! It's totally normal. What's really cool about Kickstarter, though, is that it's not just about getting funded. It's this awesome chance for you, our backers, to actually jump in and be part of the whole creative ride. You'll get this genuinely behind-the-scenes look, seeing all the intricate steps involved in taking an idea and turning it into a real product.
+
+We promise to keep you in the loop, plain and simple. Especially as we get closer to finishing development and kicking off manufacturing. We'll send regular updates so you know exactly what's happening and feel connected to the process. Seriously, your support and patience as we go through all this together mean the world to us. And trust us, we're working our absolute hardest to make sure you're genuinely thrilled with the final Sirius you receive.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18">My project seeks funding for AI technology.</h3><div class="flex flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p style="margin-bottom: 1.5rem;">For the database or source that I will use or will create, the consent of the persons whose works or information incorporated have been obtained.</p></div></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

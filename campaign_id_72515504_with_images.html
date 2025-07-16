@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HiCOZY F3: 5-in-1 Home Slushie & Ice Cream Maker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/791/875/808104fef14a64a2d5dfa7b16b70a925_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750746002&width=560&sig=gtSDnKaXJoNic0fDpxO8jLpE8vX81sRpXppyKgRNdv0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>HiCOZY F3: 5-in-1 Home Slushie & Ice Cream Maker</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">No Ice Needed | Soft Ice Cream Mode | Five Presets | Customizable Speed Levels | Self-Cleaning Mode | Easy To Use</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div><div><div><div><div><div><div><div><div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691996">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/996/5f7f533bdc9bc924a5b63a97f6b89d2b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062616&amp;width=680&amp;sig=PYlCF0jrnB%2ByjrcWsH8he1TC9XIvqvQom9Bn6YGKHV8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792306">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/306/2fa7e32af64078d7067b7de9637f1830_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750749188&amp;width=680&amp;sig=whc7B5YQprKg1zyL4iSGOCgyHwpZi7si3O9HPIlkdPg%3D"/>
+</figure>
+</div>
+<p>A must-have for frozen treat lovers, HiCOZY F3 is a versatile frozen treat maker that lets you enjoy <span class="bold">slushies, soft serve, spiked slushies, milkshakes, and cold drinks</span> at home—all from one compact machine. No ice cubes, no prep work—<span class="bold">just pour, choose and press</span>. In as little as 15 minutes, you’ll be sipping or scooping perfectly chilled treats with ease. Make every sip a moment to savor with HiCOZY F3.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791723">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/723/dac4e83c454f6c8b863c43a55d200a42_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750745000&amp;width=680&amp;sig=I91bEExqBVo1AStMn4pijg6z19s3hVSyfNoU3bbo4Ts%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795519">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/519/d9035fdcc7a04e028032d90ee787abd1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750767644&amp;width=680&amp;sig=VMgKEpVwIcJAlgTszg7wT6lXbnBPpV6dyPBfHzKCgWk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691874">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/874/34cf0ea1780ba6849c7086ed03020eab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750061979&amp;width=680&amp;sig=WDiQzYRr5fsaiwlX1TEYdoTXNyal6aqbDGPxxwmXOgY%3D"/>
+</figure>
+</div>
+<div>
+<p>Make fluffy frozen treats without ice cubes. HiCOZY F3’s exclusive <span class="bold">Quicool™ technology</span> chills your drink in <span class="bold">15–60 minutes</span>—no prep, no dilution, just pure, smooth slush and a quiet operation. Whether it’s a spontaneous craving or a planned party, HiCOZY F3 is always ready.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791736">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/736/463198eca368f73fff931a9ab47d75cd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750745075&amp;width=680&amp;sig=bEYSzfenLIof9WOM6rhHV0RAGlLY2MYKwdWbOcPvAik%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49692957">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/692/957/f2b289eb0d1e74cbff51e0dc551cebb1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750068381&amp;width=680&amp;sig=cLpQOMJvfDuhNpiOYjn3xLeW7zd1Hnk0oSIjeYakXiM%3D" src="https://i.kickstarter.com/assets/049/692/957/f2b289eb0d1e74cbff51e0dc551cebb1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750068381&amp;width=680&amp;sig=cLpQOMJvfDuhNpiOYjn3xLeW7zd1Hnk0oSIjeYakXiM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691885">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/885/79685c53b6dc8b640247540610cfa88b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062029&amp;width=680&amp;sig=VDukvHzAKuP21DtBKE1qcSuXgygl2VacP89kg9v%2BN3o%3D"/>
+</figure>
+</div>
+<div>
+<div><p>With our exclusive <span class="bold">iWhirl™ system</span>, the machine uses a variable-speed DC motor and adaptive algorithms to automatically and dynamically adjust the paddle’s speed based on the selected mode. This enables a dedicated soft serve function and delivers a smoother, creamier texture in every drink.</p></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691890">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/890/97575828cc159113a4ff7986a2b5c8c7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062054&amp;width=680&amp;sig=r%2BXAaiKd84JB0kmdw4rKDe9V2CRFqOOIvN2ww7P4TJs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49693214">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/693/214/702a9e3484ed301a424f08ecaa64c31a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750069764&amp;width=680&amp;sig=yd382Wv%2FrL3GrJkTwpId8eRfI4HUryX7LYdCsXI8Q14%3D" src="https://i.kickstarter.com/assets/049/693/214/702a9e3484ed301a424f08ecaa64c31a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750069764&amp;width=680&amp;sig=yd382Wv%2FrL3GrJkTwpId8eRfI4HUryX7LYdCsXI8Q14%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691892">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/892/1eb33a5af8df7b403a8256f9d613fdde_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062076&amp;width=680&amp;sig=oQkfLnZtE7%2BQdr5cuF6HcVji2qBVc2curZAngjG23VY%3D"/>
+</figure>
+</div>
+<div>
+<p><span class="bold">Slush, Soft Ice Cream, Spiked Slush, Cold Drink, Milkshake</span>—HiCOZY F3 covers all your frozen favorites and more. With <span class="bold">5 smart presets</span>, it’s easy to get started. Mix your own ingredients and experiment with endless flavor combos—DIY frozen fun starts here!</p>
+<p>HiCOZY F3 is optimized to deliver smooth, consistent slushies and soft serve every time. </p>
+<p>Just make sure your ingredients meet a few simple guidelines: Use drinks with at least <span class="bold">6% sugar</span>. <span class="bold">Keep alcohol between 3%-16%</span> for smooth freezing.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791740">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/740/d1c6041359a1afd4727079f90b38f188_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750745172&amp;width=680&amp;sig=bAq4wlRcl9R%2BF3ABE7WNg%2F6mQdMvD%2BFdrxYLPmqrCrY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691902">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/902/124786e75d6f320f912e6f034d092fbe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062138&amp;width=680&amp;sig=LV%2FvlASWMyHVW3yHwn9Fi9Qn0V9%2FiI66roMB0v0eNJw%3D"/>
+</figure>
+</div>
+<div>
+<p>HiCOZY F3 features <span class="bold">a unique dual-layer vessel</span> that prevents condensation from forming and dripping onto your counter. Once your treat is ready, the insulated design keeps it cold <span class="bold">for up to 2 hours</span>, so you don’t have to rush to enjoy it. Every sip stays smooth, every scoop stays frosty.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691909">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/909/2f3866148a7624f6dc059fda24adb368_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062164&amp;width=680&amp;sig=WMEdcDLjh3dOLVTr4xqjqxj%2Flwbd9Xhla5svVHc49IY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691914">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/914/200bdb151a94fd60e32f0c246a67e4d9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062188&amp;width=680&amp;sig=sUKHLXY%2F8Mn%2BrbvLg%2BEqz3bet8SGYnyqaMLcBSq1Upc%3D"/>
+</figure>
+</div>
+<div>
+<p>HiCOZY F3 comes with a <span class="bold">self-cleaning mode</span> that takes the hassle out of cleanup. Just pour in hot water and press the button—sticky residue gets rinsed away without scrubbing, soaking, or disassembly. Let the machine handle the hard part.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795513">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/513/0c5a21b5162dd18593d21436f4643b29_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750767624&amp;width=680&amp;sig=SEs%2BL9fFbKOKpqTrtg%2FznzjaPl4r9kgPBCM7Q0BstFc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49693221">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/693/221/c4c03174a786561c3745673b6378c3b5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750069807&amp;width=680&amp;sig=qgF%2FYY0GGrwipH%2Ff0kfPKGJbexdWC5qaXLfTf90K2XY%3D" src="https://i.kickstarter.com/assets/049/693/221/c4c03174a786561c3745673b6378c3b5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750069807&amp;width=680&amp;sig=qgF%2FYY0GGrwipH%2Ff0kfPKGJbexdWC5qaXLfTf90K2XY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691922">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/922/fdb4d58ca79a4156f4e2893c633aa438_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062242&amp;width=680&amp;sig=o2m74WrKHoEMpgVUpHBpGb3esSc7LnJPjOOgDZKcf4w%3D"/>
+</figure>
+</div>
+<div>
+<p>HiCOZY F3 is made for the whole family—kids, grandparents, and everyone in between. Just three steps: pour in your favorite drink, choose a preset, and pull down the handle. With <span class="bold">a colorful display</span> and<span class="bold"> intuitive controls</span>, there’s no learning curve. It’s easy to use and fun to explore.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691925">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/691/925/b4d97be2f7b558e2298a10c024fdee2d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750062269&amp;width=680&amp;sig=Z0MG9ENXlM0Eu2HHvweUHHt6cl1%2Bnbwj5sCbUyBQI84%3D" src="https://i.kickstarter.com/assets/049/691/925/b4d97be2f7b558e2298a10c024fdee2d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750062269&amp;width=680&amp;sig=Z0MG9ENXlM0Eu2HHvweUHHt6cl1%2Bnbwj5sCbUyBQI84%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791743">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/743/378add95c7eeca8d284633ee2496c3c0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750745204&amp;width=680&amp;sig=ebnrLHVfkJwAQnqA5m5T9jnTDf6IXrvQ8YtiOMzy%2FZw%3D"/>
+</figure>
+</div>
+<div>
+<p>HiCOZY F3 operates at <span class="bold">just 55 dB</span>, equivalent to the sound of a normal conversation or a quiet office environment. Enjoy powerful performance without the noise.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791753">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/753/44435d701e3e23c17f7256bd13d33c13_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750745241&amp;width=680&amp;sig=Bk2fCZrPKf9nyo8KYPSesGvHpyq97soEnUcMv4Zibsk%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691927">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/927/ba291672d3655f66bb533382be0b67d0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062292&amp;width=680&amp;sig=idssuxDUUdsP2QdYha2ubspCUs1agFuDDF1PtjLhs04%3D"/>
+</figure>
+</div>
+<div>
+<p>The HiCOZY F3 is designed with your kitchen and lifestyle in mind. A <span class="bold">built-in side holder</span> keeps cones and cups within reach. <span class="bold">Removable parts</span> go straight into the dishwasher. Its <span class="bold">compact design</span> means less clutter and more room to create. From first pour to final cleanup, it’s effortless.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691930">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/930/28466245952a13949ebb72e4033e665e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062323&amp;width=680&amp;sig=gYt%2BqqjRBSC43haAPGiN8a%2BYstx%2BWQiTFmbmCDpwOrw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691932">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/932/56107143328100fe3df5c369103ac459_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062350&amp;width=680&amp;sig=s5EoVj9dR3PtTt7aJQqLtj08Dt90%2BlXRomr4GV0A0CM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791758">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/758/57e043650b3ab8a1d71bc492b39e42d8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750745277&amp;width=680&amp;sig=qr%2FNiQP26VCMgdch4DaaalJ9%2B9G63YN2giwAj9T63rE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691938">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/938/ca51b9cd547432b92df8aad42dff058f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062388&amp;width=680&amp;sig=juXAQekwuIf7GKoHQ%2FjrGvVsb%2FVPdShrErUxCXmCunA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796021">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/021/13d20caa7db2c299d81e5ef6c9bdd0bd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750769916&amp;width=680&amp;sig=RXsWsZqdRPBlaRQhUM1cGexu%2BvOWYk3hI%2FuOfuZjUgA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795532">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/532/9edb682c790126b5306d63de666c5e97_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750767691&amp;width=680&amp;sig=ACVcbqki2USizoXidfG6CjTiulCq4PuEKJW2N4ag5CU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691940">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/940/50bfcd2e14ee0589ecbc2cd60953599f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062415&amp;width=680&amp;sig=J%2BkSoWcNFz4jPRuCmFSpKKRJw%2BQqlusf7BEqGzHQgEE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791761">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/761/cd8ba15fe2c2253ed9149779bb2f0925_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750745310&amp;width=680&amp;sig=EKPBPpNjsO5a9an5zrZapff3XmGLKSXkohYEKBzVxzQ%3D"/>
+</figure>
+</div>
+<div><div>
+<div class="ace-line old-record-id-KRkqdzIXBoY09ZxgUV1cHDDwnkf"><span class="bold">Please note:</span></div>
+<div class="ace-line old-record-id-Z0VQdBCV0ojQeLxqIbacRuaAnQb">
+<span class="bold">US/CA:</span> Ships with Type B plug</div>
+<div class="ace-line old-record-id-MKrgdMQbjoEDR7x54OOcpOu9n3e">
+<span class="bold">UK: </span>Ships with Type G plug</div>
+<div class="ace-line old-record-id-Ukx5d1gqyohy7ox0qD7c434inmd">
+<span class="bold">DE/FR/IT/ES:</span> Type C adapter included</div>
+<div class="ace-line old-record-id-T5kZdDSqyo5f5bx5zyXc3vWBnBf">
+<span class="bold">AU: </span>Type I adapter included</div>
+<div class="ace-line old-record-id-An1cdmKQDoC0YRxweu2cle4InMe">You'll <span class="bold">choose your voltage and plug type before shipping</span> to ensure everything works out of the box.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795535">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/535/c07cd2050ecf91a6d0a17cbee78fe752_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750767733&amp;width=680&amp;sig=KcI%2BnGoi0wiIozApPCgasahZnVyJhtNJyAgbgl1cWUg%3D"/>
+</figure>
+</div>
+</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691949">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/949/b2fbd00db16b07675688b13d0190c515_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062446&amp;width=680&amp;sig=J%2Fzni5XS5JT%2F3q7HZ9pEmdPEv5ERfPQ740n%2FTp%2BRsgY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691951">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/951/f4346d2b78f2a66ae720efb215168f93_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062465&amp;width=680&amp;sig=7ejahprYQgItS1mXwa%2F%2FT4e1Ep8mOW0bxF0JhW4fcuI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691956">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/956/707ca0c481c288cf24bb2978282f898d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062483&amp;width=680&amp;sig=k4s0wliei%2FNyYIKcZ%2FZet0jc6Ay6Vhznp1b8oQHLn7c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691959">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/959/de492253e2987d981d29c8a9cb0af22a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062483&amp;width=680&amp;sig=wCvZ%2Fn8ZU2BzvRR8xxbKAjkDlySf1tYcYIKoWaBUkh8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691958">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/958/0117661efd1f5ee14c0a2480fa18bd10_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062483&amp;width=680&amp;sig=CUskSTwHKku6p3yIUmUDwuHOTqAzTuFuy35573seNLQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691965">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/965/689c02a071745dd63b7be0d146022add_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062505&amp;width=680&amp;sig=dhmkHhvW2KikRFrAwLqFU4iPmugAewor9PAr1JWoxNE%3D"/>
+</figure>
+</div>
+<div>
+<p>We’re shipping the F3 to backers worldwide. Our logistics partners help keep shipping affordable and on time. Shipping fees will be calculated at checkout based on your address, so you’ll see the exact cost before pledging. <span class="bold">Taxes and duties</span> (e.g. VAT) will <span class="bold">be charged separately</span> as required by local regulations.</p>
+<p>See the list of supported countries below. We’ll be shipping to the <span class="bold">US/CA/UK in early September</span>, and to <span class="bold">DE/FR/IT/ES/AU in early October</span>. Our goal is to ensure your F3 arrives safely, quickly, and ready to enjoy.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791773">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/773/ceddad017d09d1ece384f5faa07ac826_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750745379&amp;width=680&amp;sig=%2FiCmzR93QmpNJTI185ttScyrB%2BUNY4X5qUuzSD8wFdQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">Warranty:</span><br/>We offer a <span class="bold">1-year limited warranty and 30-day returns</span> (shipping fees apply). If your HiCOZY F3 malfunctions due to a defect in materials or workmanship within the warranty period, we’ll replace it or refund the purchase price at our discretion.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691983">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/983/de3205689a84a76a51735bea78a99a7f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062555&amp;width=680&amp;sig=vXVzhrZE8sY2GtOHUJvhjJh1ae2kiyqrzKGIbvISCdU%3D"/>
+</figure>
+</div>
+<div>
+<p>Founded in <span class="bold">September 2022</span>, HiCOZY was built on a simple belief: to bring comfort, creativity, and joy into everyday life. Every product we design, from<span class="bold"> ice makers</span> and <span class="bold">slushie machines</span> to <span class="bold">air fryers</span> and <span class="bold">electric spin scrubbers</span>, is made with care to enhance everyday living and help you enjoy your space a little more.</p>
+<p>Before launching this project, we successfully introduced a range of popular appliances on <span>Amazon</span> and our <span>official website</span>, earning the trust and business of <span class="bold">tens of thousands of satisfied customers</span>. We’re proud to bring that same commitment and experience to our Kickstarter community.</p>
+<p>HiCOZY is a fully<span class="bold"> established brand</span> with <span class="bold">over 300 team members</span>. Our global operations include a headquarters in China and a U.S. branch with a local warehouse, giving us the ability to better serve our customers through localized operations and faster, more reliable fulfillment.</p>
+<p>We are a <span class="bold">real</span>, <span class="bold">reliable</span>, and <span class="bold">transparent</span> brand, and we take our promises seriously. With the F3 Slushie Machine, we <span class="bold">guarantee 100% fulfillment</span>. If unexpected challenges arise, we will always communicate openly and provide timely updates, responsive service, or a refund if needed.</p>
+<p>We’re on Kickstarter to deliver you the best slushie and ice cream maker on the market. If you have any questions or concerns, don’t hesitate to reach out to us at <span class="bold">marketing@hicozy.com.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49691991">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/691/991/6fad436964c871c8cfa218372dc8602f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750062588&amp;width=680&amp;sig=5D%2BYlB6xGd6oMZsRyM7j4uDgDQw8JXvgIlVnTuYGNlE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791786">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/786/08bb13bbc92b5ca1b4e8cb6e95821f4a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750745461&amp;width=680&amp;sig=9eJ%2Flq32JC5DEEKfIDhluFfGGTVfVGoqPt5fSyg6GH0%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">HiCOZY F3 is our very first crowdfunding project, and while we’re thrilled to bring it to life with your support, we acknowledge that new ventures can come with unexpected challenges — from production timelines to logistics coordination. However, HiCOZY is not a new company. We have successfully developed and delivered several home appliances globally. With experienced manufacturing partners and a solid logistics system in place, we’re confident in our ability to fulfill this campaign. We promise to communicate openly and keep you updated every step of the way. With your support, we’re confident the HiCOZY F3 will be a cool success — literally!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

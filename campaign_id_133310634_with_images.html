@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BACBUDY 2.0: Your First Soft Exoskeleton Suit for Every Use</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/979/298/f549b5dfdc9f968e1357fc16be48c1f7_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752082047&width=560&sig=1ExfzwoQZ7OGU0HYkpQb3fNcyMYkakdGIi3s37YlcuM%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>BACBUDY 2.0: Your First Soft Exoskeleton Suit for Every Use</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Soft Robotic Exosuit Jacket| Safeguard Your Musculoskeletal Vitality | Empower and Protect Your Back Health with Flexibility and Style</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 999</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div data-alt-text="" data-caption="" data-id="48815736"><figure>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986243">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/243/e6947a22b1921b1ba93b66273c540592_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752130305&amp;width=680&amp;sig=igQQX%2FTGztY2RnBivxd%2F3qR9UwoN3QQMyT3cbyTWNCI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49868792">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-Robotic-Jacket-Exoskeletons-as-Part-of-Your-Wear-">Your Robotic Jacket. Exoskeletons as Part of Your Wear.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/868/792/b203c02f9149664f343d446ac652adb6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751295018&amp;width=680&amp;sig=mLvo6WAi6eEhjHJqxRywB15dXrsVkhfdhd5oE%2FZNgoA%3D"/>
+</figure>
+</div>
+<p>Everyday life is full of moments where we lift, carry, and push our limits — whether it is bringing in groceries, tackling home projects, or lifting things at work. <span class="bold">But too often, discomfort and strain hold us back from living with ease and confidence.</span> </p>
+<p>Outdated support tools can feel bulky and disconnected from the life you lead. <span class="bold">That is why we created the Bacbudy exosuit — a lightweight, flexible, and powerful support system designed to empower you in your daily life.</span> Seamlessly blending into your wardrobe, it provides the strength and comfort you need without sacrificing style or mobility. It is not just about support — it is about <span class="bold">transforming the way you go through your day with greater confidence, comfort, and strength.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49959467">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/959/467/56acd76b5ff8440085d4f6ddec953392_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751952874&amp;width=680&amp;sig=kEAF%2FhfLkFSzBgkVtvkdLyHrIgahGvA7hJggNjSIEyg%3D"/>
+</figure>
+</div>
+<p>Even want a more personalized and fashionable appearance while wearing our Bacbudy exosuit? <span class="bold">We can also customize and seamlessly integrate the exosuit into your own jacket, so it is uniquely yours!</span></p>
+<p><span class="bold">Experience a new level of style — with incredible prices and service, breaking through the entire exoskeleton industry into the next level NOW!</span></p></figure></div><div data-alt-text="" data-caption="" data-id="48815736"><figure><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49868796">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Expert-Reviews-of-BACBUDY-">Expert Reviews of BACBUDY.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/868/796/4c76d529e4a995f31430cb175c0c5091_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751295023&amp;width=680&amp;sig=ACiy1qqMJNmMcHZDoXT%2BoeegHuQnUsdgr%2BhT9oU79jw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335878">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/878/bf3a27bcb6f895719e2947fb71fc7c79_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747666388&amp;width=680&amp;sig=nJBsDIm7l1om0O9DzOLzHAOdChvnQbXGmPBeSmsHJq4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49748989">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/748/989/d12e55d35b3d5aeeccc7e725a06b9aeb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750401891&amp;width=680&amp;sig=VwY7kauTfq1MNacbUo%2B65vNNpdNiV1KDocYb59dCYFI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793591">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/591/b897bac8d780895cd1920ad4e687f805_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750756854&amp;width=680&amp;sig=%2F0sNYmFmTaaF070UYrBDI19FkrEBwZIUV7OSIoOVNhI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793592">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/592/cd40a655625c61748557e16fb2a23c07_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750756862&amp;width=680&amp;sig=xgnuQwwEWvn%2BFLNUIKGAVZurImnw7RLLHCNgJzU73t8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987622">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/622/7a5ee91a61022b3b739e726c2f7cde5a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752141323&amp;width=680&amp;sig=BREKAzDSURvZC8a9vhAswRosvf4Y%2FbkZHnsd5XvPA%2Bk%3D"/>
+</figure>
+</div>
+<p>Based in Hong Kong and the United Kingdom, Bacbudy is proudly supported by top incubators and has been making waves across <span class="bold">media outlets and industry journals worldwide!</span> Check out some of our latest coverage and reviews—amazing feedback that fuels our passion to push boundaries!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987637">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/637/d3e65af35024bcf52632b8bae3249581_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752141414&amp;width=680&amp;sig=Z%2BSY0rbQozkRCm0Rd6i%2FPqpOoahUsHG5yPeU2RfenGA%3D"/>
+</figure>
+</div>
+</figure></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49335929">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/335/929/abc8b62f40a9527c7ee5f197db3142b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747666542&amp;width=680&amp;sig=A9r4UrIARCY4qFDGMP53V%2FIxGF25Po3diPUsnWhoVkM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987716">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/987/716/44086b66fbe5501ef272e5498ca3f880_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752141988&amp;width=680&amp;sig=S3aHwS6tvIabKT0YItjhPsF8JEElE89Y6S0uTQ4jPn0%3D" src="https://i.kickstarter.com/assets/049/987/716/44086b66fbe5501ef272e5498ca3f880_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752141988&amp;width=680&amp;sig=S3aHwS6tvIabKT0YItjhPsF8JEElE89Y6S0uTQ4jPn0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794135">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/135/e07d7b3e045c1288d6a5b168dfd65e73_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750759923&amp;width=680&amp;sig=mbhHJozx6PhERfhJCyMjMs82aZNA9nl%2F4DHI96cEmj0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49336026">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/336/026/44811c736b27ce34a4bcc3069e21eddb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747666850&amp;width=680&amp;sig=Y6nG%2BGW1U3GWkKVORngjKA4hBUe%2BpfytvfmNn8UTKw4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49336028">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/336/028/9c381439cc8c338a4017fb30359852a1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747666858&amp;width=680&amp;sig=yZYgKodLFRcPY%2BGnFj3sYv0pfvrBc%2F3lEMHYpc53nvA%3D"/>
+</figure>
+</div>
+<p>Bacbudy has been pushing the boundaries of exoskeleton technology since 2023. Partnering with top-tier universities and construction companies in Hong Kong <span class="text-italic"><span class="bold">(Hong Kong Polytechnic University, QS ranking 57)</span></span> and the United Kingdom <span class="text-italic"><span class="bold">(University of Cambridge, QS ranking 5)</span></span>, we have created a revolutionary exosuit that feels like everyday clothing<span class="bold">. It dramatically reduces the effort needed to lift heavy objects</span> and transforms the way you work! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49868799">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-Make-It-Special-">What Make It Special?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/868/799/a4a7ae22d1c70d2f1f3cf1ab0f4e97e8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751295030&amp;width=680&amp;sig=hpdO6YTKj9LWp%2BTGq0j%2BDyN3R2KDnHpCdX1c0jYbx1Q%3D"/>
+</figure>
+</div>
+<div data-alt-text="" data-caption="" data-id="48403634"><figure><p>At Bacbudy, we <span class="bold">value human adaptability and see technology as a tool to support, not replace, people.</span> Our mission is therefore simple <span class="bold">— Bacbudy is not just a mechanical device — it is your partner in every challenging manual task.</span> We allow you to break free from harmful postures and embrace perfect ergonomic alignment, transferring loads to the lower limbs and relieving stress on the lower back. <span class="bold">WE GOT YOU COVERED.</span></p>
+<p>Crafted with advanced robotics and soft, breathable textiles, our affordable exosuits are engineered to assist with ergonomic lifting and reduce lower back strain. The adjustable fabric straps and belts that securely and accommodate any body shape, no matter the terrain. They <span class="bold">effortlessly adapt to various waist sizes and hip widths, ensuring a snug fit for everyone.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49959501">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/959/501/74b26865b8d62ec1a3cdf8dc1d8a90a3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751953044&amp;width=680&amp;sig=q8X%2F%2Bd57BYgdO%2Bve4en%2FxXRfWCfqB35NQX0H3PYJWr4%3D"/>
+</figure>
+</div>
+<p>With our cutting-edge technology, you can achieve more while <span class="bold">taking care of your body</span> and staying engaged in all aspects of life. With Bacbudy, you can perform your tasks with confidence, <span class="bold">enhancing your strength and endurance — whether at work, at home, or at the gym.</span> The wearable bionic design allows you to crouch, bend, and carry daily loads <span class="bold">while being non-restrictive with natural body movement</span>. Say goodbye to fatigue and discomfort, and hello to smarter, safer, and easier lifting!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987643">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/643/400a11dde3833ba6a32fc6e385d33980_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752141494&amp;width=680&amp;sig=TcJRECArO%2FM22%2B6h%2BoTx9CLTiLXvfEwRhXs1V4AlXRc%3D"/>
+</figure>
+</div>
+<p>The Bacbudy Exosuit is sleek and slim, easily hidden under a jacket, so you can go about your day without drawing attention. Plus, its amazing assistive performance and full range of motion are completely unaffected. At work, you can <span class="bold">effortlessly put on your daily safety vest without a hitch, even while wearing the exosuit</span>. <span class="bold">Feel weightless the moment you slip it on</span>, as it provides comfortable support for your lower back, no matter how complex the environment. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987648">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/648/8f445d629a807bb70b2c2f9f8ca0460b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752141517&amp;width=680&amp;sig=fiU69TEL8XggVBGvorpzIEZPJrSaUwARBANquW2vj8A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49868802">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Lightweight-Meets-Powerful-Flexible-Actuators-as-Soft-as-Feather-">Lightweight Meets Powerful. Flexible Actuators as Soft as Feather.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/868/802/f6638e401c176a0ed180776a452ec61f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751295037&amp;width=680&amp;sig=OIhd7TbB3KeJuNxFEejCvxjU0rToqJtRyqVSnRXYiGU%3D"/>
+</figure>
+</div>
+<p>Unlike bulky alternatives, it incorporates cutting-edge features into a stylish textile design. With <span class="bold">woven-fabric flexible pneumatic actuators and a simple movement classifier</span>, it quickly detects and adapts to your movements, providing optimal assistance to support your lower back muscles and <span class="bold">maintain ergonomic squat postures with less effort</span>.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49312147">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/312/147/5b05f564c29104d3a5b5bfefbaa5aae8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747469380&amp;width=680&amp;sig=uSHXqLOtRUM066eAhV8mvbc0o%2FTcd8%2Bolv9rzWWRwpk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987729">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/987/729/0ec1beb6b3a680593eb9e654f4be8fbc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752142058&amp;width=680&amp;sig=SoCz0UNSub5gI%2F6cB9ywe5xtHhd7E1SJdYE0NCV2RGU%3D" src="https://i.kickstarter.com/assets/049/987/729/0ec1beb6b3a680593eb9e654f4be8fbc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752142058&amp;width=680&amp;sig=SoCz0UNSub5gI%2F6cB9ywe5xtHhd7E1SJdYE0NCV2RGU%3D"/>
+</figure>
+</div>
+<p>With a pneumatic pressure of <span class="bold">up to 0.8 MPa (8 bar) in each actuator, a back driving force of 600 N (60 kg) per actuator is essential to fully counteract its contraction</span>. This powerful support fully counters muscle contraction, comparable to the average body weight of an adult.While the actuators can withstand a maximum pressure of about 0.8 MPa, <span class="bold">we generally only recommend an input range of 0.4 to 0.5 MPa</span>.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987652">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/652/87204466c1e775d4f9eefa311d948e06_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752141540&amp;width=680&amp;sig=ktU7ojEM2QFBwQiOlf5U9mLBmJjLruJocuIqXJH97b4%3D"/>
+</figure>
+</div>
+<p>By integrating <span class="bold">eight woven-fabric flexible pneumatic actuators</span>, the Bacbudy Exosuit becomes both lightweight and powerful. Specifically patented for compact lower back support, these soft robotic actuators offer unique advantages that set the Bacbudy Exosuit apart. This innovative design <span class="bold">significantly reduces weight and rigidity</span>, while doubling the assist effectiveness and <span class="bold">improving the force-to-weight ratio of the exoskeleton</span>. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49868811">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Moves-as-You-Intended-">Moves as You Intended.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/868/811/207bb2b4a356d748d3c1df06a7ed0eae_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751295080&amp;width=680&amp;sig=ReJ0lxU8i%2FLcE3ZfZM4lPvpljJJ28PlgQqQYYbWeBfI%3D"/>
+</figure>
+</div>
+<p>With the sleek design of Bacbudy Exosuit, it is equipped with position sensor (Inertia Measurement Sensor, IMU) that keeps tabs on your lower back movements in real-time. Imagine having an assistant that detects when you're <span class="bold">bending forward more than 20 degrees</span>, instantly activating support to help you maintain the squat posture. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987662">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/662/7849827f9eaac44104ec054470f75e2a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752141585&amp;width=680&amp;sig=oBKUIJKE%2B4uSWN9FXvacSlZovXC%2FxHzbnYtTbWmfWoE%3D"/>
+</figure>
+</div>
+<p>Nestled in a compact control box on the waist belt, the Bacbudy Exosuit is powered by a smart microcontroller that processes kinematic signals from its IMU. <span class="bold">It's like having a personal coach right there with you, ready to keep your movements in check</span>. With responsive solenoid valves and rechargeable batteries, this exosuit adjusts the flow of pneumatic pressure to provide the support you need exactly when you need it. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987739">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/987/739/352e2d5340296ea476686c4f386bbcc7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752142138&amp;width=680&amp;sig=nMfUAfmezwLIIybTZxAEBrt%2BxAwN20Ec15li7NPMvz0%3D" src="https://i.kickstarter.com/assets/049/987/739/352e2d5340296ea476686c4f386bbcc7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752142138&amp;width=680&amp;sig=nMfUAfmezwLIIybTZxAEBrt%2BxAwN20Ec15li7NPMvz0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49868816">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Versatility-Across-Multiple-Scenarios-in-Your-Daily-Lifes-">Versatility Across Multiple Scenarios in Your Daily Lifes.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/868/816/a0517e4549c1e43dc516ae09f046efb2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751295092&amp;width=680&amp;sig=2SDfol8yl%2FPEZncN5qVT8ASzy47xAXZlfcQxoT0s%2Bgw%3D"/>
+</figure>
+</div>
+<p>Our Bacbudy Exosuit is a <span class="bold">versatile support solution</span> designed to excel across a wide range of fields. It <span class="bold">enhances comfort and promotes optimal movement in demanding work environments and athletic activities.</span> Whether you're involved in construction, logistics, agriculture, manufacturing, caregiving, or just simply in your office, our exosuit provides the support needed to improve efficiency, reduce fatigue, and ensure safety.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49960440">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/960/440/84408e1db32450925dc67b744dc273b9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751959213&amp;width=680&amp;sig=NDQoLRFef9IVyRdGoTO78erd2IHe%2Ffrk2w7umwnwz8Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794688">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/794/688/9eca5d6407182567587ee9ba2aaf370b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750762832&amp;width=680&amp;sig=MHtVh28%2BMKXEqvRC0UUTTtfw000tWeXY3z%2FAQfwsInA%3D" src="https://i.kickstarter.com/assets/049/794/688/9eca5d6407182567587ee9ba2aaf370b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750762832&amp;width=680&amp;sig=MHtVh28%2BMKXEqvRC0UUTTtfw000tWeXY3z%2FAQfwsInA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794684">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/794/684/084dba7c854629ee8f655dfa4804f144_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750762822&amp;width=680&amp;sig=cAnt5D9qFmMj2mKN0BUUes%2F74duUiBiz%2BPyOSsn%2B6Ck%3D" src="https://i.kickstarter.com/assets/049/794/684/084dba7c854629ee8f655dfa4804f144_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750762822&amp;width=680&amp;sig=cAnt5D9qFmMj2mKN0BUUes%2F74duUiBiz%2BPyOSsn%2B6Ck%3D"/>
+</figure>
+</div>
+<p>With its adaptable design, the Bacbudy Exosuit is a reliable<span class="bold"> partner across diverse industries</span>, empowering users to work smarter, safer, and more comfortably in their daily routines.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49868819">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Exoskeleton-Jacket-Constructed-from-Nylon-Rubber-and-Fabric-Materials-">Exoskeleton Jacket Constructed from Nylon, Rubber, and Fabric Materials.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/868/819/9634f1aad2280fae6d9a99be51bea8a7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751295100&amp;width=680&amp;sig=euIepEs8yPKsdtwmW9hwHzX7QrxQFN5kJMJfxYK6DJc%3D"/>
+</figure>
+</div>
+<p>We incorporate <span class="bold">fabric sleeves, belts, and straps</span> to create an integrated structure that enhances durability while dramatically reducing weight. These materials <span class="bold">ensure flexibility and breathability</span>, allowing the exosuit to move seamlessly with you. Designed to <span class="bold">fit the natural ergonomics of your body</span>, it offers unmatched comfort and compliance with your clothing.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987665">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/665/04b11b48dd79cecc7633937067d4e1e7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752141617&amp;width=680&amp;sig=RMorUA7xy4imYuvLlU%2BMl5IPiLYiFmI9rQ1Bp8Yc8eg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987666">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/666/a1e5491703b90b5608b67d336508e27b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752141625&amp;width=680&amp;sig=Pidd4tjSYEcpXyya84woQcHkHJFdqUE82kxZJIhSdsA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49868827">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Choose-BACBUDY-">Why Choose BACBUDY?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/868/827/0e76ed14994363827996d033c5b76583_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751295129&amp;width=680&amp;sig=ePhUZRKR8%2BowMvSJ%2FK1y4%2FfbIHnKG6ufvPdFDvVg%2BuY%3D"/>
+</figure>
+</div>
+<p>When designing the Bacbudy Exosuit, we prioritized <span class="bold">portability. Its lightweight construction and compact form mean you can carry it without even noticing it’s there.</span> Enjoy the freedom to bring your support system along, ensuring you’re always prepared for whatever your day brings. With the Bacbudy Exosuit, convenience meets cutting-edge technology, making it the perfect companion for your active work life!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49973399">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/973/399/2c8586e0ae5f627209b3cce1c4a4520f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752043300&amp;width=680&amp;sig=ASnRdwTcqxSlaRvIMDnFZOP3MpIS36zlnQlZr7A%2BxbY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49868840">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:LAST-BUT-NOT-LEAST-Pricing-Offer-">LAST BUT NOT LEAST. Pricing Offer.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/868/840/6e51ce50f736dd2e0fb7192ae8717bbb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751295166&amp;width=680&amp;sig=72K1im1LHvfWDSIA8kudB8jbLQbEoqmGho7Bq6YyZig%3D"/>
+</figure>
+</div>
+<p>Bringing Bacbudy to YOUR OWN LIFE — If you want us to tailor a robotic jacket for you, <span class="bold">click the pledge of "Bacbudy Customization", send your jacket to us after our campaign ends, and we will craft a seamless Bacbudy integration tailored just for you! </span></p>
+<p>If you require additional time to arrange funds, explore financing options, or secure exclusive deals, you can <span class="bold">choose the "Pledge Now and pay Later" option</span>. We will reach out to you personally to collect the remaining balance, and your rewards will be shipped to you individually once the campaign concludes.</p>
+<p><span class="text-italic"><span class="bold">NO SHIPPING FEE, TARIFFS, AND TAXES WILL BE CHARGED FROM YOU!</span></span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49973598">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/973/598/77016c93a49c94e389c5e68e060008d6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752044585&amp;width=680&amp;sig=Z%2F%2FNNivdcoRYUSbi3l74XmNtX5VZu7CYcvvcxc0w4sQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49973597">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/973/597/322145dfbb2022090c0c2aaf62d4026c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752044575&amp;width=680&amp;sig=6B%2BBiQ74LGfvXMIXRI6j68NcUAGNQSxx%2BWhcvJBTeAE%3D"/>
+</figure>
+</div>
+<p>Inside the rewards:</p>
+<ul>
+<li>Bacbudy Exosuit (Without Jacket - USD$659. Without Jacket - USD$549)</li>
+<li>An air compressor for you to recharge the pneumatic source</li>
+<li>An USB charger to recharging the batteries</li>
+<li>An User Manual</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50004740">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/004/740/04f638962a1450b81aab7aa44850d71c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752254073&amp;width=680&amp;sig=mZ5CpL7oa8X34%2BGBGge0pWbg5dle6AEam3AsO4Oi5A0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49973435">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline-and-Development-">Timeline and Development.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/973/435/ed2e531d101ee8e9e8fe7ad332e6773d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752043411&amp;width=680&amp;sig=oZzD5okJJcivVYeYMJwfMqag0ENkCENQQve0o8XNM3E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49979264">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/979/264/aec415601bbc5058f896ce0ca8b58232_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752081767&amp;width=680&amp;sig=PvzbkxkoryAuiRw75zFsdt%2BuTyNJks8PQRImBSQ8X%2FU%3D"/>
+</figure>
+</div>
+</figure></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49979222">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/979/222/5dafe84d775532f5b1b80586eb5b6dd6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752081465&amp;width=680&amp;sig=pwRh9oV6UwUeGhx7U7Y3IdfkgqrByi2l9ngZPyfIsfI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49973452">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/973/452/44b2a2554e766bc5523ccf31a1139b58_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752043494&amp;width=680&amp;sig=NULzcmCdz4CLZ4wMCOZKqNfDJtpyN7KyajQMaB3dAp0%3D"/>
+</figure>
+</div>
+<div data-alt-text="" data-caption="" data-id="48596804"><figure><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49868859">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stay-Connected-with-Us-">Stay Connected with Us.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/868/859/615ff33fe9857754dc0fe7395455234a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751295230&amp;width=680&amp;sig=5fw%2FnFZB0y2UBEe5aSfwFlyFm%2FtDzO620UkQ4UnE2pc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49960847">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/960/847/04672d4b971e7120639998d1d908ddcf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751961614&amp;width=680&amp;sig=FEYMV9aWvkUWadoSRgO6DXU0D85zCH14MjXlNiebMdg%3D"/>
+</figure>
+</div>
+</figure></div><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We’ve crafted multiple cutting-edge prototypes of the Bacbudy Exosuit and mapped out a killer plan to launch production. With a detailed bill of materials, we know exactly what it takes to bring this innovation to life and meet our delivery promises.
+
+But that’s not all! We’re anticipating an overwhelming wave of excitement, and we’re fully prepared to ride the tide. While we can’t predict every twist and turn—like supplier hiccups or customs surprises—we’re set to tackle any challenge head-on. If demand skyrockets, we’ll be working tirelessly, 24/7, to ramp up production and deliver your Bacbudy Exosuit without missing a beat.
+
+Every adventure has its risks, but we’re here to assure you: we’ve tried our best to got it all under control. Our commitment to our backers is unwavering, and we can’t wait to bring this thrilling experience to life for you!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

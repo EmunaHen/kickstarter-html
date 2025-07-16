@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AInoon: AI Smart Glasses That Actually Help You — Instantly</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/661/745/a98febba1cf023c01a78c6de8cfbf19f_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749804015&width=560&sig=J%2F3mAd1o14QD0kAg7bR2nkz757ywW%2FqpcXK1sPBSoiE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>AInoon: AI Smart Glasses That Actually Help You — Instantly</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Just tap the frame — like rubbing a magic lamp — and your AI genie appears. AInoon is your personal AI companion for your everyday.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49783300">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/783/300/b6eee07ade5a2acb98249ede124d3b13_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750692248&amp;width=680&amp;sig=hzNjKOLKaKDXxM9mYhHuTEqQ8j%2F4xtojhnFe7Q9H1%2Fo%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-THE-PROBLEM-">✅ <span class="bold">THE PROBLEM</span>
+</h4><p>Most AI glasses on the market today are priced anywhere from <span class="bold">$300 to over $1,000</span>—offering flashy features that look impressive in a tech demo but rarely translate into <span class="bold">real-life usefulness</span>.</p><p>Where’s the pair that’s actually <span class="bold">affordable</span>, <span class="bold">practical</span>, and <span class="bold">easy to use</span>?</p><h4 class="page-anchor" id="h:-OUR-PROMISE"><span class="bold">✅ OUR PROMISE</span></h4><p>AInoon was built for <span class="bold">real life</span>.<br/>We believe AI glasses shouldn’t be a luxury for tech elites—they should be practical, affordable, and truly useful for everyone.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49834841">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/834/841/50ced6df3f6489025eeb06f2cfb884a8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751002805&amp;width=680&amp;sig=PaniEmpCWQhBcHTsbsCRA90CY9rdGa4ePrZUkghXWBQ%3D" src="https://i.kickstarter.com/assets/049/834/841/50ced6df3f6489025eeb06f2cfb884a8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751002805&amp;width=680&amp;sig=PaniEmpCWQhBcHTsbsCRA90CY9rdGa4ePrZUkghXWBQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796180">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/180/2da49f3ddc873509550f2494aef5d710_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750770773&amp;width=680&amp;sig=1H7IIbO5HSUAvXXF5riTrFzykp4GpXcR3xJ74SGm%2FZc%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Real-world-AI-Magic"><span class="bold">✅ Real-world AI Magic</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49555754">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/555/754/314e4bb8458370720a78761daf5d8f8e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749104275&amp;width=680&amp;sig=7uxHIWcMBTb5wMfHqJLGGZrNB6xCfJnWr8u9BKL5fVI%3D"/>
+</figure>
+</div>
+<p>This isn’t a prototype or luxury gadget—it’s <span class="bold">AI you can actually use.</span></p><p>Imagine sitting in a restaurant abroad and not understanding the menu; you simply <span class="bold">tap the frame</span>, and AInoon <span class="bold">reads it aloud in your language</span>. While walking through a new city, a street sign or landmark catches your attention; AInoon <span class="bold">translates</span> it or <span class="bold">explains</span> what you’re seeing.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238616">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/616/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015694&amp;width=680&amp;sig=ZcXyYmhNS21VCdHIM7CMdc6CJz4q5zhifITKXp%2Fjm2s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238615">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-Voice-Your-World-Just-Ask-">Your Voice. Your World. Just Ask.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/615/0c8209ec75f0a97e3b0514f7ae409d73_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015691&amp;width=680&amp;sig=BF0DL2pph4XB7db%2FY97oFf0UDEEYQia%2BrNqfqvzgnPk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49555716">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/555/716/fcdd1f2b892384195bd0be7d5e975ba5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749104071&amp;width=680&amp;sig=q8ZQG4VdCVma1KkHB0DC7AWS%2FUUePmS0Izche8zewY0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49617474">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/617/474/45454e2c4fe41a28e9c93a3d815b7b7c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749543146&amp;width=680&amp;sig=nFzmAvSsjwcdTj%2B6QKpSxXmLHqp9u9SVwtBQMQtczLs%3D" src="https://i.kickstarter.com/assets/049/617/474/45454e2c4fe41a28e9c93a3d815b7b7c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749543146&amp;width=680&amp;sig=nFzmAvSsjwcdTj%2B6QKpSxXmLHqp9u9SVwtBQMQtczLs%3D"/>
+</figure>
+</div>
+<p><span class="bold">❓"What is this wine? I can’t really read the label."</span></p><p>Just tap your AInoon glasses.<br/>The built-in camera captures the label—and your AI genie takes over:</p><p>·  Reads the wine’s name and origin<br/>·  Explains the flavor profile<br/>·  Even suggests the perfect food pairing</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49555724">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/555/724/262bb352fcbad79f7c208017ab33cd7d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749104081&amp;width=680&amp;sig=As43Rq8108Y4JFrGG5nzoSFyuy8G8BqcpE%2F8AHuJjuU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706276">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/706/276/b4b294cb12a48ff9e107bbfffd3b9c85_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750140543&amp;width=680&amp;sig=rgSNDhJm6ijXzab7fyP6aywwW65vtU37dg2TSZgJYxI%3D" src="https://i.kickstarter.com/assets/049/706/276/b4b294cb12a48ff9e107bbfffd3b9c85_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750140543&amp;width=680&amp;sig=rgSNDhJm6ijXzab7fyP6aywwW65vtU37dg2TSZgJYxI%3D"/>
+</figure>
+</div>
+<p><span class="bold">❓"I’m in a foreign restaurant. I can’t read the menu—what should I try?"</span></p><p>Just look at the menu and tap the frame.<br/>AInoon scans it, translates it, and even recommends what to order—based on your taste preferences.</p><p><span class="bold">Your AI waiter speaks your language—and knows what you’ll love.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49555726">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/555/726/0169ff241aba5f0f4f81e301dcf5ce2d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749104100&amp;width=680&amp;sig=hksUbixeoHonPxUanB3Kn8oruE77oUwp4Hqxs1RKJN4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199263">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/199/263/5506c57dd08f2b6395875858e2137b22_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746690851&amp;width=680&amp;sig=Rq6VmIZo49%2BVGs%2FKKRiQpvryMZFEipK7MhPy8WibyVU%3D" src="https://i.kickstarter.com/assets/049/199/263/5506c57dd08f2b6395875858e2137b22_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746690851&amp;width=680&amp;sig=Rq6VmIZo49%2BVGs%2FKKRiQpvryMZFEipK7MhPy8WibyVU%3D"/>
+</figure>
+</div>
+<p><span class="bold">❓"How many calories does this dish have?"</span></p><p>Just glance at your plate and tap.<br/>AInoon analyzes the food, identifies the dish, and checks with the smartest AI for a fast calorie estimate—right through the glasses.</p><p><span class="bold">Just instant answers for smarter eating.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49555729">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/555/729/bc54a8c884cab8ca6c16bbfe0ae85472_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749104111&amp;width=680&amp;sig=4hW2muu5xS3wRLp3nZAqNoIM3%2FZalehsjDY9LYwkIy4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49617475">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/617/475/cb0eb5f3a623e86a375a86008ff5f791_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749543158&amp;width=680&amp;sig=o3FrLYup89vEW3C8ZH9m5NRlCj8TE1hqbW51LWnFmRg%3D" src="https://i.kickstarter.com/assets/049/617/475/cb0eb5f3a623e86a375a86008ff5f791_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749543158&amp;width=680&amp;sig=o3FrLYup89vEW3C8ZH9m5NRlCj8TE1hqbW51LWnFmRg%3D"/>
+</figure>
+</div>
+<p><span class="bold">❓"Can you summarize this document for me?"</span></p><p>Just point your glasses at the page and tap.<br/>AInoon scans the text and asks AI to break it down into key takeaways—so you can hear the summary while walking, commuting, or multitasking.</p><p>No scanning app. No screen time.<br/><span class="bold">Just instant clarity, right in your ear.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49555731">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/555/731/f087f46073bf251150e782b0591d3787_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749104118&amp;width=680&amp;sig=0Uex6%2FHZaLkH9ZVF4MepJCYflA18fwZMLN59%2BzcfKc4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49617480">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/617/480/f98822afdebd560759b74f73a3fa52d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749543203&amp;width=680&amp;sig=yJxuTCM9KqhNWJgKKKO%2BCzOE5nb7bMGo57M8Eu5H1js%3D" src="https://i.kickstarter.com/assets/049/617/480/f98822afdebd560759b74f73a3fa52d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749543203&amp;width=680&amp;sig=yJxuTCM9KqhNWJgKKKO%2BCzOE5nb7bMGo57M8Eu5H1js%3D"/>
+</figure>
+</div>
+<p><span class="bold">❓"What’s on my schedule today?"</span></p><p>Just tap the frame.<br/>AInoon checks your memo and reads out your day’s agenda—hands-free, right from your glasses.</p><p><span class="bold">Just start your day organized—with a voice that’s got your back.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49555732">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/555/732/a0c18aa629be0e50f0d4fb3ab1467577_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749104124&amp;width=680&amp;sig=I39VsO0cmAp0kqxqeCP7UXgaQgCBO0wdFMrRjtMDIXw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199664">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/199/664/49180769902023b74258ddf58d2c6fa5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693612&amp;width=680&amp;sig=Jfsrx8S5RPyDOKMdofB8t6awSt7OpW%2BRVzTMrPwGTbM%3D" src="https://i.kickstarter.com/assets/049/199/664/49180769902023b74258ddf58d2c6fa5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693612&amp;width=680&amp;sig=Jfsrx8S5RPyDOKMdofB8t6awSt7OpW%2BRVzTMrPwGTbM%3D"/>
+</figure>
+</div>
+<p><span class="bold">❓"Does this outfit look okay today?"</span></p><p>AInoon uses its camera to scan your outfit and asks AI for smart, style-savvy suggestions—based on color, fit, and occasion.</p><p>No selfies. No scrolling.<br/><span class="bold">Just instant feedback to help you look your best.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49555739">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/555/739/2ec4748b059e8422ccdb3951d4a1cc3b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749104178&amp;width=680&amp;sig=N5FO4%2Bv9Jy54uylxLB7F%2FbbjHt4UpiVXcFOZDOt2nUg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199655">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/199/655/749ddc225f51d5963e309d998446c317_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693589&amp;width=680&amp;sig=DHbC8fzDI3a8NByqIlgSL4qr61vTl6Ir5Xl8SjpwU6M%3D" src="https://i.kickstarter.com/assets/049/199/655/749ddc225f51d5963e309d998446c317_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693589&amp;width=680&amp;sig=DHbC8fzDI3a8NByqIlgSL4qr61vTl6Ir5Xl8SjpwU6M%3D"/>
+</figure>
+</div>
+<p><span class="bold">❓"What does this street sign mean?"</span></p><p>Just glance, tap, and listen.<br/>AInoon snaps a photo, translates the text, and reads it aloud—smooth and natural, like a local guide.</p><p>No phone fumbling. No guesswork.<br/><span class="bold">Just real-time understanding, wherever you are.</span></p><h4 class="page-anchor" id="h:-Multi-LLMs-Powered"><span class="bold">🔍 Multi-LLMs Powered</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49598683">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/598/683/671f6a31a61d69da2d6eda7fbc5823d5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749432039&amp;width=680&amp;sig=jQZNCciBohQs3Nj0HN9Y73AfZ5DGrq9ddSnhRnUiyWA%3D"/>
+</figure>
+</div>
+<p>AInoon doesn’t lock you into a single AI model. Instead, it gives you seamless access to multiple LLM models—each offering unique strengths. You can turn to ChatGPT when you need quick answers and visual recognition. If you're looking for deeper, long-form reasoning, Claude is there to help. And for real-time web context or current information, Gemini is just a tap away.</p><p> AInoon lets you <span class="bold">choose the right AI for the moment</span>—simply open the AInoon app and select the one that best fits your needs.</p><p><img class="image" data-id="49391688" src="https://i.kickstarter.com/assets/049/391/688/6702842ac8766341c03f15816c94b90e_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747978087&amp;width=1025&amp;sig=vLVFJJQeEnfam7XIpdr%2F5ClXEpUNKFn1GQ0k6xTxDmo%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49209775">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/209/775/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746757064&amp;width=680&amp;sig=al4Rvho9lD3ws590LMoa05eBCNGNA6qInnYBfo1qIW0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49209773">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Helping-you-understand-and-capture-your-world">Helping you understand and capture your world</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/209/773/cbf8ec3bb50f2b82c605a171a3856df1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746757060&amp;width=680&amp;sig=WrF4XEa7odlhctNNhUB%2BcxkowIOcJqejKDxOUW4GQnY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49481968">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/481/968/c9e3f404f00734cfa3b99d80a0813b28_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748598683&amp;width=680&amp;sig=EEiWEGQHu81tgr9fQ88PmTvyuKMOU6w3oNS8FnkrGmc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793167">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/167/aa88bda35ddf523534a2e0e533271a47_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750754519&amp;width=680&amp;sig=u8r9wsx3jURr6mzH%2FqYHlWcpzqitmIF5B0edIO47vtQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">AInoon’s 16MP camera is always ready—just tap, and it captures the moment.</span><br/>From sweeping landscapes to spontaneous snapshots, get crisp, clear photos without reaching for your phone or interrupting your rhythm.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793169">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/169/4a02aab765d0bda7f226d320849f860d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750754531&amp;width=680&amp;sig=HviTe3MRFpjQTRgjJnXZOCfr5rqnK4Mpkv1MioZwzW0%3D"/>
+</figure>
+</div>
+<p>With <span class="bold">1080p Full HD video</span> and <span class="bold">voice-activated recording</span>, Alnoon is always rolling when it counts. Just <span class="text-italic">double-tap</span> the frame, and it starts recording—<span class="bold">no phone, no fuss.</span></p><p><span class="bold">AInoon captures your world with stunning clarity—never miss a beat.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238604">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/604/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015649&amp;width=680&amp;sig=xOiOiHA1mpfuGUtNrWN%2FG6TiTqZBpPUHdZg2VkA%2FGxg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238750">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:One-app-Total-Control-">One app. Total Control.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/750/cce77f522d9c7a971d47028d5d3e1455_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747016370&amp;width=680&amp;sig=IWcC7GyunL9bVPvrqufifkNsADP6N2hxL%2F%2FjEm%2Bsu%2BI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792309">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/309/89b858d3b17adb3ff15ad861eea8ed9b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750749191&amp;width=680&amp;sig=VVo%2BgpkaJmY0TmhJIfXVy2i%2FX1Lf7DUmaYEuO%2Bw1KGI%3D"/>
+</figure>
+</div>
+<p><span class="bold">The AInoon companion app is your smart glasses’ command center.</span><br/>Sync your photos, adjust your preferences, and revisit your AI conversations—all in one clean, intuitive space.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49209549">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/209/549/36b9ba76978e92b1f906e0996e4386bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746755309&amp;width=680&amp;sig=6B2MSfnfUqb6p51zJwj1Ms8aaO9C1pPekxbplSPdLJc%3D" src="https://i.kickstarter.com/assets/049/209/549/36b9ba76978e92b1f906e0996e4386bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746755309&amp;width=680&amp;sig=6B2MSfnfUqb6p51zJwj1Ms8aaO9C1pPekxbplSPdLJc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49391695">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/391/695/ad9280a7ec2d7c69b37fc72fd0eb0d5d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747978152&amp;width=680&amp;sig=llxG4%2FkQcZRy3qrPpcIbUXs5cVp1l1CXHXm5G%2BQnrI4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238620">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/620/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015730&amp;width=680&amp;sig=ZH8LwMLlR%2FTsPeWisbrwqq6g0%2BXlBZWnGUX1UKcztcg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238622">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:TAP-TAP-to-capture-anything">TAP-TAP to capture anything</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/622/05337db9b2ca9175c8cc27d577f8df76_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015733&amp;width=680&amp;sig=gMFalpR171%2FarlHyGsL8iUQUYrRhxmPeiRwwvC9vtvs%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Don-t-miss-the-moment-Alnoon-remembers-it-for-you-"><span class="bold">Don’t miss the moment—Alnoon remembers it for you.</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199671">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/199/671/081fe383c5f4d3a94708ab2a40c3a228_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693631&amp;width=680&amp;sig=5EVoRyngLg%2BTWgXDOEJwDgzMc%2B2mUahe%2FYsmdObxTyk%3D" src="https://i.kickstarter.com/assets/049/199/671/081fe383c5f4d3a94708ab2a40c3a228_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693631&amp;width=680&amp;sig=5EVoRyngLg%2BTWgXDOEJwDgzMc%2B2mUahe%2FYsmdObxTyk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272670">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/670/cbce3d03a497e23e58981195c1307721_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747214063&amp;width=680&amp;sig=z3NGtJFjUD%2BZxPdfsCRZvvAQzu3inRm%2BXyF2Z1M%2B%2BHM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199932">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/199/932/271eb33bf08f7409a58626e487b89faa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746695066&amp;width=680&amp;sig=vsAdydA25zldqB8uHU2Y7%2BwLo3OrcVRFEY1w2INcNrk%3D" src="https://i.kickstarter.com/assets/049/199/932/271eb33bf08f7409a58626e487b89faa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746695066&amp;width=680&amp;sig=vsAdydA25zldqB8uHU2Y7%2BwLo3OrcVRFEY1w2INcNrk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272672">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/672/0ff057137ab8d638c6475b5c09edb50c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747214077&amp;width=680&amp;sig=gH%2F%2BZwoQgKE%2Fz21dAH5sCqYWEtxXEgEpFVhf6flFgCw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199687">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/199/687/1794d3182e219c369d1dc5e0c4c60b88_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693678&amp;width=680&amp;sig=m3UFyifCmmNjw3HCsp0olvNCyv4PXXohPnH6UrcA4Lw%3D" src="https://i.kickstarter.com/assets/049/199/687/1794d3182e219c369d1dc5e0c4c60b88_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693678&amp;width=680&amp;sig=m3UFyifCmmNjw3HCsp0olvNCyv4PXXohPnH6UrcA4Lw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272674">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/674/0df4892510763612d26bdebf0d636975_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747214086&amp;width=680&amp;sig=R7qyE2cmeRJkQJcQXxfhXBC76oLy0MjULMDcOiRTSGE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199694">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/199/694/e1bab6ce86b2bdfbee3cfad5013dafe3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693691&amp;width=680&amp;sig=k8hNuL3sjXDIexh%2BC91B8p33pYJ%2B3VPuPE07O%2BsGd44%3D" src="https://i.kickstarter.com/assets/049/199/694/e1bab6ce86b2bdfbee3cfad5013dafe3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693691&amp;width=680&amp;sig=k8hNuL3sjXDIexh%2BC91B8p33pYJ%2B3VPuPE07O%2BsGd44%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272676">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/676/b36fcc02c684f372bc002d55c7225318_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747214106&amp;width=680&amp;sig=yTP3ZlCt%2FDJbL0q43dZfDCCCvv9IeS2UUSKo6TlxLGc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238626">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/626/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015746&amp;width=680&amp;sig=jktxzV2bt3PaBw6N6CwJWGdvJzvgdRLn5iZs9beDaNY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238628">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hands-free-More-freedom-">Hands-free, More freedom!</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/628/c1522cb65ff68c29a911e01de0379372_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015755&amp;width=680&amp;sig=jtS5duKSW1zrj6qcL8oRvKV5F%2BKglXbTdy5eEdAcGfY%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:When-your-hands-are-free-life-gets-a-whole-lot-smarter-"><span class="bold">When your hands are free, life gets a whole lot smarter.</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199959">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/199/959/24c3ebd0c0fda96712641a0310778155_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746695229&amp;width=680&amp;sig=gmTRqpXbcbREV2trJpbc687GbXrDNlNSnWd90O%2BFF0M%3D" src="https://i.kickstarter.com/assets/049/199/959/24c3ebd0c0fda96712641a0310778155_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746695229&amp;width=680&amp;sig=gmTRqpXbcbREV2trJpbc687GbXrDNlNSnWd90O%2BFF0M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272886">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/886/c8dcbd345ab961a32c5fb9061b1b7659_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747215252&amp;width=680&amp;sig=UUUMxEvIbQFQMGVv2WmXbJCSMiXRPddK6O6A7sfI50g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199956">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/199/956/b4a888395a36b8129da4b9effe2b7df9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746695223&amp;width=680&amp;sig=%2FIqmG7KXiARqJQCChEIq28uMYHS2%2BD%2BwaWDl84iNhYM%3D" src="https://i.kickstarter.com/assets/049/199/956/b4a888395a36b8129da4b9effe2b7df9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746695223&amp;width=680&amp;sig=%2FIqmG7KXiARqJQCChEIq28uMYHS2%2BD%2BwaWDl84iNhYM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272889">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/889/4d8f69cea91da0889e06d2cd424122ed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747215259&amp;width=680&amp;sig=%2BQS%2Ft5tDv57vDMdLC4wVJLQe%2Bd2cs%2FKnGnE34sLqZko%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49391682">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/391/682/10c41b4d374a6bdc6379673b00f4c8aa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747978053&amp;width=680&amp;sig=ckvvcXZaHIbMeauG6uw8LGCYgtrXbDofH7XE2Bb%2FS64%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238631">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/631/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015766&amp;width=680&amp;sig=AffwpW14QtzI3EiC%2BdEL9fJDIAmEIe2XC8bPc3pK5%2Bs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238634">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Smart-Glasses-That-Move-With-You">Smart Glasses That Move With You</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/634/7e665a251a53f133413e6a6dc31408de_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015776&amp;width=680&amp;sig=jppad4XQZZQWl6U%2BFXSVucAST%2FnCEpSaBFduTLw0xfM%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Lightweight-Sleek-Natural-part-of-your-life-wherever-the-day-takes-you-"><span class="bold">Lightweight. Sleek. Natural part of your life—wherever the day takes you.</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796161">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/161/5610a302db3748bc6beed14d2c9c974f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750770702&amp;width=680&amp;sig=XM27eyoECmXzCOR3Exah%2BIR%2BP2QLezFjZbfG8rtha4U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796749">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/749/38cd744e445d9e6ce61c32f8d601a0cb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750773336&amp;width=680&amp;sig=MG7nF9E3Zo15MrJUBh2%2FEeu09pvQ6DPPwcj7DDv8svU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835035">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/035/b0a41eb05835db3ee28a2e0e940413a6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751004674&amp;width=680&amp;sig=HnsqEH9xM%2Fc7cu62TfJQrBxyrLqfMErdpwDWISeEJ4c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49200016">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/200/016/f5fde9db4bcda21326497d13d5e7a909_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746695503&amp;width=680&amp;sig=DVWNUGUCOOCwbEVUf%2FlQnjruHz0b%2B1vt3nL0U5iWHEw%3D" src="https://i.kickstarter.com/assets/049/200/016/f5fde9db4bcda21326497d13d5e7a909_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746695503&amp;width=680&amp;sig=DVWNUGUCOOCwbEVUf%2FlQnjruHz0b%2B1vt3nL0U5iWHEw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272705">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/705/8efa01918cd20e3275931491f33aa901_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747214238&amp;width=680&amp;sig=DaozQGw9vY0%2FOuCM2aUtQ4W7F%2FMEIhyKiMM7sW8tIAo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238641">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/641/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015803&amp;width=680&amp;sig=JVr%2FNGGvga5rx78nHYoVbPp5wl9mX5Mux7ZtOtXaOpU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238642">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Privacy-Protection">Privacy &amp; Protection</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/642/216bb3bcf1be6550e69bbf71ea46551a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015810&amp;width=680&amp;sig=KkP%2B5MRLwJttbwIroBe%2FL1qI887DlA0lB7A8U8eLME8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238747">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/747/850eef9e4ddfb3c09f8921a96ad48164_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747016355&amp;width=680&amp;sig=YgS8quxeXJLm66OZqlv82RAA8966L2X2ogUPUQPvHCc%3D"/>
+</figure>
+</div>
+<p><span class="bold">At AInoon, we believe your personal data should always stay personal.</span><br/>Before any photo, video, or voice recording is sent to AI services, it's encrypted and protected with advanced on-device processing and strict security protocols.</p><p><span class="bold">Nothing is shared externally or stored in the cloud without your clear consent.</span></p><p>And the best part? <span class="bold">You're always in control.</span><br/>Through the AInoon app, you can store, delete, or manage your content—directly on your device. No hidden backups. No third-party access.</p><p><span class="bold">AInoon is designed to help you capture life’s moments—securely, and on your terms.</span><br/>Because true intelligence should never compromise your peace of mind.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238647">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/647/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015838&amp;width=680&amp;sig=oRGJUb9R58A%2BdpxGRMIeWxH9vORy9Dil%2FYyVijTUzGI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238751">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/751/e17183c365d1b9aeefec1f3a5b4a91d6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747016378&amp;width=680&amp;sig=gjRRUvsz7X3UnYJZWEg8eHAfXaGWyAUuTn%2FH2O4XTWE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49600892">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/600/892/26af47a96e0642a4e0f9c7d50c3907e5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749449444&amp;width=680&amp;sig=B7x2RN8NBPvmcRMdVZk2BGnUiXfQmbi4EcaVtj6PqF8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49509691">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/509/691/e49a4c068316db952dae0ac3c032f00b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748832350&amp;width=680&amp;sig=RzafMgWmtaACzo%2BrPrHFhuErZvQr0VR6LWGdgAHE5ak%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49509693">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/509/693/7a0123b07dc9d7e24e90a8fd3484142d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748832356&amp;width=680&amp;sig=AmmLTMy8R2OcHZ%2BXZkAt5NGt9qvWd87h7zW72IozU6A%3D"/>
+</figure>
+</div>
+<p>* Customs duties and VAT may apply when shipping products, depending on each country's regulations. Please note that shipping fees and customs duties for international shipping are borne by the backer.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238662">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/662/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747015904&amp;width=680&amp;sig=glxXNv%2Fkf1t3sfZq%2Bnd2VygmARyBCywM5%2Bqy9YBALWo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238691">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/691/3d791fbdd51dd2d55ba8f6ed915c4365_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747016048&amp;width=680&amp;sig=kPykL7ObN%2BTcG3EfSa5M4rpTfHcbuYOcQLfzsb7q8hw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793561">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/561/98a2dcf96f2e7814aee4ce3a536e5a71_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750756723&amp;width=680&amp;sig=wcpYqWHA9KJ57glwcK8ZSqKsdvMkKQpo6dGJ9Bauuk8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238697">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/697/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747016063&amp;width=680&amp;sig=IYF1uVLuSf83eVVSTP7zt%2Fivh7%2BP%2BDQ%2FWoC9nYBfrrk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238698">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Package">Package</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/698/4b39343e0cc6e6fde9ef968c1ac0790a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747016066&amp;width=680&amp;sig=ew9NmFUJgZXK%2F79%2Bz5VaRu1oRsVN%2FulI4uTjpY5X55k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796212">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/212/1c51a4081f28c39baa42997f43d00b84_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750770885&amp;width=680&amp;sig=IyfooatTIhDMxfAq4qMcIo5OHeB8nJLMjI6bFNtO%2FMA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835032">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/032/50980187ebea7230bf17edae7e97e4e4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751004658&amp;width=680&amp;sig=TX6jm2IGyheK7aa1LkDRjBPEAtuQy0AhW85fu1fS9N8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835034">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/034/7f97cb60740b3899d061664e69521939_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751004663&amp;width=680&amp;sig=Z0f1L3kJMA7u6DAa88wjlE%2BxQfswfx0avG3B4PRy31k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="AInoon at Inspire Day (December 12, 2024)" data-id="49796659">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/659/21b10e4c38265c5b7c340c3a86227d00_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750772952&amp;width=680&amp;sig=VGLfVdzHbMs276r8rQcHLEum2RKMZ82S66x1fHYDxXQ%3D"/>
+<figcaption class="px2">AInoon at Inspire Day (December 12, 2024)</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Ainoon at Inspire Day (December 12, 2024)" data-caption="" data-id="49796566">
+<figure class="image">
+<img alt="Ainoon at Inspire Day (December 12, 2024)" class="fit" src="https://i.kickstarter.com/assets/049/796/566/c51d1056796e253aa696e2c426985ffd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750772504&amp;width=680&amp;sig=hxrW8ZdRYfFk6FjOn1f9j79eis7v6VzSHzfEvyy5x6c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835614">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/614/de8910136a2c5ced2d0ded02711f0149_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751008903&amp;width=680&amp;sig=%2B1hflyjgyXxaXwFYK6qrMmLJI9q28%2FlLk9chRHMKWE0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835615">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/615/4670a004eae1aae09b2c1f8baa293ef8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751008905&amp;width=680&amp;sig=0MF%2F3pq4cC1ichttkENs0%2F8B40ktYfw52fswxxFY5YY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238704">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/704/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747016099&amp;width=680&amp;sig=bxA5F5sFD0CxL4jVxGJVr8AXIDDvJoOu%2FvLEiFATCJw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49238705">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Seerslab">About Seerslab</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/238/705/751805cfdbc065072771153e45055717_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747016107&amp;width=680&amp;sig=47nUGF6ld6I4JWKCqOYqm3FHDWCvMclwRyrs7qtjrWA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49198654">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/198/654/5dec071e10250f9379095c638bfcc5bd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746686927&amp;width=680&amp;sig=rO4OLk9Zth89w%2B3bGJF4bADv50%2FEqiNqu4G5TZUtpNk%3D"/>
+</figure>
+</div>
+<p><span class="bold">At Seerslab, we’re building AI that feels human—technology that sees and responds to the world the way we do.</span></p><p>Our journey began with the world’s first Vision AI based AR camera app, embraced by tens of millions for its simplicity and delightfully intuitive design.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49390729">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/390/729/1d11b7bd30444c4aa58cbe7fd31d2065_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747969727&amp;width=680&amp;sig=3OEseAt2z9PGC6oliQUOE%2FmAnXUQVT8g6babYI5Mwg0%3D"/>
+</figure>
+</div>
+<p>Building on these achievements, we secured early investment from Y Combinator—Silicon Valley’s most prestigious startup accelerator. This partnership gave us more than capital—it brought world-class mentorship, a global network, and the backing of top-tier investors.</p><p><span class="bold">Now, we’re taking the next leap with AInoon.</span><br/>AInoon is built to understand your environment and deliver real-time, visual, and contextual intelligence—no commands, no friction. Just natural, seamless interaction between you and the world around you.</p><p><span class="bold">Under the hood, AInoon represents years of deep research in AI, computer vision, and spatial computing.</span><br/>It combines on-device AI processing, a privacy-first architecture, a lightweight ergonomic frame, and real-time recognition capabilities—all into one intuitive wearable.</p><p>At Seerslab, we believe the best technology doesn’t compete for your attention—it disappears into your routine. AInoon isn’t about flashy interfaces or invasive alerts. It’s ambient intelligence that works quietly in the background—augmenting your senses, syncing with your day, and letting you live more, not scroll more<span class="bold">.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835611">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/611/bb35867a873a59c73027508ea902ae00_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751008888&amp;width=680&amp;sig=kRJ%2BuBNaB3k5Vphw1QXRVEGR38hvLAkdeLxVa2%2FTmm8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835469">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/469/4dfcca57ffcef9c448d14b99b5112d2d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751008125&amp;width=680&amp;sig=%2FbT%2B8f6lSN9noqwa%2B8nsmZyHrU3Q3ZOqXBg80sCE6kE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49390735">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/390/735/ee7250b2993bd6f2afb130ebe2304e81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747969756&amp;width=680&amp;sig=bWlrBwmbXOQHu6biUV%2F3QznSnJWjW%2BFpDOhU%2F8FZ8aU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49390774">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/390/774/06393f5d996657cd13838cd42b47ae7a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747970013&amp;width=680&amp;sig=piGDZ0yc%2BE8Ty5IljNmwPaRD89O77AIRT1vFRrz9Lw0%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span>This project is promoted by Jellop, the ad tech power behind the best Kickstaters with 3,500+ successful Kickstarter projects with over $1B raised between them.</span><span></span><span></span><span></span><span>This project is boosted by BackerCrew</span><span>This project is promoted by Produxhub</span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">At Alnoon, we’re committed to delivering a high-quality, innovative smart glasses experience powered by AI. That said, creating a next-gen product—both hardware and software—comes with a few hurdles. Here’s how we’re actively managing key areas to ensure a smooth launch:
+
+1. Manufacturing &amp; Supply Chain
+We’re partnering with seasoned manufacturers to meet top-tier quality standards. As we scale from prototype to mass production, challenges like component shortages or delays may arise—but we’re working closely with our suppliers to stay on schedule.
+
+2. Product Refinement
+Our working prototypes are fully functional and extensively tested. During the move to full production, small tweaks may be made to improve performance and overall user experience. We’ll keep you updated every step of the way.
+
+3. Fulfillment &amp; Logistics
+We’re teaming up with reliable logistics partners to get Alnoon to your doorstep safely and on time. Still, factors like customs, global shipping disruptions, or local regulations could impact delivery schedules. If anything changes, you’ll be the first to know.
+
+4. Software &amp; App Updates
+Because Alnoon runs on dynamic AI tech, occasional software updates will be part of the journey—enhancing features, fixing bugs, and keeping everything secure and up to date. Our dev team is ready to roll these out seamlessly.
+
+5. Global Certification &amp; Compliance
+We’re actively pursuing the certifications needed to launch Alnoon worldwide. In some regions, additional approval processes may cause delays—but we’re working hard to navigate those quickly and responsibly.
+
+We’re grateful for your support and patience as we bring Alnoon to life. Our promise: to stay transparent, move fast, and deliver something truly game-changing—together.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>At AInoon, we have designed AI-powered smart glasses to seamlessly integrate advanced AI technology into your daily life. Powered by [ChatGPT-4o/Gemini], our AI assistant enhances hands-free interactions, allowing users to perform voice searches, capture moments, and manage essential tasks effortlessly.
+
+We prioritize privacy and security at every step. All data processed through the AI is encrypted, anonymized, and never stored without your explicit consent. We ensure full compliance with global privacy standards, allowing you to maintain full control over your data.
+
+
+The AInoon companion app enables users to synchronize captured photos and videos, manage settings, and review AI conversation history. By combining cutting-edge AI technology with intuitive design, AInoon offers a seamless and smart experience, making everyday interactions more efficient and convenient.
+
+We are committed to delivering a secure, transparent, and innovative AI experience that fits naturally into your lifestyle.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

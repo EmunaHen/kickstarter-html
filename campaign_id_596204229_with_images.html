@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HugsyBot – The AI Teddy Bear That Talks Back</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/853/273/dcd983cdeca2e99f5c8d604d4aa4dba1_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751158458&width=560&sig=Ba9%2FPo9XVUgxQITcB0%2Fev1futWFz8XPIEA9jED9NPqw%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>HugsyBot – The AI Teddy Bear That Talks Back</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A smart, cuddly friend that listens, remembers, and speaks — Hugsy helps kids feel heard, comforted, and connected every single day.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>31 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49854214">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/854/214/8a0d67b19b326e9625b81f8648e3d8fc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751169273&amp;width=680&amp;sig=e0S7f8p1fdfFp4Eh6CmvegKaD0%2FUzEw3cQ1Z%2FZuxAv4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Built for Connection, Not Just Conversation 🧸</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49854290">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/854/290/9a789c3b27fe3b7c57a47d5aa5bb625d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751170196&amp;width=680&amp;sig=P0nRJ76Ty%2BcgNHAmh8M7gQDMWvsanpqIy%2FK88VM19T0%3D"/>
+</figure>
+</div>
+<p>What makes HugsyBot different from other toys is how it interacts. Every response is generated by a real AI brain (no scripts or pre-recorded phrases), making each chat feel natural, thoughtful, and playful.</p><p><span class="bold">Each HugsyBot features</span>:</p><p>Choose how Hugsy feels today — 10 unique modes to match every emotion, from bedtime to fun facts! (auto switches due to certain key words)</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49854300">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/854/300/4e9b8974782449e8117b9bc0aeddcf50_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751170383&amp;width=680&amp;sig=DCuckHvePbsMMXh1O2dUfNYiVl09CI7cygzy%2FckHslE%3D"/>
+</figure>
+</div>
+<p><span class="bold">With HugsyBot, every day starts with a feeling — and ends with a smile</span></p><p>🧠 Real-time AI voice conversations</p><p>🗣️ 56+ language support</p><p>🧒 Remember your child’s name and favorite topic</p><p>🔁 15-second response delay to build <span class="bold">patience</span> and active listening</p><p>🐾 Personalized name label on the foot</p><p>🌙 Bedtime, story, joke, and learning modes</p><p>All interactions are powered through an invisible tech layer that keeps the magic alive while protecting your child’s privacy.</p><p><span class="bold">Why HugsyBot Matters</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49854317">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/854/317/7d7202dacf35bfd057a5e1e5f37a5c52_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751170584&amp;width=680&amp;sig=tUGzD8AnRBheTCh8euBiY8RNB1jVx4dKlesLl0Z7U3I%3D"/>
+</figure>
+</div>
+<p>We live in a fast-paced, screen-heavy world where kids often miss out on simple, meaningful emotional growth. HugsyBot was created to help bring that back — to give children a safe space to talk, laugh, wonder, and feel heard.</p><p>Research shows that interactive emotional toys can improve self-regulation, reduce stress, and help kids form healthy communication habits. HugsyBot offers this in a huggable, friendly package.</p><p><span class="bold">From Prototype to Playtime</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863583">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/583/f9f0f8277bcf152bf765278951bc2a2b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751263885&amp;width=680&amp;sig=7uTKNXeJaeLWnoX%2BvCg%2BdmdAfF6vv1bvyT69kYL%2Fyu4%3D"/>
+</figure>
+</div>
+<p> First sketch end of 2024</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49854402">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/854/402/cd1244fa19e513e9c8935205cd6925ac_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751171905&amp;width=680&amp;sig=B6yuOb4PgiVo9gEaPAfNyQ%2FCfSb0hP6HO30bsWHfNOM%3D"/>
+</figure>
+</div>
+<p>HugsyBot started as a dream to bring warmth, conversation, and AI together. We’ve spent months building a functional prototype and a magical web demo — and now we’re ready to bring Hugsy to life.</p><p>Your support will help us:</p><p>Finalize the voice AI and personalization features</p><p>Manufacture safe, cuddly HugsyBots with durable AI hardware</p><p>Package and ship HugsyBots to families around the worrl</p><div class="flex basis-auto flex-col -mb-(--composer-overlap-px) [--composer-overlap-px:55px] grow overflow-hidden"><div class="relative h-full"><div class="flex h-full flex-col overflow-y-auto [scrollbar-gutter:stable_both-edges] @[84rem]/thread:pt-(--header-height)"><div class="@thread-xl/thread:pt-header-height flex flex-col text-sm pb-25">
+<div class="text-base my-auto mx-auto py-5 [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[72rem]:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto flex max-w-(--thread-content-max-width) flex-1 text-base gap-4 md:gap-5 lg:gap-6 group/turn-messages focus-visible:outline-hidden"><div class="group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn">
+<div class="relative flex-col gap-1 md:gap-3"><div class="flex max-w-full flex-col grow"><div class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]"><div class="markdown prose dark:prose-invert w-full break-words dark">
+<p><span class="bold">🎥 See Hugsy in Action</span><br/>Here’s a real, unedited 3-minute demo of HugsyBot in action. </p>
+<p>You’ll see: Live conversation with Hugsy</p>
+<p>Name recall and memory</p>
+<p>Multilingual voice responses </p>
+<p>Explanation of the 15-second thoughtful delay</p>
+<p>👉 <span class="bold">Watch the demo:</span><br/> </p>
+</div></div></div></div></div>
+</div></div></div>
+</div></div></div></div><p><span class="bold">Tiers &amp; Pledges</span></p><p>🎁 <span class="bold">HugsyBot Lite</span> ($125)<br/>Includes a HugsyBot with real-time AI voice, no saved memory. Comes personalized with your child’s name on a foot tag. No information is remembered after each session.</p><p>🧠 <span class="bold">HugsyBot Plus</span> ($200)<br/>Full memory system — remembers your child’s name, favorite things, and past conversations. Includes “Founding Friend” digital certificate + name engraved on our Kickstarter supporter page.</p><p>👨‍👩‍👧‍👦 <span class="bold">Family Pack (3 Bears)</span> ($500)<br/>Get three HugsyBots (mix memory or no-memory options) at a bundled price. Ideal for families with multiple children.</p><p>💌 <span class="bold">Teddy Hug Tier</span> ($10)<br/>A heartfelt thank-you and a virtual “Hugsy hug” sent your way with love. Your name will appear in our thank-you supporters list.</p><p><span class="bold">Privacy &amp; Safety</span> 💾</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49854434">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/854/434/40c830292e3e168a8a34ef264ffd72b7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751172254&amp;width=680&amp;sig=jp1SNxb7KiTAjZv7wmUFbqhu5%2FsI88eyOYUjWMy%2BL70%3D"/>
+</figure>
+</div>
+<p>HugsyBot is designed with child safety at the core. All memory features require <span class="bold">parental approval</span>, and any order with memory functionality will include a digital waiver to sign. If not approved, a no-memory HugsyBot will be shipped instead.</p><p>We are not psychologists or therapists, and HugsyBot is not a replacement for professional care. It’s simply a friendly companion designed to support healthy communication and imaginative play.</p><p><span class="bold">Join Our Journey</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49854544">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/854/544/0965664f7906defdf41c4f2aaf565471_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751173259&amp;width=680&amp;sig=YAhOneX5Z37zHBEVGebspMcE3Qtt33BybTEX5hiDCz8%3D"/>
+</figure>
+</div>
+<p><span class="bold">We believe HugsyBot can become more than a toy — it can be a companion, a teacher, and a friend. By supporting this campaign, you’re not just funding a product. You’re helping create a future where children grow up more emotionally connected, thoughtful, and heard.</span></p><p><span class="bold">Help us bring Hugsy to families everywhere.</span><br/><span class="bold">Let’s teach the world to speak from the heart — one teddy hug at a time.</span></p><p><span class="bold">AI Transparency 🧠</span><br/>HugsyBot uses trusted AI services (like OpenAI and ElevenLabs) to power its voice and conversation features. All responses are generated in real-time by licensed APIs, and we do not create or train our own models. We credit all AI providers and operate within their terms of service. Memory and personalization features are only enabled with parental consent.</p><p>🧠 <span class="bold">How We Built HugsyBot</span></p><p><span class="text-italic">HugsyBot is more than just a plush toy — it’s powered by a fully customized AI workflow designed to talk, listen, remember, and even switch languages based on what your child says.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863634">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/634/1a8879b5bef52543b74394d24d868daa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751264260&amp;width=680&amp;sig=AeK43rZb4SRxkWXrdwWl1t0vt474cdZ1XLgWQa8SqSI%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">This is HugsyBot’s real-time brain, built in n8n. When a child speaks, their voice is sent to OpenAI Whisper for transcription, then processed through Hugsy’s memory system. The flow detects the child’s name, favorite thing, and emotional context, and saves them for the session — all anonymously.</span></p><p><span class="text-italic">If Hugsy hears Thai, Spanish, or French, the system <span class="bold">automatically switches</span> to respond in that language. Everything is voiced using ElevenLabs, giving Hugsy a warm, lifelike sound.</span></p><p><span class="text-italic">The flow also includes safety filters, session timeouts, and support for different interaction “modes” like jokes, bedtime stories, friend mode, and learning. All data is temporary and child-safe.</span></p><h3 class="page-anchor" id="h:-Giving-Hugsy-a-Voice">🗣️ Giving Hugsy a Voice</h3><p>To make Hugsy feel like a real friend, I used ElevenLabs to create a natural-sounding voice that’s warm, expressive, and multilingual. This voice engine allows Hugsy to whisper bedtime stories, tell jokes with personality, and even sing short songs.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863660">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/660/c0057ee97927a417a25ffcfc22b93c52_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751264448&amp;width=680&amp;sig=olAFm2YTxoBTyIUa7lS%2BjWgSY3Id2UIb7jcnTnUe45I%3D"/>
+</figure>
+</div>
+<p>HugsyBot uses ElevenLabs’ multilingual voice engine to generate expressive, real-time responses. This makes Hugsy feel more human — able to whisper, giggle, or speak French, Spanish, and more.</p><p><span class="text-italic"><span class="bold">Note:</span> Images shown are prototype representations. The final product may vary slightly in design, materials, or features as we continue refining HugsyBot for production. All updates will prioritize quality, safety, and your child’s experience.</span></p></div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div class="relative flex justify-center items-center h50"><svg height="250" preserveaspectratio="xMinYMid" viewbox="0 0 250 250" width="250"><g transform="translate(125, 125) scale(2.5, 2.5)"><defs><pattern height="1" id="bg1" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/xglb1yux-hatch_light_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=clgJlzhY3k416hIJWrLOR2MdAEuRyBIYLy5Q4Y0qGuE%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg2" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/qm5rth84-dot_line_white_2_pattern_overlays_20190901.png?origin=static&amp;sig=X4u8yLPJQSLFYyFAWhfks%2Bb0l7JvccL9Ns4mZ%2BdcX%2Fs%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg3" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/2pgrzep-scattered_dots_black_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=7dYAvrHvJlUMrHNcRby2NfD16BbES28QnocyMYhS%2BjU%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg4" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/l9o3ber7-grid_dark_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=w1sAH2Z8b0%2Bm44c8oN%2BES4hwspBpkhrrhc1YpFJSPyQ%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg5" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/v0js8b2e-dot_line_white_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=j1%2Biz4vH2TtOn5EX0sEl2Xque0oEBcJupM5qVbNe8CM%3D" width="160" x="0" y="0"/></pattern></defs><path class="innerArc innerArc0" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-32.29366242083391,29.589852440477287L-25.593766588740902,23.800454025103168A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="#059968" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc1" d="M-33.96065838442005,27.66068838797617A43.8,43.8,0,0,1,-26.55229325260464,-34.834117227621626L-21.39166210221475,-27.638728127478462A34.949999999999996,34.949999999999996,0,0,0,-27.260762552327048,21.87128997260205Z" fill="#71A0FF" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc2" d="M-24.480457160875744,-36.320066315943414A43.8,43.8,0,0,1,-12.766263824672043,-41.89823991480871L-10.433030208846251,-33.35647434399057A34.949999999999996,34.949999999999996,0,0,0,-19.31982601048582,-29.124677215800272Z" fill="#a3a3a3" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc3" d="M-10.306752886430191,-42.570069825383925A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-7.973519270604356,-34.028304254565796Z" fill="#37d893" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArcTexture" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-32.29366242083391,29.589852440477287L-25.593766588740902,23.800454025103168A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="url(#bg1)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-33.96065838442005,27.66068838797617A43.8,43.8,0,0,1,-26.55229325260464,-34.834117227621626L-21.39166210221475,-27.638728127478462A34.949999999999996,34.949999999999996,0,0,0,-27.260762552327048,21.87128997260205Z" fill="url(#bg2)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-24.480457160875744,-36.320066315943414A43.8,43.8,0,0,1,-12.766263824672043,-41.89823991480871L-10.433030208846251,-33.35647434399057A34.949999999999996,34.949999999999996,0,0,0,-19.31982601048582,-29.124677215800272Z" fill="url(#bg3)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-10.306752886430191,-42.570069825383925A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-7.973519270604356,-34.028304254565796Z" fill="url(#bg4)" style="opacity: 1;"></path><path class="outerArc" d="M1.274808758606064,-49.983745984359565A50,50,0,1,1,-20.30829989164831,45.68996558885635L-18.676262777818348,42.2568007385069A46.2,46.2,0,1,0,1.2748087586060677,-46.18240858410247Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-19.896175869741114,45.87092963697522A50,50,0,0,1,-36.98662417825958,33.64505360221891L-34.11034826059853,31.159655671086664A46.2,46.2,0,0,0,-18.472941860853116,42.346079145601436Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-38.653620141845714,31.71588954971781A50,50,0,0,1,-49.50970322319281,6.9849328380000575L-45.733325581859795,6.550032917749994A46.2,46.2,0,0,0,-35.777344224184674,29.230491618585543Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-49.44481876940067,7.430336254916302A50,50,0,0,1,-47.429619519520536,-15.825017922059883L-43.85554707866797,-14.530347223337014A46.2,46.2,0,0,0,-45.70131491045861,6.769772186351158Z" fill="#3B3BCC" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-47.57015456645305,-15.397415189692271A50,50,0,0,1,-40.17708378572911,-29.76242494277815L-37.181234954847874,-27.42254122491931A46.2,46.2,0,0,0,-43.92487988405951,-14.319389902190132Z" fill="#00007D" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-40.4433772602912,-29.399544822696843A50,50,0,0,1,-30.16707253274667,-39.87414870318865L-27.951605386720782,-36.78515673889459A46.2,46.2,0,0,0,-37.31261053732244,-27.243514730850983Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-28.09523644101776,-41.360097791510455A50,50,0,0,1,-14.400584178991679,-47.88134475245839L-13.398923283410198,-44.21435123175832A46.2,46.2,0,0,0,-25.87976929499185,-38.27110582721641Z" fill="#cccccc" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-11.941073240749809,-48.55317466303361A50,50,0,0,1,-1.2748087586061145,-49.983745984359565L-1.2748087586061245,-46.18240858410247A46.2,46.2,0,0,0,-10.9394123451683,-44.88618114233355Z" fill="#c7f5df" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><text font-size="8" height="250" style="opacity: 1;" text-anchor="middle" width="250" x="-1" y="3">$7,069</text></g></svg></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$4,500</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Manufacturing</div><div class="m0 type-16 text-nowrap">$4,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Research &amp; Development</div><div class="m0 type-16 text-nowrap">$500</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$1,869</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Taxes</div><div class="m0 type-16 text-nowrap">$639</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">$520</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">$355</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">$355</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Fulfilling</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$400</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Packaging &amp; Shipping</div><div class="m0 type-16 text-nowrap">$400</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Multiple/Other</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$300</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Labor</div><div class="m0 type-16 text-nowrap">$300</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated June 28, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Building HugsyBot — a smart, emotionally aware AI teddy bear — is a bold and ambitious mission. While we’ve already developed a working prototype and live web demo, there are still challenges ahead. Here’s what we’re watching closely and how we plan to overcome them:
+
+🔧 Manufacturing &amp; Hardware
+Risk: Producing a high-quality, durable teddy bear that also houses AI hardware takes careful planning.
+Solution: We’ve identified several manufacturing partners and are actively testing options for materials and hardware housing. Our goal is to make HugsyBot both cuddly and technically reliable — and we’ll be transparent as we finalize each step.
+
+🧠 AI Integration
+Risk: Delivering consistent, emotionally engaging AI voice responses in real-time can be technically complex.
+Solution: We've already built and tested HugsyBot's voice system using reliable APIs like OpenAI and ElevenLabs. As we scale, we’ll continue refining Hugsy’s brain to ensure smooth conversations without delays or bugs.
+
+🧸 Safety &amp; Privacy
+Risk: We’re handling a product for children, and safety is non-negotiable.
+Solution: Every memory-enabled HugsyBot requires parental consent. No data is ever sold or tracked for ads. We follow COPPA-inspired guidelines and allow easy opt-out and resets at any time.
+
+📦 Fulfillment &amp; Delivery
+Risk: Shipping delays or global supply chain issues could affect delivery dates.
+Solution: We’ve built extra time into our production schedule and will keep backers informed every step of the way. Transparency is key — if any delays happen, you’ll know immediately.
+
+📈 Scaling Production
+Risk: If we exceed our goal significantly, production and support may need to scale fast.
+Solution: That’s a good problem to have — and we’re ready for it. We’ve already vetted multiple partners for fulfillment, production, and customer support to scale responsibly.
+
+We’re not just building a toy — we’re building a heartfelt companion that speaks to kids in a way no toy ever has. Your support makes that possible.
+
+Let’s bring Hugsy to life — together. 💜</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18">My project seeks funding for AI technology.</h3><div class="flex flex-auto flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p style="margin-bottom: 1.5rem;">The owners of these works are or will be receiving credit for their work.</p></div><div class="flex flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p style="margin-bottom: 1.5rem;">For the database or source that I will use or will create, the consent of the persons whose works or information incorporated have been obtained.</p></div></div><div class="border-bottom mb2"><h3 class="normal type-18 mt5">I plan to use AI-generated content in my project.</h3><h4 class="bold lh4" style="margin-bottom: 1.5rem;">What parts of your project will use AI generated content? Please be as specific as possible.</h4><p class="border-left border-create-700 border-left5px pl3">In my project, I will be using AI-generated illustrations and promotional graphics to showcase HugsyBot on the Kickstarter page and in marketing materials. These visuals were generated using tools like DALL·E and Midjourney to help represent HugsyBot in a visually appealing and emotionally engaging way.</p><h4 class="bold lh4" style="margin-bottom: 1.5rem;">Do you have the consent of owners of the works that were (or will be) used to produce the AI generated portion of your projects? Please explain.</h4><p class="border-left border-create-700 border-left5px pl3">Yes. All AI-generated content was created using commercially licensed tools that grant me full usage rights for promotional and commercial use. I do not use any copyrighted works, third-party IPs, or protected likenesses in any generated media.</p></div><div class="border-bottom mb2"><h3 class="normal type-18 mt5">I am incorporating AI in my project in another way.</h3><p>HugsyBot is powered by licensed third-party AI services including OpenAI (for natural conversation) and ElevenLabs (for voice). These technologies enable HugsyBot to respond to children in real time with emotionally intelligent, voice-based interactions. We do not train custom AI models and do not collect or reuse personal data without parental consent.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">We’re designing HugsyBot to last — both emotionally and physically.
+
+Our goal is to create a toy that doesn’t get tossed aside after a week. HugsyBot is built with:
+
+Durable stitching and child-safe materials to withstand daily hugs, squeezes, and adventures.
+
+Modular internal hardware so future updates or repairs can be done without replacing the whole toy.
+
+Timeless emotional value — HugsyBot isn’t just a fad or a flashy gadget. It builds connection through conversation, making it a lasting companion that grows with your child.
+
+By combining thoughtful tech with heartwarming design, HugsyBot is made to be more than a toy — it’s a keepsake.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">We aim to source non-toxic materials for child safety and longevity, with recyclable packaging for reduced waste</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clixet: A Multi-Tool for Everyday Tasks and Emergencies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/864/346/77a30137b9360fbeb4ab16ff145511ea_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751269488&width=560&sig=DjzCYgM2pOi9ejVLC9a6qo2bnPi8ErZPWonI5e7zSI4%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Clixet: A Multi-Tool for Everyday Tasks and Emergencies</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A True EDC Companion — Functional, Portable, Built for the Unexpected.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777137">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/777/137/f8092f9bfb7f796a14f2b3381051a895_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750647755&amp;width=680&amp;sig=QGcAkCiwaoYaif0VPU8uS7J17YyDWo2vqtGjxzDGHEY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49961268">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/961/268/acdc670bd639804703ed92e5ae6d9889_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751964302&amp;width=680&amp;sig=KpWVnuasetzEQg5MKfDJesm9HETnUm9J%2B1YxTL0w4EI%3D"/>
+</figure>
+</div>
+<p>Tired of fumbling through bulky toolboxes or finding yourself tool-less when it counts? Conventional multitools are often too large, too clunky, or just not versatile enough for real-life demands. Worse yet, they lack comfort, portability, and personality.</p><p>Clixet redefines everyday utility by combining rugged performance with compact elegance and stress-relieving interactivity. Engineered from high-grade titanium alloy, Clixet is light enough to clip to your keychain but strong enough to tackle repairs, adjustments, and creative tasks wherever you are.</p><p>Why carry a dozen tools when one can do it all—smarter, faster, and more fun?</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49735199">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:9-Tools-in-One">9 Tools in One</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/735/199/6cd46b2c38a0affb80ba086140a763a0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750305647&amp;width=680&amp;sig=IXsUG01q7FPPVu52Mb8IdXTG9a1OxCxgiJPNZAErhJE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49735163">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/735/163/08f585a67400585523c39833b2b96aaa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750305401&amp;width=680&amp;sig=plXP906T9qrwIVMzqjrH85BfkSFWGM00zmnbP%2FBdcDo%3D"/>
+</figure>
+</div>
+<div><div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49963772">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/963/772/730a70aed30469eb15764b71905a3152_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751980325&amp;width=680&amp;sig=Pn%2FJ911hVPOS9ULX%2FgcA26DqJ7ll0crgBYaUHqFbCpk%3D" src="https://i.kickstarter.com/assets/049/963/772/730a70aed30469eb15764b71905a3152_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751980325&amp;width=680&amp;sig=Pn%2FJ911hVPOS9ULX%2FgcA26DqJ7ll0crgBYaUHqFbCpk%3D"/>
+</figure>
+</div>
+<p>Forge your ideas with a pen that never runs dry. Using a metal alloy tip, it writes smoothly on most surfaces—no ink, no refills, no waste. Jot down quick measurements in the garage, sketch out a fix at your workbench, or mark a cut on-site —it's always ready.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776798">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/798/3fd3c4cc097ae9a53fb56e00422f0788_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645105&amp;width=680&amp;sig=CIX%2Fi02zSmD64Tg%2BWTxc5vQBPu0ZZErr%2FElrAF2PQ4I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776795">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/795/71361fd7c5bc87ab9db62359c46469c7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645054&amp;width=680&amp;sig=mII%2BT%2B2iJzJHoOzQFZww7L02KjN2tJsuV6sPeGeziME%3D" src="https://i.kickstarter.com/assets/049/776/795/71361fd7c5bc87ab9db62359c46469c7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645054&amp;width=680&amp;sig=mII%2BT%2B2iJzJHoOzQFZww7L02KjN2tJsuV6sPeGeziME%3D"/>
+</figure>
+</div>
+<p>Integrated directly into the tool’s frame, the bottle opener is always at your fingertips. From camping trips to casual hangs, pop a cap anytime without hunting for an opener.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776807">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/807/b7335aa450d04bedf1044a80e9cc9c57_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645297&amp;width=680&amp;sig=YKw%2F8ZEFo2kBW8lxuzPeGM0VxFUhLDrU1GzCR2RYT7E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776812">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/812/e77fa7e72f0ef09b31fd12252d4e2ecd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645351&amp;width=680&amp;sig=w17aK0WVkJjJtXnOd7%2FxZIUYG%2Bnlsbi8z94QlnbZFok%3D" src="https://i.kickstarter.com/assets/049/776/812/e77fa7e72f0ef09b31fd12252d4e2ecd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645351&amp;width=680&amp;sig=w17aK0WVkJjJtXnOd7%2FxZIUYG%2Bnlsbi8z94QlnbZFok%3D"/>
+</figure>
+</div>
+<p>Crafted for tight spots and quick fixes, these compact pliers offer control and grip beyond their size. Tackle repairs, tweaks, and grips with pro-level precision in the palm of your hand.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776813">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/813/839bcadbd8c7252b93b3b74c51f54d22_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645358&amp;width=680&amp;sig=ggD0s6fTE%2Fjk3ynxRtAC3Pax9q6X5iD1%2BNRESZUg5no%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776815">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/815/8fcb656f4167fb5d5b9c6eb0caac764e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645370&amp;width=680&amp;sig=2HDLh%2BaN%2F0DF1LiVznQzWb4Uw8KsiPk8v9fdz%2BbThwM%3D" src="https://i.kickstarter.com/assets/049/776/815/8fcb656f4167fb5d5b9c6eb0caac764e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645370&amp;width=680&amp;sig=2HDLh%2BaN%2F0DF1LiVznQzWb4Uw8KsiPk8v9fdz%2BbThwM%3D"/>
+</figure>
+</div>
+<p>Tear through tape, plastic, and packaging with a dedicated blade that’s always ready. Sharp, safe, and surgically clean—because multitools should open boxes better than your keys ever did.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776816">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/816/76e2e23cc2c50278f03863f83388ca18_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645392&amp;width=680&amp;sig=r%2FTPNfaf7JyIkL4WMsup%2BlHLfJBxHhMNjWjqOHmOgDc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776818">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/818/0c25a31c50b7d627b5910988fbf2e226_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645400&amp;width=680&amp;sig=dktj3ISe80qFCnBi4DsasWiSzJawHdLaFj8jOOqDU5U%3D" src="https://i.kickstarter.com/assets/049/776/818/0c25a31c50b7d627b5910988fbf2e226_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645400&amp;width=680&amp;sig=dktj3ISe80qFCnBi4DsasWiSzJawHdLaFj8jOOqDU5U%3D"/>
+</figure>
+</div>
+<p>Clixet features a built-in caliper-style scale, allowing for accurate measurements right on the tool itself. Perfect for quick checks, alignment, or sizing tasks when precision matters most—no need to reach for a separate ruler.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776821">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/821/82fe7de7493e437421fe5e9ff0dfd201_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645414&amp;width=680&amp;sig=hB1tKwfXkHaS3Ibg3i8gqdUopJTWxfijuY54C0I3VE8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776823">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/823/fd6500079f3c940e6479fe7a7f1153e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645420&amp;width=680&amp;sig=2Hndfm5O8cLL2%2Fz7rIE4GICWyE6iIfDj06Vyai5tXjc%3D" src="https://i.kickstarter.com/assets/049/776/823/fd6500079f3c940e6479fe7a7f1153e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645420&amp;width=680&amp;sig=2Hndfm5O8cLL2%2Fz7rIE4GICWyE6iIfDj06Vyai5tXjc%3D"/>
+</figure>
+</div>
+<p>A built-in glow-in-the-dark strip ensures you’ll never lose track of your tool, even in low light or total blackout. Whether you're digging through a backpack at night, working in a dim garage, or caught in a power outage, Clixet stays visible when it counts.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776825">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/825/1010d96f21eabd86a3757981342d061f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645431&amp;width=680&amp;sig=lD4WAUFikKOSj8zX4t7eNlTpQUNtprG9DaBb7j3a660%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776828">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/828/66092b8c434bb9feade863c41002ad39_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645442&amp;width=680&amp;sig=3raHglmLdPbXja24msdrG4pQytiFcEzS%2BcXoqga2DIs%3D" src="https://i.kickstarter.com/assets/049/776/828/66092b8c434bb9feade863c41002ad39_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645442&amp;width=680&amp;sig=3raHglmLdPbXja24msdrG4pQytiFcEzS%2BcXoqga2DIs%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-MifBdEocFojHZwxD7H8cnrVbnYg">Slide your phone into the plier groove and it instantly becomes a stable stand—no extra parts, no setup. Perfect for watching tutorials while you work, taking hands-free calls, or streaming on the go. It’s a hidden feature you’ll use more than you expect.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/836/3af2ec1a2c05dcf899ed236fc6647beb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645534&amp;width=680&amp;sig=NPw%2BydPZs%2BxdVs9EtN01BOXmajmstgPaV7y781sr1So%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776838">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/838/53fe8e066d56e870604ac53462597d14_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645544&amp;width=680&amp;sig=%2FoMz4EwODPUIVZK6sVDa%2BH%2FGuKwYsm3o1iJHLr2q584%3D" src="https://i.kickstarter.com/assets/049/776/838/53fe8e066d56e870604ac53462597d14_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645544&amp;width=680&amp;sig=%2FoMz4EwODPUIVZK6sVDa%2BH%2FGuKwYsm3o1iJHLr2q584%3D"/>
+</figure>
+</div>
+<p>The specially designed groove at the top of Clixet lets you easily pull out nails, tacks, or staples with precise leverage. No need for a hammer or pry bar—just slide the nail into the groove and lift it out effortlessly. Ideal for quick repairs, packing, or tearing down old projects.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776843">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/843/5b0e2365ce5505e2a7ffe36b2fe3c80a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645618&amp;width=680&amp;sig=7W0iHwsq3%2FGYiHJA3DYh%2Fjj93N9UhLVLxXv21ewMXVk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776850">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/850/7851896b19688d7e3db6f049dd7bf9df_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645679&amp;width=680&amp;sig=BmwYjagCa5eLREtLx2WNGWBkrFYpQ8N%2BKXXzNsNMvmw%3D" src="https://i.kickstarter.com/assets/049/776/850/7851896b19688d7e3db6f049dd7bf9df_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645679&amp;width=680&amp;sig=BmwYjagCa5eLREtLx2WNGWBkrFYpQ8N%2BKXXzNsNMvmw%3D"/>
+</figure>
+</div>
+<p>Clixet’s hexagonal groove design makes swapping bits quick and easy. Simply insert your screwdriver bit into the slot, and you’re ready to go. Included are a high-strength Phillips and flathead bit, ensuring you're always prepared for any screwdriving task—whether you're at home or on the move.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776853">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stress-Relief">Stress-Relief</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/853/991a175c521f42ebead110189742834b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645706&amp;width=680&amp;sig=Eum8R%2FCDMmbiq%2FLF0ADg3u9CaqYj2JVOm8E2E1BBQ4g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776854">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/854/c415433c239d92a251604475b9747570_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645712&amp;width=680&amp;sig=JIq59r3K6Vz1m6sc%2FZc%2BDsA2OMYyQNcGSGuG14yefU0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776857">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/857/ffcf86b7c6ecff6bc47817457ee856c5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645727&amp;width=680&amp;sig=TtgyGyVOnvmI2jp%2Fvjd5%2BFf2NNl%2Bka33s6cG8dtBmtk%3D" src="https://i.kickstarter.com/assets/049/776/857/ffcf86b7c6ecff6bc47817457ee856c5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645727&amp;width=680&amp;sig=TtgyGyVOnvmI2jp%2Fvjd5%2BFf2NNl%2Bka33s6cG8dtBmtk%3D"/>
+</figure>
+</div>
+<p>Clixet features an embedded fidget spinner designed to help you relieve stress and improve focus. The smooth, satisfying spin produces a calming ASMR sound, perfect for moments when you need a mental break or a tactile distraction.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776861">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Modular-Magnetic">Modular &amp; Magnetic</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/861/4e269387823fd4467d644a191e21e808_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645748&amp;width=680&amp;sig=RH%2FnE4s0qLL2lOwPeh4OfjWttEOhqLgbIUcpminM5sY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776867">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/867/f57fcdde92b0e1f9d4c8935126b7f0b5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645790&amp;width=680&amp;sig=jMsYtL8a6O4iXIzOb5yScp6BocxqSPVJJfjgm6Ui02c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776870">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/870/25a39294802d534168aac00eb7d573c6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645792&amp;width=680&amp;sig=jsYfDuhYYVjTOVoCmN35NSdMiipl5xPBbSTLq7BOKcQ%3D" src="https://i.kickstarter.com/assets/049/776/870/25a39294802d534168aac00eb7d573c6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645792&amp;width=680&amp;sig=jsYfDuhYYVjTOVoCmN35NSdMiipl5xPBbSTLq7BOKcQ%3D"/>
+</figure>
+</div>
+<p>Clixet features three magnetic grooves designed to securely hold your accessories in place. The built-in slots keep the Everlasting Metal Pen and two screwdriver bits safe, while also allowing you to swap in any other magnetic tools of your choice. With anti-drop safety, you can trust that your gear will stay exactly where you need it.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776875">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sleek-and-Stylish">Sleek and Stylish</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/875/cad2886c3f4fcd57ec8ca4d52b229408_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645813&amp;width=680&amp;sig=nt9lCKcQAive526AGhLP%2BQP0AtMrShxJurh0vMyn4aM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776877">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/877/5f9ad61300a91914afd8af6ddb739bba_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645825&amp;width=680&amp;sig=TQw37OwFSmS91wRXAZ65P0b%2Bb6XWyj24%2BkZzzz7EAmE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776878">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/878/a96ddcc9e76fd52412b958c284e15130_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645830&amp;width=680&amp;sig=rRTGXSIZR4KPbU%2FJ4%2FWEIAbRvWYnj%2BWMjLSWaQmb94A%3D" src="https://i.kickstarter.com/assets/049/776/878/a96ddcc9e76fd52412b958c284e15130_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645830&amp;width=680&amp;sig=rRTGXSIZR4KPbU%2FJ4%2FWEIAbRvWYnj%2BWMjLSWaQmb94A%3D"/>
+</figure>
+</div>
+<p>Crafted from aerospace-grade titanium alloy, Clixet is as much a high-performance tool as it is a statement piece. With its sleek, modern design, it’s not just functional but stylish enough to pair with your everyday gear. Hang it on your bag, clip it to your belt, or simply show it off—Clixet blends seamlessly into your active lifestyle.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776884">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Ultra-Portability">Ultra Portability</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/884/85a54176e78ce793d23607f431a874e1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645896&amp;width=680&amp;sig=GIT7vCGOYBuKyWJSlMp%2Bi5NwZmAgvgp8cAXveezVr7w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776883">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/883/330b94cc6c2c73ae33e8b722157c15a9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645891&amp;width=680&amp;sig=Qf6IVMFTJ%2F%2F3HEJQdGED4dxCLG86KqCTfTqypeTo4HA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776885">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/776/885/e1ca280be90decddd9e58d4e2aa6af42_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645897&amp;width=680&amp;sig=8%2BZQLlYHn%2FeZwB%2FzQzEbr%2F%2F1YVztegWlMl5b7jLqUZE%3D" src="https://i.kickstarter.com/assets/049/776/885/e1ca280be90decddd9e58d4e2aa6af42_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750645897&amp;width=680&amp;sig=8%2BZQLlYHn%2FeZwB%2FzQzEbr%2F%2F1YVztegWlMl5b7jLqUZE%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-TqvLd0zbhoDFQ2xVyH3cUyeMnoP">Clixet’s compact and ergonomic design ensures it fits comfortably in your hand, offering a secure grip for everyday tasks. Its thoughtful shape makes it easy to carry, whether you’re at work, on an adventure, or simply going about your day. Ready to tackle anything, anytime.</div></div>
+<div><div class="ace-line old-record-id-Nj4PdWXh1oits7x0stccZnRznue">Weighing in at just 32g, Clixet is so light you’ll barely notice it in your pocket or bag. Despite its ultra-light build, it doesn’t sacrifice strength or durability, making it the ideal companion for everyday use without weighing you down. Clixet is small enough to fit comfortably in your pocket, backpack, or tool pouch. Its compact size means you can take it with you everywhere, ensuring you're always prepared, without the bulk.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776889">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Settle-for-Less-">Why Settle for Less?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/889/3005191cb22c6606a09ee1c98ba3f3a0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645913&amp;width=680&amp;sig=C6%2BVBWxxt3provhWnCUt3aKtBWQwbfLgdfPzFnAeZSE%3D"/>
+</figure>
+</div>
+<p>Tired of fumbling through bulky toolboxes or finding yourself tool-less when it counts? Conventional multitools are often too large, too clunky, or just not versatile enough for real-life demands. Worse yet, they lack comfort, portability, and personality.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777134">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/777/134/35c374c06a3d4206a4ab34f444cf69e6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750647740&amp;width=680&amp;sig=%2F0g9wvkM4SdkziiBPls8KLs744wEHO6Xa00k3kpWai8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776893">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Product-Specification">Product Specification</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/893/2bdbcfb0a2b7a74d94577181ff30a7c6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645946&amp;width=680&amp;sig=HnVz3QkM7vSxk2zdf70JMteo4GTnyGfoATPwyKo95WU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865643">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/643/61fe5b9b3c25d3767ce48ca6eefe27a4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751279372&amp;width=680&amp;sig=eXR%2Bn6tL2jQTZfkLeiumGO3E8OPrXhaq5XmC23w5Q3o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864133">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/133/16ba980830a7ab0121af0a8650d68d9f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751268081&amp;width=680&amp;sig=2E1vjzZ72U6ZDd0B7fV9y7vuQlaQGq6kconNM%2BP2tGU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776896">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Warranty">Warranty</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/896/6d5148ccf9d9f5a4d8f5579690aaeb85_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645982&amp;width=680&amp;sig=3EhDYQmEZvPbYGF28whWH823Kd6VCkPx8dO5Z6e59uo%3D"/>
+</figure>
+</div>
+<p>Clixet comes with a <span class="bold">2-year limited warranty</span>, covering any defects in materials or workmanship under normal use. If your tool fails due to a manufacturing issue within this period, we’ll repair or replace it, no questions asked. This warranty does not cover damage caused by misuse, accidents, or unauthorized modifications.</p>
+<p>For warranty claims, please contact our support team with your order number and a description of the issue. We're here to help and stand behind the quality of every Clixet we make.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776898">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Product-Development">Product Development</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/898/4684dd61f3412d9240fbea0072210eb2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750645998&amp;width=680&amp;sig=GLH7GIrINcTH3myFMU8IoqF9rW1Rc0XHzQ4zL%2BKekgg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49961569">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/961/569/ace02efe4a2e4f0ad57a889b97d188e5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751966026&amp;width=680&amp;sig=CMoEU7dcQj3UJIGm2%2B84kfgtWKEUtxxTozS88YO98TM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776901">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Company-Introduction">Company Introduction</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/901/62067246781496af7f9cfa38ac2cfdf1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750646016&amp;width=680&amp;sig=f9RQUhVpglOJS4SfugrHM1x3mpDepoL%2BN2XBhRDgIPk%3D"/>
+</figure>
+</div>
+<p>Founded in 2024, Clixet was born from a passion for crafting everyday tools that are both functional and inspiring. We believe that great design is rooted in simplicity, durability, and purpose. Our mission is to create gear that empowers people to do more — wherever life takes them. With a focus on precision engineering and user experience, Clixet is dedicated to redefining the standards of modern EDC essentials.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49963762">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/963/762/d01d122c4a2df46d5ccb428b6c715c97_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751980227&amp;width=680&amp;sig=IprxFTir8OTPl5Si%2BfzU05tEqNsPyK2UXCLobW%2FKOqI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777272">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Design-Journey">Design Journey</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/777/272/0b722a041e7c9bf1c509abfca4151937_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750649144&amp;width=680&amp;sig=OjWy%2Bc4FZ8Jt%2FohPwMENPr9yw%2BqIO9%2F0LFEJ08xVn1w%3D"/>
+</figure>
+</div>
+<p>Clixet was born from a simple goal: to create a truly versatile EDC tool that feels as good as it performs.</p>
+<p>Starting in Aug 2024, we dived into research — studying how people work, fix, create, and move through daily life. We challenged ourselves to combine strength, portability, and smart functionality in one compact design.</p>
+<p>After months of testing materials, ergonomics, and features, Clixet took shape: magnetic tool storage, precision grip, integrated measuring aid, and even fidget for fun — all in a form that fits seamlessly into your everyday carry.</p>
+<p>Every detail was crafted with one purpose: to make you feel ready, confident, and capable — no matter where life takes you.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777173">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Production-Process">Production Process</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/777/173/f7e971419c51c6e1374b0d131f626c46_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750647969&amp;width=680&amp;sig=7hMgkN7Qjdxqril8EbLuxShpXctzdMuF8CXtJFfYlIU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777180">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/777/180/b79d303750364511e7c4ea9ccdca815a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750648100&amp;width=680&amp;sig=kiZw3UxtXatIBlz2XF66NTql8DyPwVpPtDkmrtJwhHk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777181">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/777/181/46f2bec24d9e40f4935f39d9087bf10a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750648111&amp;width=680&amp;sig=i4RTH1vgBeoLLE2OPvpHhKdr%2B1fsyrr3C3BGize2j7U%3D" src="https://i.kickstarter.com/assets/049/777/181/46f2bec24d9e40f4935f39d9087bf10a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750648111&amp;width=680&amp;sig=i4RTH1vgBeoLLE2OPvpHhKdr%2B1fsyrr3C3BGize2j7U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777167">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box">What's in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/777/167/4b3124d0f6b48ddf9ded2942916d8771_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750647936&amp;width=680&amp;sig=RwQTCqjILjPEdJu5XN6er845cZTJydPuGEtCVkTYnA8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49946844">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/946/844/e1fbe2e4f89eace29a12a64b499fca3d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751878600&amp;width=680&amp;sig=WSgO2Q3UShAIP%2BNMxgtSBhjhwBp5P%2B%2FYb9mfCKgd2vI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776978">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/978/ef4a2a8765682ddef70a3cb4724a10c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750646705&amp;width=680&amp;sig=%2F1KdJ4YZbarJ9sNIghgC4BFsfi4Q01cYbwN0d6zOEQw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49945541">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/945/541/85c42f1db1539be1f9390b186203403d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751867229&amp;width=680&amp;sig=tjNDCQmAMHiFNT0E96HDRTZ6pwu%2BBhOfg3hxnTi7pEo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776991">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Social-Media">Social Media</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/991/676c463023cbc0144f8c725a056e9c8c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750646761&amp;width=680&amp;sig=32JlNUH%2FyjWqIcJ%2Buw1XQoWHFkI4WEqYiAyDKydFjns%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span>
+</div></div></div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">At Clixet, we believe trust starts with transparency. We're ready to bring this project to life, but we also recognize there may be challenges along the way — and we're prepared for them.
+Creating a high-precision EDC tool like Clixet requires top-tier manufacturing. We've partnered with experienced, reliable suppliers, and while delays or supply issues can happen, we've built in buffers and contingency plans to keep things on track.
+
+Shipping and logistics can also pose risks, especially with international orders. To stay ahead, we've pre-planned our logistics and partnered with fulfillment experts who know how to handle Kickstarter campaigns. If anything changes, we’ll keep you informed every step of the way.
+Backing Clixet means supporting a project grounded in preparation and passion. Thank you for joining us — we’re committed to delivering with integrity, speed, and your satisfaction in mind.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRU: The Ankle-Based Step Tracker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/836/843/4554fdd2a7a14e95dda01d876593c3fb_original.gif?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751016340&width=560&sig=sfHBcV1uTR%2BooUip9U4ntThmyzpn0NNBF%2BEIeRKd%2FoI%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>TRU: The Ankle-Based Step Tracker</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">10mm | 1-month battery | 24x7 wear | Waterproof | Smart Sync | Multi-wear: Anklet, Necklace, Bracelet</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 7,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>29 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779802">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Ankle-Based-Step-Tracker">The Ankle Based Step Tracker</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/779/802/82efa94c1975bd811dbfd01067969638_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750671828&amp;width=680&amp;sig=ipr8o5zUljCafFXwerGKp0%2BWf5nTnkWuWfpYIG1sPxY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49787159">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/787/159/601c424d1c27a9e5ebc8f7d7a4a82170_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750712897&amp;width=680&amp;sig=xN7ZrLiFhb%2FhlhN%2F7w6H%2FsNpQnXXq9x3MOkXaD6oUN8%3D" src="https://i.kickstarter.com/assets/049/787/159/601c424d1c27a9e5ebc8f7d7a4a82170_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750712897&amp;width=680&amp;sig=xN7ZrLiFhb%2FhlhN%2F7w6H%2FsNpQnXXq9x3MOkXaD6oUN8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49786783">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/786/783/04e81a8ae6e5ac7c189cf9a5d65da2f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750710924&amp;width=680&amp;sig=Oot3rKr83B%2BW6VQlphPiL96sgfN8a2O1JtebSDgHRBo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49786786">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/786/786/742494192ca27567367dc29cd7c65044_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750710945&amp;width=680&amp;sig=SwnT1rc1lzn4AiZ8q8qAm5lqPhvIQd9xIPV3NLtg7l4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49786791">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/786/791/d41c5f3bb9d74e003a57cf04d5b5a777_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750710959&amp;width=680&amp;sig=oGM8D9IMyXQnT0jHpXZxeXayZLqFoeTwYzjzBfIjaqM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49786794">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/786/794/5c288fefb650ba2c6a1854972b67230b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750710967&amp;width=680&amp;sig=gw1VfSjyQK4F5FDydP3mV10PYBpu%2BWudxiQ7%2F37LvI8%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Meet-TRU-stylish-accurate-and-goes-with-any-look"><span class="bold">Meet TRU: stylish, accurate and goes with any look</span></h4><p>Smartwatches, fitness trackers and pedometers don't track your steps when your wrists are stationary. Worse, they are often bulky, unattractive, and don't complement formal or stylish outfits.</p><p><span class="text-italic"><span class="bold">TRU was designed to solve both problems: tracking every step and looking good while doing it.</span></span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809675">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/675/ff77d6d586bf0882c9971662f6cf5371_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750846157&amp;width=680&amp;sig=gcmMMFL%2B9ssMPw8py0cpVPUYEOV%2F7FWB8vV47yJWhnQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792935">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/935/fda57ea40fa515455d6d14f0c6e6c7a4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750753248&amp;width=680&amp;sig=DNAOGKVl84sOxEHXqIRQqAnVnkxfZYC0efs8L6MeOv0%3D"/>
+</figure>
+</div>
+<p>Designed to go where the action is, TRU counts every step - even when others fail. With a modular fashion forward design, you can swap bands to match your outfit, from workout gear to evening wear.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779812">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/779/812/21adfb33adf7d21ee412c0e9e3f4ed73_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750671911&amp;width=680&amp;sig=p8jzNeAdWL2p2vnqbg6P0RwP3E%2BVCqpa3uZ3mtuOlV4%3D" src="https://i.kickstarter.com/assets/049/779/812/21adfb33adf7d21ee412c0e9e3f4ed73_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750671911&amp;width=680&amp;sig=p8jzNeAdWL2p2vnqbg6P0RwP3E%2BVCqpa3uZ3mtuOlV4%3D"/>
+</figure>
+</div>
+<p>A sleek, lightweight step tracker that blends seamlessly into any look with multiple stylish bands. Worn on the ankle, it delivers significantly better step-tracking accuracy, ensuring every step counts - without sacrificing style or convenience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809707">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/809/707/27130b0a4af96d385db488c4a9049f72_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750846357&amp;width=680&amp;sig=qjRKFeLazzMfdiYsHJl26b9afW99zqd5ti0kfXpHaqo%3D" src="https://i.kickstarter.com/assets/049/809/707/27130b0a4af96d385db488c4a9049f72_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750846357&amp;width=680&amp;sig=qjRKFeLazzMfdiYsHJl26b9afW99zqd5ti0kfXpHaqo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780730">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-TRU">Why TRU</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/730/235a1c8b86b4e91531cf98d5ef5102e8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750677982&amp;width=680&amp;sig=fYXTQthHlJ26hSenPmst0dd%2FH7ObSW%2BvqCAIX2SHhLM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809749">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/809/749/45284b1b144c5ae9baaa0feb5923be54_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750846659&amp;width=680&amp;sig=cWde8XIY4I2NO4hq1VXTL9hUuXTYg2LY9saSG6OLkbI%3D" src="https://i.kickstarter.com/assets/049/809/749/45284b1b144c5ae9baaa0feb5923be54_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750846659&amp;width=680&amp;sig=cWde8XIY4I2NO4hq1VXTL9hUuXTYg2LY9saSG6OLkbI%3D"/>
+</figure>
+</div>
+<p>***<span class="bold"> House Arrest Mode:</span> When you have to wear your wrist based fitness tracker on your ankle because you want it to track your steps more accurately</p><h4 class="page-anchor" id="h:TRU-Technical-specs">TRU: Technical specs</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809791">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/791/be6bba89e16085cbadf87d5172c5961e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750846976&amp;width=680&amp;sig=dzYRDxPU0I94U2fYZNowGGOwh89cobySHvMyXZbMoUw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779817">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/779/817/9fcacaa0900c9ac24b7d5455a306ad56_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750671933&amp;width=680&amp;sig=eWybrtE%2BVgJ5OFZJzLg%2FUKHe2%2FfEX9YZBbgpL%2B3u%2FYA%3D" src="https://i.kickstarter.com/assets/049/779/817/9fcacaa0900c9ac24b7d5455a306ad56_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750671933&amp;width=680&amp;sig=eWybrtE%2BVgJ5OFZJzLg%2FUKHe2%2FfEX9YZBbgpL%2B3u%2FYA%3D"/>
+</figure>
+</div>
+<p>At only 10mm in diameter, TRU goes everywhere you do. Its tiny design means it’s comfortable enough to wear underneath your clothes or as a fashion statement.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792983">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/983/a33febca568934bbd8bfe550dc1875b8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750753399&amp;width=680&amp;sig=mICziJ8VhcZnYTYXERLalLPpR1D%2BtZHIywlXuMK5WqA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49781412">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stylish-Modular-Design">Stylish Modular Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/781/412/ae4c3a1ddd96f62146fd9ea5233d0bee_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750682076&amp;width=680&amp;sig=r3f1C4P1OTvOGTA657xZ9uOWre4uHmSMj2ATCijM0wQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809798">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/798/38a4b651e62bed6294c8552bd0de6d43_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750847054&amp;width=680&amp;sig=n5AyVTi2vWjsT1MR5Olx4rvalMmPkCC%2FJ%2BW7B%2BF5cPs%3D"/>
+</figure>
+</div>
+<p>TRU’s locket based design unlocks a world of possibilities. From skin toned food grade silicon to rugged nylon, to sleek milanese to premium metals. TRU is available in multiple colors and finishes to give you over 28 options to wear and style as you like.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49781902">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/781/902/c049488599c1a3eb92414795b243d83c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750684503&amp;width=680&amp;sig=GOzvuvq56v5f36zKqTmDLIeUrr2qkOVq2yCPSJr5EuQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:With-over-32-different-accessory-combinations">With over 32 different accessory combinations</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809808">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/808/283a6e03f5ed00de4ae950827388a431_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750847143&amp;width=680&amp;sig=LPrF6L3ADvB7x%2B%2FxQbCFLI04Wj1qPt4o%2FO%2FFage4OXs%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Three-timeless-finishes-Gold-Silver-Rose-Gold">Three timeless finishes: Gold, Silver, Rose-Gold</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809818">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/818/f5784af6040dad51df111a4bc1c29b01_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750847245&amp;width=680&amp;sig=xhnXepaUbm5tGZuC%2BXK8f6qoKZlbUU8kPjk%2FctYnMi8%3D"/>
+</figure>
+</div>
+<p>Looking to upgrade? Our premium options are great for date night or special events, and with options in Gold, Silver and Rose Gold, you’ll be able to track your steps no matter the occasion.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779867">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Premium-Materials">Premium Materials</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/779/867/dec02196ed556a88f131980d79d4150e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750672189&amp;width=680&amp;sig=70ZrOrY2%2B%2BPhRwbEfrg1sLuctLpodUsttkXfRdGOMDo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49782261">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/782/261/55b4ea2d501cae040f2dc122a922a9bd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750686342&amp;width=680&amp;sig=BBz%2BTUDwmsUlEPwkmD5GCyILmxS8gj6DSJvCwoIR1pY%3D"/>
+</figure>
+</div>
+<p>All our accessories are made from the highest quality material in each category. With options that reduce tarnishing, scratching, and increase durability, while being hypoallergenic.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49782317">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Inclusive-Sizes">Inclusive Sizes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/782/317/0b228f377002c556a0dbf892b9f2ec7d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750686649&amp;width=680&amp;sig=mxOVId%2B%2B5ePr%2F5%2BVHa%2Br3Da%2FMowmJqjZ7gcZEcqgx1Y%3D"/>
+</figure>
+</div>
+<p>With extenders, adjustable and varied sizes, there's something comfy and stylish for everyone, so everyone can find their perfect fit</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809842">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/842/64b5fdcce93308d148ce4480dc289527_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750847420&amp;width=680&amp;sig=Xjyp1L0yT2fumKmovGat6UjAgmt8H2Hs%2FTG%2B%2BsaWehs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779874">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:For-the-Ladies-Lads">For the Ladies &amp; Lads</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/779/874/f24e68d293888f59152e8283ab03ee0f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750672223&amp;width=680&amp;sig=7Rx%2BwYJPPDw6z746iTH3RNSuMKUJIUZKtuPBI84XO2w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49782228">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/782/228/93ed603ffb451c1b9b3aeed62884d3c0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750686134&amp;width=680&amp;sig=iLH7lIu1uSCo%2FrqpXof2Yr6uYLZ2PK1CLEcQRUSpidc%3D"/>
+</figure>
+</div>
+<p>TRU has something for everyone. Whether you prefer rugged or dainty, we've something that matches your style.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779876">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/779/876/1af72128dc3a9c459d44a9a7b0f64f8c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750672248&amp;width=680&amp;sig=oN3OEq9Sjo8IWpTK9aXevWBabRt2%2BlnXXdx0ri7cBhw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779879">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Tracks-where-others-don-t">Tracks where others don't</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/779/879/f2ac38380e9c0a5069a943625ea03b2d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750672287&amp;width=680&amp;sig=PewtGhtQpldVYrwDo8Lh56CIdu%2Fi6xZe2pXe0rdkEFE%3D"/>
+</figure>
+</div>
+<p>Wrist-based trackers use your arms to track your steps, meaning they stop tracking when your arms aren't moving. Tru goes where the real action happens, tracking steps when others fail.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809855">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/855/4c052f4cde61f9c46fa704c0b9c18abc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750847507&amp;width=680&amp;sig=Zy6ZU4vt8bSRAwSOk6KR7oNf%2FMDM%2F9ierMUqDE3v5a4%3D"/>
+</figure>
+</div>
+<p>Because you can wear TRU where and how you want, you can move it around based on your outfit, mood or activity. Which means you’ll always get the most accurate count.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779970">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Comfort-without-Compromises">Comfort without Compromises</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/779/970/dbe3f7f7eb964c948d05149e67450e67_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750672877&amp;width=680&amp;sig=QcUDIZkjSUqtQv%2BsO%2FAeMcibjQ5KF42Exc1onVxnqp0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779977">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/779/977/d913d557d818fd159db8c1c265b4b071_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750672897&amp;width=680&amp;sig=JmkQx1T%2Bw%2B2ZWC5m5w%2FX2MQ%2ByN%2FjHxNsjmWJ0JCiegs%3D" src="https://i.kickstarter.com/assets/049/779/977/d913d557d818fd159db8c1c265b4b071_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750672897&amp;width=680&amp;sig=JmkQx1T%2Bw%2B2ZWC5m5w%2FX2MQ%2ByN%2FjHxNsjmWJ0JCiegs%3D"/>
+</figure>
+</div>
+<p>TRU is made to move with you, day and night. Crafted from hypoallergenic, tarnish-resistant materials, it’s gentle on all skin types and built to withstand sweat, showers and whatever life throws your way. Whether you're working, sleeping, or working out, TRU stays comfortable and stylish around the clock.</p><div class="template asset" contenteditable="false" data-alt-text="Long Lasting Battery" data-caption="" data-id="49779984">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-longest-lasting-battery">The longest lasting battery</h3>
+<img alt="Long Lasting Battery" class="fit" src="https://i.kickstarter.com/assets/049/779/984/916ebbfac1d26f221010df0ede544abd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750672928&amp;width=680&amp;sig=4iyje1P110k58bMt3l5aioRcnURFevV7BJHCXLClMlY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809873">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/873/6930fda169ab26df31b7d73ee29b82f3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750847643&amp;width=680&amp;sig=R7j1to207G3EoG71EiMNdtBfl%2BHRG8ThLO9jNGpH4Mc%3D"/>
+</figure>
+</div>
+<p>With a rechargeable battery that lasts a full month, all you need to do is pop it on the charger for 2 hours and you're ready to go another month.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49783396">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/783/396/76320f7623337a35ef3e7be1e623815c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750692756&amp;width=680&amp;sig=es42S0KyY2H7cbdlD7XXLRRsFXUCMn%2FOldRxmb3AQDA%3D" src="https://i.kickstarter.com/assets/049/783/396/76320f7623337a35ef3e7be1e623815c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750692756&amp;width=680&amp;sig=es42S0KyY2H7cbdlD7XXLRRsFXUCMn%2FOldRxmb3AQDA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779997">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-TRU-App">The TRU App</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/779/997/f14e6115c45e22c2a52288aff5d7d99d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750673007&amp;width=680&amp;sig=twpPKh3%2BTFaDPHl%2FF4M5l8qjom5uFDV36YpsZOFOb8o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809910">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/910/2b5c93a9765dbb44b7ee211c208d0862_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750847973&amp;width=680&amp;sig=bskgvl9DIvETySecoTjLwdNxw%2FZSDkbiEGG%2B94wmamY%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Fitness-doesn-t-have-to-be-boring">Fitness doesn’t have to be boring</h4><p>With progress tracking, motivational prompts, communities and achievement rewards, the TRU app leverages the same techniques that make social media addictive, but for good.<br/><span class="text-italic">Stay inspired and watch your goals turn into lasting habits, one step at a time.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49787116">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/787/116/57fd7f18b48c85e512394cf2593f3bc7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750712621&amp;width=680&amp;sig=3kSp4c2ucwzfHMv9%2B0l8EwvXMcHWcmmrx6EV6C3xdEI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780002">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-people-are-saying">What people are saying</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/002/f1456a1b8f4590f9f18414278a88ad7c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750673048&amp;width=680&amp;sig=fK4yjjN41AH0JoPifFqHFsJ3RjHzEAFVqelr0FDBuHg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780004">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/780/004/cacf6c19656094ad3a4ec76ec462b2b5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673059&amp;width=680&amp;sig=TZd2UmnTb81D4Cywr60x9w9NhgjspUAhuD%2B1G0saoew%3D" src="https://i.kickstarter.com/assets/049/780/004/cacf6c19656094ad3a4ec76ec462b2b5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673059&amp;width=680&amp;sig=TZd2UmnTb81D4Cywr60x9w9NhgjspUAhuD%2B1G0saoew%3D"/>
+</figure>
+</div>
+<p><span class="bold">We are excited to bring TRU to life, and so is our over 13,000+ community!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780009">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/009/12e1845e25773f43c7ed9451309d4ce6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750673086&amp;width=680&amp;sig=35ZmrE0QtNk%2BxG6bADUsa%2BJWlQEBFCUG4AuV%2FXFy4Ck%3D"/>
+</figure>
+</div>
+<p>Because Kickstarter isn’t a store, you’re not purchasing a product, instead <span class="bold">you’re backing a project</span>. Kickstarter helps bring creative projects to life and ,<span class="bold">Pledges</span> are a way for you to support the that process!  <span class="bold">Rewards</span> are a way for us to share TRU with our backer community.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49897651">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/897/651/8890585fbcc255a554b91abda1519c89_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751467835&amp;width=680&amp;sig=%2FgjHeatgNFKj1LxyrFLvyrovQV4IiWd52wTW6s%2FT4hY%3D"/>
+</figure>
+</div>
+<p><span class="bold">For our VIPs:</span> Check your email for your special reward link. Clicking that link will bring you back to this page and unlock your VIP discount!</p><p><span class="bold">A note on our Kickstarter pricing:</span> We’re launching on Kickstarter with our best prices possible, available only during the campaign. These early bird rewards are well below retail and won’t last, so back us now to lock in the biggest savings.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780023">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-box">What's in the box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/023/d31aacd9897840fa1d860b634bd860ba_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750673157&amp;width=680&amp;sig=sXy84es%2FgtbWJ1OB2ZgXIMDbeezvyBMGG75M74Qgzac%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809433">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/433/d45f7d6c85c8f557755be9a632dad9f5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750844966&amp;width=680&amp;sig=WQYQuUPEFehqnjdimB4gsQH8kfxYirpoHplEe1FsXf4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-NOTE-All-backers-will-get-one-accessory-of-your-choice-included-in-your-pledge-We-will-send-a-survey-out-at-the-end-of-he-campaign-where-you-will-be-able-to-select-the-accessory-of-your-choice-">*** NOTE: All backers will get one accessory of your choice included in your pledge. We will send a survey out at the end of he campaign where you will be able to select the accessory of your choice.</h4><p>With TRU, we keep it simple and give you exactly what you need. Nothing extra, nothing wasted. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780386">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Estimates">Shipping Estimates</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/386/67cdd105265bb78608071e9355a9ee99_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750675512&amp;width=680&amp;sig=iZ64CO5xob0dpfwRXNWnrKatjYOuDps4yNASn%2FE75%2Fw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809918">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/918/ba7b3e3475e45f5a0d6e19f147c3a3a9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750847993&amp;width=680&amp;sig=k5gczd3zGNzzwJNsFSgofMwRAPzTtCES1HJvx3S%2F%2FCI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780389">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Timelines">Shipping Timelines</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/389/b0376b4513312dd3d37b09568f18ea85_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750675531&amp;width=680&amp;sig=crvv7gsdC7gbvLVJTceER7sN7OphaqaCUBypUnIpkSA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809920">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/920/a08fd1dae5d4e94744782c1a3e940fb2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750848005&amp;width=680&amp;sig=l2qs%2BNiNdIq%2BWFf7P7pUVs%2BCv86J5HhKOB%2FLpRGsfBo%3D"/>
+</figure>
+</div>
+<ul>
+<li>Shipping is not included in your pledge amount.</li>
+<li>You’ll pay for shipping after the campaign through a simple post-campaign survey once we're ready to ship. During this time you'll also be able to change your shipping address. We’ll use your address to calculate exact costs based on destination, add-ons, and courier options.</li>
+<li>Once manufacturing is complete, we’ll ship kits to regional fulfilment partners.</li>
+<li>Our current plan is to begin fulfilment in October 2025, with batches shipping out every month after that based on the date you placed your pledge.</li>
+<li>You’ll receive plenty of updates along the way, and we’ll share exact timing in the backer survey.</li>
+</ul><h3 class="page-anchor" id="h:Taxes-VAT-and-Import-Duties"><span class="bold">Taxes, VAT, and Import Duties</span></h3><ul>
+<li>
+<span class="bold">Backers in Canada:</span> GST/HST may apply depending on your province.US Backers: Sales tax may be applied in some states at the time of shipping.</li>
+<li>
+<span class="bold">EU and UK Backers:</span> VAT and/or customs duties may be collected upon delivery, depending on your local regulations. We'll do our best to make this easy!</li>
+<li>
+<span class="bold">Other Countries:</span> Local taxes or fees may be due on arrival: we’ll do our best to minimize these, but they’re out of our control.</li>
+</ul><h4 class="page-anchor" id="h:A-Note-on-Batteries"><span class="bold">A Note on Batteries</span></h4><p>TRU contains a rechargeable lithium-ion battery. We’ll follow carrier rules to ship them safely, but in rare cases, some countries or carriers may restrict delivery. If that happens, we’ll work with you to find the best solution.</p><h4 class="page-anchor" id="h:Thanks-for-Your-Patience"><span class="bold">Thanks for Your Patience</span></h4><p><span class="bold">Kickstarter isn’t a store, it’s a launch platform for people with ideas and prorotypes!</span> We’re committed to transparent communication and doing everything we can to ensure smooth, fair, and on-time delivery. We’ll keep you updated every step of the way.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780536">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-the-Founders-Answers-to-your-questions">Meet the Founders: Answers to your questions</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/536/259315d3a7564cdbafa45a9d421a86fe_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750676672&amp;width=680&amp;sig=14m3bKZkYLzl%2FRvx%2BVg5Zh97vvfogOfHuTEu%2FagUIk4%3D"/>
+</figure>
+</div>
+<p>Getting to know our community and answering their most burning questions</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780090">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-TRU-Story">The TRU Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/090/712bd227944e58df27eaa100f0bfa123_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750673512&amp;width=680&amp;sig=uWYkp1dz6898qE6VZJ7VApNK3qTwUvQhWxxn6MRQbP0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780094">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/094/771369de69a94cb2c4391ec1231a3e68_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750673523&amp;width=680&amp;sig=uYqu7DE02R3qaQ8mqXrLNET91%2BPhEcMBGR4LgLdlF3w%3D"/>
+</figure>
+</div>
+<p>The idea for TRU started with a simple complaint. I (Temi) was walking on my treadmill desk, trying to get my steps in while working, and realized my smartwatch wasn’t tracking anything. Super annoying. When I told Tomi during a visit in March 2024, she laughed and said she had the same problem -but hers also didn’t count steps when she was pushing the stroller with her kids.</p><p>That little moment sparked something. We started noticing all the ways our smartwatches were failing us. I even started wearing mine on my ankle just to get accurate data. Then I went online and saw <span class="text-italic">so many</span> other people complaining about the same thing.</p><p>We’ve always been the resourceful type, our parents are entrepreneurs, and our dad was an engineer. So we grew up tinkering and figuring things out. And with our backgrounds, we knew we could build something better.</p><p>So we did.</p><h4 class="page-anchor" id="h:Our-Backgrounds">Our Backgrounds</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780104">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/104/ebf04b35a90dcdb3de6f2a34fa308887_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750673593&amp;width=680&amp;sig=oOUn7qylUVBCKWTFyQ%2FG5sHmEAiyz6hZKnGwpDlswVU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780111">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Building-TRU">Building TRU</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/111/e3f8ec9157c41ef809a3818a72440851_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750673619&amp;width=680&amp;sig=vatyMjqD39F1f6XX0vFLZ%2BNVpH44zqoeehCCkrZsft4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780167">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/780/167/c0b5ea20ad9ae01e7c6709baa3fc5702_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673976&amp;width=680&amp;sig=cUjjGVUZ9yM%2B%2BIG%2BgyXnWraHIuBYQRm3fmyxCA%2B4Gk0%3D" src="https://i.kickstarter.com/assets/049/780/167/c0b5ea20ad9ae01e7c6709baa3fc5702_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673976&amp;width=680&amp;sig=cUjjGVUZ9yM%2B%2BIG%2BgyXnWraHIuBYQRm3fmyxCA%2B4Gk0%3D"/>
+</figure>
+</div>
+<p>Our prototype journey took over a year of testing and refining. We experimented with countless components, shapes, and styles, balancing size, comfort, and performance. After dozens of iterations, we landed on the perfect form: a sleek, pill-shaped design that’s discreet, lightweight, and packed with power. It’s the result of relentless prototyping and a deep commitment to creating a tracker people actually want to wear.</p><h4 class="page-anchor" id="h:Testing-TRU">Testing TRU</h4>
+<h4 class="page-anchor" id="h:Our-Timeline">Our Timeline</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780192">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/192/ccef6752ea5dfbef86ad37b078992395_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750674137&amp;width=680&amp;sig=x9Ckae72u45WKpH4vdwndu0veKynaERAAmoKhRr08p0%3D"/>
+</figure>
+</div>
+<p>We've spent a year prototyping and refining until we landed on TRU, a simple, accurate, and stylish step counter that actually works with <span class="text-italic">your</span> lifestyle. Whether you’re walking on a treadmill, pushing a stroller, or just living your life, TRU is built to count every step.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780197">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:FAQs">FAQs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/197/fe4fbc8420de19d35a17878cd0d5ab7a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750674163&amp;width=680&amp;sig=fR75KfuSz7qkVEu1%2Fxcqm2F754MVpQNNIz1yL7NLZWw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Does TRU only count steps?</span><br/>Yes, for now it only counts steps. This allows us to focus on accuracy, reduce the size and have the best battery life to provide the best experience.</p><p><span class="bold">What are the metallic bands made of?</span><br/>Our metallic bands are made of a 14K PVD coating on nickel-free stainless steel. This reduces the chances of tarnishing and increases durability as our products are designed for 24/7 wear. Water, shower, steam and ocean proof.</p><p><span class="bold">Will TRU fit my ankle?</span><br/>TRU comes in multiple sizes or will have extenders (depending on the band type). We are working to ensure that TRU fits every ankle.</p><p><span class="bold">I already have a fitness app/tracker, will TRU work with it?</span><br/>Yes! TRU will work with Apple, Google, Samsung and Android Health out of the box. This should allow it to work with most other apps. You can also prioritise TRUs data in your settings, which will ensure that you get the most accurate numbers.<br/>We're also planning custom integrations with other popular health apps and are always taking suggestions from our community.</p><p><span class="bold">Will I need a subscription for the app?</span><br/>No. There's no required subscription. The app will be free to view your data, but there will be an optional monthly premium for some features e.g Cloud Sync, Groups and Communites etc. We’re still fine tuning the app so that may change so make sure to sign up to get the latest info.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780206">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/206/f5db5d9c7426443ff2769b012aa43f17_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750674209&amp;width=680&amp;sig=vysS9klOGioXaVGis2aGRSRRFNQgRhU0C3U1I9ADSVc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809972">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/972/61192b573f1e52cde89f38327c13c8f1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750848420&amp;width=680&amp;sig=OodvP377CNE4fGt%2Fm1IFHDQOQ2vWJ2r70R0jJuqCbZY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Our-Promise-to-our-Backers"><span class="bold">Our Promise to our Backers</span></h3><p>We’ve spent the last year refining TRU and creating multiple accessories, testing with real users, and lining up experienced manufacturing partners. That said, things like component delays, shipping slowdowns, or small tweaks to part design can still happen. We’ve built in buffer time and already absorbed a lot of the early risk, but as with all hardware projects, surprises are always possible.</p><p><span class="bold">Here’s our promise:</span><br/><span class="text-italic">We’ll communicate clearly and often. We’ll deliver the product you backed. And if we hit bumps along the way, we’ll face them head-on.</span></p><span></span><h4 class="page-anchor" id="h:Partners-Press"><span class="text-italic">Partners &amp; Press</span></h4><p><span></span></p><p><span></span></p><p><span></span></p><span></span><p>This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We have worked extremely hard to make TRU ready for Kickstarter and full-scale manufacturing. We’re confident in our ability to produce both the pebble and its accessoriesby working with trusted partners. However, things don’t always go as planned. Here are a few of risks that may come up, and our plan to address them:
+
+MANUFACTURING: We have a trusted manufacturer lined up and will have quality assurance people on site during production. Despite this, manufacturing delays can still happen. Whether it’s an unexpected backlog, bad timing with holidays, or a quality assurance issue on the ground floor, we’ll let you know immediately. Our #1 priority is product quality followed by timely delivery. 
+
+FULFILLMENT: Sometimes, stuff happens that can’t be planned for: a supplier misses a deadline, a package gets held up at customs, a shipment gets lost, or a global pandemic shuts down shipping ports around the world. Those things can cause delays. We are using an experienced logistics team to get our products to you. We’ll keep open and honest communication with you through our process so you know where your product is and when it’s going to get to you.
+
+US TARIFFS: There's a lot of uncertainty at the moment as to how the tariffs will affect our product. We're working to find the best way to handle these changes and focusing on remaining flexible as things change.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
