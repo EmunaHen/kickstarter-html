@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Howard Atkins’s 2084</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/488/341/5f98ee41f1f64ac28493e97128d324e6_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1748635742&width=560&sig=nFtseMCvw1bGcChVVf0nKS8oZ5ns39aZiaj%2Bw%2B9lsRo%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Howard Atkins’s 2084</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">No End or Beginning</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p><span class="bold">2084: A Wake-Up Call for Humanity</span><br/>Howard Atkins is a futurist and visionary fiction author known for his thought-provoking work on the direction of human civilization. His debut novel, 2084, received praise for its optimistic portrayal of a future shaped by peace, unity, and human potential. Blending social criticism, political insight, and futurism, Atkins offers readers a compelling contrast between utopian possibility and dystopian consequence.</p><p>Howard Atkins draws from a broad spectrum of sources, including: His own lived experience. Scientific research on climate change and emerging technologies. Historical patterns of political division and social unrest. His work challenges us to reflect on our current reality and confront uncomfortable truths.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49489328">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/489/328/7000e06c2cc2ff73f846e86c51301637_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748641293&amp;width=680&amp;sig=gVcjasfw8aMGSDzhubQdsHEbfnC5evclNz0oyZnbln8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49490719">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/490/719/f9a24d9b856299d5b0666c8ff01476c7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748650325&amp;width=680&amp;sig=zL9Dq2XtrQCW0aqvuG1j52ZlkJRxx310dPSzGXTiAw8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-2084-The-End-of-the-Beginning-">
+<span class="text-italic"><span class="bold">2084</span></span><span class="bold">: The End of the Beginning</span>
+</h3><p><span class="text-italic">2084 </span>presents a stark and sobering vision of what our near future could become if we fail to address the urgent crises facing our world, environmental degradation, political polarization, and unregulated political decisions.<br/>While <span class="text-italic">2084 </span>envisioned a world healed and united, <span class="text-italic">2084 </span>flips the lens to reveal the devastating consequences of inaction.</p><h4 class="page-anchor" id="h:This-book-isn-t-just-a-work-of-fiction-it-s-a-mirror-held-up-to-today-s-world-"><span class="bold">This book isn’t just a work of fiction, it’s a mirror held up to today’s world.</span></h4><p>The question is what happens if humanity continues down its current path of neglect and division? <br/>You don’t need to wonder, Howard Atkins provides the answer in <span class="text-italic">2084</span>.</p><h4 class="page-anchor" id="h:Historical-and-Societal-Context"><span class="bold">Historical and Societal Context</span></h4><p>Set in the not-so-distant future, <span class="text-italic">2084 </span>is deeply rooted in our present-day reality. The book imagines a world unraveling due to the very issues we grapple with now:</p><ul>
+<li>Climate change and resource depletion</li>
+<li>Mass migrations and rising global conflicts</li>
+<li>Authoritarian governments and surveillance overreach</li>
+<li>Human right exploitation and erosion of personal freedom<br/>The events of <span class="text-italic">2084 </span>are unsettling because they feel so close, because they are.</li>
+</ul><h4 class="page-anchor" id="h:-Key-Events-Turning-Points-in-2084-">
+<span class="bold">Key Events &amp; Turning Points in </span><span class="text-italic"><span class="bold">2084</span></span>
+</h4><ul>
+<li>Global environmental collapse caused by relentless exploitation of natural resources, leading to widespread conflict over food and water.</li>
+<li>Authoritarian regimes rise to power, using fear and propaganda to suppress dissent and control the population.</li>
+<li>A scattered resistance movement inspired by the ideals of <span class="text-italic">2084</span>, struggling to unite and take a stand against systemic decay.</li>
+</ul><p><span class="text-italic">2084</span> offers a brutally honest glimpse into a world on the brink, one that may already be in motion.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49489411">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/489/411/078cd9620bacf15aef9a6121580fd7d2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748641766&amp;width=680&amp;sig=MFCGDP%2FHQbib%2BXvwScmSqLkboJzc3QIAhl5bcGNN2Is%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Author-s-Interpretation-Themes-">
+<br/><span class="bold">Author’s Interpretation &amp; Themes</span>
+</h4><p>Atkins presents a carefully balanced narrative, blending speculative fiction with grounded realism. His analysis is supported by historical precedent, political theory, and current events. He challenges readers to consider their own roles in shaping the future and whether we can still alter the course of history.<br/><br/>Rather than offering blind hope or despair, <span class="text-italic">2084 </span>aims to inspire action through awareness.</p><h4 class="page-anchor" id="h:-Strengths-of-2084-">
+<span class="bold">Strengths of </span><span class="text-italic"><span class="bold">2084</span></span>
+</h4><ul>
+<li>Deeply relevant themes tied to current global crises</li>
+<li>Rich world-building grounded in reality</li>
+<li>Urgent, emotionally compelling storytelling</li>
+<li>Clear philosophical contrast to <span class="text-italic">2084</span>
+</li>
+<li>A powerful call to self-reflection and societal accountability</li>
+</ul><h4 class="page-anchor" id="h:-A-Conversation-Starter-Not-Just-a-Novel-">
+<br/><span class="bold">A Conversation Starter, Not Just a Novel</span>
+</h4><p><span class="text-italic">2084</span> goes beyond entertainment. It opens the door for meaningful dialogue about the future we’re creating and how we can still change it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49489454">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/489/454/261381f062b26143f3d09f5505818fcb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748641961&amp;width=680&amp;sig=2CorKes%2FsyFrmqtH9KFug5L91y0ZM0JIrsMjoEkCq8A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49490891">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/490/891/d6be6cc0f67d457001119959d501e6db_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748651760&amp;width=680&amp;sig=2IZM8BOpI7nm9ruagt5iO4qQJ65crIXhbhSJZMa3S8s%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-First-Book-2084-">
+<span class="bold">First Book: </span><span class="text-italic"><span class="bold">2084</span></span>
+</h4><p><span class="text-italic">2084</span> is a futuristic novel that presents a powerful vision of what the world could become if humanity embraces peace, collective intelligence, and ethical progress. In contrast to Orwell’s dystopian 1984, Atkins’s <span class="text-italic">2084 </span>is a tale of transformation from a planet on the edge of collapse to a society rebuilt on global cooperation, environmental stewardship, and enlightened governance. Featuring richly imagined cultures and breakthrough technologies, the novel dares to ask:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49489686">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/489/686/d7992a9096ad3fb508771c5dcc6f1998_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748643240&amp;width=680&amp;sig=EGflGa2qAYGPSB0ffqn5gg19DJZEYWPklUXemSFsXjo%3D"/>
+</figure>
+</div>
+<p><br/>Available now on Amazon, <span class="text-italic">2084</span> sets the philosophical foundation for <span class="text-italic">2084 </span>and provides an essential counterpoint to the grim warnings of the new book</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49489690">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/489/690/7fb86f5b79c857e585b27d403ce8b80b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748643270&amp;width=680&amp;sig=hRxnTC7iGBJFx5L64LVVVuMbIXz6ws8AZNvkBeGUY0E%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Final-Thoughts-Why-This-Campaign-Matters"><span class="bold">Final Thoughts: Why This Campaign Matters</span></h4><p>This Kickstarter campaign supports the completion and release of <span class="text-italic">2084 </span>in several formats:<br/>• Finalization of the manuscript<br/>• Audiobook production<br/>• Graphic novel adaptation<br/>• Print-on-demand setup</p><h4 class="page-anchor" id="h:Backers-will-receive-"><span class="bold">Backers will receive:</span></h4><p>A free copy of <span class="text-italic">2084 </span>upon pledging<br/>Early access to <span class="text-italic">2084 </span>content<br/>Access to digital, audio, or illustrated versions of <span class="text-italic">2084 </span>upon release<br/>Exclusive rewards such as signed books and private Zoom calls with the author.</p><h4 class="page-anchor" id="h:Join-the-Movement"><span class="bold">Join the Movement</span></h4><p>Support <span class="text-italic">2084 </span>and be part of a global conversation about our future. This isn’t just a campaign, it’s a chance to help bring a visionary, cautionary tale to life. The choices we make today will define the world of tomorrow.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49490906">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/490/906/565d33cda7d6c0c01723bbb3b0f1d74a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748651905&amp;width=680&amp;sig=lx5Bs%2BK%2Fpqw8rx5S8N3zviiJflFlg9Ny9h2MbE1msBo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Back-2084-now-and-let-s-build-a-future-worth-saving-">
+<span class="bold">Back </span><span class="text-italic"><span class="bold">2084</span></span><span class="bold"> now, and let’s build a future worth saving.</span><br/> </h3></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Risks and Challenges
+Creating 2084: A Wake-Up Call for Humanity is a deeply personal and ambitious project, driven by a commitment to spark reflection and inspire change. However, bringing this book to life involves several risks and challenges, which I am prepared to address with transparency and dedication.
+
+Production Timelines: Writing, editing, and publishing a thought-provoking novel like 2084 requires meticulous attention to detail to ensure the narrative resonates with its intended impact. Unforeseen delays in the editing process, design of the book, or printing could push back delivery timelines. To mitigate this, I’ve established a clear schedule with experienced editors and a reliable printing partner, and I’ve built buffer time into the production timeline to account for potential setbacks.
+
+Funding Goals: The success of this Kickstarter campaign is critical to covering the costs of professional editing, cover design, printing, and distribution. If the campaign does not meet its funding goal, it could limit the scope of the project or delay its completion. To address this, I’ve carefully calculated the budget to prioritize essential elements and have contingency plans, such as exploring alternative funding or scaling production to match funds raised, while maintaining the quality of the final product.
+
+Balancing Vision and Accessibility: 2084 aims to blend complex themes of futurism, social critique, and environmental urgency into an accessible and engaging narrative. Striking this balance during the writing and revision process is challenging, as it requires ensuring the story resonates with a broad audience without diluting its message. I’m working closely with beta readers and editors to refine the manuscript, ensuring it remains true to its vision while being relatable and impactful for readers.
+
+External Factors: Unpredictable events, such as supply chain disruptions or global economic challenges, could affect printing or shipping timelines. To minimize these risks, I’ve partnered with reputable suppliers with proven track records and will maintain open communication with backers about any potential delays, providing regular updates on progress.
+
+My experience as an author, combined with the support of a dedicated team, gives me confidence in overcoming these challenges. I am fully committed to delivering 2084: A Wake-Up Call for Humanity as a high-quality, thought-provoking work that honors the trust of my backers. Thank you for joining me on this journey to confront the future and inspire change.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">NA</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

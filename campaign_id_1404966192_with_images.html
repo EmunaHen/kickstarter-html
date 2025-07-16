@@ -1,0 +1,786 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LiberNovo Omni - World's First Dynamic Ergonomic Chair</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/876/561/69ba59ec4c95983a44ef8e02f6c7e2c0_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751337953&width=560&sig=jc6sKvOLuEqK%2BRXn67DR4eU5g07OcBUC8bCNN%2BBpN5E%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>LiberNovo Omni - World's First Dynamic Ergonomic Chair</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Bionic FlexFit Backrest | Dynamic Support System | OmniStretch Massage | 4 Recline Positions: 105°–160° | Precision Adjustments</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 49,919</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777274">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/777/274/ee951e742eb4692efd8296db4c01439b_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750649150&amp;width=680&amp;sig=%2BVG0rhXPwYy%2B9ELOc9Vcgg%2FErar80a7nEk%2BWV%2FxuGfA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795334">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/795/334/ccfb6507a8b991d345b83cdae26445eb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750766609&amp;width=680&amp;sig=dB81cM2H4CYzsKmlENHfWEcVrdFB054mrkUcWn%2FEuPY%3D" src="https://i.kickstarter.com/assets/049/795/334/ccfb6507a8b991d345b83cdae26445eb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750766609&amp;width=680&amp;sig=dB81cM2H4CYzsKmlENHfWEcVrdFB054mrkUcWn%2FEuPY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49798717">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/798/717/1e7d4409abd8cfabef90003c22b493c9_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750780407&amp;width=680&amp;sig=CL8muLADmIat4slfnyUZoLTPt5uLCooFctRqBC1FO2s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49753491">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:All-Day-Sitting-Comfort">All-Day Sitting Comfort</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/753/491/6d45f36195480a90cd18583faea13833_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750430419&amp;width=680&amp;sig=8Z17naCCKQnvsOEkR%2BQyc%2BSd12m%2FnHFcGjnpJm8SzGI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/514/31c83152324931b86d579fc7f5111679_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750676398&amp;width=680&amp;sig=PQyX9eC8LS%2FAXhQOrRQKIvK1I894prgcb0mCnbQVshw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Your body moves – Omni moves with you. </span>Even the most expensive chairs offer comfort that fades within minutes—because <span class="bold">your posture is always shifting</span>. But Omni is different. Every component—from neckrest to armrests—moves in sync with your body, preserving <span class="bold">perfect ergonomic alignment </span>and letting you <span class="bold">stay focused</span>, with no manual adjustments needed.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49748936">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/748/936/a7a7c07e5814a77f7f8814a3ec86c24a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750401496&amp;width=680&amp;sig=ZVuyY06QGO5qPZg0xts507Qb2khfSof21eYj0csYMvo%3D" src="https://i.kickstarter.com/assets/049/748/936/a7a7c07e5814a77f7f8814a3ec86c24a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750401496&amp;width=680&amp;sig=ZVuyY06QGO5qPZg0xts507Qb2khfSof21eYj0csYMvo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780531">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/531/9d164159d10534627e89d699be828405_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750676604&amp;width=680&amp;sig=BbaieeVQBnaxogG7wnO2eT%2FNixP0pYJEESZNZorjmf4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Every spine is unique. </span>No chair on the market has truly created a perfect fit for every back. It’s either <span class="bold">pushing too much</span> into your lower back, or<span class="bold"> leaving it hanging</span> — both of which can<span class="bold"> lead to strain and discomfort</span> over time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49750364">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/750/364/9afbc647759bffff6edd366330d40fdd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750411496&amp;width=680&amp;sig=umLJdpPC3GIXZrueUAdXkh%2FkIkK%2B6X4XTw2Vd2EovWs%3D" src="https://i.kickstarter.com/assets/049/750/364/9afbc647759bffff6edd366330d40fdd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750411496&amp;width=680&amp;sig=umLJdpPC3GIXZrueUAdXkh%2FkIkK%2B6X4XTw2Vd2EovWs%3D"/>
+</figure>
+</div>
+<p>Omni changes that. With advanced flexible panel architecture and 16 precision pivot points, our Bionic FlexFit technology creates a living surface that <span class="bold">adapts to your spine’s natural curve</span>, ensuring <span class="bold">perfect alignment in every position</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49790519">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/790/519/20c14d4b1eeb23deb105ae9fad43d40c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750734877&amp;width=680&amp;sig=PiEN5U7lGDAxTmeH22B6Wz7ImK4kfkjHoLwgvV0GmZ0%3D" src="https://i.kickstarter.com/assets/049/790/519/20c14d4b1eeb23deb105ae9fad43d40c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750734877&amp;width=680&amp;sig=PiEN5U7lGDAxTmeH22B6Wz7ImK4kfkjHoLwgvV0GmZ0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780563">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/563/b9a83f282feec63cce1f9b6ccd2b8020_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750676838&amp;width=680&amp;sig=MIKXCFLIGlN%2BrGUBFAJ5b0dMTw%2Bo18Idp5qBlqWZ5Go%3D"/>
+</figure>
+</div>
+<p>We all know stretching is <span class="bold">good for our spine</span> — we just don't always have time to do it. <span class="bold">Inspired by the yoga cat-cow stretch</span>, Omni’s motorized stretch function activates like a gentle therapist’s hands, helping you<span class="bold"> relieve the fatigue </span>of long hours of sitting — anytime you need it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706477">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/706/477/1edb1bbe2519764b3df6ba05189862e4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750141984&amp;width=680&amp;sig=Jm51c9bUv%2FHE2ezXowrgiWTaYYqV%2B5AX%2FlDpzOvvbko%3D" src="https://i.kickstarter.com/assets/049/706/477/1edb1bbe2519764b3df6ba05189862e4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750141984&amp;width=680&amp;sig=Jm51c9bUv%2FHE2ezXowrgiWTaYYqV%2B5AX%2FlDpzOvvbko%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">*This GIF has been speeded up, the actual effect is smoother and more gradual.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795348">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:From-Dream-to-Your-Chair">From Dream to Your Chair</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/348/536e1b0d92c63ded23c74b4a42c5b9db_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750766684&amp;width=680&amp;sig=3ybHSSaHO%2F3hrwvq0Us2q%2FlqONEHNRHX9%2FxDHyvq%2BMQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49790411">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/790/411/7d324f4b71ff7eeeb5c4afc73491946e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750734320&amp;width=680&amp;sig=Am%2BBnxT%2BSJZ6f9KOopFiHYIw4IAwsCTkdP0qYtfIsPo%3D"/>
+</figure>
+</div>
+<p>In 2023, LiberNovo was born from a bold idea: sitting shouldn’t hurt. We saw millions suffering from back pain due to static chairs. Our ergonomic experts and designers set out to <span class="bold">redefine sitting</span> with Omni’s real-time dynamic support. <span class="bold">Teaming up with spine specialists</span>, we've actualized our vision.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49824233">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/824/233/8e5234bfefbbc894b4c518da3da22b30_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750935487&amp;width=680&amp;sig=KAoVEiExZXT2P5lvYZAECC0sTXXQdFuJ3miw%2Bmqq8xU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49790410">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/790/410/d86879cc15f88bb3c027eec0c461f6ed_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750734317&amp;width=680&amp;sig=Xa%2FB9ojSTsWI3pDBB1FrbfNIAez2K%2BOkSHpxVjiH1uQ%3D"/>
+</figure>
+</div>
+<p>After <span class="bold">100,000 pressure tests</span>, Omni cuts back pain <span class="bold">by 90%</span> in beta testing. We’re now in mass production and on track to begin <span class="bold">deliveries after the campaign ends</span>.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49707194">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hear-Them-Out">Hear Them Out</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/707/194/8bb3ac5160899dc4f534213eebf7aee1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750146838&amp;width=680&amp;sig=08IKdLY09uYftza1tkClT10QV%2ByHTmMRUFtV8d86BlU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49746881">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/746/881/efb0246f6ace4345aaa8cb68368f9d27_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750385158&amp;width=680&amp;sig=2EobNDhtW5vsXSV1mItk1iuniBUkLkp%2BiLOAhiJVfEw%3D"/>
+</figure>
+</div>
+<p>Here’s what spine specialist Dr. Adam says about Omni — <span class="bold">click the video below</span> for the full review.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777386">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/777/386/1164a8de68d88808541106de421cc320_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750650332&amp;width=680&amp;sig=GTty9XptMkwX50pSPmnbhkFfDoV2doyRoYqqi5ehsm8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49707102">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/707/102/53f99a434709452d78d7e2f3a02d659d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750146402&amp;width=680&amp;sig=xKfrOeZL65b%2BN34bzGlENZ%2BCiTgFt4Q%2BP7F7RBw5lGc%3D"/>
+</figure>
+</div>
+<p><span class="bold">Ahnestly</span> — a <span class="bold">professional ergonomic chair reviewer</span> who has tested over 100 chairs — put Omni and a nearly $2000 through a pressure test using a sensor suit. The data shows that Omni offers <span class="bold">better body conformity</span> and <span class="bold">relieves more pressure</span> during extended sitting. Click the video below to watch the full review!</p>
+<p><span class="bold">Ckid — gaming influencer. </span>With over seven ergonomic chair reviews under his belt, Ckid offers an honest, in-depth take on the Omni: "Now, the third mode is relax mode. This mode right here, man, is going to be <span class="bold">good for those longer working or gaming sessions</span> that I tend to use—typically when I'm playing like my AAA titles, or my God of War, Uncharted, The Last of Us, different things like that. And I kind of just want to vibe out and just be."</p>
+<p><span class="bold">Fenchel &amp; Janisch - Renowned Tech Reviewer. </span>In the video, he breaks down the fundamentals of ergonomic sitting and showcases how LiberNovo subtly transforms our sitting habits during work.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49746891">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/746/891/51c800f4d6ea851e5d4c7efa76aae8c8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750385242&amp;width=680&amp;sig=2UboclsCFvxm3H5nsMkZ5pQd0GrXPUPk%2BcMNevH85Nk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49721922">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/721/922/107a0406a4fd247b5a6d07d2d0a48965_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750226026&amp;width=680&amp;sig=qUYsq0TwwB603LQTaxYqOpF2AixvAZ0SQjSh3lKaBdc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49734667">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/734/667/501acf97d2c265381bb63160506e69f6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750301622&amp;width=680&amp;sig=3IPJuuHyc9FS1D%2BaMagZRqtReJCO5%2BA3nG5nL3HYnBs%3D"/>
+</figure>
+</div>
+<p>Meet <span class="bold">Peace, a 27-year-old marketing manager</span> <span class="bold">and busy mom</span> balancing high-pressure work with family life—all from her home office in Los Angeles. Like so many remote professionals, Peace was <span class="bold">putting in 10+ hours a day</span> in front of a screen… in a chair that was doing her zero favors. <span class="bold">Back pain, tense shoulders, fatigue</span>—she thought it was just part of the job. Until she discovered the LiberNovo Omni.</p>
+<p>Meet <span class="bold">Bryson, a 27-year-old gamer</span>. He <span class="bold">spends 8 to 10 hours</span> a day locked into intense gameplay and tournaments—but his old gaming chair? Absolute trash. It <span class="bold">wrecked his back</span>, killed his focus, and straight-up ruined the vibe. Then he found the LiberNovo Omni—and everything changed.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777078">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Perfect-Fit-Every-Time">Perfect Fit, Every Time</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/777/078/c236e9335038fae91baa461235ecc355_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750647376&amp;width=680&amp;sig=QtabDDh7AZSTkZaDmV%2BFc6k3RYGo0QW%2BZkzo7j5R32U%3D"/>
+</figure>
+</div>
+<div><p>Traditional <span class="bold">one-size-fits-all chairs</span> always leave gaps where your back loses contact—whether you have a petite frame or a larger build, they just don’t conform. Our backrest, however, can be <span class="bold">customizes easily </span>to<span class="bold"> fit your unique shape</span>, delivering seamless support that <span class="bold">reduces strain</span>.</p></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793393">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/793/393/eeff5a720b58b7d9298cb53d6e6587bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750755742&amp;width=680&amp;sig=cybmK7lTlf2KW011CVdvRggv%2B%2FkUvGjjK1%2BIOFzrms0%3D" src="https://i.kickstarter.com/assets/049/793/393/eeff5a720b58b7d9298cb53d6e6587bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750755742&amp;width=680&amp;sig=cybmK7lTlf2KW011CVdvRggv%2B%2FkUvGjjK1%2BIOFzrms0%3D"/>
+</figure>
+</div>
+<p>Inspired by the human spine itself, the Bionic FlexFit Backrest integrates 8 flexible panels connected through 14 dual-connection points, plus dual-layer spherical brackets with 16 pivot points. This symphony senses micro-movements—whether you lean or recline—to <span class="bold">instantly mold to your S-curve</span>. Not rigid support. Intelligent harmony.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777093">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/777/093/e2f41d734234173881be33e8980ebf0b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750647436&amp;width=680&amp;sig=Xb2vv6b6SZn5XBdj0qv0J1clZVTXyvPkIzKCtNfYc20%3D" src="https://i.kickstarter.com/assets/049/777/093/e2f41d734234173881be33e8980ebf0b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750647436&amp;width=680&amp;sig=Xb2vv6b6SZn5XBdj0qv0J1clZVTXyvPkIzKCtNfYc20%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705926">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/926/312ed90ea218774e527455915abf870d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138239&amp;width=680&amp;sig=E4DXKWEeUOeO0oEkaw%2BaSIOq8sI%2FAlEUzvlF%2BdK1TII%3D"/>
+</figure>
+</div>
+<p>Meet your posture's new best friend. The ErgoPulse Motor System reads your body's needs and responds instantly, delivering perfect support for <span class="bold">up to 300 lbs</span>. With fingertip controls and thoughtful adaptation, it follows the natural curve of your spine, allowing you to<span class="bold"> adjust it precisely to your posture</span>—no matter how you work—providing the most suitable support for your back.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749290">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/749/290/64b2aaf67e6f90e1b310e4c20d1715aa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404288&amp;width=680&amp;sig=PQNovDp3ImJgcs%2FSvI5gwAlCSSnU%2FFqtNRYUUylBVBk%3D" src="https://i.kickstarter.com/assets/049/749/290/64b2aaf67e6f90e1b310e4c20d1715aa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404288&amp;width=680&amp;sig=PQNovDp3ImJgcs%2FSvI5gwAlCSSnU%2FFqtNRYUUylBVBk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49753359">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Ultimate-Productivity-Booster">The Ultimate Productivity Booster</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/753/359/f79a7565f95ac35dde8a3c04072d9ca5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750429669&amp;width=680&amp;sig=zQucYy5FD%2BEJexcOFgvfgb79r%2BqCRyLqEkLY8CgWb%2FA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780721">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/721/c90953577e267a46664dea0edcd6315b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750677927&amp;width=680&amp;sig=cMg4ejuddNxkcZrIDfX4kkWqV4vCBwPAvBhrz%2BqDYmY%3D"/>
+</figure>
+</div>
+<p>Annoyed by all those manual adjustments every time you want to lean back? We <span class="bold">pioneered</span> the Dynamic Support System, which is driven by SyncroLink Mechanisms and 60 joints in coordinated operation. From focused work to relaxed breaks, <span class="bold">every component moves in harmony</span>, ensuring uninterrupted comfort and productivity all day long.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749296">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/749/296/252295c30e07d673f4f9ee5e2a990aa5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404332&amp;width=680&amp;sig=x1DV27UBdz6PpSfBminldHbeFKY%2FShBbJ8JDNfesee8%3D" src="https://i.kickstarter.com/assets/049/749/296/252295c30e07d673f4f9ee5e2a990aa5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404332&amp;width=680&amp;sig=x1DV27UBdz6PpSfBminldHbeFKY%2FShBbJ8JDNfesee8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49753417">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/753/417/b9dc333747b550353e6e7bb62d14fba3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750429922&amp;width=680&amp;sig=elnbyLcSISEWlI2KqKTPvBiTZZYrcn4Hiq2QXEw%2BNQA%3D"/>
+</figure>
+</div>
+<div>Don’t choose between comfort and the best viewing angle. Omni features the <span class="bold">world’s first </span>headrest-backrest tilting differential. By allowing the backrest to tilt faster than the headrest, it <span class="bold">keeps your eyes level with the screen</span> as you recline. Lean back, brainstorm, or dive deep into work—your comfort and productivity stay uncompromised.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49753567">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/753/567/ac044c97701b7f4ca334b21b9508b7e4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750430761&amp;width=680&amp;sig=tiE9oxj%2F3Ch675rqOlvqQY0wiLEXJru5g5w47bv15iM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49750354">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/750/354/926a124af6fb2f06e9329f59af06ad60_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750411442&amp;width=680&amp;sig=rlyD%2FvLz8VTzCRZawXcYsr9PZwTsNC7KSKhR3jnvMmo%3D" src="https://i.kickstarter.com/assets/049/750/354/926a124af6fb2f06e9329f59af06ad60_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750411442&amp;width=680&amp;sig=rlyD%2FvLz8VTzCRZawXcYsr9PZwTsNC7KSKhR3jnvMmo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49753425">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/753/425/504fdf7e25b0175d4b86f74be0223c06_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750429968&amp;width=680&amp;sig=BP5WUoEJQRx7MjQXKudCJkozk0KyrYqA58XFWIVRiv8%3D"/>
+</figure>
+</div>
+<p>Other chairs’ armrests often hit the desk or tilt awkwardly when you recline. Omni solves this with <span class="bold">built-in sliding arms</span> that automatically <span class="bold">retract up to 100mm</span> when they meet resistance—an <span class="bold">industry-first</span> design that prevents interference while maintaining consistent support. Type, click, and create in total comfort—<span class="bold">no adjustments needed</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737600">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/600/5b81b5ab1a985069e4dfb3fd53cfc341_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323967&amp;width=680&amp;sig=MqcOkzivnrnQUZMFRf5QQoqd60vYXsz5d4sTYgSQyvE%3D" src="https://i.kickstarter.com/assets/049/737/600/5b81b5ab1a985069e4dfb3fd53cfc341_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323967&amp;width=680&amp;sig=MqcOkzivnrnQUZMFRf5QQoqd60vYXsz5d4sTYgSQyvE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49753336">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/753/336/64c7d867ebbb061483d0f5af39b49a4a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750429580&amp;width=680&amp;sig=F2u%2Fguy%2FiPQ3V%2FkeHvQ1NVJTuRMfB4rfVkpwul%2FBJx8%3D"/>
+</figure>
+</div>
+<p>Say goodbye to <span class="bold">leg strain and lower-back suspension</span> while reclining. Our seat cushion starts at an <span class="bold">8° upward tilt </span>for optimal back support, then moves naturally with you. Our 10° forward-tilted footrest ensures your heels stay grounded ensuring you maintain perfect ground contact and full-body comfort in every position.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49777104">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/777/104/c00b4406e2e7b5914f16f3490be3698a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750647497&amp;width=680&amp;sig=WrJ2Chow%2BHBmPciVokjDpxr9bXVVVkWhY0QMDrmy6tE%3D" src="https://i.kickstarter.com/assets/049/777/104/c00b4406e2e7b5914f16f3490be3698a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750647497&amp;width=680&amp;sig=WrJ2Chow%2BHBmPciVokjDpxr9bXVVVkWhY0QMDrmy6tE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49750359">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/750/359/6c85625843463bd18c8b6f9f8eb5cfb4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750411463&amp;width=680&amp;sig=B5z7nYPli7WTkiLzrQ6kCHZfrjBSPjyh%2FKngURQIKlc%3D" src="https://i.kickstarter.com/assets/049/750/359/6c85625843463bd18c8b6f9f8eb5cfb4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750411463&amp;width=680&amp;sig=B5z7nYPli7WTkiLzrQ6kCHZfrjBSPjyh%2FKngURQIKlc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49753630">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Relieve-and-Improve-Your-Spine-Health">Relieve and Improve Your Spine Health</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/753/630/210c967f71a49aed523569c9309cefea_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750431145&amp;width=680&amp;sig=f8oiFVGzmHl%2FFxPlkAtlD2XrTT002gx8nIdMXlGejig%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780842">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/842/5601178520f84310eeb477be3249151b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750678729&amp;width=680&amp;sig=5wYmLJJJFFE1MkJP%2BqH6RD6BLX8m2MESSCF%2F7QXw2fQ%3D"/>
+</figure>
+</div>
+<p>Each of Omni’s angles feels tailored, not generic. </p><p>The <span class="bold">105° Deep Focus Mode</span> was a clear favorite during extended editing sessions—it reduced muscle fatigue without making the body feel slack. </p><p>At <span class="bold">120°,</span> the chair opens up slightly, encouraging creative flow and breath expansion, especially useful during brainstorming. </p><p>The <span class="bold">135° Soft Recline</span> cut down fatigue during long meetings and content reviews, while the <span class="bold">160° Spine Flow Mode</span> is perfect for recharging between intense creative sessions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793403">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/793/403/aa2220b52b3f3a4da3056185c4a897a9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750755777&amp;width=680&amp;sig=3LKCwN981VUEX2RO01KLiR8Wu4zfj3doC1VtKKzgnIE%3D" src="https://i.kickstarter.com/assets/049/793/403/aa2220b52b3f3a4da3056185c4a897a9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750755777&amp;width=680&amp;sig=3LKCwN981VUEX2RO01KLiR8Wu4zfj3doC1VtKKzgnIE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780849">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/849/3ef5cdca3af77baaf5bb98181c743eda_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750678821&amp;width=680&amp;sig=e3pBRKjX3md%2F0O4TiCGjzSmrFPKIe0tYt%2FjfGIoTGXY%3D"/>
+</figure>
+</div>
+<p>After long hours of sitting, Omni's Stretch Mode delivers instant relief. <span class="bold">At a 160° recline</span>, the motorized system gently stretches your spine by <span class="bold">1.2 to 2.0 inches</span><span class="text-italic">—</span>drawing inspiration from<span class="bold"> spinal care concepts</span>. In just five minutes, it relaxes tense muscles and provides soothing decompression, leaving you refreshed and ready to take on the day.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49733975">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/733/975/902ede97f3ece0009c859f7593536d03_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750296871&amp;width=680&amp;sig=Ng7rQ7N55CZUNtp8r2D6z%2Br6JG%2FI2NvtL7kVHytBzQQ%3D" src="https://i.kickstarter.com/assets/049/733/975/902ede97f3ece0009c859f7593536d03_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750296871&amp;width=680&amp;sig=Ng7rQ7N55CZUNtp8r2D6z%2Br6JG%2FI2NvtL7kVHytBzQQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793408">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/408/c1396feb16ae6fc0a515dcf154064b07_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750755799&amp;width=680&amp;sig=M4Z5fPRKdNJySov%2Bp2ldjNlEZs7j5Yng9lltvpBRXms%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705861">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Precision-Adjustments-for-Perfect-Comfort">Precision Adjustments for Perfect Comfort</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/861/5e6bd6adb6e455a3c7214038ae8917f8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750137883&amp;width=680&amp;sig=3keTQofV8a7LyfbZWVeAa1cskvRJ%2BcP6aGXfmAWVTFE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706904">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/904/8fba4ee80d1f0e10168b025c2cebd9aa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145459&amp;width=680&amp;sig=miUs4RvudC3Dp7mHcNUIm54dF6lX%2F764URbJYqGLxp4%3D"/>
+</figure>
+</div>
+<p>Elevate your comfort with our detachable 3D neck support, offering precise height adjustment (5.1"), depth control (2.4"), and tilt customization (32°). Your <span class="bold">perfect cervical support</span>, exactly where you need it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706557">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/557/0c66b271a6b7704607e3cb3528779101_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750142699&amp;width=680&amp;sig=fE4r1Qb2OsHtlrPzDgB0BCLvbAXInTcU6gT81thTYJ0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705964">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/964/2b256c414bd8549de22abe7d31eb8982_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138565&amp;width=680&amp;sig=E%2BOmQ27FdKyk4gn9EGJtVjVtKoq5zchiq0Sf4Yl6C8g%3D"/>
+</figure>
+</div>
+<p>Command your comfort with the touch of a button. The Omni's Electric Lumbar Support System, elegantly integrated into the armrest, delivers <span class="bold">up to two inches </span>of precise lower back customization – because perfect support should be effortlessly accessible.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706559">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/559/ad0f16886c52139e7d29fdf542f97df8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750142700&amp;width=680&amp;sig=V0X9E5mmImFFfeiiDgC8OPw2PLmV9UtwUz%2B3gbUVoT0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706900">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/900/435efcb8a519cbfdd28fcdd4d547cc7a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145438&amp;width=680&amp;sig=lVDiOrDKM2fFKc%2Ft99BMZ426XLpdIMT2qd2K7Ax0rAo%3D"/>
+</figure>
+</div>
+<p>Experience support that moves the way you do. With precise adjustments spanning height (3.1"), depth (3.9"), width (3.0"), and rotation (±40°), the Omni's 4D armrests create your <span class="bold">perfect position in any posture</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706558">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/558/8fca36f70a3c998336b75cad2db02379_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750142699&amp;width=680&amp;sig=pm8kv6SI23ZUjprkDFQnKCYVA0fyqDDSUSX4FDjkgA4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706908">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/908/51d2dffadc45c7c8a25c38a815573220_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750145475&amp;width=680&amp;sig=3Ev79tDgd%2BfOBGDr8n8QXviDosu79%2FFlXSmgr7xxDAU%3D"/>
+</figure>
+</div>
+<p>Find your ideal seating position with 4.41 inches of smooth height adjustment. The Omni ensures perfect ergonomic alignment with your workspace, regardless of your stature.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706560">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/560/5243d9620cc5c4829a04bf836187799a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750142700&amp;width=680&amp;sig=hN7QYN7LzHxdgseUQg9HoDXwQUek0UILovKDOKxZq%2Fs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705860">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Premium-Materials-for-Comfort">Premium Materials for Comfort</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/860/c5d4016f2df0656a4c874ceef86726e4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750137883&amp;width=680&amp;sig=e2qWw42FqDiOiJcCNYnmTM9QfWhbg9Mash%2BpL7mDWzA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705968">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/968/05490607bceda38506cbec3230a89a58_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138597&amp;width=680&amp;sig=e%2F4yKdQAqjNAkMKHwvRyjABYCFa57ryoftSfTzMeKHY%3D"/>
+</figure>
+</div>
+<p>Experience the next evolution in comfort with our <span class="bold">hydrophilic foam neckrest</span>. Unlike traditional memory foam, this advanced material delivers perfect temperature regulation and breathability while cradling your neck in weightless support.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710788">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/788/31db96f60db9363b73f1196e427782a7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750165291&amp;width=680&amp;sig=bmtZevPFZZ6Oznpv6DfQ8bldBwktCcNBfOQIr9%2B0KJM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705967">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/967/fa51556616d450c4e6be90c18e147321_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138597&amp;width=680&amp;sig=lr5qASklxEMhMmHaFPeZnaINV7MFmA%2FWnxk3kfAXR5I%3D"/>
+</figure>
+</div>
+<p>Crafted for all-day support, the <span class="bold">three-layer backrest</span> combines a Comfort Contact Layer, Pressure Relief Layer with sponge padding, and aerospace-grade Posture Support Layer with panels that flex with your spine—delivering <span class="bold">breathable comfort</span>, <span class="bold">balanced pressure</span>, and <span class="bold">adaptive posture alignment</span> in every moment.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49709883">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/709/883/2115d65fb29983c4ddfc67d25ecdda0b_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750161242&amp;width=680&amp;sig=qcHQ5wj6VYArbHVavWP%2FIn%2FBJCDDzHjcl%2FkOsyb8jg8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705969">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/969/d9008a776ad405b737d7b947d700bb4b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750138597&amp;width=680&amp;sig=2NWtjDGejh8G3Aqkk9EgCKZGXXKM4MJIYwQLOhCfcG8%3D"/>
+</figure>
+</div>
+<p>Through advanced integrated molding, the Omni's seat cushion creates a sophisticated gradient of support. <span class="bold">Firm density at the rear</span> provides stable sit bone support, while <span class="bold">softer anterior zones</span> promote circulation and reduce leg fatigue – a thoughtful balance for extended comfort.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49706493">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/706/493/a10845635742aa48cca08fcb942d4ef5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750142108&amp;width=680&amp;sig=WPIP0qu7lLTTNtrYmVLGSgpQjCTMVJh4dn3AIsNkEQE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49707119">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Precision-Height-Tailored-for-You">Precision Height, Tailored for You</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/707/119/7c995cdfde5cd87197666e9d8e1e1b32_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750146481&amp;width=680&amp;sig=ud06yaGkrbB%2B%2F2s6mN7%2FkENpMHixnJ28OFflSXTO07Y%3D"/>
+</figure>
+</div>
+<p>The Omni's <span class="bold">dual-height footrest</span> system (2.8" and 4.7") ensures optimal ergonomics regardless of your stature. By <span class="bold">maintaining proper leg alignment</span> and <span class="bold">promoting healthy circulation</span>, it completes the perfect ergonomic equation for users to find their ideal position, especially for those under 6'3".</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49734261">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/734/261/ae5d13c513f68f3bcb3d4bb2c9e4737e_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750298693&amp;width=680&amp;sig=GmzLlSkgwOsSu2WKdRGJ8t4o1oRFlw8UXoyPOs2bOno%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49720997">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:BIFMA-Standard-Engineered-to-Last">BIFMA Standard, Engineered to Last</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/720/997/fe7cbeb3ab2b017d757dbd9d4374c185_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750217302&amp;width=680&amp;sig=sU6jFD9Y%2FZVJjr8YZS%2ByHWI1NKaml8rdVyuKVaU9T%2FM%3D"/>
+</figure>
+</div>
+<p>Rigorously tested to <span class="bold">meet BlFMA standards</span>, the Omni has undergone extensive simulations to ensure long-term durability and performance. While others build for today, we engineer for the years ahead.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793452">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/793/452/fddfa0a488e1617b72dc212eafca9248_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750756074&amp;width=680&amp;sig=46zPqMPZuBTVaycBBrZL2uv337EZ5EZMjt5iJvZL0PU%3D" src="https://i.kickstarter.com/assets/049/793/452/fddfa0a488e1617b72dc212eafca9248_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750756074&amp;width=680&amp;sig=46zPqMPZuBTVaycBBrZL2uv337EZ5EZMjt5iJvZL0PU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49750490">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Choose-Omni-">Why Choose Omni?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/750/490/b428a1757b15e34fba82f10597f81cbb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750412052&amp;width=680&amp;sig=a6yH0HAuuxlTPNyUT%2B9%2BLAxt33r7DEAGad7h7k09FAQ%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-Ig3Wd83n3okQThxo3nJckAsrnmc">Say goodbye to chairs that constantly need your attention. Powered by intelligent design, LiberNovo Omni intuitively adapts to your body and work style — delivering all-day comfort, energy, and wellness. You focus on your work. Omni takes care of you.</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749860">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/860/146aa1cfa86495350012c9ef34ca7878_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408272&amp;width=680&amp;sig=X5%2BKzl7nyFh3ISowdQJjoRZHJvNNPgYp7uhsKwe%2B%2Fvc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49750494">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box-">What's in the Box?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/750/494/532a83bf5e4b3b4d4e1f985b60b558cf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750412099&amp;width=680&amp;sig=hZcUmgqTRNB%2FmwmvJxk55wSqLAB%2BM%2Fffq5b1WVKIMrI%3D"/>
+</figure>
+</div>
+<p>Every component and tool has been carefully selected to ensure a smooth and hassle-free assembly experience. <br/>Our thoughtfully designed packaging makes it easy and quick to get your Omni Chair set up and ready to use — because delivering a great user experience starts the moment you open the box.</p><p>Inside, you'll find: LiberNovo Omni Chair, set of assembly tools, Quick Installation Guide.</p><p><span class="text-italic">Please note: Two specific Perks do not include a footrest, and therefore no footrest-related accessories are provided for that version.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749873">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/873/603d8c43ad3343c60e8f10c50bd30c97_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408392&amp;width=680&amp;sig=%2BMY0c69sEW9IQpcuJA4mpDPBwVjVW2LyYaWXTR9rF2A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749877">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/877/38bc2b33b1e4df4518a5ac23e71e1baa_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408413&amp;width=680&amp;sig=seF%2FImSRv%2FlgEXHSLNe7gEm9X8FAcM3gpGuBOyadguI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749880">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards-We-Offer">Rewards We Offer</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/880/fa6e2e2df671321819721b40f3988a63_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408438&amp;width=680&amp;sig=sCGbmJJvjJW1DjdbKSDeaJfrKnM5CD%2FCCp6X6yT3Xkk%3D"/>
+</figure>
+</div>
+<p>We've curated a thoughtful selection of bundles to meet a variety of needs while offering exceptional value.</p><p>All Perks are scheduled for delivery in September. The chairs will be available in two color options; However, due to platform limitations, you won't need to select a color preferred when choosing your Perk. We will collect your color and shipping information at the end of the campaign.</p><p><span class="text-italic">Please note: The color of the footrest will match the color of the chair.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793897">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/897/fe703d9aa62184fe3824e1038d6b2dd6_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750758770&amp;width=680&amp;sig=r6hvyb%2BPgq9wVNU2YL24uDulQXZVQw8OeFcULJhwpUc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793875">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/875/8fbc99ad3c6ccb9167dd6fd9279d1bb4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750758672&amp;width=680&amp;sig=%2BsiyeFKVs2Ap4XqfMHF0IAEb3codcy2BBmEu1B9nGuo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749885">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-Ons">Add-Ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/885/be2346addb626e628962a142dc6dedd7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408475&amp;width=680&amp;sig=9HLdz6jcoE%2FcKl7M5kFtjTL36L3SA%2FWyhsJVHaPv4tQ%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-IJTvdXY06oC7AHxfpZ9c6zJynpf">Choose the perfect extra features that complement your LiberNovo setup and make every moment even better. Stay powered twice as long: add a second battery to enjoy up to 60 days of continuous use.</div>
+<div class="ace-line old-record-id-HNdGdHnbooTfQLxIiQqctOzdn9d"><span class="text-italic">Please note: Battery is already included with each Perk. Here is an additional battery purchase option. </span></div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49793880">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/793/880/ad492453a9dd9743b60f49cf997cb846_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750758690&amp;width=680&amp;sig=t41zPDjzXyRtJQTafMt24e3WyUDOrMfnrxPARzWqN94%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49823770">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specs">Specs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/823/770/eed5c3a52768f987999506df115ccef4_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750932506&amp;width=680&amp;sig=79tlpAKcj88Ie3k6OKcgidqjTMycuWpuXSARNIG6QOQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49824183">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/824/183/817e1fb3a65e57f5da7215852d4cd58e_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750935078&amp;width=680&amp;sig=MV3idspv24rGKQHdAONAXfFbsyO%2F%2FHiRreN1iWrSfn4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49799009">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goal">Stretch Goal</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/799/009/793276521d7299b733a7407d5a2e4bc8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750781587&amp;width=680&amp;sig=0E38pCxxGG9pctOzc60Gfc2jwudtiL1Er2btB2xhwrI%3D"/>
+</figure>
+</div>
+<div class="rich-text-paragraph">As we reach new milestones together, we’re excited to unlock exclusive rewards designed to enhance your LiberNovo experience.</div><div class="rich-text-paragraph">Thank you for your support — let’s keep pushing forward and make every moment of your day exceptional!</div><div class="rich-text-paragraph"><span class="text-italic">Please note: Additional prizes will be shipped separately from Perk.</span></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50028790">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/028/790/26fea0a53db6a2f6af76529b47bc1ecd_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752488260&amp;width=680&amp;sig=by693KZ065FaTh2NoZd0Evrq2fHmVdOXBH8TekgFjFQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50028328">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/028/328/0940833f8ed77e2fc7f4fb0e7ccf0ccb_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752485914&amp;width=680&amp;sig=6Jg%2B6CoYyUz9tZDWhU5GncMFRsj6E8p8PTcVSjlHhZ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50028332">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/028/332/3d8dabfb830a2d5d5e124a9282d3f253_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752485936&amp;width=680&amp;sig=2G31UgCTWGHjRfvCin5Kn2j49HO4sokAXkUKuMnh76Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49776652">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Purchase-Guideline">Purchase Guideline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/776/652/b4c34e590ff04ca409db4a3004d5596b_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750644015&amp;width=680&amp;sig=7iDNulJ%2FFPrL8sfnMMqRYepS3XQN1T57HsKShgOWJGw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49810244">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/810/244/88134f0db9ce4100a2a132c00f5cbe2d_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750850665&amp;width=680&amp;sig=LHZla9oTJ7k3%2BYhjxmE3YPioTPjfIXj1p3ISU8CClh8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749918">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:After-Sales">After-Sales</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/918/0e87fa33f5c03baf371807f8ae17cb38_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408676&amp;width=680&amp;sig=uFYsQ9qCRA7%2FfHRBMbAYuryIlNfS2VtNjkl5ydQG5Q8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796375">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/375/6751256f6b997d42d1ee5078ddff4204_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750771733&amp;width=680&amp;sig=psOMKpxSO7fz2Jh1xf%2BP1MVEwZwsaNeruQuzjtDUpac%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749922">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Policy">Shipping Policy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/922/9e0ff3538b2b83d62cb9b857a13d2063_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408700&amp;width=680&amp;sig=%2BRjCOlliBTy0KOU%2FIJOJvDOdFBGW1XYcV3pCkf1SrTg%3D"/>
+</figure>
+</div>
+<div>Omni is a large, high-performance chair — with a shipping size of 74x70x50.5 cm and weight of 30 kg (just Omni itself), international delivery doesn’t come cheap. But we’re committed to giving our backers the best possible deal. That’s why we’ve <span class="bold">covered the majority of the shipping cost</span> for every order. Even better — all orders arrive free of customs fees, with no hidden charges at your door.</div><div>You’ll only need to pay a small portion of the fee, with <span class="bold">no customs duties or hidden charges at your door.</span> Please refer to the table below for a detailed breakdown by region.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49798216">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/798/216/b5e90916b5f4853e60bb6f553f4e03de_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750778863&amp;width=680&amp;sig=uWEhXIy%2FfgPoxwc2J5Mx8awuzBpzLizqNy99y6VFlL4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749957">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-LiberNovo">About LiberNovo</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/957/7da441663a13c9a7d2493818c4d88633_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408843&amp;width=680&amp;sig=bc2W9Wiha7b95XOoumbB4tSZHSlk1Yn3%2Fma49%2BzyTiM%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-JiPDdoN53o9u9ExGCbJcd9vonLg">At LiberNovo, our journey began with a simple yet powerful realization: sitting shouldn’t hold you back. Our founder, Alex, a tech innovator with years at DJI and Narwal, struggled with chronic back pain from long hours at the desk.</div>
+<div class="ace-line old-record-id-Qnx7dVr8toBGLWxGZWQc6AWDnqc">Determined to find a better way, Alex assembled a team of robotics and ergonomic experts <span class="bold">to</span> <span class="bold">create something truly new—a chair that moves with you, not against you.</span>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722352">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/352/1c5df9c1242a52eeaa01f6e81b528e53_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750229189&amp;width=680&amp;sig=OmOKmORUMf59dBvuwhQrmJ1fuTn6yc7DdJyeawFr8dY%3D"/>
+</figure>
+</div>
+<div><div class="old-record-id-GW67dvJVMooDAOxsJlpc7qo1nsb">We envision a future where sitting becomes a source of well - being, not strain—a new standard of comfort for the next decade and beyond.</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49833288">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/833/288/baf3f5691e67c3bb805f32a5120f8901_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750990884&amp;width=680&amp;sig=wRs2m7vD8QEl5UcEcAtRYB8pCWBy%2Bz9Dghd%2F7wpKj8s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749927">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/927/6a4a81f90babef0b61b44ffa58e4362b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408726&amp;width=680&amp;sig=ieU3foVfRe6dJsGzvhZCXAOjIK0fbGv4%2FfhXk7hKXWE%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-UtNUddQWioPIYWxRE96cKl9vnbc">Every line and curve you see reflects our dedication to thoughtful design and innovation. </div>
+<div class="old-record-id-UtNUddQWioPIYWxRE96cKl9vnbc">From the earliest sketches to the final prototype, we meticulously crafted the LiberNovo Omni to blend comfort, functionality, and style. This glimpse behind the scenes shows the passion and precision that shape every detail of your chair.</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749934">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/934/36082e317c7644c4511f65f6941b83e9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408760&amp;width=680&amp;sig=bCXVSeSJ5SYLqC5BQQrFLsn2HjXow06EiVjJWOdCbZc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749946">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/946/623beed5fa3c06fbd33bc7c5f05eac68_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408804&amp;width=680&amp;sig=ccS25aDNgCZA8pGhiskS2NbeGS0YfZt%2BN1hEFIUYmCE%3D"/>
+</figure>
+</div>
+<p>Bringing the LiberNovo Omni to life has been a journey of precision and care. From material sourcing to final assembly, every step of production is meticulously managed to ensure the highest quality. We're excited to share our progress with you as we craft a product we're truly proud of.</p><p>Currently, we are in the mass production stage and plan to begin deliveries in September. Shipping information for all backers will be collected through the Kickstarter survey after the campaign ends. We will keep you regularly updated on the shipping status in the project update section.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49904828">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/904/828/678748b98fc6b209781df1d864b8a854_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751513351&amp;width=680&amp;sig=k5PhEvFRxE%2FTbgYjale3x%2ByjdjpDc34vZv9R4XQKBfg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722334">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/334/1afc13d6417d23c7964f44a2fe7fff33_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750229067&amp;width=680&amp;sig=pg%2BMNnROhAbss6W3krHdCLCgtGtRDulcp9HpXjf0QFw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749952">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Project-Timeline">Project Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/952/4cc86233fb23701228fd1ea65fa6d9ef_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750408826&amp;width=680&amp;sig=BKxHmesenFNCb78%2Bquc9cwy%2BlVhHyeuAcvM4QztTzMU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796084">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/084/aed29b643be8850e91033095964ea9c6_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750770235&amp;width=680&amp;sig=7ApRew8CAMBQZ5bDmOhrx3DJVIsRLIVzHauSTxu1lHA%3D"/>
+</figure>
+</div>
+<div><span class="bold">Important Note: </span></div><p>We’ve created two distinct versions of Omni — one for the launch in Mainland China, and one specifically tailored for global users here on Kickstarter.<br/>While both share the same core innovation, the Kickstarter version includes adjustments in materials, sizing, massage settings, and support features to better suit global preferences and ergonomics.<br/>Each version is designed for its intended market — see below for a full comparison.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49798832">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/798/832/12d70bd6e6683fd604fefd47a555b706_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750780827&amp;width=680&amp;sig=M6fkw22peYOFRj8zw1mozD6IlGAJHjwBJIN324U%2FHOA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863503">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/503/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751263439&amp;width=680&amp;sig=MkSH7nsveQ%2BcFII3FXr4qJS%2BkkESYFYctPbjfB7%2FcVM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863531">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/531/726a8522b3ad08c95db97cd6175f012a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751263613&amp;width=680&amp;sig=zNctTFayCkhFFd0vgBBv9GUH4MFz%2Flo5c7L9LhZsa8I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863499">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/499/2a4fb6dfdad3e0851c68f4eb1ca9f1c5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751263439&amp;width=680&amp;sig=kKkmnOiBuz5D%2FvVv1h7On%2FwqQk%2Baeu8MhqzhhrcTFOA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863501">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/501/8b819faf1685e3837a3211fe7a10e5da_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751263439&amp;width=680&amp;sig=Z%2BwZS%2Biay8FJQATf41V4NTYzb5GynqoEYvTXFaUU6l8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863556">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/556/1dc93301d0b5a95a6ba93a877b8664e7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751263794&amp;width=680&amp;sig=lky0NRGb1%2FuFmfVx3Xq%2Bkzuoo%2BDhmJczBYwf%2Fa1Y%2Bfs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863500">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/500/318ea2f4206d16594ae59a3577158ce8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751263439&amp;width=680&amp;sig=So0XImcRViTj1wo3QFLGZFDlHzei0Fb%2FpKvTRDg%2Bh3Y%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863504">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/504/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751263440&amp;width=680&amp;sig=wdy%2FTJHNTTZqxwNM%2FN1Ce6%2Byt8OVdV5v1Qf2u8tjpd0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863575">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/575/c0c955d1bd0901c11a175d289c1de949_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751263857&amp;width=680&amp;sig=X1eb1IX%2B%2FSedVESpz3%2Fmm8D7KjwZ4PZ6oaKVDr8%2BC5k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863584">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/584/e28f3385ceb479de85143dfb041918d6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751263898&amp;width=680&amp;sig=wzq4jIxG4HXbf8NUpnuM0GL8h2JShh7e6H07jsuQC2Y%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Manufacturing and Supply Chain
+While we are working with the top manufacturers in the industry, scaling up for mass production can present unforeseen challenges. We are collaborating closely with our manufacturing partners to maintain the highest quality standards and deliver on schedule.  
+
+Product Development 
+Our working prototypes are fully functional and have been rigorously tested. However, there may still be minor adjustments or optimizations required as we move into final production. We are committed to transparency and will keep our backers updated every step of the way.  
+
+Fulfillment and Logistics 
+Shipping delays, customs clearance, or unforeseen global events could potentially impact delivery timelines. We have partnered with experienced logistics providers to minimize these risks and ensure reliable delivery. 
+
+Global Certification and Compliance  
+As LiberNovo enters the global market, obtaining certifications and ensuring compliance with regional standards is a top priority. Although this process can be time-consuming, it is crucial for delivering a product that upholds both safety and quality regulations.  
+
+We appreciate your understanding and patience as we navigate these challenges together. Your support means everything to us, and we are committed to delivering a product that exceeds your expectations.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">To ensure the longevity of the LiberNovo Omni Chair:
+Utilize durable materials like 20mm thick foam armrests with 25D hardness for steel-like support and aerospace-grade resilient panels in the chair back.
+
+Implement a robust 6-coordinated linkage system designed for repeated use, supporting features like 160° recline and motorized spinal stretch.
+
+Conduct extensive stress testing on components, including the hydrophilic sponge headrest and zoned hardness seat cushion, to withstand long-term wear.
+
+Design modular parts for easy maintenance or replacement, extending the chair’s lifespan.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">We will focus on eco-conscious materials, including:
+Hydrophilic sponge in the headrest, designed for durability and recyclability, reducing the need for frequent replacements.
+
+Linen-like elastic fabric for the skin-friendly stretch layer, chosen for its durability and potential for sustainable sourcing.
+
+Aerospace-grade resilient panels in the chair back, engineered for longevity to minimize material waste over time.
+
+Recycled or biodegradable packaging materials to reduce environmental impact during shipping.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">When selecting manufacturing partners, we will prioritize:
+Factories with environmental certifications, such as ISO 14001, ensuring sustainable production processes.
+
+Energy-efficient manufacturing facilities that utilize renewable energy sources where feasible.
+
+Robust waste management systems to minimize production waste and promote recycling.
+
+Ethical labor practices, ensuring safe and fair working conditions for all employees.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">Sustainability will guide our delivery strategy by:
+Leveraging overseas warehouses in local markets to shorten delivery distances, reduce carbon emissions, and ensure fast, reliable shipping.
+
+Partnering with logistics providers using fuel-efficient or low-emission vehicles for last-mile delivery.
+
+Minimizing packaging with recycled or biodegradable materials to reduce waste.
+
+Optimizing inventory management in regional warehouses to prevent overstocking and streamline eco-friendly distribution.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

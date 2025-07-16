@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hermes | One-click 3D printing files protected by blockchain</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/048/857/487/1801c0d7704b6613725d165709c69be2_original.webp?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1744290137&width=560&sig=ONCW0XA1GegN0TQgx8pOPld3IuQStWdzFmU2av%2B7Lrk%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Hermes | One-click 3D printing files protected by blockchain</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">The first marketplace to 3D print limited editions.Active NFTs,protected files.Sell and print in one click.Decentralized design is here</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,840</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49575369">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-Hermes-The-Genesys">Meet Hermes &amp; The Genesys</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/575/369/5aa78ec6f693032beab0510c0f17a0a1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749223801&amp;width=680&amp;sig=SEF9hIssumlyOq9%2Bao%2Fe69BUFNZYHpNqrSRAwY0bG98%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49561045">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/561/045/3cb6dce9990349db8c6fcde63307ddbd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749135899&amp;width=680&amp;sig=jhkTRivaF38J%2BWabUs2e9ZCVPcl1ttdAUPWjSvMQhu0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49575412">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/575/412/441ffac71cef346145c603965bcdb970_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749224090&amp;width=680&amp;sig=6NhX%2BDz3bBiXarAlg6mMhE%2FcCWs%2BIzq9JrPeoJdhCGc%3D"/>
+</figure>
+</div>
+<p><span class="bold">Hermes is a universal plug-and-play module that upgrades any 3D printer with one-click printing, direct access to a blockchain-protected marketplace, and zero subscriptions.</span></p><p><span class="bold">It’s time to create, sell, and own digital-to-physical objects, securely and freely.</span></p><p>Imagine a world where creating, customizing, and producing your ideas is as simple as clicking a button. The Genesys is here to make that dream a reality, redefining 3D printing with its easy-to-use technology, built-in intellectual property protection, and commitment to sustainability. </p><p>With The Genesys, 3D printing is no longer a complex niche, it’s accessible, secure, and ready for everyone. Back our Kickstarter campaign today and help us democratize the future of 3D printing!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49561147">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-is-Hermes-">What is Hermes?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/561/147/e03ffb22ad12188c390b66412a74019a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749136544&amp;width=680&amp;sig=6zfyOmDR0KsemYPFUL8vny5ALP%2B2QmB5Lf7DL4l7Als%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49561422">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/561/422/b1d7e14abd53837c05adc3e6b5167699_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749138120&amp;width=680&amp;sig=Gh8UDy9NUM8Z3sKdRXKl3gHWA0iBxUz2XR%2FXwHX4Cco%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49561526">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/561/526/f9b6fcb0ec76b23ace287b8b68238ece_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749138491&amp;width=680&amp;sig=sZOnBElUw6HxtYfNc2x3GhmGtPkbgN%2Bdx1pMWiwlrpA%3D" src="https://i.kickstarter.com/assets/049/561/526/f9b6fcb0ec76b23ace287b8b68238ece_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749138491&amp;width=680&amp;sig=sZOnBElUw6HxtYfNc2x3GhmGtPkbgN%2Bdx1pMWiwlrpA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49561919">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-is-The-Genesys-">What is The Genesys?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/561/919/94b023d32c720b9cc36ec073e242d717_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749140129&amp;width=680&amp;sig=fXw%2BCSa2twW1KqjwX1%2FkrZe38V8XaYCslKRZf%2BHAflk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49562113">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/562/113/62169ac081be51b025c3dbd0976b7cc4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749141140&amp;width=680&amp;sig=n%2B7%2FHbwCzcaCWv1Eywn%2Fh7u6J%2BobAfZ%2F8d8PvO3OhOk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49562156">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/562/156/c915a342b52dcef4c62ff3d31a0be595_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749141363&amp;width=680&amp;sig=NRL5TZWTIz6pDx4sVojjQmCEPp6nPUWwTVEGo913dK8%3D" src="https://i.kickstarter.com/assets/049/562/156/c915a342b52dcef4c62ff3d31a0be595_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749141363&amp;width=680&amp;sig=NRL5TZWTIz6pDx4sVojjQmCEPp6nPUWwTVEGo913dK8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49606036">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/606/036/103f297f884993ac0ea5abaf7c31337b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749480968&amp;width=680&amp;sig=frSzxAehWCHwBV4MgmSlWtvLpFkejqhz6Bfys5HpcwI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49573380">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Revolution">The Revolution</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/573/380/2118ebee463655ea8f08c4d1554fb2b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749212584&amp;width=680&amp;sig=yg31C%2F5j64%2FkxivUBweMx5%2Bl1ucPPRU5yhRbBchhUaQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">Not Just a Platform. A Revolution in Digital Manufacturing.</span></p><p>Hermes isn’t just a tool. It’s the keystone that unlocks a new era of 3D printing.</p><p>With The Genesys, creators, designers, and even companies can distribute digital products with confidence. Every model is protected via NFT authentication, with built-in licensing and print control that makes piracy and uncontrolled copying a thing of the past. Earn from every single print.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49573430">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/573/430/b6442259d7758e05c97eb7959635dd05_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749212904&amp;width=680&amp;sig=eswHPsIbrodHbkXOJ0v8tf5qgnlUyfrauPBpmrsWa1w%3D" src="https://i.kickstarter.com/assets/049/573/430/b6442259d7758e05c97eb7959635dd05_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749212904&amp;width=680&amp;sig=eswHPsIbrodHbkXOJ0v8tf5qgnlUyfrauPBpmrsWa1w%3D"/>
+</figure>
+</div>
+<p>We’re not another 3D file marketplace. We’re building the first decentralized ecosystem where creators own their work, control the number of prints, and earn from every authorized copy.</p><p>Hermes connects directly to your printer and our platform to:</p><ul>
+<li><span class="bold">Print with just one click</span></li>
+<li><span class="bold">Automatically verify ownership and print rights via blockchainPrint with just one click</span></li>
+<li><span class="bold">Sell and distribute models globally, securely, and instantly</span></li>
+</ul><p>And the best part? You get Lifetime Access, no subscriptions, no monthly fees. Just one purchase, forever yours.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49562970">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/562/970/98a303a47d275465324a855e57bec20a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749144719&amp;width=680&amp;sig=oFkEqOlHbfDB1B5EmVBvzMMD9HfIoN8HSJRkIP4vdzk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49592219">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/592/219/1feec09e4990a64aaf2ef523421cc947_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749378696&amp;width=680&amp;sig=fNtE%2F66fHCJ4fO5TriijA0HCSV4hm4Olu08zRCevILs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="47769435">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/047/769/435/c9b1e2e3ac7068c71fe546de6e26c6bd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1736349877&amp;width=680&amp;sig=8Eg14e9UJDETrHR%2F22me7mCSHuoUi%2BGglLG%2FownIpRA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49562859">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Main-Benefits-">Main Benefits </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/562/859/a107f759f8cc8bf58f04c073722559aa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749144226&amp;width=680&amp;sig=6b1S0xqkmymLThbM%2FOnYGMByEcqtYBDFmX%2Furfczhlc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49606057">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/606/057/81882e43568a3b044e42e707cc9707eb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749481033&amp;width=680&amp;sig=dT5bVlxw%2Fd6zmgk%2BqPINOYwFcS7o6I9KLjRKr5nm8IE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49563425">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-does-it-work-">How does it work?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/563/425/ff03bad6c9a19621aabe88593a477b55_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749146824&amp;width=680&amp;sig=5QpgVXpUj0OPycZTSBZ2kF9MCZTRlc7jLBSGu1GyhiQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49606093">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/606/093/5bd44514220072a0c87eb75c73dd0187_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749481104&amp;width=680&amp;sig=qN7YPdSuEX8yhWu7sw%2FSIUUSYfQAwXax%2BBj2YkmYiYQ%3D"/>
+</figure>
+</div>
+<p>At The Genesys, our mission is to revolutionize 3D printing by breaking down technical barriers and empowering creators worldwide. We aim to make 3D printing simple, secure, and accessible, providing tools that foster creativity while protecting intellectual property. By combining cutting-edge hardware, intuitive software, and NFT technology, we’re building a platform that opens new doors for creators, businesses, and enthusiasts. Together, let’s print the future.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49603436">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/603/436/15d5af1bf7768c4b9fc5ec8d09d35b14_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749466253&amp;width=680&amp;sig=JOtUKzoXa6xSJAUyRim2dJT3o1q7J800GxoITrePssk%3D"/>
+</figure>
+</div>
+<p><span class="bold">Product Introduction</span></p><p>The Genesys is an innovative platform that simplifies 3D printing for everyone. Featuring a universal interface module compatible with most 3D printers, The Genesys connects seamlessly to its integrated marketplace.</p><p> Users can browse thousands of 3D models, select their favorite designs, and start printing with just one click. </p><p>Using NFT technology, The Genesys ensures every 3D file is protected, giving creators full control over their work. Whether you’re a designer, business owner, or hobbyist, The Genesys is your gateway to the world of 3D printing.</p><p>The Genesys makes 3D printing effortless by eliminating the complexity of slicing, formatting, and file security. With a plug-and-play hardware module, it connects directly to your 3D printer, automating the entire process. </p><p>Simply choose a design from the Genesys marketplace, and with one click, your printer starts working—no technical expertise required. Plus, with built-in NFT protection, every design remains secure, ensuring that creators retain full control over their work</p><p><span class="bold">For Creators, Businesses, and Everyone in Between</span></p><p>Whether you’re an artist, entrepreneur, or 3D printing enthusiast, The Genesys is designed for you. Creators can upload and sell their designs, businesses can use local production to save costs, and anyone can easily print custom items at home. The Genesys makes 3D printing simple, secure, and limitless.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49603461">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/603/461/4b31cc6acd08f7b65f688e2206239276_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749466386&amp;width=680&amp;sig=%2FJUs%2BTxnvOa0UjYgxQ77bHb5ijJ7fA98JaM6Q5I7Aeo%3D"/>
+</figure>
+</div>
+<p>The <span class="bold">Genesys App</span> is your <span class="bold">command center for seamless 3D printing</span>. From browsing and purchasing <span class="bold">ready-to-print models</span> to monitoring your print progress in <span class="bold">real-time</span>, the app simplifies every step of the process.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49596907">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Tech-Specifications">Tech Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/596/907/531c7f32b8ec285a6061b7000ce93691_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749417264&amp;width=680&amp;sig=wQbSTn8Yny1ea9KImJoU9Zy5pDeyWkH1ZYLqg%2BF2hWY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49597050">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/597/050/b0c0e82d9a943284d5daf6cb44fe615b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749418236&amp;width=680&amp;sig=b4xZl%2BDq40h8UEF7nUX5wUZ6xHY5y9QHowlAPppt2to%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49603399">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/603/399/885c4ba32daa4c85ccd53ee2ad24509c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749465979&amp;width=680&amp;sig=LBOu%2BS3wxk0YReKCfyq%2FyMAD7e2u3i4xtl0YjbfHWLg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49563570">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-App">The App</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/563/570/9deca00bd9880f4c27ff2a15c2c941c0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749147457&amp;width=680&amp;sig=uQaAzCQfIathQOOjt0mCzniz1g%2BnSOXcjmwHPORW7%2BU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49563565">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/563/565/0a2a98b660715321fbb309b4087be954_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749147420&amp;width=680&amp;sig=s2FfiOTTQlUlcJ3cwBOza1tTjY9ZGAC7oNVjSCeqY%2BQ%3D"/>
+</figure>
+</div>
+<p>With <span class="bold">one-click printing</span>, you can send designs directly to your 3D printer, no slicing or complex setup required. Plus, built-in <span class="bold">NFT protection</span> ensures that creators retain full control over their files. Whether you’re a beginner or a pro, the <span class="bold">Genesys App</span> makes 3D printing effortless, secure, and more accessible than ever.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49563763">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Case-Studies-Collaborations">Case Studies &amp; Collaborations</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/563/763/4c9590c67390ed44c12f6bab7943a0ec_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749148368&amp;width=680&amp;sig=REEziMtccnP0EXUjY3CzZNqH8UTD5cJqwwIlq9JxpPE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49588861">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/588/861/b887ee4c94ee6c4d618581919c4dc5d8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749334767&amp;width=680&amp;sig=1P9RtJ5x9MKcVJt7vcRNUHXYer4m5HhE8cF5UoMBjpw%3D"/>
+</figure>
+</div>
+<p>This isn't just a file. It’s a certified, numbered NFT that grants the right to 3D print the artwork in high resolution. Each user can choose to print, collect, or resell the print rights, which are limited and tracked thanks to Genesys' smart licensing system.</p><p>The first edition includes 100 exclusive NFTs at $500 each. A potential second edition may follow only after the first one is sold out.</p><p>This project marks a new era where digital art becomes physical, sustainably, securely, and globally.</p><p>Support this release and own a piece of art history, signed by OZMO, powered by The Genesys.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49589047">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/589/047/801dc5849996b8e73e4c7d9c0f876e03_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749336994&amp;width=680&amp;sig=QBQfzgDdEJZS%2BKR09RiI0aog5B31MW1p8zPpL12gYQI%3D" src="https://i.kickstarter.com/assets/049/589/047/801dc5849996b8e73e4c7d9c0f876e03_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749336994&amp;width=680&amp;sig=QBQfzgDdEJZS%2BKR09RiI0aog5B31MW1p8zPpL12gYQI%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">“Neoclassical harmony is fractured by a visual anomaly. The eternal ideal of the human face is disrupted, approximated by pixels and distortions. A short circuit between memory and algorithm.”</span></span></p><p>In Rendering Venus, OZMO deconstructs classical perfection through digital fragmentation.<br/>The sculpture becomes a visual glitch, a conscious rupture between antiquity and the now, where timeless beauty is reimagined and reshaped for the digital age.</p><p>This piece doesn’t merely replicate the past, it interrogates it, fusing historical aesthetics with computational error.<br/><span class="text-italic">Rendering Venus</span> is both relic and anomaly: a symbolic collision of memory, matter, and machine.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49692317">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/692/317/2e07b3cd31858b3660fd66bf6e8d52eb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750064798&amp;width=680&amp;sig=kfgGjoVZcfDdDVZOzJ6yp9NRwtGjqJ%2B55kXCdTXy91U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49589287">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/589/287/89163148f0be6d0ced4705dabb1cca05_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749339530&amp;width=680&amp;sig=QvVRPaz3w%2FNZYBVswFHeZfWr92%2BFJLyIQNSPM%2Bm6zj0%3D"/>
+</figure>
+</div>
+<p>Her approach favors slow design, where every curve and joint is sculpted with care. With a strong focus on sustainability, material selection, and emotional value, Elena’s collections are born as modern heirlooms, made to last, and to matter.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49589343">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/589/343/286541bf65c3c0a10d691f38560aa76b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749340193&amp;width=680&amp;sig=Vq45lNpIyTyJhuaFXxKd%2FR22oL06JUNys%2FsfCj96gPA%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">“Betty was the first. A sinuous, compact chair defined by its fluid plasticity and bold curves, a tribute to the timeless femininity and irreverence of Betty Boop.”</span></span></p><p>Inspired by the iconic cartoon character created by Max Fleischer, <span class="text-italic">Betty</span> captures both strength and elegance.<br/>Its modernist legs and short, sculptural seat echo the charisma of a stage performer. Originally created for Giorgia’s international tour, <span class="text-italic">Betty</span> has since appeared in exclusive interiors and performance spaces around the world.</p><p>Now, for the first time, Betty is available as a 3D-printable design, offered in two formats:</p><p><span class="bold">Modular: print at home in parts, then assemble</span><br/><br/><span class="bold">Monolithic: one-piece version for high-end production</span><br/><br/>Each version includes a certified NFT that ensures:<br/>✅ Authorship and originality<br/>✅ Tracked edition control<br/>✅ The ability to resell or transfer print rights</p><p>This collaboration opens a new chapter in collectible furniture, where designer chairs can travel as code, and come to life anywhere.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49692323">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/692/323/c18556ce3375eaf9e8729848b455c2c2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750064813&amp;width=680&amp;sig=YrZ70kA%2Blg02L4Qaa67qX%2BaDY66EBQ6QjwoFbyFU5FY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49592125">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/592/125/56631f2eea9e882d88233515b96d2e3b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749377093&amp;width=680&amp;sig=JrWlIvNN7W0XPPjJVUVl0TjnRqMK00P9dYn8oOEQVK4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49949103">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/949/103/a1abf63b1d3ea7df51cc73f97861d575_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751893435&amp;width=680&amp;sig=emLAfgAYL2B5lIR%2FetMprd7VrUiHIaqFI1AvOtMKHJY%3D"/>
+</figure>
+</div>
+<p>From the sold-out first drop to the spotlight at Expo 2025 in Osaka, Servati has captured international attention with its concrete philosophy: the Boomerang Process—a closed-loop production system where every shoe returns to its raw material state, making each purchase an ethical act.</p><p>Now, with The Genesys, this revolutionary brand takes the next leap: Servati footwear becomes certified digital NFT files, protected, traceable, and printable on demand—drastically reducing environmental impact by eliminating CO₂ emissions from shipping and packaging.<br/>Not just fashion, but a creative legacy—protected, shared, and ready to live in homes, studios, and collections worldwide.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49946072">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/946/072/43a094649c07907674e7393d097f53ba_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751872895&amp;width=680&amp;sig=SiIgX6snwj4ZZ9IiW%2Fk00g%2BLrYOKQH8mJmbIZe4nVR0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49949174">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/949/174/ecc144f466abb9744361aa60ed75289c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751893894&amp;width=680&amp;sig=4L91vkUWFg9ttLptbttKJu173ndb61pU0j%2BirULN7a4%3D"/>
+</figure>
+</div>
+<p>With fluid lines and a strong character, every detail is crafted for comfort, lightness, and uniqueness.</p><p>Made as a single recyclable monoblock, with no glue or joints, and embossed with the Servati brand identity, these slides redefine minimalist design.</p><p>Perfect for those who want effortless, conscious fashion—wearable or collectible—as a symbol of a new way to produce and experience objects.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49949262">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/949/262/88656090f602f1fb0785f5f77f20b644_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751894335&amp;width=680&amp;sig=kMRM81gmtCTOzaDZ8tibI6CF83kDme%2B%2FI431xwCBcII%3D"/>
+</figure>
+</div>
+<p>To own a Servati creation today is to enter a new design paradigm:<br/>not just to possess an object, <span class="bold">but to activate its lifecycle through blockchain.</span><br/><span class="bold">The Genesys makes it possible—with style.</span></p><p><span class="bold">Smart Licenses for High-Value 3D Models</span></p><p>Thanks to The Genesys' print rights tracking system, both creators and buyers can rely on a platform that limits the number of prints and links every copy to the original NFT-certified model.<br/>This finally makes it possible to sell rare, collectible and limited-edition 3D models, unlocking new revenue streams for designers, artists, and businesses.</p><p>For the first time, companies and brands can safely distribute their digital models, protect design value, and control reproduction.<br/>Consumer products like eyewear, fashion accessories, parts or décor items can now be sold as 3D printable files, with full authenticity and zero risk of unauthorized copies.</p><p>And with Hermes’ one-click printing experience, buying and producing an object becomes as easy as shopping on Amazon, with no shipping delays and a dramatically lower environmental impact.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49563968">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:A-new-industrial-era">A new industrial era</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/563/968/39dd7eb026d65258b055617a68b4442e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749149072&amp;width=680&amp;sig=iPNux7uxd%2F13FI3cfc%2FjCTxs%2FsTjUBN%2BpFv1%2BW4pOlQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">For years, we were told that 3D printing would revolutionize the world. That we would produce locally, avoid unnecessary shipping, and reduce waste.</span></p><p><span class="bold">And yet, that revolution never happened. Files weren’t protected. Models could be copied. Platforms were complex, fragmented, and only accessible to a few experts.</span></p><p><span class="bold">The Genesys was born to unlock that potential.</span></p><p><span class="bold">Thanks to our infrastructure, anyone can sell a product without physically producing it.</span><br/><span class="bold">A designer can upload a model, certify it as an NFT, limit its editions, sell it  and let the world print it.</span><br/><span class="bold">Each print is executed across a distributed network of printers, without warehouses, logistics, or unnecessary emissions.</span></p><p><span class="bold">With Hermes, printing becomes simple: one click, guaranteed quality, no setup.</span><br/><span class="bold">With The Genesys, buying an object means downloading a certified right, and producing it locally, where and when it’s needed.</span><br/><span class="bold">No intercontinental shipping. No waiting for packages. No packaging waste.</span></p><p><span class="bold">According to the U.S. Environmental Protection Agency (EPA), every traditional e-commerce delivery can generate between 500 and 1,000 grams of CO₂ on average, not to mention the packaging waste, which accounts for up to 30% of urban solid waste.</span><br/><span class="bold">The Genesys can cut these emissions by up to 90%, eliminating logistics and digitalizing the entire purchase and production cycle.</span></p><p><span class="bold">And to make this revolution even more accessible, we will offer 3D printers through low-cost monthly subscriptions, so that anyone, makers, schools, professionals, families, can become part of the network and contribute to the new distributed manufacturing chain.</span></p><p><span class="bold">Unlike other systems that rely on closed software and expensive fees, The Genesys offers an open, scalable, and sustainable technology, with lifetime access for those who purchase Hermes.</span></p><p><span class="bold">It’s a system that reduces environmental impact, lowers the barriers to market entry, and opens the door to a new kind of entrepreneurship.</span><br/><span class="bold">A manufacturing model that requires no factories or capital, just creativity, ideas, and a network that works.</span></p><p><span class="bold">The Genesys is the first step toward a lighter, distributed, and sustainable industry.</span><br/><span class="bold">A freer, more convenient, and fairer economy.</span><br/><span class="bold">And today, you can be among the first to build it.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49606253">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/606/253/9d4f9f0491a36386b1ef383277e06f80_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749481723&amp;width=680&amp;sig=p861l968iDSB%2BsJrGxIvhw%2Fp5rlHW0M9D9tZ1YnAu6w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49572855">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/572/855/7982a0555e982dfc104a25ba53cc0bf5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749207984&amp;width=680&amp;sig=HguywQCvqNDJ9o000RZUYx5fAEZv3dELvQwPsYB2cxo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49603643">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/603/643/a2e0448dbd78f417cf440dead2f5bdee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749467729&amp;width=680&amp;sig=ejdBbUaFvO9nBQ%2B2SK6vs0YBdBcRaJ%2FI3z9nymmYSqU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49603716">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/603/716/e8f364dabccf5e4da852c4d02a3c82df_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749468387&amp;width=680&amp;sig=6C6g6HR8qP0Zr0icFHmCSVsDKpaSwZjnOd43IfPgd6I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49692326">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/692/326/a28366d1d481513f68c70ad2d4c87af5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750064826&amp;width=680&amp;sig=Hul9l2tCYvW9dZs%2B6p8Ef5W5p9btQWG7QDjWPO7BwZM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49603760">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/603/760/7aa7262c3d1e85fd1d139b8993f583a1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749468673&amp;width=680&amp;sig=cgC5aVP1UdTw4%2BYkFpx86rFNg1xLXhVlnyJQBLbRGmg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49692327">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/692/327/2e07b3cd31858b3660fd66bf6e8d52eb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750064836&amp;width=680&amp;sig=WAedlFIPu0rDtfBaXLDVBJ%2FYHg9v0sjIDWN%2FZaqGeTs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49692328">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/692/328/c18556ce3375eaf9e8729848b455c2c2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750064843&amp;width=680&amp;sig=cgcX39Jpn0C2tK7MEY%2F4E6CBv0yfxwub4A6j71YwfBw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49949280">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/949/280/88656090f602f1fb0785f5f77f20b644_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751894402&amp;width=680&amp;sig=9wB9cFAwQxfSMQCCsmGOEtMJBrC3fkNItXHvNrGOfUI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49692131">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-box">What's in the box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/692/131/5c6c4c376b82b7f5072ab9a6773bbdc9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750063502&amp;width=680&amp;sig=tnpaMJP5NTKz9CS9IUxF%2BGxsDcK6yUHDoLEPF50MdJY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49692232">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/692/232/4876e323fd0ace81f295ac4d3b54d2fc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750064027&amp;width=680&amp;sig=ZJvyJBpRn8BeL3xKoK2I7EgLdbrQ3zYGKQTU%2BtJ8hr4%3D"/>
+</figure>
+</div>
+<p>Everything you need to get started with Hermes is right inside the box—no extra purchases, no setup stress. From the core device to the essential accessories, it’s all there and ready to go. Just unbox, plug in, and you’re on your way.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49692233">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/692/233/b0fe8b3ccc7edd9b4a0c775471409cd7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750064034&amp;width=680&amp;sig=sV5riVDmWjQ%2Ffpbu1IeGaDMRmIFnBoytCg7PeRPihf8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49692244">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/692/244/330c4a9d8d79fe726820e42c700af863_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750064120&amp;width=680&amp;sig=I7fv1I3TpQzN2rWRLE%2Bp1BFipOCMZv42P8WCgBgIM3g%3D"/>
+</figure>
+</div>
+<p>Shipping will be charged after the campaign through a link we send on Kickstarter. Here are the estimates:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49701190">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/701/190/958eda1348ed42a865e32a56eac30d79_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750108205&amp;width=680&amp;sig=UKT36y4M47lQo2J%2FDT99OMtEzwirxH3IQG33kOfN0x8%3D"/>
+</figure>
+</div>
+<p>For rewards that include a 3D printer, shipping estimates are as follows:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49701184">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/701/184/30955f5698ed735f1d0031e1d3a1cf20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750108194&amp;width=680&amp;sig=UhJOMIuIWxmhUYy0Hc%2Bxsb6Y8DHeh%2FnJlSdGw0uksOQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49564050">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-the-visionaries-behind-the-revolution">Meet the visionaries behind the revolution</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/564/050/6a89a184c5017de5ad279bdc4a056f5a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749149498&amp;width=680&amp;sig=L16M1gZITRjGIw%2FHA9STusMOr8cr86w3zi6mh6J0d30%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49606128">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/606/128/7facbe4522e8fc512f3e31c64946b65a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749481279&amp;width=680&amp;sig=Fbu5NSo9wHjaf7oMPyC32xu54PvsS40fai66DKBKVvo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49588477">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/588/477/95bfeb10fc0a01e38d078a3b1f00a748_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749331523&amp;width=680&amp;sig=oMqvzpTlx9iTzZMhIF2I9rDJhF1PYwX8iS%2FAxf8wfZ4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49564064">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-our-early-users-are-saying">What our early users are saying</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/564/064/288c78ddae2a4daacc185f4245be3101_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749149576&amp;width=680&amp;sig=n5KYlbCFLhD0yWQ0H9HlcpzGOXS4EsPL9G9UvgfC7Q0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49572536">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/572/536/8a8d79fa2ad54989da3a0c88c9bc20bf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749205556&amp;width=680&amp;sig=79TaA26tfZwK3nLKghNupGXNS0P0TjHqXHdhHlybtrQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49572846">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Roadmap">Roadmap</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/572/846/5b77a167683e1e5d24badd18a13a1ad4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749207907&amp;width=680&amp;sig=9Bz14kUPxj8lFOBY1gpQLOgE3fQCdPIQFBqiLMu%2Fsxk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49611576">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/611/576/0678e4d0519523d0cc5d07bcb052be38_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749505912&amp;width=680&amp;sig=xVzI7N1xdB4qJklH05uhNEB2iz%2BTitWqYoDTTf%2F70V8%3D"/>
+</figure>
+</div>
+<p><span class="bold">🚀 An Extraordinary Future. Just One Click Away.</span></p><p>Imagine a world where every object you need can be printed directly at home.<br/>Not just small accessories, but clothes, glasses, tools, even electronic components, prosthetics, and complex instruments.</p><p>This isn’t science fiction. It’s the future of 3D printing.<br/>And thanks to The Genesys, we can start building it today.</p><p>For years, this revolution remained out of reach: difficult, expensive, fragmented.<br/>Now, with Hermes and our digital infrastructure, 3D printing becomes simple, secure, and universal.</p><p>An ecosystem that protects models, enables certified sales of digital objects,<br/>and builds a global network where every home becomes a sustainable micro-factory.</p><p>The more The Genesys spreads, the faster 3D printing evolves:<br/>more complex models, more advanced materials, more useful, beautiful, personalized products.</p><p>Step by step, we’re moving toward a future where ordering and waiting becomes obsolete, replaced by printing what you need, exactly when you need it.</p><p><span class="bold">Lower costs. Less waste. No borders.</span></p><p><span class="bold">Support The Genesys and help us make this future real, accessible, and shared.</span></p><p><span class="bold">Choose Hermes. Let’s print a more convenient, faster, and sustainable world together.</span><br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49592231">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/592/231/d2b6dad43c87d257fe95224bb28535a3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749378920&amp;width=680&amp;sig=l9uaxZZMekBr8ZuxJjGMQ3bPHLAvrfg7JK32lfhg7Tc%3D" src="https://i.kickstarter.com/assets/049/592/231/d2b6dad43c87d257fe95224bb28535a3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749378920&amp;width=680&amp;sig=l9uaxZZMekBr8ZuxJjGMQ3bPHLAvrfg7JK32lfhg7Tc%3D"/>
+</figure>
+</div>
+<span></span><p><span>With over $20 million in successful funding raised since 2020, we've been helping creators turn their ideas into reality through product launches, crowdfunding, and e-commerce.</span></p><span></span><p><span>This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3400+ successful Kickstarter projects with over $1 Billion raised between them.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49741469">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/741/469/f31bf90e0d70adb62957100aa5979515_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750347347&amp;width=680&amp;sig=eqYOgcoHms561%2FKRP%2BpgyHlc1ct4iGyUqMZm8gFI3Aw%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">The Genesys prototypes are fully developed and functional. We are just waiting for our community to grow before we deliver our products!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">Everything we do at the Genesys aims to minimize our environmental impact.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

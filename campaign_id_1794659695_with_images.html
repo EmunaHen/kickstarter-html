@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SnagMag - Turn Any Phone into a Pro Cinematic Camera</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/747/470/3d38df46c52b75f8942d6b18aad0e7ba_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750389419&width=560&sig=FMo3HLeZyF8gBhZT%2BPvr4CUXOSRdMDHiHh8ijdgHQWs%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>SnagMag - Turn Any Phone into a Pro Cinematic Camera</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">iPhone & Android / Magnetic Camera Grip/ Magnetic Filter / 67mm Filter Compatible/ DSLR Control / Fill Light / Creator/</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,547</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737535">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/535/aa855de40c69efa1bf0f808acfd95a00_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323684&amp;width=680&amp;sig=C89Hi1LJS3msrlX7cxn%2BZ6iRu3kvV%2BiOvfUirzKXHX8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49723575">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/723/575/67d32e0a34e3b6be88cc395d56a811b2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750236634&amp;width=680&amp;sig=XCxers3QjNqxqy6zFbew6fj1IJ9GDsaLEsWUoehEtkA%3D"/>
+</figure>
+</div>
+<p><span class="bold">Introducing SnapMag: a magnetic camera kit that turns your smartphone into a pocket-sized cinematography rig.</span><br/>Filters, grip, lighting, and control—SnapMag gives you the creative tools to shoot like a pro, without the bulk of a DSLR.</p><p>With SnapMag, every shot becomes a story, and your phone becomes your most powerful creative companion.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737122">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/122/3fd434ee087ba1006098a904ebf2d37c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750321354&amp;width=680&amp;sig=Uay1qYRMwcbcKu2nxbxkB%2BabeCmFrXk5XuJdMeIRag8%3D" src="https://i.kickstarter.com/assets/049/737/122/3fd434ee087ba1006098a904ebf2d37c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750321354&amp;width=680&amp;sig=Uay1qYRMwcbcKu2nxbxkB%2BabeCmFrXk5XuJdMeIRag8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737544">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/544/8632cfe7b2fe3e68f9e2b936ba927125_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323719&amp;width=680&amp;sig=eGaVZwG%2FYUgKamBOXr%2FLn0NYUJj1wS%2BTp8BGHgD9kpk%3D"/>
+</figure>
+</div>
+<p>Most smartphone accessories just make shooting easier.<br/>We wanted to make it truly professional.</p><div class="template asset" contenteditable="false" data-alt-text="Not just for iPhone 16 - we offer perfectly fitted cases for every smartphone model." data-caption="" data-id="49722832">
+<figure class="image">
+<img alt="Not just for iPhone 16 - we offer perfectly fitted cases for every smartphone model." class="fit" src="https://i.kickstarter.com/assets/049/722/832/7e859bf3ed55fd2c5cddcfa67af703c0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750232233&amp;width=680&amp;sig=gdQ8MbGgRlW4DbDAQV7flOQQuKJhtDVPnK%2BKzpgygNs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49747438">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/747/438/a944246ee14908d8ec4cb17ff15a1db8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750389169&amp;width=680&amp;sig=p340OagPZcKUTFVnDvQtr79BS3tLuEyNBzo5jxLrLhQ%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">Not just for iPhone 16 Pro Max - we offer perfectly fitted cases for every smartphone model.</span></span></p><p>Apple (iPhone Series) /  Samsung (Galaxy Series) / Huawei Series /  vivo Series/ Xiaomi Series / OPPO Series / Google Pixel Series</p><p> If your phone model is not listed above, don’t worry — we’ll confirm with you during the campaign and make sure your device is supported.</p><h4 class="page-anchor" id="h:Smartphones-are-convenient-But-are-they-creative-enough-"><span class="text-italic"><span class="bold">Smartphones are convenient. But are they creative enough?</span></span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722846">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/846/993518359529edaffb81f43b94f1dda0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232317&amp;width=680&amp;sig=eOMRa1YGMGx1Qd73G60rpxMg7rQYMtTaDHEYq3rHymk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737546">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/546/1b9f78e05e85a36bd9e730ebb0b61099_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323732&amp;width=680&amp;sig=dY1eiS%2BZCQEN1cu2sHsI%2F9x4blO1aRcJH6RxpUP28Rg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736935">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/736/935/fdc22c388d4d98b1940a74bb88d219f7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320193&amp;width=680&amp;sig=KCc8%2FNpeS4MIKqGZI71OkO5vUUwwx4Gdq6%2B8MKcbxcw%3D" src="https://i.kickstarter.com/assets/049/736/935/fdc22c388d4d98b1940a74bb88d219f7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320193&amp;width=680&amp;sig=KCc8%2FNpeS4MIKqGZI71OkO5vUUwwx4Gdq6%2B8MKcbxcw%3D"/>
+</figure>
+</div>
+<p>Comes with 4 professional-grade magnetic filters (ND8, CPL, Black Mist, and Starburst) — switch visual effects instantly with a snap.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722861">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/861/fe1437686a0b3e5504a5e369335f35e6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750232414&amp;width=680&amp;sig=BGZbOisNLEcJPXm%2BBHZ32deT61eoXR0g4ZcE5Cco3ag%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722862">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/862/04c30cb6f488a7508b5f6b55b75a69f7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750232415&amp;width=680&amp;sig=4aknTMUSh1OvmasXx8kGVXCR7RBeDLmI2GZqwlStOvU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722869">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/869/6f0bf17abbdd8c19cc8f4f9157d6470d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750232445&amp;width=680&amp;sig=%2FRN2h2w0fuhUPdiDqpsgZ2LYw9RpWYKSzJUnC7qOb5c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722860">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/860/663b58e54db01c05ad3e69aad33973fb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232408&amp;width=680&amp;sig=kkg0lsU1PiYqq0%2FT6vfnJpIUTUYLNToY6kVHJ8o6SNc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49736982">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/736/982/e41187bd3a14a0cce9ee8c5994c4feb9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320493&amp;width=680&amp;sig=ZRwrZg5FNlmoXeXcI9qjrS5Dqwvb0%2BnGyAqoYPa2mvA%3D" src="https://i.kickstarter.com/assets/049/736/982/e41187bd3a14a0cce9ee8c5994c4feb9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320493&amp;width=680&amp;sig=ZRwrZg5FNlmoXeXcI9qjrS5Dqwvb0%2BnGyAqoYPa2mvA%3D"/>
+</figure>
+</div>
+<p>Also supports standard 67mm threaded filters and high-end magnetic filters, bringing DSLR-level optical flexibility to your smartphone.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737071">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/071/a9f1fea09954d26994992f80f028d4b3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320998&amp;width=680&amp;sig=w1PRDMRW0IwcSv4goxYDgQLj96kW2WOmE716IPkhBw8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737556">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/556/ae6a9e4a0b35933d3a3c9592413ae9a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323757&amp;width=680&amp;sig=%2BucNO6R30hJwGWsCcqOVAbZH9Uq8Zb%2Bh6v4g6lZiF3k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722898">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/898/829b0c8cc4c4daf23b3c2035793f4ca3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750232539&amp;width=680&amp;sig=gfqy7cBgSRZ9XfJ%2FPJRsPU1cnzFb4YsX5k9E91Es0TA%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Slide-to-zoom-in-out"><span class="bold">Slide to zoom in/out</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737009">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/009/ad1196c28ce5d111a22ae236a07fd732_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320651&amp;width=680&amp;sig=IkAfYICeKG6Tfcp%2FKK6cVUYpEWUQrxnszHIZ7KfLYTQ%3D" src="https://i.kickstarter.com/assets/049/737/009/ad1196c28ce5d111a22ae236a07fd732_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320651&amp;width=680&amp;sig=IkAfYICeKG6Tfcp%2FKK6cVUYpEWUQrxnszHIZ7KfLYTQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:One-tap-autofocus-shoot"><span class="bold">One-tap autofocus &amp; shoot</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737016">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/016/f61c6c461a8273bf3c70e693046dc37c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320703&amp;width=680&amp;sig=JF4oqC5E8DZHTtUQwucaTsZ4r%2BoomnjTf%2FiB24Tkiys%3D" src="https://i.kickstarter.com/assets/049/737/016/f61c6c461a8273bf3c70e693046dc37c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320703&amp;width=680&amp;sig=JF4oqC5E8DZHTtUQwucaTsZ4r%2BoomnjTf%2FiB24Tkiys%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Double-tap-to-switch-cameras"><span class="bold">Double-tap to switch cameras</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737025">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/025/792fc1866e77cd1933ec80f533be9cf4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320807&amp;width=680&amp;sig=%2FMuhaqbObmIObv1AGExjFpm%2B%2FFJi2Adso0B%2BnjjgSiQ%3D" src="https://i.kickstarter.com/assets/049/737/025/792fc1866e77cd1933ec80f533be9cf4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320807&amp;width=680&amp;sig=%2FMuhaqbObmIObv1AGExjFpm%2B%2FFJi2Adso0B%2BnjjgSiQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Long-press-to-quick-launch-camera-"><span class="bold">Long press to quick-launch camera </span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737023">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/023/b0ad16dced104c5da5ad09a81ea1031f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320774&amp;width=680&amp;sig=hHnjbFAwc%2B5nRHXcF0RyhyCugHWplAPzoSbMxqXreiA%3D" src="https://i.kickstarter.com/assets/049/737/023/b0ad16dced104c5da5ad09a81ea1031f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750320774&amp;width=680&amp;sig=hHnjbFAwc%2B5nRHXcF0RyhyCugHWplAPzoSbMxqXreiA%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Rotate-freely-between-portrait-and-landscape"><span class="bold">Rotate freely between portrait and landscape</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49723545">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/723/545/ddeb0fe66c154920802c3ee6f52ef4d7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750236466&amp;width=680&amp;sig=Vw0DbKgGnDvQOfb5oqx22z7SCkxkk8eHBuE4vSdQHnY%3D"/>
+</figure>
+</div>
+<p>And never miss a moment again.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737567">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/567/62a471821d209303ffc88f7c111ca96a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323816&amp;width=680&amp;sig=H1IDzsw82Hd5V3NURnszTQT5DJ4UvM%2Fl9mL8LyH6JOQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722902">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/902/54c54d7d26bc40709a809e8a9cb27caa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750232568&amp;width=680&amp;sig=4p7HpL7h%2FiVPvE9ayL%2FE8v%2BLDGPqVh584zYbiKWWX3E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737572">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/572/24bfa13bc4babd8bce0728068aff2a6c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323843&amp;width=680&amp;sig=0X9OU8YPia%2FHTO6SCIqMsVWj3zrX8ukBm9rEsweRWlg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737084">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/084/be7b93ac973fa079726a03fb0323b26c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750321053&amp;width=680&amp;sig=U4etaVwR0E7n4q6gdzHUUrw3B0OyVKC8F3qq7z%2B7n2A%3D" src="https://i.kickstarter.com/assets/049/737/084/be7b93ac973fa079726a03fb0323b26c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750321053&amp;width=680&amp;sig=U4etaVwR0E7n4q6gdzHUUrw3B0OyVKC8F3qq7z%2B7n2A%3D"/>
+</figure>
+</div>
+<p>Designed for creators on the move, the custom SnapMag phone case features a durable, impact-ready structure perfect for outdoor shoots.<br/>It supports standard 67mm threaded filters and high-end magnetic filters — bringing pro-level optics to your smartphone.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737578">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/578/994338c0c223ac1cb83d8988ddebcb4a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323873&amp;width=680&amp;sig=F9u0033dlvR8fw8I75%2FzKH0uwyLcNI%2F9LMKcg44T9E0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737093">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/093/6c28bfe8a1ac3ebdba0b142253efc136_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750321146&amp;width=680&amp;sig=GU2rJtEi9g6xTAcCmbYMPtu3lIC%2FR55dA%2FUeXh4%2BvyM%3D" src="https://i.kickstarter.com/assets/049/737/093/6c28bfe8a1ac3ebdba0b142253efc136_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750321146&amp;width=680&amp;sig=GU2rJtEi9g6xTAcCmbYMPtu3lIC%2FR55dA%2FUeXh4%2BvyM%3D"/>
+</figure>
+</div>
+<p>Add a magnetic fill light for 3-level color correction &amp; selfie lighting</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737586">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/586/5c66f7237a4719bb2bb3b3f25d4db5a5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323903&amp;width=680&amp;sig=p%2BDAE0bgNrrvujfV%2B9e9%2B6fQZNwcbLsdnKLwkPLnbPA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722915">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/915/c31b8e26c4528399f2db24eadfe07417_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232614&amp;width=680&amp;sig=2XAOK36TdG0tZYNnNULGr2sOpifEv%2BT2oZ4fadYxvuU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737590">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/590/f22fb157b89e81289b4e2d6c5b3663e9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323925&amp;width=680&amp;sig=%2FmFX5Fvnb%2BHqsOTkq227%2B2E7m23VK1DHI52p7NjG2Ao%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737100">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/100/088fc0fd1047c06fd6d6887cd5e7086c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750321169&amp;width=680&amp;sig=2%2BNiF%2Fw5X85LUMRIOtC3fPq%2BWta1NoQwRAaqAP%2Bx2Q8%3D" src="https://i.kickstarter.com/assets/049/737/100/088fc0fd1047c06fd6d6887cd5e7086c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750321169&amp;width=680&amp;sig=2%2BNiF%2Fw5X85LUMRIOtC3fPq%2BWta1NoQwRAaqAP%2Bx2Q8%3D"/>
+</figure>
+</div>
+<p>Secure even when mounted on hand or wrist</p><p>Slim, ergonomic, and fits everyday carry</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722925">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/925/3042bb30af88384d685c5581030733a9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750232652&amp;width=680&amp;sig=vdU6p7tnN6g43tmf3lIkjet9M9yvpNZVcZhsehPHLAU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737593">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/593/00b6518187475742f65c48c8c0aa2f96_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323943&amp;width=680&amp;sig=rLj%2FGpivMhvPzKfL2HqlCBo%2BkJz5veyl8%2FpTcLcX50k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722928">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/928/f8d6ace00e9da1d50956baf593d7dcc4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232660&amp;width=680&amp;sig=xMt%2BkUI%2B7m3am2bUOTIL7T6R3H5fpChR9k9TOyN68T8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737601">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/601/2c929a956d4da9060ea9118aaed77b42_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323969&amp;width=680&amp;sig=8m%2BxIn6WJ4zCSZgXp9UVSH9bLiSWc0iP%2FVzqGZQy3pM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722939">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/939/47c07a8e1e0d5f18ba5cfeacb31c8057_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232694&amp;width=680&amp;sig=P25%2BSmYi2b7HlhxI9vU2Dz1P3WnT2i2GO%2BPrRUinDqU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722944">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/722/944/6c2c6a0edda4d6c885a8a4542b97c354_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232716&amp;width=680&amp;sig=fZzNnhwWdGGh1iZXivpH1Doj%2BaCzqMv7FWbbgeaiUj8%3D" src="https://i.kickstarter.com/assets/049/722/944/6c2c6a0edda4d6c885a8a4542b97c354_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232716&amp;width=680&amp;sig=fZzNnhwWdGGh1iZXivpH1Doj%2BaCzqMv7FWbbgeaiUj8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737605">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/605/fb5838ea6665a356d1ea3c7f6d523aea_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323985&amp;width=680&amp;sig=k%2Fyo0Z7X1Ah3lb3j%2FT0H%2FLlkThMeBrquPu87WCmqzAQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722966">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/966/8a21e4bfef4ad6269b2e4fd0ec7365f3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232908&amp;width=680&amp;sig=6xlNY9dEoOyC5LUydvaQLDQXOqCui6Pdn2ZMX5WhIL0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49723048">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/723/048/569f08efe126fc817b392855173de792_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750233417&amp;width=680&amp;sig=FKePqOkrdKtIMXWJnf72eSuGDZ8wfgSmMMvmnSiw%2F0Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722967">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/967/74caadc5df42668e1497f5c950b420c8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232925&amp;width=680&amp;sig=lFWbUXwFf8uED3AvIGS5ZciILPuDEiyDgQZGqNb4FZ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737608">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/608/af2d2cf9b64a70d2e4e8d8ad9d4bc52d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323999&amp;width=680&amp;sig=UQ2HliNWZ850%2FnUlrJULA6%2F7IxEQ2ZWxkpb%2BfYNJvLM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49722950">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/722/950/88c9aae232836192cffba65c707ffe79_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750232763&amp;width=680&amp;sig=ja03C1AwO7m7IQC%2Bbj1%2FXXQpyQmBzUD3w3sWvB62u8I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737610">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/610/c057bdfbc43a185d7203895f4216bc91_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750324013&amp;width=680&amp;sig=yuxZojERnjRQdjA%2BdtUkcG02SYsIiGprL%2BEiMANEHHM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737456">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/456/e63dc1a04c637f1dabfe16875f9e0f67_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750323212&amp;width=680&amp;sig=YuOYMiNaPfNVDNp7kxRyuJ5gkX4Vqt8SCk3GvMI0lFE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737611">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/611/f16929e5c7cb76e6c75ee042c3a40329_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750324025&amp;width=680&amp;sig=AVL132dcuFRuvMcz0NFXVmeINtMCrRntwAG%2F6IVjffA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737616">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/616/4a1e9756044d6e69dcf25795cd31de0c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750324055&amp;width=680&amp;sig=9bHOlTxTiaFodmu3ntjG8R4tcWnSBv%2Fn6cry4gT8yLE%3D"/>
+</figure>
+</div>
+<p>Aespresso is a company focused on the development of intelligent imaging equipment, with its own intellectual property rights. They have launched the world's first handheld multifunctional motorized slider, SMART-1, which has been granted intellectual property patents in several countries. The successful development of the SMART-1 handheld multifunctional motorized slider offers a new and efficient way for global video and film creators to move their cameras.</p><p>The Aespresso design team consists of followers of cutting-edge technology, as well as passionate enthusiasts of visual arts and classical music. They believe that the perfect presentation of these ultimate audio-visual arts is the ultimate goal for all imaging equipment researchers. These artistic essences touch the human spirit and provide people with profound enjoyment. Therefore, in future developments, Aespresso will continue to integrate aesthetic elements from the spiritual realm, such as mechanical aesthetics and fashion art, into every aspect of their imaging equipment design. Their goal is to provide global video creators with stylish, innovative, and intelligent products, contributing to cross-cultural and cross-regional artistic exchanges in various forms.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As with any innovative hardware project, we want to be transparent about potential hurdles. Here’s how we’re addressing them</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

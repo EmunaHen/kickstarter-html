@@ -1,0 +1,798 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LingoYak: The Future of Language Learning</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/238/951/25b9ffa68e4831616317277972d1aa12_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1747017706&width=560&sig=nSD6D%2F0xSbFA7u0csPClvUef2B7J%2F5wmWdNfq3Orp1U%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>LingoYak: The Future of Language Learning</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Get 1 FREE Lifetime Subscription - Learn and Practice any Language Your Way with AI Chat Technology - Built for Progress for All Levels</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 107</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>31 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49856570">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/856/570/ac4f30fc5563fdb8761d4079159e0e89_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751202710&amp;width=680&amp;sig=TW0gmFyNRb7bdoVkghqSH5mJx343M1ffXPPD9BQHGPI%3D"/>
+</figure>
+</div>
+<p><span class="bold">The way you learn and practice languages have changed. </span>What if you could automatically create your own language lessons from anything <span class="bold">you love</span> or<span class="bold"> care about</span>? </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49867725">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/867/725/93a75f7c245acd678d8b3502f2b555de_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751290358&amp;width=680&amp;sig=xP8bgHkCcbYbjlH%2FJ2o5CK8YgV%2Fn7A3rHW9bZlymW2k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49857939">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/857/939/e2aa09f7ebeba36c72ae833df088300e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751215788&amp;width=680&amp;sig=es%2FRvGreF2jTXMD2xHGWVd6sYJKjChrDzGsRukkNU8A%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48102838">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-LingoYak-AI">Meet LingoYak AI</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/102/838/37d1146b393fa0b87623b12fb25e959d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1738958482&amp;width=680&amp;sig=PqYqDJM47%2BPMuaVYVRMiKSi%2FmdLxPGMZjxhqwNbWFig%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49827285">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/827/285/25b9ffa68e4831616317277972d1aa12_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750953494&amp;width=680&amp;sig=S1fdPc7Zz9k%2FBqjCB7vqNhGbFRgvcCfTre3SPQJ1Exg%3D"/>
+</figure>
+</div>
+<p><span class="bold">Take Control of your Language Learning:</span> Turn whatever that interests you into a Language Lesson.  <span class="bold">No </span>limits.<span class="bold"> No </span>restrictions. <span class="bold">Learn what you want</span>. </p><p>Learn or practice any language <span class="bold">10x</span> <span class="bold">easier</span> and <span class="bold">faster</span>, starting from your <span class="bold">native language</span>. Like <span class="bold">WhatsApp </span>but <span class="bold">designed </span>for language learning.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48789197">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/789/197/d49413433505c8873e332040620c019e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743802038&amp;width=680&amp;sig=alrC%2BR8FuC1NktIHZDVRyMLA2CvQmTBIAxYmWKpIR7c%3D" src="https://i.kickstarter.com/assets/048/789/197/d49413433505c8873e332040620c019e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743802038&amp;width=680&amp;sig=alrC%2BR8FuC1NktIHZDVRyMLA2CvQmTBIAxYmWKpIR7c%3D"/>
+</figure>
+</div>
+<p><span class="bold">Create topics you care about </span>and let <span class="bold">LingoYak</span> <span class="bold">AI</span> build your lessons automatically. <span class="bold">It's Personalized, Organized, Easier </span>and <span class="bold">Boundless.  </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Create topics you care about without limits and let LingoYak AI build your lessons automatically. " data-id="48775515">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/775/515/5d6e88ff17f1caa6c6202401a29f98ab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743705878&amp;width=680&amp;sig=NyHfWFzB%2BEX8QXmppiHSV8MKfXx2U9%2BL5y1SPHUVvIU%3D" src="https://i.kickstarter.com/assets/048/775/515/5d6e88ff17f1caa6c6202401a29f98ab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743705878&amp;width=680&amp;sig=NyHfWFzB%2BEX8QXmppiHSV8MKfXx2U9%2BL5y1SPHUVvIU%3D"/>
+<figcaption class="px2">Create topics you care about without limits and let LingoYak AI build your lessons automatically. </figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-TAKE-Your-Personalized-Lessons-and-Chats-OFFLINE-when-traveling-abroad-and-keep-learning-and-expressing-yourself-even-without-Internet-perfect-for-every-scenario-or-when-you-re-trying-to-save-data-">
+<span class="bold">TAKE Your Personalized Lessons and Chats OFFLINE</span> when <span class="bold">traveling abroad</span> and keep learning and expressing yourself even without Internet; perfect for every scenario, or when you're trying to save data.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49226651">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/226/651/ee68a4049e31efb12b7411d253a27e03_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746891746&amp;width=680&amp;sig=ybS9hujtcFHjOK5DpURclfH7v%2BADQh0re1jlo4TJrfE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Turn-Books-and-Games-into-Language-Lessons-">
+<span class="bold">Turn Books </span>and<span class="bold"> Games into Language Lessons:</span>
+</h4><p>From <span class="text-italic"><span class="bold">Clash of Clans </span></span>to <span class="text-italic"><span class="bold">A Tale of Two Cities</span></span>, turn any <span class="bold">story </span>or <span class="bold">game </span>into a language lesson, complete with summaries and key vocabulary in your target language.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49246767">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/246/767/9be6ce26d9be206e43ebc8de5e764ffb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747067613&amp;width=680&amp;sig=5wANtEzgzjNBVYSMl3NQ0gXu3tpD8a71VPFVyeSmdD8%3D" src="https://i.kickstarter.com/assets/049/246/767/9be6ce26d9be206e43ebc8de5e764ffb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747067613&amp;width=680&amp;sig=5wANtEzgzjNBVYSMl3NQ0gXu3tpD8a71VPFVyeSmdD8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49202205">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/202/205/782e6a04a2dc2f9c9621a9c829cdb58f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746709945&amp;width=680&amp;sig=Q88AYZSS1O6JDppLNedVRB5axvhXsUfWRr0YONUcurs%3D"/>
+</figure>
+</div>
+<p>From <span class="bold">Greeting someone  </span>to <span class="bold">Ordering Food;</span> <span class="bold">How to lose weight</span> to <span class="bold">Cake Baking; Eating </span>to<span class="bold"> Driving </span>vocabulary<span class="bold">;</span> chat your way to fluency like WhatsApp! <span class="bold">It's endless.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Chat your way to fluency like WhatsApp" data-id="48905007">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/905/007/796e50826a14a35f7808dd6c18a86b16_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744660492&amp;width=680&amp;sig=ksWGmvuNbRWHukW3BSI7Bsecnek15Fy4st%2Bfwc3a3PQ%3D" src="https://i.kickstarter.com/assets/048/905/007/796e50826a14a35f7808dd6c18a86b16_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744660492&amp;width=680&amp;sig=ksWGmvuNbRWHukW3BSI7Bsecnek15Fy4st%2Bfwc3a3PQ%3D"/>
+<figcaption class="px2">Chat your way to fluency like WhatsApp</figcaption>
+</figure>
+</div>
+<p>Not only that.<span class="bold"> Lingoyak AI enhances your chat </span>by letting you tap any target sentence to instantly see full <span class="bold">grammar breakdowns</span> of sentence structures. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48669167">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/669/167/f97a133a21293d617d01f9bbd0afa29e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742992764&amp;width=680&amp;sig=%2BmLtOAtCyrPLyosMr6gWn59VlrxsS6inVN6ecAjAB8U%3D" src="https://i.kickstarter.com/assets/048/669/167/f97a133a21293d617d01f9bbd0afa29e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1742992764&amp;width=680&amp;sig=%2BmLtOAtCyrPLyosMr6gWn59VlrxsS6inVN6ecAjAB8U%3D"/>
+</figure>
+</div>
+<p><span class="bold">The best part?</span> Take <span class="bold">your chats offline</span>. Learn and practice multiple languages at the same time, anytime and anywhere without internet. <span class="bold">Your single lesson plan </span>is available<span class="bold"> to reuse</span> across<span class="bold"> all languages</span> you wish to learn or practice.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48905037">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/905/037/261f67bbd39006a81e90f2dc0ea8ee6c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744660647&amp;width=680&amp;sig=Mm%2FGWQoEExBmXD%2BrEgdGBI7g%2FzCLxOMGMEmIcS3i4t4%3D" src="https://i.kickstarter.com/assets/048/905/037/261f67bbd39006a81e90f2dc0ea8ee6c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744660647&amp;width=680&amp;sig=Mm%2FGWQoEExBmXD%2BrEgdGBI7g%2FzCLxOMGMEmIcS3i4t4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Built with a Combined Cloud AI Technology from Microsoft Azure, OpenAI and Google Cloud</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Listening and Writing Tool from your Chat History" data-id="49687784">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/687/784/0020a53081639b1abfb4f8c3e665453b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750030282&amp;width=680&amp;sig=22OFsLL6nZCII5leAtgLX%2BTFjtrhWoI6e1h1abV8w34%3D" src="https://i.kickstarter.com/assets/049/687/784/0020a53081639b1abfb4f8c3e665453b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750030282&amp;width=680&amp;sig=22OFsLL6nZCII5leAtgLX%2BTFjtrhWoI6e1h1abV8w34%3D"/>
+<figcaption class="px2">Listening and Writing Tool from your Chat History</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Speech Assessment Tool from your Chat History." data-id="49687792">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/687/792/cad0f5c206cddf6e0652748238fbc60b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750030331&amp;width=680&amp;sig=n22%2BKTKFEzV8QcSZ2BHAhVMc6if2TQSZNGR4xw3sjF0%3D" src="https://i.kickstarter.com/assets/049/687/792/cad0f5c206cddf6e0652748238fbc60b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750030331&amp;width=680&amp;sig=n22%2BKTKFEzV8QcSZ2BHAhVMc6if2TQSZNGR4xw3sjF0%3D"/>
+<figcaption class="px2">Speech Assessment Tool from your Chat History.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="About the Creator" data-caption="" data-id="48558105">
+<figure class="image">
+<img alt="About the Creator" class="fit" src="https://i.kickstarter.com/assets/048/558/105/0f318574cd5e3f59edabb3bb45e8f9b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742235858&amp;width=680&amp;sig=oKbclNMLghxDNYD8qqHXq%2BcLoCGdeFYdBeLQoEaQhl0%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Hi there! I’m <span class="bold">John Francis; </span>an English teacher and programmer who has been teaching English for over 10 years. I’ve had the opportunity to teach both <span class="bold">General and Business English</span>, and one of my proudest projects was training all the engineers at <span class="bold">IDOM</span>, a major engineering company here in Mexico. I’ve always loved combining language and technology, so I created <span class="bold">Lingoyak </span>to make learning a new language feel more <span class="bold">organized</span>, <span class="bold">easier</span> and <span class="bold">progressive</span>, like chatting with a friend. <span class="bold">Please, join me in this journey.</span></span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="ift your loved one the second one for Free" data-id="49825725">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/725/27ddfe2715f34cb9c3a08e62bd8a8f6c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750944631&amp;width=680&amp;sig=JMrupSjI7w2hIIbt0BEYPJ2EqBiq%2B3KtaEs88h7jkmE%3D"/>
+<figcaption class="px2">ift your loved one the second one for Free</figcaption>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48558203">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-LingoYak-">Why LingoYak?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/558/203/af61eee14f7343630229e584b16dabfe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742236209&amp;width=680&amp;sig=6kGROKNIVUCg4R8O8NfFMOFua7ZXXPNP1J2Pk2jRZCE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49204148">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/204/148/a0cf631052cd9bcce449e793eae9114b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746720972&amp;width=680&amp;sig=j%2FGYBiUOgUiqYpRX1t7GOcxZkUUqLdpio10BAvdiNnA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Why lingoyak?" data-caption="" data-id="48366820">
+<figure class="image">
+<img alt="Why lingoyak?" class="fit" src="https://i.kickstarter.com/assets/048/366/820/418400e5816eba9e8571d4989c2fbe29_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740923910&amp;width=680&amp;sig=JxcriWDkOAEtBXu0jJE4jy12wBX0f7bWX7fhsUNrA1U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49204153">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/204/153/17f6becefbf1d060ccf3e87e108fae37_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746720988&amp;width=680&amp;sig=AGIlLWnbW7An4AuEYkF9LG7ABW9pCE6mGJKhS5R%2B4gA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48265131">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-Lesson-Plan">Your Lesson Plan</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/265/131/0d43002a5376ee1f6ed517a9d350e254_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740163718&amp;width=680&amp;sig=ZlQT5t6hMGDZN8h6UVxrlxEuYDmbKtojloosVp6Q1Qk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-LingoYak-lets-you-take-control-of-your-language-learning-with-multiple-dynamic-topic-styles-Regular-Topics-Summary-Topics-and-How-To-Topics-">
+<span class="bold">LingoYak </span>lets you take control of your language learning with multiple dynamic topic styles: <span class="bold">Regular Topics, Summary Topics </span>and <span class="bold">How-To Topics.</span>
+</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49209848">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/209/848/28f9086aa8caf35d2ca682ebe64a66d9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746757743&amp;width=680&amp;sig=59uzah7iuMfXxYegJYo3uf%2BBzmopze7xD%2FAn7bIGVuk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257442">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/442/8aa6300492d0872e28977d04fe1ef25f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740105162&amp;width=680&amp;sig=DDv2kOvNpSZT6B0b9XgFFHiYtDMwaBc%2Ftg%2Bt%2BQn%2B%2FC8%3D"/>
+</figure>
+</div>
+<p>With <span class="bold">regular topic style</span>, create topics you care about and <span class="bold">LingoYak AI</span> will do the rest automatically. <span class="bold">Learn, practice </span>and <span class="bold">get used to everyday conversations</span>.</p><p><span class="bold">Create topics</span> such as "<span class="bold">Week Days</span>", "<span class="bold">Greeting Someone", "Family Description"</span> or "<span class="bold">Ordering Food"</span> etc. Your lessons will be built automatically including <span class="bold">essential vocabulary</span>, <span class="bold">phrases</span>, and <span class="bold">sentences</span> in context.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48775530">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/775/530/a4f4af917c4bcbcb97140db9044ac9bf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743705949&amp;width=680&amp;sig=mjvTTmiAi%2BqmMcjfLqLChChDveCqVeGCxibssuhwVOc%3D" src="https://i.kickstarter.com/assets/048/775/530/a4f4af917c4bcbcb97140db9044ac9bf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743705949&amp;width=680&amp;sig=mjvTTmiAi%2BqmMcjfLqLChChDveCqVeGCxibssuhwVOc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Vocabulary-Building-Regular-Topics"><span class="bold">Vocabulary Building Regular Topics</span></h3><p>What if you wish to <span class="bold">build around a specific word </span>and <span class="bold">their contexts</span>? Create a topic focusing on that vocabulary, for example: <span class="bold">"SPEAK".</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48761050">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/761/050/02196f4b9b270d6cbd5ca38854354f48_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743614645&amp;width=680&amp;sig=cOPnCNoqJpeheSTgxU7Ltd80mZ36gukK5W2qoRpdOPo%3D"/>
+</figure>
+</div>
+<p><span class="bold">LingoYak AI</span> is smart enough to detect your <span class="bold">topic style</span> and your personalized lesson plan will be built automatically including the <span class="bold">vocabulary</span>, <span class="bold">phrases</span>, and <span class="bold">sentences</span> in context.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48269331">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/269/331/1cb40602f27c67e80d2c7ed247a50b5b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740191021&amp;width=680&amp;sig=xF%2Fdq9oz6GyP8%2BHK%2FzH5DA7RMEOTx6kwxiadMlOg%2FgM%3D"/>
+</figure>
+</div>
+<p><span class="bold">Topic is created</span> and it's time for lessons<span class="bold">. Hop into your chat </span>and <span class="bold">select content from your lesson plan.</span> Your lesson plan includes <span class="bold">vocabulary, phrases,</span> and <span class="bold">usage in context</span>. </p><p><span class="bold">Type in more</span> vocabulary, phrases, and sentences when needed, and <span class="bold">it will also be added to your lesson plan automatically.</span></p><h4 class="page-anchor" id="h:Here-is-Greeting-Someone-Topic-Lesson-Chats-"><span class="bold">Here is "Greeting Someone" Topic Lesson Chats:</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption='"Greeting Someone" Topic Lessons: Select content from lesson plan and transform them.' data-id="48761114">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/761/114/a88a56b97b0653f62473059d8c311acb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743614897&amp;width=680&amp;sig=JLxdC9wPjibVcRLvacUUv0O%2FhwtWCVHEICe2qKJ5W9Y%3D"/>
+<figcaption class="px2">"Greeting Someone" Topic Lessons: Select content from lesson plan and transform them.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Here-is-Speak-Topic-Lesson-Chats-"><span class="bold">Here is "Speak" Topic Lesson Chats:</span></h4><p>Hop into your chat and select content from your lesson plan. Lesson plan include key <span class="bold">vocabulary,</span> <span class="bold">phrases</span>, and <span class="bold">sentences</span> in context. </p><p> <span class="bold">Type in more</span> phrases and sentences when required, and it will also be added to your lesson plan automatically.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption='"Speak" Topic Lessons: Select content from lesson plan and transform them.' data-id="48904789">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/904/789/5a3201061748310cdd870fc6aa1b3133_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744659249&amp;width=680&amp;sig=yvS02C9EPNSXaA9fdzD2Y8lRwdmZye2KHf0XkxjegsM%3D" src="https://i.kickstarter.com/assets/048/904/789/5a3201061748310cdd870fc6aa1b3133_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744659249&amp;width=680&amp;sig=yvS02C9EPNSXaA9fdzD2Y8lRwdmZye2KHf0XkxjegsM%3D"/>
+<figcaption class="px2">"Speak" Topic Lessons: Select content from lesson plan and transform them.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption='"Speak" Topic Lessons: Select content from lesson plan and transform them.' data-id="48761055">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/761/055/8fd9f625a81eecf0361aae25bf0de8b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743614694&amp;width=680&amp;sig=yAO%2Br%2BE%2FjZeNs9EXjgBs2Dn9rbFkxXzvnh8kMQvbxT8%3D"/>
+<figcaption class="px2">"Speak" Topic Lessons: Select content from lesson plan and transform them.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Here-is-Numbers-Counting-Topic-Lesson-Chats-">
+<span class="bold">Here is "Numbers Counting" Topic Lesson Chats</span>: </h4><p>Hop into your chat and select content from your lesson plan. Your <span class="bold">lesson plan</span> include <span class="bold">numbers </span>and <span class="bold">usage in context</span>. </p><p><span class="bold">Type in more numbers</span> when needed, <span class="bold">it's endless</span>, and it will also be added to your lesson plan automatically.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption='"Numbers Counting" Topic Lessons: Select content from lesson plan and transform them.' data-id="48904858">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/904/858/df6a2e8fbd7f3410e0d933585c569b7b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744659607&amp;width=680&amp;sig=S4dkAVcDOXuWXT4vtsdg%2Fbukl1O%2FH34ZUA29O0hj%2BHI%3D" src="https://i.kickstarter.com/assets/048/904/858/df6a2e8fbd7f3410e0d933585c569b7b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744659607&amp;width=680&amp;sig=S4dkAVcDOXuWXT4vtsdg%2Fbukl1O%2FH34ZUA29O0hj%2BHI%3D"/>
+<figcaption class="px2">"Numbers Counting" Topic Lessons: Select content from lesson plan and transform them.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption='"Numbers Counting" Topic Lessons: Select content from lesson plan and transform them.' data-id="48761095">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/761/095/dc3a8c342b1d2ad390ffe2ed4d2e1ae8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743614800&amp;width=680&amp;sig=20sTHS1eB%2BB2aFBdrIpOE67QN1WPO38WtN5HVwHV4UU%3D"/>
+<figcaption class="px2">"Numbers Counting" Topic Lessons: Select content from lesson plan and transform them.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48671675">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/671/675/68f25d9dd9052d073abc16c4a8275c1e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743003307&amp;width=680&amp;sig=CxssyRtcV%2B5bX8LlkEwiZiWKvK3TWTKB5PZ5hysj%2FHc%3D"/>
+</figure>
+</div>
+<p>It doesn't stop there. <span class="bold">Lingoyak AI enhances your chat </span>by letting you tap any target translation to instantly see full <span class="bold">grammar breakdowns</span> of sentence structures. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Full grammar breakdowns of sentence structures. " data-id="48762024">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/024/3655e0c67b96d6f17acd49ad2f3a843e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619096&amp;width=680&amp;sig=txffSiJd4at2rlTBVc89wgMaSNHrtHJozMEMCRxMDcM%3D"/>
+<figcaption class="px2">Full grammar breakdowns of sentence structures. </figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48671684">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/671/684/b80be779fb812564a322433df70d2a53_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743003328&amp;width=680&amp;sig=625%2BaWG1a2beGLimldrH7RaH3b1eHZmc%2BSloRtPXT3E%3D"/>
+</figure>
+</div>
+<p><span class="bold">Lingoyak AI enhances your chat </span>by allowing you to tap any<span class="bold"> target vocabulary </span>to learn <span class="bold">three extra </span>related <span class="bold">synonyms</span> with audio pronunciations and meaning.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Tap a word and get three extra related synonyms with audio pronunciations and meaning." data-id="48762031">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/031/2c0972473599f1dee324822800c556f3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619138&amp;width=680&amp;sig=nwudsKfNRhEuS1IHb7nXpHQX47jwaQT%2F79388MV%2FrXs%3D"/>
+<figcaption class="px2">Tap a word and get three extra related synonyms with audio pronunciations and meaning.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257444">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/444/8585746316b5398b7a907f5e1e48b0e8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740105186&amp;width=680&amp;sig=8Ti2665ZPs%2FB0H0Qn%2BLX33Mt0hPpjSy62wsj50U5x5s%3D"/>
+</figure>
+</div>
+<p>No need to search<span class="text-italic"> how-to articles</span> on search engines. <span class="bold">LingoYak AI</span> makes it possible to convert any<span class="bold"> how-to content</span> into a language lesson. Learn through <span class="bold">Real Tasks</span>.  </p><p>Create topics such as "<span class="bold">How to bake a cake</span>", "<span class="bold">How to Cook Rice in a Slow Cooker" </span>or "<span class="bold">How to Change a Flat Tire"</span> etc. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption=" LingoYak AI makes it possible to convert any how-to content into a language lesson. Learn through Real Tasks.  " data-id="48762047">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/047/3ef855043652e5807be514392e7142cc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619217&amp;width=680&amp;sig=CdmUZIl1Xg5fw08PoHxH5J%2FRgDNRp8yDJgxRpVd%2Bb%2BY%3D"/>
+<figcaption class="px2"> LingoYak AI makes it possible to convert any how-to content into a language lesson. Learn through Real Tasks.  </figcaption>
+</figure>
+</div>
+<p><span class="bold">LingoYak AI</span> automatically builds a <span class="bold">step-by-step guide</span> with key <span class="bold">vocabulary, </span>and <span class="bold">instructional sentences. </span>Transform and follow instructions in both your <span class="bold">first </span>and <span class="bold">target languages </span>and pick up specialized vocabulary naturally.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48269324">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/269/324/54aaebd83647e2757d27c662240360d4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740190990&amp;width=680&amp;sig=WuRW58I%2F8BDgwS1nu4eJXVM7XWXzIcF2LmdeQh2A2t8%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Here-is-How-to-bake-a-cake-Topic-Lesson-Chats-"><span class="bold">Here is "How to bake a cake" Topic Lesson Chats:</span></h4><p><span class="bold">How-to topic is created,</span> and it's time for lessons. Hop into your <span class="bold">"How to bake a cake"</span> topic chat,<span class="bold"> for example</span>, and <span class="bold">select content from your lesson plan</span> and <span class="bold">LingoYak AI </span>will transform them as you go.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption='"How to bake a cake" Topic: Select content from lesson plan and transform them.' data-id="48904877">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/904/877/6e0f874b98eb05b1ec142cff81c98f1b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744659784&amp;width=680&amp;sig=GWs2HJ0cegRkk6WUV3CO2nZ9jJqPmKh7Wzgls73HqeY%3D" src="https://i.kickstarter.com/assets/048/904/877/6e0f874b98eb05b1ec142cff81c98f1b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744659784&amp;width=680&amp;sig=GWs2HJ0cegRkk6WUV3CO2nZ9jJqPmKh7Wzgls73HqeY%3D"/>
+<figcaption class="px2">"How to bake a cake" Topic: Select content from lesson plan and transform them.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption='"How to bake a cake" Topic: Select content from lesson plan and transform them.' data-id="48764392">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/764/392/eee5ba3fe6ca5542db05fb706c45bbe8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743630838&amp;width=680&amp;sig=n5ZgWDhBFNnEiQw0C%2B0xQ9yekyCP4kfapp4xZKlChTM%3D"/>
+<figcaption class="px2">"How to bake a cake" Topic: Select content from lesson plan and transform them.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49204239">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/204/239/7f1812084b85a4dffee85fa072d577f7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746721468&amp;width=680&amp;sig=JfcaajmKJDB10ryYDcLjmFAl%2BP7hvGUbcOMIbU6LKLQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">Summary Builder: Learn from Any Book or Game: </span>Turn any <span class="bold">book </span>or <span class="bold">game </span>into a bilingual learning experience! Just create a topic with the title of the <span class="bold">book </span>or <span class="bold">game</span>, and <span class="bold">LingoYak </span>will automatically generate a structured lesson plan. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Create Book or Game Summary Topics" data-id="49225839">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/225/839/a77ad4935de87a733be40790d24a0677_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746887349&amp;width=680&amp;sig=pEysWfdInmdU65BGjEWrdfjIWbyQcL%2Fb0WcxSofTtnw%3D"/>
+<figcaption class="px2">Create Book or Game Summary Topics</figcaption>
+</figure>
+</div>
+<p>Perfect for language learners who love <span class="bold">stories</span>, <span class="bold">games</span>, or <span class="bold">both</span>!</p><ul>
+<li>📚 A clear summary in ascending sentence order</li>
+<li>💬 Key vocabulary for each part</li>
+<li>🔊 Audio support to read and listen in both your first and target languages.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49204240">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/204/240/ff5dcee3049b4cf4d4a51770fcf0b718_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746721478&amp;width=680&amp;sig=%2FT9AVgrva7pOXvhhBU8SU%2FI0YtAmAUP3IUmUroxgT%2BE%3D"/>
+</figure>
+</div>
+<p>Now that your <span class="bold">summary topic </span>is ready, it’s time to start learning!<br/>Jump into your <span class="bold">chat </span>and explore the lessons based on your plan. Select content from your lesson plan.</p><h4 class="page-anchor" id="h:-Game-Summary-Chat-Clash-of-Clans">
+<span class="bold">Game Summary Chat:</span> Clash of Clans</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Game Summary Chat: Clash of Clans" data-id="49225894">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/225/894/782e6a04a2dc2f9c9621a9c829cdb58f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746887606&amp;width=680&amp;sig=3pczFwoylJaXOqaa87%2BF1FNw4F6w0%2FvYQMvuXkjcbfE%3D"/>
+<figcaption class="px2">Game Summary Chat: Clash of Clans</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Book-Summary-Chat-A-tale-of-Two-Cities">
+<span class="bold">Book Summary Chat:</span> A tale of Two Cities</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Book Summary Chat: A tale of Two Cities" data-id="49225903">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/225/903/4bf6f78cdfc0a9d012cc0e7e3e09c3ee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746887643&amp;width=680&amp;sig=%2FvJkTKiOlz7nCY%2FIi4uPYVLrJZw6l9sIKRHUA%2B1OQSw%3D"/>
+<figcaption class="px2">Book Summary Chat: A tale of Two Cities</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48265125">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/265/125/b4e862c6364be9f67f78185bc5d9ba12_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740163642&amp;width=680&amp;sig=%2BAUvqKUahU4qwOOue2bHEPJNAcm%2FxutLUfTK7mXriXk%3D"/>
+</figure>
+</div>
+<p><span class="bold">Your chat history is your asset.</span> <span class="bold">YakWriter</span> allows you to take advantage of your <span class="bold">chat history</span> by <span class="bold">practicing Listening </span>and <span class="bold">Writing </span>as you<span class="bold"> monitor progress.</span> <span class="bold">Tap Words, Don’t Type. Focus on Listening.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825788">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/788/5a978aa560146b2f9b2db371efe71b14_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750944885&amp;width=680&amp;sig=PwMIYLmWwYTUFRmgV4YGAg%2Fv%2BZf1WWpwKo35ZQo6IN0%3D"/>
+</figure>
+</div>
+<p>Simply tap the correct word you hear, or tap words to form the sentence you hear. This method reduces friction, letting you focus on comprehension rather than keyboard skills.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49687802">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/687/802/0020a53081639b1abfb4f8c3e665453b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750030451&amp;width=680&amp;sig=PTV2VHbKeuLMbYY3yFVzZVVa4D97by5Vxq7%2FVlCYbgY%3D" src="https://i.kickstarter.com/assets/049/687/802/0020a53081639b1abfb4f8c3e665453b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750030451&amp;width=680&amp;sig=PTV2VHbKeuLMbYY3yFVzZVVa4D97by5Vxq7%2FVlCYbgY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825792">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/792/47a2bd5751147b36fe8bb3faf43c8793_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750944924&amp;width=680&amp;sig=7hh2eHqbknMWWjOmQn4oBhb3NyAcOf%2FQHXQcCRee7ls%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825796">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/796/c256bcac490eb4c021b0a3b776bd4c3a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750944951&amp;width=680&amp;sig=hispvstBgwD%2B5WKCF1knGlAA1J5qpvpIF179DVyC2Og%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48265137">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/265/137/8c0ffd21851a3fa834caf31ec2870a8e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740163759&amp;width=680&amp;sig=pBdh6Q2envTBeuwd0DeeMMFNOxENMjYhKz6WtWGhXzY%3D"/>
+</figure>
+</div>
+<p><span class="bold">Practice Makes Perfect: </span>Practice <span class="bold">speaking </span>with <span class="bold">Speech recognition</span> using your <span class="bold">Chat History</span> on any topic and <span class="bold">monitor progress.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825802">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/802/0de53723325c4385390576db81cb3ca4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750944968&amp;width=680&amp;sig=0L7xWwkxxwpsB6NLXcphgSRhuvbKa72RJmXAMirpppQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49687823">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/687/823/cad0f5c206cddf6e0652748238fbc60b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750030696&amp;width=680&amp;sig=PU0urpRezpvoZLpUJN33%2Btn%2B4ws3JIFMs0YSGh9ikFQ%3D" src="https://i.kickstarter.com/assets/049/687/823/cad0f5c206cddf6e0652748238fbc60b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750030696&amp;width=680&amp;sig=PU0urpRezpvoZLpUJN33%2Btn%2B4ws3JIFMs0YSGh9ikFQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825806">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/806/9b0b6ba6d1554385575c20dc2486900d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750945017&amp;width=680&amp;sig=kmMKgmYyMER7cv5j09ELJFg92mrQdzLkcjS66B4dws8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825810">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/810/d40264abb8500d67108d3ebd65bfcdd1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750945038&amp;width=680&amp;sig=cUpW9MX9x9sVKHl5xC7IC2IRXtzbZmWFhMv52e4HkFI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48281943">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Learn-multiple-Language-at-the-same-time">Learn multiple Language at the same time</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/281/943/ab1c58a913b72bb7e5886b97c3f501c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740326338&amp;width=680&amp;sig=H%2Bcv00di6Qw8sAsYDGUZ%2F9c7gal70kDTcuE9hGP%2BSMs%3D"/>
+</figure>
+</div>
+<p>Why wait? Learn <span class="bold">two </span>or<span class="bold"> more languages</span> at the same time. Your lesson plans are reusable globally across all languages.</p><p>Your <span class="bold">lesson plan </span>in <span class="bold">Spanish, </span>for instance<span class="bold">, </span>is also ready to use in <span class="bold">French</span>, <span class="bold">Italian</span>, <span class="bold">German </span>etc. without writing a new one. <span class="bold">Simply select from your available lesson plan in your chat.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762113">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/113/1bba16c088c57e0028dd8d7b12e28296_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619510&amp;width=680&amp;sig=TCyBl%2FmottzUmWKIZ8croQVs66VtHJuE%2BLNH42pVNaY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762121">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/121/74deec07d6f427ffedb5e1d55c31edef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619534&amp;width=680&amp;sig=35KRvHHjf0hKlOslkcl4QGnnBBSiK7K4kfjo4JXk4i4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48265152">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:First-Languages">First Languages</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/265/152/5f19a0be17239a60bee42952adeb1085_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740163845&amp;width=680&amp;sig=cdWev3g6nFfVnoT8VBkDg4InOnx5bM2pMOfSA2QXEYE%3D"/>
+</figure>
+</div>
+<p><span class="bold">LingoYak AI</span> leverages your first language (<span class="text-italic"><span class="bold">native language</span></span>) as a foundation to make learning a new language personalized, boundless, easier and faster. Consider any language you speak and understand as your <span class="bold">first language</span>.</p><p><span class="bold">7 first languages </span>are fully integrated and more will be added after this campaign. We are targeting <span class="bold">25+ first languages</span> and we are integrating them gradually. </p><div class="template asset" contenteditable="false" data-alt-text="Lingoyak AI Chat GPT for Language Learning list of first languages" data-caption="More first languages are on the way!" data-id="48109821">
+<figure class="image">
+<img alt="Lingoyak AI Chat GPT for Language Learning list of first languages" class="fit" src="https://i.kickstarter.com/assets/048/109/821/547746f9c3ace133603799ee9a54912e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1739025709&amp;width=680&amp;sig=SPLIXBkIq9xRcJBFEsTiE9zmKk%2BBSH%2B2eMK1P2Ou8ps%3D"/>
+<figcaption class="px2">More first languages are on the way!</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49225752">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Target-Languages">Target Languages</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/225/752/013fb0391152d3add91fe095139f18a5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746886384&amp;width=680&amp;sig=eongMbLGiv4W6z7zNhlkJk1JieqIPWGRAQSV%2Fi0cy9w%3D"/>
+</figure>
+</div>
+<p><span class="bold">LingoYak</span> <span class="bold">AI Chat</span> Language system, currently supports <span class="bold">26 languages</span>, and we will continue to add more languages in the future. All popular languages are already included in this version.</p><div class="template asset" contenteditable="false" data-alt-text="Lingoyak AI Chat GPT for Language Learning list of target languages" data-caption="" data-id="48109877">
+<figure class="image">
+<img alt="Lingoyak AI Chat GPT for Language Learning list of target languages" class="fit" src="https://i.kickstarter.com/assets/048/109/877/654162b43876f0bdb79557a3f82b803b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1739026180&amp;width=680&amp;sig=VRX7AWfFgLOP5rx7vFmLtTSJut3W01qczQ7%2Fm%2Bpnbzw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257471">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-it-Works-">How it Works?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/471/c739d744358f74069931b1ac146faebe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740105325&amp;width=680&amp;sig=BWPoEHqf4qwD1WiH8vnva%2FOY8XgQ39IhkC40X1wUs2Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257499">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/499/025a2331d5419f18fdab6a27dc8a9d45_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740105411&amp;width=680&amp;sig=HRX0BIGMFTlNTEuaMjeT%2FF%2F6lrRoC9qRGy7rYbtcdgE%3D"/>
+</figure>
+</div>
+<p>Choose the language you want to learn. This will be your <span class="bold">target language</span> throughout your learning sessions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762145">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/145/61cf671525bd0e33796b858144dd1e36_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619606&amp;width=680&amp;sig=I9%2FxwuvXL%2BIv5RUE7PF87wabKk3BxKyOEYM%2FcrX6egI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257502">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/502/cb715e8af635387f181f690d7763bba5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740105434&amp;width=680&amp;sig=Yq9geM1knd%2Fqf2%2F5jbLaCvMfqlMAkeOMXH%2BH6w6TEqw%3D"/>
+</figure>
+</div>
+<p><span class="bold">For example</span>, if you want to master greetings, create a topic titled <span class="bold">"Greeting Someone."</span> What you want to learn about <span class="bold">week days</span>? Create a topic titled <span class="bold">"Week Days"</span> and allow LingoYak AI build your lesson plan automatically.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762155">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/155/843aab752991b39b09451ac851e4cd5d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619648&amp;width=680&amp;sig=WrH0yLCIykmP%2B5rUxnyham4lp5T0aziwejVbRiWjYhY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257812">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/812/90826b1ed1644eb3cb7f43e6d44345a5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740107654&amp;width=680&amp;sig=MWXddqFE8Y1uPsM9rBWHVZpY9HTN6buQ9G6bXkT6YUI%3D"/>
+</figure>
+</div>
+<p>Once your topic is created, it's time for lessons. Hop into your <span class="bold">“Greeting Someone” </span>chat and <span class="bold">select content</span> from your<span class="bold"> lesson plan </span>or<span class="bold"> write your own</span>. </p><p><span class="bold">LingoYak AI Chat </span>will transform them into your <span class="bold">target language</span>, along with audio pronunciations. Tap any word for <span class="bold">synonyms </span>and tap any sentence for <span class="bold">grammar breakdown </span>and <span class="bold">explanation</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762173">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/173/a88a56b97b0653f62473059d8c311acb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619717&amp;width=680&amp;sig=qcWMssCd2oJUVSvSw23mC5sP3sp9rbUqOxKzIoX6lng%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762195">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/195/3655e0c67b96d6f17acd49ad2f3a843e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619825&amp;width=680&amp;sig=Ic49i6B3hnZ%2BpldBEMIvgmxaLZunsV3Y09n29BhMbsg%3D"/>
+</figure>
+</div>
+<p><span class="bold">The possibilities are endless! </span>Feel free to create more topics, such as:</p><ul>
+<li><span class="bold">FAMILY DESCRIPTION</span></li>
+<li><span class="bold">NUMBERS COUNTING</span></li>
+<li><span class="bold">WEEK DAYS</span></li>
+<li><span class="bold">OFFER &amp; REQUESTS</span></li>
+<li><span class="bold">COLORS DESCRIPTION</span></li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257515">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Learn-by-Vocabulary">Learn by Vocabulary</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/515/87ae1e98ad9388bfd10c56e18989432e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740105506&amp;width=680&amp;sig=3jRYkUZKoRa67jHS0ilRi4fVKYcBgY6bNQcuT7xatGw%3D"/>
+</figure>
+</div>
+<p>Do you want to build around a <span class="bold">specific word</span> and it's <span class="bold">context</span>? Create a topic focusing on that <span class="bold">vocabulary</span>, for example: <span class="bold">"SPEAK".</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762220">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/220/02196f4b9b270d6cbd5ca38854354f48_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619912&amp;width=680&amp;sig=CJPDhhrsQQ939p9ScsfAAbrA%2FkxC5nMwpENQQ%2BaiDOM%3D"/>
+</figure>
+</div>
+<p>Enter your "<span class="bold">SPEAK" </span>topic chat and <span class="bold">select content from your lesson plan,</span> or <span class="bold">write your own</span>. LingoYak will transform them into your<span class="bold"> target language.</span> Your AI chats are always enhanced. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762211">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/211/8fd9f625a81eecf0361aae25bf0de8b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743619886&amp;width=680&amp;sig=3uboHq51r9hohGt532WaNVANd1deXl1awV3LYeoqpl4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257522">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/522/95a7f6c9a684e505214863fb010545b9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740105565&amp;width=680&amp;sig=5wfMUvRksLTXuPDxpUmW6F6xQ3FQrvaW5zbBl5Txw1c%3D"/>
+</figure>
+</div>
+<p>Once you build up some chat history, <span class="bold">it doesn't stop there</span>. Use <span class="bold">LingoYak Speech Assessment</span> to practice and improve your pronunciation. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825814">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/814/0de53723325c4385390576db81cb3ca4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750945071&amp;width=680&amp;sig=KJeZxqRNJtJgz%2Bkmjx4W08Vj%2FxG02o2DhAPRLyL8lpw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825818">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/818/d40264abb8500d67108d3ebd65bfcdd1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750945085&amp;width=680&amp;sig=nsudFI7ty0e1OdM3s336NJRgEyIOQAiB6RE9IhbOdzc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257529">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:YakWriter-Tool">YakWriter Tool</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/529/c4cadbfbcbd0a0edc359d3353b0ea3a7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740105619&amp;width=680&amp;sig=VZCPYbpOgAjvH2A02qdKcis1CbVURwnP44H2jghb2Bc%3D"/>
+</figure>
+</div>
+<p><span class="bold">Your chat history again! </span>Listen to <span class="bold">words, phrases, sentences</span> and <span class="bold">write what you hear by tapping words.</span> This will help improve your <span class="bold">listening </span>and <span class="bold">writing </span>skills simultaneously.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825822">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/822/5a978aa560146b2f9b2db371efe71b14_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750945102&amp;width=680&amp;sig=ZCkCjgUx5OnOT8ustoRrzYkFAv13m%2Bf2oydClzXPUL0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825829">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/829/47a2bd5751147b36fe8bb3faf43c8793_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750945131&amp;width=680&amp;sig=1B1UYHS1ZIQNiDT1NCbNn6YdE9%2B2oe9T9GG9egWxX94%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825828">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/828/c256bcac490eb4c021b0a3b776bd4c3a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750945131&amp;width=680&amp;sig=54e9%2ByK%2Fv00TK4plsj%2BFmTwuRFSR7a0nUvZXBpm1VoM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/836/e1acf999beea1af78982456def1906da_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750945210&amp;width=680&amp;sig=IDPcERkrSGe5G%2F6HXtNtk5zeNuBUCu%2FFlv36aaQiygk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257536">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Read-Along-Bilingual-Dialogues">Read Along Bilingual Dialogues</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/536/0f5be41235359a1bc09489f146e90719_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740105704&amp;width=680&amp;sig=m%2B2ycc8t2RkFG0YitV5sPt7FEorYfSFm9bm5h%2B63SzU%3D"/>
+</figure>
+</div>
+<p>Each language offered on <span class="bold">LingoYak </span>comes with over<span class="bold"> 100 dialogues.</span> <span class="bold">Listen </span>and read along in both your <span class="bold">native language and target language</span>, side by side. It’s a great way to improve your comprehension and pronunciation.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762253">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/253/8eb505be9825bdaedf106b1e81a0e921_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743620008&amp;width=680&amp;sig=PujsrmpVsZUAHga%2F5iuH1rKhqP3TvAfmYA7tFnpJP0A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48257550">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/257/550/27751f3035fe5c42eb230dd1966c3108_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740105802&amp;width=680&amp;sig=0040Hb13ZGnH7vQ95jIgTdpUq3WCBpkJieD%2FLeS9Nvg%3D"/>
+</figure>
+</div>
+<p>Do you need to<span class="bold"> edit or delete a topic or chat message</span>? <span class="bold">Simply swipe left or right</span> on the item to reveal the actions, and make any changes you need.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762268">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/268/550702850c55bf363f5a521566d1c69c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743620058&amp;width=680&amp;sig=XLXyHEYKtYQwH90Gt%2Bh5I2glzVh%2BRlwBpryrfdJApoQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762272">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/272/8162e53505916c45183eac722cad9ea7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743620068&amp;width=680&amp;sig=6PzAcaRz%2Bp7KsWkbPdlnp0Z6lZlb86ODu%2BnidYuq6wY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48265184">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/265/184/b92798e043d603a9a65295b1c06e173b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740164066&amp;width=680&amp;sig=fEOlT5WEXCXqn147W%2F1J2ZR1sU4YrH11ED1n4iw3rt8%3D"/>
+</figure>
+</div>
+<p><span class="bold">LingoYak </span>incorporates a quick grammatical rules of every language, providing comprehensive insights and fostering a deeper understanding of linguistic structures for effective learning.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762285">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/285/32f0b612f2638d1add6d9e528b5f98e7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743620105&amp;width=680&amp;sig=Q%2BQAu60xro8urZlCVi8TkP%2BYH7KCooonRqcZpzrd5rs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48265187">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/265/187/a765356b6e0ec0e5e7791307d47c814f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740164075&amp;width=680&amp;sig=I4d1jSo1lZfAraS02ts6fltWJogy9ARwQZ9cBdX%2BciE%3D"/>
+</figure>
+</div>
+<p>Learn language alphabet with <span class="bold">audio pronunciation</span> for each language that interests you; even before you start learning the language.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762288">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/288/5ae186052cf0676b744feed195ba0d91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743620119&amp;width=680&amp;sig=CT9woDT1CZDzev%2FSwtafPJ6kR0WTKoyuUdo4JyLZm9g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48265190">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/265/190/0fbcb18d4a08e0b257abfc48f4dceb39_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740164086&amp;width=680&amp;sig=khmEnD%2FyBD4zgt4uUiATdau7p7zfnfPs0Vjh2G3hqV0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762295">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/295/fde2bedcb444f5476c3968cc430a94b6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743620138&amp;width=680&amp;sig=JGes41jlWXYNEQy6dE1kgwwMUZ%2FeS5PD98Zz1No6Le8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48265192">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Romanization">Romanization</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/265/192/c1db39df64a83830d435dfa311788b7a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740164133&amp;width=680&amp;sig=CsiGfs%2FnYbEIuURBVPzrlZWHE2oJH%2BNY7El%2F4L4yWKs%3D"/>
+</figure>
+</div>
+<p><span class="bold">Transliteration</span> is crucial when studying languages with non-Latin characters like <span class="bold">Chinese, Japanese</span>, and others. It facilitates better pronunciation comprehension by converting them into<span class="bold"> Latin characters</span>. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48762302">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/302/a0af3d96da30c9042f1f7599ec9def9f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743620179&amp;width=680&amp;sig=rrhehTty7%2BTzpIwKgfjz90RlHHpitThstnOp%2FLIWImI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48265191">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Neural-Voices">Neural Voices</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/265/191/e01519452060159016ce9b5a343dfa08_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740164109&amp;width=680&amp;sig=8NmgLOMM1HbmbygebTydUybHYZDMAPGNK9WjA3BoD%2FA%3D"/>
+</figure>
+</div>
+<p><span class="bold">LingoYak</span> offers over 50 male and female native voices, sourced from advanced neural networks. Whether chatting, listening to dialogues, or exploring alphabets, experience exceptional clarity and authentic language immersion.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="LingoYak offers over 50 male and female native voices, sourced from advanced neural networks. " data-id="48762308">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/762/308/f62382c0a5d7156c8841f0b4e8fe99b6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743620201&amp;width=680&amp;sig=4oUtS23CTVDhpVfu05TsuoLlgj0x8tdfwn7Pu0JbyP4%3D"/>
+<figcaption class="px2">LingoYak offers over 50 male and female native voices, sourced from advanced neural networks. </figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="LingoYak is avaliable across all platforms." data-id="48320928">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/320/928/404a7a0930bc19ffa7a01cc6d3e7cc5a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740574796&amp;width=680&amp;sig=rgNB2Hh0kC2soMYbvvLeJzeZg2yl%2B1yzyDIgwBuesTE%3D"/>
+<figcaption class="px2">LingoYak is avaliable across all platforms.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48265199">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/265/199/08f8c372b8f7190d2a3c2de32db49445_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740164171&amp;width=680&amp;sig=0OkzSVVA2GtYoS0lqKBlu3KzE57UnHJW71x7nRUz3UA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49247880">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/247/880/a8f65b245572bbe424d0001c8ee5c905_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747073847&amp;width=680&amp;sig=rDRHJLefVRb1Q7iY1p9u9oHmv6AjDWUkkYyCwemePP0%3D"/>
+</figure>
+</div>
+<p><span class="bold">Note: </span>All rewards offered on this campaign are <span class="bold">exclusive to kickstarter backers. </span></p><p>Each reward tier comes with assigned number of tokens <span class="bold">without expiry</span> (<span class="text-italic">only for backers</span>).  That means, your tokens are valid for a lifetime. </p><p>Your<span class="bold"> subscription code</span> can be redeemed right from<span class="bold"> Final Beta Release</span> (3 Weeks after campaign ends).</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825725">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/725/27ddfe2715f34cb9c3a08e62bd8a8f6c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750944631&amp;width=680&amp;sig=JMrupSjI7w2hIIbt0BEYPJ2EqBiq%2B3KtaEs88h7jkmE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Other-Rewards-"><span class="bold">Other Rewards =&gt;</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825729">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/729/be1b7734389400ba0b959c37d9683c09_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750944645&amp;width=680&amp;sig=vFLkk6q5LQVXKkWiARSD0%2BFYpTkcHc2EA1fsvLZNTuM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825732">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/732/2bb81188ed66b984836c0a8c5e578c5c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750944653&amp;width=680&amp;sig=isZJ94MyeX0NNtCcAd%2FDyXGIvLRF%2FTL1quiVr%2BJXmQs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825736">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/736/29cb6c50f27db66a1c5419211461a957_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750944661&amp;width=680&amp;sig=ThzoVPhcksgECEpDTnHMAC5Tyb2seJKSKXAuLI8BTA0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49857961">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/857/961/92a11272f5eb1212bc1d6bc8f451d2ab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751215882&amp;width=680&amp;sig=Xzg%2BFFr2t1noGcj7Mu0JjB75zlEvYhmx2ucZuoNym7Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49825749">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/825/749/119db714d844a91a28cd0ad4b62c1a87_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750944696&amp;width=680&amp;sig=hrZn41AB2wXB8D02zsdXgeFJRtPHoxUiN590n44DP30%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Join-Us-Today-"><span class="bold">Join Us Today!</span></h3><p>LingoYak AI makes learning a new language easy, fun, and accessible. Dive into your topics, explore vocabulary, and practice daily. Take your learning everywhere you go and see how fast you can master a new language!</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48102809">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline-and-Reward-Fulfillment">Timeline and Reward Fulfillment</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/102/809/f5dc074224fb9914358c3bc61c473f68_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1738958233&amp;width=680&amp;sig=Fed%2Bh8QDpI4NXnVXnuuUER0aPw4iNwIwpQkLeThRV3g%3D"/>
+</figure>
+</div>
+<p>Reward fulfillment starts <span class="bold">3 WEEKS</span> after campaign has ended (<span class="bold">Final BETA Release</span>). If necessary, we may send out the reward survey 3 weeks after the campaign has ended.</p><p>We will send out unique subscription codes to each backer. Subscription can be redeemed via our website only (<span>https://www.lingoyak.com</span>) because <span class="bold">Appstore</span> &amp; <span class="bold">PlayStore</span> do not permit redeeming subscription codes in-app.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49697532">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/697/532/87024a34aed6b44e0507b1f4de6ab640_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750091529&amp;width=680&amp;sig=kPbafNBGzAti9u5ClWxMVhQutncbpfEl3du7WE8U62M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="About the Creator" data-caption="" data-id="48558105">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-the-Creator">About the Creator</h3>
+<img alt="About the Creator" class="fit" src="https://i.kickstarter.com/assets/048/558/105/0f318574cd5e3f59edabb3bb45e8f9b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1742235858&amp;width=680&amp;sig=oKbclNMLghxDNYD8qqHXq%2BcLoCGdeFYdBeLQoEaQhl0%3D"/>
+</figure>
+</div>
+<p>Hi there! I’m <span class="bold">John Francis; </span>an English teacher and programmer who has been teaching English for over 10 years. I’ve had the opportunity to teach both <span class="bold">General and Business English</span>, and one of my proudest projects was training all the engineers at <span class="bold">IDOM</span>, a major engineering company here in Mexico. I’ve always loved combining language and technology, so I created <span class="bold">Lingoyak </span>to make learning more personal.</p><p>My passion for language learning began long before this project. Back in 2019, I created Language Chat, expanded my <span class="bold">Spanish</span> rapidly to native level; learned<span class="bold"> French </span>and<span class="bold"> Portuguese </span>through the very method I now share with you.</p><p><span class="text-italic">I wanted a language system that would allow me learn what I want. A system I could consider my contents as assets that would allow me practice and expand my learning progressively anytime, anywhere even without internet.</span></p><p>When I launched my first Kickstarter in 2020, I could have never imagined the journey ahead. Thanks to <span class="bold">over 320 incredible backers</span> like you, across two campaigns, I have spent years refining, testing, and listening to feedbacks. </p><p>Now, we are entering an exciting new chapter using the latest combined cloud AI tech.  <span class="bold">Please, join me in this journey.</span></p><h4 class="page-anchor" id="h:How-I-Learned-Spanish-Without-a-Traditional-Curriculum"><span class="bold">How I Learned Spanish Without a Traditional Curriculum</span></h4><p>When I first arrived in Mexico, I didn’t speak a word of Spanish. But I had no intention of sitting through grammar drills or memorizing long vocabulary lists. I wanted something different.</p><p>I needed to get around. I had to order food, ask for directions, and talk to locals. So I started with what I cared about. I learned useful phrases for my day using translate <span class="bold">English/Spanish</span> like<span class="bold"> Where is the bathroom?</span> / <span class="bold">¿Dónde está el baño?</span>. Each day brought a new situation, and I picked up the words I needed for that moment. No textbooks. Just real conversations.</p><p>At the market, I did the same as mentioned earlier but in different context. Slowly, I built my <span class="bold">Spanish </span>through everyday experiences. The more I spoke what mattered to me, the more confident I became.</p><p>I realized language learning works best when it fits your life and interests. That idea inspired me to create LingoYak, a tool that helps people learn a language naturally based on what you want. It doesn't follow a strict path. It follows you.</p><p>Today, I speak Spanish fluently. Not because I followed a curriculum, but because I learned what I needed, when I needed it. And with Lingoyak, you can do the same way easier and faster.</p><h4 class="page-anchor" id="h:Past-Campaign-Success"><span class="bold">Past Campaign Success</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48275736">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/275/736/b7ee1de5029d1fe23a42062e7ebeccb4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740256876&amp;width=680&amp;sig=HNa0w1sTxjrTUGX6eb3KTZ0X%2FqCpF%2FZqObVoyDStSrU%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48327351">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/327/351/131d14facf6fc5551bd017b13a8d671c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1740610937&amp;width=680&amp;sig=hqzeO%2BBNApdw%2B474oQcUBbgvwP4wfsSxAwpMJwgljjU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-LingoYak-Website-https-www-lingoyak-com-">
+<span class="bold">LingoYak Website</span>: <span>https://www.lingoyak.com</span>
+</h4><h4 class="page-anchor" id="h:-Media-Kit-Click-Here-for-Media-Kit-">
+<span class="bold">Media Kit:  </span><span>Click Here for Media Kit</span>
+</h4><span></span><span></span><span></span><span></span><span></span><span></span><span>This project is boosted by BackerCrew</span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Embarking on the journey of creating LingoYak comes with its share of risks and challenges. While we're excited about the potential of this project, we recognize the need to address potential obstacles head-on to ensure its success.
+
+Technology Evolution: As LingoYak relies heavily on cloud infrastructures, we acknowledge the dynamic nature of these technologies. The ever-evolving landscape of cloud services presents a risk of compatibility issues and unexpected changes that could impact the functionality of our app.
+
+Version Updates: Our current state is a fully functioning private beta version. However, ensuring that all tools and dependencies are updated to the latest version before the production release is crucial. Failure to do so may result in compatibility issues, security vulnerabilities, or performance degradation.
+
+Despite these risks and challenges, the team is committed to overcoming obstacles and delivering a top-notch language learning experience. With dedication, adaptability, and the support of our backers, we are confident in LingoYak's potential to revolutionize language learning in the digital age.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Lingoyak is a language learning system that uses OpenAI AI Models to allow users to learn languages from their native tongue. Lingoyak takes user input in their native language and transforms them to their target language, organized around a personalized topic created by the user. 
+Learner's contents are created by them. Lingoyak does not copy or use content from anyone's work</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">Lingoyak project does not include any manufacturing process or physical shipping of rewards. Project will be fulfilled digitally.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

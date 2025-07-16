@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Empower STEM Learners: Build, Debug, Innovate with IoT</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/048/801/583/cb0fdf523eacfe4956b2f3e2503024b5_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1743925201&width=560&sig=heIMZeHL3IPEByO3NqrYw3TQH5oq0jtVxCBo5uWFtDs%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Empower STEM Learners: Build, Debug, Innovate with IoT</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A Hands-On IoT Kit Designed to Teach Practical Debugging Skills (Bug is Good)</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 3,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p><span class="bold">Bug in Circuit: Master STEM by Mastering the Debug</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802683">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/683/402a72c1771b338ba132f6588a297c52_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743939905&amp;width=680&amp;sig=5Nu7rNYPKAgW%2BGEpF0dWoKrRAEyN9prDnjyGnN8woy0%3D"/>
+</figure>
+</div>
+<p>In STEM education, most kits teach you to build and code, but what happens when things go wrong? In the real world, engineers spend more time fixing problems than following instructions. Yet few tools teach students, hobbyists, or future innovators the critical skill of debugging. Without it, they’re left unprepared for the challenges that define engineering. We saw this gap and decided to fix it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48839432">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/839/432/0b47a5f3f6ca370cbe6ce27ebb039db6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744177783&amp;width=680&amp;sig=eDqzdVMYzJWSTWsZMZnaqjUqjzDrJFUaCbCUOx2uUqU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802149">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/149/0a0c2fbab5ad70cf2477ed1571eb69e2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743934378&amp;width=680&amp;sig=aJ3lZVFr9WXCGzzc7zj4df25G8BLExMqtPYUstiwywI%3D"/>
+</figure>
+</div>
+<p>"<span class="text-italic">Bug in Circuit"  </span>a hands-on STEM platform built around a powerful ESP32 microcontroller with WiFi and Bluetooth. It’s not just another IoT kit; it’s a real-world learning experience. Each board comes with an intentional 'bug' that stops it from working out of the box. To unlock its potential, you’ll need to troubleshoot and fix it, learning to analyze circuits, test connections, and solve problems like a pro. With three variants, 2-channel, 4-channel, and 6-channel with built-in power conversion, it scales from simple smart devices to advanced systems, all while teaching you skills that last a lifetime.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802706">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/706/e4789d8642b6bd97250695434f0700b9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743940135&amp;width=680&amp;sig=XfcRP5Lnd0Q9jnl37JEOLlngK1h1ms%2FgKz6D2WHv%2BaI%3D"/>
+</figure>
+</div>
+<p>At the heart of <span class="text-italic">Bug in Circuit</span> is its signature feature: a built-in bug. Out of the box, the board won’t function as expected, relays won’t trigger, lights won’t blink, or connectivity might fail. This isn’t a flaw; it’s the point. Users must use the included tools (multimeter, soldering iron and wires) and their wits to diagnose and resolve the issue. The bug could be a short circuit, a missing connection, or a misconfigured component. Each kit varies slightly to keep the challenge fresh. A comprehensive tutorial book guides you through the process, teaching techniques like:</p><ul>
+<li>
+<span class="bold">Circuit Analysis</span>: Reading schematics and tracing signal paths.</li>
+<li>
+<span class="bold">Testing</span>: Using a multimeter to check voltage, continuity, and resistance.</li>
+<li>
+<span class="bold">Repair</span>: Soldering or rewiring to fix the issue.<br/>By conquering the bug, users gain practical skills that traditional kits overlook, preparing them for real engineering challenges.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49006785">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/006/785/847742984f1c04b7359e48e7a21362fe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745388113&amp;width=680&amp;sig=NNv1L6iTpj%2FBGr78quDH63pC7D%2FCmef3ldxyVbtmmpA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802140">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/140/ea1107f2816d0e66260664b61b39f184_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1743934263&amp;width=680&amp;sig=RaXOzQD7eJluiy5zb57MsnnZovLfmCBAQ%2B8WVOU5wvw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802716">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/716/da41f78bd4e5c02bf77e09772c73c7e8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743940269&amp;width=680&amp;sig=GjBN%2BTvXXnP9RxDYrDBormPtbxq411MuiM57ILaIJaM%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Bug in Circuit</span> comes in three distinct versions, each tailored to different skill levels and project ambitions:</p><p><span class="bold">2-Channel Relay Board</span></p><ul>
+<li>
+<span class="bold">Overview</span>: Compact and beginner-friendly, perfect for small-scale IoT projects like smart lights or remote-controlled appliances.</li>
+<li>
+<span class="bold">Power</span>: Operates on 5V DC (via USB or external supply).</li>
+<li>
+<span class="bold">Features</span>: Two relay channels, optocouplers for isolation, status LEDs, RF/IR interfaces, and full I/O access for sensors.</li>
+<li>
+<span class="bold">Ideal For</span>: Students or hobbyists starting their IoT journey.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48744461">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/744/461/df570029cf71849f0cfed14a792b83aa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743519639&amp;width=680&amp;sig=ELOSpGBdcgxUdkmWxUHL3J8nOiMtUQ%2FyLeytfx%2FHA3s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48895739">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/895/739/e6adaba545188f858e50ebdeea0cb03a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744602716&amp;width=680&amp;sig=McFJIJ36wEZ1U4z27aZtcbYGWk3rR744zz3oQVtHXHY%3D" src="https://i.kickstarter.com/assets/048/895/739/e6adaba545188f858e50ebdeea0cb03a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744602716&amp;width=680&amp;sig=McFJIJ36wEZ1U4z27aZtcbYGWk3rR744zz3oQVtHXHY%3D"/>
+</figure>
+</div>
+<p><span class="bold">4-Channel Relay Board</span></p><ul>
+<li>
+<span class="bold">Overview</span>: A step up for intermediate users, offering more control for multi-device setups like home automation prototypes.</li>
+<li>
+<span class="bold">Power</span>: 5V DC, same as the 2-channel variant.</li>
+<li>
+<span class="bold">Features</span>: Four relay channels with the same core capabilities, ESP32 with BLE/WiFi, RF/IR control, and sensor compatibility.</li>
+<li>
+<span class="bold">Ideal For</span>: Makers and educators tackling more complex builds..</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48744472">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/744/472/f18c11e69aedcf7b716eb187020649ea_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743519663&amp;width=680&amp;sig=gLzeEdDYBCC0a2snM%2Fne5TVVfwxD4KaPXQoURo1av3c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48895742">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/895/742/1923ea935c02f41aa062d3a132736be0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744602730&amp;width=680&amp;sig=iM8B1%2FH%2Fno6ZP%2FIGhmByOzCXqUl3CRTbR9IWVq%2BCGgw%3D" src="https://i.kickstarter.com/assets/048/895/742/1923ea935c02f41aa062d3a132736be0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744602730&amp;width=680&amp;sig=iM8B1%2FH%2Fno6ZP%2FIGhmByOzCXqUl3CRTbR9IWVq%2BCGgw%3D"/>
+</figure>
+</div>
+<p><span class="bold">6-Channel Relay Board with Built-In Power Conversion</span></p><ul>
+<li>
+<span class="bold">Overview</span>: The advanced option, designed for high-power applications and seamless integration into larger systems.</li>
+<li>
+<span class="bold">Power</span>: Built-in 230V AC to 5V DC converter, plug it straight into mains power no external adapter needed.</li>
+<li>
+<span class="bold">Features</span>: Six relay channels, plus all the connectivity and control options of the smaller variants.</li>
+<li>
+<span class="bold">Ideal For</span>: Experienced users or classrooms building ambitious projects like smart grids or industrial simulations.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48744474">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/744/474/73aa53372f5826947b097d028e5c8f96_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743519672&amp;width=680&amp;sig=ZeMFBoqWBlRASDOoioDooA2rXLWpP5hphAlEOddJb5E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48895820">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/048/895/820/cf529bf8da014e7f966b48a921d6f696_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744603153&amp;width=680&amp;sig=DXqBivG7dv0hbe%2BnMUtXBaeDOP4ea4zm1Qdv%2BfnD%2BI0%3D" src="https://i.kickstarter.com/assets/048/895/820/cf529bf8da014e7f966b48a921d6f696_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1744603153&amp;width=680&amp;sig=DXqBivG7dv0hbe%2BnMUtXBaeDOP4ea4zm1Qdv%2BfnD%2BI0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802727">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/727/94fcfba2c25cab8d12fdd53c97446212_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743940359&amp;width=680&amp;sig=%2FV2O%2F8a6tyeQukOc3RcDZBSVuWRvSTG04dMH6CNIOI0%3D"/>
+</figure>
+</div>
+<p>Beyond debugging, <span class="text-italic">Bug in Circuit</span> is a fully-featured IoT platform. The ESP32 microcontroller enables seamless cloud connectivity with platforms like Arduino IoT Cloud, Amazon Alexa, and Google Assistant. Control relays remotely via WiFi, Bluetooth, or the included RF/IR interfaces, imagine turning on a fan with your voice or automating lights with a sensor. Male headers provide easy access to I/O pins, letting you connect sensors (temperature, motion, light, etc.) for endless project possibilities. Whether it’s a smart home system or a data-driven experiment, this kit delivers.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48784202">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/784/202/4e333faceaf57773328c99e3e4efc5a7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743771342&amp;width=680&amp;sig=izN9vqRuqEOrFTM%2FEx3yF0ECRIZgg4DVHRnWJx%2B7xSA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48895507">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/895/507/ed312abd789e19cadb96c301cb8b419c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744601070&amp;width=680&amp;sig=bAN8t5m7d27irx4Dm6DelNCKscshgHcbn2WvehbM800%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48831109">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/831/109/18537920c0ebf0dd815b37b663ad8887_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744124933&amp;width=680&amp;sig=3Us39%2BOhTNJUogbcrawmA6pQHN%2BdYnV%2FTffYiOQyDVM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49049265">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/049/265/e549b5056dafa6adfb10d6e228c806d7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745659792&amp;width=680&amp;sig=qlgaulLJ%2BzqPYKBAihOJvtoNDmVDvbymj64gyg4kMt8%3D" src="https://i.kickstarter.com/assets/049/049/265/e549b5056dafa6adfb10d6e228c806d7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745659792&amp;width=680&amp;sig=qlgaulLJ%2BzqPYKBAihOJvtoNDmVDvbymj64gyg4kMt8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802962">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/962/70e43b6ef18c77a69de6d06d20ee21a7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743942948&amp;width=680&amp;sig=af%2BY2EqL6PWoTqOlnFJ1mtKLWAtI8dUGvb%2BE424p%2Blo%3D"/>
+</figure>
+</div>
+<p><span class="bold">A Better Tutorial E-Book</span></p><p><span class="bold">Hands-On Learning:</span></p><ul>
+<li>Each tutorial is designed with practical, real-world applications to ensure learners gain hands-on experience.</li>
+<li>Unique emphasis on troubleshooting helps learners build critical problem-solving skills.</li>
+</ul><p><span class="bold">Step-by-Step Guidance:</span></p><ul>
+<li>Clear, concise instructions with illustrations make complex concepts easy to grasp.</li>
+<li>Includes code snippets, diagrams, and circuit layouts for better understanding.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49011395">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/011/395/d15a65c2b114cb44c13fa90490303dc1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745415509&amp;width=680&amp;sig=uVOZ%2FfAFTWlD351KLM6zYdGvRVLQ%2BhYZMGn9rq37SRE%3D"/>
+</figure>
+</div>
+<p><span class="bold">Draft Version Of the Bug In Circuit Book</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49011359">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/011/359/3bb90906edb2e3079576837d93e665f9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745415322&amp;width=680&amp;sig=touFgv%2FtA%2BnYDOYEj8F7QVESuV9SHELhYDUYuUJwe5g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49011358">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/011/358/aa5d5abe3aef6a07b0cb03a990dbb504_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745415322&amp;width=680&amp;sig=nUvQ%2FZiPSTYUsddVJZN5NtJrAxh7tYSqRBNeZBPQ%2BSc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49011360">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/011/360/491a7e9e854bf244ce4ebbfbed071f27_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745415322&amp;width=680&amp;sig=KRqauJrOGtsjMK3G30Amz8%2FFtr3jHrqpr9rULsqYGiM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49011362">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/011/362/842eaddaf53f2238a9262a5f4a3638b7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745415323&amp;width=680&amp;sig=wfHV5KtIfyWoCrN3CRTfb9wvVKE6n3RALp5gh9gtRGw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Add-Ons</span></p><p>Electronics is a powerful app for beginners and makers, It provide the complete guidance in Embedded System programming using c programming language, it helps to understanding the basic of microcontroller programming, and it provide details like hardware description, circuit diagram, c program to interface basic components, peripheral, communication devices, sensors with Microcontrollers.<br/>This app includes: Microcontroller- 8051 Microcontroller, Arduino, ARM7 Microcontroller, AVR Microcontroller, PIC Microcontroller, electronics symbols and detail description on how to program different microcontroller with architecture, pin diagram &amp; registers</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49020754">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/020/754/562328e49d38ae19dfe2848de59ce9cb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745469189&amp;width=680&amp;sig=Uqm6y7e59DdeF9J7mVvreADA%2BBAC5d9nQ%2Fbk2xnI2CI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Play Store Review</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49020770">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/020/770/27c2bbdc79f1925a2fefdc027c47b2a5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745469341&amp;width=680&amp;sig=vNceioITexGomX4hLAhW0QBtb2ELmWWueynVW0rTf6k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49020777">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/020/777/198b50f36262d60846d58dc56c7b24ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745469467&amp;width=680&amp;sig=F7OIYCotSoazsoxsPtQ1vMum%2FBU%2FWjtJtlIyaWMR%2BIA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802978">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/978/06981397a019978bc4fd86265343e100_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743943128&amp;width=680&amp;sig=xsj%2F4wkuLEfkl9JHLU02iRTQKWai5KEWiUScZVzn%2F%2BM%3D"/>
+</figure>
+</div>
+<p>Each <span class="text-italic">Bug in Circuit</span> kit is a complete STEM learning package:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48810940">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/810/940/7887b7937e75bfe6d6f2cc37ebf7e5df_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744003999&amp;width=680&amp;sig=sGAr8VverUM002gn%2FQkp7W9o25ws7%2FyVnM5zDDmBxF0%3D"/>
+</figure>
+</div>
+<p><span class="bold">Submit a Project Using Bug In Circuit Kit And Get a Debug King Certificate </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48812590">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/812/590/4f98b457c9718b4a06a775261650dc5f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744017023&amp;width=680&amp;sig=C7YHRszaS15p4swjQYW8assoWMFil7qDMb4ww1JlpLE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48812319">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/812/319/7f605f1edd188b6a997e9b0d39d04d50_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744015131&amp;width=680&amp;sig=%2FKGzRIzEdsfyq5nPDVF%2FKX43YsW5z3601s6iFZmoWaE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48839688">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/839/688/d5026d1ecffb6b0a23eef0a1b2204181_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744179997&amp;width=680&amp;sig=rs%2Fw0HFjXte225npTKLcdvXbY5Uc1at4LW4RWr7ZP0M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48803050">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/803/050/b06712e7a4208e1c934b487b6af329bf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743943848&amp;width=680&amp;sig=6UsaNjlQzEGG%2BUfjMJ9EfgeiEUe3uDKj5J045NDYl2M%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">Students and Educators</span>: Bring real-world engineering into the classroom with a kit that teaches critical thinking and practical skills.</li>
+<li>
+<span class="bold">Makers and Hobbyists</span>: Build custom IoT creations while mastering troubleshooting, an essential skill for any DIY project.</li>
+<li>
+<span class="bold">Future Engineers</span>: Get a taste of professional hardware development from debugging circuits to integrating cloud systems.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48803073">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/803/073/4b9064ccadf311b5a963cb1c5a1a48aa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743944016&amp;width=680&amp;sig=r5Sabgj2NJW5dzDjVHeHtDUlutcQLh%2BgwcNKLG32rYQ%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">ESP32 Microcontroller</span>: Dual-core processor with WiFi and Bluetooth Low Energy (BLE) for robust connectivity.</li>
+<li>
+<span class="bold">Relay Isolation</span>: Optocouplers ensure safe, reliable switching of high-power devices.</li>
+<li>
+<span class="bold">RF/IR Control</span>: Dual remote options for flexible operation.</li>
+<li>
+<span class="bold">Scalable Design</span>: Three variants plus sensor compatibility for projects of any scope.</li>
+<li>
+<span class="bold">Built-In Bug</span>: A unique challenge that turns every kit into a learning opportunity.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48803082">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/803/082/4c5571d886bcf7b21e4d71a5ffa95db0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743944112&amp;width=680&amp;sig=Q91W%2BrKxOj%2FDnBQQmRrBqF2RzHSFUHtz3WMMR96Kq0Q%3D"/>
+</figure>
+</div>
+<p>With <span class="text-italic">Bug in Circuit</span>, you can build:</p><ul>
+<li>A smart doorbell that texts you via the cloud.</li>
+<li>A voice-controlled fan synced with Alexa.</li>
+<li>An automated plant-watering system triggered by soil sensors.</li>
+<li>A multi-device home automation hub powered straight from the wall (6-channel variant).<br/>The only limit is your imagination, and your ability to debug!</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49794188">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/794/188/fb41fcc06aed716c983f511db26e1180_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750760182&amp;width=680&amp;sig=%2B3l0K80LkkZ4PzNlvetBiMTeHgEAU0gAafCsSsPxlLs%3D"/>
+</figure>
+</div>
+<span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48811049">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/811/049/0691bace89c7fc106f10879bfa4263b9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744005141&amp;width=680&amp;sig=NDbulShHCNKFWM5SHWrDRzzPFwxCQ3yDY%2BCVMnMdrhE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48811228">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/811/228/8fb0bec615cef30fed87bb24b3af2afb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744006466&amp;width=680&amp;sig=SRmx2QDCnDnFUlY9HYg11lMaa31hsRDj1NkzyWOiDHM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802659">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/659/60009a56a56d79b7bf4a7508853cf5c7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743939666&amp;width=680&amp;sig=3j2NvTNXnE5bAY%2BOjp%2BBsUJ4HF3fnDudqyJ6a3arft4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48830912">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/830/912/13a5f619d56260155f91318536922a6e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744124305&amp;width=680&amp;sig=LtCjxLz%2BAl%2Bbc4vZ1J%2B3ankD2%2BB6WnJBbeXhfHFiaYw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48902042">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/902/042/e2db3432ac329f34aeb26d173224bc55_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744644472&amp;width=680&amp;sig=PasDMqql1CcaEDGzn61VIEc9unHKSWT2Wp97wR%2Fe864%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48831509">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/831/509/4fbd4e13a5831fbef94108156e9da48f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744126436&amp;width=680&amp;sig=yys6RiQcl7jAhSfmTxRnSe%2FlkJeuMpJCe2K1VlN113Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49964141">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/964/141/1b15a6de89e73d081bffe440f246b0c3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751982248&amp;width=680&amp;sig=7yew2ubb5ndQkLWFXKdfElCCDdqXljf9JjRQVML2jm0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49964146">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/964/146/03569b1ee61610eb41a44e4f7d39bb9e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751982258&amp;width=680&amp;sig=y6YIrTTOSmMyMknxDj5gWup%2BNDBG6G8hISUjHzOgus8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48804638">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/804/638/e78176aef0af62f092f17c322d7764a4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743955677&amp;width=680&amp;sig=mylARbH%2Fg9Oa1nufFaKefOSUZrf%2BweqehqtnwbvjD3U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802199">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/199/6b1b045623b3c11fd2144e04827cbce6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743935022&amp;width=680&amp;sig=akV7%2F96BULB16RF56LvSZm5qKkqiVG%2BU0XkoK8jj4vM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48804649">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/804/649/2f9a507a83b3c793350214efa77f3074_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743955809&amp;width=680&amp;sig=d2tudoK42qsBtdXLaOuTKOOxzZg6OwhYB9ltVshUuDc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802203">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/203/c15b79d50575b1f270b73e5a382a5dc5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743935042&amp;width=680&amp;sig=NTfcZ9%2FH0IXLYRCZ74teK8TLJbtVRSuMr3rUFS1ZvUk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48804668">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/804/668/54a1efb60ba4e0ed69c1f15fc0a710f4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743955933&amp;width=680&amp;sig=K5GgW9YZDe3vnca293Tusz2sLPZMEz8zSlFX1CWXywY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802204">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/204/956853e5882969b3834d3cdeb6e94a97_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743935069&amp;width=680&amp;sig=k3c5AHXVMoysBOKruDZ19cAfnx%2BE7aUO7aDugnX0wZ8%3D"/>
+</figure>
+</div>
+<p>CAD Diagram and Gerber files and Schematics Of initial prototypes, we have used KiCAD for Hardware Design and Development.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49690554">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/690/554/fb06dfcf9c0468a5850c72ab315fed71_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750052328&amp;width=680&amp;sig=8PDObc3juQyq2j8L9YjBO3phaUdBxNVfYDZaL2mPLxo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49690553">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/690/553/21542cc43d2f5038e4b6d0f77e706c4d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750052328&amp;width=680&amp;sig=zhN%2FBVvjXhQrVy1sgG8AHOQ4jmE5pjnrE5VDrDbNw3k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49690555">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/690/555/14ff7534f85a845917643b0b7f34da9f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750052328&amp;width=680&amp;sig=mb12NeJ6QipIEjT4S3clKjdXcvfEd1DPqh8cfkPKFqk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49690556">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/690/556/b87a85aede3bbc6a7338a1a9e3a00d11_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750052328&amp;width=680&amp;sig=%2FWomt14FIGQmMHBSW5RYl0fI3fRUjrVxZdqbUdagYYc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49964068">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/964/068/bd7f7535a9f63c85508b3ad79bcd0a4c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751981890&amp;width=680&amp;sig=dTFExUTD0W6Q7%2FyeInun3eI6Hr0leiOgzMIkZNJZl7c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48802206">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/802/206/59fb20af831bb16b58faa838561a003d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743935084&amp;width=680&amp;sig=JOXN0m5OAKsZHUl%2FKsReGZdPUMVSmYvTh0foANRJjYc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48811516">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/811/516/80458c592087c60ed10e3b7a93752c3b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744008970&amp;width=680&amp;sig=%2BpKabaRzxz01uPFkIZWPMr5UU0Q2R2x2xT7E%2FCbI3AE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49963993">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/963/993/9105fb5213ecb04cf16e23d53188f37e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751981498&amp;width=680&amp;sig=U8fgM%2Bo6M%2F0A29L6%2BG1STjF3CCkHNv0xtkLrXo4j1DU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48804968">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/804/968/ae318661be871af09223a8faaf6e894d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743957685&amp;width=680&amp;sig=UJmuOfxyTo5ixdOatEWt2EbcdtU4d%2FhiusTHNmEbhl4%3D"/>
+</figure>
+</div>
+<p>Imagine a student proudly powering up their first smart relay after hours of tinkering, a hobbyist building a voice-controlled home system, or a classroom buzzing with problem-solving energy. <span class="text-italic">Bug in Circuit</span> doesn’t just teach IoT, it transforms users into confident, capable engineers. We’ve seen it in workshops at SRM University and beyond: learners light up when they conquer the debug. This kit empowers them to think critically and innovate fearlessly.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48839624">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/839/624/c8fa9439f3387e855b753e753785e2dd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1744179434&amp;width=680&amp;sig=3zh6aQa43Dhc3sG30x7Ltn2KPhZO6S1yElLfR%2B0XUJE%3D"/>
+</figure>
+</div>
+<p>This started with us, engineers and educators frustrated by how STEM kits glossed over the messy, beautiful reality of debugging. We remembered our own late nights tracing circuits, the thrill of cracking a tough problem, and wished we’d had a tool like <span class="text-italic">Bug in Circuit</span> growing up. After months of prototyping and testing, <span class="text-italic">Bug in Circuit</span> was born to give today’s learners the practical edge we craved.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48804976">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/804/976/efc9a430e9065df568ae294206cd4935_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743957723&amp;width=680&amp;sig=W0c43VOyyHvvmJQDzFa5OQxR5vrMn5s8S89lV0wVqQ8%3D"/>
+</figure>
+</div>
+<p>We’ve built the boards, run the workshops, and perfected the design, but to bring <span class="text-italic">Bug in Circuit</span> to classrooms, makerspaces, and homes worldwide, we need your help. Crowdfunding will fund mass production, create our comprehensive tutorial book, and keep costs low for educators and families. Every pledge gets us closer to shipping kits packed with everything you need: relay boards, remotes, tools, and guides.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48804978">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/804/978/8f68807ad51692acfe45a55b01522535_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743957733&amp;width=680&amp;sig=2WGWRJUw%2Fo%2FL6p1b2qonyU%2FMGS6iLkmA%2BOZmS%2FTwr9E%3D"/>
+</figure>
+</div>
+<p>"Our dream is bold: a world where every STEM learner knows how to tackle the unexpected. With your backing, <span class="text-italic">Bug in Circuit</span> could redefine how we teach engineering, making it practical, engaging, and fearless. This isn’t just a product; it’s the start of a movement to equip millions with skills that matter."</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48804982">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/804/982/84fb662212da8c9db2cd89ea615cfe04_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1743957749&amp;width=680&amp;sig=i8RwnoOmAtjBECNuRPLw6K%2FmMqWSf%2BxI7eLIMNYyz4Q%3D"/>
+</figure>
+</div>
+<p>"Be part of this revolution. Back <span class="text-italic">Bug in Circuit</span> today and help us empower the next generation of problem-solvers. Together, we’re not just building a kit, we’re building the future of STEM."</p><p><span class="bold">Social Media</span></p><p><span class="bold">Instagram: </span><span>https://www.instagram.com/anuelectronicsofficial/</span></p><p><span class="bold">Facebook: </span><span>https://www.facebook.com/anuelectronicsofficial/</span></p><p><span class="bold">X.COM: </span><span>https://x.com/anu_electronics</span></p><p><span class="bold">LinkedIn:</span> <span>ClickHere</span></p><p><br/><br/> </p><p><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">1. Possible Delay due to Cashflow
+As a small business in hardware technology, we strive hard to deliver high-quality products in a timely manner. However, with our limited cash flow, there is a potential risk of delays in the production process.
+A "safer" approach is to wait until the campaign concludes, secure the funds, and then plan production based on the confirmed number of backers. While this method minimizes financial risk, it can significantly slow down the delivery process. We fully understand how important timely delivery is to our customers; therefore, we often take the proactive step of starting production early — even before the campaign officially ends. This approach allows us to achieve the maximum possible speed in fulfilling orders. However, by taking this risk, there is a potential challenge: if unexpected funding issues arise or if actual demand deviates from our early estimates, it may impact our production timeline. Nonetheless, we believe this balanced approach best serves our commitment to delivering quality products as efficiently as possible.
+
+2. Potential for Delayed Shipments:
+One of the inherent risks in any manufacturing and distribution process is the possibility of delayed shipments. The refined and modified boards and modules in this project have been tested for small-quantity productions, and we are committed to staying close to each step of the manufacturing process to ensure transparent and up-to-date communication.
+
+3. Risk of Damaged and Missing Components:
+There remains a small possibility that some components may arrive damaged or missing from packaging due to human mistakes. In such cases, we have a responsive customer service team ready to address these issues promptly, ensuring that our backers are satisfied with their products. Leave a private message on Kickstarter and we will response on time.
+
+4. Taxes
+Depending on the customs/taxation regulations of your region, you might be subjected to taxes while receiving the product, which is beyond our control.
+
+Our Commitment:
+We understand that these risks can cause inconvenience, and we are fully committed to addressing any issues proactively. Our team is dedicated to ensuring the highest quality standards and the best possible experience for our backers. We appreciate your support and understanding as we navigate these challenges together.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">All components included in the kit, such as resistors, capacitors and integrated circuits can be reused for future projects.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">We are in partnership with fulfilment couriers which include carbon-neutral delivery options and eco-friendly packaging initiatives. Our investment in optimizing logistics and reducing waste reflects our dedication to sustainability</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">Our Kit Box is eco friendly</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

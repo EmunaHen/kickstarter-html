@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Character Creator: Easily Create 3D Characters</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/809/109/71eab8ce67ab8e716d94830c9c885f3f_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750843186&width=560&sig=%2B2GD8BlUfxjtk7amcrh%2B55JmLz4HHr%2F5xk4DV5MDsAE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Custom Character Creator: Easily Create 3D Characters</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Customize 3D characters, pose them, and export images — good for webtoons, illustrations, and creative projects</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 20,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792519">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/519/0ae690275cc11455996aafa5f5120697_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750750859&amp;width=680&amp;sig=FRxhFK7%2Fk4WWr8MmJ%2BsfPgaNu%2BDXyVms81Qkq4QEt1U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49908057">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/908/057/cad17d27f496a87b9d7c3b6e5b01937e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751536550&amp;width=680&amp;sig=SKGJ5IxXd6ohmtTgs8l%2F07THU6%2BklYrwb8PF0N%2FKIYc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49922273">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/922/273/4c021954d8bf178b1080c9bbd6b32a69_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751633582&amp;width=680&amp;sig=CiMRkidK0cNd5HloPRah9%2BnNz9L932itko11FewUoqY%3D"/>
+</figure>
+</div>
+<p>We’re building <span class="bold">Custom Character Creator (CCC)</span> — a <span class="bold">browser-based tool</span> that lets you design 3D characters in <span class="text-italic"><span class="bold">your</span></span><span class="bold"> style</span>, anytime, anywhere (as long as you’ve got Wi-Fi). Your characters live safely in the cloud, ready to be accessed, edited, or dropped into your next project at a moment’s notice. Creativity shouldn’t be chained to a device — and now, it doesn’t have to be.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49929635">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/929/635/66d35afe2d0441701cdd55e9c97a3ec8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751697832&amp;width=680&amp;sig=uC%2BSzB%2FDHAXfwsWdbvZ2vLr0DWJoSv5a08OBTap%2FxS8%3D"/>
+</figure>
+</div>
+<p>For a while, comics seemed like relics of the boomer era—overshadowed by the rise of online and mobile games. But then came the plot twist: <span class="bold">Webtoons</span>. These mobile-optimized digital comics captured the attention of MZs craving quick, bite-sized entertainment during their downtime—no long movies or binge sessions required.</p><p>Webtoons didn’t just stop at being a snackable delight; they became a <span class="bold">goldmine for adaptations</span>, inspiring hit dramas and films. As visual storytelling skyrockets in demand, the problem is clear: supply can’t keep up. Technical skills and long hours still block aspiring creators from entering the scene, while professionals are stuck grinding through time-consuming, repetitive tasks.</p><p>We think it’s time for a change.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49847993">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/847/993/9cb14cf959fa7ef3212f5e109c31dc6d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751101809&amp;width=680&amp;sig=sW%2FEA0XUryBHjrSi7NpoufGa4veR4PGTNasICI3J2fA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49929674">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/929/674/523ad7467b0a1958a7c8be6b0b83a3d8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751698253&amp;width=680&amp;sig=a%2BYVgpWdX5yJTEqbmPVsyj2CNbSZworSkK%2FE8zk9aY0%3D"/>
+</figure>
+</div>
+<p>As creators ourselves, we zeroed in on a problem that professional artists know all too well: the crushing weight of repetitive production. In the fast-paced world of webcomics or webtoons, creators are buried under weekly deadlines, thousands of hand-drawn panels, and a serious lack of helpful tools.</p><p>To survive the grind, many turned to a surprising savior — <span class="bold">3D assets</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Clipstudio Image" data-id="49847874">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/847/874/c947475cc7b42ddf676b21463966a396_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751099387&amp;width=680&amp;sig=WdKjqNhvto45BKnAnz3IUESuYNoaq8DUx7bPVw%2Fezds%3D"/>
+<figcaption class="px2">Clipstudio Image</figcaption>
+</figure>
+</div>
+<p>3D mannequins quickly proved to be a game-changer. With just a few tweaks, artists could test poses, visualize proportions, and eliminate hours of redrawing. It was a leap forward — but not quite the final answer.</p><p>Why? Because while 3D pose references helped scratch the surface, creators were still stuck doing the heavy lifting — manually redrawing textures, tailoring costumes, and adapting proportions to match their unique art styles. The iceberg was still there. They’d just chipped off the tip.</p><span>Source: Unicorn Process by Saige199 on DeviantArt</span><p>Learning 3D tools themselves seemed like a logical next step — but anyone who’s ever opened one knows the pain. Complex. Expensive. Time-devouring.</p><p>That’s why we’re building something radically different — a service laser-focused on custom character creation. Simple, creator-first, and powerful enough to finally unburden visual storytelling.</p><p>Meet <span class="bold">Custom Character Creator</span> — the tool that lets you bring your signature style to life without ever touching a 3D textbook.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49847714">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/847/714/1fcdefba8798f46c828ef19007805e0c_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751097007&amp;width=680&amp;sig=QKzGRKwDHSpeK8E28g4ISMQcT8SVuXHwYf7tsvSQsQc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49922378">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/922/378/718f13dcf3646dacc2c79a3bf355115b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751634336&amp;width=680&amp;sig=pG0A13uzbibUALfLaWc39toj3HmFLLlGOJjDllg5vfk%3D"/>
+</figure>
+</div>
+<p>Webcomics, of course. But the use of visual content is rapidly expanding beyond traditional comics, as shown in the examples below. Visual storytelling is now being applied to websites for engaging guides and tutorials, webcomics and publications for immersive narratives, posters and illustrations for marketing and artistic expression, campaign materials and etiquette guides to communicate messages effectively, and even short-form videos and reels for social media. These diverse applications highlight how visual content has become a powerful, versatile medium for conveying stories, ideas, and information across industries and platforms</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49929744">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/929/744/ef13d0fe57804b43771bbd6da0e4d927_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751699153&amp;width=680&amp;sig=UGudb6RgA1KSby7DmLV3jWI97dk59KuFbTL3cHEw3Sw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Custom Character Creator (CCC)</span> can now empower creators to meet this growing demand for diverse visual content by making it easier than ever to<span class="bold"> create unique, high-quality 3D characters</span>. Whether for webcomics, campaigns, short reels, or publications, CCC allows creators to design characters in their own style without requiring advanced 3D skills — saving time and enabling consistent, customized visuals across all formats. By lowering the technical barrier and providing ready-to-use assets, CCC helps creators deliver more content, faster, and expand their creative possibilities into new platforms and industries.</p><p>Here’s a sneak peek at what CCC can really do. We put our prototype to the test — and the results were game-changing. In the GIF below, you’ll see how a base model transforms into a reference character using simple morph sliders. (Hair and background were drawn for now but hair and backgrounds could be added as 3D assets as well.) </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792609">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/792/609/15d5c5a6059617358eb19ecac922e9c4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750751380&amp;width=680&amp;sig=nUyPm2a7pfpJrrRmkWcKP9EBvqpEue8uZo2u5ze%2FN4E%3D" src="https://i.kickstarter.com/assets/049/792/609/15d5c5a6059617358eb19ecac922e9c4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750751380&amp;width=680&amp;sig=nUyPm2a7pfpJrrRmkWcKP9EBvqpEue8uZo2u5ze%2FN4E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49947822">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/947/822/1e3fec2d08e9f1820cc0d4d5cde5f61e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751885160&amp;width=680&amp;sig=WF2xCAIrA5yLVVjvfzlblxDgGYa5z1pYqnEAXUnIew8%3D"/>
+</figure>
+</div>
+<p>(Based on the questions submitted from supporters. Updated on July 6th)</p><ol><li>How each reward tier works? </li></ol><p>: <span class="bold">Each reward tier corresponds to the number of months you can access the service — think of it like a subscription. All tiers offer the same features and functionality; the only difference is the duration of access.</span></p><ol><li>Is there any difference in functionalities between different tiers?</li></ol><p>: <span class="bold">All tiers offer the same features and functionality; the only difference is the duration of access.</span></p><ol><li>How Lifetime Subscription is different from the rest tiers?</li></ol><p><span class="bold">: The Lifetime Subscription is a one-time offer available only during this Kickstarter campaign. By choosing this tier, you can use the Custom Character Creator service forever, without any monthly or annual fees. Once this campaign ends, we do not plan to offer the lifetime plan again.</span></p><ol><li> Will the accessibility be made nationwide?</li></ol><p><span class="bold">:If you’re asking about technical accessibility nationwide — the answer is yes! As long as you have an internet connection, you can access and use the service from anywhere. There’s no need to worry about saving files to a local drive, as everything is securely stored in our cloud server.</span></p><ol><li>Are there plans for subscription models?</li></ol><p>:<span class="bold"> The primary pricing will follow a flexible subscription model, allowing you to start and cancel anytime. However, during this special Kickstarter promotion, we’re offering an exclusive Lifetime Subscription as a one-time reward.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49922332">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/922/332/4248e4acbbf076aeff52c9222e04a305_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751633964&amp;width=680&amp;sig=9tjMY5rHWbI5bDeicV0n%2BSnXQmLT%2FMMHQxQbTPprPek%3D"/>
+</figure>
+</div>
+<p><span class="bold">The following images are preliminary design guides; final designs and features are subject to change to better align with creators’ needs and optimize usability.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49806216">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/806/216/9a7dc6ecf1a17db45243119eb5eca18e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750820570&amp;width=680&amp;sig=qd5fAEbT5rmdP6b5LB4sEvAKApocB29zU8StZq4iVEg%3D"/>
+</figure>
+</div>
+<p>✅ You can use [1. Character Studio 2. Shooting Studio] in Toonit Studio.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807241">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/241/d205bdb8b39bbab5ed58170e972d1ca8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750829430&amp;width=680&amp;sig=QCNe8Z%2FNhq9x6fPCNh6nWnkvblpWIcv9Wj5KzwwAj7w%3D"/>
+</figure>
+</div>
+<p>✅ You can choose the character’s style.</p><p>✅ Characters will be added sequentially, and newly added characters will incur no additional cost.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807244">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/244/0a5ffa43cef7197a8cbc3b178442c49b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750829479&amp;width=680&amp;sig=1xAW32gbitT2Waio%2FpsT8Q9V%2FJGKHQidlzCKS43w6Qg%3D"/>
+</figure>
+</div>
+<p>✅ You can set the character’s name and gender for your project.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807248">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/248/a8742057a6efc45bab9a77bed3c11182_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750829538&amp;width=680&amp;sig=nKvmHCU%2BIRYTKBlrrvcWgCHhLdgoC7Ol%2BLj9LdwIIRQ%3D"/>
+</figure>
+</div>
+<p>✅ The character's basic information helps with the character sheet and various textures will also be provided.</p><p>✅ To speed up customization, you can apply images automatically by uploading your own drawing or a desired photo.</p><p><span class="bold">Hair</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807255">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/255/80459c5c559a0768840407b201c7bfd0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750829587&amp;width=680&amp;sig=I%2FJRWcpOGeUv0%2FaplWmr9mB1ohuSEDCdtT2DacKQUdo%3D"/>
+</figure>
+</div>
+<p>✅ The Hair section includes categories for hair, mustache, and beard.</p><p>✅ Hairstyles are available in short, medium, long, and ponytail types.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807510">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/510/3d4b4a6b625b22789a377d347333aa6e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831438&amp;width=680&amp;sig=bQjX9yUyeLmmSBhHc1sn7239kVBER5p9stmvFBma3V8%3D"/>
+</figure>
+</div>
+<p>✅ You can change the hairstyle and customize the color as desired.</p><p><span class="bold">Face_Morph</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807522">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/522/c9403e1309363585ed7bf43ac7fe6a9b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831525&amp;width=680&amp;sig=1K2asPvAjO4wZp7ZfW7os55Y4rT9GX79o6lvOV5FmeE%3D"/>
+</figure>
+</div>
+<p>✅ Basic eye customization can be easily done using sliders.</p><p>✅ Options include eye size, spacing between eyes, and eye shape, with more to be added.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807530">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/530/45bea4cdefdf7dad35a7fe5d87d94fa4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831553&amp;width=680&amp;sig=Efxtqc6%2Fv4%2BAjcK9elh%2BCLbdjrVRpcL0mQ0jBVS1y34%3D"/>
+</figure>
+</div>
+<p>✅ For advanced eye customization, users can manually drag control points to reshape features.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807539">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/539/763bd9d7241157e9faa2405895b0bcad_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831594&amp;width=680&amp;sig=5FOdYyaKmX%2F2nB40lH%2FvyxKSI9PDBDqc267vMDs4Nwo%3D"/>
+</figure>
+</div>
+<p>✅ Basic nose customization can also be adjusted with sliders.</p><p>✅ Options include nose bridge height, nostril width, nostril size, and tip position, with additional settings to come.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807544">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/544/22f4d0365350cf89a9379d737f54480f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831618&amp;width=680&amp;sig=PBRNsFBkSWpXybhf63rw%2B90CWbWskgNLFkUjTTdP0Hc%3D"/>
+</figure>
+</div>
+<p>✅ Advanced nose customization allows users to manually adjust control points for detailed shaping.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807548">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/548/31d9e82b9c87f1aa1c78d628006fb261_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831638&amp;width=680&amp;sig=D20Ox4Ha4MosNd1UTZANLlpNhTZIIkfymAEE558JJ%2BI%3D"/>
+</figure>
+</div>
+<p>✅ Mouth customization uses sliders for easy control.</p><p>✅ Options include mouth width, lip thickness, corner angle, and philtrum length, with more to be added.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807553">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/553/b0ee1a797ba8db96dafa90267dacd061_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831662&amp;width=680&amp;sig=pnW%2FUzipyl3URbLXfh2vf1F5tSjN0tR3KQypKG66zmE%3D"/>
+</figure>
+</div>
+<p>✅ Advanced mouth editing enables manual adjustments using control points.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807561">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/561/671a285ad6a13a23177d10b99866044b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831681&amp;width=680&amp;sig=fg5sCdcZnLpEwRJStT4HBNh1d0HqnsoD5Pa0DsCvF4s%3D"/>
+</figure>
+</div>
+<p>✅ Chin customization is done via sliders.</p><p>✅ You can adjust chin length, chin width, chin tip shape, and double chin presence, with additional features planned.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807570">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/570/bda5bb0d256753bd7bec265e8da9501d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831721&amp;width=680&amp;sig=Lsjr%2BNK%2BrKkIznR2OwTJbkHnqpr3llXYGXdjWOx6Plk%3D"/>
+</figure>
+</div>
+<p>✅ Advanced chin editing allows for manual deformation with control points.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807573">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/573/7dc61242be9c3018e6ce321f76c063b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831741&amp;width=680&amp;sig=uXdc2n1r9A2VAx2tIN%2FlmrBJMZSsVevOZmiSMlh%2BVTk%3D"/>
+</figure>
+</div>
+<p>✅ Ear customization is also available via sliders.</p><p>✅ Options include ear size, earlobe size, and ear tip shape, with future updates planned.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807580">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/580/6632349fd50895083ee2175d6f61198e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831763&amp;width=680&amp;sig=IZq8cIMisWRfXAm4Kx9cZVWXxWYEdUJ%2FBXhxzGzHUvc%3D"/>
+</figure>
+</div>
+<p>✅ Manual control point editing is available for detailed ear adjustments.</p><p><span class="bold">Skin</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807594">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/594/f4802fc00f54083b94e6986798e08280_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831849&amp;width=680&amp;sig=2xNrQdxUU%2BlPwPia0Tu1PiWk0iox0m7vS87JTfXV%2Fio%3D"/>
+</figure>
+</div>
+<p>✅ You can change the character’s skin tone (color).</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807602">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/602/ecf39d54e291bfb60341d647fd4a3cda_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831927&amp;width=680&amp;sig=lIWIIKGuWcj%2BMScXb7nqvhi9W2yz%2FGACI1UtJ%2FK4Mu8%3D"/>
+</figure>
+</div>
+<p>✅ You can add skin elements such as moles, scars, freckles, and acne.</p><p><span class="bold">Eye</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807605">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/605/339323dbeb716e47478c3bd3cc3e7991_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831962&amp;width=680&amp;sig=%2FYlvtP3rtaWiKhKelMPlZucJPka3vown6gb2Lcnf%2FyM%3D"/>
+</figure>
+</div>
+<p>✅ You can customize the shape and style of lenses, eyebrows, and eyelashes.</p><p><span class="bold">Makeup</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49807606">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/807/606/714e5e448aa383cf5206c1b12593ca45_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750831991&amp;width=680&amp;sig=Qbnthh6ulh6cHTzYgMpuYDvbACUElw%2BTsq3M9dTggY4%3D"/>
+</figure>
+</div>
+<p>✅ You can apply makeup to the character’s face.</p><p>✅ Use elements like blush, eyeshadow, eyeliner, lipstick, and face art to create a variety of styles.</p><p><span class="bold">Body_Type</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808225">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/225/6079c4715dca67bb6759988a8d6c224c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750837339&amp;width=680&amp;sig=q9o2GI%2FWAJ7ucoOkbqXMFI0q7d23yBK0nsDZSGfW1mY%3D"/>
+</figure>
+</div>
+<p>✅ You can adjust the character's overall body type with sliders for muscularity, body fat, and slimness.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808229">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/229/71a51e68c5e778fe9bb00b1908ac753e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750837372&amp;width=680&amp;sig=yjsZMAAwpY6eko%2B9vhNhGtFMvBRZ4aETht2X2gSlazw%3D"/>
+</figure>
+</div>
+<p>✅ In the upper body, you can customize the size of the neck, trapezius, shoulders, chest, arms, hands, abdomen, waist, and back.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808234">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/234/50eb0c19b966adf24b00025a338c2113_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750837394&amp;width=680&amp;sig=h2jEUcsnxKLzPLQLmE7ceNTBLX9xh0K07MCRqUm%2B2EQ%3D"/>
+</figure>
+</div>
+<p>✅ In the lower body, you can customize the size of the hips, pelvis, thighs, calves, and feet.</p><p><span class="bold">Body_Proportion</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808238">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/238/e838b71fc31396f36cedfe6299d03a43_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750837427&amp;width=680&amp;sig=T6H5yzpywj8TkbwGYcXNggj4YIbsRwrBqJNJrDWKRUA%3D"/>
+</figure>
+</div>
+<p>✅ In the upper body, you can adjust the length of the neck, arms, fingers, and waist.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808242">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/242/e370b56b4b49524f4d9d84039abb054c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750837445&amp;width=680&amp;sig=dovIOtIdVNtmMyLsg6ZRJxQ5xqSF%2FlyOv9KuRa%2BTcG8%3D"/>
+</figure>
+</div>
+<p>✅ In the lower body, you can adjust the length of the thighs, calves, and toes.</p><p><span class="bold">Body_Detail</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808254">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/254/91cf239f0e3e9b6422c6563ce50c1520_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750837500&amp;width=680&amp;sig=zZlQ7TciTmtqVHt4oBUznm2WwQTOut1IhDeNkDoIGiU%3D"/>
+</figure>
+</div>
+<p>✅ You can add tattoos and carve unique scars onto the character’s body.</p><p><span class="bold">Outfit_Outer</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808264">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/264/7cd8d5b3f8c08e8b5eab2255c123a9ec_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750837535&amp;width=680&amp;sig=kZ1L6rQ6X4zHSex6BFO9UHt2i%2BN14DT0SJqp0xTqkUU%3D"/>
+</figure>
+</div>
+<p>✅ A variety of outfits are provided to complete the character's overall style.</p><p><span class="bold">Accessory_Neck</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808272">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/272/2a75392495e911bd0913cce98dd7b9df_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750837570&amp;width=680&amp;sig=4D4doJV3knRCgD2aYnnDf4S%2BEO%2B2W9jt5n%2FUPWQkWyI%3D"/>
+</figure>
+</div>
+<p>✅ Accessories allow for even more stylish and expressive customization.</p><p><span class="bold">Photo Studio</span></p><p>In the <span class="bold">Photo Studio</span>, you can apply rigging to your customized character, pose them, and change facial expressions for dynamic captures.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808617">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/617/56a23b06c33f34a0b58794d45eb568e7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750839939&amp;width=680&amp;sig=wTFnEGE4pSm%2BjmpzYyu3bh7rBZASI0RTW%2F9YO5wHPqE%3D"/>
+</figure>
+</div>
+<p>✅ Click “Add” at the top to import your custom character into the studio.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808621">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/621/aee1380aea3e8fdcbf939dc93f4095ad_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750839958&amp;width=680&amp;sig=4KrOlbb9KLpWqXkrIRSxt%2FOCg8mOs4EIUBqe8GQuFQ0%3D"/>
+</figure>
+</div>
+<p>✅ When a completed character is loaded into the Photo Studio, a layer is created for it, and each layer can be individually hidden or shown.</p><p>✅ You can adjust the camera angle manually or use recommended angles for quick and easy positioning.</p><p>✅ The outline color can be changed, and the thickness is fully adjustable.</p><p><span class="bold">Photo Mode, Background</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808628">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/628/cd723dff9a31ed819e6b1730285caaad_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840036&amp;width=680&amp;sig=HbW59pwbcD78j1vXO7v94EdZrulggvgES5XD1W5S4Vg%3D"/>
+</figure>
+</div>
+<p>✅ In Photo Mode, you can set a frame to capture images at your desired size.</p><p>✅ You can capture linework, base colors, textures, and shadows separately.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808629">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/629/024d64be82817c460560459202e5f3e5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840064&amp;width=680&amp;sig=AIrxftLndLReFLnVXlAMF4dMZ5gqSxMBKJp8XZVfmlo%3D"/>
+</figure>
+</div>
+<p>✅ Full capture provides results exactly as seen on screen.</p><p>✅ Framed capture generates an image based on the size you specify.</p><p>✅ Captured results are available in JPG or PNG format and are not provided as 3D files.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808630">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/630/b70637c2f230ac8623dabc9306f1f309_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840098&amp;width=680&amp;sig=fDsqLPS4V31YrT1WUpZE3rRt2eoSMmOmWxu4DPgc2CQ%3D"/>
+</figure>
+</div>
+<p>✅ You can load a previously captured background and adjust the character’s pose and rigging to match it.</p><p><span class="bold">Pose</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808634">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/634/cff33109050dd9c96c45514d3a424598_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840129&amp;width=680&amp;sig=XDpx1QcF0oH0e2lSGx9wntxxSBMdXbosvHyZYBKMn8c%3D"/>
+</figure>
+</div>
+<p>✅ You can quickly switch between various poses using pose presets.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808652">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/652/4e08d17b0223f0c3a5f9856f2e89df14_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840270&amp;width=680&amp;sig=5F30P85e0vZJeqC7VmtLxYBVVPxHBIIyc1t%2BE9qvnek%3D"/>
+</figure>
+</div>
+<p>✅ Characters can be moved, rotated, scaled, flipped horizontally, or removed.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808659">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/659/58353a2f4660d00c2cf481e4e93ec27f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840306&amp;width=680&amp;sig=Ch72j6pgXcbnhFvOfFgMRGM1ufQCeFMeYjry2OpgQg0%3D"/>
+</figure>
+</div>
+<p>✅ Fine-tuned poses can be created using rigging controls.</p><p><span class="bold">I Eye, Expression</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808664">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/664/7edbdd63b1eabff73dabf63684c65c02_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840350&amp;width=680&amp;sig=FmFmakLGinucWFYWaC1xHPiZ%2FFh43tfBGgxl9cZIkto%3D"/>
+</figure>
+</div>
+<p>✅ You can adjust the position of the pupils to control where the character is looking.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808666">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/666/e7cb758550c4c36b6713d7137ff87032_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840366&amp;width=680&amp;sig=GpMu2u2q1whIohoCDMww6mVDn4rLG8snc4FQ9CcyL7E%3D"/>
+</figure>
+</div>
+<p>✅ Expression presets allow you to easily control the character’s facial expressions.</p><p><span class="bold">Hand</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808674">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/674/039fe2f0d24fb6fa6d13720259280a88_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840392&amp;width=680&amp;sig=m1yNJtMdpIVPgQWv4piUcRuvaSw9W0rANHRcrHNi2iQ%3D"/>
+</figure>
+</div>
+<p>✅ Hand presets enable quick expression of various hand gestures.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808677">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/677/cbafe87d1ce30cffb3f517bbfa56fd59_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840406&amp;width=680&amp;sig=%2Bhhe9v5kSyRTxCOUdswKuvBomEWcHTCDIb11j%2F4rl8s%3D"/>
+</figure>
+</div>
+<p>✅ Detailed hand poses can be created using hand rigging.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808680">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/680/f180f520f9702809d5595b74a963f4d7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840418&amp;width=680&amp;sig=zTWQTdKeUC%2BoLddBNR94szQqrynbZQmhJRbg7qTbJvk%3D"/>
+</figure>
+</div>
+<p>✅ You can mirror the left and right hands and arms, as well as flip them horizontally.</p><p><span class="bold">Add Character</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808685">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/685/b704c535de79dac845b69b40c6f9cce1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750840449&amp;width=680&amp;sig=Apaq6qJu9%2BmE0pFh%2FH7si8o60%2FQSwECIYalhBOS4LbE%3D"/>
+</figure>
+</div>
+<p>✅ You can add characters for natural interactions in your scene or comic panel.</p><p><span class="bold">Feature Technology Preview</span></p><p>⚠️ The GIFs below showcase the core technology we’ve already developed — and yes, it’s the real deal. While the final UI and design may evolve for better usability, what you see here is the engine that will power your creative freedom.<br/> </p><p><span class="bold">Eyebrow Adjustment</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808803">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/808/803/cf389b89145d4acf3764b656897bfbb1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750840972&amp;width=680&amp;sig=VG5W0xV4b3e0cQLj0Lp4HLFYYYaWPv7sy9TEkWzoMiY%3D" src="https://i.kickstarter.com/assets/049/808/803/cf389b89145d4acf3764b656897bfbb1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750840972&amp;width=680&amp;sig=VG5W0xV4b3e0cQLj0Lp4HLFYYYaWPv7sy9TEkWzoMiY%3D"/>
+</figure>
+</div>
+<p>✅ Eyebrows can currently be customized using 5 sliders.</p><p><span class="bold">Eye Adjustment 1</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808780">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/808/780/a70d5a5b9004017cf1ee3e3a1c86cae3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750840912&amp;width=680&amp;sig=IP4BJwhSj5YUiYjEySrKimOY0clrcI6Ro3V8oQxuFRY%3D" src="https://i.kickstarter.com/assets/049/808/780/a70d5a5b9004017cf1ee3e3a1c86cae3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750840912&amp;width=680&amp;sig=IP4BJwhSj5YUiYjEySrKimOY0clrcI6Ro3V8oQxuFRY%3D"/>
+</figure>
+</div>
+<p>✅ Eye Adjustment 1 includes 5 sliders for facial customization.</p><p><span class="bold">Eye Adjustment 2</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808784">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/808/784/c375372819ed00c4916520f92b67eca7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750840931&amp;width=680&amp;sig=lCsJK4XhGkfvaKLnNeyc%2BxBZ9hwOqh4HsiriuC91C%2BY%3D" src="https://i.kickstarter.com/assets/049/808/784/c375372819ed00c4916520f92b67eca7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750840931&amp;width=680&amp;sig=lCsJK4XhGkfvaKLnNeyc%2BxBZ9hwOqh4HsiriuC91C%2BY%3D"/>
+</figure>
+</div>
+<p>✅ Eye Adjustment 2 includes 6 sliders for more detailed facial customization.</p><p><span class="bold">Nose Adjustment 1</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808798">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/808/798/c1cbba554b60e70b274898338b709e29_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750840960&amp;width=680&amp;sig=DbM6h5L5rLZxD1t9ZrvRRAPGqgVMRHfVMaDMAy3S1TU%3D" src="https://i.kickstarter.com/assets/049/808/798/c1cbba554b60e70b274898338b709e29_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750840960&amp;width=680&amp;sig=DbM6h5L5rLZxD1t9ZrvRRAPGqgVMRHfVMaDMAy3S1TU%3D"/>
+</figure>
+</div>
+<p>✅ Nose Adjustment 1 includes 3 sliders for customizing the nose.</p><p><span class="bold">Nose Adjustment 2</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808821">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/808/821/74f35749b2051082643c883ff52e7d49_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750841045&amp;width=680&amp;sig=QR4ay3tx7MKDpATKJyVnhHDGpoFnOR9KULZlkjUTjeQ%3D" src="https://i.kickstarter.com/assets/049/808/821/74f35749b2051082643c883ff52e7d49_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750841045&amp;width=680&amp;sig=QR4ay3tx7MKDpATKJyVnhHDGpoFnOR9KULZlkjUTjeQ%3D"/>
+</figure>
+</div>
+<p>✅ Nose Adjustment 2 also includes 3 sliders for further nose customization.</p><p><span class="bold">Mouth Adjustment</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808810">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/808/810/4d13fda8e97be74c6b478dd2c3a8dbb5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750840999&amp;width=680&amp;sig=C1NF1tBZ8KvlktN2CWYIIK7OVy4TpOsJnYk6vGO%2Fmi8%3D" src="https://i.kickstarter.com/assets/049/808/810/4d13fda8e97be74c6b478dd2c3a8dbb5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750840999&amp;width=680&amp;sig=C1NF1tBZ8KvlktN2CWYIIK7OVy4TpOsJnYk6vGO%2Fmi8%3D"/>
+</figure>
+</div>
+<p>✅ Mouth customization currently includes 5 sliders.</p><p><span class="bold">Jaw Adjustment</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808818">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/808/818/3a3290dc5cc86b148331834868acbec1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750841029&amp;width=680&amp;sig=5etUJMvX6Gib0UNbZwfTFJdMurNeukU%2Bv7%2Bn1uISGYA%3D" src="https://i.kickstarter.com/assets/049/808/818/3a3290dc5cc86b148331834868acbec1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750841029&amp;width=680&amp;sig=5etUJMvX6Gib0UNbZwfTFJdMurNeukU%2Bv7%2Bn1uISGYA%3D"/>
+</figure>
+</div>
+<p>✅ Jaw customization includes 7 sliders to fine-tune the facial structure.</p><p><span class="bold">Fine Editing</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808822">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/808/822/619474502e9e491f64e0c6d10b42f017_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750841055&amp;width=680&amp;sig=gWK9uNrsqjKeGj57c51tUM%2BojQfADX1TAnTa7dplluo%3D" src="https://i.kickstarter.com/assets/049/808/822/619474502e9e491f64e0c6d10b42f017_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750841055&amp;width=680&amp;sig=gWK9uNrsqjKeGj57c51tUM%2BojQfADX1TAnTa7dplluo%3D"/>
+</figure>
+</div>
+<p>✅ The design and UI for detailed editing points will be updated for easier use.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808827">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/827/e987b2315e4f036df3cd87918af839a1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750841075&amp;width=680&amp;sig=COXvuDWhRA657gYbcYE%2FjDh2EOgewewQs2nYkg6EqH4%3D"/>
+</figure>
+</div>
+<p>✅ After customizing the face, users can change the texture to better match their own drawing style.</p><p><span class="bold">Body Shape Editing: Male</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808837">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/808/837/a382cf80fbd61c5716f818d36f75a019_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750841095&amp;width=680&amp;sig=2iMC0gTYAAz42%2FMs2V3t9UQuWTux6AjwMa7F21tGlbY%3D" src="https://i.kickstarter.com/assets/049/808/837/a382cf80fbd61c5716f818d36f75a019_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750841095&amp;width=680&amp;sig=2iMC0gTYAAz42%2FMs2V3t9UQuWTux6AjwMa7F21tGlbY%3D"/>
+</figure>
+</div>
+<p><span class="bold">Body Shape Editing: Female</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808842">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/808/842/11e85c5d9614b486e776d003a4782d7b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750841117&amp;width=680&amp;sig=%2FTG92BwoO4az2i7oJhT%2BQRUDYeVYO2pu5yVnNIRBmkM%3D" src="https://i.kickstarter.com/assets/049/808/842/11e85c5d9614b486e776d003a4782d7b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750841117&amp;width=680&amp;sig=%2FTG92BwoO4az2i7oJhT%2BQRUDYeVYO2pu5yVnNIRBmkM%3D"/>
+</figure>
+</div>
+<p>✅ Male body customization is continuously being refined for more precise control.</p><p>✅ Textures are not yet applied, but a variety of textures will be added in the future.</p><p>🎨 <span class="bold">Final Touch: Post-Editing Your Characte</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863087">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/863/087/4ef8a13fc47f1c598c9e3ce3bb835e30_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751259183&amp;width=680&amp;sig=j%2BtZ%2BSAKeO0k8ArWmb8zV3gQUweC8L3yEGeQ3WwkIkk%3D" src="https://i.kickstarter.com/assets/049/863/087/4ef8a13fc47f1c598c9e3ce3bb835e30_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751259183&amp;width=680&amp;sig=j%2BtZ%2BSAKeO0k8ArWmb8zV3gQUweC8L3yEGeQ3WwkIkk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863089">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/863/089/8c01d1e6d49a006f0cb8a5251777d8bb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751259195&amp;width=680&amp;sig=PTwGmimPgwF9SvOz8L5Jv3rJiylrNS9nHOxQFH2OCMo%3D" src="https://i.kickstarter.com/assets/049/863/089/8c01d1e6d49a006f0cb8a5251777d8bb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751259195&amp;width=680&amp;sig=PTwGmimPgwF9SvOz8L5Jv3rJiylrNS9nHOxQFH2OCMo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863090">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/863/090/e1ebcb01ffa4bb3cf0eed24d5e18a698_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751259198&amp;width=680&amp;sig=yASES0Y%2BIJc%2FbyWUyp94OtR1oD5KCYFgJH3YwB9MsGU%3D" src="https://i.kickstarter.com/assets/049/863/090/e1ebcb01ffa4bb3cf0eed24d5e18a698_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751259198&amp;width=680&amp;sig=yASES0Y%2BIJc%2FbyWUyp94OtR1oD5KCYFgJH3YwB9MsGU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863095">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/863/095/9ba2369b5b35ed48e7404e2d0372e544_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751259212&amp;width=680&amp;sig=QCl9BxymyH%2BAdqWVxIOZgNjsKO83Jz4qWvksVVqfOOQ%3D" src="https://i.kickstarter.com/assets/049/863/095/9ba2369b5b35ed48e7404e2d0372e544_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751259212&amp;width=680&amp;sig=QCl9BxymyH%2BAdqWVxIOZgNjsKO83Jz4qWvksVVqfOOQ%3D"/>
+</figure>
+</div>
+<p>After customizing your character’s body shape in 3D with Toonit Studio, creators often take their exported images into external software for a final polish. This post-editing step allows for additional detail, stylization, and integration into their unique art style — whether for a webtoon, illustration, or animation.</p><p><span class="bold">💡 Where Did This Project Come From?</span></p><p>As former startup operators and creators, we’ve seen firsthand how demanding visual content production is — especially in the webtoon and manga world. Artists are stuck redrawing similar panels every week under insane deadlines.</p><p>We launched <span class="bold">Toonit Studio</span> in early 2024 and quickly learned from our users that custom character creation was the biggest unmet need. CCC was born out of hundreds of conversations with creators — who wanted to save time without sacrificing style.</p><p><span class="bold">📅 What’s the Plan and Schedule?</span></p><p>We’ve already built a working prototype. The funds from this campaign will go toward polishing the beta version, adding more presets and styles, and making CCC stable and scalable for creators worldwide.</p><p><span class="bold">Timeline</span>:</p><p>• 📦 July: Campaign ends</p><p>• 🔧 August–October: Feature development, asset expansion</p><p>• 🚀 November: Beta launch to backers</p><p>• 🌍 December: Public release</p><p><span class="bold">💰 What’s Our Budget?</span></p><p>We’re raising <span class="bold">$20,000</span> to finalize the development of CCC and launch it globally.</p><p><span class="bold">Budget Breakdown</span>:</p><p>• 👨‍💻 45% Development (frontend/backend integration)</p><p>• 🎨 25% Character &amp; clothing presets</p><p>• 🔍 15% UI/UX polishing &amp; testing</p><p>• 💾 10% Cloud hosting and deployment</p><p>• 📢 5% Marketing &amp; creator partnerships</p><p><span class="bold">❤️ Why We Care</span></p><p>We believe <span class="bold">creativity should not be limited by technical barriers</span>. Artists should spend time telling stories, not wrestling with 3D software or redrawing scenes endlessly.</p><p>With CCC, we’re not just building a tool — we’re creating a <span class="bold">new standard for visual storytelling</span> where originality is celebrated, and creators are empowered to work faster and express more.</p><p>Let’s make 3D creation accessible, fun, and wildly creative — together.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">This project does not contain any content generated by generative AI.
+
+Due to the nature of this project, which begins production and execution immediately after the campaign ends, refunds due to a simple change of mind will not be available.
+
+If rewards are not delivered within 30 days of the estimated delivery date, we will offer refunds (excluding platform and payment processing fees) to backers who request it.
+
+If there are serious defects in the delivered reward or copyright issues arise, refunds will be granted.
+(Platform fee: 5% of the total amount raised, VAT not included / Payment fee: 3% of successful transactions, VAT not included)
+
+Rewards cannot be transferred to others once delivered.
+
+At present, no major risks are expected. However, due to unforeseen circumstances, a delay of 2–3 weeks may occur. If such a delay happens, we will ship any completed portions first and announce the revised delivery timeline as soon as possible.
+
+Some features that require further development may not be included in the initial reward delivery but will be added through future updates.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">We designed the Custom Character Creator (CCC) to be a long-lasting, evolving platform rather than a one-off tool. By building it as a browser-based service with cloud storage, creators’ characters and assets remain accessible and usable anytime, without relying on specific devices or software versions. We also plan regular content updates — such as new presets, styles, and features — informed by creator feedback, ensuring CCC stays relevant and valuable as creators’ needs and trends evolve.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">Since Toonit Studio provides digital content only, there is no need for physical shipping, packaging, or transportation. This significantly reduces carbon emissions and supports a more eco-friendly method of delivering rewards to our backers.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

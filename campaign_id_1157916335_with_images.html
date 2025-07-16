@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHOTONoBOOK displays your photos in the best HDR format</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/795/610/7596bd7851490ca14e147bb80e357525_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750768027&width=560&sig=F8WBfLZf21OVKOPI5E1Ls6Kpuzc7iG0gelslHN5p%2BuE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>PHOTONoBOOK displays your photos in the best HDR format</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">New Software to show your photos like never before on HDR displays (brightness up to +4EV, 10-12 bit) ... much larger than smartphones</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,168</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:What-do-you-shoot-"><span class="bold">What do you shoot ?</span></h3><p>Consider HDR at least if you shoot digital <span class="bold">landscape</span>, <span class="bold">night photography, macro</span>, <span class="bold">water</span>, <span class="bold">glass</span>, <span class="bold">cars </span>and whatever glossy subject, <span class="bold">wildlife</span>, <span class="bold">sky</span>, <span class="bold">artworks</span>, <span class="bold">paintings</span>, <span class="bold">ceramics </span>and whatever high-white-color gradients subject, and also if you shoot <span class="bold">Black/White</span>.</p><h3 class="page-anchor" id="h:What-means-Dynamic-Range-andwhat-means-High-Dynamic-Range-">What means Dynamic Range and<br/><span class="bold">what means High Dynamic Range</span>
+</h3><p>By "HDR" we mean video signals sent to displays from PCs playing image files containing extended brightness (&gt;SDR) and 10–12-bit color depth, avoiding color banding.<br/><span class="text-italic">This is <span class="bold">not the traditional photo merging process</span> producing a single image exposed both for lights and shadows.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49824066">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/824/066/28b369155fb915a3ab4954eb4afcabe5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750934399&amp;width=680&amp;sig=DZTyCQINyI%2FBWzVe3YU9dT8BGnDhzO4u646RfdN5CEI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:HDR-facts"><span class="bold">HDR facts</span></h3><p><span class="bold">For more than 10 years Full-frame cameras captured RAW with ~14EV dynamic range</span> using 12–14-bit. Taking into consideration noise, the effective dynamic range was -and still is 11~12 EV.<br/>The best <span class="bold">photo printing technology can show only 8EV</span> of dynamic range, the same can do the <span class="bold">best SDR professional monitor</span> and also the <span class="bold">best edited JPEG</span> SDR.<br/><span class="bold">Since 2024 HDR file formats are supported by the main web browsers</span> and <span class="bold">by main digital developing software</span>, and now also <span class="bold">some social media platform can show also HDR</span> images.</p><h3 class="page-anchor" id="h:-It-s-time-to-change-leave-SDR-JPEGs-and-go-to-HDR-">
+<span class="bold">It's time to change:</span><br/><span class="bold">leave SDR JPEGs and go to HDR !</span>
+</h3><h3 class="page-anchor" id="h:-But-showing-the-best-HDR-file-formats-is-still-a-challenge-here-comes-PHOTONoBOOK-software-">
+<span class="bold">But showing the best HDR file formats is still a challenge:</span><br/><span class="bold">here comes PHOTONoBOOK software !</span>
+</h3><h3 class="page-anchor" id="h:What-are-HDR-photos-"><span class="bold">What are HDR photos ?</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49779813">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/779/813/697323f3b40e51d3c62e654cf8152cd8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750671915&amp;width=680&amp;sig=ayIaSCO6azDajH51mEbYjsxu89RDefmB0pyz2FF9BB4%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">*Note: All images on Kickstarter (like almost all websites) are reprocessed with SDR (Standard Dynamic Range), resulting in only 8-bit JPEGs. Image labeled "HDR" here is simulation downgraded to SDR (and SDR is further downgraded).*</span></p><p>As said, HDR still images are files containing extended brightness (&gt;SDR) and 10–12-bit color depth (avoid color banding), resulting in up to +4EV over SDR peak brightness.</p><p>To better understand HDR, which is born in the motion pictures environment, you can read Wikipedia (<span>https://en.wikipedia.org/wiki/High_dynamic_range</span>) <br/>or a video motion pictures specialized website like VMI (<span>https://vmi.tv/blog/learn-help/hdr_survival_guide</span>) - <span class="text-italic">tanks VMI for the image shown above.</span></p><p>HDR photography already exists, as does the ability to view HDR images in some software—this is a non-issue. If you use Apple and lower-quality HDR HEIC files, everything works smoothly (but the HDR quality is the lowest HDR available).<br/>Using Microsoft Windows environment, we shall use HDR file formats other than HEIC, that web browsers can already display pulled from a server—and that's even on Apple MACs.<br/>You can read and view further on this site: <span>https://gregbenzphotography.com/hdr/</span>.</p><p>However, you can only view HDR images manually one-by-one, or view a slideshow within advertising frames or only at reduced 2K resolution.<br/>To view or display HDR photos with the best possible HDR quality, fullscreen in 4k, you have to rely on one of the only two HDR-capable digital developing software: <span>Adobe Lightroom</span> or <span>Zoner Studio</span>.</p><p>If you want a <span class="bold">structured slideshow</span> (<span class="bold">multi-album</span>, <span class="bold">varied transitions</span>, <span class="bold">scheduling</span>, etc.), no device or software currently meets this need.</p><h4 class="page-anchor" id="h:This-is-what-PHOTONoBOOK-software-does-"><span class="bold">This is what PHOTONoBOOK software does!</span></h4><h3 class="page-anchor" id="h:Want-to-display-at-best-your-own-HDR-photos-"><span class="bold">Want to display at best your own HDR photos?</span></h3><p>In order to do it, you need compatible hardware (which you maybe already own), development software (which you likely use), and a slideshow player software like PHOTONoBOOK.</p><h4 class="page-anchor" id="h:Where-does-PHOTONoBOOK-came-from-"><span class="bold">Where does PHOTONoBOOK came from ?</span></h4><p><img class="image" data-id="49780310" src="https://i.kickstarter.com/assets/049/780/310/a06c1f80e7e6c852056f85b3b3100115_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750674936&amp;width=3840&amp;sig=tgGXXR5q9LeCt%2F6dYV3uelCgXYUi%2BNsQSiq%2F%2BXqXIzs%3D"/>During the development of <span class="text-italic">HDRplayer</span> projct, aiming to create an HDR photo playback hardware device — which is also a Kickstarter project I collaborate on (<span>https://www.kickstarter.com/projects/fineware/hdrplayer-expands-the-dynamic-range-of-your-photos</span>)—we realized many photographers <span class="bold">already own HDR-ready hardware.</span></p><p>Here comes <span class="bold">PHOTONoBOOK simply software</span>: a streamlined software solution for viewing HDR photos on compatible PCs connected to HDR displays.</p><p>Sharing the basis of HDRplayer, PHOTONoBOOK software is already in an advanced stage of development. We plan to complete and distribute it to backers, offering select features of its sibling bigger project <span class="text-italic"><span class="bold">HDRplayer</span></span> (which remains separate).<br/>For that reason <span class="bold">we can yet offer a DEMO-TEST software release</span>, limited to a basic single folder slideshow limited to 30 slides working for 10 minutes, for a simbolic contribution of only 1 € (see Project Rewards).<br/>Using this very simple tool you can test Windows PCs and displays, compare SDR images with HDR and understand how good HDR images could be.</p><h3 class="page-anchor" id="h:What-is-PHOTONoBOOK"><span class="bold">What is PHOTONoBOOK</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49782599">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/782/599/26082b26e23392e64e2110f4549747dc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750688270&amp;width=680&amp;sig=3ufgkQGO2%2FLSM9Dh74I7jpgIMO5q5lshsjLa8j7fEZI%3D"/>
+</figure>
+</div>
+<p>PHOTONoBOOK is a moderately structured slideshow player software designed to show (not to print, as the name suggests) images stored on local folders.<br/>It support both SDR and HDR images, based on display settings and image formats.</p><p>The more expensive HDRplayer will host a more sophisticated software working on database, managing multiple storages, allowing also images backup and future online upgrades.</p><p>Currently, <span class="bold">no other software enables full-screen structured HDR slideshows</span> (<span class="text-italic">HDRplayer</span> is in development but separate).</p><h4 class="page-anchor" id="h:What-it-is-NOT"><span class="bold">What it is NOT</span></h4><ul>
+<li>
+<span class="bold">Not HDR video</span> (easily viewable with widely available hardware/software), but <span class="bold">static images</span>: photographs.</li>
+<li>
+<span class="bold">Not HDR drawings</span> (e.g., created in Photoshop).</li>
+<li>Not a player for HEIC files. Why? Read "HDR file formats" and "Why avoid HEIC (today)?".</li>
+<li>
+<span class="bold">Not traditional digital HDR photography</span> (merging multiple exposures for shadow/highlight detail).</li>
+</ul><h3 class="page-anchor" id="h:-PHOTONoBOOK-Features-">
+<img class="image" data-id="49782588" src="https://i.kickstarter.com/assets/049/782/588/e3fb88f2061de03aaa23e3e7577419c5_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750688214&amp;width=2942&amp;sig=liQhNFhJajA17302h%2BBtU34x9OKvaw5yvKC2xXHXCWM%3D"/><span class="bold">PHOTONoBOOK Features</span>
+</h3><ul>
+<li>Displays images in slideshows.</li>
+<li>Supports JPEG and AVIF file formats (SDR and HDR).</li>
+<li>Manages images loaded in local folder/subfolder structures.</li>
+<li>Treats subfolders as Albums.</li>
+<li>Allows album selection, reordering, and per-album settings: timing, display order, transitions.</li>
+<li>Includes calendar scheduling (start/end times per album).</li>
+<li>Prevents pixel burn-in (when a slideshow is not running).</li>
+<li>Runs on Windows 11 with Intel/AMD (not guaranteed on Windows 10).</li>
+<li><span class="text-italic">Planned:  remote controlled by UDP strings over LAN (not guaranteed).</span></li>
+<li><span class="text-italic">Planned: macOS version (not guaranteed - will be added as a reward if confirmed functional).</span></li>
+</ul><p>PHOTONoBOOK will evolve to support HDR web content, newer formats and photographer workflows.</p><h3 class="page-anchor" id="h:HDR-file-formats-make-your-choice"><span class="bold">HDR file formats: make your choice</span></h3><p>HDR data (higher brightness + bit depth) can exist in TIFF/RAW files but are only visible when processed correctly in editing software (e.g., Adobe Lightroom, Photoshop, Zoner Studio - but these software tools are not structured slideshow players).</p><p><img class="image" data-id="49780081" src="https://i.kickstarter.com/assets/049/780/081/bafd2310f17675d8a9d2682441a65b10_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673474&amp;width=899&amp;sig=lBQeezXWvES0Aw92ZGNXMknz045CJv0ioD%2FyLQ9Y89c%3D"/><br/>Many formats support HDR, but quality varies. <span class="bold">JPEG XL and AVIF excel</span> as yo can see in this table.</p><p><img class="image" data-id="49780088" src="https://i.kickstarter.com/assets/049/780/088/f684f876e9e3a64e2b19026cdbbeedbf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673498&amp;width=1087&amp;sig=qWct5JYOdNREFmJR7NRZeN7zqt9%2Bfa0iLaaU3dE0TEg%3D"/>Taking into consideration platform compatibility, beyond smartphones is limited. <span class="bold">AVIF leads</span> as you can see here.</p><h3 class="page-anchor" id="h:Shooting-HDR-Photos"><span class="bold">Shooting HDR Photos</span></h3><p>Since almost 10 years Full-frame cameras capture RAW with ~14EV dynamic range using 12–14-bit.<br/>Taking into consideration noise, the effective dynamic range is still 11~12 EV: more than enough for HDR developing and publishing.</p><p>We suggest to go this way: <span class="text-italic"><span class="bold">Shoot RAW → Develop HDR → Export AVIF.</span></span></p><p>Now it is possible to develop HDR only using these software, that you have to pay for:<br/>- <span>Adobe Lightroom</span> (costly subscription)<br/>- <span>Zoner Studio</span> (≈1/3 Lightroom’s cost)</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780102">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/102/6de353b02612df19ae042ae1f740e485_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673579&amp;width=680&amp;sig=ITPOxVjob8ecAzHjKlX0YBes%2FLz5ncVVvUAZov%2F2REg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Why-avoid-HEIC-today-"><span class="bold">Why avoid HEIC (today)?</span></h4><p>HEIC (default on iPhones since iOS 11) loses HDR data on non-Apple displays (converted to SDR). Sony, Canon, and Nikon adopted HEIC but face cross-platform issues.</p><p>Critically, today HEIC files shooted in camera and also exported from editing software have a <span class="bold">relative low peak brightness </span>(<span class="bold">+1 /+2EV</span> over SDR), limited by:<br/>- iPhone’s narrow dynamic range vs. full-frame cameras<br/>- Apple’s early market dominance<br/>- HDR displays were dimmer than today's, when HEIC was launched.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780108">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/108/8812a84db088ac05dc70432c029cb767_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673601&amp;width=680&amp;sig=Pexbu%2FjS6AY7cR%2BUD2yjE5reM9JDsbIRcqfWbdB%2FhQQ%3D"/>
+</figure>
+</div>
+<p>Future implementation sould imporve HEIC HDR quality, but until today these are the facts.<br/>Most photographers have found HEIC’s complexity unjustified versus SDR JPEG (I too!).<br/>This small quality improvement and the impossibility of sharing online HDR HEIC files explain the quite unanimous opinion expressed in the last years in chats and websites: it was better to stay with JPEG.<br/>But things are changing, already changed in 2024 allowing high quality AVIF files to be published online and shared on some social networks!</p><h4 class="page-anchor" id="h:Why-choose-AVIF-"><span class="bold">Why choose AVIF ?</span></h4><p>AVIF format allows brightness up to <span class="bold">+4EV</span> over SDR. It also encodes separate HDR/SDR color spaces, auto-adapting to playback systems.<br/>Experts recommend AVIF for compressed HDR viewing.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780114">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/114/d786008a6c6c27ac1e4eb318e34e99a4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673634&amp;width=680&amp;sig=hT0S2EFRWZkOt1EqTgCikhClZrenO4nHQAld%2BwleS%2Bo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-use-Editing-software-"><span class="bold">Why use Editing software ?</span></h3><p>HDR could expands dynamic range by +4EV beyond SDR. Manual editing (Adobe Lightroom, Zoner Studio) is essential to <span class="bold">optimize image brightness for the brightness of the target display</span>. Since late 2023, Adobe and Zoner added HDR development with luminance monitoring.</p><p>Color space is also important, therefore we suggest to export AVIF files with dual color profile:<br/>- HDR <span class="bold">(Rec.2020)</span><br/>- SDR <span class="bold">(sRGB)</span></p><h4 class="page-anchor" id="h:But-editing-software-alone-can-t-deliver-structured-slideshows"><span class="bold">But editing software alone can’t deliver structured slideshows</span></h4><ul>
+<li>Lightroom: Web-only slideshows (max 2048px).</li>
+<li>Zoner Studio: Resolution-unlimited but displays in branded web frames.<br/><span class="text-italic">PHOTONoBOOK enables full-screen, full-resolution HDR slideshows.</span>
+</li>
+</ul><h4 class="page-anchor" id="h:This-is-what-PHOTONoBOOK-software-does-"><span class="bold">This is what PHOTONoBOOK software does!</span></h4><h3 class="page-anchor" id="h:HDR-Compatible-Hardware"><span class="bold">HDR-Compatible Hardware</span></h3><h4 class="page-anchor" id="h:Your-PC-"><span class="bold">Your PC:</span></h4><ul>
+<li>PHOTONoBOOK runs on Windows 11/10 (Intel/AMD only; ARM unsupported).</li>
+<li>Modern PC GPUs support HDR graphics at OS level.</li>
+<li>In Windows 11: <span class="text-italic">Settings &gt; Display &gt; HDR Settings</span> verifies capabilities.<br/><span class="text-italic">macOS version in development.</span>
+</li>
+</ul><h4 class="page-anchor" id="h:Your-Display-"><span class="bold">Your Display:</span></h4><ul>
+<li>HDR TVs/monitors (HDR10, Dolby Vision, HLG) now feature peak brightness &gt;1.000 nits (+3EV vs. SDR’s 100 nits), 10–12-bit color, and rich blacks.</li>
+<li>OLED/microLED/LED tech enables HDR on all screen sizes.</li>
+<li>Many displays are factory-calibrated for accurate HDR colors.</li>
+</ul><p>- SDR max: 8-bit (16M color shades)<br/>- HDR: 10–12-bit (1.000M–68.000M color shades)</p><h3 class="page-anchor" id="h:If-you-have-not-already-an-HDR-display"><span class="bold">If you have not already an HDR display</span></h3><p>Better is to evaluate first and then buy.<br/>You can count on few reliable Reviewers or on the Return and Refung services.</p><h4 class="page-anchor" id="h:Where-to-find-reliable-HDR-display-recommendations-"><span class="bold">Where to find reliable HDR display recommendations?</span></h4><p>Some displays cannot show a wide color gamut, but most of them can—although not all are well-calibrated by the manufacturer.<br/>As a general rule, we can say that the more expensive displays from major brands are usually better, but it’s always best to read reviews before making a choice.<br/>To our knowledge, the only website offering objective, instrument-based testing (rather than just opinions) is <span>RTINGS.com</span>.<br/>Below are links to their test results (with scores over 7 for HDR and color performance) for medium-to-large-sized displays, categorized into:<br/>- Computers / Monitors: <span>https://www.rtings.com/monitor/tools/table/169382</span><br/>- Home Entertainment / TVs: <span>https://www.rtings.com/tv/tools/table/169383</span></p><h4 class="page-anchor" id="h:Test-buy"><span class="bold">Test &amp; buy</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49781223">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/781/223/4428d08fbc7fb64845d2410dc1e806ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750680983&amp;width=680&amp;sig=7Sjp%2Fa4Mi4I%2FcDc5bCDWVMzJTmkR196cTPPY4gbYKgs%3D"/>
+</figure>
+</div>
+<p>We suggest the same workflow we already use:</p><ol>
+<li>Order an HDR display from a reseller thath allows Return&amp;Refund service (i.e. Amazon if you like it - or others), then manage with care the received package.</li>
+<li>Test it and evaluate </li>
+<li>Finally you have to decide: take it if you are satisfied, or send it back for refund ... and go again for another device.</li>
+<li><span class="text-italic">Anyway, if you are not satisfied by Amazon (whatever it could mean) you can buy from other sellers or using other channels, and it seems could be better for the whole market-system.</span></li>
+</ol><h3 class="page-anchor" id="h:How-to-test-PC-Display"><span class="bold">How to test PC / Display</span></h3><ol>
+<li>Verify the specifications of your devices, whether they support HDR graphics</li>
+<li>Connect the HDR-ready display to the HDR-ready PC via an HDR-ready cable.</li>
+<li>On PC Enable HDR (<span class="text-italic">Settings &gt; Display</span>).</li>
+<li>Calibrate using Windows HDR Calibration app from Microsoft Store</li>
+</ol>
+<ol>
+<li>Better is to calibrate with dimmed ambient lights</li>
+<li>Test HDR with test-demo images and SDR vs. HDR comparison</li>
+</ol><h4 class="page-anchor" id="h:Where-to-find-HDR-images-if-you-have-not-your-own-"><span class="bold">Where to find HDR images (if you have not your own)</span></h4><ul>
+<li>Online on websites dediceted to HDR (i.e.  <span>https://gregbenzphotography.com/hdr/</span>)</li>
+<li>Googling HDR demo images</li>
+<li>Funding with 1 € our DEMO-TEST PHOTONoBOOK reward and then use the software we will send you.<br/>It allows you to view your own AVIF and JPEG photos, either SDR and HDR</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49781232">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/781/232/67e0892fcef0599ac294a274afcf9858_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750681034&amp;width=680&amp;sig=%2F%2FyVHooAHLtceVG9DeBlAZpc20lhYkiQ4LWpc7izBwI%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Test-with-your-photos-"><span class="bold">Test with your photos:</span></h4><ol>
+<li>Export HDR images as AVIF (Rec.2020, native display resolution).</li>
+<li>Save to C:\PHOTONoBOOK\images.</li>
+<li>Download HDRplayer-FREE.exe (shared core with PHOTONoBOOK).</li>
+<li>Ensure port 80 is free.</li>
+<li>Run to launch slideshow in Microsoft Edge.</li>
+</ol><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780131">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/131/91b09464b82cbfc9e3d090fafe994884_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673742&amp;width=680&amp;sig=d3mbQqwRmXHUsYCwkpSiMPCFbAJ8AqLnY2PiWbZRQCo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:PHOTONoBOOK-alternatives"><span class="bold">PHOTONoBOOK alternatives</span></h3><ul>
+<li>For simple AVIF HDR slideshows on large screens you can pay Adobe plugins.</li>
+<li>For sophisticated AVIF HDR slideshow you have to count on custom-coded solutions to be developed.</li>
+</ul><h4 class="page-anchor" id="h:But-No-other-software-hardware-offers-what-PHOTONoBOOK-allows"><span class="bold">But No other software/hardware offers what PHOTONoBOOK allows</span></h4><ul>
+<li>10/12-bit SDR/HDR playback</li>
+<li>Folder/subfolder management</li>
+<li>Calendar scheduling</li>
+<li><span class="text-italic">planned LAN remote control (not guaranteed)</span></li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49782616">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/782/616/2ef71f8d12d8aa2b8efe6eeea79b8583_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750688354&amp;width=680&amp;sig=xjdvRyBEt92LO5kVkWcZXaPeqKWlsghTNIWB3zFj5iI%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:HDR-photos-on-all-the-other-slideshow-software-available-today-"><span class="bold">HDR photos on all the other slideshow software available today </span></h4><ul>
+<li>Show low-quality HEIC HDR, on all Apple devices.</li>
+<li>Reduce resolution to 2k or frame the image inside marketing infos</li>
+<li>Downgrade image to SDR (mostrly with color/luminance inaccuracies).</li>
+</ul><h3 class="page-anchor" id="h:Photography-Genres-that-benefit-most-from-HDR"><span class="bold">Photography Genres that benefit most from HDR</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49786698">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/786/698/a5efc729c67756f1f4f9600494339645_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750710456&amp;width=680&amp;sig=hmzAhJ1HBF%2FHUlPfIDjZ9b%2B6JROpuZMrgUe%2FOPbE43Q%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Brightness-Enhancement"><span class="bold">Brightness Enhancement</span></h4><ul>
+<li>Direct/reflected light (<span class="bold">landscapes</span>, <span class="bold">night photography, macro</span>, <span class="bold">water</span>, <span class="bold">glass</span>, <span class="bold">cars </span>and whatever glossy objects).</li>
+<li>High-white-color gradients (<span class="bold">sky</span>, <span class="bold">artworks</span>, <span class="bold">paintings</span>, <span class="bold">ceramics, glass</span>, <span class="bold">white-paper drawings</span>).</li>
+<li>Increased contrast and whiter whites (<span class="bold">B&amp;W photography</span>).</li>
+</ul><h4 class="page-anchor" id="h:Higher-Color-Depth"><span class="bold">Higher Color Depth</span></h4><ul><li>Critical for <span class="bold">landscapes</span>, <span class="bold">sky</span>, <span class="bold">wildlife</span>, <span class="bold">macro</span>, <span class="bold">artworks</span>, and <span class="bold">pure B&amp;W</span> (1,024–4,096 HDR tones vs. only 256 SDR tones).</li></ul></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">No significant risks: HDR imaging/viewing is established; PHOTONoBOOK adds management functions. Core functionality is complete.
+Remaining development:
+•	Per-album transition settings.
+•	LAN command integration (calendar start/end).
+•	macOS version validation.
+Test the demo now: Back with €1+ to receive the Test-Demo Lifetime Limited version (10-min slideshow, 30 files, 5s timing).</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18 mt5">I plan to use AI-generated content in my project.</h3><h4 class="bold lh4" style="margin-bottom: 1.5rem;">What parts of your project will use AI generated content? Please be as specific as possible.</h4><p class="border-left border-create-700 border-left5px pl3">Utilizzerò AI sia per la traduzione di testi dalla mia linguia (italiano) all'inglese in cui pubblico il progetto, che come filtro di verifica per il codice di programmazione informatica.</p><h4 class="bold lh4" style="margin-bottom: 1.5rem;">Do you have the consent of owners of the works that were (or will be) used to produce the AI generated portion of your projects? Please explain.</h4><p class="border-left border-create-700 border-left5px pl3">Non utilizzerò opere generate da AI nel progetto</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Lifetime license (no subscriptions), made for the latest Microsoft Windows Oprating System.
+As 8-bit SDR JPEG lasts for decades before the newest JPEG, HEIC and AVIF formats arrive, and still is the preferred.
+A software player dediceted to the newes file formats (but compatible with the oldest) will be able to show slideshow for thenext decades.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">PHOTONoBOOK is simply downloadable software, therefore nothing goes to the trash can, neither to the recycle bin. 
+The software runs on existing PCs and has low resource usage, allowing to recycle realtively old PCs.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">Zero-material distribution: Digital download + on-screen documentation.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">As already said, it is a downloadable software: zero production, reduced carbon footprint.
+To show HDR images is not possible on printed photos, because the latter have narrower SDR. Therefore PHOTNoBOOK will reduce the number of printed photos and the quantity of ink used, and reduce also the pollution produced by printig processes.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">No manufacturing Internet delivery only, reducing carbon footprint.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

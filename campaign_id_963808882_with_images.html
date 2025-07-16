@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echolens - The Digital Camera That Feels Like Film</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/006/873/8ebda9bfb726c20fb0bb6fddeca853f4_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752268374&width=560&sig=KviJgRzRt4XURI%2FyXsVEeuoVKrT8NVws9svlW0rZOIc%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>echolens - The Digital Camera That Feels Like Film</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Timeless film aesthetics meet digital convenience. Savor every shot, share every story.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 30,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:The-Digital-Camera-That-Feels-Like-Film-">The Digital Camera That Feels Like Film<img class="image" data-id="49671718" src="https://i.kickstarter.com/assets/049/671/718/2459b15904a502ccea9c5e0f4623a222_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749870619&amp;width=852&amp;sig=uLGlNCrOByun0Iz4EhtmMJV0HW9%2Bs%2FltxIxMpJLY1zg%3D"/>
+</h3><p>Over the past few years, we kept seeing a curious revival: handheld cameras making a comeback on social feeds, analog enthusiasts hunting down discontinued rolls, and digital creators craving that imperfect, tactile feel. One night, our best friend Ema showed up with an old-school, digital camera in hand. Watching her swap memory cards and share candid, grainy snaps felt like rediscovering something magical—and it lit a spark in us. As three lifelong friends who grew up devouring disposable cameras and clicking away on point-and-shoots, we realized we wanted more than just a quick ‘gram; we wanted to feel the click, the winding crank, and the moment of surprise when you see a developed frame—<span class="text-italic">yet still be able to share instantly</span>. That’s how echolens was born: a nod to the past inspired by Ema’s moment, wrapped in modern Wi-Fi magic so you can stay present, shoot like there’s no redownload button, and still post that shot before your coffee gets cold.</p><h3 class="page-anchor" id="h:Timeless-Aesthetics-Future-Proof-Technology-">Timeless Aesthetics, Future-Proof Technology<img class="image" data-id="49671776" src="https://i.kickstarter.com/assets/049/671/776/520389c9fb521b827e90df577612e56f_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749871214&amp;width=1000&amp;sig=7DYdKgonRIbl3vOMHiGW%2FfEXfT6%2FQWvMrxSv5CucyL0%3D"/>
+</h3><p>We took that iconic film look—the warm tones, organic grain, and satisfying click of a winding crank—and married it to a camera body built like a classic vintage piece, with brushed aluminum accents and precision-machined controls that feel as solid as any heirloom. Inside, you’ll find fast USB-C charging, a bright Xenon flash, CMOS sensor, and instant Wi-Fi transfer, so you get that timeless film vibe and the speed of modern sharing. </p><p><span class="bold">The result is echolens: a re-usable camera that looks and feels nostalgic, yet delivers today’s digital performance in a beautifully crafted package.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49657860">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/657/860/e117118c6ecbab5763d37004f8b6673a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749774734&amp;width=680&amp;sig=jNgj0Zq0EO1Y8tmgJaSkQ4cYcNNus%2FXQT9ky7gIhYmU%3D" src="https://i.kickstarter.com/assets/049/657/860/e117118c6ecbab5763d37004f8b6673a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749774734&amp;width=680&amp;sig=jNgj0Zq0EO1Y8tmgJaSkQ4cYcNNus%2FXQT9ky7gIhYmU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659376">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/659/376/0adc0ca18d7cb4ed359bf2c1db762035_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749785357&amp;width=680&amp;sig=ABrNIk0%2BGJFgm7Uv8eCM%2BMc1ihUpQXY92o%2BoMUoEkM0%3D" src="https://i.kickstarter.com/assets/049/659/376/0adc0ca18d7cb4ed359bf2c1db762035_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749785357&amp;width=680&amp;sig=ABrNIk0%2BGJFgm7Uv8eCM%2BMc1ihUpQXY92o%2BoMUoEkM0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Innovation-for-the-Modern-Storyteller-">Innovation for the Modern Storyteller </h3><p>There’s something undeniably magical about holding a real camera in your hands—the weight of its body, the click of a mechanical shutter, the ritual of winding a frame and composing through a viewfinder. Each digital roll loaded on the app has 54 shots. With echolens, you’re forced to slow down, consider each shot, and truly live in the moment instead of endlessly scrolling on a screen. And that tactile experience not only makes every photo feel intentional, but it also frees you from notifications and digital distractions. In short, using a physical camera is much more satisfying than tapping a touchscreen: it turns shooting into an event, reconnects you with your surroundings, and makes every captured memory feel as authentic as the moment itself.</p><p><img class="image" data-id="49658927" src="https://i.kickstarter.com/assets/049/658/927/0ab47f3866bf0ea2273143c092f4eeb8_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749782249&amp;width=2000&amp;sig=bhpRBlhWtqHtGSRVj99O%2FYeKbJZAZtAZCIj4Owdiwqg%3D"/></p><h3 class="page-anchor" id="h:Your-Favorite-Film-Digitally-Reimagined-">Your Favorite Film. Digitally Reimagined.</h3><p>We’ve spent all of 2025 obsessing over the perfect film look—and now we’re finally ready to share it. echolens comes with <span class="bold">four built-in film emulations</span> straight out of the box, crafted to capture those dreamy, throwback vibes without any editing needed.</p><h4 class="page-anchor" id="h:1-Kodagrain"><span class="text-italic">1. Kodagrain</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Warm and textured like a roll of 70s Kodak film — organic, timeless color." data-id="49645379">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/645/379/a6b459a6599bcc202288217503d4add3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749694699&amp;width=680&amp;sig=P5JrJqOwRwwCiMHP6xy4jEbDWrD0bOtASsXPeeciB48%3D"/>
+<figcaption class="px2">Warm and textured like a roll of 70s Kodak film — organic, timeless color.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:2-Dreamroll"><span class="text-italic">2. Dreamroll</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Golden warmth, wrapped in haze. Like a dream on expired film." data-id="49657270">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/657/270/a41673bcf8ac9cf966dbb8b2285d137d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749768824&amp;width=680&amp;sig=S4H2PvPe63M0N7%2FKHAfMrLoOXzGxAAnCkIJ04Tj%2FarA%3D"/>
+<figcaption class="px2">Golden warmth, wrapped in haze. Like a dream on expired film.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:3-B-W"><span class="text-italic">3. B&amp;W</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Timeless monochrome with deep contrast and emotional clarity." data-id="49631771">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/631/771/de08ace59fff3760afabe064f610379f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749614946&amp;width=680&amp;sig=NrhERA0WRmuHgFiOI%2Fq1VR6WIsJP4rleasYgSwiUxDo%3D"/>
+<figcaption class="px2">Timeless monochrome with deep contrast and emotional clarity.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:4-Rosebyte"><span class="text-italic">4. Rosebyte</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Soft pastels and faded cools. Like a memory from the early 2000s." data-id="49645546">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/645/546/6e1d8e305305a208caadd4154ae094e1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749695599&amp;width=680&amp;sig=A27P3tJ4%2BKF52Hoz%2BaWkedj%2F6exFFlOiE%2BnopOF7TZ8%3D"/>
+<figcaption class="px2">Soft pastels and faded cools. Like a memory from the early 2000s.</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Capture-the-Moment-Instantly">Capture the Moment, Instantly</h3><p>With echolens in your hands, there’s no need to carry your phone everywhere to snap a shot. You compose through the optical viewfinder, wind the crank like a classic film camera, and capture each frame without ever glancing at a screen. Because echolens has no built-in display, you stay fully immersed in the moment—no digital distractions, no battery-draining previews. When you’re ready to see your shots, simply open the echolens app on your phone, sync your echolens camera using the WiFi button on the bottom, and watch your photos appear on your phone within seconds. No more waiting around to download via USB or digging through memory cards. In other words, you only reach for your phone after you’ve experienced the authentic joy of shooting. Choose your filter for your next roll and get back to capturing genuine moments! The echolens app will be available on both iOS and Android.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49546346">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/546/346/b76adac50caf4dd5e747f87c4f8fd2db_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749048229&amp;width=680&amp;sig=n8bs8GnZ27higtbpNNVF9qi1efyOJP9Iukm3DlxqSL0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:One-Camera-Endless-Rolls-">One Camera, Endless Rolls </h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49598164">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/598/164/eafaaa24c7729c6ee756c3cbf3787bed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749427591&amp;width=680&amp;sig=0WBgRXYKTrWoyeLxmPyvZ3e6dhwDU7Ta25Jv6zCX4hs%3D" src="https://i.kickstarter.com/assets/049/598/164/eafaaa24c7729c6ee756c3cbf3787bed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749427591&amp;width=680&amp;sig=0WBgRXYKTrWoyeLxmPyvZ3e6dhwDU7Ta25Jv6zCX4hs%3D"/>
+</figure>
+</div>
+<p>echolens is built to last—no disposable plastic rolls, no single‐use cartridges, and no constant battery drains. With a durable, precision‐machined high-quality body and a rechargeable battery by way of USB-C designed for hundreds of cycles, it replaces both throwaway film cameras and energy‐hungry smart devices. Because you shoot digitally and review in the app, there’s no chemical processing or film waste, and each frame is stored in the app or on your phone rather than in landfills. By combining timeless build quality with a reusable, repairable design, echolens minimizes e-waste and ensures that every shot you take has a low environmental footprint.</p><h3 class="page-anchor" id="h:Capturing-Community-One-Shot-at-a-Time">Capturing Community, One Shot at a Time</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49579288">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/579/288/ddb3db212c9b6b44e302d5f9d09e64d9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749245763&amp;width=680&amp;sig=DKZVPPH3QVuEQXFntAv02pZG5rC8vkHQ9CWrDBKI%2FsE%3D"/>
+</figure>
+</div>
+<p>The community’s enthusiasm has been unmistakable. Every DM and comment—whether it’s a veteran film shooter praising the feel or a social media follower cheering on our Kickstarter countdown—has reminded us we’re on the right path. From friends volunteering to model in photo demos, to San Diego and L.A. enthusiasts sharing ideas for future color presets, the chorus of encouragement and hands‐on feedback has been invaluable. Your belief in our vision—even before the first batch rolls off the line—fuels our drive to perfect every detail so that, when echolens finally reaches your hands, it truly reflects the collective passion of this growing community. Want to join our growing community? Click the graphic below to join our discord to share your photos and talk with other backers!</p><span>Join the echolens Discord server &amp; chat/share with our community</span><h3 class="page-anchor" id="h:Rewards-Add-ons">Rewards &amp; Add-ons</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659399">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/399/0825f2f01d78c7da9565f69bee814c57_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749785618&amp;width=680&amp;sig=nGdQsJF6x4XlkKQaNooShKX9hAssiujeG8IQJgiP3mM%3D"/>
+</figure>
+</div>
+<p>We're offering a limited run of exclusive echolens accessories and apparel as part of our Kickstarter rewards and add-ons. Whether you’re backing us for the camera or just enjoy the brand, you can rep echolens with a premium leather camera case/strap, mesh hat, or one of our ultra-soft, garment-dyed tees and crop tops (the same ones we are wearing on our adventures). These items won’t be widely available after launch—so if you want to score some official gear, now’s your chance to grab it alongside your pledge.</p><p>Want another echolens camera with your pledge? Choose the <span class="text-italic">"Additional echolens Camera" </span>add-on and pick your desired quantity!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49704272">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/704/272/18625201e8429978f00231a82b2aeac0_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750127707&amp;width=680&amp;sig=l%2BbmSA7dWR4WMRb5DtAEXCFBq3UsG7%2BC9ONFFLuMiro%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:VIPs-We-Didn-t-Forget-About-You">VIPs, We Didn’t Forget About You</h3><p>If you are one of the thousands from 50+ countries that joined our VIP list before launch—we know who you are. You’ve been with us since day one, and we’re making sure you’re taken care of. Your exclusive VIP accessory will be automatically added to your pledge after the campaign. No action needed. Just a little thank you for believing in us early. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49596509">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/596/509/a61596fb17bd30b06b242922594687e6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749413915&amp;width=680&amp;sig=tKDj%2FUk%2B4rSGtB4tiIa6EgOAoBlJQZd0OkMSqtFEk6A%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Stretch-Goals">Stretch Goals</h3><p>We built echolens alongside our early community—and now that the campaign is live, we want to keep building <span class="text-italic">with</span> you. You asked, we listened. These stretch goals are our way of giving back and making the camera even more fun, personal, and creative. As more of you join, we’ll unlock new features, customizations, and surprises to make echolens everything it can be.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="We will reach out to our community to vote on new camera colors!" data-id="49767025">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/767/025/a40a2dc0d4a2e1483c16193544be2df2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750542213&amp;width=680&amp;sig=vtvVRZfl3CEYMN9TX2xJU%2FvcjGBupnkDLpWiSKlMfYM%3D"/>
+<figcaption class="px2">We will reach out to our community to vote on new camera colors!</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Behind-the-Lens-">Behind the Lens </h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49568091">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/568/091/a2c3efc190426c8eadf94bb58a780889_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749174403&amp;width=680&amp;sig=iZOHLt6htNiku0tqUk%2BL0%2Bz5ZdN94fZ8HTMSM5wbWOk%3D"/>
+</figure>
+</div>
+<p>We’re Gianni, Zack, and James — three lifelong friends from Southern California who bonded over a shared love of adventure and capturing authentic moments away from our phones. After years of chasing sunsets with disposable cameras, we set out to bring that feeling back in a new way. echolens was born from late-night brainstorms, long drives, and a lot of trial and error as we worked to build something that felt as fun and effortless as film. It’s inspired by all the moments we never planned but never forgot—and built for anyone who wants to shoot, live, and share without overthinking it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791924">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/924/392847ecead1f5949836ca5174bf34b6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750746309&amp;width=680&amp;sig=UUIlV%2FCfMxOZYq%2FyXqb6TG9Kc5mec2JuRrnDLxZ8qWE%3D"/>
+</figure>
+</div>
+<span></span><h3 class="page-anchor" id="h:Clear-View-On-Our-Journey-">Clear View On Our Journey <img class="image" data-id="49524021" src="https://i.kickstarter.com/assets/049/524/021/cda941026966c67e3dfe17aecb8a3817_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748925134&amp;width=2512&amp;sig=TzDQGnGpieMneGJ7Fcpi42G%2BbeaCLix%2FD%2BOZD356eqk%3D"/>
+</h3><p>Now we’re turning to Kickstarter to help us power through these final steps. Your support will fund the creation of our mass-production tooling and the wireless certification that makes echolens fully compliant and ready for market. By backing us, you’re not just pre-ordering a camera—you’re fueling the last push to bring this project to life. Every pledge brings us closer to securing reliable shipping channels, fine-tuning the production molds, and certifying our Wi-Fi module so you can instantly share those timeless film-style shots. We’ve poured our hearts into prototypes, design, and app development—now we need you to join the mission. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="James and his ridiculously large monitor" data-id="49612008">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/612/008/fd1484859a8db6c75fbe12051557f7c3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749508623&amp;width=680&amp;sig=lFTEA8QqgcHdg%2FLt2jMSoZ206wnkoxy5KJzSAbaitP8%3D"/>
+<figcaption class="px2">James and his ridiculously large monitor</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="echolens camera sketch" data-id="49772321">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/772/321/d5637517ee290630219b7dc820642897_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750607706&amp;width=680&amp;sig=3YcqFip5CpgRFrxvGcAkcZM%2FVRuHPkHhCmB9bEWyi0I%3D"/>
+<figcaption class="px2">echolens camera sketch</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49659455">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Thank-you">Thank you</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/659/455/9d31ad3c51a2c7d3523b524a3eaf4640_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749786051&amp;width=680&amp;sig=7JJ79RO5G7V5lxW1FVggVPLyvKYC1msjlfHjD5LmQEs%3D"/>
+</figure>
+</div>
+<p>From the bottom of our hearts, thank you for believing in echolens and joining us on this adventure. Your kindness, encouragement, and excitement have carried us through every prototype tweak, late-night code fix, and design revision. Because of you, we’re one step closer to sharing the joy of analog shooting in a digital world. We can’t wait to capture memories together. </p><p>- Gianni, Zack, James and the echolens team</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">🚧 Risks &amp; Challenges 🚧
+
+Bringing echolens to life is an exciting journey, but like any ambitious project, it comes with challenges. Here’s what we’re anticipating and how we plan to overcome them:
+
+📦 Manufacturing &amp; Supply Chain
+
+Sourcing high-quality materials and ensuring smooth production can be tricky, especially with potential delays. We’re working with trusted manufacturers and securing multiple suppliers to keep production on track. We’ve also built in buffer time to handle unexpected hiccups.
+
+💰 Balancing Cost &amp; Quality
+
+We want echolens to feel premium without an over-the-top price tag. By focusing on essential features, optimizing production, and securing bulk pricing for components, we’ll ensure the perfect balance between quality and affordability.
+
+📸 Competing in the Camera Market
+
+Big brands have big budgets—but we have something they don’t: a fresh take on nostalgia, a passionate community, and a product that blends analog soul with digital convenience. Our marketing will focus on early adopters, creative photographers, and those craving a unique shooting experience.
+
+🚀 Making Sure People Love It
+
+Creating something new always carries the risk of missing the mark. That’s why we’ve spent time gathering feedback, refining our design, and ensuring that echolens truly captures the magic of film in a digital world. Your input will continue shaping the final product!
+
+🔧 Technical &amp; Software Challenges
+
+Seamless performance is key. Our team is working with experienced engineers to develop a smooth user experience, and we’ll provide firmware updates post-launch to enhance features and fix any potential issues.
+
+💵 Funding &amp; Fulfillment
+
+Kickstarter helps bring ideas to life, but production is expensive. We’re using pre-orders to gauge demand, setting realistic stretch goals, and working with trusted logistics partners to ensure every backer gets their echolens on time.
+
+We’re committed to making echolens a reality, and with your support, we’ll turn this vision into something truly special.
+
+💛 Thank you for believing in echolens! 💛</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">High-Quality Build – We’ll use premium materials and robust engineering to ensure echolens stands the test of time, just like classic film cameras.
+Timeless Appeal – By embracing a vintage aesthetic with digital convenience, echolens won’t feel outdated as trends shift, keeping it relevant for years to come.
+Upgradeable Software – Regular firmware updates will enhance features, fix bugs, and optimize performance, ensuring longevity in a fast-changing tech landscape.
+Strong Community &amp; Support – By fostering a dedicated user base and offering continued customer support, echolens will stay in users’ hands longer, rather than becoming disposable tech.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Minimal &amp; Eco-Friendly Packaging – We’ll use recyclable, biodegradable, or compostable materials for packaging, avoiding plastic where possible.
+A Lasting Alternative to Disposable Cameras – Unlike single-use film cameras that generate waste with every roll, echolens offers a reusable, long-term solution with the same nostalgic feel—no film waste, no plastic disposables.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

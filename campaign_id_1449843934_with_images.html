@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anyonebot M1: A Fully Intelligent Mower with Dual Perception</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/894/907/e3bcb3059baca833c0c1965b25c953dd_original.jpeg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751450900&width=560&sig=N3G4XBFuzWt7JZTgCo%2BIyRTzCIprGRSg6ps9oJorMb4%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Anyonebot M1: A Fully Intelligent Mower with Dual Perception</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">AI Vision Navigation|Smart Blade Sensing|One Press Setup|No Wire&RTK|AI Mapping|Obstacle Avoidance|Systematic Route Planning|Multi-zone</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49974776">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/974/776/de49cb61ab51bd8d1df95cf8c78cf133_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752053821&amp;width=680&amp;sig=UReKWmrUzHNelm2zBz6E0qGxgdafIN04Nam2UFMJE3g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49723247">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-Makes-M1-Different-">What Makes M1 Different?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/723/247/72fbad025ff777479f65e94b04a64bfa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750234651&amp;width=680&amp;sig=vrtti4tqGN7s164pawt3XAJbFRALYgkwjHM06RpAyBc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49723442">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/723/442/fa9083aaf06a5aa9818b378c00eb3c2e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750235795&amp;width=680&amp;sig=cBmQN6Q2kC%2FwGVoR00lGJSvOhP9q%2FQk1lD9BPXaC4k0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49724796">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/724/796/59722c90b394c3a3275855a20a5a57be_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750244956&amp;width=680&amp;sig=QBxG4hgCyNU0KPYZIMDvBGGyIB0Epfv5FOMq9SUg8zk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49724787">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/724/787/8e5c883728acf15903c821e5e4bc0295_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750244897&amp;width=680&amp;sig=JtdsJE%2Bzf1wSzKb2F1CH%2FqWtuZC1%2BeVM2%2F%2FPU5lSVhU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49784349">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/784/349/1cbf06a53c6e0f9667272ef429ff9b04_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750697553&amp;width=680&amp;sig=EeEJoXER30VtozY7g9j0FUYEXd9jKSXGUN1ogs0W9m4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49724321">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-the-Pros-Are-Saying">What the Pros Are Saying</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/724/321/0bf2419f28db050efe33b3cce3513aa6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750241852&amp;width=680&amp;sig=jt%2BvnBmI7J%2BDxkTeQ38%2FhIQ18iKj4%2FaS6VfxG18l9Ec%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49724350">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/724/350/f44d2b2bb68713323520d011a1aabb0a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750242019&amp;width=680&amp;sig=CSMwYk5FDlCTWUAsIMpZ8GzqTarAQV8JLCxX5NbM%2Bw4%3D"/>
+</figure>
+</div>
+<p><span class="bold">TechMagnet："M1 is amazing, It's performing much better than most of the robotic lawn mowers we've tested so far"</span></p>
+<p><span class="bold">Mark Haley：“It has the simplicity of a camera-guided mower, but uses sophisticated AI. It’s mowing systematically in straight lines, which is incredible!”</span></p>
+<p><span class="bold">Tim Thompson：“It was really, really fast and easy to set up. If you know nothing about robot mowers,you can have this mower set up, running and cutting your lawn.”</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795679">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/679/e27b4c2e3aabb58f6a1d97801a89fa0e_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750768316&amp;width=680&amp;sig=oUepQqSBT4OSiVxT0308U7602vO82Pp99v1xr%2F2Rhn0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795683">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/683/cd8e58c4af82b82a8bf4daa61d164bde_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750768330&amp;width=680&amp;sig=uGQkFD67IQaV8vVjuZna9p%2F0RXGev%2BT43noeGJLpEhY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49724530">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Dual-Perception-A-Breakthrough-in-Robotic-Mowing">Dual Perception:  A Breakthrough in Robotic Mowing</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/724/530/6ca2f20431ad8938368d26c73cc80293_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750243387&amp;width=680&amp;sig=cvalES7INm%2BIMgL3rGy8revPtEJCstU50m3Xr4CmRjA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49761514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/761/514/df6ee6d9ce2bfde0e302e886ea50dca9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750494715&amp;width=680&amp;sig=byHirq39Wk3SmMnyrAiB1TpK6Dw8E%2FRQw9adkbUH1M4%3D"/>
+</figure>
+</div>
+<p><span class="bold">AI Vision</span> replaces wires, RTK, and LiDAR with<span class="bold"> pure camera-based intelligence</span>. M1 sees your lawn, maps it automatically, and navigates like a self-driving car — no setup, no weak signals, no stress.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780335">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/335/503f8d2dca2d5ab46d5c659862563bcb_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750675160&amp;width=680&amp;sig=T9o4QX%2B1vGKljbRpf2G%2B0V3X1Uynh9cCF4i%2FFH3Zs60%3D"/>
+</figure>
+</div>
+<p>While traditional RTK mowers require base station calibration, RTK antenna setup, and manual mapping, <span class="bold">Anyonebot M1 is ready to mow in just one minute</span> .</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49647598">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/647/598/c1425fc0e25736538658957754317155_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749712536&amp;width=680&amp;sig=MBphPSgc5BNTDAsp5svrgF96R7hwByv00%2F%2BQuM5eFHc%3D"/>
+</figure>
+</div>
+<p><span class="bold">Smart Blade Sensing</span> gives M1 the ability to feel the grass — <span class="bold">detecting grass type and density</span> in real time. It knows exactly where to mow and how to mow, saving battery and protecting your lawn.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49760220">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/760/220/b98b532a34c7ea1dccdfbd02ce11b27b_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750477106&amp;width=680&amp;sig=LNqhQoV9l5nCSaJ5xDEfXY51GR1bL7vPmYkRlSWvs74%3D"/>
+</figure>
+</div>
+<p>Together, this <span class="bold">Dual Perception system</span> — powered by a <span class="bold">5 TOPS AI chip</span> — enables M1 to see, think, and adapt like a human gardener, learning your lawn and getting smarter with every pass.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49724258">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/724/258/5d067650880f12246b1b0651dddd12e6_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750241467&amp;width=680&amp;sig=BTdJ%2Fu1N988uPPAr7boWJxPKYjQjY1zh2mBDVQsfMEw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49738531">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Smarter-Cuts-Healthier-Lawns">Smarter Cuts, Healthier Lawns</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/738/531/709086b77be49f74245206020dcb4ecd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750330326&amp;width=680&amp;sig=ommAoqx3%2FrgRn2XjP1a5Np1kFE436VXSbnImXEz1XA0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49738664">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/738/664/a586a569df13a922975a5af38c06118f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750331256&amp;width=680&amp;sig=kWH0yR6BeNFguFsdDvD85vXwmNf6oxwB%2B9xy5%2BFeoNc%3D"/>
+</figure>
+</div>
+<p>M1 uses computer vision to <span class="bold">identify your lawn type</span> — from Tall Fescue to Bluegrass — and <span class="bold">adjusts blade speed in real time</span> for the healthiest cut.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49738720">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/738/720/90663b696514526945fce92f276eb4cd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750331839&amp;width=680&amp;sig=L02hOgYjVzZvWBcOG8UG0ozl1GtDlEA%2BtTuEcI%2Fea2s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49738630">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/738/630/caba2e9a0ecb83a3e786c2cff7fc9ce6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750330935&amp;width=680&amp;sig=4gX8RSUQVDThmKQ5nbnlcp%2F295S3BJWEj%2BIkAituaJA%3D"/>
+</figure>
+</div>
+<p>By recognizing your grass type, M1 selects the<span class="bold"> optimal cutting speed</span> to protect roots, reduce stress, and keep your lawn thriving</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49760024">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/760/024/fa20f60569c76a931be1881acf85c52f_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750475170&amp;width=680&amp;sig=42pyXcdMusC6sy5e64YsG4bDjlBi4QNiVd6rfbJss7M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49738651">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/738/651/b8ed9a398951fee459776fbd6c751f40_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750331095&amp;width=680&amp;sig=DJUM4wTjj8zZXsJvMXxBD7oY4nIuCibpqTQ%2BHV2k1Bc%3D"/>
+</figure>
+</div>
+<p>The M1’s blade is crafted from premium<span class="bold"> 65Mn steel</span>, a high-carbon manganese alloy known for its <span class="bold">exceptional hardness (HRC 60) </span>and <span class="bold">tensile strength (180 MPa)</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49769350">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/769/350/b541bf430a2e77504dfc9b0661f7fdbc_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750572684&amp;width=680&amp;sig=kGtIrealL%2F40T7rcNtAU7cf7G7C%2FvmefL%2B2AnXk8voI%3D"/>
+</figure>
+</div>
+<p>M1’s blade motor reaches <span class="bold">up to 5000 RPM</span>, with <span class="bold">cutting speed automatically adjusted by AI </span>in real time — ensuring optimal performance, efficiency, and lawn health.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49761630">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/761/630/ab1bfa49e129c5b97b926133dc43186d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750496053&amp;width=680&amp;sig=vjQUwoYcKceUys6RReJ1DnbI58RDR9RE8BAKQGhBaBw%3D" src="https://i.kickstarter.com/assets/049/761/630/ab1bfa49e129c5b97b926133dc43186d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750496053&amp;width=680&amp;sig=vjQUwoYcKceUys6RReJ1DnbI58RDR9RE8BAKQGhBaBw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49746792">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Knows-Your-Lawn-Like-a-Pro">Knows Your Lawn Like a Pro</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/746/792/60dd908721fe28fb06d7cbe940c520cc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750384351&amp;width=680&amp;sig=MG1G%2Fi%2FcJOrEjW7BSKPOi75FRhVIMUKC7CWlCKQwgAE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49746810">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/746/810/c99a15118de663710a27dd4c41b10994_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750384515&amp;width=680&amp;sig=rI4t5VkbXxYk7KHR5fteIclx7JNDLZXBicXDSxM0ANk%3D"/>
+</figure>
+</div>
+<p>M1 uses AI vision to<span class="bold"> scan and understand your lawn</span> layout right out of the box. No RTK, no wires, no manual input — just switch it on and let it build the map for you.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49836699">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/836/699/2fc085de156299ffd021c0a27673663f_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751015304&amp;width=680&amp;sig=LifmM2qQjpB96R95BNu99AueMoDfkXVewenKsSH3%2BFg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49746894">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/746/894/f56f248353e11495d362c4f24245e2e1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750385262&amp;width=680&amp;sig=tyOqViFv76aSWWi2ODhJBqjYLHOvWd2kQJ8GyS6IM4Q%3D"/>
+</figure>
+</div>
+<p>With real-time obstacle detection, M1 glides through your lawn with the awareness of a watchful gardener — ensuring safe, clean navigation every time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49746902">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/746/902/e3092bf382068a2ad995b569ebaf94f8_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750385318&amp;width=680&amp;sig=07HLf4pRyvhS70Pv7xN76fnI%2Fiy9fSdY7GRk3R%2FGiP4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49746922">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/746/922/5177ced4b9e1c1dc893afe338e4a1b53_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750385434&amp;width=680&amp;sig=OaLRqFXv2cfW%2BLf4kz6CCZF8QnujNIdE8NszUvLqE%2BA%3D"/>
+</figure>
+</div>
+<p>M1 comes equipped with two intelligent mowing modes, each designed for real-life lawn conditions — and both easily <span class="bold">switchable via the app</span>.</p><p><span class="bold">Systematic Mode:</span> For clean, open lawns, M1 follows precise, efficient paths — no zigzags, no wasted motion. It maps your lawn and executes <span class="bold">straight-line coverage </span>with surgical accuracy.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49836701">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/836/701/47d4d917e9440c361dcfb94278dfaefc_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751015323&amp;width=680&amp;sig=ruk2%2BobITjIuH9uz1Q6xxgSyNKl2OHp5Ji%2FORSpiu8c%3D"/>
+</figure>
+</div>
+<p><span class="bold">Smart Seek Mode:</span> For more complex, obstacle-rich yards, M1 switches to adaptive behavior — using AI vision and smart blade sensing to<span class="bold"> find uncut grass zones</span> and navigate organically around flower beds, trees, and other landscaping features.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49769371">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/769/371/338b405a201e9d93373be62a2ce9228f_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750573114&amp;width=680&amp;sig=3ZHm2zwdrKn%2Fd%2BH%2FuSUiWQScMFv8qg3zoTZHz9rkEdQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49746957">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/746/957/7460d6cbbfc14d3883fd3f53a5ca26a0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750385744&amp;width=680&amp;sig=clfjyyP7lwaEEB9An%2Ft9W4eILLFpEX6UbNckIe9%2BIdA%3D"/>
+</figure>
+</div>
+<p>Whether your lawn has paths, multiple areas, or disjointed zones, M1 recognizes them and <span class="bold">transitions automatically</span>. You never have to lift a finger.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49746961">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/746/961/1f854fa116761f4e98b7c353efada561_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750385785&amp;width=680&amp;sig=kO9mZewCpQrzG8c%2FQQ9JdL36VrpemPWxNZkDFQE%2FpuQ%3D"/>
+</figure>
+</div>
+<p>M1 visually recognizes No-Go Zones and avoids them with centimeter-level accuracy. Control each zone through the app — turn them on or off as needed.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49760047">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/760/047/84c07f02dfee9d97672bf7b91e90b428_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750475400&amp;width=680&amp;sig=SFYLyL9g4XKMF3gMa%2FIF%2BGklpQ5Rp%2Bmc4c64n48HpYk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795338">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Learns-Your-Lawn-Evovles-Over-Time">Learns Your Lawn, Evovles Over Time</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/338/6b8a12a7b7dd28165d5e28b941724d5e_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750766623&amp;width=680&amp;sig=F%2BoQBdxHpdhVBLPYzzERV7pz38TZPQBaisd39q4j9C8%3D"/>
+</figure>
+</div>
+<p>M1 is built on a pure vision AI system，intelligence that grows. M1 gathers data about your lawn’s layout, grass types, and growth patterns. With cloud-based OTA updates, <span class="bold">M1 evolves over time — improving its navigation, adapting to your specific lawn</span>, and delivering a smarter, more personalized mowing experience with each update.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49748467">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/748/467/3089a572a7d1beb23a167eda1b369ea9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750398195&amp;width=680&amp;sig=adrBoH%2Bvmfc7fApA4QWTm0k23Oo6NzwwkAqkWWJd1rs%3D" src="https://i.kickstarter.com/assets/049/748/467/3089a572a7d1beb23a167eda1b369ea9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750398195&amp;width=680&amp;sig=adrBoH%2Bvmfc7fApA4QWTm0k23Oo6NzwwkAqkWWJd1rs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49747037">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Anyonebot-APP">Anyonebot APP</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/747/037/75746f5e49dc761cee654a57d20e7c9a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750386308&amp;width=680&amp;sig=myGOS2qJ%2BxJbBAQgP5oRv1xC7nko6fOEGRpO%2BENyKxk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49836707">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/836/707/92843721e214ae65c574b561971d3288_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751015364&amp;width=680&amp;sig=VzpOVj8vsksUlnPOKcSRvdamSgQKPnDPI0Tm2eZYMeU%3D"/>
+</figure>
+</div>
+<p>The Anyonebot app puts your lawn on autopilot. Start, stop, or send M1 home with a tap. Easily manage <span class="bold">multi-zone</span> and <span class="bold">No-Go Zone, track mowing history</span>, and set your preferred <span class="bold">daily mowing schedule</span>. You’ll also receive the latest improvements via seamless <span class="bold">OTA updates</span> — so M1 gets smarter over time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780128">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/128/2712421744d18580d55fc9b0c16f74cb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673726&amp;width=680&amp;sig=ZcBo5%2Ft3C8DPeXH%2Fg%2BoiGOQwrvSB1ZxsxVYm2Tqc1KE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749306">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:More-Features-More-Confidence">More Features, More Confidence</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/306/5b4cf8a3099d8f5fdb35925f34c4ad42_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404421&amp;width=680&amp;sig=raaUHZ1Lj%2BfE%2FzeQQwF7DOR%2F1pQkSeHa6rlg2nQusuU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749309">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/309/91f8a63ee03fa73bb8db784fe786c964_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404431&amp;width=680&amp;sig=PuqDImaOhzaxrKxv%2BmnzlyMiM2cli0cNQDxZjEcgJNw%3D"/>
+</figure>
+</div>
+<p>With a built-in rain sensor, M1 automatically returns to charge when it starts to rain or the battery runs low — and <span class="bold">picks up right where it left off</span> once conditions improve. It knows when to pause and when to resume so your lawn care never misses a beat.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749333">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/333/176927ad7b53a489d41a8f1f79ad3d45_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404573&amp;width=680&amp;sig=Ns8oW4P31HiIUmq7%2Bs7MMuKEFemlF3BTOjFTGJizTTk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749329">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/329/526b5ae55c2eaf40d4d012182dc67672_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404544&amp;width=680&amp;sig=OjbSVahBhlpan5JAsiBxZUL7LDyOO2XQ5UskTgSZiV8%3D"/>
+</figure>
+</div>
+<p>Powered by <span class="bold">dual 500W brushless DC motors </span>on the rear wheels, M1 confidently tackles <span class="bold">inclines up to 45%</span>.Built for real-world terrain, it climbs hills and handles uneven lawns with ease — delivering clean, consistent cuts even on a slope.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749341">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/341/4f9de6cb5f79bd04efbb8b974c6ae9db_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404611&amp;width=680&amp;sig=dqzbgJgunMKj7sfMt2TJXh8mkAgEGIC3n8XYFW6oxDc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749353">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/353/8d52ef2f88ff6aadad9afd7d4ac0fbd5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404676&amp;width=680&amp;sig=0zBsRQM2hh36a%2Bo30T4xYbAq0pcEdgQRQ83s%2FC7z9W4%3D"/>
+</figure>
+</div>
+<p>With edge-cutting as close as <span class="bold">5cm</span>, M1 leaves no untrimmed borders. It gets right up to paths, patios, and fences for that crisp, finished look.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749363">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/363/4f82b93467fa4be55dcdd4832f5b5f48_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404722&amp;width=680&amp;sig=rwh9PO2k3bjS09Rfb8V6nSMbTP7ecqewsseWATjxocg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749369">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/369/894109bde40b567a9c6b264cd54ca07b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404767&amp;width=680&amp;sig=oC7w%2FBv8%2Fw1fCvmPOVNMTZwRIlRP8MTo%2BepCejuG2Hk%3D"/>
+</figure>
+</div>
+<p>M1’s compact design and vision-based pathfinding allow it to pass through tight spaces effortlessly. Perfect for yards with gates, garden paths, or segmented zones.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749371">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/371/695a6c6825c1a6f6fdb9c0a6611fb2c9_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404800&amp;width=680&amp;sig=g4hvT74tNJ76XCQo6F1%2BleuvEqkAdsIQuL3Zusw6uzA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749380">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/380/043bc6d31519dc6575c5a97c27fd1db6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404853&amp;width=680&amp;sig=SWE9%2BO6cfUGdsQBiytypGpDFS25Q8%2B5MYjD1zJ3OR%2BU%3D"/>
+</figure>
+</div>
+<p>Built-in lift sensors instantly stop the blade if the mower is raised — even slightly. Whether it’s a child, pet, or curious hand, M1 cuts power before anything goes wrong.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749388">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/388/73203da303b0d7ec4efb92c0a8e995bd_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404926&amp;width=680&amp;sig=%2F9J9WIzq%2BzuZCu%2Bq2rU42Usku25sjFbNeb4a%2Fv8HsNA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749391">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/391/e9ff1dd0670650b6944efdee2e97675d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750404963&amp;width=680&amp;sig=YnSBhF0R6pYF8TXp99U3lEGJ8YgUpQTjd4kT1djNCTs%3D"/>
+</figure>
+</div>
+<p>Anyonebot M1 's IPX6 waterproof design allows for effortless cleaning with water, making regular maintenance simple and convenient.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49750688">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/750/688/e2115bc36e6337d8202f6403cb24bdc8_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750413140&amp;width=680&amp;sig=9XFl9Zn7AugH%2BXq0FO19g%2Bcb4%2FLcrQL8BFfmbYXpQfA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749403">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/403/e7fa98d022ea7b089013f00ddfc5e88b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750405073&amp;width=680&amp;sig=sTmeYeYnX8e9%2Fm9ZXQfr%2BXEaj52nUONCxt0mtZfdktM%3D"/>
+</figure>
+</div>
+<p>M1’s low-noise operation lets it mow safely and discreetly after dark — with optional indicator lights and built-in camera illumination for clear nighttime vision. Let your lawn get groomed while you sleep, without disturbing your peace.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49749407">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/749/407/47bedd4df51fe5e13fe301dda8968ed6_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750405118&amp;width=680&amp;sig=tDwettEt661jjOAI7GOFET2yB63lAa3cYPr7L5q7u4s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710371">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/371/f0124286b27d31566449e56b404941d2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163653&amp;width=680&amp;sig=RWPNnbIVQn87Aai2PTTWkeB328EUmlz0Zc9ZfjiW36E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780832">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/832/dd151a683413e2cf037579335c38eb52_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750678677&amp;width=680&amp;sig=Pprf2xXTwN9joosBV%2Fj4hj6HzOpzG8rRL0od%2Fjt2NHI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710359">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/359/2d65a118a8064cc983512cc047876885_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163616&amp;width=680&amp;sig=jcuzwbJHZ7XSE9OBqBJB6GIpB3RVwK3%2FnfNB9wjUuh4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795910">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/910/c7cfc00c3c5c86e8ee2dcf9b66090292_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750769425&amp;width=680&amp;sig=lv%2B1GaBDBQ6kxSM6QpdU7fMFRQLgGXrUKc%2FhM9y1nYQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710374">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box">What's in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/374/7777fd5850a0d5284fba25b2e537feb3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163684&amp;width=680&amp;sig=Yb4pU708BNGGCVRoicZVs%2BOMCS6nWzrsqGGRdP3uPts%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780145">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/145/2e5b87859ff956ba91d4ac567a8b6f37_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750673836&amp;width=680&amp;sig=7QzD7PBo0M2aa9U58%2F1VczG9XCx4ppAVK3qV6R7mZXU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710383">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/383/275db08fc02634d86f1a5b1e90f5305a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163715&amp;width=680&amp;sig=AvnoZpHOksiMIkUbJaCiNineKRQCAefeKGa1XmM%2BXQg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49792936">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/792/936/675833e0d195492e4555431e707995c5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750753251&amp;width=680&amp;sig=7FsJnX4cJzREW%2BOgZemXGSHDl94wfDJ%2BSR%2FKsCDtV9w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49710389">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-Ons">Add-Ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/710/389/c9e8500e38f782f1db1622a4b2e983a4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750163745&amp;width=680&amp;sig=RVyr4BwHBZf7VUtZcfK%2FUup3SxyazTg%2FUgkD4ZlBaxg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49796187">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/796/187/4befdbf09d9148e134f9053eff47f404_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750770787&amp;width=680&amp;sig=ossDIzFRxcgMp4G9zOPPZpx0bTt6513MYsqKE7UwuBQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780199">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goal">Stretch Goal</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/199/4a3d986340a23e8ee9991b7735d39338_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750674178&amp;width=680&amp;sig=E4H6Anx0cqf%2FAzROoI1fPt4q9U8IwneX%2BcJYmxewCeE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780772">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/772/0a651e2820e3b087a42cb7fa920dd188_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750678274&amp;width=680&amp;sig=bo1dn6yJQ%2FmB5cVTzEBs74WYtpw6hKOWSLG5kvtDSfA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780239">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:After-Sales">After-Sales</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/239/90ac2d6ca5076470b5c17397e7dbf743_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750674396&amp;width=680&amp;sig=MuZuegi7tZio6G%2FxcSw7sHUHC27I1U45ia5tRD5w4K0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49808013">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/808/013/5471b2f8fc87aeb705d023990b2dfb24_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750835559&amp;width=680&amp;sig=YTEI18yBYB4WS5%2BKVMK8m6BaGzivDdjhUvEbtAEmg3Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780225">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Policy">Shipping Policy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/225/308b74a6c9da22c6ef4f202c27ec72be_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750674320&amp;width=680&amp;sig=T0LEPssISxLKXAfdUtH2B%2FXJVtafDRBgN96TvkiuctM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791539">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/539/7d7119a4603ac0c9ffca10c748802448_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750743263&amp;width=680&amp;sig=loZm%2BQzRtxqYfb9r21zfO4wEE8KlCIYM2F1RATkeWaI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780284">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-to-Back">How to Back</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/284/a9e1ae31888f04be707ac3d9208d4f1d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750674763&amp;width=680&amp;sig=Qs1yfLEDtuGI%2BZKIzzQhAY85gtx83UDkDaGBEX0Rgk4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780290">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/290/df9656dbba7a4d281683da89b5e88c4c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750674792&amp;width=680&amp;sig=5hp0HwJ884T1dBNU6mDUo1optSY5l1JLq71QJOc6uYc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49750747">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Anyonebot">About Anyonebot</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/750/747/88555d41fb7b37ee8067bbf0a0b8b3cc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750413426&amp;width=680&amp;sig=8SNo%2BAH%2BxG6sflmtXyCSr3ygjkkOY8fJy9Scck%2FUVq4%3D"/>
+</figure>
+</div>
+<p>Anyonebot was founded by robotics veterans with deep expertise in AI vision and product engineering.The core team previously led the development of the <span class="bold">EcoFlow Blade</span> and contributed to flagship robotics at <span class="bold">DJI</span>. Since December 2022, they’ve spent over <span class="bold">2.5 years</span> developing M1 from the ground up: from vision navigation and smart blade sensing to OTA learning. With full control over engineering, supply chain, and manufacturing, <span class="bold">Anyonebot is ready to deliver.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795107">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/107/31720abc57c9a33877b0b18eb0d1fd24_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750765151&amp;width=680&amp;sig=RGzXAoSuvMuqX3h03zGDM3x2Yr8Z2GnSxZAXwI%2B1Eoo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795240">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Development-Trial-Production">Development &amp; Trial Production</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/240/0211e23fb92b75f6c9f81a5e652c83f6_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750765906&amp;width=680&amp;sig=agEdrol4XdVdPAwguPpRLQ4Y%2FAtO25U8JnoywLMrhiQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49762600">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/762/600/c8c4f3498244cf68892cb40c84347a6c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750505160&amp;width=680&amp;sig=ncqtCZps%2FcX0Bn8IpyMYnLsCjxSRE9tQJVpPgmN6jDA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49761227">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/761/227/5dcc57d224b3be3d5d4f01c06bb7483f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750490766&amp;width=680&amp;sig=VkWE47ukE0pXjuyCS%2Bj1aNhocVTlLXOk6O%2F79V7Y2Z8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780464">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/464/fb89b5851c20017c2e789d8cb2bde686_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750675956&amp;width=680&amp;sig=RhcqA218b2jE%2FobCxJg0jc2%2FXPvsbQdSTpbhyD4bMkY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49795155">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Demo-Videos">Demo Videos</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/795/155/f15e0f3b94e419a885ed57861eb106b2_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750765373&amp;width=680&amp;sig=g4fq6kwamtkCNhMGucnbHu0ebTqOPcfvin86wfIqX4g%3D"/>
+</figure>
+</div>
+<span>Get 10% Cashback</span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780793">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/793/ffc7e6cd487e17d91649a5381c6d9516_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750678365&amp;width=680&amp;sig=%2Bb2shykKq50FcDf%2BwBKOvDV3MYsl4ikSrKY6ttobbhQ%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49780795">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/780/795/ce445e5b59aaba9fea04ed272732950c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750678388&amp;width=680&amp;sig=fIW4jEYL6DAuepgaS3bbtvVZQQ1GBsGIQ4TwCrHSwFQ%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><p><span>This project is boosted by BackerCrew</span></p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Every innovative project carries inherent risks, and our journey is no exception. However, with our deep expertise in smart robotics and lawn mower design and our close collaboration with trusted manufacturing and logistics partners, we are well-prepared to tackle any unexpected obstacles. Our process is defined by meticulous development, rigorous testing, and continuous refinement, which helps us anticipate challenges and adhere to our timeline.
+We understand that surprises can occur during product development. That’s why we commit to proactive risk management and transparent communication throughout every phase. With regular updates and active engagement, we invite our backers to join us on this creative journey. Your support is invaluable, and together, we will overcome any hurdles to deliver a high-quality product that exceeds expectations.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

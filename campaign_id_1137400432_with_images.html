@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ORICO CyberData AI-powered NAS with GPU Dock & RAID Cabinet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/792/932/a964f0af9625644c5d57cbd21c738350_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750753234&width=560&sig=cJYBWHm0YgeF1mxuZWn1ynZVHeSahcpJ97sdxOxIbpU%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>ORICO CyberData AI-powered NAS with GPU Dock & RAID Cabinet</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Up to 256TB｜i5-1240P｜Dual 10GbE & USB4 Ports｜RAlD 50/60 Support｜ZFS for Extra Security｜Cross Platform OS｜AI Features with Local LLM</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 9,894</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49920818">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/920/818/0ab3dea0f7226256c4751e6769ea8050_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751624137&amp;width=680&amp;sig=BPHI7%2FtWDFsMlFycH9eMHx%2F6C8oYAiG7VyCe5OfkknE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822600">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/600/a9fe79e025d482725a0f0f5597efbbe1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925045&amp;width=680&amp;sig=rpj%2FHIEjxP4JUNGkEamErljl10eSbw0Xy8bemFNS0BI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49947644">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/947/644/591cf37fc180ae41141a8696a13570fb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751884068&amp;width=680&amp;sig=%2BTznMOCJ24CKuO88UVyuylummaNk0ra%2FAa6zRZEOhtM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49946022">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Featured-On">Featured On</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/946/022/9217afd95f7f789ba00229ff3417e230_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751872529&amp;width=680&amp;sig=zqKHbHJVNFucDHqEsWlQjh8dpxX9WP%2BtM4YkElmOP0c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987799">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/799/ecf594c216531af7b1525235bd670f02_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752142611&amp;width=680&amp;sig=Lc%2FsxPbxPymtvnLF9%2BamWUCpz095YgspHxXkqWMoYYE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822601">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Mixed-Storage-Design">Mixed Storage Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/601/4cd8e1935b27f1cf5791423b39e71553_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925045&amp;width=680&amp;sig=TnlZ6BjR1h039uYsP3cTE1xddaAvq3AI4%2BsuYyqbRZ8%3D"/>
+</figure>
+</div>
+<p><span class="bold">One-time fee</span> for one CyberData NAS, <span class="bold">lifetime expansion</span> for all your devices. With up to <span class="bold">10 HDD bays (24TB each)</span> for cold data backup and long-term archiving, plus up to <span class="bold">6 M.2 SSD slots (8TB each)</span> for ultra-fast, latency-free processing, you get the best of both worlds. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822604">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/604/22c9fc7ee8137d79beba1142d3983a57_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925046&amp;width=680&amp;sig=xXaMOWm9X3oY3FJsEAWigSHBAwjina%2F%2BNyQWzICXdx8%3D"/>
+</figure>
+</div>
+<p>Seamlessly store UHD photos, 4K/8K videos, creative projects, and critical work files. Whether you’re editing RAW footage in real time or training local AI models at terabyte scale, CyberData NAS delivers unmatched speed, massive capacity, and enterprise-grade reliability — all with <span class="bold">no ongoing fees</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822603">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Next-Gen-Processing-Power">Next-Gen Processing Power</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/603/edc8edf106f948025a67edfc1f4bea16_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925046&amp;width=680&amp;sig=VkOcOFaI92hH%2B%2FAsj1IgZY%2Bynn8CMcmtsyK5I2PWeEo%3D"/>
+</figure>
+</div>
+<p>Equipped with lightning-fast Intel processors - <span class="bold">up to 12 cores and 16 threads (i5-1240P, N150, or N305)</span> - CyberData NAS delivers exceptional performance for advanced computing, multitasking, and rendering without the need for heavy investment. Effortlessly handle PC-level tasks and run local open-source AI models. Paired with an ORICO external GPU dock, it’s ready for any scenario—free from NPU limitations like poor compatibility, low efficiency, or high costs.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822606">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/822/606/e6fe9ebfcb116111a70c0cfe6ed8c0b8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925047&amp;width=680&amp;sig=yci4p5%2FW4RxMDUZhLwohKIGtZjKfcl6b2in7ueewMuk%3D" src="https://i.kickstarter.com/assets/049/822/606/e6fe9ebfcb116111a70c0cfe6ed8c0b8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925047&amp;width=680&amp;sig=yci4p5%2FW4RxMDUZhLwohKIGtZjKfcl6b2in7ueewMuk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822605">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:High-Speed-Connectivity">High-Speed Connectivity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/605/0552d40d82470f00fb254598bc8cd9ac_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925046&amp;width=680&amp;sig=htJ4qX8mJEBeRrBJZSP8wUNIRHBxcO8tpBPrgdYLnmw%3D"/>
+</figure>
+</div>
+<p>Equipped with <span class="bold">dual 10GbE ports</span> and <span class="bold">40Gbps USB4 ports (supports Thunderbolt 4/3)*</span>, CyberData delivers ultra-fast data transfers and effortless network integration, ideal for modern high-performance workloads.</p><p>*Specs for CF1000/CF56 Pro</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822608">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/608/ca703fd07f26da13a3594f41c52fd2ff_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925047&amp;width=680&amp;sig=f7Bc429PVXIl%2Fmz8%2BNs8zvJMsriUdiby1NMatyKWZuU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822610">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:High-Capacity-DDR5-Memory">High-Capacity DDR5 Memory</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/610/908d00a068aa92990db2ef2b0a03c776_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925086&amp;width=680&amp;sig=zRSrJwH2FGL4kdqVjsC3cN44UJQ7gdkmIEuv8onr3mY%3D"/>
+</figure>
+</div>
+<p>Comes with<span class="bold"> 32GB DDR5 RAM, expandable up to 96GB</span> for intensive applications.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822612">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/612/ddbb9c8ceb64085902a6d6f25fd29ec2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925087&amp;width=680&amp;sig=BL68XwjRzWCAC0XsGDgGJ6EH5VgG%2FllNLvzzTqosgqY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822611">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Comprehensive-RAID-Enterprise-Level-Security">Comprehensive RAID &amp; Enterprise-Level Security</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/611/6c97d6e995d87578228dc913e4b5b016_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925087&amp;width=680&amp;sig=WKFSZFHkQY%2FRKmsAcpP7Rmx4NFj%2FCCSyYQFpQIMnaa4%3D"/>
+</figure>
+</div>
+<p>CyberData NAS supports<span class="bold"> RAID 0, 1, 5, 6, 10, 50, and 60 (RAID 50/60 on CF1000)</span>, delivering faster data throughput with built-in integrity, redundancy, and protection.</p><p>It features <span class="bold">system-level auto backup</span> and<span class="bold"> one-click snapshot recovery</span>, supports multiple independent local accounts and storage spaces, and offers end-to-end encryption, real-time intrusion blocking, robust antivirus, and TPM-secured storage pools, ensuring <span class="bold">enterprise-grade security and privacy</span> across your entire setup.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822613">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/613/74891e3a6b4dba3d650e86f310e3f19b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925088&amp;width=680&amp;sig=vgdJsBGmPXM2%2BptvfZIrZwPcYyiDdX%2FKoatS4LqlB5M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822615">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Efficient-Cooling-System-with-Premium-Framework">Efficient Cooling System with Premium Framework</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/615/ad14bc596e84c0e47087e0a320fff165_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925087&amp;width=680&amp;sig=XJUCn9DrSUArAphjJNjUom9FaMC%2FRbnKeSwEpSgRPWU%3D"/>
+</figure>
+</div>
+<p>Combining an aircraft-grade aluminum frame with enterprise-grade airflow design, the system integrates a large, quiet fan with four adjustable speed modes. Even during heavy workloads, the cooling system maintains performance stability across all models.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822616">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/616/2af684dfa307f7453c9424e76c91fb40_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925088&amp;width=680&amp;sig=h1Mrq6QDgtyTLtXIcnqvgDdjz7fNPyLUXQAxbKeW%2Bys%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822614">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Advanced-I-O-Options">Advanced I/O Options</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/614/a2bdd2a200e7de6b40bbfc65bd555c33_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925087&amp;width=680&amp;sig=yQ%2FDRY8in3Zqfd68nHf8l2VizPztg1ArvTh8UVoIkP0%3D"/>
+</figure>
+</div>
+<p>Features dual 40Gbps high-speed ports compatible with Thunderbolt 4 and 3, allowing direct connection to your Mac or PC for data transfers up to 8× faster than USB 3.2. With integrated DP and HDMI outputs, it meets the demanding requirements of 4K and 8K HDR displays—delivering ultra-fast, low-latency data interaction with maximum efficiency.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822617">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/617/cb860a34328fb06c2a53cd9930eaa11a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925088&amp;width=680&amp;sig=MLb8mbAhiKW2MSu4Oi8cnnOMLDP92dzBoasNKTVqJCU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822618">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-First-NAS-with-True-Freedom-Flexibility">Your First NAS with True Freedom &amp; Flexibility</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/618/d80aa515e5e32243f5bbab9999b1eea1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925088&amp;width=680&amp;sig=Mh%2B3D0CHbj6CIPWzVIH%2BDIvYHj1q4D4C38LITVz5Wbs%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Seamless-Multi-System-Access-"><span class="bold">Seamless Multi-System Access </span></h4><p>One click to switch between Windows, Linux, Debian 12, and Ubuntu—locally or remotely. Run multiple programming tasks anytime, anywhere.</p><h4 class="page-anchor" id="h:Open-Source-AI-Deployment"><span class="bold">Open-Source AI Deployment</span></h4><p>Supports localized deployment of open-source AI models with MLC Agent for secure content generation. Minimize AI flaws and optimize workflows.</p><h4 class="page-anchor" id="h:Third-Party-OS-Compatibility"><span class="bold">Third-Party OS Compatibility</span></h4><p>Break free from restrictions - easily install and run third-party NAS operating systems for a personalized experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822619">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/822/619/d097865d89d38c0b1290f9d9dc36cd6d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925090&amp;width=680&amp;sig=Jp4fhQo9wGkm9TAI5FsKU9HnCyurCtvcUozV2DmC2v8%3D" src="https://i.kickstarter.com/assets/049/822/619/d097865d89d38c0b1290f9d9dc36cd6d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925090&amp;width=680&amp;sig=Jp4fhQo9wGkm9TAI5FsKU9HnCyurCtvcUozV2DmC2v8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822624">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Cross-platform-CyberData-OS">Cross-platform CyberData OS</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/624/37e68bf0db15504526e17e5b0a7fcc50_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925121&amp;width=680&amp;sig=jboysp8N0XKw7VhOlMat3FSlcUaVrOz2ZZo9w%2BqQX3Y%3D"/>
+</figure>
+</div>
+<p>An innovative, fully self-developed operating system that combines localized intelligence, intuitive controls, and real-time updates. It supports seamless cross-platform and cross-device data collaboration, connecting apps across smartphones, computers, and TVs for a unified experience and expanded functionality.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835618">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/618/509f95e3f9fc5404a3cc9dde89d277a2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008944&amp;width=680&amp;sig=tCI8OATh76fl0Yxq53CaCgRee7saE92wsp322RYclIk%3D"/>
+</figure>
+</div>
+<p>Multiple storage spaces and user permissions, end-to-end encryption and real-time intrusion blocking ensure data privacy.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822642">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/642/b914eb10bc68a9fc3e540e581dcdc3a3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925124&amp;width=680&amp;sig=v%2B%2BFDKAhGpQ5PX9S6L4hCDV%2BsxXkOr1x4E8TKNdtFwY%3D"/>
+</figure>
+</div>
+<p>You can follow all official software update logs and feature announcements for ORICO CyberData NAS on our website: <span>https://www.orico.cc/us/tops_nas/helper_detail/id/1704.html</span></p><p>We regularly post firmware releases, feature enhancements, and bug fixes on this page. It's the best way to stay informed about ongoing improvements to CyberData OS.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49919986">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/919/986/7dffc002e80b5146179c5c3867a15fff_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751617505&amp;width=680&amp;sig=i9lfNtMNvyMLmySBSoim%2B6MtTBwIZfMjFixgvQrHn6A%3D"/>
+</figure>
+</div>
+<p>Make the teamwork seamless. Collaborate in real time – securely chat, edit, and share files directly from your NAS.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49920902">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/920/902/595b82c74ff803211fd6d854284acffd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751624855&amp;width=680&amp;sig=QhVhb0jkKKqAVlB1DYBxgi85RMLwxzexPXDn7wq3%2BQE%3D" src="https://i.kickstarter.com/assets/049/920/902/595b82c74ff803211fd6d854284acffd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751624855&amp;width=680&amp;sig=QhVhb0jkKKqAVlB1DYBxgi85RMLwxzexPXDn7wq3%2BQE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822623">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Enterprise-Grade-ZFS-File-System">Enterprise-Grade ZFS File System</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/623/9961a67d7792a784fb7b2458af87f191_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925120&amp;width=680&amp;sig=UoRDJP9CeGdgVJ%2FiCHhBuL5mFOpkP0lJG2ItNFptCug%3D"/>
+</figure>
+</div>
+<p>Offers advanced features such as integrity checks, deduplication, data rollback, snapshot management, and a 30% performance improvement over EXT4.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822628">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/628/c4fe838db48eec7f163fa936d405f555_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925121&amp;width=680&amp;sig=zqGcwfUgPaw8IQWz%2FxjWxPo8YHLBUcuyqFmapm6aK1k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822625">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Remote-Access-Global-Connectivity">Remote Access &amp; Global Connectivity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/625/1a51f280ab8da8093905d96dbd93bd2f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925121&amp;width=680&amp;sig=qx6XltmdDhfqRGReeJNWdsxi9gTMDeO30%2ButU6E%2F5WM%3D"/>
+</figure>
+</div>
+<p>Supports global remote access with P2P technology, enabling high-speed, secure connectivity across devices, whether on corporate intranet or external networks. Experience lightning-fast speeds, instant messaging, file transfers, online preview of Office documents, real-time edits with auto-sync, and no worries about external network access or data security breaches.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822629">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/629/3ee6d34ba5c31d6f19051904fa02204f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925121&amp;width=680&amp;sig=E3PBFquR9xnX7aUwR6xLsft5l3JDWCMRvavzFOaqA50%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822627">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Keep-the-Workflow-Going-Locally-or-Remotely">Keep the Workflow Going Locally or Remotely</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/627/c0bd4beaaba6ff03c6374419e4765eb2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925121&amp;width=680&amp;sig=WlRcap6Di3nvb8VvHgL51nFCyaE3Qh0%2FUntjEFxD3As%3D"/>
+</figure>
+</div>
+<p>Transform your digital lifestyle with this next-gen "high-performance PC" built with private cloud capabilities. Seamlessly open or switch between your private <span class="bold">Windows, Linux, Debian 12, and Ubuntu </span>desktop systems - anytime, anywhere - whether for demanding tasks, creative workflows, or everyday entertainment.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822630">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/630/cb7ee8674696ea58310672ec942a71d0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925121&amp;width=680&amp;sig=yJGJx6e7nf5484Y4q%2Btvl0y8jeqv0W0q%2BCPRQRnukjY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822631">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:AI-Drive-Data-Management-Integration">AI-Drive Data Management &amp; Integration</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/631/f1aaf51eace0b2d9d0314802fb98c501_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925121&amp;width=680&amp;sig=3gCOImOkeUbg6gtU6PnFLxFyBottJOVI4%2FqWM99Xn%2BA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822632">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/632/d8fb19204055878f5bb474d42bb946e5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925121&amp;width=680&amp;sig=i4JCUClWQOFJz%2BX2EAmUWNmYZWPkiMHIm%2FWBeSRlclg%3D"/>
+</figure>
+</div>
+<p>AI-powered photo and file search with semantic recognition, face recognition, and location-based categorization.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49198806">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/198/806/f18a1f60ca1783a2a0b3d68bccf97c69_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746687898&amp;width=680&amp;sig=6OcXsYmWQocMRj%2FepWP1gDJVKxE317Xw3d7y90IVals%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49198807">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/198/807/2e4b42fbf4e9e27238db13b23e7bdc95_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746687898&amp;width=680&amp;sig=xByo6Ukg8QAKzgdfoixDBsMGxVJ6Y5e4%2FwpAoAOcJdc%3D" src="https://i.kickstarter.com/assets/049/198/807/2e4b42fbf4e9e27238db13b23e7bdc95_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746687898&amp;width=680&amp;sig=xByo6Ukg8QAKzgdfoixDBsMGxVJ6Y5e4%2FwpAoAOcJdc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49834568">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/834/568/aa64ab4981a87cc26a4cdade5000d082_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751000461&amp;width=680&amp;sig=N8hSBJ0hxwXUrgdZlJg4jHwpSSrFuTCXWGwPsp6RPTA%3D"/>
+</figure>
+</div>
+<p>From cherished family memories—parents, babies, pets, adventure trips—to essential work files, CyberData NAS keeps everything that matters secure and always within reach through <span class="bold">private shared access</span> over your network. With <span class="bold">one-click backup</span> and seamless synchronization <span class="bold">across PC and Mac</span>, it simplifies your workflow—Windows users can customize folder sync, while Mac users enjoy built-in Time Machine support for effortless remote collaboration.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822635">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/635/bd730a3c5c836c742e2885c3b1a8e0b9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925121&amp;width=680&amp;sig=4o1PdvCXCO4Pd0iq3Bf9zAUta%2FT03VwZnbAFCPtAPro%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822634">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/634/839e8cd0e5a21d711995fb98bec1c481_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925121&amp;width=680&amp;sig=hGkqPxHT2sV%2B1IQx1JCmlCFW2eV0iyLOwL2hsLy1ajk%3D"/>
+</figure>
+</div>
+<p>CyberData automatically generates movie wall information for an immersive and organized viewing experience. With powerful hardware and advanced processing capabilities, it effortlessly handles <span class="bold">dual 4K high-bitrate Plex transcoding</span>. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822643">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/643/98539334076aa3900694aa31937ba79c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925127&amp;width=680&amp;sig=5s4OxfTf2Zr8xDcQ9lIuwh9ffdAJB8Kf%2BWOQ%2B%2BAdH9w%3D"/>
+</figure>
+</div>
+<p>Enjoy smooth, luxurious 4K playback right from your personal server. Plus, with support for mounting third-party cloud storage, you can stream content online without downloading—bringing cinematic convenience straight to your home.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822637">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/637/421b48a34049ff4fffaa4ebdaf651d6a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925122&amp;width=680&amp;sig=RmD26i%2FRJM2ypM3g1kj9Hi42RAFPR0w1hLLRZuuDYP0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822638">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/638/1956b197220833b6a6849e46c4067064_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925122&amp;width=680&amp;sig=AU9%2BmO3zk%2F1U3A%2Bk6ioKdsQd%2BHt1XdLC4qA4IyILHLQ%3D"/>
+</figure>
+</div>
+<p>Features localized AI-generated content (AIGC) to simplify data organization and management. (Available on CF56 Pro and CF1000)</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822639">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/639/f11c201e7e6fffb8064a94cc21775793_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925123&amp;width=680&amp;sig=jlgn2EwWE2AZofQQA16Xr1xLDoVrHmaw9m3BA9QdSi8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822695">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Expandable-Ecosystem-for-Advanced-Computing-and-Storage">Expandable Ecosystem for Advanced Computing and Storage</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/695/e66ee164b6b6727019a1695ffb1f80a7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925470&amp;width=680&amp;sig=sylAA%2FmfWBX5bnRFNJeFU2Ly5aZjBTRKlL9DPFK3iNA%3D"/>
+</figure>
+</div>
+<p>Maximize the capabilities of your CyberData NAS with seamless integration of additional accessories. By leveraging the CyberData NAS with the GPU Dock or Thunderbolt RAID Cabinet, you can remotely manage resource-intensive tasks, enjoy enhanced computing capabilities, and achieve peak productivity without constant monitoring.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49921263">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/921/263/c75485e5e171daf229f8fb7c9b51714d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751627500&amp;width=680&amp;sig=ftx1%2FWaa7BDRrnBDjbtybBAfoIaU66rSU0rLV0aA7AI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835470">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:ORICO-GPU-Dock">ORICO GPU Dock</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/470/294b380046af2e0b3b61dec078a64c95_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008130&amp;width=680&amp;sig=wYuQxKXhwpNFQC04zGJGUdfkvu8UBsN1wdRBQRSXsS8%3D"/>
+</figure>
+</div>
+<p>Unlock new levels of performance by pairing your CyberData NAS with an <span class="bold">external GPU dock</span> — transforming it into a<span class="bold"> true high-performance mini PC</span>.</p><p>Powered by <span class="bold">Intel JHL6340 Thunderbolt</span> for up to <span class="bold">40Gbps bandwidth</span>, it enables seamless GPU acceleration for AI, rendering, and virtualization workloads. The GT550 (550W) supports mainstream GPUs like the 5060Ti/7700XT, while the GT800 (800W) handles high-end cards like the 5090D/7900XTX with ease — and is also backward compatible with all GPUs supported by the GT550. For users in <span class="bold">110V countries</span>, we <span class="bold">strongly recommend the GT800</span> for better power efficiency and broader compatibility.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835464">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/835/464/4cd0f22d5ed366140bf443b2424c2314_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008108&amp;width=680&amp;sig=kP57cZcrVUc0oJBOi%2FbRN92Lq8717pUp3JEWNCZOYJI%3D" src="https://i.kickstarter.com/assets/049/835/464/4cd0f22d5ed366140bf443b2424c2314_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008108&amp;width=680&amp;sig=kP57cZcrVUc0oJBOi%2FbRN92Lq8717pUp3JEWNCZOYJI%3D"/>
+</figure>
+</div>
+<p>Both models are equipped with <span class="bold">enterprise-grade CRPS Platinum power supplies</span>, delivering up to 80Plus Platinum efficiency and up to 150W of redundant overhead. With 110V–220V wide voltage support, ultra-quiet active cooling, and versatile I/O (Thunderbolt + USB), these docks are purpose-built for demanding creators, pros, and performance users.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835474">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Thunderbolt-RAID-Drive-Cabinet">Thunderbolt RAID Drive Cabinet</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/474/5ca09a4e679f42a87df9fa93d7ba5504_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008143&amp;width=680&amp;sig=M8bEKMnbL%2BFbaeWFJWhSRsux7Xjfvi9czc%2FRK8cFmyk%3D"/>
+</figure>
+</div>
+<p>Take your storage capacity and performance to the next level by pairing the CyberData NAS with <span class="bold">optional Thunderbolt RAID Drive Cabinets</span>. </p><h4 class="page-anchor" id="h:Enterprise-Class-Storage-Expansion-for-CyberData-NAS"><span class="bold">Enterprise-Class Storage Expansion for CyberData NAS</span></h4><p>Designed for creators, studios, and professionals, the ORICO HD8 and HD10 RAID Cabinets deliver high-speed, high-capacity expansion via USB4/Thunderbolt (40Gbps) - fully optimized for CyberData OS. Whether you’re expanding your AI lab, building a media server, or editing 8K footage, ORICO’s RAID Cabinets offer the <span class="bold">ultimate in modular, high-speed storage</span> with plug-and-play CyberData compatibility.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835460">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/835/460/82b82014fdd63fbae39554c39a512c8d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008073&amp;width=680&amp;sig=0j1bEqDuyruY85y19zZuJ%2BP98NyHRNyFW%2BFN1LPqhuI%3D" src="https://i.kickstarter.com/assets/049/835/460/82b82014fdd63fbae39554c39a512c8d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008073&amp;width=680&amp;sig=0j1bEqDuyruY85y19zZuJ%2BP98NyHRNyFW%2BFN1LPqhuI%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Secure-Scalable-Backups"><span class="bold">Secure, Scalable Backups</span></h4><p>Protect your critical data with robust RAID configurations that ensure redundancy, integrity, and future-proof scalability — whether for enterprise use or creative production.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835468">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/835/468/ec42cd0d8c1fc7e5140846631ced6893_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008123&amp;width=680&amp;sig=yiA51yVkqov6vDdY1TzExmSr11baxPuZFOveszR9Alo%3D" src="https://i.kickstarter.com/assets/049/835/468/ec42cd0d8c1fc7e5140846631ced6893_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008123&amp;width=680&amp;sig=yiA51yVkqov6vDdY1TzExmSr11baxPuZFOveszR9Alo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822696">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/696/8f7e2f6bf450a4fcbe0dac13a7963e03_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925470&amp;width=680&amp;sig=jiy2rTlJWZxFZCDzSKnrf%2B7p2PmDpTWfvx9OEp%2FP75k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822698">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/698/e80bbc1882f15710a0dd9c25ed59d149_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925471&amp;width=680&amp;sig=AEzEuU86RoBdyNgHjlYILQui6KQyo17TiURlPHziXwQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49974730">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/974/730/ca31b8ec2e40e916fe161a7f82d5fa3c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752053395&amp;width=680&amp;sig=LAPFnYXC2YS6DuL5OGESpCduAU3%2BR1gXD%2BP%2BEqhPwgw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49974734">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/974/734/1a079a0096108d4495eb0d2d105f51c7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752053409&amp;width=680&amp;sig=GDZ2E1D29iuYvLQxwOUCH%2FgvFlRyzOwQrT4qBJVyrBE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835612">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box-">What's in the Box?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/612/0b4a786d437c89db3ab79d11a206ad9c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008901&amp;width=680&amp;sig=Gf6NStxpsLIF8NxMAy9S1sigNNDzaAXB%2FFiTVb%2Fu5qc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835613">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/613/a666a6e9dbf040d541166b0e5c8fd955_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008903&amp;width=680&amp;sig=iirATVfIrPsu4FB9UdA9bqt5RHuuRaektuRdQUFQva0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199666">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/199/666/3f97153ba25c333290b151271061db4f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693616&amp;width=680&amp;sig=1VwkSHKHJyByM6NrIaqO%2BSSWf3dbQOXtJKPV3wxRqug%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49822699">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/822/699/79bacfe99e8d5cd39f2f6609a191c8f0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750925471&amp;width=680&amp;sig=CdC8v%2BwnjBFfCCVgsAeAWcjEl031lXbscfnPrX7Eqtc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199670">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-on-Rewards">Add-on Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/199/670/8dd6032fc1dacbb3bf340b7d7dc11625_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693623&amp;width=680&amp;sig=L6H6ZEFPUlowOFp8AlcghPvWGex1ewmcWW3DTxjThR8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49920797">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/920/797/66fd78bb244cd530003c378f5e82d0e1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751624020&amp;width=680&amp;sig=nH4kGnV2LVnVQ9YgPiryE9ACExWtoa8veR9V5jDyoRQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49920907">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/920/907/05907c7d1ca6ab3015326dcd24d2f4f7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751624906&amp;width=680&amp;sig=2WYMS7u0SRE%2FIXn3Rp3pPhfKLszKC7mKvO3LC%2BYUt3M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49920800">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/920/800/15cb1c9f60ac2dc05d3cff814261e823_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751624028&amp;width=680&amp;sig=hWTNkYY4TN43pLfN3czSSHLVynq20Sq10TcnUP8q1bY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49835609">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/835/609/b9c59bcf57dfb6e83c4e601818f40dc0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751008863&amp;width=680&amp;sig=dh5ojDfQgpz5WKBpjMmEfe551aoqXLqFFav55umMYew%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199681">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Campaign-Timeline">Campaign Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/199/681/38820b4f9b12d51ddf721c267a10203a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693667&amp;width=680&amp;sig=b0yMlMiuaAN8qedzbW2VlD2L8gabA%2FDD45ECMGp5jYE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49960323">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/960/323/af890e8e535e44f310f24d6588a99fb1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751958495&amp;width=680&amp;sig=GYQivQCTv0BypokHPABcQ7knB%2BOULRQb%2FK2xKMghU0Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272743">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Production">Production</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/743/4e70b8bf75f4c786de0affd52ee90c29_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747214380&amp;width=680&amp;sig=lbjfHg5L3gncGFj3IhJ1s%2Bi3%2FIuB0WQuAv1YUMN3LDw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49272738">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/272/738/838eb9a3c7a84365c00c4ef04d9ac0b3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747214367&amp;width=680&amp;sig=x2WbFRL6YdOF8IQrb3qYvGPrqxeXRPxDJH%2F3jKoviJg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49332746">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/332/746/cc9a635d11d0176312925f2ddc6c4140_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747650745&amp;width=680&amp;sig=cyhbfSkEvOexWY3HVzKZBb0KQs14nw9auwtuoEkC6S8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199677">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-ORICO">About ORICO</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/199/677/06dbb5aac421c6561fcbbb1eace350f3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746693653&amp;width=680&amp;sig=KtV%2FctXmKc13vODwZuOJRaaWhkyuS16%2FqBgM6kcSqz8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49920170">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/920/170/9e7d0b3f9e6c2894e445ea93fd37a35e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751618927&amp;width=680&amp;sig=T6V4eUc2tJyAU7IS2AE%2BUCiqFQg0MPau7%2FlyGG1jlzw%3D"/>
+</figure>
+</div>
+<p>Established in June 2009, ORICO specializes in world-leading data storage and charging solutions. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49920171">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/920/171/7655f5cf705bb3d1dc9c473a31d20e71_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751618936&amp;width=680&amp;sig=8VxZB8tTyVA1Iw4gSDoL3LCZ9M6Zj4JoxiQ%2Fx9bKvp4%3D"/>
+</figure>
+</div>
+<p>Over the years, ORICO has built a comprehensive product portfolio that includes SSDs, network-attached storage (NAS), hybrid storage devices, smart power strips. These diverse product lines and combinations are reshaping the global consumption patterns for data storgage and charging products. For over 15 years, we have been empowering people's beautiful aspirations. We are committed to "Original and User-Friendly Design," striving to make it easier, more comfortable, and more secure for users worldwide to enjoy the convenience and joy brought by advanced technology.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49199049">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/199/049/6cb4e24251f8d640efa8b23d142763ca_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746689505&amp;width=680&amp;sig=cIYNdOZnPvWa0cbs1M0d8StPmgYRVdb%2BZoG%2Bv3Y9f0Q%3D"/>
+</figure>
+</div>
+<p>Learn more about us: <span>https://oricotechs.com/</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49833425">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Connect-with-ORICO">Connect with ORICO</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/833/425/e0c2d49485e3d886fbab5407b331dae9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750991841&amp;width=680&amp;sig=ngpo5DTNpN%2BzixfOJ8W9ZAI6tp2bfd8pagmHkt5dVjo%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49999388">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/999/388/296cbfafc8ac2e3d47580fe9e5ee0bfa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752220755&amp;width=680&amp;sig=jsR8KirGvAPNkDAke5mQPPMDA0hiZMh8WkgH0bSmFa8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49999380">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/999/380/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752220720&amp;width=680&amp;sig=vr9Un7kT6AP1NiQTBz4wDmlB%2FMH7IebXvwSXXko6Zuc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49999876">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/999/876/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752224032&amp;width=680&amp;sig=pzVM4l%2Bw3HCOJbyb4mF1XiXJI3JXQSLGotGPROHIB0I%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">1. Continuous Improvement Based on User Feedback
+At ORICO, we deeply value the insights and feedback from our community. As we gather input from early users and backers, we are committed to continuously optimizing both the software and hardware of the CyberData NAS. This may include firmware updates, UI enhancements, or even configuration refinements. Our engineering team is agile and responsive, ensuring the product you receive benefits from the most up-to-date improvements available at the time of shipment.
+
+2. Manufacturing and Component Availability
+High-performance NAS systems require specialized components, including high-speed networking chips, DDR5 memory, and advanced processors. While we have secured supply chains and manufacturing partners, global supply fluctuations or unforeseen production delays may impact timelines. We’ve proactively built buffer periods into our schedule and identified alternate suppliers to mitigate potential disruptions.
+
+3. Software and Feature Readiness
+The CyberData NAS includes advanced software features such as AI Docker deployment, multi-user permission management, and mobile app integration. Some of these features may continue to evolve post-launch via OTA updates. While core functions will be fully operational at delivery, we are transparent in stating that certain advanced functionalities may roll out progressively. We will keep our backers updated on development progress and expected release timelines.
+
+4. Quality Control and Testing
+Delivering a reliable, enterprise-grade NAS system is a top priority. Each unit undergoes rigorous QC procedures, including thermal, data transfer, and RAID configuration testing. We are working closely with our factory team to ensure that every CyberData NAS meets ORICO’s high standards of performance and durability.
+
+4. Logistics and International Shipping
+Shipping high-value electronics globally comes with challenges such as customs clearance, regulation differences, and delivery risks. We've partnered with experienced logistics providers and are actively monitoring customs policies in key regions (e.g., the U.S., EU, Southeast Asia) to ensure a smooth process. In rare cases, backers may be required to provide personal information to customs for clearance, which we will guide through securely and transparently.
+
+5. Scalability and Demand Surge
+If demand for the CyberData NAS exceeds our projections, scaling up production without compromising quality will be our primary challenge. We’ve worked with scalable manufacturers and planned multiple production phases to meet potential demand increases efficiently.
+
+We are fully committed to transparency, regular communication, and support throughout the campaign and fulfillment process. Your trust empowers us to deliver not only a powerful NAS product, but also a future-ready digital infrastructure solution for creators, professionals, and tech enthusiasts alike.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>The ORICO CyberData NAS Series integrates AI technology in meaningful, user-focused ways to enhance functionality and unlock smarter data experiences. For example:
+
+1. Built-in AI Docker Integration: The CyberData NAS supports AI-enhanced Docker containers such as DeepSeek and OpenLLaMA, enabling advanced tasks like local language modeling, smart search, or private AI agents—run directly on your NAS device without sending data to the cloud.
+
+2. Edge AI for File Management: Our roadmap includes deploying AI-powered image classification and document sorting tools, helping users auto-organize large media libraries and archives.
+
+3. OTA AI Updates: We will roll out AI feature updates over time via over-the-air software improvements. These will be based on user feedback and open-source innovation, keeping the experience fresh and adaptive.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The ORICO CyberData NAS Series is engineered with long-term reliability in mind—both inside and out. Its chassis is constructed from industrial-grade aluminum alloy, providing excellent structural rigidity while efficiently dissipating heat during heavy workloads. The internal architecture is reinforced with precision CNC-machined brackets to support up to 10 HDDs and 2 M.2 SSDs without vibration-related wear over time.
+
+Every component, from the high-efficiency cooling system to the reinforced drive bays, has been selected and tested to withstand 24/7 operation in demanding environments. The modular design also allows for easy maintenance and upgrades, ensuring that your NAS system remains future-proof and serviceable for years to come.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

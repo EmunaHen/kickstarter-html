@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmify</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/047/916/318/f494e47a37ba32b3511a2d11f7c58cd2_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1737537204&width=560&sig=Ll1j4QMzBFMdkFPatdSEMFRZr370jqwJR9Ihv7jxzHw%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Bookmify</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Revolutionizing Appointments and Service Shopping</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 146,015</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:How-We-Will-Use-the-Funds"><span class="bold">How We Will Use the Funds</span></h3><p>The funds will be directly invested in the development and launch of <span class="bold">Bookmify</span>, our innovative platform for automated appointment management. Here's a detailed breakdown:</p><ul>
+<li>
+<span class="bold">Platform Development</span>: 50% of the funds will go toward completing our web and mobile app, including programming, design, and testing.</li>
+<li>
+<span class="bold">Marketing and Branding</span>: 25% will be allocated to targeted marketing campaigns to make Bookmify internationally recognized and build a strong user base.</li>
+<li>
+<span class="bold">Team and Infrastructure</span>: 20% will be used for hiring experts and providing essential resources like servers and hosting.</li>
+<li>
+<span class="bold">Contingency and Miscellaneous</span>: 5% will act as a buffer for unforeseen costs.</li>
+</ul><h3 class="page-anchor" id="h:Why-This-Project-Matters"><span class="bold">Why This Project Matters</span></h3><p>There are growing numbers of stories from travelers complaining about poor service experiences abroad. One story, in particular, deeply moved me: A woman was left paralyzed after a massage in a foreign country. This tragic incident inspired me to create <span class="bold">Bookmify</span>.</p><p>Our platform is designed to minimize such risks. With <span class="bold">Bookmify</span>, users can book services safely and transparently, with access to reviews, real-time availability, and integrated translation tools to prevent misunderstandings.</p><p>For service providers, our platform offers more than just booking options. It supports spontaneous bookings in different countries, integrated translation tools for better communication, and a built-in shop to sell products. Providers can also benefit from our affiliate system, expanding their reach and increasing their revenue.</p><p>This project is important because it not only simplifies daily life for customers but also empowers service providers to grow their businesses efficiently. It’s a win-win for everyone involved.</p><h3 class="page-anchor" id="h:How-We-Will-Execute-the-Project"><span class="bold">How We Will Execute the Project</span></h3><p>We’ve already made significant progress: The development of our platform is <span class="bold">30% complete</span>. With the investments, we will accelerate the remaining development phases, launch a beta version, and run targeted marketing campaigns.<br/>Our plan includes:</p><ol>
+<li>
+<span class="bold">Completing Development</span>: Finalizing all core functionalities and implementing new features like automated reminders and real-time availability.</li>
+<li>
+<span class="bold">Launching the Platform</span>: Rolling out Bookmify nationally and internationally, supported by advertising campaigns and strategic partnerships.</li>
+<li>
+<span class="bold">Scaling and Growth</span>: Building a global user base and continuously improving the platform based on user feedback.</li>
+</ol><h3 class="page-anchor" id="h:Exclusive-Reward-for-Supporters"><span class="bold">Exclusive Reward for Supporters</span></h3><p>We want to thank our supporters with a special reward: The first <span class="bold">1,000 backers</span> will receive exclusive access to the platform as soon as the beta phase begins.<br/>Before that, these supporters will have the opportunity to use and test the demo version and provide valuable feedback. Your ideas and suggestions will directly influence the platform’s development, helping us tailor Bookmify to our users' needs.</p><h3 class="page-anchor" id="h:About-Me"><span class="bold">About Me</span></h3><p>My name is Ilias, and I’m the founder of <span class="bold">Bookmify</span>. I have a passion for technology and its potential to improve lives. With years of experience in software development, marketing and business management, I have successfully delivered several projects.</p><p>Bookmify is more than just a project for me—it’s a mission. I want to create a platform that saves time, reduces stress, and helps businesses operate more efficiently.</p></div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div class="relative flex justify-center items-center h50"><svg height="250" preserveaspectratio="xMinYMid" viewbox="0 0 250 250" width="250"><g transform="translate(125, 125) scale(2.5, 2.5)"><defs><pattern height="1" id="bg1" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/xglb1yux-hatch_light_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=clgJlzhY3k416hIJWrLOR2MdAEuRyBIYLy5Q4Y0qGuE%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg2" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/qm5rth84-dot_line_white_2_pattern_overlays_20190901.png?origin=static&amp;sig=X4u8yLPJQSLFYyFAWhfks%2Bb0l7JvccL9Ns4mZ%2BdcX%2Fs%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg3" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/2pgrzep-scattered_dots_black_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=7dYAvrHvJlUMrHNcRby2NfD16BbES28QnocyMYhS%2BjU%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg4" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/l9o3ber7-grid_dark_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=w1sAH2Z8b0%2Bm44c8oN%2BES4hwspBpkhrrhc1YpFJSPyQ%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg5" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/v0js8b2e-dot_line_white_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=j1%2Biz4vH2TtOn5EX0sEl2Xque0oEBcJupM5qVbNe8CM%3D" width="160" x="0" y="0"/></pattern></defs><path class="innerArc innerArc0" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,0,1,3.772157822170732,43.63726418285908L3.266653940315918,34.797003779552895A34.949999999999996,34.949999999999996,0,0,0,1.2748087586060675,-34.92674280016648Z" fill="#059968" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc1" d="M1.2266984579943918,43.78281867231887A43.8,43.8,0,0,1,-43.79686046187236,0.5244174704191534L-34.943459022524074,0.6761446155818758A34.949999999999996,34.949999999999996,0,0,0,0.7211945761395714,34.94255826901268Z" fill="#71A0FF" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc2" d="M-43.75317223722349,-2.024825715921068A43.8,43.8,0,0,1,-18.670903971573154,-39.62117293675559L-15.131083204711526,-31.504806316689148A34.949999999999996,34.949999999999996,0,0,0,-34.8997707978752,-1.8730985707583483Z" fill="#a3a3a3" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc3" d="M-16.333882156196584,-40.64042683963202A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-12.79406138933492,-32.52406021956559Z" fill="#37d893" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArcTexture" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,0,1,3.772157822170732,43.63726418285908L3.266653940315918,34.797003779552895A34.949999999999996,34.949999999999996,0,0,0,1.2748087586060675,-34.92674280016648Z" fill="url(#bg1)" style="opacity: 1;"></path><path class="innerArcTexture" d="M1.2266984579943918,43.78281867231887A43.8,43.8,0,0,1,-43.79686046187236,0.5244174704191534L-34.943459022524074,0.6761446155818758A34.949999999999996,34.949999999999996,0,0,0,0.7211945761395714,34.94255826901268Z" fill="url(#bg2)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-43.75317223722349,-2.024825715921068A43.8,43.8,0,0,1,-18.670903971573154,-39.62117293675559L-15.131083204711526,-31.504806316689148A34.949999999999996,34.949999999999996,0,0,0,-34.8997707978752,-1.8730985707583483Z" fill="url(#bg3)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-16.333882156196584,-40.64042683963202A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-12.79406138933492,-32.52406021956559Z" fill="url(#bg4)" style="opacity: 1;"></path><path class="outerArc" d="M1.274808758606064,-49.983745984359565A50,50,0,0,1,26.84243900965325,42.183924284175426L24.884128019903944,38.925829120123204A46.2,46.2,0,0,0,1.2748087586060677,-46.18240858410247Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M27.22109114816235,41.940579355839105A50,50,0,0,1,4.12623950421888,49.829450604575435L3.909225885186396,46.034312778389435A46.2,46.2,0,0,0,25.070935621305676,38.80577517679999Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M1.580780140042543,49.97500509403523A50,50,0,0,1,-47.167371164427564,16.590331444462684L-43.55039650105777,15.420861344317178A46.2,46.2,0,0,0,1.363766521010051,46.179867267849225Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-47.01611380352009,17.014259984332178A50,50,0,0,1,-49.99825156096641,0.4181397449653306L-46.197472267144455,0.48327644926999763A46.2,46.2,0,0,0,-43.47577385427507,15.630006006778531Z" fill="#3B3BCC" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-49.954563336317534,-2.131103441374869A50,50,0,0,1,-42.99517030438481,-25.522839389396847L-39.776923192646684,-23.499710239198404A46.2,46.2,0,0,0,-46.15378404249558,-2.06596673707023Z" fill="#cccccc" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-43.22318483650493,-25.134762632444545A50,50,0,0,1,-33.00384770205398,-37.55989931908266L-30.56829395457485,-34.64129623306124A46.2,46.2,0,0,0,-39.889413902451764,-23.308253013018554Z" fill="#999999" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-33.340624706305434,-37.261276738637065A50,50,0,0,1,-21.150381847549788,-45.30630582714548L-19.630731172416848,-41.82193675137847A46.2,46.2,0,0,0,-30.734442506169422,-34.49397112300882Z" fill="#848484" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-18.813360032173204,-46.325559730021915A50,50,0,0,1,-7.4581911155361595,-49.44062484722597L-6.987188703039776,-45.66857994319633A46.2,46.2,0,0,0,-17.29370935704024,-42.84119065425492Z" fill="#c7f5df" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-7.902953512910496,-49.371482920535975A50,50,0,0,1,-1.2748087586060257,-49.983745984359565L-1.2748087586060426,-46.18240858410247A46.2,46.2,0,0,0,-7.206611725379803,-45.63446885238852Z" fill="#73e5ae" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><text font-size="8" height="250" style="opacity: 1;" text-anchor="middle" width="250" x="-1" y="3">€122,222</text></g></svg></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">€60,000</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Herstellung</div><div class="m0 type-16 text-nowrap">€50,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Recherche &amp; Entwicklung</div><div class="m0 type-16 text-nowrap">€10,000</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Multiple/Other</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">€32,000</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Arbeitskosten</div><div class="m0 type-16 text-nowrap">€25,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Verschiedenes</div><div class="m0 type-16 text-nowrap">€7,000</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">€22,222</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Fehlerspielraum</div><div class="m0 type-16 text-nowrap">€10,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter-Gebühren</div><div class="m0 type-16 text-nowrap">€6,111</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Zahlungsabwicklungsgebühren</div><div class="m0 type-16 text-nowrap">€6,111</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Fulfilling</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">€8,000</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Verpackung</div><div class="m0 type-16 text-nowrap">€5,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Versand</div><div class="m0 type-16 text-nowrap">€3,000</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated January 23, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">At Bookmify, we believe in transparency, and we acknowledge that every project comes with its own set of risks and challenges. Here's how we plan to address them:
+
+    Technical Challenges
+    Developing a platform that integrates multiple features like real-time availability, translation tools, and automated reminders is complex. To mitigate this, we’ve assembled a team of experienced developers and project managers who are skilled in handling such tasks. Regular testing and user feedback will ensure a smooth and reliable platform.
+
+    Market Adoption
+    Encouraging both service providers and customers to adopt a new platform can be challenging. We plan to overcome this by launching targeted marketing campaigns, offering competitive pricing, and emphasizing the platform's unique benefits, such as time savings and ease of use.
+
+    Scalability
+    As the user base grows, ensuring the platform remains efficient and reliable is critical. We are investing in scalable infrastructure and cloud-based hosting solutions to handle increased traffic and usage without compromising performance.
+
+    Competition
+    The appointment scheduling market is competitive, with established players like Booking.com and Airbnb. Bookmify differentiates itself with unique features like integrated translation tools, a built-in shop for service providers, and a user-friendly interface. Our strategy focuses on innovation and user satisfaction to carve out a strong position in the market.
+
+    Financial Risks
+    As with any startup, managing funds effectively is crucial. We have created a detailed budget plan to ensure that every euro is used efficiently. Regular financial reviews will help us stay on track and adjust as needed.
+
+    User Trust and Security
+    Building trust among users and ensuring data security is a top priority. We are implementing robust encryption and secure payment systems to protect user information and transactions.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

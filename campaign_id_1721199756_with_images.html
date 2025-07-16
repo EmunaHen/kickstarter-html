@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VFLEX: Power Everything with USB-C</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/658/041/e23911740e28b3abfce937f9253b1583_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749776359&width=560&sig=FWysxGdGK6URGqpFnqsivb%2Btxx0kJd5Lf1knqO7BbZ8%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>VFLEX: Power Everything with USB-C</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Ditch the brick!</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 30,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:このKickstarterキャンヘ-ーンの日本語訳はこちらをクリックして下さい"><span>このKickstarterキャンペーンの日本語訳はこちらをクリックして下さい</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658191">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/191/60915de1a23edbb7187a186585d96329_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749777648&amp;width=680&amp;sig=A41RpQDBrUHb9B2rIQzyugsvbWN9KxIQzb6Ddk3g65M%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Your-Devices-Are-Smart-"><span class="text-italic"><span class="bold">Your Devices Are Smart.</span></span></h3><h3 class="page-anchor" id="h:Your-Power-Bricks-Are-Stuck-in-the-90s-"><span class="bold">Your Power Bricks Are Stuck in the 90s.</span></h3><p>You’ve got modern tech, but you’re still stuck hunting down the exact voltage and connector for each device. It’s draining, messy, and frustrating.</p><div class="notion-selectable notion-text-block"><div><div>
+<p>Electronic devices over the past 50 years have relied on AC to DC power supplies with a litany of output voltages and connectors.  <span class="text-italic"><span class="bold">The combinations are endless</span></span>. </p>
+<p>Finding the right one can be close to <span class="text-italic"><span class="bold">impossible</span></span>.</p>
+</div></div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658214">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/214/106ff3baf9295d49f9394c813124f268_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749777864&amp;width=680&amp;sig=jSc3KhDoot1jnIlkCz12ROa1%2FVCLhB2bVT0a8322GWc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658222">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/658/222/32b77d1287fa64ae04ea8dd0a14cc42b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749777905&amp;width=680&amp;sig=kC4%2BF92eI3cHztfG563sJav11z8%2FCbYC8aSCtcsA4jE%3D" src="https://i.kickstarter.com/assets/049/658/222/32b77d1287fa64ae04ea8dd0a14cc42b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749777905&amp;width=680&amp;sig=kC4%2BF92eI3cHztfG563sJav11z8%2FCbYC8aSCtcsA4jE%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-How-VFLEX-works-">
+<span class="bold">How </span>V<span class="bold">FLEX works</span>
+</h3><p>V<span class="bold">FLEX</span> solves the problem in a clever way.  It has one base that is configurable for <span class="text-italic"><span class="bold">the right voltage</span></span> and a family of low cost adapters to find <span class="text-italic"><span class="bold">the right connector</span></span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658236">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/236/708d345e07684c7ae6546485ad0ac0ea_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749777994&amp;width=680&amp;sig=SBbH%2FKV3DR67JVAa2QAUQkW68KecypIYr8xx0PUfWlA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658296">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/296/95be56f1c8450ec6ff47bcbb324f3389_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749778431&amp;width=680&amp;sig=Sf%2FrSLqJbVMs8cYGkMS5zKbv55j9%2Flfm4nG4XpxDaOU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658301">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/301/e2e22226b8c2957dd28a2dfa90e73996_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749778476&amp;width=680&amp;sig=HOIdUey2KPqXSE2%2Bj4gajwd2zoJe%2FYZw%2FvXbkogzcYU%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-If-we-don-t-have-your-right-adapter-talk-to-us-and-we-ll-build-it-">
+<span class="bold">If we don't have your right adapter, </span><span>talk to us</span><span class="bold"> and we’ll build it!</span>
+</h3><p>New adapters will be continuously added to expand the uses for V<span class="bold">FLEX</span>. Our supply chain is setup to quickly make new cables and stock them for the entire community to benefit.</p><h3 class="page-anchor" id="h:Power-Supply-Options"><span class="bold">Power Supply Options</span></h3><p>V<span class="bold">FLEX</span> is compatible with most USB-C power supplies that support <span>USB-C Power Delivery</span>.  Each device has variability in what modes are supported and what maximum voltages are allowed.</p><p>In this campaign Werewolf is offering 4 options for Power supplies.  Two that are powered by an AC wall outlet and 2 that are Battery powered.  These supplies are tested and verified to work with V<span class="bold">FLEX</span> out of the box.</p><p>They are also very useful devices for your everyday life, use them to charge your phone, laptop or any other native USB-C device.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49788615">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/788/615/d2264477d2654cce05a412015f3ac1f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750722030&amp;width=680&amp;sig=CISCJ1WCSdjBp4mCK1umBb%2Be69ZeGf5a6dqZtQRIsvY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791355">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/355/6c100d548b62f1250a25c249fb310c78_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750741613&amp;width=680&amp;sig=M4e%2B5AQpeDZdi1yTGewY5VD3qGsWwD%2B5T5%2Fx%2F3Z%2Fnz8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:VFLEX-Specifications-">V<span class="bold">FLEX</span> <span class="bold">Specifications</span>
+</h3><p>V<span class="bold">FLEX</span> is designed to operate at voltages up to 50volts and currents up to 5A.  These are the maximum specifications of USB-C.  This means that it will work in any configuration and is only limited by the USB-C Power Supply that you plug it into.</p><h3 class="page-anchor" id="h:-The-VFLEX-App-">
+<span class="bold">The </span>V<span class="bold">FLEX App</span>
+</h3><p>To make V<span class="bold">FLEX</span> as easy to use as possible, it is incredibly important to have a convenient and easy to use app.  For this reason we are using cross platform development tools to offer an app for iOS, Android and the Google Chrome Web Browser.</p><p>So far we already have a working version of the Google Chrome Web app that works on PC and Android. </p><p>We believe that in order to support USB communication with V<span class="bold">FLEX</span> on iOS, we will need to ship an iOS app to the Apple App Store.  We are beginning this process now and will have more updates to share about it.</p><p>The V<span class="bold">FLEX</span> App will always be Free.  At launch it will have a simple interface where voltage can be manually programmed.  over the time, we plan to implement additional help and support features to assist everyone with determining the correct voltage settings and suggested adapter.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658351">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/658/351/de9449b1e11022be6e7efd8b6867cf45_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749778742&amp;width=680&amp;sig=s2Ucuj%2FPVCjqz2hatt1dF7qrbQuHS1g6Fjb%2FPnOKui0%3D" src="https://i.kickstarter.com/assets/049/658/351/de9449b1e11022be6e7efd8b6867cf45_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749778742&amp;width=680&amp;sig=s2Ucuj%2FPVCjqz2hatt1dF7qrbQuHS1g6Fjb%2FPnOKui0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658364">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/364/50c90665bc5b9f55cab91360d2dd5b40_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749778844&amp;width=680&amp;sig=hEbwFKiMIfFa4zM7rsTAk%2FwvyzuxIbJdyzEJK8JNuTA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658369">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/369/bc2f8bb1b098c76f25a0e18fb036dd9c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749778882&amp;width=680&amp;sig=dfINA%2FQhYTUP8re%2Fo0sKPFe%2FajdCzkt96iwQ%2FVeqeTI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:One-Adapter-Endless-Possibilities-"><span class="bold">One Adapter. Endless Possibilities.</span></h3><p>V<span class="bold">FLEX</span> isn’t just a cable — it’s the missing link between modern USB-C power and the legacy tech that still runs your world. Whether you’re at home, on set, in the studio, or on the go, V<span class="bold">FLEX</span> eliminates the need for bulky, device-specific bricks with one sleek adapter.</p><p><span class="bold">Real-World Use Cases:</span></p><ul>
+<li>
+<span class="bold">LED Light Panels</span> (Aputure, Neewer, GVM)</li>
+<li>
+<span class="bold">Sony NP-F Battery Chargers</span> (camera gear, monitors)</li>
+<li><span class="bold">Wi-Fi Routers &amp; Modems</span></li>
+<li><span class="bold">Guitar Pedalboards &amp; Amps</span></li>
+<li>
+<span class="bold">Massage Guns</span> (Theragun, etc.)</li>
+<li><span class="bold">Camping Lanterns &amp; Outdoor Gear</span></li>
+<li><span class="bold">RC Drone Chargers</span></li>
+<li><span class="bold">Digital Synthesizers &amp; Keyboards</span></li>
+<li><span class="bold">Mini Fridges or Personal Coolers</span></li>
+<li><span class="bold">Portable Monitors &amp; Legacy Screens</span></li>
+<li>
+<span class="bold">Rehab/Medical Devices</span> (Breast pumps, stimulators, etc.)</li>
+</ul><p>No more searching for the “right” charger. If it runs on a barrel plug — V<span class="bold">FLEX</span> powers it.</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658449">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/658/449/925c6acb551a89f1451bcb205f1234db_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749779419&amp;width=680&amp;sig=kU3Ldha1vsY5uGGeSSG5ZPa2tMl0ndCi%2Faz8OkNH5gU%3D" src="https://i.kickstarter.com/assets/049/658/449/925c6acb551a89f1451bcb205f1234db_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749779419&amp;width=680&amp;sig=kU3Ldha1vsY5uGGeSSG5ZPa2tMl0ndCi%2Faz8OkNH5gU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658472">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/472/be069ad60377fd28ed70302665e61c37_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749779552&amp;width=680&amp;sig=F05N775P7Qw%2Bz%2FU7xolPq8Mjmsn%2F1N52gEJ4WHBNA0M%3D"/>
+</figure>
+</div>
+<p>Something unique about many musical accessories is that they are “Center Negative” or “Reverse Polarity”. The distinctive Orange color indicates this “Center Negative” configuration.</p><p>The molded "Lever Nut" connector in the DIY edition offers a <span class="text-italic"><span class="bold">tool-less</span></span>, <span class="text-italic"><span class="bold">solder-less</span></span> method to conveniently connect wires to V<span class="bold">FLEX</span>.  </p><ol>
+<li>Lift the color coded levers</li>
+<li>Insert your wires.</li>
+<li>Snap the lever back to the locked position.  </li>
+<li>A spring loaded clamp grips onto the wires and provides a robust connection.</li>
+</ol><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658495">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/658/495/ee57c46b587ac5f62d523734a5a8d2fa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749779644&amp;width=680&amp;sig=XuBF1ejVXf8s33XP0nF5AGPlgW31nyu9J7B1OfhoeS4%3D" src="https://i.kickstarter.com/assets/049/658/495/ee57c46b587ac5f62d523734a5a8d2fa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749779644&amp;width=680&amp;sig=XuBF1ejVXf8s33XP0nF5AGPlgW31nyu9J7B1OfhoeS4%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Power-Monitor-Add-on"><span class="bold">Power Monitor Add-on</span></h3><p>We are offering a low cost Voltage and Current monitor as an Add On to any reward tier.  With this $12 monitor, you can see a realtime readout of the output voltage, current and power.  The monitor is also capable of logging the amount of power consumed over time which is useful for measuring and estimating battery life.  </p><p>We highly recommend that you add one to your order! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791561">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/561/e214906366562b9f3308539358a44353_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750743565&amp;width=680&amp;sig=UAgKfyWuivEnD7XzXkzKRA9j21Vs6WB%2Fb52If04lqOo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658515">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/515/aa1bdd90c2ed5376984b48a5b9efe1ca_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749779748&amp;width=680&amp;sig=ab2hzOcfAs7YC43pyvdvpee27fMM3xnmV7xmx9D9UOM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Crafted-to-Endure-Made-in-the-USA"><span class="bold">Crafted to Endure, Made in the USA</span></h3><p>V<span class="bold">FLEX</span> is proudly assembled in the US by humans and robots who care. We don’t cut corners—every unit is assembled with care to ensure durability, reliability, and longevity. When you buy from us, you’re not just getting a great product—you’re investing in American jobs, expert craftsmanship, and gear that’s made to last.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658529">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/529/90103f8df572aa9e05aa03561fcb2d44_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749779823&amp;width=680&amp;sig=GS5iEtteEiwodNs6%2FZBypOZIacO1Ujmuj2TWlAkp6h8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Built-for-a-Cleaner-Future"><span class="bold">Built for a Cleaner Future</span></h3><p>We believe sustainability starts with smart design. Every year, millions of cheap, disposable electronics end up in landfills—so we set out to build something better. Our products are engineered to reduce waste by eliminating the need for constant replacements. Fewer broken cables and failed chargers mean less clutter in landfills and less strain on the planet. It’s a small change that adds up to a big environmental impact.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49658541">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/658/541/d959faf2684b1445dfebd6a42c170246_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749779869&amp;width=680&amp;sig=fa%2BobNIT6xMOQ%2F7g3GQO0Ncpya7kDCzhrKCgOs%2B3Fv0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:CALLING-ALL-INFLUENCERS-"><span class="bold">CALLING ALL INFLUENCERS!</span></h3><p>We love working with influencers to promote our product.  If you have an audience that you think is relevant for our product and would like to test a sample <span>please apply here</span>. We will review your request and contact you if we determine it to be a good fit as well.</p><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Four years ago we successfully launched and delivered Tundra Tracker to all of our backers: https://www.kickstarter.com/projects/tundralabs/tundra-tracker
+
+Since this is our second campaign, we hope that it offers additional peace of mind and confidence that we will deliver.
+
+With any Hardware project, there are risk associated with sourcing of materials, manufacturing and tooling.  Regulatory compliance can present additional challenges.  We manage these with careful planning and risk mitigation ahead of the manufacturing process.  Any delays will be communicated promptly and clearly to our backers.
+
+For VFLEX, we're really far ahead of where most Kickstart projects launch from.  We already have working prototypes and have initiated production tooling.  The few remaining steps are to scale production operations, complete any regulatory tests and fulfill orders.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">VFLEX is manufactured with high quality materials like ABS, Aluminum and TPE.  The are carefully selected to maximize the number of bend cycles and continuous use.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">We hope that adoption of VFLEX in future products can reduce the amount of eWaste contributed from AC/DC power supplies that are shipped with products.  If we can increase the reusability of USB-C based power supplies, then they can be higher quality, more reliable, more multipurpose and reusable.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">The VFLEX Base is built at our factory in Green Bay WI.  We work very hard to minimize waste and transportation of parts.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenWheely - AI-Powered Robotic Car</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/865/028/2afa948d99172c2c8e83bb239eb5378c_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751274023&width=560&sig=s3MeQz89GXVh4AYuE%2BTnb1GetPqeiN2zPLnKuiHm14M%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>OpenWheely - AI-Powered Robotic Car</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Learn. Build. Explore. Play. Drive it. Code it. Control it however you want</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p>We believe robotics should be fun, accessible, and educational. That's why we created <span class="bold">OpenWheely</span> — a smart, AI-powered robotic car that gives you the tools to learn, experiment, and innovate with ease.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49867501">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/867/501/693a9e63f5bc2d0746ebf9f3ad2329a0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751289274&amp;width=680&amp;sig=QkFk1bKl%2BYyW3eyBPfUqonRW2YYnMR0ArpnPcWA94gk%3D" src="https://i.kickstarter.com/assets/049/867/501/693a9e63f5bc2d0746ebf9f3ad2329a0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751289274&amp;width=680&amp;sig=QkFk1bKl%2BYyW3eyBPfUqonRW2YYnMR0ArpnPcWA94gk%3D"/>
+</figure>
+</div>
+<p>What started as a small project to teach embedded systems quickly evolved into a fully functional 4WD robotic platform — one that can <span class="bold">drive upside down</span>, <span class="bold">follow sound and light</span>, <span class="bold">stream live video</span>, and even <span class="bold">operate in a swarm</span>.</p><p>Combined with a powerful <span class="bold">ESP32-based controller</span>, OpenWheely is perfect for students, educators, developers, gamers, and anyone passionate about future tech. Whether you're into AI, automation, gaming, or simply building cool stuff, <span class="bold">OpenWheely has something for you. </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865946">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/946/70a43ca64ac9da74d626a50961631f6c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751281351&amp;width=680&amp;sig=7ujBzVtyVvtLZJrPtdI55vriqzthAvJNF2%2FxM%2BU0plY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864996">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/864/996/19624edf11bbb2859941705e420fb841_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751273805&amp;width=680&amp;sig=4sGw3tRrFL2eRdhfuZdDfDP%2BvS%2F9xxWbrDtqFcpFLKs%3D" src="https://i.kickstarter.com/assets/049/864/996/19624edf11bbb2859941705e420fb841_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751273805&amp;width=680&amp;sig=4sGw3tRrFL2eRdhfuZdDfDP%2BvS%2F9xxWbrDtqFcpFLKs%3D"/>
+</figure>
+</div>
+<p><span class="bold">OpenWheely</span> is a 4-wheel-drive smart robot car powered by the <span class="bold">ESP32-S3 Wroom-1</span>, equipped with rich sensor input, wireless control options, and AI-ready processing. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839217">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/217/61b31c922ca375d20276039e6756c213_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031144&amp;width=680&amp;sig=0yyuefpBTVIfm173pckIBMpUqF3XQ7k%2FY9Mdasfx%2BDg%3D" src="https://i.kickstarter.com/assets/049/839/217/61b31c922ca375d20276039e6756c213_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031144&amp;width=680&amp;sig=0yyuefpBTVIfm173pckIBMpUqF3XQ7k%2FY9Mdasfx%2BDg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864802">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/802/a138bbba8e07fa378ec55de2e2b6c86e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751272751&amp;width=680&amp;sig=JzB29WdTcdhr3z8ka4ArHggWTGZ8MBNla48yWCb5FsE%3D"/>
+</figure>
+</div>
+<p>OpenWheely is designed with ultimate flexibility in mind — you’re not limited to just one way of control. Whether you're on your phone, using our custom-built joystick, working from your laptop, or even reaching for a TV remote, OpenWheely adapts to your environment and preferences. <img class="image" data-id="49864860" src="https://i.kickstarter.com/assets/049/864/860/aafa9b03c8bbbf1e9ba23582b0f55f2d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751273168&amp;width=2184&amp;sig=SmOu54GAUOsz%2BxXCKw3RpBG1Be7o%2BDrS3%2Bb0NFZFCGY%3D"/>Use your mobile device as a remote! With our web-based or app-based control interface, you can steer the car, adjust speed, view the live camera feed, and even activate different modes like sound-follow or light detection — all from your pocket.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839272">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/272/fd590f139e73cfe82525970367594e65_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031391&amp;width=680&amp;sig=AKoLmsEJB1wmOQJnYEeOuK3K7Dm0lvM7QQ2e6gX19vo%3D" src="https://i.kickstarter.com/assets/049/839/272/fd590f139e73cfe82525970367594e65_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031391&amp;width=680&amp;sig=AKoLmsEJB1wmOQJnYEeOuK3K7Dm0lvM7QQ2e6gX19vo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864873">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/873/97ed2429b29e567bfee42fed476784db_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751273278&amp;width=680&amp;sig=fDEze4JmhUeIrueT1tmGHO9vOvQ7CBtjiBLQ%2B1Avx50%3D"/>
+</figure>
+</div>
+<p>Take full command with the custom-built joystick controller. Featuring dual analog sticks, an onboard LCD for live video streaming, and programmable buttons, this is the most immersive way to control <span class="bold">OpenWheely</span>. It's not just a controller — it's a dev board, a gamepad, and a robotics dashboard in your hands.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839301">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/301/88fba2e674487eee8310301dbb4a94bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031486&amp;width=680&amp;sig=QOVKv8RPgYngNUsa3lPWL1Mllv%2FxWrZgXIK1Y62xpyo%3D" src="https://i.kickstarter.com/assets/049/839/301/88fba2e674487eee8310301dbb4a94bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031486&amp;width=680&amp;sig=QOVKv8RPgYngNUsa3lPWL1Mllv%2FxWrZgXIK1Y62xpyo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864876">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/876/d69c178d1dafb6ab7efdb251fb12759e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751273295&amp;width=680&amp;sig=%2BYhGEUuYlITYVmGnzIuriBwh5LuMRyoY2crX7MMNEB0%3D"/>
+</figure>
+</div>
+<p>For developers and tinkerers, OpenWheely is fully accessible via your computer. Use keyboard keys or custom scripts to send commands, visualize sensor data, or even train and deploy lightweight AI models directly to the car over Wi-Fi.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839307">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/307/5e73043669e6c5133845ad410059772e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031520&amp;width=680&amp;sig=JkwvHCHpJW1AZBdNONHMIfuNoVGP1r2EhRO%2FYE%2BL7JA%3D" src="https://i.kickstarter.com/assets/049/839/307/5e73043669e6c5133845ad410059772e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031520&amp;width=680&amp;sig=JkwvHCHpJW1AZBdNONHMIfuNoVGP1r2EhRO%2FYE%2BL7JA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864881">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/881/b46eec18dfa68892aa77547cae4f5d1c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751273313&amp;width=680&amp;sig=5vlUtqIL9Y1TACPWGRuU4b5yWd%2FIBwKk4t7qiigoZSk%3D"/>
+</figure>
+</div>
+<p>Sometimes, simple is powerful. With built-in IR receiver support, you can control OpenWheely using a regular TV remote — ideal for classrooms, workshops, or quick demonstrations. Assign basic commands like forward, stop, or mode switch to remote buttons and go!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839311">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/311/e3d49c01ab74326421d133e76c015ebd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031536&amp;width=680&amp;sig=O7wlYwLQ3kkBeDK%2BUypG7oOASMkhNynzX4UJYc%2FZucQ%3D" src="https://i.kickstarter.com/assets/049/839/311/e3d49c01ab74326421d133e76c015ebd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031536&amp;width=680&amp;sig=O7wlYwLQ3kkBeDK%2BUypG7oOASMkhNynzX4UJYc%2FZucQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864889">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/889/e7ef2ac32f4a1c2c42f85cf62912235e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751273344&amp;width=680&amp;sig=vYclXzXilflK6KBkt%2FWn4EJdEB5QqCbjGxaWtg98qhc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49867494">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/867/494/e63ef62f5659636b6b0f3ef4f1e1ffdc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751289237&amp;width=680&amp;sig=Y%2FyQDPvARvQroowSgMxRSC9XOvhGhDB3I1CIvNUMy84%3D" src="https://i.kickstarter.com/assets/049/867/494/e63ef62f5659636b6b0f3ef4f1e1ffdc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751289237&amp;width=680&amp;sig=Y%2FyQDPvARvQroowSgMxRSC9XOvhGhDB3I1CIvNUMy84%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863135">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/863/135/70aa3d9ad251ed51a2fa72d85d0569c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751259758&amp;width=680&amp;sig=6gXzRaRDMWkFXpylWxhPvgcoRI3t4D0A7VOo%2BC%2BWHdE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865956">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/956/d785af5477a0438f6c0249e1c0882d59_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751281406&amp;width=680&amp;sig=8%2Fbwen%2BGxfoDgZRnzB%2Fd6HGoDXkGYstTa35T0veS3ig%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864163">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/163/e890a3372359a27588dcc6d1633cf693_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751268300&amp;width=680&amp;sig=TFfFAdaGEsFho6VszweTn8aNtBYNvdd8Sds%2BwuLdPcM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864164">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/164/92e2bb6327de50e22569551bc7c79d2a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751268311&amp;width=680&amp;sig=kTwtggOwIuJAcFNXvXtnu%2FvOpX9uRfVz5rrwQFWFD6Q%3D"/>
+</figure>
+</div>
+<p><span class="bold">OpenWheely </span>keeps going no matter what. Thanks to its smart sensor logic and symmetrical 4WD design, it continues driving even when flipped upside down — perfect for rugged terrain and unexpected turns.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863855">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/863/855/798e4681b5136a6c94234410a14e81cc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266065&amp;width=680&amp;sig=cHidZXgCntMgbGbvJDTkK8677KZXwT8fQNnwiewuiFo%3D" src="https://i.kickstarter.com/assets/049/863/855/798e4681b5136a6c94234410a14e81cc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266065&amp;width=680&amp;sig=cHidZXgCntMgbGbvJDTkK8677KZXwT8fQNnwiewuiFo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864169">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/169/6337207230044f614f494994c360e8d3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751268372&amp;width=680&amp;sig=0RWRoEhmH0QJG%2BHP%2B18JfTmcbY3b77g2Enasnam7cpg%3D"/>
+</figure>
+</div>
+<p>Using onboard IR and distance sensors, OpenWheely detects obstacles and intelligently avoids collisions. Great for autonomous navigation or demoing reactive AI behavior.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863863">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/863/863/8ab820904e77357938b08641d98c6977_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266129&amp;width=680&amp;sig=xtASX5FdPTGecD447HqAaTaHrVcyV3ufkfOnXLA0iHY%3D" src="https://i.kickstarter.com/assets/049/863/863/8ab820904e77357938b08641d98c6977_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266129&amp;width=680&amp;sig=xtASX5FdPTGecD447HqAaTaHrVcyV3ufkfOnXLA0iHY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864176">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/176/1cbe5cd5bbbf520feae41702320eecf6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751268414&amp;width=680&amp;sig=vBfs2IRGRH2RbTUcjIJzm55hUCkke%2FGcMqUwfttQ45c%3D"/>
+</figure>
+</div>
+<p>OpenWheely can track a light source or respond to sounds like a clap. This mode is perfect for interactive robotics projects or creative room lighting interactions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863862">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/863/862/e0dab4b5a75f4cbeefbe873842e85aed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266127&amp;width=680&amp;sig=t%2FbNFofyzs6JVfduJJo%2BAHP52z22fnwt89jMZaisbJg%3D" src="https://i.kickstarter.com/assets/049/863/862/e0dab4b5a75f4cbeefbe873842e85aed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266127&amp;width=680&amp;sig=t%2FbNFofyzs6JVfduJJo%2BAHP52z22fnwt89jMZaisbJg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864191">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/191/52059e20d684b5d0fcbe8a6223c3a5dd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751268544&amp;width=680&amp;sig=z0%2F%2FdXLVUXFVEvKe%2BTW%2FPi37fMw7kjbz69PpXULsQMc%3D"/>
+</figure>
+</div>
+<p>With dual IR sensors on each side, OpenWheely detects table edges or drop zones with 360° coverage and stops safely before disaster strikes — ideal for desktop demos or elevated courses.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863865">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/863/865/9f8b52638bea848c8943ad418bb18f45_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266160&amp;width=680&amp;sig=E49j2DbMR5ap1XxrruG9nNVmX7BPIIgtRHeWoCetnqM%3D" src="https://i.kickstarter.com/assets/049/863/865/9f8b52638bea848c8943ad418bb18f45_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266160&amp;width=680&amp;sig=E49j2DbMR5ap1XxrruG9nNVmX7BPIIgtRHeWoCetnqM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864192">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/192/36286bd7211ef3bbdb45e2ccfa7e6cd7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751268550&amp;width=680&amp;sig=D%2BWKdlVEtf2PSeyHm6UPbk%2FWZC%2FaJlsDHCvcHg4QCQY%3D"/>
+</figure>
+</div>
+<p>Classic line-following robotics, enhanced with precise 4-channel IR sensing. OpenWheely navigates black-and-white line paths with smooth, stable movement.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863867">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/863/867/ad968846284ca08ef4afac36bd1cd076_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266171&amp;width=680&amp;sig=y7FylHnw7E1MprbLwasaVa7f62CSgvYfEdx8Y8GyyRI%3D" src="https://i.kickstarter.com/assets/049/863/867/ad968846284ca08ef4afac36bd1cd076_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266171&amp;width=680&amp;sig=y7FylHnw7E1MprbLwasaVa7f62CSgvYfEdx8Y8GyyRI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865907">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/907/5e492ef6574fbd0fbef2a4b7e500cd0e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751281172&amp;width=680&amp;sig=HIASavyuDQ6%2FYa1GreKjxKdTaPamRVZrGvwHfiXNNVg%3D"/>
+</figure>
+</div>
+<p>With built-in support for swarm behavior, OpenWheely units can communicate, coordinate, and move as a unified team. Program multiple cars to form patterns, respond to shared commands, or complete group objectives — all without a central controller.</p><p>Perfect for AI experiments, robotics education, and showcasing decentralized intelligence, Swarm Mode lets you explore collective behavior in a hands-on, visual way that’s both fun and future-ready.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865925">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/865/925/00e86a8fb5c5a531da001d367c5aff20_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751281206&amp;width=680&amp;sig=XpXfudYqjZY9uOirJUeTEcTw%2FMs7PbfDJC6LalhHstY%3D" src="https://i.kickstarter.com/assets/049/865/925/00e86a8fb5c5a531da001d367c5aff20_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751281206&amp;width=680&amp;sig=XpXfudYqjZY9uOirJUeTEcTw%2FMs7PbfDJC6LalhHstY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864197">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/197/7745f1f9d3de4f4bb35ce418e74431ee_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751268575&amp;width=680&amp;sig=%2BrEqEXPC4sbwIxndCKT5l2nPn3yl9SUC12ncc5ZtUFA%3D"/>
+</figure>
+</div>
+<p>Stream live video directly from OpenWheely’s onboard 2MP camera to the joystick controller’s screen — or your phone or laptop. It’s your own FPV (first-person view) robot experience, anytime, anywhere.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49863874">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/863/874/88fba2e674487eee8310301dbb4a94bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266214&amp;width=680&amp;sig=1x9tw97CUhoRsRXL8Y%2BcRYmXxiAqbWQNQ1%2FxkN2J3nk%3D" src="https://i.kickstarter.com/assets/049/863/874/88fba2e674487eee8310301dbb4a94bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751266214&amp;width=680&amp;sig=1x9tw97CUhoRsRXL8Y%2BcRYmXxiAqbWQNQ1%2FxkN2J3nk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49867602">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/867/602/96442851d101fe9afaac27967835ec1a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751289817&amp;width=680&amp;sig=RlBBMwSOU5AsN97SebfjFgn2kxL9UgfT%2F4XJgMO7on8%3D"/>
+</figure>
+</div>
+<p>OpenWheely responds to sound cues like claps or snaps, making it easy to trigger actions without any physical contact. Start, stop, or switch modes with simple sounds — a fun and hands-free way to interact with your robot. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49867619">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/867/619/2f56efe88b4f0afd46ee22052d356266_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751289872&amp;width=680&amp;sig=K8gIy7L4Qp9lH1X8n%2FWwKtiPtDyaYlQ25q0OQ4jpnXk%3D" src="https://i.kickstarter.com/assets/049/867/619/2f56efe88b4f0afd46ee22052d356266_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751289872&amp;width=680&amp;sig=K8gIy7L4Qp9lH1X8n%2FWwKtiPtDyaYlQ25q0OQ4jpnXk%3D"/>
+</figure>
+</div>
+<ul>
+<li>Line Following &amp; Obstacle Avoidance</li>
+<li>Sound-Based Driving (e.g., Clap to Start)</li>
+<li>Stream Live Video to Your Phone, Laptop, or Controller</li>
+<li>Interactive RGB Feedback for Events and Alerts</li>
+<li>Inverted Driving – Operates Even When Flipped Upside Down</li>
+<li>Light Detection with LDR Sensor</li>
+<li>Swarm Robotics Mode – Coordinate Multiple Bots</li>
+<li>
+<span class="bold">Multi-Platform Control</span>: Phone, Joystick, Laptop, TV Remote</li>
+<li>
+<span class="bold">All-Terrain 4WD System</span> – Designed for rough surfaces</li>
+<li>6D Motion Sensing – For gesture-based interaction or motion logging</li>
+</ul><p><span class="text-italic"><span class="bold">OpenWheely is more than a robot — it’s a mobile, modular playground for learning and experimentation.</span></span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864916">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/916/ea88894cc75351c19ef9990de96e8566_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751273472&amp;width=680&amp;sig=VE2KI2vc3FGvT0UNkSA7JQg6hciclO9Eiek%2FK5kycYw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Meet the Smart Joystick Controller - </span>The <span class="bold">OpenWheely Joystick</span> is a powerful ESP32-S3-based controller designed to give you total control of the car — and much more. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865068">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/068/34dc12b3aaba41a184989fe215412d2b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751274277&amp;width=680&amp;sig=Qjghyl5e38Ek3vMfvCzjRMIqDYdbUgGfWHYqGmJaWoI%3D"/>
+</figure>
+</div>
+<p>The <span class="bold">OpenRemote Controller</span> is more than just a joystick — it's a powerful ESP32-S3-based handheld console built for robotics, gaming, and DIY innovation.</p><p>Designed to seamlessly control the OpenWheely robot, it features dual analog joysticks, a 2.0" LCD display for real-time video feedback, programmable buttons, and full USB Type-C connectivity for both power and programming.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49867640">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/867/640/8987463ded9d68e41e6f66a645c76c92_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751290008&amp;width=680&amp;sig=g3RySvBRq8b4HLHnkdLMiUTDHqj9U2dbCtK1PTUc4Uc%3D"/>
+</figure>
+</div>
+<p>Turn your controller into a portable game console or use it as a joystick to play PC games like the Chrome Dino. With dual analog sticks, a vibrant LCD, and responsive buttons, it’s built for fun on any screen.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49866383">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/866/383/362a3a679a26df354e2d57684c50918d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751283967&amp;width=680&amp;sig=jb8mdbdOyaVEA1wXYKRi02GDST9r1CauoiKeoQeoD%2FA%3D" src="https://i.kickstarter.com/assets/049/866/383/362a3a679a26df354e2d57684c50918d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751283967&amp;width=680&amp;sig=jb8mdbdOyaVEA1wXYKRi02GDST9r1CauoiKeoQeoD%2FA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Controller-Highlights-">Controller Highlights:</h3><ul>
+<li>
+<span class="bold">Onboard LCD</span> – View real-time video feed and telemetry</li>
+<li>
+<span class="bold">ESP32-S3 Chip</span> – Program games, apps, or control logic</li>
+<li><span class="bold">Dual Analog Joysticks</span></li>
+<li><span class="bold">Two Programmable Buttons</span></li>
+<li><span class="bold">Reset &amp; Boot Buttons</span></li>
+<li><span class="bold">Battery Connector + Power Switch + Power LED</span></li>
+<li><span class="bold">RGB LED for Feedback</span></li>
+<li>
+<span class="bold">USB Type-C</span> for programming, charging, and PC connection</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865099">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/099/68eb8b1ae3398dbd5de25f6423d9ab5a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751274416&amp;width=680&amp;sig=tOKzdwnYy9JoZtMKuFqzDm4aJnQ6jYPvaT6jWsKF3SE%3D"/>
+</figure>
+</div>
+<p>Whether you're streaming a live camera feed, controlling multiple bots, or using it as a standalone device to play games or interact with your PC, the OpenRemote gives you precision, flexibility, and performance in the palm of your hand.</p><p>Perfect for makers, educators, developers, and gamers — this is the controller you didn’t know you needed.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865794">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/794/d5291dd2a13e454a29c25a65c0455d04_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751280433&amp;width=680&amp;sig=wejp0cJ8rMdsidzRSTfJBr0ZGOZnKuihCAO%2FlyRc9lQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865798">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/798/c7473baf4913cd49ee0aa3a02066c1a2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751280446&amp;width=680&amp;sig=M9mFrKfPtOoufpVXeqW5SO3HKyfY%2Fr0Q2h%2FJJeiquzY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865800">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/800/b2d40406fe64e893206a987ffee2fa8a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751280453&amp;width=680&amp;sig=br4OdrxO7nBI98l%2BqFRjFq4YXwefxY2KI0k7x1G%2FidU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865801">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/801/1443b48080281591b5c43378f73da7f9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751280457&amp;width=680&amp;sig=l66O2ZPnyRJNApEqTXrOsnxXsWTgW1fJBWrPxy6KuWg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865802">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/802/9cfd203814af5606842c02ded1877717_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751280470&amp;width=680&amp;sig=6inucPbWLwhBOuSKgXU4m5DGuoJSJA%2FqT1XbenEofrQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865803">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/803/44d8d47c5b7a5a483ece71cb44c7d76c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751280478&amp;width=680&amp;sig=b14DOLY5kwiUZbYm3QkjT4X0Bq8sxnb0gOPTLqOM1n0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865804">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/804/b39dcff8ce6bfe12ac37f2c432bb8d5b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751280484&amp;width=680&amp;sig=E9EHDWMEAfOLCfXogSkWgV34CN7nXUjlqh%2FONcquZc4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865806">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/806/9bcd26b20791c28f2d9e4f4ec9be23bf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751280492&amp;width=680&amp;sig=y5V5FvmsS7lORC0bTIFelWx5%2BhxJzIPLjRMd0Q1T7co%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49866284">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/866/284/af148162197d40aaba00b90c6155e877_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751283268&amp;width=680&amp;sig=9awInuQjAa9VCJ2Y9PT%2Bs7%2FRsVBXy4swl9atGc8GdCY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49866396">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/866/396/0264f52aa7a94e15c9c53c82cafc032e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751284054&amp;width=680&amp;sig=KVEx1E%2ByM7021%2FZtJEthnTWE86BsuUdn9XBk8D85p6Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49866404">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/866/404/6dacb96e572bc98255cb78195623ad6b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751284109&amp;width=680&amp;sig=dAEVwstx3QbCoB1xB%2F5ZXBKgAtahXwFYZz7VLZzk%2Bns%3D"/>
+</figure>
+</div>
+<p>Explore high-resolution raw images and accurate hardware dimensions of both the OpenWheely smart robot car and the OpenRemote joystick controller. Perfect for developers, educators, and makers who want to plan, design, or integrate with precision.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865106">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/106/350dd9313f4cf68279edb2fb1751ff95_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751274485&amp;width=680&amp;sig=Quwj%2Br5cJw04QJqnvso9b6gTuTG7dtT%2B9oQcR1Z5MeI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49865109">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/865/109/9e9076bbdaa84d556a2109b0c3a0818b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751274494&amp;width=680&amp;sig=saUcbD5OiD9Rd%2FoLIS3f8TbIYzM4j6GaGw19TZxfvOM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49694947">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/694/947/b2ff642843e76630ca98a78571fc531d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750079780&amp;width=680&amp;sig=%2FlbEbLMbmZlZiTtf5p9TX4iKG7foNx0F9qsEcZlqosk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49694951">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/694/951/405ea76491cca5afbec9f197cbea6a9d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750079797&amp;width=680&amp;sig=jhmH31vECwHXFavY0nJpwxzuDGFH%2BhbYV8l%2FtWq7%2ByM%3D"/>
+</figure>
+</div>
+<p><span class="bold">OpenRemote is made for the creative minds who want to build, control, and play.</span> Whether you're a student, maker, hobbyist, or developer, this device is a powerful tool for hands-on innovation.</p><p> <span class="bold">Back OpenWheely Now </span><span class="text-italic">(Secure the best price before it’s gone!)</span></p><p>Thank you so much for supporting us — let’s bring the future of robotics to life, together.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Hardware production depends on timely sourcing of components (such as the ESP32-S3, camera modules, and displays), which can be affected by global supply chain issues.
+How We're Addressing It: We’ve already completed several successful prototypes and established relationships with reliable suppliers and PCB manufacturers. We’ve also built in buffer time in our delivery estimates to account for minor delays.
+
+📦 Shipping &amp; Logistics
+Challenge: International shipping can be unpredictable due to customs delays, logistical bottlenecks, or regional restrictions.
+How We're Addressing It: We're partnering with experienced fulfillment partners and have factored global delivery planning into our logistics workflow. Tracking numbers will be provided for all backers, and we’re building a support channel to help you if any issues arise.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

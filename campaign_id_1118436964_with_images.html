@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speed Tin</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/624/118/665890b8ce42c293d1bc3d98be214381_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749572243&width=560&sig=GXU%2FQ1gqH1dpixpQTD1mJELRgZ%2BW%2B3%2FjLNIy20g6j6w%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Speed Tin</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A single-handed cocktail shaker to assist with shaking and serving cocktails quicker and easier</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 15,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49164100">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/164/100/7a5409e905a48edf4984f1a148897903_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746476956&amp;width=680&amp;sig=XEdHcBkXrYfmQzrrL6SxfwLdcH%2FAd%2B3dqyj%2BXe7IChY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:A-Revolutionary-Cocktail-Shaker">A Revolutionary Cocktail Shaker</h3><p>Hi Backers, Bartenders, Mixologists, and Bar Owners!</p><p>GET READY for a new generation of cocktail shakers! Introducing a revolutionary cocktail shaker designed for single-handed quick, efficient and simple use.  It's the first single-handed cocktail shaker tin in the world.  </p><h3 class="page-anchor" id="h:The-Purpose-For-You-by-one-of-You-">The Purpose.  For You by one of You!</h3><p>This has turned into a passion project.  I've been bartending for 15 years.  People always ask me, "when are you going to hang up your shakers?" lol.  But I've always loved bartending, and I still do.  It was never my plan to invent something, let alone an invention for bartending.  But I'm really glad I did.  I want Speed Tin to actually help people. I want it to help bartenders make more tips, make them faster, and make their job easier. I want it to help bar owners increase revenue.  I want bar patrons to be happy getting their cocktail faster.  I also want Speed Tin to help home bartenders just by making it easier to shake and pour a cocktail after a long hard day at work. Or mocktail ;). I'm really grateful that I now have the opportunity to give back to a community that I've been so involved with and truly love.</p><h3 class="page-anchor" id="h:Our-Patented-Design-in-Collaboration-with-JonCon-Creative-Works-">Our Patented Design in Collaboration with JonCon Creative Works </h3><h4 class="page-anchor" id="h:The-Single-handed-Concept">The Single-handed Concept</h4><p>I wanted to design the shaker so that it would be fast, simple and save the bartender from having to do extra work. The idea had to be for single-handed use, which has never been done before.  It needed to eliminate a step.  It needed to make shaking and serving easier.  One of the biggest pain points for any bartender is having to separate shaker tins or the frozen cap at the top.  I also knew the design had to be something even beginner bartenders could easily use.  </p><h4 class="page-anchor" id="h:Built-in-Strainer-">Built-in Strainer </h4><p>Having a built-in strainer ensures no ice cubes will ever end up in your cocktails.  The built-in strainer can also hold back other ingredients.  With a built-in strainer, you eliminate having to purchase and utilize another bartending tool.  This also means one less thing to rinse, clean or put away.  Sometimes an actual strainer can be difficult to find.<br/> </p><p><span class="bold">Convenience</span>: It eliminates the need for a separate straining tool, simplifying the cocktail-making process and allowing for a quicker pour.</p><p><span class="bold">Consistency</span>: A built-in strainer helps ensure that only the desired liquid (the cocktail) flows into the glass, while ice and other ingredients remain in the shaker.</p><p><span class="bold">Less Mess</span>: It reduces spillage and makes for a cleaner pouring experience, minimizing the mess often associated with shaking and straining cocktails.</p><p><span class="bold">Portability</span>: With a strainer integrated into the shaker, it's more practical for mobile use, such as at parties or during travel, as there's one less item to carry.</p><p><span class="bold">Space-saving</span>: It takes up less space in your bar or kitchen, particularly useful in smaller setups where storage is a concern.</p><p>Overall, a built-in strainer enhances the efficiency and ease of preparing cocktails, making it a valuable feature for both novice and experienced mixologists.</p><h4 class="page-anchor" id="h:The-Pull-Sled-Spring-loaded-with-an-Easy-Pull-back">The Pull Sled.  Spring-loaded with an Easy Pull-back</h4><p>The pull-back mechanism utilizes a spring, which is useful in allowing the bartender to control the size of the opening.  If the bartender were pouring shots or shooters, they may only pull back slightly. But when pouring a martini, a bartender can pull back all the way, allowing maximum flow.  The spring allows the mechanism to close after being let go, which will save the bartender the step of having to close the opening themselves.  </p><h4 class="page-anchor" id="h:Flow-Patterns">Flow Patterns</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48490343">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/490/343/477a921c4d5210e4d584262bda1392e0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741746175&amp;width=680&amp;sig=EAz60EbMxos280sJB2SKlNEzmXRD5g%2FBX9GgRzwoC3w%3D"/>
+</figure>
+</div>
+<p>We've tested out several styles and sizes of openings to develop the best and most accurate flow pattern.  The sizing also assists with accurate pouring for shooters or shots.  </p><h3 class="page-anchor" id="h:Interchangeable-Grips">Interchangeable Grips</h3><p>Customization is key! Not only for appearance, but also to make Speed Tin super user-friendly. We've tested out several finger grips to optimize comfort, ergonomics, appearance and ease of use!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="48490366">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/490/366/30607792dbb381ef4b3cabf6874f1ab1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1741746349&amp;width=680&amp;sig=gUJt58OTrrDzKPyw3AjAyrC6VACQzTBjx5pWSh9mQEs%3D"/>
+</figure>
+</div>
+<p>Every Speed Tin Reward will include three different finger grip lengths, allowing users to customize it to best fit their hand size and finger length. This thoughtful feature ensures a more comfortable and secure grip, making the device easier and more intuitive to use for a wide range of individuals. By offering this level of personalization, we’re committed to making the product as user-friendly and accessible as possible.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49653429">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/653/429/edea32cc478747b9a19d2e623a190837_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749746689&amp;width=680&amp;sig=zl%2BlQbFn3XjXc2Pvau7dSUx7vw8iDxZMsP%2FdSEP1Fx4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Springs-and-Gaskets">Springs and Gaskets</h4><p>We tested out several spring sizes and tensions to optimize the closure and strength needed to pull back the sled.  We also tested different gaskets' thickness to develop the best leak-proof fit.  Below are only a portion of the springs and gaskets we've tested.  </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49644304">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/644/304/1fdcc7a727ea8f2dc5e1297719fa5c92_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749686607&amp;width=680&amp;sig=%2FMrVm1eGPeiDOGHLJaad5w0Cy81H328g%2BxVmgIs%2BB3g%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Ease-of-Separation">Ease of Separation</h4><p>Speed Tin was designed in a special way to ensure easy separation from the base tin.  I understand this is a very common paint point for a lot of bartenders.  With a simple thump press</p><h4 class="page-anchor" id="h:Easy-To-Clean">Easy To Clean</h4><p>We understand that cleaning and rinsing is such an important step and concern for every bartender.  This step needs to be as fast and simple as possible.  For the most part all you need is a quick rinse under some water.  But in case you require a more thorough cleaning because of foamy or sticky ingredients, we designed the pull sled to easily be removed so a more in-depth cleaning can take place within the track.  And, Speed Tin is dishwasher safe.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49644347">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/644/347/990c41f604519e2aa79ddcf9f62d0684_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749686841&amp;width=680&amp;sig=VOmtJAFMFZ5eqHheTjCDdv338BKR%2FQZZJwtjy1oQXTM%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Universal-Sizing">Universal Sizing</h4><p>We are kicking off with 28 oz and 16 oz shakers.  While 90% of bars own the standard 28 oz size, for those with smaller hands, the 16 oz is ideal for one-handed use! Speed Tin uses a 2 tin set up so that an exact fit is not required to pair the 2 and create a seal. Now bartenders can take Speed Tin and pair it with one of their favorite base tins.  </p><p><span class="bold">Standard</span> version Speed Tin fits most 28oz Base Tins.  </p><p><span class="bold">2.0</span> version Speed Tin fist most 16oz Base Tins     </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49644353">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/644/353/26ecc61d904e2921ad39a75f94271189_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749686879&amp;width=680&amp;sig=31FgfsOCmHsxwaod13Cg%2Bkf2HF%2FuMOrY%2BmpkLJLY9hg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:One-Directional-Pour">One Directional Pour</h4><p>You may observe that bartenders may sway the shaker back and forth to get all the liquids out.  With the Speed tin we've designed it so that all the liquid inside would flow out in one direction from top to bottom.  We designed a patented internal pitch making sure no liquid gets trapped within the shaker.</p><h4 class="page-anchor" id="h:Durability">Durability</h4><p>Speed Tin is built using only the highest quality materials.  304 Stainless Steel. Everything from the top cover, the sled and the spring are all made with 304.  This ensures a high-quality durable product.</p><h4 class="page-anchor" id="h:Ease-of-Learning-Ease-of-Use">Ease of Learning + Ease of Use</h4><p>Speed Tin is much easier to learn and use than your average cocktail shakers.  Between the ease of separation, ease of pull back, and having the built - in - strainer, it can easily be learned how to use within a day.  </p><h4 class="page-anchor" id="h:Overall-Appearance">Overall Appearance</h4><p>Speed Tin doesn't compromise on looks! I designed the Speed tin to look sleek, sexy and appealing.  In the future, we will launch different colors and styles to allow for greater personalization!</p><h3 class="page-anchor" id="h:Better-Than-The-Rest-">Better Than The Rest!</h3><h4 class="page-anchor" id="h:-We-Lead-with-Speed-and-Pour-with-Ease-">"We Lead with Speed and Pour with Ease"</h4><p>Make cocktails &amp; shooters 15-50% faster with Speed Tin!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49167495">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/167/495/855447dac8a8160508222f99eb6931b2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1746497899&amp;width=680&amp;sig=vaf4BjeCwI%2BkjVxR9%2BESuZs8ntKnhL%2BTD5gRab84Sxc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:The-Only-Shaker-With-No-Separation-Before-Pouring">The Only Shaker With No Separation Before Pouring</h3><p>With a Speed Tin, you can serve a cocktail before you have to separate your shaker tins, or separate the cap at the top.  This allows the customer (priority) to get their drink right away.  This also instills confidence - you can be sure that when separating your old shakers, you won't spill any of the cocktail inside.  </p><h4 class="page-anchor" id="h:If-You-Use">If You Use</h4><ul>
+<li>Boston Shakers - Using two hands, you have to separate the tins, you have to worry about ice getting into your cocktail, you sometimes have to sway the tins back and forth to get your cocktail out.</li>
+<li>Boston Shakers + A Strainer - Using two hands, you have to first separate the tins, drain the smaller tin, then grab a strainer, place the strainer properly on the base tin. The strainer is also an extra tool to wash or rinse.</li>
+<li>3 Piece Shaker - Using two hands, you have to put the lid on, then the cap, then sometimes the cap gets frozen or stuck. An extra step is required in removing the cap and often it gets lost or misplaced.</li>
+</ul><p>The best part is, even if you are set in your ways when it comes to using Boston shakers, you can still use Speed Tin.  Speed Tin can even act as another form of a strainer.</p><h4 class="page-anchor" id="h:Out-With-The-Old-In-With-The-FUTURE-Or-At-Least-Give-Yourself-Another-Simpler-Faster-Option-">Out With The Old, In With The FUTURE! (Or At Least Give Yourself Another Simpler, Faster Option!) </h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49624291">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/624/291/98fc024452187f528d5c184623f26cbc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749572842&amp;width=680&amp;sig=zBQB2tuRt10ro1b3JZjOo5LMVi2FJuDKGxoPHO0PbR0%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Why would you ever go back to using 2 hands when you don't have to!</span></p><h3 class="page-anchor" id="h:A-Win-for-Everyone-Customer-Bartender-Bar-Owner">A Win for Everyone: Customer, Bartender, Bar Owner</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49164115">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/164/115/a4b6e2beb54d72ff9afb0a2e1ba2e883_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746477004&amp;width=680&amp;sig=uRmpj8kz11qFu%2FtbuArg16rnX5uJQITSgw6mi7huMyE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Win-for-the-Customer-">Win for the Customer </h4><p>No more long waits, customers can get their drinks faster!  Customers sitting at the bar can watch bartenders mix and pour their drinks in a new way, providing entertainment value! </p><h4 class="page-anchor" id="h:Win-for-the-Bartender-">Win for the Bartender </h4><p>More money, less work.  Because increased speed will lead to increased sales and tips. Speed Tin also frees up a bartender's hand to accept payment, wipe down the bar, garnish a cocktail, etc.  </p><h4 class="page-anchor" id="h:Win-for-the-Bar-Owner-">Win for the Bar Owner </h4><p>When drinks are being made faster, sales and revenue will increase.  When bartenders jobs are made easier, they will be happier and their customers will be happier.  Speed Tin will also save time and money on training new staff.</p><h4 class="page-anchor" id="h:-Added-Bonus">*Added Bonus</h4><p>It's a win for a server that needs the bartender to make their cocktails for their table. This also becomes a win for the bartender because they will get tipped more and another win for the Bar Owner because the sit down service are getting their drinks faster which can then lead to faster table turnover.   </p><h4 class="page-anchor" id="h:Beginner-Bartenders">Beginner Bartenders</h4><p>Speed Tin is super simple and easy to use. It's a great shaker to use for beginners or even walking into your first shift.  The best part is if you get good with a Speed Tin you will be faster than if you were to get good using any other shaker.</p><h4 class="page-anchor" id="h:Veteran-Bartenders">Veteran Bartenders</h4><p>No matter what level you are at, no matter how fast you already are, Speed Tin can take you to the next level of fast.  By eliminating a step, performing minimal work and effort, and through the use of one hand, Speed Tin can elevate your bartending.  </p><p>Bartending can also be very exhausting.  Repetitive movements performed hundreds of times a day can require a lot of energy and sometimes caffeine!  Speed Tin can save you unnecessary effort.  </p><h3 class="page-anchor" id="h:Any-Environment-Any-Location">Any Environment, Any Location</h3><p>A lot of you have experienced what it feels like to be in the "weeds." (In the industry it's known as a time where you feel overwhelmed with the amount of tasks you have to perform to catch up with substantial service.)  No matter where you work or what environment you're in, Speed Tin can be beneficial to you! Whether you make 10 drinks or 100, a Speed Tin can save you the time and effort. Whether it's in a:</p><ul>
+<li>Restaurant  </li>
+<li>Nightclub</li>
+<li>Sports Bar</li>
+<li>Dive Bar</li>
+<li>Mocktail Bar</li>
+<li>Tea Shop or Barista</li>
+<li>Wedding Venue</li>
+<li>Resort</li>
+<li>Private Bartender</li>
+</ul><h4 class="page-anchor" id="h:At-Home-Bartenders">At-Home Bartenders</h4><p>Speed Tin is so easy to use that now you can enjoy your cocktail quick and easy or look like a professional serving up your friends and guests.</p><h4 class="page-anchor" id="h:Leisure-Bartenders">Leisure Bartenders</h4><p>Because Speed Tin is so fun and easy to use.  It's easily transportable.  You can bring it out:</p><ul>
+<li>camping</li>
+<li>on a boat</li>
+<li>vacations</li>
+<li>golf course</li>
+<li>hotel room </li>
+<li>poolside</li>
+<li>beach</li>
+<li>or anywhere you need a refreshing cocktail chilled</li>
+</ul><h3 class="page-anchor" id="h:Increasing-Sales-and-Tips-">Increasing Sales and Tips!</h3><p>There are 2 things a bar guest dislikes! First, a cocktail that doesn't taste good. Second, a cocktail that takes forever.  Every bartender wouldn't mind being faster.  Like we said, it's a win for everyone!  Speed is how a lot of bartenders are judged or ranked. Speed tests are part of bartending school!  </p><p>Speed is so important because faster drinks will lead to more drinks being sold, which will lead to increased sales.  At the end of the day its a business and we are here to make money!</p><h4 class="page-anchor" id="h:Pouring-With-Confidence">Pouring With Confidence</h4><p>The spring-loaded pull sled allows the bartender to easily control the pour flow from Speed Tin. The built-in strainer ensures no ice will end up in your cocktails!  Speed Tin is just user-friendly.  The pull sled is so conveniently placed and easy to pull back, it makes it so simple for the bartender.  </p><h3 class="page-anchor" id="h:How-to-Use">How to Use</h3><p>This is for suggested use only!  </p><p>Step 1. Build your ingredients </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49355975">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/355/975/7567caa7b7eb92309f93bff20c49005b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747770617&amp;width=680&amp;sig=rhVyn61zBd9Ry8OZbbXEqVaUnNHm7n1ipZftOEFj3xc%3D"/>
+</figure>
+</div>
+<p>Step 2. Add Ice</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49355977">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/355/977/ec312c08c0d7b7e48235a869472e792d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747770630&amp;width=680&amp;sig=Wn6W1N1hcPeLS8F%2BsWeRu7SxaMdPJor%2BZoVe%2FDA1Irg%3D"/>
+</figure>
+</div>
+<p>Step 3. Cap and Seal</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49355983">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/355/983/1fef39fa12f411fff804d5c107a7463a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747770641&amp;width=680&amp;sig=wYG0utD3W28xI4ypHga84zipIHaLfOyLqTZC1OMnfgQ%3D"/>
+</figure>
+</div>
+<p>Step 4. Shake </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49355989">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/355/989/dc570d1ae3480d91ebc581776b99affa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747770671&amp;width=680&amp;sig=dPGnm7fYdpouDGDEP5YAp5bHxBnsdWcMvWshpIkGXCs%3D"/>
+</figure>
+</div>
+<p>Step 5. Serve with Speed and Ease</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49355993">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/355/993/f42a2560047f6ee541f1fd3607ac2982_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747770685&amp;width=680&amp;sig=1jfpwWEZfjdgtYtDBbOSw%2B4bdb2JVZT0hGJqSTEgVgc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Increase-Versatility">Increase Versatility</h3><p>The beauty about the Speed Tin is how versatile it can be.  A bartender can find out and discover what works best for them.  </p><p>A big part of Bartending is also showmanship.  If you are someone who is used to using a Boston Shaker, Speed Tin will increase your versatility with pouring cocktails.  I'm excited to see what bartenders out there come up with!</p><h4 class="page-anchor" id="h:The-Double-Shake-and-Serve">The Double Shake and Serve</h4><p>Now you can double shake and pour efficiently and easily with 2 speed tins! Previously this would take up so much time.  </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49567282">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/567/282/9cdaec39d4234120a3decfe61f233bba_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749167156&amp;width=680&amp;sig=cUI4IMLUoNVNuRFbUeqWOxHhICA3AJMqnLKFyGvQJgE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:The-Thumb-Pour">The Thumb Pour</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49575749">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/575/749/341b464af581486b5eef1b8327f87f17_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749225682&amp;width=680&amp;sig=3xU6xnJxJcDE2EBvvaqrE8SBaGSHhF6vo89XWDNefeQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Just-as-Easy-with-Two-Hands">Just as Easy with Two Hands</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49665874">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/665/874/8c2e89fb6df6187c84f9ea0777c3eeee_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749829292&amp;width=680&amp;sig=Yls3Dpj2XgLuRAVPnJ3OI8fBTcHiAyVq%2BkqFxfNkB00%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Like-a-Yo-Yo">Like a Yo-Yo</h4><p>It's fun in the beginning, and only gets cooler and more fun the more you practice and the better you get at it!</p><h3 class="page-anchor" id="h:How-it-All-Started">How it All Started</h3><p>I've been a bartender for over 15 years, working some of the busiest high volume locations in the Jersey Shore and NYC area.  Dealing with high volume, I've always tried to create efficiencies around the bar to improve customer satisfaction and increase sales.</p><p>It all started with an idea during a busy shift in the summer of 2022. I was 4 customers deep all around the bar.  I lined up a row of shots for one of my regulars, while simultaneously shaking a set of Boston shakers with one hand and my finger placed on top of the smaller tin. Then, it was as if the world suddenly moved in slow motion for a few moments, as I stared at the shaker and thought to myself, "wow, how cool would it be if there were a way to just pour out directly from the top without having to separate the tins?!" Staring at my shaker in my hand, I thought, "there just might be some promise in inventing this."</p><h3 class="page-anchor" id="h:The-Evolution">The Evolution</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49608435">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/608/435/de59cc11f5878ab5484263fb3c6e0f48_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749490749&amp;width=680&amp;sig=hKnYrXv5EQd6x1Wb635j66Wc09U7Qk8djhZDm559neg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:How-your-Donation-Helps-"><span class="bold">How your Donation Helps!</span></h3><p>I've been working on this invention for nearly three years, dedicating countless long hours to bring the idea to life. Up until now, I’ve bootstrapped every part of the process—covering all the fees and development costs out of pocket. It's been a labor of love and determination, driven by my belief in the impact this product can have, especially for others in the industry I care so deeply about.</p><p>Your donations will directly support the essential upfront costs needed to bring this product to life, including tooling for manufacturing, meeting minimum purchase order requirements, and funding further research and development to perfect the design. Every contribution helps lay the foundation for launching the company and is genuinely appreciated. Your support makes this dream possible.</p><h4 class="page-anchor" id="h:What-is-Tooling-">What is Tooling?</h4><p>In manufacturing, tooling refers to the process of designing, creating, and using specialized tools and fixtures to shape and form materials into specific parts or products. These tools are crucial for achieving tight tolerances, consistency, and efficient production of parts, especially in mass production. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49655650">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/655/650/aa89a1a4ccf9538dc90bc5cab17fa035_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749759299&amp;width=680&amp;sig=Wuk39IIka7wXubic1MJXYdF%2Fwfwl2TlGQs8OKFc0xWw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:The-Timeline">The Timeline</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49608456">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/608/456/c0998c46ecaf8db6b33fc5ad1da9588a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749490825&amp;width=680&amp;sig=hKKFb3ZEHR60kYfIEsS8vt6UPCOi33s84eDL1sP5YB0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Own-a-Part-of-History">Own a Part of History</h3><p>Speed Tin is a product that not only enhances your cocktail-making experience but also allows you to own a piece of history. Crafted with aesthetic innovative design, this shaker represents a significant leap in beverage preparation, combining style and functionality like never before. As you shake up your favorite drinks, you'll be part of a transformative era in the world of cocktails, making every pour a moment to cherish. Elevate your bartending and be a pioneer in cocktail culture with this iconic piece that will be talked about for generations to come.</p><h3 class="page-anchor" id="h:A-Perfect-Gifting-Idea">A Perfect Gifting Idea</h3><p>A revolutionary single-handed cocktail shaker makes a fantastic gift for anyone who loves mixing drinks with style and ease. Its innovative design allows for effortless one-handed use, combining convenience with sleek functionality—perfect for home bartenders, busy hosts or cocktail enthusiasts. Whether for a birthday, housewarming or holiday present, it adds a touch of sophistication and fun to any occasion, making it both a practical and impressive gift choice.</p><h3 class="page-anchor" id="h:Future-Products">Future Products</h3><p>In the fast-paced world of bartending, having a faster cocktail shaker is not just an upgrade—it's the way of the future. By streamlining your mixing process, you can serve customers quickly and efficiently, enhancing their overall experience. With a shaker designed for speed and ease of use, you'll not only elevate your craft but also keep the bar flowing smoothly, allowing patrons to enjoy their drinks without long waits. Embracing this innovation means providing exceptional service and ensuring that every cocktail is crafted to perfection, making the entire bar experience more enjoyable for everyone involved.  We plan to manufacture different color schemes, grips, styles, sizes, logos, brands and much much more!</p><h3 class="page-anchor" id="h:A-Message-from-the-Inventor-">A Message from the Inventor!</h3><p>Thank you all!  As a inventor, I am thrilled to introduce you to the first version of our product. This launch marks the beginning of our journey together, and we are committed to continuously growing and improving based on your feedback. Your satisfaction is our priority, and we believe that with each iteration, we can enhance your experience and deliver even greater value. Thank you for being part of our story; we look forward to evolving alongside you!</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Design and Development: Speed Tin has gone through extensive design, development, and testing to ensure it meets the highest standards of quality and performance for all you bartenders.  While we are confident in our ability to deliver the product on time and without major issues, we recognize that unexpected challenges can arise. If any issues do occur during production or after launch, we promise to keep our backers informed and work tirelessly to resolve them quickly.
+
+Shipping: We are committed to shipping Speed Tin nationwide, excepting remote areas. To ensure smooth delivery, we have partnered with reliable shipping services and tax experts who will help us ensure timely arrival of Speed Tin to backers and bartenders everywhere. While we don't foresee any major shipping delays, there are always risks, such as global supply chain disruptions or unforeseen events. If any such delays arise, we will be fully transparent and provide timely updates to our backers.
+
+Supply Chain: Manufacturing and production can be unpredictable, especially with the ongoing impact of global events such as tariffs . We’ve taken steps to work with experienced manufacturing partners and state-of-the-art facilities to minimize risks. However, unforeseen circumstances may still occur. Should any challenges arise during production, we will address them promptly and keep our backers updated every step of the way.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Every aspect of Speedtin’s design was considered  to meet and in most cases exceed the expected service life of the tools used in commercial food preparation and bar service. We have spent months prototyping and testing our product in some of the busiest settings to ensure that it can survive drops, bangs, cleaning, and general rough treatment of a tool intended to produce hundreds of drinks per shift. 
+
+Specifically to maximizing the life of Speetin are as follows:
+
+The major components that comprise the body and moving components are made of 304 stainless steel with a substantially thicker gauge than existing bar tins.
+ 
+All components subject to wear and tear such the gaskets and springs are easily serviced and replaced to extend the life of the Speedtin.
+
+The grips are made to be easily removed and replaced with different styles to better suit different users' serving style.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">As mentioned the grips are replaceable to better suit other users. As we expect Speedtin to outlast the tenure of most bartenders
+
+With exception to gaskets which constitute a very small amount of material, all major components of Speedtin are easily separated and recycled.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">The steel and plastics used in the majority of Speedtin's components come from recycled or partially recycled stock and are designed to last a lifetime</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">Packaging is manufactured in facilities that follow environmentally responsible practices, focusing on waste reduction and energy efficiency.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magix Keys App</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/836/600/24cb2e245d222ea626cd3eb6f8b5126d_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751014534&width=560&sig=C7odY78fPq9c5ugfaTxLG5RVEeMgFxXAwH2MWoa4qpI%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Magix Keys App</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">The App That Makes Your Smartphone an Intelligent Keyboard With Eyes and Ears</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 292</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>34 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Meet-Magix-Keys-Type-Smarter-Not-Harder">Meet Magix Keys: Type Smarter, Not Harder</h3><p>What if your phone or tablet could whisper directly into your computer’s keyboard — without ever touching a key?</p><p>Introducing <span class="bold">Magix Keys</span> — a versatile smart input solution that transforms your smartphone into a powerful, wireless text-entry tool for any computer, TV, or device with a USB keyboard port or Bluetooth interface.</p><p>Whether you're scanning documents, dictating emails, entering barcodes, or automating text with macros — Magix Keys lets you type anything, anywhere, without actually typing.</p><h3 class="page-anchor" id="h:One-Tool-Endless-Input-Possibilities">One Tool, Endless Input Possibilities</h3><p>Magix Keys doesn’t just add convenience — it actively replaces a whole collection of devices you might already use, combining their functions into one compact, smart solution:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49838963">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/838/963/eee9617101c429321d884a6af8c7483f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751029671&amp;width=680&amp;sig=h7s4LCL1ToIif87Il7CVEdzJGCulmY3mDnx7etvZXMc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Standalone-App-Dongle-Optional-Simple-by-Design-">Standalone App, Dongle Optional. Simple by Design.</h3><p>At its core, Magix Keys is an app-based solution. It connects to your computer or device using Bluetooth — just like a wireless keyboard. No need to install any additional software on your connected device.</p><p>If your phone/tablet supports the required Bluetooth mode (many Android devices from popular manufacturers like Samsung and Google do) and your target device supports Bluetooth keyboards (e.g., PCs with Windows, macOS, Linux, etc.), you don’t need any additional hardware.</p><p>But even if these conditions aren’t met, there’s a simple solution: <span class="bold">The Magix Keys Dongle.</span></p><p>You only need the Magix Keys Dongle if:</p><ul>
+<li>Your Android phone/tablet doesn’t support Bluetooth Human Interface Device (HID) mode</li>
+<li>You're using iOS (iPhone/iPad) — iOS requires the dongle due to strict Bluetooth limitations</li>
+<li>Your target device has no Bluetooth interface (e.g., some TVs, kiosks, embedded devices)</li>
+<li>You want convenient plug-and-play support, with no Bluetooth pairing setup</li>
+</ul><h3 class="page-anchor" id="h:What-is-the-Dongle-Exactly-">What is the Dongle Exactly?</h3><p>The <span class="bold">Magix Keys Dongle</span> is based on the widely available <span>M5Stack AtomS3 Lite DevKit</span> — a compact and powerful ESP32-S3-based microcontroller with built-in USB.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49838439">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/838/439/882dc653b4fa15d6ee78f97af5b438f6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751027048&amp;width=680&amp;sig=4kZxSel7AeF4D0aPoHYWlIJUMj2UGTc4Tk0rOtsXzpw%3D"/>
+</figure>
+</div>
+<p>We offer two reward options:</p><h4 class="page-anchor" id="h:DIY-Option">DIY Option</h4><p>You receive:</p><ul>
+<li>The official Magix Keys Dongle firmware</li>
+<li>A step-by-step guide for flashing it to your own AtomS3 Lite DevKit</li>
+</ul><p>Perfect for makers, tinkerers, or anyone who wants to save money and program the dongle themselves.</p><h4 class="page-anchor" id="h:Pre-Flashed-Option">Pre-Flashed Option</h4><p>You receive:</p><ul>
+<li>A fully programmed AtomS3 Lite DevKit</li>
+<li>Ready to plug into your device and start using immediately</li>
+</ul><p>Both options enable seamless, secure communication with the app and act as a plug-and-play USB keyboard emulator.</p><h3 class="page-anchor" id="h:Why-a-New-Campaign-">Why a New Campaign?</h3><p>This is the successor to our <span>previous Kickstarter campaign for Magix Keys</span>.</p><p>We’ve taken your feedback to heart and made significant improvements:</p><ul>
+<li>Support for direct connection mode without the need for a dongle on many Android devices</li>
+<li>Reduced development costs by focusing on an Android-only variant (see iOS Support below)</li>
+<li>Reduced hardware costs by using an unmodified off-the-shelf DevKit</li>
+<li>Thanks to these changes, this campaign has a much lower funding goal — and with many of our early supporters returning, we’re confident we’ll reach it.</li>
+</ul><h3 class="page-anchor" id="h:Try-the-App-Now-Free-Preview-for-Android">Try the App Now – Free Preview for Android</h3><p>In order to easily find out if your Android device supports Bluetooth Human Interface Device (HID) mode and thus you do not even need a dongle, you can already test the Magix Keys app on your Android phone or tablet. </p><p>Follow <span>this link</span> on your Android device to install the preview version from the <span>Google Play Store</span></p><p>Once installed, you can immediately use it to scan text, capture QR codes, or dictate speech — and see how seamless and powerful it is.</p><p>However note, that the app's preview version will stop working when the campaign ends. In order to continue using it without the Magix Keys Dongle, you need to back the project and choose the reward "Unlimited Full App Access".</p><h3 class="page-anchor" id="h:iOS-Support-A-Stretch-Goal">iOS Support – A Stretch Goal</h3><p>While the Android app is already fully functional and available for testing, iOS support is planned as a stretch goal.</p><h4 class="page-anchor" id="h:Why-is-iOS-different-">Why is iOS different?</h4><p>Apple restricts the use of Bluetooth peripheral mode on iOS, which means iPhones and iPads cannot emulate Bluetooth keyboards directly. As a result, iOS devices must use the Magix Keys Dongle to communicate with the target device.</p><p>Because of this limitation, it only makes sense to invest time and resources into the iOS version of the app if there’s sufficient demand for the dongle-based workflow.</p><h4 class="page-anchor" id="h:Stretch-Goal-8-000-Unlock-iOS-Support">Stretch Goal: €8,000 – Unlock iOS Support</h4><p>If the campaign reaches <span class="bold">€8,000</span>, we’ll officially unlock iOS support!</p><p>This means that — in addition to unlimited full access to the Android app — <span class="bold">each backer will also receive unlimited full access to the iOS app</span> once it’s developed.</p><p>Estimated availability for the iOS app: September 2025</p><p>Let us know if you're excited about using Magix Keys on your iPhone or iPad — your support makes all the difference!</p><h3 class="page-anchor" id="h:Snap-It-Type-It">Snap It, Type It</h3><p>Use your phone’s or tablet's camera to scan documents—receipts, barcodes, tracking numbers, forms, or even handwritten notes, extract just the text you need and it will "type" the text for you automatically.</p><h4 class="page-anchor" id="h:Effortless-Quoting-from-Books-Articles-and-Tables">Effortless Quoting from Books, Articles, and Tables</h4><p>Need to quote a sentence from a printed book, grab a definition from a magazine, or pull numbers from a statistical table? The Magix Keys App makes it incredibly easy.</p><p>Just open the app, point your phone’s camera at the page, and tap to scan. The built-in text recognition (OCR) instantly extracts the text. After that, select the parts of the text you want the Magix Keys App to type for you and transfer it with a single tap to your word processor, email or spreadsheet as if you entered it by hand.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839019">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/019/b03c80c68d0404ef44343f697541042b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030001&amp;width=680&amp;sig=YqgTEyaY3hM2MwRphejoKILRlH8pzBrAFC1nQZxfcfc%3D" src="https://i.kickstarter.com/assets/049/839/019/b03c80c68d0404ef44343f697541042b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030001&amp;width=680&amp;sig=YqgTEyaY3hM2MwRphejoKILRlH8pzBrAFC1nQZxfcfc%3D"/>
+</figure>
+</div>
+<p>Perfect for:</p><ul>
+<li>Students and researchers quoting academic texts</li>
+<li>Writers and bloggers referencing printed materials</li>
+<li>Journalists pulling quotes or figures from reports</li>
+<li>Professionals digitizing financial or scientific data from paper</li>
+</ul><p>Whether it’s a block of prose or a dense chart of numbers, Magix Keys helps you skip the typing and get straight to the point. </p><h4 class="page-anchor" id="h:Targeted-Text-Capture-Scan-Just-What-You-Need">Targeted Text Capture – Scan Just What You Need</h4><p>Sometimes you don’t want to scan an entire page - just a <span class="text-italic">specific</span> part of it. With the Magix Keys App’s Quick-Scan feature, you can draw a rectangle directly on the live camera feed to precisely select the text you want to extract. Whether it’s a product number, serial code, or just one total from a long receipt, you’re in control.</p><p>Once selected, the Magix Keys App types that snippet into your connected device with one button-tap - no copy-paste, no typing, no clutter.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839035">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/035/c67c1fb1cace2148ccf0e80cfe2544a5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030122&amp;width=680&amp;sig=90wEMFXgckIsgfI8lmIJQ4khlV%2B5k6gI8j%2FYwImFOOk%3D" src="https://i.kickstarter.com/assets/049/839/035/c67c1fb1cace2148ccf0e80cfe2544a5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030122&amp;width=680&amp;sig=90wEMFXgckIsgfI8lmIJQ4khlV%2B5k6gI8j%2FYwImFOOk%3D"/>
+</figure>
+</div>
+<p>Perfect for:</p><ul>
+<li>Picking out tracking numbers from receipts</li>
+<li>Grabbing serial numbers or product codes from devices or labels</li>
+<li>Extracting just the total amount or invoice number from financial documents</li>
+<li>Copying reference numbers from shipping documents or forms</li>
+<li>Digitizing ingredients or nutritional info from packaging</li>
+</ul><h4 class="page-anchor" id="h:Scan-Barcodes-QR-Codes-Enter-Data-Instantly">Scan Barcodes &amp; QR Codes – Enter Data Instantly</h4><p>Need to enter a barcode or QR code into a system that doesn’t have a scanner? The Magix Keys App turns your phone or tablet into a smart scanner—and makes your PC think you typed it yourself.</p><p>Just point your phone’s camera at the code. The Magix Keys App instantly reads the barcode or QR content and “types” the data into your device—exactly as if you were using a keyboard.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839060">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/060/82ad044c079045f466bc1b1aee578353_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030296&amp;width=680&amp;sig=q%2F9H%2BPNFaiuaTIGCAEgMddNM5wdyN04AENkQGp77a7g%3D" src="https://i.kickstarter.com/assets/049/839/060/82ad044c079045f466bc1b1aee578353_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030296&amp;width=680&amp;sig=q%2F9H%2BPNFaiuaTIGCAEgMddNM5wdyN04AENkQGp77a7g%3D"/>
+</figure>
+</div>
+<p>Perfect for:</p><ul>
+<li>Scanning tracking numbers into shipping or order systems</li>
+<li>Inputting product IDs or EAN/UPC/IBAN codes into inventory software</li>
+<li>Transferring QR-encoded URLs or serial numbers to a PC or terminal</li>
+<li>Using QR access tokens or setup codes in secure environments</li>
+<li>Entering event check-in codes or ticket IDs at venues<br/> </li>
+</ul><h3 class="page-anchor" id="h:Speak-Smarter-The-Intelligent-Dictaphone">Speak Smarter – The Intelligent Dictaphone</h3><p>Running late on that email? Dictate it into your phone or tablet, and watch it magically appear on your computer screen.  The Magix Keys App transforms your phone into a smart dictaphone with live speech-to-text conversion and types it as if you did it yourself.</p><p>As you speak, your words are instantly converted into text. And when you want to add punctuation - like commas, periods, question marks, line breaks, etc. - you simply tap a button on the screen. This is far faster than saying "comma" or "period" out loud and lets you focus on your ideas and rhythm of speech - without interrupting your flow</p><p>If you make a mistake or want to revise something, the app offers a smart undo function: With just one tap, you can delete the last few spoken words, without ever needing to touch your computer keyboard. This makes editing on the fly effortless and distraction-free.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839139">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/139/0efa5a180a0851c2fa33fe15b5e08ba4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030776&amp;width=680&amp;sig=SsoDeVv1pT1m2b4vZ8J8CJGqFeRTD2%2FmjQq%2FCUjKWHs%3D" src="https://i.kickstarter.com/assets/049/839/139/0efa5a180a0851c2fa33fe15b5e08ba4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030776&amp;width=680&amp;sig=SsoDeVv1pT1m2b4vZ8J8CJGqFeRTD2%2FmjQq%2FCUjKWHs%3D"/>
+</figure>
+</div>
+<p>Watch on Youtube (with audio):</p>
+<p>Perfect for:</p><ul>
+<li>Dictating emails, letters, or reports</li>
+<li>Composing structured documents with real-time punctuation</li>
+<li>Capturing thoughts and ideas quickly and hands-free</li>
+</ul><h3 class="page-anchor" id="h:Tap-to-Automate-Your-Personal-Macro-Keyboard">Tap to Automate – Your Personal Macro Keyboard</h3><p>Tired of typing the same things over and over? The Magix Keys App gives you a fully customizable macro keyboard right on your phone or tablet. Each button can be programmed to send a specific sequence of keystrokes to the connected device - just like a hardware macro pad, but way more flexible.</p><p>You can create multiple workspaces, each tailored to a specific application, task, or workflow. Switch between them instantly to stay organized and efficient.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839162">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/162/8fa57e48eaf5944f2431dd9441ff5083_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030878&amp;width=680&amp;sig=YL7cTx%2FU%2BvCDUWkXNDkDE8wYtUsvfhvsxiA9MIEq8qw%3D" src="https://i.kickstarter.com/assets/049/839/162/8fa57e48eaf5944f2431dd9441ff5083_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030878&amp;width=680&amp;sig=YL7cTx%2FU%2BvCDUWkXNDkDE8wYtUsvfhvsxiA9MIEq8qw%3D"/>
+</figure>
+</div>
+<p>Examples of what you can do:</p><ul>
+<li>Insert frequently used email signatures, phrases, or boilerplate text</li>
+<li>Launch complex command-line sequences with one tap</li>
+<li>Automate login sequences for test systems or kiosks</li>
+<li>Fill out forms with pre-filled template data</li>
+<li>Trigger keyboard shortcuts for in-game commands or stream actions</li>
+<li>Send control sequences to smart TVs or media players</li>
+</ul><h3 class="page-anchor" id="h:Stay-Awake-Smart-Mouse-Movement-to-Keep-You-Online">Stay Awake – Smart Mouse Movement to Keep You Online</h3><p>We’ve all been there: You step away for a few minutes, and your PC goes to sleep. Or worse, your status in MS Teams, Slack, or Zoom turns to "Away" even though you're still actively working - just not at the keyboard.</p><p>Magix Keys solves this with a built-in configurable mouse mover feature. It sends subtle, periodic movement signals - just enough to keep your device awake and your status "Online".</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839174">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/174/d4016563bf53d35580dc3932e159f32e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030931&amp;width=680&amp;sig=aW%2FqV2gmtKmwC3yVmWjuaqvGwckSsVyRLKa%2FfXBrJHo%3D" src="https://i.kickstarter.com/assets/049/839/174/d4016563bf53d35580dc3932e159f32e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751030931&amp;width=680&amp;sig=aW%2FqV2gmtKmwC3yVmWjuaqvGwckSsVyRLKa%2FfXBrJHo%3D"/>
+</figure>
+</div>
+<p>Key Benefits:</p><ul>
+<li>Prevents your PC from going to sleep during long downloads, renderings, or data processing</li>
+<li>Keeps your status active in Teams, Slack, Zoom, and other apps</li>
+<li>Simulates presence during long meetings or calls when you're listening but not typing</li>
+<li>Ensures uninterrupted remote desktop sessions and VPN connections</li>
+<li>No need for sketchy software or admin rights - Magix Keys behaves like a real Bluetooth or USB mouse</li>
+</ul><p>Fully configurable - use the Magix Keys App to adjust:</p><ul>
+<li>Movement frequency and pattern</li>
+<li>Active/inactive schedules</li>
+<li>On/off toggles at your convenience</li>
+</ul><h3 class="page-anchor" id="h:Instant-Text-Transfer-The-Perfect-Companion-for-Your-Password-Manager">Instant Text Transfer – The Perfect Companion for Your Password Manager</h3><p>Sometimes, you have a piece of text on your phone that you just want to type straight into your PC - quickly, without emailing it to yourself or fumbling with QR codes. That’s exactly what the Magix Keys Dongle can do for you.</p><p>Just copy or share any text with the Magix Keys App and it instantly "type" it into your connected device as if you were at the keyboard.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49839207">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/839/207/cab1ffdee1ceb767038e447590a2bb2a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031089&amp;width=680&amp;sig=al4fyRSbpeG02kWEz6m0ndFql4s3go7pY9b%2FRPWCg8k%3D" src="https://i.kickstarter.com/assets/049/839/207/cab1ffdee1ceb767038e447590a2bb2a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751031089&amp;width=680&amp;sig=al4fyRSbpeG02kWEz6m0ndFql4s3go7pY9b%2FRPWCg8k%3D"/>
+</figure>
+</div>
+<p>Perfect for transferring:</p><ul>
+<li>Passwords from a password manager and one-time passwords (OTPs) from an authenticator app</li>
+<li>Phone numbers or addresses copied from a message</li>
+<li>Links or URLs you want to open on your PC</li>
+<li>Names, email addresses, or reference numbers stored on your phone</li>
+</ul><h3 class="page-anchor" id="h:Why-the-Dongle-Plug-and-Play-Power-When-You-Need-It">Why the Dongle? Plug-and-Play Power When You Need It</h3><p>The Magix Keys Dongle uses the USB keyboard standard — meaning it works instantly, without drivers or software.</p><p>Use it when your target device:</p><ul>
+<li>Doesn’t support Bluetooth</li>
+<li>Has strict IT or security policies</li>
+<li>You’re an iPhone/iPad user</li>
+<li>Your Android device doesn’t support Bluetooth HID mode</li>
+</ul><p>Since it acts like a physical keyboard, it works universally — with Windows, macOS, Linux, smart TVs, point-of-sale systems, embedded devices, and more.</p><p>And yes — it’s <span class="bold">secured with AES-256 end-to-end encryption</span>, ensuring private and tamper-proof data transmission between the app and dongle.</p><p>In short, the Magix Keys Dongle gives you full flexibility, zero setup hassle, and maximum device compatibility - with the kind of simplicity only hardware can deliver.</p><h3 class="page-anchor" id="h:Why-Back-Magix-Keys-Now-">Why Back Magix Keys Now?</h3><p>✅ Proven, working prototype<br/>✅ App already testable today<br/>✅ Lower funding goal than before<br/>✅ More affordable dongle using off-the-shelf hardware<br/>✅ DIY option reduces costs and shipping expenses<br/>✅ Be among the first to receive the product</p><h3 class="page-anchor" id="h:Fully-Functional-Prototype">Fully Functional Prototype</h3><p>Magix Keys isn't just an idea — it's a fully working prototype, featuring:</p><ul>
+<li>Off-the-shelf hardware</li>
+<li>A functional Android app</li>
+<li>Tested core features: scanning, dictation, macros, and more</li>
+</ul><p><span class="bold">Demo Video:</span></p><p>Watch how the Magix Keys Android App scans text from a document and transfers it into a text editor on a PC via the Magix Keys Dongle.</p><ul>
+<li>First, the Quick Scan feature is used to extract a single line from the document page.</li>
+<li>After that, the complete document page is scanned, and the OCR feature recognizes all text blocks on the page. Two lines are selected, combined and transfered to the text editor on the PC.</li>
+</ul>
+<h3 class="page-anchor" id="h:Rewards-Overview">Rewards Overview</h3><h4 class="page-anchor" id="h:1-Unlimited-Full-App-Access-No-Shipping-Costs-">1. Unlimited Full App Access (No Shipping Costs)</h4><p>Includes permanent access to all features of the Magix Keys App — no subscription required.</p><p>This is the way to go, if the direct Bluetooth connection works for your setup and you do not need a Magix Keys Dongle.</p><p>Remember: You can always try it out before becoming a backer with the preview version of the Magix Keys Android app.</p><p>After the campaign ends, you will receive a voucher for permanent access to the app via the Google Play Store so that you can continue using it after the preview period has expired.</p><h4 class="page-anchor" id="h:2-DIY-Magix-Keys-Dongle-No-Shipping-Costs-">2. DIY Magix Keys Dongle (No Shipping Costs)</h4><p>Includes full app access + one license of the Magix Keys Dongle firmware and DIY flashing guide.<br/>(Additional dongle licenses available as add-ons)</p><p>Choose this option to save shipping costs: Buy an M5Stack AtomS3 Lite DevKit from your local distributor and flash it with the Magix Keys Dongle firmware.</p><p>You will receive access to the Magix Keys Dongle firmware binary and a Windows executable that lets you flash your M5Stack AtomS3 Lite DevKit.</p><h4 class="page-anchor" id="h:3-Pre-Flashed-Magix-Keys-Dongle">3. Pre-Flashed Magix Keys Dongle</h4><p>Includes full app access + one M5Stack AtomS3 Lite DevKit, pre-programmed with the Magix Keys Dongle firmware.</p><h4 class="page-anchor" id="h:4-Pre-Flashed-Magix-Keys-Dongle-Cover">4. Pre-Flashed Magix Keys Dongle + Cover</h4><p>Same as #3, but with a 3D-printed cover for the exposed DevKit's connectors.</p><h4 class="page-anchor" id="h:5-Pre-Flashed-Magix-Keys-Dongle-Pack-of-2-">5. Pre-Flashed Magix Keys Dongle (Pack of 2)</h4><p>Includes full app access + two M5Stack AtomS3 Lite DevKits, pre-programmed with the Magix Keys Dongle firmware.</p><h4 class="page-anchor" id="h:6-Pre-Flashed-Magix-Keys-Dongle-Cover-Pack-of-2-">6. Pre-Flashed Magix Keys Dongle + Cover (Pack of 2)</h4><p>Includes full app access + two M5Stack AtomS3 Lite DevKits, pre-programmed with Magix Keys Dongle firmware,  both with a 3D-printed cover for the exposed DevKit's connectors. </p><p>Shipping countries for rewards 3 to 6: Germany, EU, Australia, Canada, UK, USA</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49844415">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/844/415/f0069dc8391178c26411ff6d98ff8dc4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751062193&amp;width=680&amp;sig=5N2WQCivLwiHtpV1KbjvNtHl0CBxOZoEvACeQ%2BP3YeI%3D"/>
+</figure>
+</div>
+<p>EU shipping includes VAT and customs — no extra costs. Other regions: customs and VAT are your responsibility.</p><h3 class="page-anchor" id="h:Help-Spread-the-Word">Help Spread the Word</h3><p>We’re engineers — not influencers — and we need your help.</p><p>If you believe in Magix Keys, please share this campaign with friends, coworkers, students, makers, and tech enthusiasts.</p><p>Your support brings us one step closer to making Magix Keys real.</p><h4 class="page-anchor" id="h:Let-s-Make-Typing-Smarter-Together">Let’s Make Typing Smarter — Together</h4><p>Thank you for being part of this exciting journey. Whether you’ve been with us since the beginning or just found us now — we’re incredibly grateful.</p><p>Let’s build Magix Keys. Let’s make typing smarter for everyone.</p><p>Questions? Contact us directly: <span>magixkeys@gmail.com</span></p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">While every project comes with risks, we are fully committed to overcoming challenges and delivering the product we’ve promised. From production to shipping, we’ve carefully planned each step to minimize potential issues.
+Due to supply chain issues and other reasons, the final manufacturing schedule may be delayed. However, we will be as transparent as possible to keep you informed and work to resolve any issues that may arise. There may also be adjustments to the final form of the product, but we can guarantee it will be positive. If you have any questions or concerns, please feel free to contact us.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Our product uses AI to extract text from images and audio recordings, functioning similarly to an OCR scanner and a voice dictation tool. These AI features rely on machine learning models that are integrated into 
+the app to enhance productivity, but all inputs and outputs are controlled, reviewed, and used by the user.
+
+The product does not involve training new models or generating creative content with AI.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

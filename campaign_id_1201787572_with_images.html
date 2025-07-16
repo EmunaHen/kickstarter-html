@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CarCine, Portable Cinema In Your Car.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/710/807/ff768e491f9eac4e99b22dfe08f34eea_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750165405&width=560&sig=fbc2uBKKxgErVcsxUDfpOkHa2JxDQkcj933at2N%2BpsQ%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>CarCine, Portable Cinema In Your Car.</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Drive-In Cinema | For Panoramic Roof Cars | 32" Screen | 2K Projection | Quick Setup | App Control | Favorite Content On the Go</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 3,504</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>34 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49712409">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Introducing-CarCine">Introducing CarCine</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/712/409/129dc2d79b202dfa5230b1a380d8e5f3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750171995&amp;width=680&amp;sig=QepCk4lQ7KPSG%2F4KNd2tKrhC4fi%2FCLbBZL4N5Z21vUE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49962101">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/962/101/850930d4ea494394f40515d9dd739b03_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751969593&amp;width=680&amp;sig=DU6QEBQ5Fp9gKj36wK%2FD3NF9lrO4T1fpB%2FdsAeIfl3M%3D" src="https://i.kickstarter.com/assets/049/962/101/850930d4ea494394f40515d9dd739b03_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751969593&amp;width=680&amp;sig=DU6QEBQ5Fp9gKj36wK%2FD3NF9lrO4T1fpB%2FdsAeIfl3M%3D"/>
+</figure>
+</div>
+<p>Introducing CarCine, the world’s first portable cinema set designed specifically for cars with panoramic roofs. It includes a smart projector and an auto-unfolding screen that work seamlessly together to turn any car into a private movie theater in seconds.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49955392">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/955/392/31061be6eb0980b36f047ddf1b1ab0fc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751926837&amp;width=680&amp;sig=jyxM8VZUo3cVHwu5YBqyuBdS%2FOQGx3wzn3IbywEjndA%3D" src="https://i.kickstarter.com/assets/049/955/392/31061be6eb0980b36f047ddf1b1ab0fc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751926837&amp;width=680&amp;sig=jyxM8VZUo3cVHwu5YBqyuBdS%2FOQGx3wzn3IbywEjndA%3D"/>
+</figure>
+</div>
+<p>It includes a smart projector and an auto-unfolding screen that work seamlessly together to turn any car into a private movie theater in seconds.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50049387">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/049/387/04766cdf93a76d1b2d61b36a4aa3b1a2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752600273&amp;width=680&amp;sig=6AgrPXpdfNmcdVR%2B0TPoi4R0ZM1Kkl1l0MDAPluK8IM%3D" src="https://i.kickstarter.com/assets/050/049/387/04766cdf93a76d1b2d61b36a4aa3b1a2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752600273&amp;width=680&amp;sig=6AgrPXpdfNmcdVR%2B0TPoi4R0ZM1Kkl1l0MDAPluK8IM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49962090">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Experience-CarCine">Experience CarCine</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/962/090/b46871418eec5ff5c911880fc84fb8b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751969496&amp;width=680&amp;sig=D3guSLZDkjlFpmN2Y4uh9N3%2Biq2Mdv9Y68PnDPWiJBo%3D"/>
+</figure>
+</div>
+<p>CarCine is more than just a screen or a projector. It’s about turning ordinary moments into something unforgettable. You lean back, hit play, and suddenly your car feels like your own little getaway. Whether you're watching solo or sharing it with someone, it's that effortless, cozy kind of experience that just feels right. Because the best nights aren’t always at home. Sometimes they’re right where you’re parked.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49964241">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/964/241/dac9addf7177c24f68e2581a40fe179f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751982916&amp;width=680&amp;sig=Xumecb8PTq5pniXunHdzWtkGzbXzi6kRN3zru%2F7Azo8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49964245">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/964/245/a71842547dab59cad90d092a3b6ddb71_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751982932&amp;width=680&amp;sig=isJHssv9v4%2BGj8PioNXRZ2TDOGpMEgLJLgD9UUYFcx0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49964250">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/964/250/cd0b09bf5cb36040b6ac21474dba44fe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751982956&amp;width=680&amp;sig=v%2BxPtK7wKJOafJZXvreaYR9Mx%2Fbc%2FPhcUNn7k5iOXds%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49873866">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Live-Demos">Live Demos</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/873/866/27f90024978c5e6440ebf1cc24e40fd0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751320879&amp;width=680&amp;sig=z%2BDlCuAmMETIQ70RoH%2BZnNTxX4pMGrsq%2B9WL7DiZptg%3D"/>
+</figure>
+</div>
+<p>Take a look at CarCine in real life. No need to imagine it. You can see it in action.<br/>Watch the screen unfold, the projector power up, and your content play directly from your phone. You’ll also see how it performs on the road, staying steady and smooth throughout the ride.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49718699">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Cinema-Screen-in-Your-Car">Cinema Screen in Your Car</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/718/699/993ace7fb8ac3a9c9aa69a8844f62332_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750200637&amp;width=680&amp;sig=fDjCqBsZxJabIIJG25Ym8vLot3OJoMOQvTwZWBtLNQg%3D"/>
+</figure>
+</div>
+<p>CarCine comes with a 32-inch self-unfolding screen made from high-contrast fabric for clear, vivid viewing any time of day. A smooth lift system ensures stability, while two heavy-duty suction cups keep it firmly in place on your car’s roof.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49718746">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/718/746/f6253fe2a581393d93f4d641b10e6f61_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750200851&amp;width=680&amp;sig=FBU1tUZXIoMESP2o%2Fg2AXcKGw5MRlzOVr0lkPDjtAIc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49718711">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:CarCine-Screen-Features">CarCine Screen Features</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/718/711/c8524c48472781ce65a84734087698b6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750200680&amp;width=680&amp;sig=tS82HpCoxgtLZbzK5iqjZs35O%2F%2FtBkwHNJnFWCe8AFk%3D"/>
+</figure>
+</div>
+<p>The CarCine Screen folds and unfolds with just the press of a button. It runs on a high-efficiency built-in battery that gives you up to 200 full open and close cycles on a single charge. For most people, that means you only need to recharge it once every five to six months.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719265">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/719/265/16b54e4d1bfe6dbfc67eeba87f1d048e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204687&amp;width=680&amp;sig=xdYYmD38k5Yq369k4yaSntKBennce6xAS2d8fycBHwA%3D" src="https://i.kickstarter.com/assets/049/719/265/16b54e4d1bfe6dbfc67eeba87f1d048e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204687&amp;width=680&amp;sig=xdYYmD38k5Yq369k4yaSntKBennce6xAS2d8fycBHwA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49718703">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Projector-Power-in-Your-Car">Projector Power in Your Car</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/718/703/11b842da8283776ba8803ac533f59438_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750200656&amp;width=680&amp;sig=KGm9bzbH98K6cyyYezd3dkPPvvEVlwpPyKcrIXLVOAg%3D"/>
+</figure>
+</div>
+<p>The CarCine Projector was built with two main goals in mind: 1) to be compact and stay out of the driver’s way; 2) to deliver a bright, high-quality image. <img class="image" data-id="49718772" src="https://i.kickstarter.com/assets/049/718/772/e12bc87b7defcb0c73b11a62cd64a806_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750201020&amp;width=1000&amp;sig=VaENk4VcR7y3jr6CjXqG1Q2FowuvvVx9PHetkcLybVg%3D"/></p><p>And it was engineered with precision. Combining an lightweight design, crisp 2K resolution, and 700 lumens of brightness, it delivers the best in-car cinematic experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49964863">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/964/863/2722fdcd82ad3a760a93eee8dceb74e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751986102&amp;width=680&amp;sig=jvMCWwXN0x1tSFW%2Blsjs5TB8%2B2LToVqlFccI1I10DjU%3D" src="https://i.kickstarter.com/assets/049/964/863/2722fdcd82ad3a760a93eee8dceb74e5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751986102&amp;width=680&amp;sig=jvMCWwXN0x1tSFW%2Blsjs5TB8%2B2LToVqlFccI1I10DjU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49718718">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:CarCine-Projector-Features">CarCine Projector Features</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/718/718/13fa91a1a1fcb9f40d1dca07847b995f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750200699&amp;width=680&amp;sig=CCH8cdqHOKNLoKkw9X99pGBdTi6i8PgMjajWppnRFCU%3D"/>
+</figure>
+</div>
+<p>The CarCine projector uses a DLP projection system paired with an ultra-short throw lens (0.6:1 ratio), allowing it to project a large image from a short distance. The lens features an aspherical, multi-coated 5-layer glass design that delivers sharp visuals with reduced glare. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49964839">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/964/839/07582b976ad16ff06786eb22025eb93e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751986019&amp;width=680&amp;sig=nxLivVOgGIi8kjmirJI%2BBepdLAeG5BfJmwZKQccF8cs%3D" src="https://i.kickstarter.com/assets/049/964/839/07582b976ad16ff06786eb22025eb93e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751986019&amp;width=680&amp;sig=nxLivVOgGIi8kjmirJI%2BBepdLAeG5BfJmwZKQccF8cs%3D"/>
+</figure>
+</div>
+<p>A high-performance digital signal processor (DSP) automatically handles focus. An advanced heat management system keeps the projector running at peak performance, even during longer viewing sessions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49718790">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/718/790/7c8c0a8f9bafd2fb2a7c6a6a9ed3080a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750201124&amp;width=680&amp;sig=GGLJqZ7vIPuCsoirsx%2BvnT3F%2B8Ih528ANUeg0Cg2vwg%3D" src="https://i.kickstarter.com/assets/049/718/790/7c8c0a8f9bafd2fb2a7c6a6a9ed3080a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750201124&amp;width=680&amp;sig=GGLJqZ7vIPuCsoirsx%2BvnT3F%2B8Ih528ANUeg0Cg2vwg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49718808">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Audio-in-CarCine">Audio in CarCine</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/718/808/d23e92582095b73ebdcd713ef1765342_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750201160&amp;width=680&amp;sig=S58wEkNoHXALg5x1MUEHDlG0BbqqLZifRlbqMMy%2B1M4%3D"/>
+</figure>
+</div>
+<p>Sound is seamlessly integrated into the projector, engineered to deliver rich, balanced audio throughout your car’s interior. Effortlessly control sound levels with the CarCine mobile app. For a truly elevated audio experience, you can also pair the projector with your car’s sound system via Bluetooth.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49718811">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/718/811/abcbafbd57a763992f4eeab26971966f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750201178&amp;width=680&amp;sig=6MQfjoevhp3CV9TqWr45gqUHz2rKigisAvjGOSN1LyI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719113">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Choose-CarCine-">Why Choose CarCine?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/113/9d37ce491781fa02f2b6a36c701932b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203494&amp;width=680&amp;sig=XLtw7skvrYn4hoxuWrwibiyyffbAQDAd7yosRBkJX3U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49962714">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/962/714/a670ce32fb69739e7dfb4b0f2b7d28db_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751973409&amp;width=680&amp;sig=euVTH3RJRKd%2F5PYD0%2BgJtM80fk1RsBjtyhLfRFRFsbk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719120">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/120/180893a8fb0da202a6f15513b293da05_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203562&amp;width=680&amp;sig=ZPxEcZRxntMr%2BYGbjcYizLxd0IA9iUzPWXGKwSFxE64%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719128">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/128/438575f19a2ed6537bb448e32b2c644d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203605&amp;width=680&amp;sig=swrdiblx2sM7cQBUaSWRNvadSbGpd6xImJ38sjPlVzc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719130">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/130/33d3f2dda839316f410fdb3376f0a184_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203616&amp;width=680&amp;sig=5ZG04zQz4hoDaienQ4SredjrWUr%2Bg9pZznn1sPkhjLQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719131">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/131/5876b5d70f28ea8d1d61a49344760331_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203625&amp;width=680&amp;sig=mqHY%2FHKv%2BIffzGA5lqrR2nPLlQmS1Qic71anTUxgRRU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719136">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-Ons">Add-Ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/136/b1ff16f8aaf948e715ded3208a450946_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203652&amp;width=680&amp;sig=fSgl2rhs9oAcYTGRhjnmwcIfZQKmI6o12ePCtM%2FwSnU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719137">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/137/9b75eca33cb1ac80ef2701c88541b484_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203665&amp;width=680&amp;sig=2Q1bE%2FRFHQuwP7dDGMs0Fj2furXhmnH0P6foLCOCgg4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49963837">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Kickbooster">Kickbooster</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/963/837/1bb4208bea4d1d94edde2c51d904d143_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751980694&amp;width=680&amp;sig=5lJvJ5GrKJYy2waALU1rqEi7YFQ%2BwXiYHgFLvBi7GHk%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49718690">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:CarCine-in-Action">CarCine in Action</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/718/690/4d029102766a6777a796916d2701eef1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750200595&amp;width=680&amp;sig=gpnSzbWelgHnqygd0L1g03JglRw946cX9yqDEegrDWc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49964225">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/964/225/abb6ed7ea7b38cce579271d65f058823_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751982813&amp;width=680&amp;sig=UXxCfwCgmSHKP9Af2Rkj2OO6IqVjxdDZjpTp%2BITjGCo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719237">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/237/89f513689208fa2135b5192f78d556ef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750204496&amp;width=680&amp;sig=vYYfKuRDpXw7bOWvWSfYR1wos%2Bc%2F6E1pmgSqeGEt0ik%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719140">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:For-Any-Panoramic-Roof-Vehicle">For Any Panoramic Roof Vehicle</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/140/36df8e6865234843c698176dea8d8fa7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203688&amp;width=680&amp;sig=WnPokHkhhonSC3xWgkh5ZRfkJHp20PoZ6PRfsy4dhQg%3D"/>
+</figure>
+</div>
+<p>CarCine is expertly designed to fit any vehicle with a panoramic roof, regardless of make or model. Its flexible and universal design allows for a precise fit whether your car features a fixed glass roof, such as the Tesla Model 3, or a sliding panoramic sunroof like the Toyota RAV4.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719150">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/150/f97f47dc165e379c38bf372317c4d2c3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750203724&amp;width=680&amp;sig=5WG9EVRowHHaWPlk9KWg19qMvAJBDmGu95nCQVcyFSE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="This material is publicly available and provided for informational purposes only." data-id="49719186">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/719/186/69f3291ce80808075724aff20574a228_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204040&amp;width=680&amp;sig=9Q2h9Idv25Kla3SinV6F10f32g7jnwC0gIldbC5yl3I%3D" src="https://i.kickstarter.com/assets/049/719/186/69f3291ce80808075724aff20574a228_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204040&amp;width=680&amp;sig=9Q2h9Idv25Kla3SinV6F10f32g7jnwC0gIldbC5yl3I%3D"/>
+<figcaption class="px2">This material is publicly available and provided for informational purposes only.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719193">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Quick-Setup-Guide">Quick Setup Guide</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/193/9ed8af076d460b933061ec82301cc8e5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750204085&amp;width=680&amp;sig=mf3x08Q524jqOg%2FnVrZa53sIhMNjG4YXOD4qemZzpW8%3D"/>
+</figure>
+</div>
+<p>Thanks to the universal suction cups and simple connections, setting up the CarCine system in your car takes just 60 seconds. Just follow these two easy steps.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719197">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/719/197/5886de5fca0bf0fdea77362e78180f56_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204117&amp;width=680&amp;sig=tcK0tIAyVJ8lvIICdlIOCYiCc%2B9iehQFzac6GN0Az1o%3D" src="https://i.kickstarter.com/assets/049/719/197/5886de5fca0bf0fdea77362e78180f56_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204117&amp;width=680&amp;sig=tcK0tIAyVJ8lvIICdlIOCYiCc%2B9iehQFzac6GN0Az1o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719202">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stability-Reliability">Stability &amp; Reliability</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/202/4573e0dc4e84b0d7a73612582cf09eaf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750204147&amp;width=680&amp;sig=pDC7NkMBg9bIpt4Dfi0N8D5WBgmIbrMSeEx8LUGt7So%3D"/>
+</figure>
+</div>
+<p>CarCine is designed with a focus on maximum stability: its precision-engineered mounting system and reinforced structure ensure secure fixation.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719205">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/205/a064ba1167dd04d84a458e3e30ef0d56_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750204198&amp;width=680&amp;sig=PIuh%2F8QnFGvF9eB7HbGlq2TqumoyJtVcEzwiBosLI1U%3D"/>
+</figure>
+</div>
+<p>After countless tests, design tweaks, and pushing the limits with weight checks on panoramic roofs and simulations of tough road vibrations, we perfected CarCine to deliver unmatched stability and performance.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719208">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/719/208/c94755a828fdb0228cafcd06e42c8a57_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204225&amp;width=680&amp;sig=qIpoc8PVuCbpXM43axYzhkcrffb3rDfD3FTU0iqQODE%3D" src="https://i.kickstarter.com/assets/049/719/208/c94755a828fdb0228cafcd06e42c8a57_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204225&amp;width=680&amp;sig=qIpoc8PVuCbpXM43axYzhkcrffb3rDfD3FTU0iqQODE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719218">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-to-Charge">How to Charge</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/218/a7e33ec4eab4076c07bddfacf10b18a8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750204352&amp;width=680&amp;sig=ayc92QQPasad0z1d7wswUHt4gX4fx2iUmTQEXCRnpdU%3D"/>
+</figure>
+</div>
+<p>The motorized screen runs on a long-lasting battery and can be controlled through the CarCine app. When it’s time to recharge, simply use the included USB-C cable.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719222">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/222/58a6f613398b2bc08e21320a43963dfe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750204389&amp;width=680&amp;sig=12Yapzxh2XmmXjfaAK5GUM4S4oRHRkBK5hr7tJ%2FCrX4%3D"/>
+</figure>
+</div>
+<p>The CarCine projector draws power directly from your car either through the 12V power outlet in the rear cargo area or the USB-C output on the rear center control.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719225">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/719/225/22a83311e63c8b201d3fb9e95385b719_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204420&amp;width=680&amp;sig=e4XHBDRtvbwZ1ViLfoe2wlcPz1m3vaLzQo21Qp9YvEo%3D" src="https://i.kickstarter.com/assets/049/719/225/22a83311e63c8b201d3fb9e95385b719_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204420&amp;width=680&amp;sig=e4XHBDRtvbwZ1ViLfoe2wlcPz1m3vaLzQo21Qp9YvEo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719242">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Control-in-Your-Hands">Control in Your Hands</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/242/d12b46b1eca5847442d6a46162bbb2f3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750204552&amp;width=680&amp;sig=2c5k8a8BieNAf4gOtGqNlB5EC2OScoBmOuFQfwrunLk%3D"/>
+</figure>
+</div>
+<p>Take your in-car entertainment to the next level with the CarCine Mobile App for Android and iOS. With just a few taps, you can roll up the screen, adjust the brightness, and customize the setup to fit your ride perfectly. Total control, all from your phone.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719241">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/719/241/f45a746ec580bdb6ee327de312a9f4bf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204529&amp;width=680&amp;sig=p12YM7gtCrRPEFNC8kD%2B8N6094xOboQd2lNPv%2BuFIvE%3D" src="https://i.kickstarter.com/assets/049/719/241/f45a746ec580bdb6ee327de312a9f4bf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204529&amp;width=680&amp;sig=p12YM7gtCrRPEFNC8kD%2B8N6094xOboQd2lNPv%2BuFIvE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719247">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Favorite-Content-On-the-Go">Favorite Content On the Go</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/247/90ca8acbd7e514bf2c3473b49132e4f5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750204608&amp;width=680&amp;sig=4cIdNekNlo8YCnMWIsC%2FDhnuKkNkvkL%2FeqdlYlt8M7g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719278">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/278/55897b1e682baffda327e3bcd13f9e29_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750204772&amp;width=680&amp;sig=9dowESfLSNhVknL0k2zmq%2BbdU9NjxgXXdU21NssKxtE%3D"/>
+</figure>
+</div>
+<p>Turn every drive into an entertainment experience with CarCine. Whether it’s the latest series, a thrilling game, or your favorite vlog, CarCine brings your content to life on the go. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719253">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/719/253/752381b52a3ad937059a0020dc029cdd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204623&amp;width=680&amp;sig=zk8VH2xVzHQ25lrYKsNQtqVAcuXoXcgwtvbDuxT1vBg%3D" src="https://i.kickstarter.com/assets/049/719/253/752381b52a3ad937059a0020dc029cdd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750204623&amp;width=680&amp;sig=zk8VH2xVzHQ25lrYKsNQtqVAcuXoXcgwtvbDuxT1vBg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719284">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Additional-Feature">Additional Feature</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/284/96ce19ce416d86589072af25ab6a999e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750204845&amp;width=680&amp;sig=FFne1g9Zk9XPZVlqLhWGtfXB7TuQ8WepSgwC9bK7cw8%3D"/>
+</figure>
+</div>
+<p>The CarCine screen case has built-in LED lights that can be used as extra interior lighting. They turn on automatically with a sensor or can be controlled through the app. The projector also has soft LED lighting that adds to the cinema-like atmosphere.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719322">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/719/322/ff51467bb7068305d290fa58ce830c77_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750205212&amp;width=680&amp;sig=fTNKbOZ97oFd84RuvNqEWMmxH6YPXv6e5O0SATd0McE%3D" src="https://i.kickstarter.com/assets/049/719/322/ff51467bb7068305d290fa58ce830c77_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750205212&amp;width=680&amp;sig=fTNKbOZ97oFd84RuvNqEWMmxH6YPXv6e5O0SATd0McE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719327">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box-">What's in the Box?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/327/7e9ddb7cf4d29f015f7e773e4d92fe90_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750205254&amp;width=680&amp;sig=PaldEvV8wnQWhSu40szeJPjTuLreA%2FekM3Hko3fw0Ik%3D"/>
+</figure>
+</div>
+<p>Everything you need for the full CarCine experience comes right in the box. You’ll get the screen, the projector, a secure mount, and all the power cables and adapters. Just set it up, sit back, and enjoy your own cinema on wheels.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719331">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/719/331/65e33e435ca898a91338dd35f33d073f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750205303&amp;width=680&amp;sig=RZQtvXAwugr7qf7z9SPzVyn5RXpk8lnCo0CrfjxlDdw%3D" src="https://i.kickstarter.com/assets/049/719/331/65e33e435ca898a91338dd35f33d073f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750205303&amp;width=680&amp;sig=RZQtvXAwugr7qf7z9SPzVyn5RXpk8lnCo0CrfjxlDdw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719335">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specification">Specification</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/335/69172f5a3fe016e8125a1057ccd4b490_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750205331&amp;width=680&amp;sig=p9B2Qp4wZhzA%2FIXuD1cZ2d78NBOx180gbOFSiJ5OEqM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719337">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/337/b6dd1fc847d0ae2b4b98b8b90daeb541_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750205350&amp;width=680&amp;sig=R0QtRaYCZxZMaAHSZ%2FlXRBl9lnyuJ4x5iygVDaAhJRI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719343">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/343/db9a96ebcf64eb509459af86de575300_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750205389&amp;width=680&amp;sig=oRHw3OA6d4J9i8dkrfF1lPE%2BgOD5h8BsBYN8ZaFjM1I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719344">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/344/b4f7e15499e5567d77b1eff2a77a2b10_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750205406&amp;width=680&amp;sig=b5hTP1hg4rVy%2BDRcXPOCyOPPfJBsDSH9BmpfB81KEmk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50034906">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/034/906/e0db804d5ce4a98aeb4f6ead6b9d4901_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752522712&amp;width=680&amp;sig=seEY2LHU1SXcfOPHpMX%2BlQdNxkaTIEPiqFn8RElW7iw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="CarCine has already gained support from Tesla owners, including members of local Tesla clubs. Our early testing took place in Poland with real Model 3 and Model Y drivers who helped us fine-tune the experience. Their feedback has been valuable, and their response shows we are building something drivers truly want." data-id="50034937">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/034/937/d519259df83c3b4e656c9dda0c4d0bf3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752522879&amp;width=680&amp;sig=va8XVsru8pVbDQR9MJjmMTi%2B3s0oN3gFiKjgdT7a5m8%3D"/>
+<figcaption class="px2">CarCine has already gained support from Tesla owners, including members of local Tesla clubs. Our early testing took place in Poland with real Model 3 and Model Y drivers who helped us fine-tune the experience. Their feedback has been valuable, and their response shows we are building something drivers truly want.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719346">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sketches">Sketches</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/346/a3ae4f936e7352539fc253999f7d8461_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750205433&amp;width=680&amp;sig=MVeC462Eh8RRPPxl9zZeLNCcpXGceQwSb%2BgIkgKqOiA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719351">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/351/9d4a46e44ca4ad878a3d60a330a95362_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750205474&amp;width=680&amp;sig=U0teb8fieA%2FnJ85LG9nSPaYZh38J4nIXbCqtSoFGYpw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719354">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Production">Production</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/354/22c14967ff43aa2a52a17a7ee0522330_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750205497&amp;width=680&amp;sig=ZlWIfAaJaCynyr0bxSfa3FuqVcVtOoDv8O90ocKTaVA%3D"/>
+</figure>
+</div>
+<p>We’re now in small-batch production and will move into mass production in July. Shipping is set to begin in October, right after the crowdfunding campaign ends.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719359">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/719/359/c333d5472a35ac0b3e8017b21ab37d78_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750205524&amp;width=680&amp;sig=tOVpcm7ep0OlCYHC8a2m6iC6Q6CmNhs2pHiR9EnuD3Y%3D" src="https://i.kickstarter.com/assets/049/719/359/c333d5472a35ac0b3e8017b21ab37d78_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750205524&amp;width=680&amp;sig=tOVpcm7ep0OlCYHC8a2m6iC6Q6CmNhs2pHiR9EnuD3Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49888434">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:USPTO">USPTO</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/888/434/c857a1ea97924d00bef91f01d0cdf833_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751405641&amp;width=680&amp;sig=%2Be0b5w3RAGPuxdd3DiGY20iKotSnCmFNULk1NmFwKTM%3D"/>
+</figure>
+</div>
+<p>We’ve officially filed a provisional patent application with the USPTO to protect the core innovation behind CarCine. This is just one of the steps we’re taking to bring CarCine to life the right way.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Our official filing receipt from the United States Patent and Trademark Office (USPTO)." data-id="49888370">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/888/370/6ea5d46f203a54fa5779c2df26ce1a9d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751405294&amp;width=680&amp;sig=AD80WI%2BxtPFqA%2Fni6l1ITPZYulyUQPAnB1M79p7G2rA%3D"/>
+<figcaption class="px2">Our official filing receipt from the United States Patent and Trademark Office (USPTO).</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49719366">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-to-Pledge">How to Pledge</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/719/366/7e0e716667d6421c2745fbd343e6ab60_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750205576&amp;width=680&amp;sig=4NH4DU2y9uudZRvORPmg%2FrKALMbY9011VwzlkW%2BPYn0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49726043">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/726/043/39aad89c88110015a56d087a9f84afd4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750253661&amp;width=680&amp;sig=%2B6N8Fq%2BNIrCFznxSN8h9pbFQAZXvigeaoMaeUSDwr38%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49726051">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Follow-Us">Follow Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/726/051/749c7c9e96df4a647b7a2822cc80e64c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750253696&amp;width=680&amp;sig=ER0mJDv38Ym9ioh4%2BPFsP%2BAjp%2BjiG9vP5D8XHtW%2Byvc%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span>This project is boosted by BackerCrew</span><span>This project is Featured on HugeBackers, a community of over 169,000+ Backers that has raised creators over $100MM to date. https://hugebackers.com/</span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We’re proud to introduce CarCine through our first Kickstarter campaign. Like any new hardware project, there may be challenges during production and delivery. These could include delays with parts, manufacturing, or international shipping, especially given how unpredictable global supply chains are right now.
+
+We’re working hard to build strong partnerships to ensure CarCine is made with the quality it deserves. Currently, we’re in the final stages, fine-tuning the product to be as easy to use and reliable as possible. Sometimes small changes to the design or features happen during this phase. While we’re doing everything we can to stay on schedule, slight delays may still occur due to supply or shipping issues. If that happens, we’ll keep you informed every step of the way.
+
+Your trust means a lot to us, and that’s why we promise to be transparent and keep you updated regularly throughout the process.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

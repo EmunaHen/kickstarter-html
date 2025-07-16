@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>striing — remember it all</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/697/837/505030c17d8105050beabd06968661a9_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750092888&width=560&sig=l4oWn2csBBAV5dqK074FmInjDSRZobj7yzJZxaeYwdw%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>striing — remember it all</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A mobile platform to help capture and document the details of your life. Help us launch the striing app in both major app stores.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 65,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49698058">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/698/058/505030c17d8105050beabd06968661a9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750093680&amp;width=680&amp;sig=lsn%2F9s4wJL3JXhCt%2FYFYPyJ1Thr5qm2dJykXte%2FAAi8%3D"/>
+</figure>
+</div>
+<p>Late in 2020, and deep into the pandemic, it became increasingly apparent that there were more moments I wanted to save for myself than I wanted to share on social media. At this point in my life, I had nearly two decades of memories logged on social platforms that I couldn’t really search, and there were significant life moments happening that didn’t belong on public display. Moments that didn’t need to be validated by likes or comments, just details of my life I wanted to be able to access again.<br/><br/>By early 2021, the idea for striing started to take shape—a mobile platform to capture and document the details of your life. The following year Danielle Daugherty joined as my Co-Founder and COO. Danielle brings nearly a decade of business operations experience to striing, having held roles in community engagement, HR and strategy consulting. </p><p>Together, we focused on our customer messaging and our pitch, as well as the foundational elements of becoming a real company. We’ve participated in numerous pitch competitions and other accelerator-type programming, which all ultimately came back to the same thesis—”build it, gain traction and then come back and talk to us.” In 2024 we built our prototype (via Figma) and this year we plan to build and launch the first version of the platform with the funds raised from this Kickstarter.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49698173">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/698/173/eaf696a9bf518829bd6b88b140f6acfb_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750094292&amp;width=680&amp;sig=fs1Fj9vFASK%2BhKUBDx41IFQbtEY6XwCdI6eEL7SGDOQ%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Danielle and Nicole attending Rally Innovation Conference in Indianapolis in August 2023.</span></p><h3 class="page-anchor" id="h:striing-remember-it-all"><span class="bold">striing—remember it all</span></h3><p>striing is a private-by-default mobile platform that provides customizable timelines to help capture and document ALL the details of your life. One main timeline houses all of your posts, with smaller, more hyper-focused timelines called Collections. You might have a collection of your significant other, all of the books you've read, your professional portfolio, memories and papers from college, or keeping track of your high scores on video games. A place to put all of the drawings from your kiddos or to track your journey as an entrepreneur to quickly recall everything you've accomplished.</p><p>striing provides structure to keep everything in one place and makes it easy to organize and rediscover. It gives you a place to put quotes from those late night conversations with family and friends or to note all of the cool cars you've come across. With striing, everything is private by default, and from there you get to decide who, if anyone, you want to share Collections with. Enjoy public Collections of your movie reviews and photography while maintaining Collections for certain eyes only. </p><p>There is a 100+ year old principle called the forgetting curve that says we forget up to 90% of our experiences after just seven days. Think back to one week ago—what do you remember? What are we willing to risk forgetting?</p><p>Keep reading to learn about the key elements that will be included in the first version of the striing platform.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49698245">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/698/245/500d2df89fd3e612b09f6f75ec2fbbbe_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750094656&amp;width=680&amp;sig=3fZOiY7hVe7RPmbwAJng%2BVJ%2BlwMR%2Fl1A9iTIPSkmvrY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:the-key-elements"><span class="bold">the key elements</span></h3><p>Everything on striing is<span class="bold"> private-by-default</span>, and from there you get to decide who, if anyone, you want to share with. The main elements of the platform include: your Profile, Timeline, Collections, Entries, Blips, Photo Albums, Hashtags, and Search.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49262483">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/262/483/48446ee9528b17f5cb46e016d7dcf851_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747151040&amp;width=680&amp;sig=IiZkkZeBBJe27jI1Y2NFCj4zhDTVWFA%2BZhmVOkKThbY%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Profile"><span class="bold">Profile</span></h4><p>Your <span class="bold">profile</span> is your home screen when you login to the platform. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49262495">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/262/495/2ebce0fd24bac53e69e0981c2d7ba8c7_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747151068&amp;width=680&amp;sig=C%2FtAl9CuTNHRvMXijoCrcCn%2FpZuj%2FxZBEXJMDce6cBk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Timeline"><span class="bold">Timeline</span></h4><p>Your main <span class="bold">timeline</span> is on the front of your profile where you can scroll to see all of your posts.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49262541">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/262/541/11334442af92ef9a5955f93361b0d865_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747151202&amp;width=680&amp;sig=4pFbj6B%2BLcDCjy2SCSmImB%2B%2FRb1yZX5%2F4a2JFAkjUk0%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Collections"><span class="bold">Collections</span></h4><p>Located just above the main timeline are <span class="bold">Collections</span> which are smaller, more hyper-focused timelines. You might have a collection of your relationship, your business, your art portfolio, every book you’ve read, every vacation you’ve gone on, your stamp collection, etc. Some Collections you may want to have completely public, like your music collection or business accomplishments. And some you may want to just share with a few people, like collections of your kids. Posts within Collections can still have their own tailored privacy settings.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49699445">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/699/445/453f2ddcc104bf69c845081b9d9d738a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750100314&amp;width=680&amp;sig=3tWJ3cUJDCUVsG%2FJaLjEAQaM12YZkYROTeT0QZ8oWbE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Entries"><span class="bold">Entries</span></h4><p><span class="bold">Entries </span>are long-form, blog-like posts. You can include photos, videos, documents, voice memos, etc. Entries have both a published date, as well as an adjustable date to ensure it falls at the right date on your timeline, plus full privacy settings.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49262512">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/262/512/0416ecdc16ab9fc7d79c02c05795768d_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747151134&amp;width=680&amp;sig=1%2BjYwyTiZ7MylC3qSeXmfEGhvlIioZCuoGpEQ5X%2BOTo%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Blips"><span class="bold">Blips</span></h4><p><span class="bold">Blips</span> are single-frame posts and are typically used for capturing quick or small moments. For example, you may want to remember a funny joke or take a short video that wouldn’t warrant a larger post. Blips can be a still image, video, or blank background. Blips have both a published date, as well as an adjustable date to ensure it falls at the right date on your timeline. Just like Entries, Blips have full privacy setting options and can be included in collections and/or your main timeline.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49607832">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/607/832/fc642d6f0f7afe7e1384d3c1126f2a2b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749488107&amp;width=680&amp;sig=orPtEXRpO5unhneCPpfGo4JGbsbq2dqddXl2gsaGx7A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49699450">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/699/450/812d51bbe1e78780df554b77c04ec6dc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750100338&amp;width=680&amp;sig=z2N7qK5UTUtLDdmQlE5Nv12GzRTAIq1zWZ8o3gMdtHs%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Photo-Albums"><span class="bold">Photo Albums</span></h4><p>A <span class="bold">Photo album</span> is a way to collect a lot of photos in one place. For example, you may want to highlight a few photos from an event in an Entry, but you may want to include all 100+ photos from the event in one location. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49262517">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/262/517/35b9693a3c1c5527bd56fb3747dfdfaa_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747151146&amp;width=680&amp;sig=QEBcvNlbknDWJbC%2BeTG%2BTnyAAHjUZwa4zFhpw9Thx2U%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Hashtags"><span class="bold">Hashtags</span></h4><p><span class="bold">Hashtags</span> are visible only to you, and only search your profile. Hashtags can be included on any Entry, Blip, or Photo Album. So for example, if you searched #FunnyMoments, you'd find every post where you included that tag. #ProudMoments, #CoolCars, #Pacers, #DailyRun, #GoodIdeas… suddenly we can categorize life quickly and conveniently—all in one place.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49262522">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/262/522/4263130db1950e321932bb5cd76e48c9_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747151156&amp;width=680&amp;sig=GPfj%2FbYh10E6uhs77EGP7JGZNZc3fBdONNUyesYP9Co%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Search"><span class="bold">Search</span></h4><p>On striing, you can <span class="bold">search</span> by monthly calendar view, or by keyword, date, or hashtag. Our goal is to make capturing the details of your life simple and easy for you— and then finding them again even easier.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49609803">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/609/803/6b862c6cf1a6d35ef2087388073bea1a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1749496989&amp;width=680&amp;sig=Ze8EB3eAE09iJyEBCDMg3ktLbN5px8ZT%2FswnevuFm%2Bk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Connections"><span class="bold">Connections</span></h4><p><span class="bold">Connections</span> are other users you are connected to on striing. If a user is not a connection of yours, they can only see anything on your profile that is completely public. If a user is a connection of yours, you may choose to add them to various groups (only visible to you) to make it easier for sharing posts with others. For example, you may have a group called “College Friends” that you may want to share similar posts with, instead of sharing it with the same individual people every time. </p><h4 class="page-anchor" id="h:Our-Business-Model"><span class="bold">Our Business Model</span></h4><p>Users get a small amount of space to use to see if striing is the right solution for them. Once users meet that threshold, it's $5/month.<br/> </p><h3 class="page-anchor" id="h:meet-the-striing-team"><span class="bold">meet the striing team</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49262625">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/262/625/23eab9fd4718738da96685c25da12994_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747151492&amp;width=680&amp;sig=Frigw705LXahTtsJ5NZ2Bn9pjsk7eCi1E3oWc6lA8fg%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Co-Founders Nicole Clark and Danielle Daugherty</span></p><h4 class="page-anchor" id="h:Nicole"><span class="bold">Nicole</span></h4><p>Nicole is a lifelong Hoosier and social media marketing veteran who is passionately battling the Forgetting Curve. Nicole has been focused on bringing striing to life since 2020. She is also the co-founder of  Gals Innovating, which hosts gatherings for cool women doing cool stuff around Central Indiana.</p><p>Prior, Nicole served as a Social Media Strategist for Miller Brooks, an Indy-based full-service marketing agency. There, she led social media for B2B and B2C clients, managing everything from creative strategy to crafting engaging posts.</p><p>Nicole’s career journal also includes 8 years at Kiwanis International, a nonprofit with 550,000 members across 80 countries focused on serving children and improving communities through local clubs and youth programs. She led social media for Key Club International, crafted an award-winning weekly newsletter, and was tapped for the Kiwanis Innovation Team, where she helped create a digital platform connecting young professionals to volunteer opportunities. Along the way, she sharpened her skills in surveys, focus groups, and cross-functional collaboration with local developers and the marketing team.</p><p>On Saturdays, Nicole volunteers at the Broad Ripple Farmers Market, where she’s spent the past seven years growing its Instagram presence by over 20,000 organic followers (@brfarmersmarket). Her posts have become a local fixture—often credited with getting people out of bed on Saturday mornings and to the market.</p><p>Nicole is a 2012 graduate of Ball State University with degrees in Business and Graphic Arts. She lives in Indianapolis with her husband, Andrew; step-daughter, Gloria; three cats; and 100+ indoor plants.<br/> </p><h4 class="page-anchor" id="h:Danielle"><span class="bold">Danielle</span></h4><p>Born and raised in New Palestine, Indiana—just outside Indianapolis—Danielle has built a career at the intersection of purpose, creativity, and strategic execution. With a degree in Education from Ball State University and a passion for launching high-impact initiatives, she has successfully contributed to projects across a range of industries, including nonprofits, healthcare, technology and education.<br/><br/>Danielle is a skilled relationship-builder and results-oriented leader, known for turning ambitious ideas into actionable strategies. Whether leading a campaign or developing creative solutions, she brings clarity, focus, and collaborative energy to every project.<br/><br/>Outside of her professional work, Danielle is deeply invested in her community and family. She’s been married to her high school sweetheart for over 17 years and enjoys coaching her son’s basketball team and supporting her daughter’s running and horseback riding. Danielle brings the same dedication and drive to her personal life that she brings to every professional endeavor. Driven, dependable, and endlessly resourceful, Danielle shows up ready to lead, build, and get the job done.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49607978">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/607/978/9e39856137b69ca968000b2901e00f57_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749488823&amp;width=680&amp;sig=E8JH4n%2FE%2FA5k0IPG%2B0uxjnlevFcp2rqcGj%2Fs4AvTYzU%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Team brainstorming retreat April 2022.</span></p><p><img class="image"/></p><h3 class="page-anchor" id="h:passion-and-vision"><span class="bold">passion and vision</span></h3><p>After working on striing for 5 years, I’m still surprised how many times I organically wish that striing existed. As I write this, I’m sitting in my friend’s backyard, watching the ducks hang out on the dock as the high, fast-moving river flows by, and there’s no good way to capture this moment. A photo alone in my camera roll loses meaning and relevance over time. As Danielle says, time is a nonrenewable resource, and we need a place to capture how to spend it. From watching ducks and spending time with friends, to starting companies or moving to a different state. Everyone deserves a place to watch your kids grow up, keep the epic fishing trips and car restoration photos. The wedding albums and trunks of old memories and home videos. A place to keep track of video game scores and health journeys. To keep recipes and capture old memories. Everyday, there are so many details in our lives that are worth remembering. It’s unacceptable that we forget so many things after just 7 days.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49696917">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/696/917/155eb40376733314d630801df2379649_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750088459&amp;width=680&amp;sig=Sd6sCrdWret%2FWOs%2BHBLmZeLGMb6ixR32Br%2BYLYlfi5k%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:why-kickstarter"><span class="bold">why kickstarter</span></h3><p>People always light up when they tell us how they’d use striing. So for us, Kickstarter is a perfect platform for us to connect with the people who <span class="text-italic">want and need</span> striing the most, and really start to build out the striing community. There are so many people who have believed in us along the way that can now be part of our origin story, and that’s a really incredible feeling! They believe in us, yes, but they deeply believe in what we are building.</p><p>Support this project because your time is valuable and you should be able to remember how you’ve spent it. </p><h3 class="page-anchor" id="h:hear-from-our-supporters"><span class="bold">hear from our supporters</span></h3><p>We asked a few friends, family, and other potential users why they need something like striing in their lives. Here's what they said.</p><p>"I’ve always felt a strong need to archive my life. I’ve journaled almost every day for 16 years (shown below), but have never found a good system for going back and reading through my mountain of entries. striing would satisfy my desire to document and quickly recall important moments of my life." <span class="bold">—Kate J.</span>, 33</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49642749">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/642/749/6681ba3d26027fec07e3ff8a710e8b3c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749677436&amp;width=680&amp;sig=YWIdIxdL3jE2EW2QrdH1RFg0D%2BEKjJuAINh0qvUh3w8%3D"/>
+</figure>
+</div>
+<p>"striing would help me keep both my thoughts and content organized, especially with starting a business. I've tried multiple solutions for cataloging, tagging, and sharing photos, videos, and notes over the years but they all had a high learning curve, cost a lot of money, or didn't work with my setup. I just need a simple solution that works across platforms and doesn't require much effort to learn while not breaking the bank which is why striing is on my radar." <span class="bold">—Ron D.</span>, 40</p><p>"I’d want Striing to exist because it would make it so much easier to remember the good times, express creativity, and document the meaningful chapters of life—like my move from Indiana to Florida. I love the idea of a private space where I can capture those moments and choose who, if anyone, gets to see them." <span class="bold">— McKenna H.</span>, 24</p><p>"As an occasional fisherman, I've always been more about the company and resulting stories than the fish caught—unless there's drama in the catching. striing is the perfect place to preserve the photos that spark memories and great stories. And as the family historian, striing will offer me the place to store and share generations of photos and other digital treasures for sharing with my large family. We’re all about the family storytelling, and now we’ll have a good way to share these with a new coast-to-coast generation." <span class="bold">—Jeff H.</span>, 62</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49641854">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/641/854/6dff9ee13a9bb9b1523c420b94f0442c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749672820&amp;width=680&amp;sig=O%2F85HXliJceKK0V3ma4g9V8kClUZQVNU3Z%2FngokXiik%3D"/>
+</figure>
+</div>
+<p>“As an entrepreneur, inspiration strikes at odd hours and ideas evolve quickly. striing would give me a space to capture it all. From the sparks of creativity to the rough drafts, the timelines, and the pivots. It could be my business notebook, vision board, video journal, and photo archive all in one. I could document the wins, the failures, and the messy middle without relying on memory or scattered files. What I love most is that it’s a private, secure space, no algorithms, no noise. Just me and the journey, shared only with those I would choose." <span class="bold">—Tamera M.</span>, 51</p><p>“What a great concept! striing is putting a heart and soul back into storing important memories. By supporting the needs of the user first, they’re removing the popularity contest vibes and ad overload of the big social media players. I call it “unsocial media” in that it’s designed for you, by you, without having to battle typical doomscrolling!” <span class="bold">—Drew K.</span>, 39</p><h3 class="page-anchor" id="h:further-exploration"><span class="bold">further exploration</span></h3><p><span class="bold">Podcast: </span><span>99% Invisible: Search and Ye Might Find</span><span class="text-italic">. </span>For the last decade, people have been grumbling about not being able to find things online, both in our private data and on the public web, despite ever-evolving algorithms. Ever since humans started writing stuff down, the struggle has been in how to organize it all so that its contents wouldn't be lost in the stacks. Search has always been an attempt to fix that problem.</p><p><span class="bold">Study: </span><span>The Forgetting Curve</span><span class="text-italic">. </span>The Ebbinghaus Forgetting Curve shows us that memory declines over even short periods of time. After just 7 days, we forget up to 90% of our experiences.</p><p><span class="bold">Podcast: </span><span>Wantrepreneur to Entrepreneur: Nicole Clark</span><span class="text-italic">.</span> Nicole shares her journey from working in social media to becoming a stepmom and the challenges she faced with privacy on social platforms. She delves into the inspiration behind creating striing, a platform that allows users to save and cherish memories privately. Nicole also discusses her experiences pitching her business to investors and the importance of language in conveying her vision. </p><p><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Our primary challenge is meeting the timeline for building and launching the striing platform. Like any project, unexpected hurdles may arise that could delay our initial launch or lead to additional costs. However, the more successful this Kickstarter campaign is, the better we’ll be able to navigate these challenges without significant delays. The funds raised will directly support overcoming any obstacles, allowing us to maintain momentum and bring striing to life as planned.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

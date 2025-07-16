@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roadie 4 Automatic Guitar Tuner: Next-Level Precision</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/574/227/2b23d237318903629bd2bdaf1355d8ce_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749218408&width=560&sig=QuNfOXZ63Q2B6n5Ucua5L2PNhQ%2BrLsU0F6e0HQqYT1c%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Roadie 4 Automatic Guitar Tuner: Next-Level Precision</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Fast, reliable tuning for nearly any instrument with geared pegs</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p>After the success of Roadie 3, trusted by over 60,000 musicians and rated 4.5 stars across 2,000+ Amazon reviews, we knew we had to come back with something even better. So we listened. Closely. Every comment, suggestion, and request from our community helped shape what came next. Roadie 4 is the result: our most advanced, precise, and reliable tuner yet. Built from the ground up with your feedback at the core. We’re proud of the trust musicians have placed in us, and we can't wait to earn it again. Join us early and be part of the next evolution in music tech.</p><div class="template asset" contenteditable="false" data-alt-text="Roadie 4 tuning image" data-caption="" data-id="49606899">
+<figure class="image">
+<img alt="Roadie 4 tuning image" class="fit" src="https://i.kickstarter.com/assets/049/606/899/535f16eda2abba41a3773ece6242f5ff_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749484436&amp;width=680&amp;sig=TqYYU260Ac8aH9mhUYzg53G%2FrteDwbz9hKywjaMC2nA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-What-It-Is">‎What It Is</h3><h4 class="page-anchor" id="h:The-Fastest-Smartest-and-Most-Reliable-Automatic-Tuner-We-ve-Ever-Made"><span class="bold">The Fastest, Smartest and Most Reliable Automatic Tuner We've Ever Made</span></h4><p>Roadie 4 is our most powerful and user-friendly tuner to date, built to make tuning faster, more precise, and effortless.</p><p>With cutting-edge vibration detection, completely revamped audio circuitry and algorithms, a high-torque motor, and improved resistance to background noise, Roadie 4 delivers flawless, reliable tuning, whether you're at home, on stage, or in the studio.</p><div class="template asset" contenteditable="false" data-alt-text="Roadie 4 surrounded by different instruments image" data-caption="" data-id="49653185">
+<figure class="image">
+<img alt="Roadie 4 surrounded by different instruments image" class="fit" src="https://i.kickstarter.com/assets/049/653/185/45801cb92ee62346f0d6a2fd8e1f58a9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749745243&amp;width=680&amp;sig=k%2BP%2FufCqGRGIviyAlx1TTfGe3O9qJoqsJrgMWSaawEc%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Watch-this-demo"><span class="bold">Watch this demo</span></h4>
+<p><span class="text-italic">**This video is 100% genuine and has no edits. </span></p><h4 class="page-anchor" id="h:Roadie-4-in-a-nutshell-"><span class="bold">Roadie 4 in a nutshell:</span></h4><ul>
+<li>Automatically gets you in tune in seconds with incredible precision</li>
+<li>Compatible with <span class="text-italic">almost</span> ALL string instruments with geared pegs</li>
+<li>Reliable tuning, even in noisy environments</li>
+<li>Switch effortlessly between 150+ built-in tunings</li>
+<li>Intuitive interface with a large, full-color screen</li>
+<li>Integrated string winder for fast and easy restringing</li>
+<li>Built-in metronome with optional beep and vibration modes</li>
+<li>Long-lasting battery that stays powered for months</li>
+<li>Bluetooth 5.0 enabled for smooth syncing</li>
+</ul><p><span class="bold">Keep scrolling for full specs!</span></p><div class="template asset" contenteditable="false" data-alt-text="Roadie 4 tuning electric guitar image" data-caption="" data-id="49653205">
+<figure class="image">
+<img alt="Roadie 4 tuning electric guitar image" class="fit" src="https://i.kickstarter.com/assets/049/653/205/5199b2b9c94b72992792dfaf0ed3c90d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749745362&amp;width=680&amp;sig=0yRMYBDbJWhRPWbXOaumKn45JaGrsuRcNnaIy0Vmx50%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Compatibility-">
+<span class="bold">‎‎‎</span>Compatibility </h3><h4 class="page-anchor" id="h:Fits-More-Pegs-Tunes-More-Instruments-"><span class="text-italic"><span class="bold">Fits More Pegs. Tunes More Instruments.</span></span></h4><p>Roadie has always supported a wide range of instruments, but with a newly redesigned peg connector, Roadie 4 now fits both smaller and larger pegs more comfortably. Its rubberized texture grips tuning pegs more securely and turns smoothly with no slipping, no shaking, just steady, quiet tuning.</p><p>It works with any instrument that uses geared pegs, including electric guitars with 6, 7, 8 or 12 strings, acoustic and classical guitars, ukuleles, mandolins, banjos, bouzoukis, lap steels and much more. Whatever you play, Roadie 4 is ready to tune it with speed and precision. Bass guitars, however, have heavier strings and require more torque than Roadie 4 is designed to deliver. That’s why we created Roadie Bass, a separate tuner specifically built to handle the needs of bass instruments. It’s already available on the market, and you can order it directly through our website.</p><div class="template asset" contenteditable="false" data-alt-text="Roadie 4 peg connector twirling" data-caption="" data-id="49695697">
+<figure class="image">
+<img alt="Roadie 4 peg connector twirling" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/695/697/ffd290573f0632fd587159bca7bfa1b1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750083313&amp;width=680&amp;sig=u5o3QRW4z4KUz5m29zYb1yQ8Pg2AEGGRXd3dN1ONsts%3D" src="https://i.kickstarter.com/assets/049/695/697/ffd290573f0632fd587159bca7bfa1b1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750083313&amp;width=680&amp;sig=u5o3QRW4z4KUz5m29zYb1yQ8Pg2AEGGRXd3dN1ONsts%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:How-It-Works">How It Works</h3><p>Roadie 4 uses a built-in contact microphone and advanced audio processing to detect string vibrations, analyze pitch, and automatically turn the tuning peg with incredible precision. No focus needed. Just hold it in place and trust it to get the job done right every time.</p><div class="template asset" contenteditable="false" data-alt-text="Xray of the Roadie 4" data-caption="" data-id="49639114">
+<figure class="image">
+<img alt="Xray of the Roadie 4" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/639/114/0f5c801bfa712d08266298113459e8a4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749658240&amp;width=680&amp;sig=dxuNj17QZpG5Uah1o%2FPBEn%2F9L2WnCQoTWMaVMxwHBoM%3D" src="https://i.kickstarter.com/assets/049/639/114/0f5c801bfa712d08266298113459e8a4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749658240&amp;width=680&amp;sig=dxuNj17QZpG5Uah1o%2FPBEn%2F9L2WnCQoTWMaVMxwHBoM%3D"/>
+</figure>
+</div>
+<p>We completely revamped the audio circuit and tuning algorithm, making Roadie 4 noticeably faster, more accurate, and more reliable than ever before.</p><h4 class="page-anchor" id="h:Tune-Your-Instrument-in-3-Simple-Steps-"><span class="bold">Tune Your Instrument in 3 Simple Steps:</span></h4><div class="template asset" contenteditable="false" data-alt-text="Steps to tune with Roadie 4 " data-caption="" data-id="49693086">
+<figure class="image">
+<img alt="Steps to tune with Roadie 4 " class="fit" src="https://i.kickstarter.com/assets/049/693/086/7c8e3d59bbb8e26f0fbbfca55fa78c65_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750069148&amp;width=680&amp;sig=PMeE2KOCRNxmLq1j0F5eOiz6dX1155ZnxVqk4O3o5jM%3D"/>
+</figure>
+</div>
+<p><span class="bold">[New!] Auto-Detect</span><br/>By default, Roadie 4 tunes from the lowest to the highest string. But with the new auto-detect feature, you can pluck any string and Roadie 4 will instantly recognize and tune it. It beeps and vibrates when the string is in tune.</p><div class="template asset" contenteditable="false" data-alt-text="Roadie 4 tuning high E string" data-caption="" data-id="49653224">
+<figure class="image">
+<img alt="Roadie 4 tuning high E string" class="fit" src="https://i.kickstarter.com/assets/049/653/224/61284713f1eb7fec39bdbe0b65c31a80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749745454&amp;width=680&amp;sig=mWu%2B%2F%2BijYPf8Mc%2BVM0z5sAbeq4kCVwHytx8CRrlWvBQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:What-s-New">What's New</h3><div class="template asset" contenteditable="false" data-alt-text="Comparative table: Roadie 3 vs. Roadie 4" data-caption="" data-id="49711595">
+<figure class="image">
+<img alt="Comparative table: Roadie 3 vs. Roadie 4" class="fit" src="https://i.kickstarter.com/assets/049/711/595/9eaa1551fcb70e2c5608286ffcdfa6a8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750168704&amp;width=680&amp;sig=l0kLRlzugDr0y2XJ8waxo%2FmJncSZzWj8jxOhpcK6rrU%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Winder-Metronome">Winder &amp; Metronome</h3><h4 class="page-anchor" id="h:Restring-Tune-and-Track-All-in-One-"><span class="text-italic"><span class="bold">Restring, Tune, and Track. All in One.</span></span></h4><p>Roadie 4 features a built-in winder with three speed settings, giving you full control over how you restring your instrument. Whether you prefer a fast wind or a slower, more controlled approach, the winder makes changing strings smoother than ever.</p><p>And beyond the dedicated winder feature, Roadie 4 also streamlines the process from within the tuner itself. When you're replacing a string, you can now wind it and immediately tune it in one smooth step. It’s a fast, fluid experience that keeps you focused on your music, not the setup.</p><div class="template asset" contenteditable="false" data-alt-text="Roadie 4 winding a string" data-caption="" data-id="49574317">
+<figure class="image">
+<img alt="Roadie 4 winding a string" class="fit" src="https://i.kickstarter.com/assets/049/574/317/096879aaa105c55b21437fa0409c46b4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749218906&amp;width=680&amp;sig=YxFjj8UrZ81%2FLM2JvaAg0UtOmiAplIOYPZbgzesayaM%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Watch-it-in-Action"><span class="bold">Watch it in Action</span></h4><p><span class="text-italic">We’ve reinvented the way you restring your instrument. Roadie 4 automates both winding and tuning in one smooth, seamless step, no more manual effort, just a fast process that gets you back to playing in seconds.</span></p>
+<p><span class="bold">But here's where it gets even smarter: </span>with the companion Roadie Tuner app, you can now log each string change. Ever found a string you loved but couldn’t remember the brand or gauge later? Or wished you had a reminder to change your strings before a gig or session? The app helps you track what you used, when you changed it, and when it's time to swap again, so your instrument always sounds its best.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49712039">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/712/039/e83ce67a85973ba8af90f5dbd1a00cd8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750170681&amp;width=680&amp;sig=WanCNqCehseKeKot71RXVvmo3N73f4%2B3FYY7nupbfYQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Play-in-Perfect-Time-With-Beep-or-Vibration"><span class="bold">Play in Perfect Time, With Beep or Vibration</span></h4><p>Roadie 4’s built-in metronome has been upgraded to give you full control over tempo, time signature, and now rhythm. Set your BPM, choose your beat count, and add rhythmic subdivisions like eighth notes or triplets to match your style. With vibration mode, you can feel the rhythm instead of just hearing it, perfect for practicing quietly or playing in a loud environment.</p><div class="template asset" contenteditable="false" data-alt-text="Roadie 4 metronome options" data-caption="" data-id="49653230">
+<figure class="image">
+<img alt="Roadie 4 metronome options" class="fit" src="https://i.kickstarter.com/assets/049/653/230/15b44c63573746150eb5072d1d4b7673_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749745465&amp;width=680&amp;sig=Pl3FE%2Bnkc1Av%2Fb%2FQQKftaD3Uld5qaqQPtVXvVM2wgYg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Who-Is-It-For">Who Is It For</h3><p>Tuning can be a hassle, no matter your skill level. Whether you're just starting out, a seasoned player, or someone who works with instruments every day, Roadie 4 is made for you. It takes the frustration out of tuning so you can focus on what really matters: playing.</p><div class="template asset" contenteditable="false" data-alt-text="collage of different users of Roadie 4" data-caption="" data-id="49692938">
+<figure class="image">
+<img alt="collage of different users of Roadie 4" class="fit" src="https://i.kickstarter.com/assets/049/692/938/35d6f3e8ecc0de83c8ee4f80213cc752_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750068271&amp;width=680&amp;sig=D2AVwmX4rvkexKLAZVDdM3%2Fd5aCDG1dB3GvSWPsFbMk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:See-How-It-Works-For-You"><span class="bold">See How It Works For You</span></h4><p><span class="bold">Professionals</span><br/>Roadie 4 delivers pro-level accuracy, even in noisy environments. Customize tunings, set your own temperaments, adjust reference pitch, and use the Tune Up feature for longer-lasting stability. Perfect for stage and studio.</p><p><span class="bold">Beginners</span><br/>Learning an instrument is already tough. Tuning should not be. Roadie 4 makes it easy with a clear, beginner-friendly interface that guides you through the process. It gets you in perfect tune fast while helping you naturally develop your ear over time.</p><p><span class="bold">Amateur Players</span><br/>Explore new sounds and grow your skills. Roadie 4 gives you instant access to over 150 alternate tunings, helping you discover new genres, techniques, and creative directions as you improve.</p><p><span class="bold">Multi-Instrumentalists</span><br/>Playing more than one instrument? Roadie 4 has you covered. Save custom setups for each one and switch between them in seconds. From guitar and ukulele to mandolin and beyond, it keeps your whole collection ready to play.</p><p><span class="bold">Guitar Shops</span><br/>Need to keep multiple instruments ready for customers? Roadie 4 lets you tune them fast without setting up full profiles. The built-in winder also makes restringing quicker and easier so everything stays ready to go.</p><p><span class="bold">Teachers</span><br/>Tuning for a group of students? Roadie 4 speeds up the process so you can focus more on teaching while your students focus more on playing.</p><div class="template asset" contenteditable="false" data-alt-text="Teacher and student playing guitar" data-caption="" data-id="49666690">
+<figure class="image">
+<img alt="Teacher and student playing guitar" class="fit" src="https://i.kickstarter.com/assets/049/666/690/8ce53d9c02dbc258ca2d33e614d873fb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749833246&amp;width=680&amp;sig=oGsCudWL8oL%2FjV2MKjPyCc9NWUw85yi1dMuk%2B10iRa4%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Customization">Customization</h3><h4 class="page-anchor" id="h:-Tune-Your-Way-Customize-Everything-">
+<span class="bold">Tune </span><span class="text-italic"><span class="bold">Your</span></span><span class="bold"> Way. Customize Everything.</span>
+</h4><p><span class="bold">Roadie 4 is packed with advanced features designed for musicians who like things just right. </span>Whether you want faster tuning, ultra-precise adjustments, or custom setups tailored to your instrument and sound, Roadie 4 gives you <span class="text-italic">real </span>control. Every detail is customizable, so it works exactly the way <span class="text-italic">you</span> want it to.</p><div class="template asset" contenteditable="false" data-alt-text="tune up screen" data-caption="" data-id="49639197">
+<figure class="image">
+<img alt="tune up screen" class="fit" src="https://i.kickstarter.com/assets/049/639/197/02c3de99230a71457b12872288160f79_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749658767&amp;width=680&amp;sig=f2RQ6uybyY42q6XB3tAIVDsBs2eb55Af6TT5IpzvwHg%3D"/>
+</figure>
+</div>
+<p><span class="bold">Set Roadie to “Tune Up”</span><br/>With the optional Tune Up setting, Roadie 4 finishes all tunings by tightening the peg and locking in your tuning even more securely. Many players swear by this method, while others prefer the default. The choice is yours.</p><div class="template asset" contenteditable="false" data-alt-text="CUSTOM Gsus2 screen" data-caption="" data-id="49710894">
+<figure class="image">
+<img alt="CUSTOM Gsus2 screen" class="fit" src="https://i.kickstarter.com/assets/049/710/894/d0dbd9d1c7128631f403835fd3d31099_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750165896&amp;width=680&amp;sig=sYmcGxEKaXO2U62nke2vtiCC%2F5YHwllgVDwSQv3kGfk%3D"/>
+</figure>
+</div>
+<p><span class="bold">Create Custom Tunings</span><br/>Whether you're tuning to tempered or alternate tunings, Roadie 4 makes it easier than ever. You can adjust each string in cents to match your ear or specific setup. If you’ve fitted your guitar with a custom nut or bridge to compensate for intonation, you can create tunings tailored to that exact configuration. For floating bridge guitars like a Floyd Rose, follow the recommended string order (Low E, High E, B, A, G, D) to maintain equal tension across the bridge. Save your custom tuning once and access it anytime with just a tap.</p><div class="template asset" contenteditable="false" data-alt-text="-1 Capo selection" data-caption="" data-id="49639203">
+<figure class="image">
+<img alt="-1 Capo selection" class="fit" src="https://i.kickstarter.com/assets/049/639/203/df346408fef7f400b8daac4691280f17_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749658775&amp;width=680&amp;sig=UbxU0oVGwyk0aukvXvN4OJtd1v%2BKb6Xz7j8ZJIGc79k%3D"/>
+</figure>
+</div>
+<p><span class="bold">Tune with a Capo</span><br/>Using a capo? No problem. Just tell Roadie which fret it's on, keep the capo on, and your preset tunings will adjust automatically so Roadie tunes for the key you're playing in.</p><div class="template asset" contenteditable="false" data-alt-text="442 Reference pitch selection screen" data-caption="" data-id="49639205">
+<figure class="image">
+<img alt="442 Reference pitch selection screen" class="fit" src="https://i.kickstarter.com/assets/049/639/205/f6bb1bdc6d88f37c3479aa294fe49c36_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749658781&amp;width=680&amp;sig=5Jt2XBImktEs1o6mW21Fj9ciAz%2FhMxZM97vRe59jGhI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Adjust Your Reference Pitch</span><br/>Not everyone tunes to A=440 Hz. Roadie 4 lets you shift the reference pitch anywhere between 420 Hz and 460 Hz, in 1 Hz increments (perfect for historical pieces, orchestral settings, or matching fixed-pitch instruments).</p><div class="template asset" contenteditable="false" data-alt-text="High Accuracy mode selected" data-caption="" data-id="49639209">
+<figure class="image">
+<img alt="High Accuracy mode selected" class="fit" src="https://i.kickstarter.com/assets/049/639/209/4458ebaf2d7be231d95e1e557f62e1e4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749658798&amp;width=680&amp;sig=KUIBg66uuY35%2FEP1HpFs9ruBHrNIDp6vGUYqNeAQAQM%3D"/>
+</figure>
+</div>
+<p><span class="bold">Fast or Higher Accuracy Tuning </span><br/>Roadie 4 comes set to "Fast Tuning" by default: quick, reliable, and accurate enough for everyday playing. But when you need extra precision, like during recording sessions, just switch to "High Accuracy" mode. It fine-tunes each note with even greater detail, giving you a perfectly polished result.</p><p><span class="bold">[NEW] Quick Tune: Your Shortcuts to Tuning</span><br/>By popular demand from our Roadie users, we’ve introduced Quick Tune, a feature designed to get you tuning faster than ever. When enabled, your Roadie 4 will automatically open to your<span class="text-italic"> last tuned instrument</span> or a <span class="text-italic">favorite </span>as soon as you power it on, so you're ready to go immediately. <br/><br/>And now, Roadie 4 also comes preloaded with a few common instrument profiles, so you can start tuning right out of the box. While we still recommend creating full instrument profiles for precision and advanced features, you now have a shortcut when speed matters.</p><p>So whether you're picking up where you left off, testing a guitar in a store, or helping a friend tune in a pinch, these quick-access options save you time.</p><h3 class="page-anchor" id="h:Product-Design">Product Design</h3><h4 class="page-anchor" id="h:Made-for-Musicians-Built-to-Perform-"><span class="bold">Made for Musicians. Built to Perform.</span></h4><p>After years of careful design, real-world testing, and input from our community, Roadie 4 delivers professional-grade performance in a tool that feels effortless to use. Every detail, from the sturdy build and non-slip grip to the vivid full-color display, has been crafted for comfort, speed and style.</p><div class="template asset" contenteditable="false" data-alt-text="Roadie 4 Exploded view" data-caption="" data-id="49651642">
+<figure class="image">
+<img alt="Roadie 4 Exploded view" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/651/642/daa6bf07a069965f4ef087fb379f1096_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749738160&amp;width=680&amp;sig=84RShd%2BUVb9SpHf2k2ScUkVoxRvJAZw7rcGphqxJ91s%3D" src="https://i.kickstarter.com/assets/049/651/642/daa6bf07a069965f4ef087fb379f1096_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749738160&amp;width=680&amp;sig=84RShd%2BUVb9SpHf2k2ScUkVoxRvJAZw7rcGphqxJ91s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Product design team at work" data-caption="Roadie’s product team evaluating design prototypes" data-id="49602635">
+<figure class="image">
+<img alt="Product design team at work" class="fit" src="https://i.kickstarter.com/assets/049/602/635/5cb4d05c2320c4d3011e63d0ddffe083_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749461383&amp;width=680&amp;sig=0EDDUqtUaIoDWiO%2BMIR2cz%2BKo7u18XWJLPOzUstCSjA%3D"/>
+<figcaption class="px2">Roadie’s product team evaluating design prototypes</figcaption>
+</figure>
+</div>
+<p><span class="bold">Design Features:</span></p><ul>
+<li>
+<span class="bold">Clear, Intuitive Display</span><br/>Front-facing, full-color screen with large graphics that stay visible while tuning</li>
+<li>
+<span class="bold">Sleek and Ergonomic</span><br/>Compact form that fits comfortably in your hand or pocket</li>
+<li>
+<span class="bold">Non-Slip Grip</span><br/>Gives you confident handling, even during quick tune-ups</li>
+<li>
+<span class="bold">Precision Scroll Wheel</span><br/>Smooth navigation with tactile feedback and hyper scroll for faster menu access</li>
+<li>
+<span class="bold">Bold, Modern Look</span><br/>Striking black, gray, and red design with clean, sharp accents</li>
+</ul><p>Roadie 4 isn't just a tuner, it’s a precision tool made to match your craft.</p><div class="template asset" contenteditable="false" data-alt-text="Roadie 4 on an amp" data-caption="" data-id="49667215">
+<figure class="image">
+<img alt="Roadie 4 on an amp" class="fit" src="https://i.kickstarter.com/assets/049/667/215/94fc7175aa5aa87ffb68528ab2fbf946_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749835689&amp;width=680&amp;sig=DnifoY12I59n7fPQrxN3Sd3681SC9nwAIQkorhoEut4%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Tech-Specs">Tech Specs</h3><div class="template asset" contenteditable="false" data-alt-text="Tech specs" data-caption="" data-id="49653010">
+<figure class="image">
+<img alt="Tech specs" class="fit" src="https://i.kickstarter.com/assets/049/653/010/b36c84fac2e88e7941050ec5e4861244_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749744450&amp;width=680&amp;sig=%2FigRHFUyH8TP%2BuKNq%2Br5P0%2Fg8WDcRGU51ZuoWeM4xns%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:The-App">The App</h3><h4 class="page-anchor" id="h:Roadie-4-connects-to-a-free-companion-app-for-deeper-customization-and-updates">Roadie 4 connects to a free companion app for deeper customization and updates</h4><p>The free Roadie app unlocks the full potential of your tuner, giving you advanced features, personalization, and ongoing updates, all in one place. Based on user feedback, we also redesigned the interface for a smoother, more intuitive experience.</p><div class="template asset" contenteditable="false" data-alt-text="App homescreen and instrument screen" data-caption="" data-id="49623287">
+<figure class="image">
+<img alt="App homescreen and instrument screen" class="fit" src="https://i.kickstarter.com/assets/049/623/287/24b7318dd25e44b59ca985f7b29f0648_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749569908&amp;width=680&amp;sig=BuTFObCMth01BOwbfhpgQ3qH4IkHfr8hGjJwqy2%2FITM%3D"/>
+</figure>
+</div>
+<p><span class="bold">With the app, you can:</span></p><ul>
+<li>Create and save profiles for each of your instruments: guitars, ukuleles, mandolins, banjos, and more</li>
+<li>Add unique instruments like a charango, guitalele, bandurria, or baglama with geared pegs</li>
+<li>
+<span class="bold">[NEW!]</span> Log your string changes to track what you used, when you changed them, and when it's time to swap again</li>
+<li>Download from a growing library of curated tunings or create your own custom ones</li>
+<li>Toggle vibration and beep notifications on or off to suit your environment</li>
+<li>Receive firmware updates with the latest features and performance enhancements for Roadie 4</li>
+</ul><h3 class="page-anchor" id="h:Reviews-Awards">Reviews &amp; Awards</h3><h4 class="page-anchor" id="h:From-groundbreaking-tech-to-critically-acclaimed-tuners-we-ve-set-the-bar-Roadie-4-is-here-to-raise-it-"><span class="text-italic">From groundbreaking tech to critically acclaimed tuners, we’ve set the bar. Roadie 4 is here to raise it.</span></h4><div class="template asset" contenteditable="false" data-alt-text="Artists testimonials" data-caption="" data-id="49667002">
+<figure class="image">
+<img alt="Artists testimonials" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/667/002/a3cd8a818334ea64c675199e592e6af0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749834764&amp;width=680&amp;sig=zhapXb3pff2jbrArqQ9Z1Ik89AD7uHgYr%2BN7z4k7LgI%3D" src="https://i.kickstarter.com/assets/049/667/002/a3cd8a818334ea64c675199e592e6af0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749834764&amp;width=680&amp;sig=zhapXb3pff2jbrArqQ9Z1Ik89AD7uHgYr%2BN7z4k7LgI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Awards" data-caption="" data-id="49667205">
+<figure class="image">
+<img alt="Awards" class="fit" src="https://i.kickstarter.com/assets/049/667/205/fb19dd76bfbf4eeb0afe3d6f7065f4e5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749835637&amp;width=680&amp;sig=UIJAmthi5xY0%2F6%2FEkfcl7Pe8fPM18vWETNJBSFI5NW0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="4.5 stars Amazon rating" data-caption="" data-id="49667162">
+<figure class="image">
+<img alt="4.5 stars Amazon rating" class="fit" src="https://i.kickstarter.com/assets/049/667/162/5a86b38a634271ed90a9b98e9f1a4c30_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749835464&amp;width=680&amp;sig=Z9VwtAhkI3kSZ3car%2BELyWjsv7paCLdx631lwelONgc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="Publications' reviews" data-caption="" data-id="49667125">
+<figure class="image">
+<img alt="Publications' reviews" class="fit" src="https://i.kickstarter.com/assets/049/667/125/97c14a549b76d5be88456eaf2fe1e831_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749835242&amp;width=680&amp;sig=vF9OmYhFfdkX6JdufgvgVOJzCBbKRCyh5fmRAoG1XZQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Through-The-Years">Through The Years</h3><h4 class="page-anchor" id="h:A-journey-of-continuous-innovation-inspired-by-musicians-feedback"><span class="text-italic">A journey of continuous innovation, inspired by musicians' feedback</span></h4><div class="template asset" contenteditable="false" data-alt-text="History product timeline" data-caption="Roadie 4 is the culmination of 10+ years of technical innovation in music accessories." data-id="49604682">
+<figure class="image">
+<img alt="History product timeline" class="fit" src="https://i.kickstarter.com/assets/049/604/682/cfa3a71fd906d03726a5312ba551268b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749474440&amp;width=680&amp;sig=uQpG%2BboEJb3HwELqoQxXAL%2Fw1B8x13kgdZGldyY4kR8%3D"/>
+<figcaption class="px2">Roadie 4 is the culmination of 10+ years of technical innovation in music accessories.</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Project-Timeline">Project Timeline</h3><div class="template asset" contenteditable="false" data-alt-text="Project milestones - Ships in October" data-caption="" data-id="49697237">
+<figure class="image">
+<img alt="Project milestones - Ships in October" class="fit" src="https://i.kickstarter.com/assets/049/697/237/dfe1a7a888b737e677c9d9ad9b5b935f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750090077&amp;width=680&amp;sig=X6GmzlF1F%2FgKWXYIExDARGIeZXiHEDh4oxiKOW1o1MQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Meet-The-Team">Meet The Team</h3><div class="template asset" contenteditable="false" data-alt-text="Photos of the CEO, CTO, CMO and VP Sales &amp; Partnerships" data-caption="" data-id="49667251">
+<figure class="image">
+<img alt="Photos of the CEO, CTO, CMO and VP Sales &amp; Partnerships" class="fit" src="https://i.kickstarter.com/assets/049/667/251/7dcbb810cd831af28446b4bf2ae257fb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749835899&amp;width=680&amp;sig=RxfeSepQvLW%2Bb%2BkVSUbSEYoX%2BaMRVVIYiEiVbyCdREA%3D"/>
+</figure>
+</div>
+<p>Back in 2013, two music-loving engineers, Hassane Slaibi and Bassam Jalgha, set out to solve a problem: musicians were spending too much time tuning and not enough time playing. So they built the first Roadie Tuner. It was smart and automatic and earned global attention, including the TechCrunch Disrupt 2014 Audience Choice Award.</p><p>Since then, we’ve kept building: Roadie 2, Roadie Bass, Roadie 3 and Roadie Coach, each one smarter, faster, and more intuitive. Along the way, bands started recording and touring with our tools, and our community kept growing.</p><p>Now it’s time for Roadie 4, our most advanced tuner yet, powered by the smartest tuning technology we’ve ever built.</p><p>Behind it all is a small, passionate team of musicians and makers who love what they do, and each other. We’re still tuning, still dreaming, and still creating tools to help you do what you love most: make music.<br/> </p><div class="template asset" contenteditable="false" data-alt-text="Collage of the full team" data-caption="" data-id="49652948">
+<figure class="image">
+<img alt="Collage of the full team" class="fit" src="https://i.kickstarter.com/assets/049/652/948/5e109841d479ccddde0f86e6432b7210_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749744241&amp;width=680&amp;sig=Z9uo%2FOsNakFkDSevXBuHwZVJqqmisS1B6ZpmnctNAFA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-Kickstarter">Why Kickstarter</h3><p>You might be wondering why a brand like Roadie, already established with products on the market, would return to Kickstarter to launch the next version.</p><p>The biggest advantage of being on Kickstarter is the invaluable feedback we receive from this amazing community of curious, passionate, and forward-thinking musicians. By sharing our concepts, features, and development updates, we gain insights that go far beyond our internal perspective. It’s the most effective way we’ve found to create something that truly resonates with musicians everywhere.</p><p>When we were just getting started, the tuner market was crowded, and spreading the word felt almost as challenging as inventing Roadie itself. We genuinely believe we wouldn’t be where we are today without the incredible support and open dialogue we've had with our Kickstarter backers.</p><p>Now, our team is more prepared than ever to launch something groundbreaking. And once again, we’re turning to you, your passion, feedback, and support, to help us make Roadie 4 a reality.</p><div class="template asset" contenteditable="false" data-alt-text="Man tuning with Roadie 4" data-caption="" data-id="49639594">
+<figure class="image">
+<img alt="Man tuning with Roadie 4" class="fit" src="https://i.kickstarter.com/assets/049/639/594/a48c977842b06a8737a4391792efcb66_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749660438&amp;width=680&amp;sig=3I65z6VSw%2FPaijxhwGZhhSpt5gcfmQbvjVND1yWsgBg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Warranty-Shipping">Warranty &amp; Shipping</h3><p>We will be shipping worldwide! Free shipping to the US. All our Roadie products come with a 30-day money-back guarantee and a 1-year warranty.</p><div class="template asset" contenteditable="false" data-alt-text="Worldwide shipping + 1 Year Warranty + 30 Days Money Back" data-caption="Taxes &amp; duties included in all our prices, worldwide." data-id="49653036">
+<figure class="image">
+<img alt="Worldwide shipping + 1 Year Warranty + 30 Days Money Back" class="fit" src="https://i.kickstarter.com/assets/049/653/036/313bdb19ceb6745cd737c44d208ba81d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749744590&amp;width=680&amp;sig=7ZCduVU0z2zCwvZetm2C48x%2FrmlU4%2BZSG0xSbk6ISpc%3D"/>
+<figcaption class="px2">Taxes &amp; duties included in all our prices, worldwide.</figcaption>
+</figure>
+</div>
+<span>Spread the word, boost the launch, and earn commissions as an affiliate</span><span>This project is boosted by BackerCrew</span><div class="template asset" contenteditable="false" data-alt-text="Featured on Backerspaces" data-caption="" data-id="49707752">
+<figure class="image">
+<img alt="Featured on Backerspaces" class="fit" src="https://i.kickstarter.com/assets/049/707/752/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750149912&amp;width=680&amp;sig=YDp02cCk8eRXdF5ai9JMKAgPoqEwl%2FEUREhShXXSdAk%3D"/>
+</figure>
+</div>
+<span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Hardware development is risky and there are always challenges in delivering a product.
+
+We have several years of experience building and delivering the original Roadie Tuner, the Roadie 2, the Roadie Bass, the Roadie 3 and the Roadie Coach. Thanks to this, all manufacturing and logistics relationships are already in place. Our supply chain and manufacturing process for Roadie 4 are in place as well and we have already developed our final production-ready product.
+
+Some risks remain with the production of Roadie 4 such as unforeseen changes in the availability of components and production lead times. Although unlikely, these things can affect our delivery time.
+
+Count on us being transparent with you until your Roadie reaches your doorstep.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">We care about our environment so we build our products to last a long time thus generating less waste.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Our packaging is also fully recyclable and contains no plastic.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

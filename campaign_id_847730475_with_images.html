@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Micro Wallet Finder</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/748/650/1ec48b435aab51fdde12546d223ba2cb_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1750399545&width=560&sig=pjaEkburmwBThP0K2GEp3RygKka4WffZe4IZ7Ycizm0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Micro Wallet Finder</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Total Wallet Security</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 3,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Introducing-the-Micro-Wallet-Finder"><span class="bold">Introducing the Micro Wallet Finder</span></h3><h3 class="page-anchor" id="h:Total-Wallet-Security">Total Wallet Security</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49510202">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/510/202/79a42b76d9ec42a60e7a408f93aac169_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748838306&amp;width=680&amp;sig=a8pXPsF0Xzy9NQKCtJpU%2FNEuRaxvI8oietDeD523ipU%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:A-Digital-Multi-Tool-for-Safety-Security"><span class="bold">A Digital Multi-Tool for Safety &amp; Security</span></h3><p>The Micro Wallet Finder is a Certified 'Find My' Device with the worlds first <span class="bold">RFID Skimming Alarm</span> offering <span class="bold">Smart RFID™</span> Protection and <span class="bold">Active Jamming Technology</span>.  </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49510227">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/510/227/b2aca001d39f874140696fc3b183dc49_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1748838566&amp;width=680&amp;sig=KTwTfR3hEfYG67p%2FudWZJWyIfd4FevfzRxwwv%2FyqHbA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49269311">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/269/311/083fbfce7edae73365e1cba168502142_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747191183&amp;width=680&amp;sig=PYvVolNg%2FK%2FtZ1s0pbi%2BlKaB9rMaLHXGUW8hjX6KQ8E%3D" src="https://i.kickstarter.com/assets/049/269/311/083fbfce7edae73365e1cba168502142_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747191183&amp;width=680&amp;sig=PYvVolNg%2FK%2FtZ1s0pbi%2BlKaB9rMaLHXGUW8hjX6KQ8E%3D"/>
+</figure>
+</div>
+<p><span class="bold">Find your wallet instantly</span> around the globe or under the couch. Keeping your valuables safe with left behind alerts is not only smart, it's super convenient!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49457909">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/457/909/392b3ba8fdef606407f616eb501c7833_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748451106&amp;width=680&amp;sig=DQ561mOwKnEgXi4yrIKx2HW5o2SaL0XnCuptPaiLTNc%3D" src="https://i.kickstarter.com/assets/049/457/909/392b3ba8fdef606407f616eb501c7833_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748451106&amp;width=680&amp;sig=DQ561mOwKnEgXi4yrIKx2HW5o2SaL0XnCuptPaiLTNc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="We've packed a LOT of tech into 2mm. There is more to the Micro Wallet Finder than meets the eye." data-id="48986989">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/048/986/989/77f59e54d1b21ff236f3adc1b8e4f91d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745269544&amp;width=680&amp;sig=QC5BafYagVihkLOBmLPmnj0dPP5AigcYGgRes%2FZWAro%3D"/>
+<figcaption class="px2">We've packed a LOT of tech into 2mm. There is more to the Micro Wallet Finder than meets the eye.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Apple Certified 'Find My' Device manufactured in an Apple MFi Certified factory" data-id="49019153">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/019/153/6b3f68703ce267d4d3a137f9e28b139e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745456976&amp;width=680&amp;sig=JCaTJT7FoZFVNpvnn7nBI570MMTgS1GZ7c5ikAWPSQs%3D"/>
+<figcaption class="px2">Apple Certified 'Find My' Device manufactured in an Apple MFi Certified factory</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-RFID-Skimming-Alarm-Exclusive-to-the-Micro-Wallet-Finder">
+<span class="bold">RFID Skimming Alarm! </span><br/>Exclusive to the Micro Wallet Finder</h3><p>The Micro Wallet Finder performs digital Jiu-Jitsu by harvesting the Radio Frequency waves of any skimmer/reader and temporarily jumbling them making your card impossible to read while alerting you with an audible alarm.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49785103">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/785/103/7ebfeffb91cf9d590cd8e314e04df01e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750701916&amp;width=680&amp;sig=a5aRJ2BSPEcqzJ%2FAQskTxgT2a6Tiao0kvflc1MTPBl8%3D" src="https://i.kickstarter.com/assets/049/785/103/7ebfeffb91cf9d590cd8e314e04df01e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750701916&amp;width=680&amp;sig=a5aRJ2BSPEcqzJ%2FAQskTxgT2a6Tiao0kvflc1MTPBl8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Active-Passive-Wallet-Finder"><span class="bold">Active &amp; Passive Wallet Finder</span></h3><p><span class="bold">Our Apple Certified "Find My" device works on the Apple Mesh Network*</span> to find your item quickly. Get left behind alerts instantly and track down your valuables wether around the globe or around the corner. </p><p>*See our stretch goal to add Google "Find My" for Android during the live campaign. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49785387">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/785/387/956c21cb7e9061c0506e4d681e7584c9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750703385&amp;width=680&amp;sig=F03BaH%2FHZdvuIpRflaLJkHTLTn5hnFluNhsLbhZKa0Y%3D" src="https://i.kickstarter.com/assets/049/785/387/956c21cb7e9061c0506e4d681e7584c9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750703385&amp;width=680&amp;sig=F03BaH%2FHZdvuIpRflaLJkHTLTn5hnFluNhsLbhZKa0Y%3D"/>
+</figure>
+</div>
+<p>All the functionality of an AirTag but a wallet friendly credit card size makes the MWF an ideal Every Day Carry for digital protection and convenience. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49765503">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/765/503/533b400b58b92ff837917a7f1e995dec_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750529969&amp;width=680&amp;sig=rgx%2FC2fBMuXDDePxc3tcnvT8KRj2EGg6CPU%2F8%2BMd5Wc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Custom-QR-Code-Powered-by-ScanKeepTM"><span class="bold">Custom QR Code Powered by ScanKeep™</span></h3><p>Every Micro Wallet Finder includes a custom-printed QR code with a <span class="bold">Lifetime ScanKeep Lite Membership</span>—that lets anyone reach your chosen contact info (name, email, or phone) instantly and can be edited 24/7 from your ScanKeep dashboard. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49765459">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/765/459/88bcb451289eab21fd02cc77aa62d70f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750529585&amp;width=680&amp;sig=RLKe7QGXfHac4J1wiszBVdYXrQYR0km3D3zh3ojAFcM%3D"/>
+</figure>
+</div>
+<p>ScanKeep™ allows <span class="bold">your finder to find you even when your finder battery is dead </span>by instantly sharing your contact info when your QR code is scanned. If your wallet is lost you can update your contact info 24/7 or upgrade your plan to receive geolocation notifications of any scans of your QR code. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49885917">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/885/917/3b17ecb6328630fcf433e176f1ec3c16_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751391304&amp;width=680&amp;sig=%2Fy3cidXbWvT%2BeI%2BqzR9xCVtxAJVO4Cu4jnffCxLVDno%3D" src="https://i.kickstarter.com/assets/049/885/917/3b17ecb6328630fcf433e176f1ec3c16_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751391304&amp;width=680&amp;sig=%2Fy3cidXbWvT%2BeI%2BqzR9xCVtxAJVO4Cu4jnffCxLVDno%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Use-Your-Custom-QR-Code-Anywhere"><span class="bold">Use Your Custom QR Code Anywhere</span></h4><p><span class="bold">Download and reuse your QR code in countless ways:</span> add it your phone’s lock-screen for a “scan-if-found” retrieval tool, stick it to a pet collar, laptop sleeve, water bottle, or bike helmet—anything you’d hate to lose. Leave a print out in your car when parking in a questionable spot or you need to be contacted to move your EV after charging. </p><h3 class="page-anchor" id="h:-ScanKeep-Premium-">
+<span class="bold">ScanKeep Premium</span> </h3><p>Level up your connections with <span class="bold">ScanKeep Premium*</span> and unlock up to 5 MB of data storage per scan.</p><p>Perfect for sales agents, creative freelancers, coaches, educators or realtors who want to add videos, PDFs, photos to every scan. You can also add multiple contact personas, so you can tailor what persona you want to use at any time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="*Additional $49.00 fee lifetime Premium plan with Geo Scan Locations, Anonymous Chat and 5mb of file sharing" data-id="49269415">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/269/415/b7ddd3ac035f32060247acc604312f5e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747191841&amp;width=680&amp;sig=qU%2FttuHpdDXObPlH%2FUO3Ef0ammkYkgRwwhyLpSDXHMQ%3D" src="https://i.kickstarter.com/assets/049/269/415/b7ddd3ac035f32060247acc604312f5e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747191841&amp;width=680&amp;sig=qU%2FttuHpdDXObPlH%2FUO3Ef0ammkYkgRwwhyLpSDXHMQ%3D"/>
+<figcaption class="px2">*Additional $49.00 fee lifetime Premium plan with Geo Scan Locations, Anonymous Chat and 5mb of file sharing</figcaption>
+</figure>
+</div>
+<p><span class="bold">Premium plans also adds GPS scan-location logs</span> for every scan so you know where your cards last scan location was. Anonymous chat is also unlocked on the ScanKeep™ Premium plan. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49765507">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/765/507/45ab6f0705b7af2b829ce6f2fdb2642f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750530011&amp;width=680&amp;sig=fYjjWA7miRCIOFEwH9UtdnueYxHJKo5UkMGyhQp%2B9w4%3D" src="https://i.kickstarter.com/assets/049/765/507/45ab6f0705b7af2b829ce6f2fdb2642f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750530011&amp;width=680&amp;sig=fYjjWA7miRCIOFEwH9UtdnueYxHJKo5UkMGyhQp%2B9w4%3D"/>
+</figure>
+</div>
+<p>Whether you stay on the Lifetime Lite plan or go Premium, ScanKeep™ turns your Micro Wallet Finder's QR code into a fail-safe recovery tool—even if the Finder’s battery is depleted.</p><h3 class="page-anchor" id="h:Easy-Recharging"><span class="bold">Easy Recharging</span></h3><p>Easy wireless recharging that lasts 8 months on standby! Sustainable design, no more e-waste like other finders. Full charge in approximately 1.5 hours. Choose our <span class="bold">wireless charger as an add-on to your reward level</span> to ensure your MWF is always ready. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Easy Charging with any wireless magnetic charging device. 1.5 hr to full charge lasts 6-8 months." data-id="49252562">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/252/562/bf56b2b465fbc4ee4d74062f460f408a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747097774&amp;width=680&amp;sig=OGSBAXeEGwjSG4SunAkj7otwU%2BVdCaCMtlwXiipntn0%3D"/>
+<figcaption class="px2">Easy Charging with any wireless magnetic charging device. 1.5 hr to full charge lasts 6-8 months.</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Active-Jamming-RFID-BlockingA-lifetime-of-protection">
+<span class="bold">Active Jamming RFID Blocking</span><br/>A lifetime of protection</h3><p>The Micro Wallet Finder comes with <span class="bold">Active Jamming RFID Technology</span> which is the highest level of protection for your “Tap-to-Pay” cards. <span class="bold">This is a lifetime solution</span> that will work in any wallet you ever own and it works even if your battery is not charged! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49499924">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/499/924/4ce4436549c4c5c0a258f393afb00b67_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748740541&amp;width=680&amp;sig=GF3izqit6nlNThGJ5RCUnn2U1w2mM7gl9vEsJJ%2Ftm7w%3D" src="https://i.kickstarter.com/assets/049/499/924/4ce4436549c4c5c0a258f393afb00b67_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748740541&amp;width=680&amp;sig=GF3izqit6nlNThGJ5RCUnn2U1w2mM7gl9vEsJJ%2Ftm7w%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Waterproof-Design"><span class="bold">Waterproof Design</span></h3><p>Features IPX8 water resistance, making it durable enough to be submerged to a depth of 1 meter for an indefinite period of time. Higher than most other trackers on the market. <img class="image" data-id="46897193" src="https://i.kickstarter.com/assets/046/897/193/a177c3a7a0d2ea7ecbc0a635bfe0eeba_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;width=921&amp;sig=5T%2FCEgl%2BtoQLrnqLtKEqRPVaR534ZW0I2wCSnLgvd1E%3D"/></p><p>We don't recommend leaving your wallet in your swimsuit or your laundry but life happens and if it does the Micro Wallet Finder has you covered with our IPX8 Waterproof rating. </p><h3 class="page-anchor" id="h:-The-Thinnest-FinderMicro-Thin-">
+<span class="bold">The Thinnest Finder</span><br/>Micro Thin!</h3><p>The Micro Wallet Finder is the thinnest of all comparable wallet finders on the market 75% thinner than an Apple AirTag keeping your wallet slim. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49785179">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/785/179/59f62e448bd9f56dd85019db06d70a63_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750702240&amp;width=680&amp;sig=4FekJHVsUnZM1dfa9iEMX%2BuCAhmfSm4nabn9TDb64Mc%3D"/>
+</figure>
+</div>
+<p>When you are sitting on your wallet every day every millimeter counts and the minimalist philosophy of Dynomighty that has lead our design decisions ever since 2005 with our incredibly thin <span>Mighty Wallet</span>, the original Tyvek® Wallet, ensure that you have the thinnest and most robust security tool for your everyday carry.</p><h3 class="page-anchor" id="h:MWF-Specifications"><span class="bold">MWF Specifications</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49765583">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/765/583/5854c39b996ec1367b7f7700b6e024dc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750530527&amp;width=680&amp;sig=vnB4HC%2FxxT4kHwkfIoyyrC8Ea%2Fph9xbYgfVnI%2BJbeHY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Complete-your-Everyday-Carry"><span class="bold">Complete your Everyday Carry</span></h3><p>The Micro Wallet Finder is <span class="bold">the most advanced</span> <span class="bold">digital multi-tool</span> that will enhance your everyday carry. Complete your gear with the advanced security and peace of mind of the Micro Wallet Finder.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="46897284">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/046/897/284/56a7806dc2a21d8a80ad26fec5ca1884_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1729033900&amp;width=680&amp;sig=a0lP0QbX5UkTkqkiqSImarAaEuApVZzJfB49P%2FfSsp4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Did you know: </span><span class="text-italic">It is estimated that the time spent looking for lost keys and wallets can be up to 1-2 full days within a year. </span></p><h3 class="page-anchor" id="h:The-Power-of-the-Apple-Mesh-Network"><span class="bold">The Power of the Apple Mesh Network</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49002473">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/002/473/51edfc6985bbd54b63db1d997f2613b7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1745355488&amp;width=680&amp;sig=Enosr9KOilnhckU5QkfNZxP280273eeeiPFkc2258rw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Features-Comparison-Chart"><span class="bold">Features Comparison Chart</span></h3><p>The thinnest wallet finder on the market comes packed with more features than any other Finder in the market. The robust security comes in an ultra lightweight design making the Micro Wallet Finder the best choice in digital wallet protection.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791454">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/454/d5761d28480212e91d12f7f71a641522_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750742429&amp;width=680&amp;sig=s6FMdTFaMCtOvVFHPZhFws3FXWOpc5dZ7OyYPkVKwks%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Recent-Press"><span class="bold">Recent Press</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49800468">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/800/468/56eb8bab659ef5120479ecdbb4be49a3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750787464&amp;width=680&amp;sig=E9eycVf4GohOZfansG1fVUF5QSCQtAeu9rrfL1pPjBc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Stretch-Goals"><span class="bold">Stretch Goals</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49941061">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/941/061/1f07268a650bdfe754512b05e7c2aaca_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751825180&amp;width=680&amp;sig=VmU%2F%2F%2BC%2BXoKo1T6%2FW74DJq1OWHg%2FDqAYLPJB0Zx%2FIMc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Production-Timeline-Tariff-Navigation-">
+<span class="bold">Production Timeline &amp; Tariff Navigation</span> </h3><p>Our current factory production timeline means an estimated 30 days for producing the full production of the MWF (with Google Find My <span class="text-italic">fingers crossed</span>). <img class="image" data-id="46909350" src="https://i.kickstarter.com/assets/046/909/350/8c5ba88b0a8323f9624936fd3d8dcf89_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;width=982&amp;sig=tw0IRIccRdDn4hU8LTLEJgE%2FGvB9r7uuSrnmZcxJfVo%3D"/></p><p><span class="bold">Our goal is to get these Micro Wallet Finders produced within the current pause in tariffs between China and the US.</span> Given the uncertain future of the tariff situation it would be best to order yours now if you're considering this as an addition to your every day carry. </p><h3 class="page-anchor" id="h:Add-on-Product-Options">Add-on Product Options</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49890344">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/890/344/9dec2d3c96ab33b597a43abeeb62f76f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751418366&amp;width=680&amp;sig=B3oyXtlEncbcFzCs%2FDwc2YqB2Abihl3qs%2BpPLFNSFTs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49935963">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/935/963/34030ce7469b069fc49ae7c885581659_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751764822&amp;width=680&amp;sig=xfI7pJWeWPOG6Lql2YTNNByrrFWHbKbZf8JLOs9DHN0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Google-Find-My-Stretch-Goal-Status-Update">Google Find My Stretch Goal - Status Update</h3><h4 class="page-anchor" id="h:We-ve-had-a-lot-of-interest-and-questions-about-the-Google-Find-MyTM-stretch-goal-so-here-s-where-things-stand-">We’ve had a lot of interest and questions about the <span class="bold">Google Find My™ stretch goal</span>, so here’s where things stand:</h4><p>There are 2 parts to this process. We’re currently in active discussions with our factory to <span class="bold">negotiate the lowest possible minimum order quantity (MOQ)</span> required to enable Google Find My integration. This quantity will determine our goal and it's our hope to <span class="bold">set a realistic and achievable stretch goal</span> based on the final MOQ.</p><p>We've already made encouraging progress in securing <span class="bold">a substantially lower MOQ for this order</span>, but negotiations take time and there are still some technical and cost constraints we’re working through to make this feasible at a reasonable unit cost.</p><p>Adding to the complexity is that just to apply for the license includes a <span class="bold">$2,000 fee</span>, adding to the unit cost no matter what the MOQ. Dynomighty has been a Case Study of many Google products over our 20+ years and have written a very compelling application to ensure our best chances of success.</p><p>While we can’t guarantee approval, we’re confident <span class="bold">our chances will be excellent</span>. The truth is that the more support we can gather for the project will help us build the case — and take the Micro Wallet Finder to Android users everywhere!</p><p>Rest assured, we’re doing everything we can behind the scenes to <span class="bold">make this feature a reality for Android users</span> — and we’ll announce the official stretch goal as soon as we can lock in the lowest production threshold.</p><p>Thanks again for your support and enthusiasm — it means the world!</p><p>#BeMighty<br/>— Terrence</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49800630">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/800/630/3a957c0769ad1910f35a6c89fba381ab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750788334&amp;width=680&amp;sig=H51JPbZPAK6iTODN8nZwXlvURV9tPpFTKBSg2ZUT2nI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:2-More-Products-Launching-on-Kickstarter-"><span class="bold">2 More Products Launching on Kickstarter...</span></h3><h4 class="page-anchor" id="h:Sign-up-for-other-products-coming-soon">Sign up for other products coming soon</h4><p><span class="bold">Dynomighty will be launching 3 New Products in total on Kickstarter in 2025.</span> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791241">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/241/63f232604e6ce0a15126c5a38485affa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750740280&amp;width=680&amp;sig=sdJC2DL4jj%2B%2F2fNZGrnm%2BwjgjZm2qysFT7Pb8u0vfcc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Mighty-Mag-Connect-"><span class="bold">Mighty Mag Connect </span></h3><h4 class="page-anchor" id="h:-Part-2-Coming-Fall-2025-Retro-fit-your-retro-wallet-with-Magnetic-connection-">
+<span>(Part 2 Coming Fall 2025)</span><br/><span>Retro fit your retro wallet with Magnetic connection</span>.</h4><p><span>Follow the launch here.</span></p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49791241">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/791/241/63f232604e6ce0a15126c5a38485affa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750740280&amp;width=680&amp;sig=sdJC2DL4jj%2B%2F2fNZGrnm%2BwjgjZm2qysFT7Pb8u0vfcc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:MicroGami-Wallet-"><span class="bold">MicroGami Wallet </span></h3><h4 class="page-anchor" id="h:-Part-3-Coming-Winter-2025-">(Part 3 Coming Winter 2025)</h4><p>They all come together in the release of the <span>New MicroGami Wallet</span>. The newest Tyvek® Wallet released in over 10 years by the Father of Tyvek® Wallets, Terrence Kelleman, who invented the Mighty Wallet in 2005.</p><p><span>Follow us for more updates on our upcoming launches.</span></p><span></span><span></span><h3 class="page-anchor" id="h:Research-and-Development"><span class="bold">Research and Development</span></h3><p>Wallets have changed so much since the first Tyvek wallet by Dynomighty in 2005 and to meet the changing needs of the consumer market place. We are releasing this triptych of inventions in three parts on Kickstarter.</p><p>We've boiled down all the current needs of minimalist wallet users based on exhaustive research and have conceived of a unique 3 part release of each modular element of the final design as it's own Kickstarter project as each element can be used independently of the other tools. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="46899093">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/046/899/093/ef40869c22a8c03211473ba968e2db23_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1729048332&amp;width=680&amp;sig=bwwRvd4ixIOn0e90dlxjiuhgtov14rmIoBFlbdinv6Y%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:About-Dynomighty"><span class="bold">About Dynomighty</span></h3><p>At Dynomighty, we’re driven by a passion to reinvent the ordinary and inspire everyday creativity. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="46897351">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/046/897/351/cc3234eb3ccb09675b10dc28adec1717_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1729034504&amp;width=680&amp;sig=lpizgp7iJ5ES%2BfiLnXB4VzsiZDSrpuIQxEwG4%2FDLmag%3D"/>
+</figure>
+</div>
+<p><span class="bold">Magnetic Innovative Beginnings</span> <br/>My global introduction as an inventor began with a video of my <span>link-less magnetic bracelet</span> that went viral on YouTube. That one product created an entire genre of magnetic products and videos with potentially billions of views. </p>
+<p>For over 20 years, our mission has been to <span>design innovative products</span> that break the mold and challenge conventional thinking like our world-famous <span>Mighty Wallet</span>, we've consistently pushed the boundaries of design and functionality.</p><h3 class="page-anchor" id="h:20-Years-of-Experience"><span class="bold">20+ Years of Experience</span></h3><p><span class="bold">We've successfully completed 3 Kickstarter Projects</span>, we are a 3x Inc's Fastest Growing Company and a case study of YouTube and Google for many years. </p><p>We have shipped millions products in our 20+ years in business and have thousands of 5 Star Reviews on Amazon, Etsy and at <span>https://mightywallet.shop/pages/youtube-reviews</span></p><h4 class="page-anchor" id="h:Press-about-Dynomighty-">Press about Dynomighty<img class="image" data-id="46898655" src="https://i.kickstarter.com/assets/046/898/655/001034c2386303bcb2c967ff02387a9e_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;width=1243&amp;sig=Ia8Q6hIz0LhjwFct78lARx8T%2BFmwjVDFjDavQr8ambs%3D"/>
+</h4><h3 class="page-anchor" id="h:Collabs-Marketing"><span class="bold">Collabs &amp; Marketing</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49767841">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/767/841/358b3fbf9d064980b0ea0dc6c96ae856_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750551513&amp;width=680&amp;sig=Qw2VRl5xzspgWD7vNXQGLvVjCpNEsjGCioqsE22ZsEY%3D"/>
+</figure>
+</div>
+<p><span class="bold">PreLaunch Club</span> - <span>www.prelaunch.marketing</span><br/>Kickstarter Landing Page Strategy, Story Development, Advertising Strategy, Content development, Ad Design and Marketing Analytics</p><span></span><p><span class="bold">Brandcraft Marketing </span>- <span>www.brandcraftmarketingllc.com</span><br/>Full Video Development, Sourcing, Video editing, Content creation, Actor Recruitment and Voiceover services. </p><p><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Producing a new product always involves some degree of uncertainty; however, we've taken significant steps to mitigate risks and ensure a smooth process for our backers. 
+
+Production Readiness: 
+Production has already commenced! Our proactive approach means we are steps ahead in the manufacturing process, significantly reducing the common risks associated with production delays. 
+
+Apple Certification and Compliance: 
+The Micro Wallet Finder is approved by Apple as an Authorized Find My Device. We are also collaborating with one of the industry’s most reputable manufacturers, which is an Apple Approved MFi Factory. This partnership ensures that the Micro Wallet Finder meets the highest standards set by Apple for hardware and software integrity.
+
+Handling Unforeseen Circumstances: While we have taken extensive measures to mitigate typical project risks, we acknowledge that unexpected events, such as natural disasters or global logistical disruptions, could affect our timeline. We promise to maintain transparency with our backers, providing timely updates and adjustments to our schedule if needed.
+
+Dedicated Experience and Proven Track Record: 
+With over 20 years in the business, Dynomighty has established itself as a leader in innovation and design. We have been recognized as one of Inc's Fastest Growing Companies and we are YouTube and Google case study for our innovative marketing. 
+
+By supporting this project, you are not just funding a product but also backing a dedicated team that is passionate about innovation and customer satisfaction. We look forward to bringing the Micro Wallet Finder into your daily life, enhancing your security and convenience for all of life's adventures.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Unlike most airtag enabled finder cards we have enabled this card with a wireless rechargeable battery</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Walker That Keeps You Safe — Meet GEORGE</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/604/540/3b2bed63cd862fe1bd5a1479cab4a28a_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1749473575&width=560&sig=uHItEbcXiMfPt4dTJZR%2BakNnzOJ9YivRoBK5nC3U79k%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>A Walker That Keeps You Safe — Meet GEORGE</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A next-generation FWW with a built-in feedback system that promotes safety, reinforces therapy training, and helps reduce fall risk.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 127,500</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>51 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:The-device-is-named-after-and-dedicated-to-Edward-L-George-my-grandfather"><span class="bold">The device is named after and dedicated to Edward L. George, my grandfather</span></h3><ul><li>I decided to use his last name for the feedback system</li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49860425">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/860/425/b36c092e44ccadc93d1d04a40a17b684_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751233927&amp;width=680&amp;sig=pptxAMP%2FwZgK%2BHhxvdFRQc8HoDwxzsRPbrjF4iF1Cls%3D"/>
+</figure>
+</div>
+<p>In the picture: My brother on the left, Nick Terry, my grandfather in the middle, Edward L. George, and me (Blake Terry) on the right.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49860529">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/860/529/5d1539419e62a7d2165564d992ffe110_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751234566&amp;width=680&amp;sig=3uzB6jEl8SjJRhW20O8p5mK7Jy3QkUi%2FIaObTq8uTGE%3D"/>
+</figure>
+</div>
+<p>Edward L. George pictured above. We couldn't afford a funeral service for him after he passed away in 2019. I took out a loan in order to have him cremated (his wishes). He didn't have any life insurance, savings, or benefits, since he worked as a lumberjack, helped his brother-in-law on his trash service business, worked for the town of Tamaroa, IL, dedicated his time to helping others and helped raise my brother, myself, and our cousins. I wanted to commemorate him by naming the device after him for the things that he did for us and let his legacy live on, allowing him to continue to help others through the device. </p><h3 class="page-anchor" id="h:Move-Confidently-Live-Fully-Meet-GEORGE-Your-Silent-Guardian-on-Every-Step-"><span class="bold">Move Confidently. Live Fully. Meet GEORGE — Your Silent Guardian on Every Step.</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858608">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/608/0b34541fca2fba7f17eaf87bfdf6f8cb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751220285&amp;width=680&amp;sig=sqdhXkDRLcoq2IVoWUWoS9ZpK2brOPfOWkJke8M73IA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Green-Light-Ready-to-monitor-the-use-of-the-FWW-"><span class="bold">Green Light - Ready to monitor the use of the FWW.</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858612">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/612/b15f822b06e07d6155cfd95c5380f2a7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751220294&amp;width=680&amp;sig=IVsjurDqdqwY3LiKRhaiWGdIdZkEMOlV0h2X0FIu8UQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Red-Light-Flashing-Alerting-patient-user-of-incorrect-use-visual-cue-and-a-sound-will-go-off-at-the-same-time-audible-cue-voice-command-Caution-Stability-Compromised-Please-Adjust-"><span class="bold">Red Light (Flashing) - Alerting patient/user of incorrect use (visual cue) and a sound will go off at the same time (audible cue - voice command - "Caution, Stability Compromised, Please Adjust."). </span></h3><ul><li>Similar to a Physical Therapist Alerting the patient with verbal cues to stop the patient of incorrect use and attempt to decrease the patient's chances of falling. </li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858439">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/439/7e6b13fbef7744cebad40d577dbec712_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219339&amp;width=680&amp;sig=otv5vTJLNMdY4HBG0onOYtEzO%2BYU7ep5OUsVT5KbSJ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858445">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/445/ad34a0322b212a013d7832d2cd5a15c5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219391&amp;width=680&amp;sig=BX05%2FJd%2BBnt0Jd4ioFExChqFqVSZGzNYRk6RqYqOHco%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858403">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/403/8252c6595b03bc5f79527548344477b0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219080&amp;width=680&amp;sig=Ndluv3feOxT7v2YlwChvwFIFiyWYKQQerNB6QwyHlII%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858408">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/408/5377eb0642846e201105180d7e88e3d4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219113&amp;width=680&amp;sig=K7bCUh9j1xd%2FI6gSmH12jum%2ByvVcG%2BobIk9hSUzUesA%3D"/>
+</figure>
+</div>
+<p>GEORGE-S (GEORGE Feedback System Front-Wheel Walker-Standard) Blue Shortened completely for shipping, picture above. <span class="bold">All of the GEORGE-S Blue pictures are pictures of the FWW shortened completely for shipping.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858430">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/430/ac5a7de31661015961ee8bb76b89e37c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219282&amp;width=680&amp;sig=KbRXeKJJqaF%2FDHktABlH26cqUW7K85Ho9qqWxvlpYpw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858436">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/436/add8a1bc4fa9f3b3926393f54619d1f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219299&amp;width=680&amp;sig=MNFfu9X8Uz4Irc14i0tkIiw24UViL%2BeE15HsyD6iZNY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858449">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/449/1ae8fd8b605ef1aad02ac8a77f298c17_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219417&amp;width=680&amp;sig=RempJxKcGfyx20rBJ9LTpSkUmr1V%2B269Tcbw7kw4OrI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858453">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/453/6ec6b68fd6a03746c7cfdeb0fa26846d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219436&amp;width=680&amp;sig=8UNUhm7Bp6Myp2rEN1Wf6NPoYVUmdYCM9Ih6y5lGut4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858457">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/457/0b09b7846cceffc4511c5b88b59f75ea_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219453&amp;width=680&amp;sig=1I08Kmuy6IZkjddF%2FtIojT9%2BHc%2BbWIRiRLoOveG7pQ4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858467">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/467/2bea10f62fccf4ff31dc16cf2f699b78_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219500&amp;width=680&amp;sig=YXPVoNvKN%2BNS%2FbsWj4mchCSNhObRDMjoEXXV3j5yLNw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Story"><span class="bold">Story</span></h3><p>Fear of falling holds so many people back from fully living. Every slight tip of a walker, every uneven floor, every awkward transfer — they all chip away at independence and confidence.</p><p>The GEORGE Feedback System was created to change that. More than a walker add-on, it is a vigilant companion that watches over every step, gently guiding safer habits through real-time auditory and visual feedback.</p><p>At the heart of GEORGE are precision-engineered distance switches integrated discreetly into the front legs. Calibrated to detect even the smallest lifts (as little as 30 mm), GEORGE acts instantly when misuse is detected — helping the user correct posture and movement before a small mistake turns into a dangerous fall.</p><p>This mission started with my grandfather, who inspired me to create a way for him to stay safe, independent, and proud. Today, GEORGE stands ready to help countless others — parents, grandparents, patients, and loved ones — move forward without fear.</p><p>When you back this campaign, you’re not just funding a product. You’re empowering a movement dedicated to restoring dignity, freedom, and confidence to the people who matter most. Together, we can make every step safer and every day a little brighter.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858478">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/478/a241145d022b6ab6b706d4a8b5a9fc16_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219550&amp;width=680&amp;sig=2uOFdpYlooYVTkZ6gkvYtxyQzHwxInMhvZ5DRSGnuy8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858484">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/484/adc2766b5e133c6eccfc61912b66938e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219579&amp;width=680&amp;sig=B8kX70TPpGLCQjsDyGH2TTrBXGu7wRfSsJNfsiW0oKk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858489">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/489/02e12a9eb1c0d963f9512b3fbff23b79_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219607&amp;width=680&amp;sig=3%2BxirxryHGW6U4v0ySWiyuJ6a1UMb08iuigzjgduk7E%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Console-Pictured-Above-for-Feedback-Alert-System"><span class="bold">Console Pictured Above for Feedback/Alert System</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858490">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/490/0dfbcadb2fa1aa20c9e937d571e5e333_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219610&amp;width=680&amp;sig=uZf7SwPkTDrwrvXecO84x9WAmedJvh44Zbsvt508MJ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858493">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/493/03418b0067fe4a0191f7edcca8a586ff_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219617&amp;width=680&amp;sig=1r4ZlyIS1EWWFmC0vINi%2Bvqizt6XRvPVxW%2F66txivZU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858499">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/499/7eb735d12b3387e28b5da4668b2b19f7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219667&amp;width=680&amp;sig=99SOLEIhpF181AIB%2Fx78ZQS8ycZG5xpqryJH7x56BsI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858500">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/500/774ecf20df51a6f34a48e34b5d9ee0f8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219668&amp;width=680&amp;sig=SGy7TMqyfala02nWTbpSzX0ugGdOt0uCvuOtu2pSmc4%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-This-Matters"><span class="bold">Why This Matters</span></h3><p>Every year, millions of older adults experience falls — leading to injuries, hospital stays, and devastating loss of independence. As a licensed Physical Therapist Assistant, I’ve seen these stories unfold not only in my patients, but at home with my own family.</p><p>My grandfather, Edward George, lived with Parkinson’s and dementia. Like so many, he used a front-wheeled walker (FWW) without proper training, and small missteps — especially tipping backward — led to dangerous falls.</p><p>Watching him struggle, knowing I couldn’t always be there, inspired me to create something that could. The GEORGE Feedback System was born to stand in when a therapist or caregiver isn’t present — protecting independence, preserving dignity, and keeping loved ones safe.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858512">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/512/c3f86739477faa7182cf1c1f5bb21082_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219723&amp;width=680&amp;sig=T8i32mAB8MVja82nhQnrjkvXQq%2FrmRxC3T%2BfQTvkVL4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858505">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/505/5a5decc40bb9a1921145cc13cdc9a964_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219704&amp;width=680&amp;sig=4vGKq6JugZ24hfERTimZxytwLQOO1kU9Wo1MLoCLGfM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858511">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/511/c9c77869d2031727f4300bdfac9d545d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219722&amp;width=680&amp;sig=Wgip7Y7wb%2FFqMHake%2FLjDYQcrWBFM%2BJhIxZHCYPaVTI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Our-Solution"><span class="bold">Our Solution</span></h3><p>The GEORGE Feedback System transforms a standard front-wheeled walker into an intelligent safety companion. Integrated precision distance switches detect subtle tipping or lifting of the walker’s front legs (as little as 30 mm), instantly triggering clear visual and auditory alerts.</p><p>These real-time cues guide the user to correct unsafe habits before they become dangerous — reinforcing safe movement and building lasting confidence.</p><p>GEORGE isn’t just a walker upgrade; it’s a vigilant coach that empowers safer mobility, even when no one else is around.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/514/3a8138992d7d503a92b1520ad9bfa037_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219733&amp;width=680&amp;sig=WGNH8tqNWDNAVg7nRtSPqiI4osXjs4HkERpJ2yK84AU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858515">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/515/c964464f5a341afd60cb7f2b0c1de29e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219736&amp;width=680&amp;sig=HBi42i%2BgfMMy4yfTctsmvT7JZqv8GlZL2ce3M7D7JuI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-It-Works"><span class="bold">Why It Works</span></h3><p>Falls often happen during transitional moments — like sit-to-stand transfers — rather than while simply walking. Many older adults instinctively tilt or lift their walkers backward for leverage, a major cause of falls that clinicians constantly struggle to correct.</p><p>The GEORGE system intervenes exactly at these critical moments. Developed and tested through a National Science Foundation Phase I STTR grant, GEORGE delivers immediate feedback that helps interrupt unsafe movement and build safer habits.</p><p><span class="bold">In early trials</span>:</p><ul>
+<li>Users self-corrected risky movements mid-transfer after hearing or seeing alerts.</li>
+<li>Therapists described GEORGE as a “coach attached to the walker” — providing reinforcement exactly when and where it’s needed.</li>
+<li>Biomechanical analysis showed improved postural control and more stable, intentional movement.</li>
+<li>Users reported higher confidence and a renewed sense of safety when walking alone.</li>
+</ul><p>Validated by clinical feedback and real-world use, the GEORGE system is now lightweight, easy to operate, and refined through direct user input — proving both its feasibility and its life-changing potential.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858526">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/526/256ab877805fb9e303291ebae1c460d1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219795&amp;width=680&amp;sig=aHYYMVDBwg%2F2oB3%2FEesxTL4WO%2Ft1M3yUL7c1RfzuKO4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858527">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/527/637d647c96abcfade1bc760389883c7a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219798&amp;width=680&amp;sig=OjWtqGVQ63hBDk4IxmRoneg8d9NZwWmHFbNOzxuVWYE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858528">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/528/50cbc62ad12fe00d93434e9ac89ce26d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219801&amp;width=680&amp;sig=M0QxPfCTRnQw8W6L9LHYt3qD4PO1%2FzPk7CuEkHc8OV8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:How-We-ll-Make-It-Happen"><span class="bold">How We’ll Make It Happen</span></h3><p>We’ve already developed a fully functional, production-ready prototype and completed rigorous biomechanical testing through our NSF grant. Our CAD files are finalized, and our manufacturing partner — Shenzhen Rayloong Rehabilitation Equipment Co., Ltd., led by Mr. Romb Wang — is fully prepared for scale.</p><p>We’ve also successfully registered GEORGE as a Class I Exempt Medical Device with the FDA, clearing the path for immediate national distribution.</p><p><span class="bold">With your support, we will</span>:</p><ul>
+<li>Fund our first manufacturing run.</li>
+<li>Cover freight, customs, and shipping costs.</li>
+<li>Deliver early backer orders and pilot units to key clinical partners.</li>
+<li>Expand outreach to families, clinics, and facilities nationwide.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858541">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/541/a85f3975edf0690f25de8db56ecdf611_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219869&amp;width=680&amp;sig=v1pggX5%2F1VCZ1pM2Yoem9B7TkMc8LGWaLwv0b83iPaQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Who-We-Are"><span class="bold">Who We Are</span></h3><p>I’m Blake Terry, President of MediTerry Inc. (formerly Terry Ventures, LLC), and a licensed Physical Therapist Assistant with over a decade of experience helping people reclaim their independence.</p><p>This project is deeply personal — merging clinical expertise, engineering innovation, and the heartfelt mission to protect those we love most.</p><p><span class="bold">We are proud to partner with</span>:</p><ul>
+<li>Shenzhen Rayloong Rehabilitation Equipment Co., Ltd., led by Mr. Romb Wang</li>
+<li>M.E. Dey &amp; Co., for expert freight and customs logistics</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858547">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/547/3b2bed63cd862fe1bd5a1479cab4a28a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219896&amp;width=680&amp;sig=oz4nQg7YhSA6jhlgcLYL%2FdP3qsvpEWvWoztOz2%2Bo6uo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858551">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/551/ba995ebc35d148e8cbb8f3d3425ce0ab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219902&amp;width=680&amp;sig=lWzveL1kIOza5FyoREBUpSxD7o9aTJgILTFcbDvH1Ok%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858552">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/552/7ef6b408a121ba48ce53dc51c8ef1302_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219902&amp;width=680&amp;sig=TqznAB00V%2BQagzWSM9rLCeuwKuDligSGZNzsmnyXjBc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858548">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/548/93e5504b068177767b7e14d5706d12a6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219900&amp;width=680&amp;sig=lyCfeZ28Pp%2FRuL3FGY5cE%2B2hTxsAY7Wn2%2FIt2QbPZdA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858550">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/550/aa966d9ed405e6fbd4ae9123233064e7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219900&amp;width=680&amp;sig=xDJypPy3R83O4mdVxiMq%2FuohSql2SgxncvtcwBHlB80%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858549">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/549/8d12e7b1c1b336c762f2ae0b1909928a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751219900&amp;width=680&amp;sig=WLTKXcpabYb2k563bAKL1CA581Xn9MOcs4q82fBipSU%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Together"><span class="bold">Together</span></h3><p>We’ve laid the foundation. Now, with your support, we can place GEORGE in the hands of those who need it most — empowering every step, and restoring confidence where it’s needed most.</p>
+<h3 class="page-anchor" id="h:How-You-Can-Help"><span class="bold">How You Can Help</span></h3><p>By backing this campaign, you’re not just supporting a product — you’re joining a mission to redefine safety, independence, and dignity for millions of people who rely on mobility aids every day.</p><p>Whether you choose to pledge for a GEORGE Feedback System walker, wear a branded T-shirt with pride, or sponsor a pilot program for a local care facility, your support creates real change. You’re helping place a silent guardian at the side of someone’s mother, father, grandparent, or neighbor — someone who deserves to move confidently and live fully.</p><h3 class="page-anchor" id="h:Thank-you-for-believing-in-this-mission-and-for-helping-us-honor-Edward-George-s-legacy-by-making-every-transfer-safer-every-step-safer-every-day-"><span class="bold">Thank you for believing in this mission, and for helping us honor Edward George’s legacy by making every transfer safer, every step safer, every day.</span></h3></div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div class="relative flex justify-center items-center h50"><svg height="250" preserveaspectratio="xMinYMid" viewbox="0 0 250 250" width="250"><g transform="translate(125, 125) scale(2.5, 2.5)"><defs><pattern height="1" id="bg1" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/xglb1yux-hatch_light_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=clgJlzhY3k416hIJWrLOR2MdAEuRyBIYLy5Q4Y0qGuE%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg2" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/qm5rth84-dot_line_white_2_pattern_overlays_20190901.png?origin=static&amp;sig=X4u8yLPJQSLFYyFAWhfks%2Bb0l7JvccL9Ns4mZ%2BdcX%2Fs%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg3" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/2pgrzep-scattered_dots_black_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=7dYAvrHvJlUMrHNcRby2NfD16BbES28QnocyMYhS%2BjU%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg4" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/l9o3ber7-grid_dark_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=w1sAH2Z8b0%2Bm44c8oN%2BES4hwspBpkhrrhc1YpFJSPyQ%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg5" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/v0js8b2e-dot_line_white_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=j1%2Biz4vH2TtOn5EX0sEl2Xque0oEBcJupM5qVbNe8CM%3D" width="160" x="0" y="0"/></pattern></defs><path class="innerArc innerArc0" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,0,1,-0.43780966689858786,43.79781184825984L-0.09163344250956078,34.94987987550477A34.949999999999996,34.949999999999996,0,0,0,1.2748087586060675,-34.92674280016648Z" fill="#059968" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc1" d="M-2.9854779782552923,43.698134070476655A43.8,43.8,0,0,1,-30.112970480310604,-31.806430306652487L-24.21499534717335,-25.201914616480483A34.949999999999996,34.949999999999996,0,0,0,-2.6393017538662717,34.850202097721585Z" fill="#71A0FF" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc2" d="M-28.211270129593505,-33.50468978628373A43.8,43.8,0,0,1,-13.875413182019305,-41.54410799413371L-11.315962855558784,-33.06737795247173A34.949999999999996,34.949999999999996,0,0,0,-22.313294996456236,-26.900174096111737Z" fill="#a3a3a3" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc3" d="M-11.434628535667315,-42.28107461088593A43.8,43.8,0,0,1,-1.2748087586060215,-43.7814442729906L-1.2748087586060486,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-8.875178209206753,-33.80434456922396Z" fill="#37d893" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArcTexture" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,0,1,-0.43780966689858786,43.79781184825984L-0.09163344250956078,34.94987987550477A34.949999999999996,34.949999999999996,0,0,0,1.2748087586060675,-34.92674280016648Z" fill="url(#bg1)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-2.9854779782552923,43.698134070476655A43.8,43.8,0,0,1,-30.112970480310604,-31.806430306652487L-24.21499534717335,-25.201914616480483A34.949999999999996,34.949999999999996,0,0,0,-2.6393017538662717,34.850202097721585Z" fill="url(#bg2)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-28.211270129593505,-33.50468978628373A43.8,43.8,0,0,1,-13.875413182019305,-41.54410799413371L-11.315962855558784,-33.06737795247173A34.949999999999996,34.949999999999996,0,0,0,-22.313294996456236,-26.900174096111737Z" fill="url(#bg3)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-11.434628535667315,-42.28107461088593A43.8,43.8,0,0,1,-1.2748087586060215,-43.7814442729906L-1.2748087586060486,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-8.875178209206753,-33.80434456922396Z" fill="url(#bg4)" style="opacity: 1;"></path><path class="outerArc" d="M1.274808758606064,-49.983745984359565A50,50,0,0,1,48.33028975423366,-12.813395033004205L44.63225209420903,-11.93323397067928A46.2,46.2,0,0,0,1.2748087586060677,-46.18240858410247Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M48.2129852616468,-13.247945205209302A50,50,0,0,1,46.16119386788447,19.213125219276154L42.69009183318428,17.663410182473058A46.2,46.2,0,0,0,44.574380056353704,-12.147618803359677Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M46.33228005799177,18.796803574752225A50,50,0,0,1,26.82949014101532,42.19216110574524L24.87217925779337,38.93346502648067A46.2,46.2,0,0,0,42.77449701027571,17.458018373169242Z" fill="#003322" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M27.208216952080278,41.94893240940145A50,50,0,0,1,2.1761218832914557,49.95262248920531L2.1075599237482474,46.15190344035455A46.2,46.2,0,0,0,25.059023698815505,38.813468426078636Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M2.625707307682259,49.931009013782045A50,50,0,0,1,-0.680289822277368,49.99537184337872L-0.531675819548024,46.196940600248716A46.2,46.2,0,0,0,2.329362380975371,46.1412404568635Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-3.22795813363407,49.895694065595535A50,50,0,0,1,-49.9814351075474,1.3624039746082683L-46.18010354482321,1.3557420807095124A46.2,46.2,0,0,0,-3.079344130904734,46.09726282246553Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-49.96714555476134,1.8122817411468526A50,50,0,0,1,-47.900477592591216,-14.336814374248796L-44.28773426004652,-13.15433746379886A46.2,46.2,0,0,0,-46.173053810226236,1.5776887646023832Z" fill="#3B3BCC" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-48.027596749862326,-13.905033276932976A50,50,0,0,1,-42.13319239258807,-26.922000275038233L-38.98316947599218,-24.79420290322058A46.2,46.2,0,0,0,-44.35044835154888,-12.94131875106225Z" fill="#00007D" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-42.373837099884966,-26.541626352437643A50,50,0,0,1,-34.24422452361618,-36.43258276290832L-31.712214435168764,-33.59725369160215A46.2,46.2,0,0,0,-39.10189126834005,-24.606545861597734Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-32.342524172899076,-38.13084224253955A50,50,0,0,1,-24.259880519036887,-43.720226408403406L-22.50082718009675,-40.35037516816194A46.2,46.2,0,0,0,-29.81051408445164,-35.2955131712334Z" fill="#cccccc" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-24.65246709432936,-43.50006742710875A50,50,0,0,1,-15.66818769719523,-47.48165850394719L-14.569411608590237,-43.84258483916609A46.2,46.2,0,0,0,-22.69450932001986,-40.24175998541232Z" fill="#999999" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-13.22740305084322,-48.21862512069941A50,50,0,0,1,-1.2748087586059813,-49.983745984359565L-1.2748087586060015,-46.18240858410247A46.2,46.2,0,0,0,-12.1286269622382,-44.57955145591832Z" fill="#c7f5df" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><text font-size="8" height="250" style="opacity: 1;" text-anchor="middle" width="250" x="-1" y="3">$144,205</text></g></svg></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$73,000</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Manufacturing</div><div class="m0 type-16 text-nowrap">$30,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Tooling</div><div class="m0 type-16 text-nowrap">$15,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Labor</div><div class="m0 type-16 text-nowrap">$14,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Research &amp; Development</div><div class="m0 type-16 text-nowrap">$12,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Packaging and Shipping</div><div class="m0 type-16 text-nowrap">$2,000</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$54,475</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Taxes</div><div class="m0 type-16 text-nowrap">$34,425</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">$7,300</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">$6,375</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">$6,375</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Funding</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$10,000</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter Fee</div><div class="m0 type-16 text-nowrap">$5,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment Processing Fee</div><div class="m0 type-16 text-nowrap">$5,000</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Fulfilling</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$6,730</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Shipping (St. Louis Route)</div><div class="m0 type-16 text-nowrap">$6,730</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated June 9, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Risks and Challenges Section
+1. Regulatory and Compliance Assurance:
+Risk: The process of meeting stringent FDA regulations and standards for medical devices can be complex and demanding.
+Mitigation Strategy: We are partnering with a manufacturing company that is already registered with the FDA and has extensive experience in producing medical devices across all class ranges. This partnership ensures that the GEORGE device will be manufactured to the highest standards and will comply with all regulatory requirements, leveraging the manufacturer’s established processes and expertise.
+2. Manufacturing and Quality Control:
+Risk: Maintaining high manufacturing standards and quality control can be challenging, especially when scaling production.
+Mitigation Strategy: By collaborating with an experienced manufacturer, we gain access to proven production capabilities and quality assurance processes. This relationship not only speeds up the manufacturing timeline but also minimizes the risk of defects and ensures consistent product quality.
+3. Market Acceptance and Adoption:
+Risk: New medical technologies often face hurdles in market acceptance, especially from healthcare providers and patients who are accustomed to traditional treatment methods.
+Mitigation Strategy: Our go-to-market strategy includes comprehensive education and demonstration programs to showcase the unique benefits and reliable performance of the GEORGE device. We will conduct clinical trials and publish the results to build trust and support from the medical community.
+4. Financial Sustainability:
+Risk: Securing enough capital to support production, marketing, and distribution is a common challenge for new medical devices.
+Mitigation Strategy: In addition to Kickstarter funding, we are exploring various funding sources, including venture capital, grants, and strategic partnerships. Our collaboration with an established manufacturer also allows for more predictable budgeting and financial planning. The refined device was produced during a National Science Foundation Phase I STTR Grant, also received an Illinois Innovation Vouchers Program Grant, and a Illinois Match Grant (pending).  Everything has been utilized for R&amp;D at this point.
+5. Technical and Operational Challenges:
+Risk: Integrating new technology with existing manufacturing processes can present technical and operational challenges.
+Mitigation Strategy: We are working closely with our manufacturing partner to ensure that the integration of our technology into their processes is seamless. Regular testing and pilot runs will help us identify and address any issues early in the process.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Use of AI
+The development and refinement of the GEORGE device do not directly involve AI technologies. However, we utilize advanced engineering and design tools such as CAD software to optimize the device's functionality and ensure precision in manufacturing. While these tools incorporate computational algorithms, the creative and problem-solving aspects of this project remain entirely human-driven.
+
+Our focus is on delivering a product that enhances safety and independence for its users, and we believe that human creativity, expertise, and empathy are at the heart of this innovation. Should AI tools be incorporated in the future for purposes such as data analysis or optimizing logistics, we will ensure transparency and compliance with Kickstarter’s policies.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The GEORGE device is engineered for durability and longevity, reducing the need for frequent replacements and thereby minimizing waste. By providing a product that lasts, we aim to decrease the environmental footprint associated with manufacturing and disposal.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Where possible, we are exploring the use of recyclable materials in the production of the GEORGE device. This ensures that components can be repurposed at the end of their life cycle, reducing landfill contributions.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">We are partnering with an FDA-registered manufacturing company that prioritizes sustainability in its production processes. This includes minimizing material waste, optimizing energy usage, and ensuring compliance with environmental regulations.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">Minimal Packaging:
+We are committed to using minimal and recyclable packaging materials for shipping the GEORGE device. This approach reduces waste while still protecting the product during transit.
+Responsible Shipping:
+We will work with logistics partners who offer carbon-neutral shipping options and prioritize efficient routes to reduce emissions.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">Community and Environmental Impact:
+By helping reduce fall risks and injuries, the GEORGE device indirectly contributes to a reduction in hospitalizations and associated energy-intensive medical interventions, supporting a healthier, more sustainable community.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
