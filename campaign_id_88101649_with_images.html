@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Argon ONE UP: An Open Source ARM Laptop for the Community</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/199/188/fc4efee8ba6d28b4d0aae2fc07338219_original.jpeg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1753700587&width=560&sig=m96Fk2EeIIUC%2BYZ2axSRrBD4fjW0lCElVOqDHMyEtK8%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Argon ONE UP: An Open Source ARM Laptop for the Community</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A Full-pledged ARM®-powered Raspberry Pi® LAPTOP built for makers, learners, and builders like you.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,579</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>27 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50198887">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Argon-ONE-UP">Argon ONE UP</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/198/887/94de0ff26998a767a5821081847d714d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753698158&amp;width=680&amp;sig=j8eEdMlcIsdRJ8laKiPuKbeISQG6Cq0krCRcNPV5%2F1g%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:ARGON-ONE-UP-An-Open-Source-ARM-Laptop-for-the-Community"><span class="bold">ARGON ONE UP – An Open Source ARM Laptop for the Community</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50198890">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Not-Intel-Not-Mac-">Not Intel. Not Mac.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/198/890/bddb42c3c0ca243bfdc0a8278a6f04d8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753698170&amp;width=680&amp;sig=br4m3Y0sGXI4XTCiI40AKGhpmCYoi1o4zPcs8p%2FXgHQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199042">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/042/63bc7b06db5993bdd20533ddb29bb33b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753699531&amp;width=680&amp;sig=Bi8FMCPuhRGaMCwtx2DUqm49xiHghI2rbmEHtJpUgo8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199094">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/199/094/39702f8290a9f0bd92e740b90fcea55c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753699900&amp;width=680&amp;sig=tNRm8e2nuGwDbNrs1j%2BSHATqc2GTpXc5%2Bhbdda6BqP0%3D" src="https://i.kickstarter.com/assets/050/199/094/39702f8290a9f0bd92e740b90fcea55c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753699900&amp;width=680&amp;sig=tNRm8e2nuGwDbNrs1j%2BSHATqc2GTpXc5%2Bhbdda6BqP0%3D"/>
+</figure>
+</div>
+<p>Over the years, we’ve heard the same question from makers and educators around the world:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50198924">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Question">The Question</h3>
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/198/924/2f5ad5f25d6db1dc4dc8138fccf7cfef_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753698565&amp;width=680&amp;sig=dIMfqi6e0qzCyqLw9BO7kQvqnD%2BO5otYa5xWKFm3DZA%3D" src="https://i.kickstarter.com/assets/050/198/924/2f5ad5f25d6db1dc4dc8138fccf7cfef_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753698565&amp;width=680&amp;sig=dIMfqi6e0qzCyqLw9BO7kQvqnD%2BO5otYa5xWKFm3DZA%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Why-isn-t-there-a-real-Raspberry-Pi-based-laptop-"><span class="bold">“Why isn’t there a real Raspberry Pi-based laptop?”</span></h4><p>So we asked ourselves the same thing. Then we stopped over thinking, unleashed our enveloped ideas.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50198928">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Answer">Our Answer</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/198/928/5ab684ead36e3fb8df3f4fc23ee774c4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753698586&amp;width=680&amp;sig=S5AuqqB72YPu4wy3MV8oB0KsHIYLmUfYXCgiXlNcCsk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210296">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/296/683e258a812f2d9277f1f6072518b097_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753770407&amp;width=680&amp;sig=yj8OSq2pzg%2Fzrl%2BwlloKmskzLDvLYkJ8J2L5o8CCstA%3D" src="https://i.kickstarter.com/assets/050/210/296/683e258a812f2d9277f1f6072518b097_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753770407&amp;width=680&amp;sig=yj8OSq2pzg%2Fzrl%2BwlloKmskzLDvLYkJ8J2L5o8CCstA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50198938">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:For-the-Community">For the Community</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/198/938/7458b07b6ab9e88d2a6309518495c9c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753698659&amp;width=680&amp;sig=IB6Tj1IrHExCz2dSKTHouw33ZWsNdP3x2zxvpyO%2Fn9c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199113">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/199/113/a57b23b16dd87883a14de1f762536305_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753700018&amp;width=680&amp;sig=%2Fx3njyQOWxmIa9YkY7lRAEO2REpJYuS8NSsAi7dSVUU%3D" src="https://i.kickstarter.com/assets/050/199/113/a57b23b16dd87883a14de1f762536305_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753700018&amp;width=680&amp;sig=%2Fx3njyQOWxmIa9YkY7lRAEO2REpJYuS8NSsAi7dSVUU%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Why-the-CM5-">
+<span class="bold">Why the CM5?</span> </h3><h4 class="page-anchor" id="h:Because-it-offers-the-perfect-balance-of-power-efficiency-openness-and-wide-selection-of-variants-a-platform-worthy-of-a-serious-laptop-while-still-embracing-the-spirit-of-the-Raspberry-Pi-community-">Because it offers the <span class="bold">perfect balance of power, efficiency, openness and wide selection of variants</span> — a platform worthy of a serious laptop while still embracing the spirit of the Raspberry Pi community.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210754">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Powered-by-Raspberry-Pi-CM5">Powered by Raspberry Pi CM5</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/210/754/709a379e308891c8ef24f889b2d7ea78_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773442&amp;width=680&amp;sig=2enWQbxIHRTTJJfZHJM%2BjqS8T2G1tPbTy5ox6v7s%2BKo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210367">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Key-Features">Key Features</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/210/367/af29dc316ed73f5c80db9139b211727f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753770758&amp;width=680&amp;sig=gYm5jGAJfan1tl9QAs0OpIa0Dd1z1QSxCnnie8uhh7Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210370">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/370/638c53fccf0bda4b4ee31df120ab1bb5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753770797&amp;width=680&amp;sig=4Iw6J3iufKwd%2FlnCJNSPNAkNToJj5ybWzRKHMXmIxvs%3D" src="https://i.kickstarter.com/assets/050/210/370/638c53fccf0bda4b4ee31df120ab1bb5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753770797&amp;width=680&amp;sig=4Iw6J3iufKwd%2FlnCJNSPNAkNToJj5ybWzRKHMXmIxvs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210371">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/371/bf04748a16a17825700890aa1ce5fcef_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753770796&amp;width=680&amp;sig=IxhJ7oWJdj%2FRtYN57X4siezfac4rq4wsXDCcSqYpej8%3D" src="https://i.kickstarter.com/assets/050/210/371/bf04748a16a17825700890aa1ce5fcef_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753770796&amp;width=680&amp;sig=IxhJ7oWJdj%2FRtYN57X4siezfac4rq4wsXDCcSqYpej8%3D"/>
+</figure>
+</div>
+<p><span class="bold">14” IPS Display – 1920×1200 @ 60Hz</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210481">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/481/683e258a812f2d9277f1f6072518b097_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753771585&amp;width=680&amp;sig=IO00fd83Zajtnd5si5pKT%2B5ZpNT6sbaab%2BizkrVcukU%3D" src="https://i.kickstarter.com/assets/050/210/481/683e258a812f2d9277f1f6072518b097_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753771585&amp;width=680&amp;sig=IO00fd83Zajtnd5si5pKT%2B5ZpNT6sbaab%2BizkrVcukU%3D"/>
+</figure>
+</div>
+<p><span class="bold">M.2 Key-M slot for NVMe SSD</span> <span class="text-italic">(main storage)</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210582">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/582/8fdba509f5beffb989fb7d042ad41200_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753772381&amp;width=680&amp;sig=bu42P8P9OXQZX14W3vmQInGmi0iuWb9jmkbwhrHoFbo%3D" src="https://i.kickstarter.com/assets/050/210/582/8fdba509f5beffb989fb7d042ad41200_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753772381&amp;width=680&amp;sig=bu42P8P9OXQZX14W3vmQInGmi0iuWb9jmkbwhrHoFbo%3D"/>
+</figure>
+</div>
+<p><span class="bold">Wi-Fi 5 + Bluetooth 5.0</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210593">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/593/d485609fa67dda57162ac320d727ad01_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753772418&amp;width=680&amp;sig=Umw3PAptamhob1HEvdkv50dSYjwd2QgsNeqiXx9ZO1s%3D" src="https://i.kickstarter.com/assets/050/210/593/d485609fa67dda57162ac320d727ad01_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753772418&amp;width=680&amp;sig=Umw3PAptamhob1HEvdkv50dSYjwd2QgsNeqiXx9ZO1s%3D"/>
+</figure>
+</div>
+<p><span class="bold">2 × USB 3.1 Gen 1 </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210602">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/602/b3b5d8d1ce95a95ce0c10fdcabd94558_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753772455&amp;width=680&amp;sig=6IrSsg0h0%2F%2FupnHx89Jl%2Bl7tWngqaDzG4LZ1PLP5%2FV0%3D" src="https://i.kickstarter.com/assets/050/210/602/b3b5d8d1ce95a95ce0c10fdcabd94558_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753772455&amp;width=680&amp;sig=6IrSsg0h0%2F%2FupnHx89Jl%2Bl7tWngqaDzG4LZ1PLP5%2FV0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210603">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/603/79e070062bfddf161851cdc031965163_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753772458&amp;width=680&amp;sig=x6gYfwT6E9r3l%2BfMPZIUpQ50C8g%2FHfDzKY4HafJc060%3D" src="https://i.kickstarter.com/assets/050/210/603/79e070062bfddf161851cdc031965163_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753772458&amp;width=680&amp;sig=x6gYfwT6E9r3l%2BfMPZIUpQ50C8g%2FHfDzKY4HafJc060%3D"/>
+</figure>
+</div>
+<p><span class="bold">2 × USB-C Modified (</span>when combined - output for <span class="bold">Argon ONE UP 40-pin GPIO Module)</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210775">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/775/0d8c6df5a29e472e2cce47a28c3e0367_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773670&amp;width=680&amp;sig=jo%2BKD4HKZmkks480f4X%2FzOz6B4Vj9PXXRT5IN7xfO4M%3D" src="https://i.kickstarter.com/assets/050/210/775/0d8c6df5a29e472e2cce47a28c3e0367_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773670&amp;width=680&amp;sig=jo%2BKD4HKZmkks480f4X%2FzOz6B4Vj9PXXRT5IN7xfO4M%3D"/>
+</figure>
+</div>
+<p><span class="bold">1 x HDMI 2.0 Port</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210778">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/778/079876884a00697931ac6cb9ddfa6c04_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773698&amp;width=680&amp;sig=9qJjfGDQhHaG2%2BewU5js4APSLD5NdEsJSy45yfAL%2FIM%3D" src="https://i.kickstarter.com/assets/050/210/778/079876884a00697931ac6cb9ddfa6c04_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773698&amp;width=680&amp;sig=9qJjfGDQhHaG2%2BewU5js4APSLD5NdEsJSy45yfAL%2FIM%3D"/>
+</figure>
+</div>
+<p><span class="bold">2.0MP 1080p front camera</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210782">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/782/63ff9e37452b168fd6c02875fbf823cd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773729&amp;width=680&amp;sig=CZzWWP7YmeVCH3LZDCr6xk%2FQQFYJ9O1iV%2F1EpRrtTQw%3D" src="https://i.kickstarter.com/assets/050/210/782/63ff9e37452b168fd6c02875fbf823cd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773729&amp;width=680&amp;sig=CZzWWP7YmeVCH3LZDCr6xk%2FQQFYJ9O1iV%2F1EpRrtTQw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Dual mics + stereo speakers</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210784">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/784/652937139cf620c607a6a4a173e46f79_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773755&amp;width=680&amp;sig=sHSOWjzW4E%2FWMXbjPno0cvYrreXidpyEeqRZgfZ3%2FYo%3D" src="https://i.kickstarter.com/assets/050/210/784/652937139cf620c607a6a4a173e46f79_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773755&amp;width=680&amp;sig=sHSOWjzW4E%2FWMXbjPno0cvYrreXidpyEeqRZgfZ3%2FYo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210788">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/788/46ed853e6ca3948ad555951dc8428bb3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773775&amp;width=680&amp;sig=Tl%2FVgKOzE%2FUs48udCV6lFksuc56gZo76AA7rqbCColg%3D" src="https://i.kickstarter.com/assets/050/210/788/46ed853e6ca3948ad555951dc8428bb3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773775&amp;width=680&amp;sig=Tl%2FVgKOzE%2FUs48udCV6lFksuc56gZo76AA7rqbCColg%3D"/>
+</figure>
+</div>
+<p><span class="bold">Full Aluminum chassis with built-in fan</span></p><p><span class="bold">54Wh | 4800mAh Battery </span><span class="text-italic">(6 to 8 hours run time)</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210795">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/210/795/93755f8aa6c78762df81de8317d92dcd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773809&amp;width=680&amp;sig=BjhtcW%2BBhQcPNXJvlmfI8ZbZ56sk12LmC%2FK6qoKhYNo%3D" src="https://i.kickstarter.com/assets/050/210/795/93755f8aa6c78762df81de8317d92dcd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773809&amp;width=680&amp;sig=BjhtcW%2BBhQcPNXJvlmfI8ZbZ56sk12LmC%2FK6qoKhYNo%3D"/>
+</figure>
+</div>
+<p><span class="bold">Argon THRML Heatsink for CPU and M.2 NVMe </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50223845">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/223/845/1d5f1e679852b15fa7a5b65051e7dae2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753843127&amp;width=680&amp;sig=4QkN5f%2Fg5P5PZSnXG%2BblmWAg0%2FH%2Fq%2B%2FwXTFYWzvTKNI%3D"/>
+</figure>
+</div>
+<p> Supports Raspberry Pi OS, Ubuntu, and other Debian flavors</p><h3 class="page-anchor" id="h:The-Challenges-We-Overcame"><span class="bold">The Challenges We Overcame</span></h3><p>Creating a real laptop from a Raspberry Pi wasn’t easy. We faced — and solved — several tough engineering problems:</p><h4 class="page-anchor" id="h:Power-Management-Efficiency"><span class="bold">Power Management &amp; Efficiency</span></h4><p>Laptops demand battery optimization, regulated power distribution, and USB-C PD compliance. We built a custom <span class="bold">power management system</span> that works reliably with the Raspberry Pi CM5 modules and any <span class="bold">45W PD Power Supply</span> in the market.</p><p>The <span class="bold">battery installed is fixed but serviceable</span>. It is a 55Wh Rated Energy or 4800 mAh Rated Capacity Li-polymer Battery.</p><h4 class="page-anchor" id="h:GPIO-Access-in-a-Laptop-Form"><span class="bold">GPIO Access in a Laptop Form</span></h4><p><span class="bold">The heart and soul of Raspberry Pi </span>is its<span class="bold"> 40-PIN GPIO.</span> We refused to leave it out — and engineered a way to bring full 40-pin GPIO access into a compact laptop form, accessible via <span class="bold">Argon ONE UP 40 PIN GPIO Module</span> that communicates via a <span class="bold">modified 2 USB-C side ports</span> of the Argon ONE UP. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50223928">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/223/928/29ac44cf6710266345097f57cc416234_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753843666&amp;width=680&amp;sig=QSiKiEBixLZDHMj%2B5yvJ2z%2B1Spki0HwuM3PGBG%2FvIFA%3D" src="https://i.kickstarter.com/assets/050/223/928/29ac44cf6710266345097f57cc416234_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753843666&amp;width=680&amp;sig=QSiKiEBixLZDHMj%2B5yvJ2z%2B1Spki0HwuM3PGBG%2FvIFA%3D"/>
+</figure>
+</div>
+<p>We were able to maintain full USB 2 functionality of these ports when the GPIO Module is not connected.</p><h4 class="page-anchor" id="h:A-New-Laptop-Architecture"><span class="bold">A New Laptop Architecture</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50223929">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/223/929/347ebda44c8140465e4218a70d85bb9c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753843690&amp;width=680&amp;sig=0582tuTNn8nLa0He7YXrqJC9XldAgMpSghirdnO%2Bkuc%3D"/>
+</figure>
+</div>
+<p>We did not develop a simple carrier board for the CM5, but basically a motherboard with separate <span class="bold">I/O boards</span> and carefully designed <span class="bold">thermal and layout solutions</span> to make the laptop sleek, fan-cooled, and easy to produce — without sacrificing performance or flexibility.</p><h3 class="page-anchor" id="h:Built-by-Passion-Fueled-by-Creativity"><span class="bold">Built by Passion, Fueled by Creativity</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225672">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/672/4eca1f9a608461953cdfef8b5df1bb58_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753856946&amp;width=680&amp;sig=mA%2Bj0ehl05iAsYcObfjPFjzk2CyqLcPpHeYuBhWSH1g%3D"/>
+</figure>
+</div>
+<p>We are a small team. We are not a giant tech company chasing margins. We are just passionate creators, engineers, and dreamers who wanted to build something <span class="bold">others wouldn’t</span> — simply because it wasn’t financially “safe.” We build for the community.</p><p>We are just interested in opening paths that others may also thread.</p>
+<h3 class="page-anchor" id="h:Third-Party-Feedback-of-Pre-Production-Prototypes-of-Argon-ONE-UP"><span class="bold">Third-Party Feedback of Pre-Production Prototypes of Argon ONE UP</span></h3><h4 class="page-anchor" id="h:ETA-Prime"><span class="bold">ETA Prime</span></h4>
+<h4 class="page-anchor" id="h:Jeff-Geerling"><span class="bold">Jeff Geerling</span></h4>
+<p>More detailed review and feedback of the Prototype Argon ONE UP in Jeff's </p><p><span>https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues/744</span></p><h4 class="page-anchor" id="h:Tom-s-Hardware"><span class="bold">Tom's Hardware</span></h4><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225856">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Values">Our Values</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/856/09050f094c02316e8bf5c5972bc499fc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753858321&amp;width=680&amp;sig=VxSwpAmhGSiJLwkcHaxg%2FCeLRZVy5aOCBxVX4t8zR8I%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Join-Us-on-This-Journey"><span class="bold">Join Us on This Journey</span></h3><p>This is our first step. With your love and support, we’ll bring this laptop to life — and open the door to a future of ARM computing that’s not locked to corporations, but shared with the community.</p><h3 class="page-anchor" id="h:Rewards"><span class="bold">Rewards</span></h3><h4 class="page-anchor" id="h:SUPER-EARLY-BIRD"><span class="bold">SUPER EARLY BIRD</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50299460">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/299/460/23035afd61d97cf6cb407432731a4083_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754381795&amp;width=680&amp;sig=v8fpZ79nq%2BP4kGolJTAEzrDU1d6hXlMHRlMmomWZrqw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50299465">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/299/465/3dac9006460e9b3d9b0468a9de912fbc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754381819&amp;width=680&amp;sig=Ji8CYeLAfrvtEFiiGFXQ%2BcFYgOdPgKLY8LRpFTmpxEo%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-">----------------------</h4><h4 class="page-anchor" id="h:EARLY-BIRD"><span class="bold">EARLY BIRD</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50299466">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/299/466/8e7cdce4e44892e2931525b74d2e5d28_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754381828&amp;width=680&amp;sig=%2FJ27CQkoGqjvCwKA%2FgU83%2FF95oj3194VXfqYNrhg7GA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50299472">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/299/472/4a91c81ddfe2a47543685c84212ab7ac_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754381850&amp;width=680&amp;sig=DDTjDAQLS3nY05inbNUHdi%2FoeCoaVuJCazpcomWhWPA%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-">----------------------</h4><h4 class="page-anchor" id="h:STANDARD-TIER"><span class="bold">STANDARD TIER</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50299475">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/299/475/6f3c6db47f4a3f07367d8c09fe2ac17d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754381867&amp;width=680&amp;sig=oqf6RYFOUg1APohE%2B3xi%2B2U91boiMaMrVveXhDsQZ%2FI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50299478">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/299/478/b65e016cdff3a0dd307eebabe506a38c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754381879&amp;width=680&amp;sig=AU9jrO%2B1hXxxLtdXCIX%2FtNnBIxo87BlQ5kWgTWtvuHo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50328950">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/328/950/923e17d585209bd0ae7180fbd7d06fc5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754535203&amp;width=680&amp;sig=%2BN66QXyNkwEPjat%2BGgPRBi31bXtKwA6NiYmVh8YAMmY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Back-Argon-ONE-UP-and-build-the-Open-Source-Option-"><span class="bold">Back Argon ONE UP and build the Open Source Option. </span></h3><h4 class="page-anchor" id="h:Help-us-share-the-LOVE-to-the-world-"><span class="text-italic"><span class="bold">Help us share the LOVE to the world.</span></span></h4></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Bringing a new piece of hardware to life is never easy — especially one as huge as the Argon ONE UP, a full-featured Raspberry Pi laptop built around a new platform.
+
+✅ What We’ve Already Overcome
+
+	•	Choosing the Right Platform: Early in development, we debated whether to build around the Raspberry Pi 5 Model B or the Compute Module 5 (CM5). We ultimately chose the CM5 for its compact, modular design — ideal for a lightweight, upgradable laptop.
+
+	•	Designing for a New Ecosystem: The CM5 is still a new platform. We had to build a custom carrier board, address power management, and engineer a way to make GPIO access available in a laptop form factor — all of which required extensive prototyping and iteration.
+
+	•	Sourcing &amp; Supply Chain: We’ve worked closely with component suppliers to ensure availability and consistency. Our prototype stage is complete, and hardware has been validated across multiple builds.
+
+🔄 What Lies Ahead
+	•	Scaling Production: With your support, our next big step is the production run. Coordinating with our partners for manufacturing and assembly will be critical. We’re already in talks to secure production timelines post-campaign.
+
+	•	Rising Costs of Shipping &amp; Fulfillment: Global logistics have become more expensive and less predictable. We are actively working on regional fulfillment strategies to help mitigate delays and reduce costs for backers.
+
+	•	Target Delivery Timeline: Our goal is to ship the first units by Q4 2025. While we’re confident in this timeline, we acknowledge that unexpected hurdles — from supply disruptions to certification processes — could introduce minor delays.
+
+💪 Why You Can Trust Us
+
+We’ve been here before. Argon 40 has:
+	•	Successfully launched and fulfilled two Kickstarter campaigns
+	•	Delivered multiple Raspberry Pi cases and accessories used by makers and educators worldwide
+	•	Built a reputation for thoughtful engineering and responsive customer support
+
+This campaign is ambitious, but not uncharted territory. We’ve learned from past launches, and we’re ready to overcome what’s next — with transparency, persistence, and your support.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The main reason for choosing the Raspberry Pi's Compute Module platform is it future upgradability as compared to its Model B platform, aside from better flexibility in terms of accessibility and form factor for future designs.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">The main body of the Argon ONE UP Laptop will be made of aluminum for better durability and recyclability.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">We have ensured that suppliers of components adhere to the highest standards of environmental compliance. Though we are not an ISO Certified company we do follow and adhere to ISO principles and standards.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

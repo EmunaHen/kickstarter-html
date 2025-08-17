@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RECPOINT AI Voice Recorder | Capturing value in every second</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/974/748/1fb4851170a71eac48c553872c010dcd_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752053528&width=560&sig=tUvoXMPFJRB2Wn%2BPekWzZ3p%2Fcv8hrwT1J5GDK9M6dK8%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>RECPOINT AI Voice Recorder | Capturing value in every second</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Transcription & Summary & Translation｜Speaker Label Recognition｜AI Noise Canceling｜30-Hour｜64GB Storage｜Snap with MagSafe｜Free App</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p>RECPOINT NOTE is already in production,we'll be shipping from Sept. 2025 onwards.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50421713">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/421/713/b921d27a3634223710b1284b2f823327_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1755161579&amp;width=680&amp;sig=Yxjg2Iurplslx7akVS3UrsDbtpPHRl2cCD1qk2fPBp0%3D" src="https://i.kickstarter.com/assets/050/421/713/b921d27a3634223710b1284b2f823327_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1755161579&amp;width=680&amp;sig=Yxjg2Iurplslx7akVS3UrsDbtpPHRl2cCD1qk2fPBp0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50421368">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/421/368/ead5d4e3370857cf6adad8a1de6351a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1755159081&amp;width=680&amp;sig=xwAOI1rs%2Blvw8XxhdnubvvhrcuiP3qrc4Lgmop%2Fzq%2BY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199257">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Background-story">Background story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/257/a174e80f16923a38fa2ac030e0678a81_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753700930&amp;width=680&amp;sig=xF8mklKNO8LKykDNucl8mx3tPEfRcwEzIp6xq%2Fl%2FnNY%3D"/>
+</figure>
+</div>
+<p><span class="bold">RECPOINT | Ushering in a New Era of Efficient Recording</span></p><div><div class="old-record-id-QsEPdLQV9o8RCJxKEcNcLf9rnkd">Why did we create RECPOINT?</div></div><div>
+<div class="ace-line old-record-id-Ah65d0csyojgWwxBIHBcteRcn9c">In our daily lives and work, we constantly run into the same problems:</div>
+<ul>
+<li>Too much information in meetings—hard to capture, harder to organize</li>
+<li>Multilingual conversations in interviews and global calls—traditional recorders just can’t keep up</li>
+<li>Inspiration strikes in class, meetings, or on the street—but it slips away in the chaos</li>
+<li>Recordings pile up as raw audio—manual transcribing, sorting, and translating is a nightmare</li>
+</ul>
+</div><div>
+<div class="ace-line old-record-id-EAwWdKpfso2kegxL6cjcgmqknjg">We kept asking ourselves:</div>
+<div class="ace-line old-record-id-NYUcdgydBoHfhbxV9UTctkaRnXb">Is there a recording device that not only hears, but actually understands? That doesn’t just record—but helps you summarize, organize, translate, and sync?</div>
+<div class="ace-line old-record-id-IzlMd3dZmo6mtvxKwFhcQPjcn6f">That’s why we built RECPOINT NOTE<span class="bold">.</span>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199260">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-RECPOINT-NOTE">About RECPOINT NOTE</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/260/62101f6f6cb33c26f8831dd4afbd42dd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753700941&amp;width=680&amp;sig=482YYhXCM%2BemfYf3OdAIfr13qPIpbQelnNzSnshzB5s%3D"/>
+</figure>
+</div>
+<p><span class="bold">The World's first AI VOICE RECORDER that can transcribe text translations.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189104">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/189/104/1662f750fd816f479250751db0f0ebc7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753616341&amp;width=680&amp;sig=EZAPRG6ucQ%2BFkOQLyQ1NHmyimFdvPOFcNB2KMCziyA8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50181511">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/181/511/45bfa612115f0e37ed016fa648c2be90_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753526560&amp;width=680&amp;sig=%2FM7RkUKHAzkmoM7ONCXAW1O%2FJPT4%2Fb6vCaKo2yo3i60%3D"/>
+</figure>
+</div>
+<p>You don’t just get a recording—you get:</p><ul>
+<li>Voice-to-text transcription with bolded keywords &amp; a full timeline</li>
+<li> AI-generated summaries, key phrases, and to-dos after each recording</li>
+<li>Real-time translation in 100+ languages with multi-speaker recognition</li>
+<li>One-tap sync to phone, tablet, or desktop—auto-organized into folders</li>
+<li>A pocket-sized, magnetic design to capture inspiration on the go</li>
+</ul><div>
+<div class="ace-line old-record-id-LfPZdWHz5oq2IYx0SkScZk9znVe">Perfect for:</div>
+<div>🧠 Professionals who need clean, actionable notes from meetings or lectures</div>
+<div>🌍 Global teams, content creators, and interviewers juggling multiple languages</div>
+<div>💡 Creatives who want to catch ideas the moment they arrive—anytime, anywhere</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199267">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Experts-Tested-Real-Tests-Reviews">Experts Tested &amp; Real Tests &amp; Reviews</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/267/07e71bfe46762be4398c23df4ec8e2ef_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753700968&amp;width=680&amp;sig=NFgdiiMXAqJzHgft0amM8IHgkHsCbbiz9g4beLQX89w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50227018">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/227/018/9ab5f9e2a8d72c61a10e5432d1d10dc6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753865065&amp;width=680&amp;sig=69xlPK217KgHz3OjXqEQ1QNwQNiQYIDebm5ZEKfA%2Fks%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50230505">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/230/505/7f3c1342fcdbd93a9e4ce9c66e90b50f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753887594&amp;width=680&amp;sig=S%2B7qV9rHbmZn70oc0auWwIB6mKcfYe94013vKS5M5uo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50230513">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/230/513/316100475fe8124e9d335799a4ee9af7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753887621&amp;width=680&amp;sig=495aw13PUQEN1jE0iSMK9UnC2olfW34N1xr8At%2FUZTQ%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199270">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Voice-Recording-Transcription">Voice Recording &amp; Transcription</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/270/972d1735dea833d4e110a92efb73f9f2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753700985&amp;width=680&amp;sig=KtAJcsZMLi%2F4mpxf4dkc0R8eSl9GENJZQWPZLStwVJw%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-WBcjdaCM6oxefBxswddcCCs3nEd">Start recording with a single tap → Speech is transcribed into text with up to 98% accuracy, restoring every spoken word.</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170882">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Dual-Modes-One-Device">Dual Modes, One Device</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/882/cfc301b4e9fae3ce3729131fd849c8f2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753442305&amp;width=680&amp;sig=yIlMuMg0KtlkuDYnX4j7Qp8PHx9hFquTMMub2eYRxrI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170899">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/170/899/d1d0c23efec7aee98391f36eeb346b10_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753442399&amp;width=680&amp;sig=POuzLsTEFkoXnGLBmt0mnIOKRIJ1LfKGp2%2FUQVX83zA%3D" src="https://i.kickstarter.com/assets/050/170/899/d1d0c23efec7aee98391f36eeb346b10_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753442399&amp;width=680&amp;sig=POuzLsTEFkoXnGLBmt0mnIOKRIJ1LfKGp2%2FUQVX83zA%3D"/>
+</figure>
+</div>
+<p>Compatible with MagSafe</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50181283">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/181/283/63921e1da6b544b942e83d43e76bdf3e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753524149&amp;width=680&amp;sig=wsprWYpcC362n42el05EQGfzBgnp7pc8Jqhprr%2BVocw%3D" src="https://i.kickstarter.com/assets/050/181/283/63921e1da6b544b942e83d43e76bdf3e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753524149&amp;width=680&amp;sig=wsprWYpcC362n42el05EQGfzBgnp7pc8Jqhprr%2BVocw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189472">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/189/472/23a308babd5e4281cf84e6889e814f13_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753621022&amp;width=680&amp;sig=77ci0QG0HrZZYY4OT7fa3hCqo0wC%2Faj3fRL6I8qtDR4%3D"/>
+</figure>
+</div>
+<p><span class="bold">- Default Mode:</span> Detects conversation context and generates natural, structured outlines automatically.<br/><span class="bold">- Phone Mode: </span>Transcribes your phone calls and highlights key information in real time.<br/><span class="bold">- Interview Mode: </span>Uses voiceprints to distinguish speakers and clearly label questions and answers.<br/><span class="bold">- Meeting Mode: </span>Automatically separates discussion modules and creates to-do lists from action points.<br/><span class="bold">- Speech Mode: </span>Analyzes emotional tone and extracts impactful segments for social media or sharing.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199275">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Capture-the-Keyword-on-the-Fly">Capture the Keyword on the Fly</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/275/72a05348c8c80399ca23c1a630174726_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753701015&amp;width=680&amp;sig=pNbC%2BIpAM1lmJVbHriJ4fejNjLw%2Ff2XNDy01ZQOcQ%2FI%3D"/>
+</figure>
+</div>
+<div><div class="old-record-id-M3J7dG95Zo25haxfIDKcjyxrnWg"><span class="bold">AI Summarization &amp; Structured Output</span></div></div><ul>
+<li>Generates summaries, key terms, to-do lists, and mind maps.</li>
+<li>Highlight Mode extracts golden phrases, statistics, and conclusions for quick review.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50188990">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/188/990/17116739943d96abf2dc7f392d534a37_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753614245&amp;width=680&amp;sig=bhIut4wxImFml4j7niBAuDcMOo%2By%2BS%2BxdFJv7Jr9%2Bh0%3D" src="https://i.kickstarter.com/assets/050/188/990/17116739943d96abf2dc7f392d534a37_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753614245&amp;width=680&amp;sig=bhIut4wxImFml4j7niBAuDcMOo%2By%2BS%2BxdFJv7Jr9%2Bh0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50188994">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/188/994/cc574795c2c4db38f14bf22665b8e437_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753614265&amp;width=680&amp;sig=4bgJs8atzN9aFDrwV%2Bfakd4%2BB5myuLDOFFbeGZhWYaU%3D" src="https://i.kickstarter.com/assets/050/188/994/cc574795c2c4db38f14bf22665b8e437_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753614265&amp;width=680&amp;sig=4bgJs8atzN9aFDrwV%2Bfakd4%2BB5myuLDOFFbeGZhWYaU%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199277">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Multilingual-Translation-Speaker-Recognition">Multilingual Translation &amp; Speaker Recognition</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/277/a4e88be8fc161fbdfcca455d28fcb402_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753701033&amp;width=680&amp;sig=Krg45xfS8aLGpHMRwGXBUmXQuSywFnqTHxtQrgNWF5M%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-LlZEd0EoloXYqsxwk0LcDdyknmb">Supports 100+ languages with multi-speaker voice separation, ideal for global conversations and international teams.</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189038">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/189/038/3daa319b008a6c91a46c83ec2f000f31_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753615230&amp;width=680&amp;sig=vJbtYU9u6brG21pJob99TorATqJg0sjXEaj09w66Sfw%3D" src="https://i.kickstarter.com/assets/050/189/038/3daa319b008a6c91a46c83ec2f000f31_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753615230&amp;width=680&amp;sig=vJbtYU9u6brG21pJob99TorATqJg0sjXEaj09w66Sfw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189042">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/189/042/5d0b8915880c8698f0c3c3d7443a6854_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753615263&amp;width=680&amp;sig=Xpz9RFSfNQm5ZpUPJCTPi1l0H0h41fj6BVR7jjQwTg4%3D" src="https://i.kickstarter.com/assets/050/189/042/5d0b8915880c8698f0c3c3d7443a6854_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753615263&amp;width=680&amp;sig=Xpz9RFSfNQm5ZpUPJCTPi1l0H0h41fj6BVR7jjQwTg4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50190159">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/190/159/7ed7b1a5ff6637411ad12646f0462555_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753627353&amp;width=680&amp;sig=cbGHyFtdzepPLAyiGBeUUfaroo7v1yrsGVoUz03v%2BJk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199281">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Noise-Warrior-Pro-intelligent-Noise-Reduction">Noise Warrior Pro- intelligent Noise Reduction</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/281/a60c7d19b6f1a657aab899f8f3c6b0bb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753701057&amp;width=680&amp;sig=4c4XngrKazyvNW3j2FQCyhBvRKT1x2g%2FncH4y5uQpuA%3D"/>
+</figure>
+</div>
+<div><div>Dual MEMS microphones + VCS noise reduction chip + AI noise-canceling algorithm-Grade Clarity.</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50194777">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/194/777/ce84d280ee80a9ca0ec2e9efa314644d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753668234&amp;width=680&amp;sig=I29JoDDWKqawUFPEWja4L%2BrFqnaEmmOaGni0QfL%2F23w%3D" src="https://i.kickstarter.com/assets/050/194/777/ce84d280ee80a9ca0ec2e9efa314644d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753668234&amp;width=680&amp;sig=I29JoDDWKqawUFPEWja4L%2BrFqnaEmmOaGni0QfL%2F23w%3D"/>
+</figure>
+</div>
+<ul>
+<li>0.03mm ultra-thin diaphragm precisely captures a full frequency range from 30Hz to 20kHz.</li>
+<li>Equipped with 3rd-gen AI noise reduction to isolate speech and eliminate distractions like typing or air conditioning.</li>
+<li>Multi-mic array and source localization enhance accuracy in multi-speaker scenarios.</li>
+<li>Adaptive noise filtering ensures clarity in both indoor and outdoor environments.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199287">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-You-ll-Love-lt-At-First-sight">Why You'll Love lt - At First sight</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/287/7f1047fbe7186f8c878a8c6df52e3552_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753701110&amp;width=680&amp;sig=vn%2B802W7QZ8VwQ%2BIXaOqd19r%2FDUM%2BmYhZ6jOfsOnav4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50195432">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/195/432/3300c1830616bf3ffcf3703a59d3ca9e_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753672936&amp;width=680&amp;sig=aSzZyC8lf0TGSNptqEd%2F%2FcYwSPVzwRkDmU2nl8ber4E%3D"/>
+</figure>
+</div>
+<ul>
+<li>Just weight 33g &amp; 0.14 inch thick — as slim as a card and easy to carry.</li>
+<li>OLED display shows recording status, battery, and Bluetooth — all at a glance.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189428">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/189/428/03f2a9298785b8e143e0d63d753646f7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753620703&amp;width=680&amp;sig=dOIm1JXy7CNAqwwqNQjQ18ehN4dBTaA3AzUiMZI9ruI%3D"/>
+</figure>
+</div>
+<p>① Pairing Ready  <br/>② Updating Firmware <br/>③ Wi-Fi Connecting <br/>④ Bluetooth Pairing <br/>⑤ Recording Active <br/>⑥ Charging <br/>⑦ Low Battery Alert <br/>⑧ Real-time Battery % <br/>⑨ Fully Charged</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199290">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/290/d90406c95389d2812bd5844d8a1323a8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753701125&amp;width=680&amp;sig=cvT6HhFt7UaPtIZk1XpHEjlPr9fP0jQCzEG7xuiEwVk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:400mAh-Battery-Lightweight-Design-with-All-Day-Power-">400mAh Battery — Lightweight Design with All-Day Power.</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50181156">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/181/156/0ee8186a646b94bf43d59e7af243981f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753522951&amp;width=680&amp;sig=1xSro3rHvq2Sa36UH8Nipd0xCQyANlQAstWirIryHq8%3D" src="https://i.kickstarter.com/assets/050/181/156/0ee8186a646b94bf43d59e7af243981f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753522951&amp;width=680&amp;sig=1xSro3rHvq2Sa36UH8Nipd0xCQyANlQAstWirIryHq8%3D"/>
+</figure>
+</div>
+<ul>
+<li>Over 30 hours of recording time, with 30-day standby.</li>
+<li>Auto-sleep saves energy by entering low power mode instantly when idle.<br/>64GB Storage — Easily Holds 600+ hours recordings.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199300">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Charge-Faster-Plug-Less">Charge Faster, Plug Less</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/300/f9b5c47a3dfa5f47754632e5448d6f98_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753701177&amp;width=680&amp;sig=rw2ebaaHoj7bgOc%2BxiY560zAbVokDIgdLsYcz5LXMi0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50190175">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/190/175/2ef982d8feb80bcbb0755af0a65ea6f4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753627509&amp;width=680&amp;sig=h%2FgaL3mnZAejWbqFcBy7lpUxbVkj9X2c5PrOEby8iqY%3D"/>
+</figure>
+</div>
+<p>- 4Pin magnetic charging for easy docking and stable connection.<br/>- Reinforced anti-bend cable — 3x more durable for travel and daily use.<br/>- One cable serves dual purposes: charging and data transfer</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50199311">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Privacy-First-You-Own-Your-Data-">Privacy First - You Own Your Data.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/199/311/d4a3003775598bdcd9950ce189e82ace_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753701284&amp;width=680&amp;sig=PXS9fvJQPwKO1BN9cjFip1X93PmSIM5IcMI49fRP2S4%3D"/>
+</figure>
+</div>
+<ul>
+<li>Local and cloud backup ensures secure and accessible storage across devices.</li>
+<li>End-to-end encryption for both local and cloud files — total user ownership.</li>
+<li>Organize, rename, merge, and export your files with ease.</li>
+<li>BLE Bluetooth ensures secure and smooth audio transfer between devices.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189087">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/189/087/87ff17b1844e954f4b48464565d5c3bf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753616112&amp;width=680&amp;sig=aEYkvjG55jU9n5DkT0%2BobEPTLVJOrDx15g3uATelX1w%3D" src="https://i.kickstarter.com/assets/050/189/087/87ff17b1844e954f4b48464565d5c3bf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753616112&amp;width=680&amp;sig=aEYkvjG55jU9n5DkT0%2BobEPTLVJOrDx15g3uATelX1w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50190047">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/190/047/3097b353c8c98dedb601b7d415e0a6d2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753626227&amp;width=680&amp;sig=EA3KJ4TTJx2ufzfeJ3hwVh0vHYt52Ook%2BPaS9MaMcb8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50183484">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Free-APP-Membership">Free APP &amp; Membership</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/183/484/a47cb40c783e851d260a7281b6755333_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753548840&amp;width=680&amp;sig=pofFbMsiH8OF%2BVaXe2%2B6HSDfb05K6u6%2F%2BVNPcC0zlww%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50180942">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/180/942/78b022cc956b7db1ad2a1ef4c9717c4f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753520536&amp;width=680&amp;sig=d0lfoLrl24Ah3Gul4lgl3lIPMcvSGSXtCrhx1o7%2FJ5Q%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Enjoy-Premium-Features-Earlier-">Enjoy Premium Features Earlier: </h4><h4 class="page-anchor" id="h:Free-Pro-Membership-Until-Jan-31-2026"><span class="bold">Free Pro Membership Until Jan. 31, 2026</span></h4><p><span class="bold">Free Pro Membership Until Apr.30,2026 for those who paid $1 previously</span></p><p><span class="bold">Dive into advanced tools and exclusive content—zero charges, no strings attached.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189186">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/189/186/92df24022d96e350c0d4d32ae2b1a205_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753617457&amp;width=680&amp;sig=2zFcav%2FPYZ7HgK9XJMdF6cd0zt4Ad1fgGCVwmLjT0qs%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50190168">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/190/168/31ea5f7c1a83b866cf6af5840fc8d674_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753627443&amp;width=680&amp;sig=Rvsa633NOvw3d%2B5yBhlwSZSpf1HiocCazSUoObF9M4g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189433">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/189/433/55669aba0eb032ca057c2328c88e7fd9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753620740&amp;width=680&amp;sig=e3oest3FFSFeli98KyXE%2Bf%2BeAnecXsdyL2yIm07mrks%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50190050">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Super-Early-Bird">Super Early Bird</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/190/050/ccfd56238058e35934a373bf0ec2e0fc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753626267&amp;width=680&amp;sig=yEowBRqledWDWGSyeZEurKYuf8E7KiTT3%2F5Kimq4d3U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50181128">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Project-Timeline">Project Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/181/128/e763d6d40d12434b5327f4e7594474ec_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753522632&amp;width=680&amp;sig=x9kGBNlME0gacPTRcjrVQsxmqiOryv2Us4q4Q25LV%2Fk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189166">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/189/166/cac1883cb9c42e8b40028d4d11ff35ab_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753617228&amp;width=680&amp;sig=FQmQG4LQ96BOX50znKv1ynQkEQWSnmxdl0SIbtm8Ejk%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Design-Draft-Wireframe">Design Draft Wireframe</h3>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49602495">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/602/495/2f7379098038ddee163052ed9804c5ae_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749460740&amp;width=680&amp;sig=Q6jJGx4pk3ia7gJip3kNypdT4YJVaDg9U%2BAXp2ysAao%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50181065">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:RECPOINT-TEAM">RECPOINT TEAM</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/181/065/9064c1391cae81c3c26107c87beae43b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753521706&amp;width=680&amp;sig=b45vE5B%2BW%2FZuhb1FOGPcyc8eI%2FvsZBueRWhy7%2FO8zUU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50190037">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/190/037/fd7aa872b46ff1ac7f75e9503649d488_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753626187&amp;width=680&amp;sig=t9ypnDGFtfREox5KKYcS6G9C6UvXg8f6bOHH6Bc%2B0gw%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-NO8mdIFyYo32Zuxbe1vcrjORn6c"><span class="bold">Brand Core Values：</span></div>
+<div class="ace-line old-record-id-NO8mdIFyYo32Zuxbe1vcrjORn6c">
+<span class="bold">Innovation Driven: </span>Constantly exploring new possibilities in AI and voice applications.</div>
+<div class="ace-line old-record-id-BooQdikecozcnGxTKyccu4YXn1Z">
+<span class="bold">Exceptional Experience:</span> Pursuing perfection from industrial design to user interaction.</div>
+<div class="ace-line old-record-id-Ryu1drzqrohHfgx1IyhcmjS1nxd">
+<span class="bold">User First: </span>Creating intelligent tools based on real user needs.</div>
+<div class="ace-line old-record-id-Ryu1drzqrohHfgx1IyhcmjS1nxd">
+<span class="bold">Trust and Quality:</span> Maintaining the highest manufacturing standards to ensure every RECPOINT device is stable, reliable, and trustworthy.</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50181053">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/181/053/79a6f0fb9ec35ea0e42e5d2ffb8264c0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753521483&amp;width=680&amp;sig=7hVPFl8l1i7crf0DSTr%2BSSJXfISIV04xW32KpAl9bQM%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189436">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:We-are-Promoted-by">We are Promoted by</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/189/436/3250136e2ae8898216a4b2a0bdd8d6a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753620764&amp;width=680&amp;sig=QHOEo0v3OmK4Vo28YI78OTvn3bzGs96EzLojCOr3LE0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50196400">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/196/400/307d470266ba82957f827a73c8b0c123_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753681304&amp;width=680&amp;sig=fNKRhEJlPZYkXRQhxrMjIjQ0mmKW9xwIn39%2Fh47qlGA%3D" src="https://i.kickstarter.com/assets/050/196/400/307d470266ba82957f827a73c8b0c123_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753681304&amp;width=680&amp;sig=fNKRhEJlPZYkXRQhxrMjIjQ0mmKW9xwIn39%2Fh47qlGA%3D"/>
+</figure>
+</div>
+</div>
+<div>
+<span class="text-italic">This project is promoted by </span><span>Jellop</span><span class="text-italic">, the ad tech power behind the best Kickstarters with 6,000+ successful Kickstarter projects with over $1.4 Billion raised between them.</span>
+</div>
+<span></span><span></span><span></span><span></span><span></span><span></span>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">RECPOINT is a professional manufacturer of AI voice recorders. To ensure a smooth delivery process, we have partnered with a reliable shipping service to help guarantee the timely arrival of products to each backer. Please be assured that we will spare no efforts in avoiding potential delays and guarantee that you will receive your products as soon as possible.
+In the event of any such delays, we will maintain full transparency and provide prompt updates to our backers.   Should any issues emerge during production or post-release, we are committed to delivering responsive customer support, keeping our backers informed, and working diligently to resolve concerns swiftly, ensuring your rights and satisfaction are safeguarded at every stage.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

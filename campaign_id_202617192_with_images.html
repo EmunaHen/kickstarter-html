@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn a language while playing a game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/097/222/e96991d87657c56745f0b7dec0c43d44_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752919195&width=560&sig=SS5ya%2F4wKCEkmEzlpDN6HZpMRP%2B0WhLAcBwWGyJA56s%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Learn a language while playing a game</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Engage with fun challenges and interactive scenarios that make language acquisition enjoyable and effective, allowing you to expand you</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 40,669</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>40 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Problems-learning-a-new-language"><span class="bold">Problems learning a new language</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49961329">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/961/329/c4f5f23b7077b3a043d2001931b0dd6a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751964686&amp;width=680&amp;sig=Tuowktnfd2e4uuBoBK4YRO2NmlGdRPxJclwJdjPjnbE%3D"/>
+</figure>
+</div>
+<p><span class="bold">Learning a new language is often seen as tedious and difficult for children and young learners.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49961385">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/961/385/4bd40317bfec34c0d3f0ed93419cb6cd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751964981&amp;width=680&amp;sig=dVSaFc%2FmrRlrxSEOOQMeXqr09VX84I3ci9T%2FtIFgqX0%3D"/>
+</figure>
+</div>
+<p><span class="bold">Many students lose interest and motivation over time, leading them to quit learning a new language.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49961490">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/961/490/9220e7f21324acdb2835986dbdba7462_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751965603&amp;width=680&amp;sig=WYf6G33RrSz2%2BEa7LPKvLFHGcKo57VYmC%2Bksyk0S2bk%3D"/>
+</figure>
+</div>
+<p><span class="bold">Are you one of those parents who suffer from seeing their children playing useless games and wasting their time?</span></p><h3 class="page-anchor" id="h:Our-solution"><span class="bold">Our solution</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49961530">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/961/530/edc4419a1460c5d3a22478f1c9d7e691_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751965808&amp;width=680&amp;sig=vS%2FXl2dogYItvZLWtshkaN3CXfAMu2q6uLGp5oAXfmM%3D"/>
+</figure>
+</div>
+<p><span class="bold">At LingoPlatformer, we solve all the above-mentioned problems, transforming challenges into opportunities for growth.</span></p><p><span class="bold">LingoPlatformer addresses the global challenge of making language learning fun and enjoyable. You play mini games and without knowing, you learn a language. </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49961711">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/961/711/c3cf0e9ce73a488404c53a4fe02b0f77_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751966895&amp;width=680&amp;sig=j%2FEL0ZC45rUp9%2BGW%2BK8c3Du%2F7O98zcVhSRYBF9%2FuTFQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">You can practice speaking using our voice recognition system and get better at day-to-day conversation.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49962126">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/962/126/0d36198975e1318635a6b68ac28d65c0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751969808&amp;width=680&amp;sig=XHuNO1OOiCbUHOD%2BjfvlVV4t0UL4JEG4hpxsxT7rsTs%3D"/>
+</figure>
+</div>
+<p><span class="bold">With more than 60 unique levels, you can practice common topics in a language. you enjoy the game while you learn new words, sentences, grammar and speaking.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49962151">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/962/151/2446229638f9a24ab63af940d322e068_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751969993&amp;width=680&amp;sig=9lwhA1hp6Tvkj5%2BCcjBORH3sofqxEOVA1mpUO7HebYs%3D"/>
+</figure>
+</div>
+<p><span class="bold">Players will be taught in their native language.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49962174">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/962/174/b9c9b67e40499d48b6702a62cbf91478_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751970132&amp;width=680&amp;sig=WhboFLzJMG%2BAo0ZHaxydQ3M36d9CFhDnme2f1MV1kcw%3D"/>
+</figure>
+</div>
+<p><span class="bold">We always try to keep it simple and fun! the joy of playing make you learn fast.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49962217">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/962/217/5bff397b3e98bdcaf7fa9c7b9e38c16c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751970323&amp;width=680&amp;sig=R5p89mk8egQ0QAE8gza8yYJgXkc6mobbFFTUL%2BGu428%3D"/>
+</figure>
+</div>
+<p><span class="bold">We pay special attention to teaching grammar. We try to let users practice it in each mini level.</span></p><p><span class="bold">To ensure players improve over time, we have added practice levels.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49962268">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/962/268/972a390954211274f7ef3ec45a803805_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751970556&amp;width=680&amp;sig=4bFNOhPMULA2jxQWWZbqO3r3kUz28d1KM3SPiz4JA3Q%3D"/>
+</figure>
+</div>
+<p><span class="bold">Of course, there is an exam to guarantee quality.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49962293">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/962/293/0a8a2327cabbaba6dedad1395f2d93eb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751970731&amp;width=680&amp;sig=HhIEljCj2QEId9EmPirH1GNDY015lFIRnkwkiIR5YzQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49962312">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/962/312/8d5908feb18921566e1532f43f7af6ab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751970820&amp;width=680&amp;sig=0vwxC4WyqPzk6T4G0gIEezJsPIT40cM4cemf3GSDI48%3D"/>
+</figure>
+</div>
+<div class="overflow-x-auto relative"><div>
+<h3 class="page-anchor" id="h:Entertainment">Entertainment</h3>
+<p>Entertainment is at the heart of our approach, ensuring that our players remain engaged and captivated. We understand that if the experience becomes dull, players will quickly lose interest and move on. This principle isn't just limited to gaming; it applies to every aspect of life. Whether it's through dynamic gameplay, compelling narratives, or interactive features, our goal is to keep the excitement alive, fostering an environment where enjoyment and engagement go hand in hand. By prioritizing entertainment, we create experiences that resonate and leave a lasting impression.</p>
+<h3 class="page-anchor" id="h:We-are-different">We are different</h3>
+<p>In a sea of language learning apps, what sets us apart is our commitment to making the learning process both exciting and immersive. While many apps rely on repetitive card arrangements or simple word selections, often leading to monotony, we break the mold by infusing each level with unique challenges and engaging gameplay. Our platform ensures that every level is a fresh adventure, requiring players to learn specific words or sentences to advance. This approach not only keeps players entertained but also seamlessly integrates learning with fun. By turning education into an exhilarating journey, we ensure that progress is both rewarding and enjoyable, fostering a more effective and lasting language acquisition experience.</p>
+<h3 class="page-anchor" id="h:Language-experts">Language experts</h3>
+<p>Our approach to language learning is distinguished by our use of real human language experts. Unlike automated systems, our experts provide authentic translations and insights, ensuring that learners receive a nuanced understanding of the language. This human touch enriches the learning experience, as our experts bring cultural context and practical usage into the lessons. By incorporating their expertise, we offer a more personalized and accurate learning journey, bridging the gap between textbook learning and real-world communication. This dedication to quality and authenticity is what makes our platform truly unique.</p>
+<h3 class="page-anchor" id="h:PC-or-Mobile-">PC or Mobile?</h3>
+<p>Player can use both PC or Mobile versions to play. They can even switch between them whenever they want. </p>
+<h3 class="page-anchor" id="h:Our-Team">Our Team</h3>
+<p>Our team is made of 4 members. </p>
+<p>1- Hamid Reza, is the founder and CEO. A software engineer with more than 7 years of experience.</p>
+<p>2- Armaan Rustami, Techincal designer. A software engineer with more than 6 years of experience.</p>
+<p>3- Nick Labbor, A game developer in construct 3, with 5 years of experience.</p>
+<p>4- Satiro, A game developer in construct 3, with 4 years of experience.</p>
+<h3 class="page-anchor" id="h:Timeline">Timeline</h3>
+</div></div><div class="overflow-x-auto relative"><div>
+<h4 class="page-anchor" id="h:Project-Background">Project Background</h4>
+<ul><li>
+<span class="bold">2024</span>: Development began with a dedicated team consisting of the CEO, a software architect, and two game developers. Together, they successfully completed around 70% of the first version of LingoPlatformer.</li></ul>
+</div></div><div class="overflow-x-auto relative"><div><h4 class="page-anchor" id="h:Current-Date-July-2025">Current Date: July 2025</h4></div></div><div class="overflow-x-auto relative"><div>
+<h4 class="page-anchor" id="h:Phase-1-Final-Development-and-Testing-July-August-2025-">Phase 1: Final Development and Testing (July - August 2025)</h4>
+<ul><li>
+<span class="bold">July</span>:<ul>
+<li>
+<span class="bold">Week 1-2</span>: Complete the development of the last 5 levels.</li>
+<li>
+<span class="bold">Week 3-4</span>: Begin testing on PC and ensure all levels function smoothly.</li>
+</ul>
+</li></ul>
+</div></div><div class="overflow-x-auto relative"><div><ul><li>
+<span class="bold">August</span>:<ul>
+<li>
+<span class="bold">Week 1-2</span>: Conduct testing on Android and Apple platforms.</li>
+<li>
+<span class="bold">Week 3</span>: Fix any bugs or issues identified during testing.</li>
+<li>
+<span class="bold">Week 4</span>: Finalize the game for all platforms.</li>
+</ul>
+</li></ul></div></div><div class="overflow-x-auto relative"><div>
+<h4 class="page-anchor" id="h:Phase-2-Initial-Release-and-Language-Expansion-September-October-2025-">Phase 2: Initial Release and Language Expansion (September - October 2025)</h4>
+<ul><li>
+<span class="bold">September</span>:<ul>
+<li>
+<span class="bold">Week 1</span>: Release the first version, Persian to English, specifically for Persian speakers.</li>
+<li>
+<span class="bold">Week 2-4</span>: Begin adding new languages, focusing on Arabic to English, French to English, and German to English.</li>
+</ul>
+</li></ul>
+</div></div><div class="overflow-x-auto relative"><div><ul><li>
+<span class="bold">October</span>:<ul>
+<li>
+<span class="bold">Week 1-2</span>: Continue adding Hindi to English, Russian to English, and Chinese to English.</li>
+<li>
+<span class="bold">Week 3-4</span>: Conduct language-specific testing and make necessary adjustments.</li>
+</ul>
+</li></ul></div></div><div class="overflow-x-auto relative"><div>
+<h4 class="page-anchor" id="h:Phase-3-Marketing-Campaign-and-Launch-Preparation-October-November-2025-">Phase 3: Marketing Campaign and Launch Preparation (October - November 2025)</h4>
+<ul><li>
+<span class="bold">October - November</span>:<ul>
+<li>
+<span class="bold">Week 1-2</span>: Develop and execute a marketing strategy to promote LingoPlatformer.</li>
+<li>
+<span class="bold">Week 3-4</span>: Create promotional materials and engage with potential users.</li>
+</ul>
+</li></ul>
+</div></div><div class="overflow-x-auto relative"><div>
+<h4 class="page-anchor" id="h:Phase-4-Full-Language-Direction-Expansion-November-December-2025-">Phase 4: Full Language Direction Expansion (November - December 2025)</h4>
+<ul><li>
+<span class="bold">November</span>:<ul>
+<li>
+<span class="bold">Week 1-2</span>: Continue working on English to other language directions.</li>
+<li>
+<span class="bold">Week 3-4</span>: Complete the development and testing of these language pairs.</li>
+</ul>
+</li></ul>
+</div></div><div class="overflow-x-auto relative"><div><ul><li>
+<span class="bold">December</span>:<ul>
+<li>
+<span class="bold">Week 1-2</span>: Conduct final tests and quality assurance.</li>
+<li>
+<span class="bold">Week 3-4</span>: Prepare for a broader launch with all 10 languages to English completed.</li>
+</ul>
+</li></ul></div></div><div class="overflow-x-auto relative"><div>
+<h4 class="page-anchor" id="h:Year-End-Goal-">Year-End Goal:</h4>
+<ul><li>By the end of December 2025, all 10 languages to English should be fully operational, with ongoing work to expand language directions as needed.</li></ul>
+</div></div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">In developing and launching LingoPlatformer, we acknowledge several risks and challenges, and we have strategies in place to address them:
+Technical Challenges:
+Risk: Bugs or glitches during gameplay could detract from the user experience.
+Solution: We will implement rigorous testing across all platforms, including beta testing with real users, to identify and rectify issues before the official launch.
+
+
+
+
+User Engagement:
+Risk: Players may lose interest if the game fails to continuously entertain and challenge them.
+Solution: We focus on designing diverse and engaging levels, each with unique challenges, to keep players motivated and excited about progressing.
+
+
+
+
+Market Competition:
+Risk: The language learning app market is saturated with numerous competitors.
+Solution: By differentiating ourselves with real human language experts and a focus on entertainment, we aim to carve a niche that appeals to users seeking a dynamic and authentic learning experience.
+
+
+
+
+Language Accuracy:
+Risk: Inaccurate translations could lead to misunderstandings and dissatisfaction.
+Solution: Our use of real human language experts ensures that translations and language instruction are accurate and culturally relevant.
+
+
+
+
+Scalability:
+Risk: As we expand to include more languages and levels, the complexity of maintaining the app increases.
+Solution: We will invest in scalable infrastructure and development practices that allow for smooth expansion and updates.
+
+
+
+
+User Retention:
+Risk: After initial download, retaining users can be challenging.
+Solution: Implementing a rewards system and regular updates will encourage continued engagement and provide incentives for users to return.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Maximizing the life of Lingoplatformer involves several strategic steps. First, continuous updates and improvements based on user feedback ensure that the app remains relevant and engaging. By integrating new languages and expanding the educational content, we cater to a broader audience and adapt to evolving language trends. Implementing cutting-edge technology and maintaining compatibility with the latest devices and operating systems also play a crucial role. Additionally, fostering a strong community around the app encourages user engagement and loyalty. Finally, collaborating with language experts and educators helps keep the content effective and up-to-date, ensuring long-term success.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

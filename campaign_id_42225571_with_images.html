@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>401Bot</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/037/947/12964e34a2c013e186ff2bf15104b8d2_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752539652&width=560&sig=Ess0CFQQEqa0xXdISpo2wMFjHLFTHdpoWVEe6YWLvWU%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>401Bot</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">The Future of the Makerspace</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 25,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50014550">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Introduction">Introduction</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/014/550/9e3adb68e7cd62392ce62a736ead928f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752351330&amp;width=680&amp;sig=qIyaQRFSzmKdxp5m89RX9b544avMRpsY7ty2wtb%2BZsY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49926748">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/926/748/01e20c023d26c03b7acb3d2d4496103e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751665025&amp;width=680&amp;sig=UoB3qNMpVOWvmPd4tDNTshVqEMheDkkIYQBoAPCwojg%3D" src="https://i.kickstarter.com/assets/049/926/748/01e20c023d26c03b7acb3d2d4496103e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751665025&amp;width=680&amp;sig=UoB3qNMpVOWvmPd4tDNTshVqEMheDkkIYQBoAPCwojg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50048114">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/048/114/ddad57d0d1fd1e303545cda7779678fd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752593838&amp;width=680&amp;sig=S6TbnFSVG1XZ2JkheZBGyw3wTKaU%2BgYdAvOdsJfS%2BnU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Industrial-Quality-Robotics-for-Hobbyists-Makers-and-Professionals-"><span class="bold">Industrial Quality Robotics for Hobbyists, Makers and Professionals. </span></h4><h4 class="page-anchor" id="h:The-401Bot"><span class="bold">The 401Bot</span></h4><p>For the first time, <span class="bold">professional quality robotics</span> are accessible for all makers. The 401Bot is a full 6 Axis Robotic Arm capable of creating <span class="bold">functional products, services and automations.</span></p><h4 class="page-anchor" id="h:The-New-Makerspace"><span class="bold">The New Makerspace</span></h4><p>The 401Bot Makerspace allows users to <span class="bold">create, upload, download and share robot programs</span> in the same way we currently do with 3D printing files.</p><h4 class="page-anchor" id="h:Integration-of-3D-Printing-and-Robotics"><span class="bold">Integration of 3D Printing and Robotics</span></h4><p>Makers now have the ability to <span class="bold">create your own programs, jigs, end effectors, tools, grippers, automation sequences and so much more.</span> No experience required.</p><h4 class="page-anchor" id="h:Empowering-the-Maker"><span class="bold">Empowering the Maker</span></h4><p>The 401Bot creates an entire new maker category. <span class="bold">Bring your ideas to life, accelerate your workflow, grow or launch your business, be part of the future.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063048">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/063/048/80c9d45b934b23a5c08786ca404e1421_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680141&amp;width=680&amp;sig=O5fyfwhnR56qOKXqvdsFc562daOhFVXZEVdpLXotnsE%3D" src="https://i.kickstarter.com/assets/050/063/048/80c9d45b934b23a5c08786ca404e1421_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680141&amp;width=680&amp;sig=O5fyfwhnR56qOKXqvdsFc562daOhFVXZEVdpLXotnsE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078851">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:01-How-it-Works">01. How it Works</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/851/a0533a957221aeb415f27879db00b44e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752774852&amp;width=680&amp;sig=DdjnGMLldfoYSpnWcO9gq%2BmWdeOsNvwCZMO67AAwnds%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50090154">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/090/154/b2eed2cfd7de3ef58b52f9bfe5f8117d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752853131&amp;width=680&amp;sig=Eqxsirdk5a%2BLJDKlOCg5t6N6IgS5aUZxQkNOLhF%2BHnY%3D" src="https://i.kickstarter.com/assets/050/090/154/b2eed2cfd7de3ef58b52f9bfe5f8117d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752853131&amp;width=680&amp;sig=Eqxsirdk5a%2BLJDKlOCg5t6N6IgS5aUZxQkNOLhF%2BHnY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101266">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/101/266/15265e2a7a437fed72e4ba4399393029_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752961504&amp;width=680&amp;sig=faNhLDBLcVal9yWTDYoLF1qkQr%2BQ3uGfRWXBcaKkFsU%3D" src="https://i.kickstarter.com/assets/050/101/266/15265e2a7a437fed72e4ba4399393029_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752961504&amp;width=680&amp;sig=faNhLDBLcVal9yWTDYoLF1qkQr%2BQ3uGfRWXBcaKkFsU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101271">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/101/271/4a6a76e4046d838c4aa055c721841f04_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752961517&amp;width=680&amp;sig=hZLVm7%2Fsas4lls5AGdxubPAqO%2BFGuY6gWdPUWdFvdxA%3D" src="https://i.kickstarter.com/assets/050/101/271/4a6a76e4046d838c4aa055c721841f04_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752961517&amp;width=680&amp;sig=hZLVm7%2Fsas4lls5AGdxubPAqO%2BFGuY6gWdPUWdFvdxA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101273">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/101/273/49e917ff5414811d8ecc78cdaa18d592_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752961543&amp;width=680&amp;sig=3%2FXiCIBD2VVZxpyCfRrWAq80N7nwUojtKogzBt0ojG0%3D" src="https://i.kickstarter.com/assets/050/101/273/49e917ff5414811d8ecc78cdaa18d592_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752961543&amp;width=680&amp;sig=3%2FXiCIBD2VVZxpyCfRrWAq80N7nwUojtKogzBt0ojG0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078853">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:02-How-to-Make-Programs">02. How to Make Programs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/853/dcbe50f2d1e4d0e602a5bd1e5f1ba8a4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752774883&amp;width=680&amp;sig=lJUfJsXtGLv2%2Be4bwi9CjG7mVF6gtFrFQaW%2FtUkYbtg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:We-ve-Made-Industrial-Robotics-Easy-">We've Made Industrial Robotics Easy.</h4><p>Over the last year and a half, our software team has been working hard to create our own <span class="bold">401Bot software</span>. The 401Bot control software has modes that make it accessible to everyone <span class="bold">from complete beginners all the way to seasoned robotics engineers.</span> Simply move the 401Bot and save waypoints, then export as a 401Bot program. We've also integrated the 401Bot with RoboDK, unlocking function for intense industrial and commercial applications.</p><p><span class="bold">Below is a full demo video showing both software options for controlling the 401Bot!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50050141">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/050/141/fe25e3cee8fd22a1914cb85f98f39ed0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752603108&amp;width=680&amp;sig=H0B%2B%2BSE41P2rdVyPeV8YyPRcKZscS6YYwcBNCYq9FkE%3D" src="https://i.kickstarter.com/assets/050/050/141/fe25e3cee8fd22a1914cb85f98f39ed0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752603108&amp;width=680&amp;sig=H0B%2B%2BSE41P2rdVyPeV8YyPRcKZscS6YYwcBNCYq9FkE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078860">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:03-Example-Programs">03. Example Programs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/860/fe7b1886c9861b1c3c7b3b88be267969_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752774913&amp;width=680&amp;sig=GLJyFOJ3QV6B1aHmzpE49LZO9jyvsyMCBb2vqnK16KA%3D"/>
+</figure>
+</div>
+<p>The 401Bot is capable of everything from <span class="bold">folding your laundry</span> and <span class="bold">automating your coffee machine</span> (yes, seriously) to <span class="bold">industrial pick and pack applications for your business. </span></p><p>Below are just a few common examples of 401Bot programs. The <span class="bold">401Bot Makerspace</span> includes a growing library of <span class="bold">ready-made programs</span> that you can simply download and run. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101276">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/276/548d8ef41c7efa53843a73b7c425e0b7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752961584&amp;width=680&amp;sig=MmvjxXzrjm6KLatwENcSDkFbr6YSUrGdSHqJYqIZ%2B1k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063106">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/063/106/98baca0ea060b723894093efc4ef57bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680395&amp;width=680&amp;sig=8Pn87v0zx0xWVCmGJ6DW2Nu71DnW1QDAYK4L%2BXU4F6g%3D" src="https://i.kickstarter.com/assets/050/063/106/98baca0ea060b723894093efc4ef57bd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680395&amp;width=680&amp;sig=8Pn87v0zx0xWVCmGJ6DW2Nu71DnW1QDAYK4L%2BXU4F6g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078862">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:04-Why-a-Robot-">04. Why a Robot? </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/862/23f91662b43ca6c36ba1b0c9ab32346b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752774939&amp;width=680&amp;sig=kZAXjgMhFBS%2FgkJ9MCl%2FtSF9qdlc%2FGAqvROcc9hBIvE%3D"/>
+</figure>
+</div>
+<p>Over the last couple of years, we've seen a <span class="bold">rapid integration of artificial intelligence and automation.</span> The way we do things is changing and we want the maker community to be a part of it. </p><p><span class="bold">As Hobbyists and Enthusiasts, our real world impact has been limited by the machines available to us.</span> Until now, most of what we could create has been primary prototypes, trinkets, gadgets, gizmos and personal use objects. With the 401Bot, we're flipping all that upside down and showing we can create <span class="bold">practical, functional and real world products, services and automations.</span></p><p>The 401Bot is here to help you <span class="bold">scale your passions and your businesses</span>. Robotics and automation have typically only been accessible with large corporate budgets, however, now for the first time, <span class="bold">smaller creators will be capable of having huge impacts.</span> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063061">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/063/061/c5a8aecce9917a3c85b6556a27e10358_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680185&amp;width=680&amp;sig=AI%2BCmWTIxDnyWyhiZTnzytVsrhCGGo5bN7fJJGSNxuQ%3D" src="https://i.kickstarter.com/assets/050/063/061/c5a8aecce9917a3c85b6556a27e10358_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680185&amp;width=680&amp;sig=AI%2BCmWTIxDnyWyhiZTnzytVsrhCGGo5bN7fJJGSNxuQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078865">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:05-Who-is-the-401Bot-For-">05. Who is the 401Bot For?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/865/665a228070b74ca9c8f346ad1bd47143_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752774965&amp;width=680&amp;sig=Cd%2BT5hK8dlxVq4alZd1SL6gfvtOS7BymhlDVN6IoNbA%3D"/>
+</figure>
+</div>
+<p>We engineered the 401Bot with the goal of providing <span class="bold">professional quality robotics at a price that hobbyists and enthusiasts can access.</span> We were able to do this though multiple iterations of <span class="bold">prototyping</span>, our <span class="bold">patent pending design</span> and the integration of <span class="bold">3D printed parts</span> with <span class="bold">custom electronics.</span> </p><p><span class="bold">Hobbyist</span> - Do you have a makerspace of your own at home? Perhaps a garage, basement or workshop? The 401Bot is an amazing addition that is designed to push the limits of what you can create. It is a tool that introduces function into your workspace. As your maker skillset grows, so do the capabilities of the 401Bot. </p><p><span class="bold">Professionals</span> - If you're a seasoned engineer or technician, the 401Bot is ready to push the limits with you. Perhaps you've worked with robots on the job and now want to apply those skills to your own projects.</p><p><span class="bold">Entrepreneurs</span> - Robotics and Artificial Intelligence are being implemented at a rapid rate in the marketplace. We want you to be a part of it. Perhaps you own a business or know someone who does and you have identified a repetitive task that would be perfect for the 401Bot. The opportunities are truly endless. </p><p><span class="bold">Educators</span> - The 401Bot team is committed to enabling and preparing the next generation for the pace of innovation that we're seeing in the industry today. If you're a University or Educational Institution looking to use the 401Bot to teach your students, please reach out to us via email (evan@crate3d.com).</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063041">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/063/041/37b02d15f14f380ac62f993158156a3a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680120&amp;width=680&amp;sig=4jjxTXPIsOuhTMJ38YlV710LqHDnBVHPVuhz%2Fj0xO2c%3D" src="https://i.kickstarter.com/assets/050/063/041/37b02d15f14f380ac62f993158156a3a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680120&amp;width=680&amp;sig=4jjxTXPIsOuhTMJ38YlV710LqHDnBVHPVuhz%2Fj0xO2c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50079464">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:06-Tech-Specs">06. Tech Specs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/079/464/73f2cd1b381093933c36d557b9eae88d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752777482&amp;width=680&amp;sig=bs2Fe392KniGcJD3Kn6PE82IP3Yu38JjoRFmoDGSmTo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50092016">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/092/016/279ecaf88868ca0b8e580533ec1638af_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752865955&amp;width=680&amp;sig=YA5w792XtwBtGxhRxVK6y59t4IoFUchAJghtIdm9xFE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Reach-And-Payload-Visualized">Reach And Payload Visualized</h4><p>The most common tech specs we get asked about are the reach and payload so we made this awesome animation! The reach from center to end effector is 521mm and from center to standard gripper center is 643mm. The payload capacity is 2kg. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50076325">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/076/325/f6ac34cb2e1e10cf542d99e27e083166_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752763055&amp;width=680&amp;sig=HBoc0XiJCFqd63nrpOs2xqJSex27s8mzzgNN6K1IZMo%3D" src="https://i.kickstarter.com/assets/050/076/325/f6ac34cb2e1e10cf542d99e27e083166_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752763055&amp;width=680&amp;sig=HBoc0XiJCFqd63nrpOs2xqJSex27s8mzzgNN6K1IZMo%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Repeatability-Testing">Repeatability Testing</h4><p>Our current pre-production model of the 401Bot is achieving a repeatability of 0.15mm. We expect the performance of the repeatability to increase on the production unit as we have a new J1 motor control system. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50076521">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/076/521/dee0cf444541cf111810034b538375f4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752763942&amp;width=680&amp;sig=Fhr6u7BixG8zLrx0w4gQz9eZIR5rA5NhdY81i1o5aEc%3D" src="https://i.kickstarter.com/assets/050/076/521/dee0cf444541cf111810034b538375f4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752763942&amp;width=680&amp;sig=Fhr6u7BixG8zLrx0w4gQz9eZIR5rA5NhdY81i1o5aEc%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">** Please note that all testing has been done with our pre-production 401Bot unit. The results may be slightly different on the production model. Though we only expect the specs to increase in performance, we believe it's important to note this. We will post full demo testing videos with the production unit once it's here!  </span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078883">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:07-What-s-Special-">07. What’s Special?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/883/28cf70ba32d4fd6be627d73d4bef318a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752775041&amp;width=680&amp;sig=jD3cgepcmIpqIB%2FUijJEwwLk36%2BmKwFaNAvZe3Nedvg%3D"/>
+</figure>
+</div>
+<p>Company Backstory (Optional Read!) - Our design company here in NYC was tasked to build an assembly line for a client, which required picking and packing small electronics. After building the system we realized it could probably be operated by a robotic arm, so we did a deep dive... which is when we discovered the <span class="bold">lack of options for affordable industrial quality robotic arms.</span> This immediately kickstarted our R&amp;D journey to build our own. Fast forward a couple of years... and today we're thrilled to show you the 401Bot.</p><p><span class="bold">Affordability</span> - <span class="bold">Traditional Pre-Built 6 Axis Robotic Arms</span> are <span class="bold">extremely expensive</span>. They often start around $10,000-$20,000. In fact, even a simple end effector/gripper can often start at several thousand dollars.</p><p><span class="bold">Integration of 3D Printing</span> - The rapid innovation in the 3D printing industry has made quality 3D printing extremely affordable. <span class="bold">3D Printing + 401Bot = Unlimited Capabilities.</span> We can now design and 3D print everything from parts for the 401Bot itself to jigs, end effectors, and other automation tools like conveyer belts, sorters, grippers... you name it. <span class="bold">With 3D printing and the 401Bot you can automate almost any task. </span></p><p><span class="bold">The 401Bot Marketplace</span> - The 401Bot Marketplace will allow users to <span class="bold">create, share, upload and download programs for the 401Bot.</span> In the same way we currently do with 3D printing files, we can now do the same for robot programs. </p><p><span class="bold">Patented Design and Easy Build</span> - The 401Bot is easy to build. It starts with our <span class="bold">patent pending design,</span> includes a <span class="bold">custom wiring harness and</span> <span class="bold">custom electronics,</span> and the 401Bot is controlled using our <span class="bold">custom software.</span> It's truly plug and play industrial quality robotics. </p><p><span class="bold">Community</span> - Our goal is always to empower the maker community. Together, we can design and create products, services and automations that will be used in industries around the world. <span class="bold">The 401Bot is here to enable entrepreneurs, creators and hobbyists.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063089">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/063/089/c2c140f51b04730097cdddc5b03d27e3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680315&amp;width=680&amp;sig=9JTZDSZo0ixpK%2BusGuXpiJln9YYf0E3roq9I5X%2B%2FU4M%3D" src="https://i.kickstarter.com/assets/050/063/089/c2c140f51b04730097cdddc5b03d27e3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680315&amp;width=680&amp;sig=9JTZDSZo0ixpK%2BusGuXpiJln9YYf0E3roq9I5X%2B%2FU4M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50121977">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/121/977/dd57cbaf8944d16d1ce579483070c98a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753131440&amp;width=680&amp;sig=5n6m%2B%2BbldoaurrIsvicaVoyS2kh2kBkpIEyWXMBgbNc%3D"/>
+</figure>
+</div>
+<p>The 401Bot Makerspace is a website platform that allows <span class="bold">users to create, share, upload and download</span> all things 401Bot. This includes things like <span class="bold">401Bot Programs, 3D Printable End Effectors, Grippers, Jigs, Tool Holders and so much more!</span> </p><h4 class="page-anchor" id="h:In-the-same-way-that-we-currently-share-and-distribute-3D-Printing-files-you-ll-be-able-to-share-and-distribute-401Bot-files-">In the same way that we currently share and distribute 3D Printing files, you'll be able to share and distribute 401Bot files. </h4><p>Create a profile, sort by trending, application, or industry, then simply download and run programs on your very own 401Bot.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50090185">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/090/185/ce7feabcbe1af39bc281e28a022cf269_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752853286&amp;width=680&amp;sig=Tv8uBqV44L%2BbXALPjfXtLJOYLNyj488KXen1F6S37C4%3D" src="https://i.kickstarter.com/assets/050/090/185/ce7feabcbe1af39bc281e28a022cf269_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752853286&amp;width=680&amp;sig=Tv8uBqV44L%2BbXALPjfXtLJOYLNyj488KXen1F6S37C4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50090194">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/090/194/920cf5104abae45fa82e9ca132fb6290_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752853333&amp;width=680&amp;sig=RBXmwCUzR7hCUF3uN2hh%2BK0UfWHAgilifDXR5qu4uPM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078895">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:09-3D-Printing">09. 3D Printing</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/895/fdf4c3485d6a99bafbdf0dc21e61dd16_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752775101&amp;width=680&amp;sig=gKTiCL1HrxnrOwFzlp71g5BD5KzSPh%2Fq0WoVU%2FHVtB4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50050857">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/050/857/2e7fb4bcab95515bebc515b3ec9c96d4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752606452&amp;width=680&amp;sig=cm82tolsaQsBAIMUC0xftgkV9yQDt%2FU4YulDwePGOsw%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:3D-Printing-401Bot-Unlimited-Capabilities-">3D Printing + 401Bot = Unlimited Capabilities </h4><p>The 401Bot is your 3D Printer's perfect companion. Not only can the 401Bot automate your 3D printer... but you can now use your 3D printer to <span class="bold">print functional parts that work with the 401Bot.</span></p><p>With 3D printing and robotics, we can automate almost any task... Here are two fun examples!</p><h4 class="page-anchor" id="h:Example-1-Bed-Removal-Jig">Example 1 - Bed Removal Jig</h4><p>Take for example the 3D Printer Bed Removal program we made. In the past, creating an automation like this would be extremely expensive. However, we were able to simply 3D print a Jig that the 401Bot can use to grab the build plates. This same concept can be applied to almost any automation task. (Ps. you probably don't need a humanoid robot to do that task!)</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063048">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/063/048/80c9d45b934b23a5c08786ca404e1421_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680141&amp;width=680&amp;sig=O5fyfwhnR56qOKXqvdsFc562daOhFVXZEVdpLXotnsE%3D" src="https://i.kickstarter.com/assets/050/063/048/80c9d45b934b23a5c08786ca404e1421_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680141&amp;width=680&amp;sig=O5fyfwhnR56qOKXqvdsFc562daOhFVXZEVdpLXotnsE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Example-2-Paint-Can-Jig-Example-">Example 2 - Paint Can Jig Example! </h4><p>To illustrate this even further, we wanted to make a Jig that would allow us to use the 401Bot for painting. Well, a traditional painting end effector/gripper for a robotic arm is extremely expensive... but with some basic design and a 3D Print, we were up and running in no time. The best part... with the 401Bot Makerspace, you can now simply download the paint Jig and use it on your 401Bot too! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062187">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/062/187/f2b74e1a501c850f30b6b0d014534985_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752676024&amp;width=680&amp;sig=CvlXW30yhTmFsRaptfdD1tSaUAqRKBUVDZyX9TKd4U4%3D" src="https://i.kickstarter.com/assets/050/062/187/f2b74e1a501c850f30b6b0d014534985_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752676024&amp;width=680&amp;sig=CvlXW30yhTmFsRaptfdD1tSaUAqRKBUVDZyX9TKd4U4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078900">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:10-Industrial-Quality-Robotics">10. Industrial Quality Robotics</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/900/81c273dd2f2753b62ea8a80539dc867d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752775125&amp;width=680&amp;sig=hQ%2FeyLTOcK6xUr21pD9bpEb8z%2F6dUnnxvRIlwrFUyqI%3D"/>
+</figure>
+</div>
+<p>The 401Bot is capable of <span class="bold">industrial robotic applications</span> which is why we have already integrated the 401Bot with RoboDK. The integration of RoboDK allows those users looking to push the limits of robotics by creating <span class="bold">advanced simulations, environments and controls</span> for the 401Bot. </p><p><span class="bold">There are a few popular industrial robot control software packages out there. We will work with the backers after the launch to determine if we should integrate the 401Bot with any others! </span></p><p>We are currently working with RoboDK to get backers of this campaign a special deal on the software package. We will provide updates as we go! We hope to get the 401Bot integrated with several common software packages.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50016397">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/016/397/5205803d274ceb8fabf78b962f13900b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752370056&amp;width=680&amp;sig=wO%2FxNWXBtinGFwNQ2dwc0HKegA4AyoA%2Bi605vjiz5b0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063046">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/063/046/d8664edf20e157f161738861682607d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680131&amp;width=680&amp;sig=EF%2B0QzEA%2FgkPbc92QdRvu5Rv9LTGBgAnKFbYLzURdW4%3D" src="https://i.kickstarter.com/assets/050/063/046/d8664edf20e157f161738861682607d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680131&amp;width=680&amp;sig=EF%2B0QzEA%2FgkPbc92QdRvu5Rv9LTGBgAnKFbYLzURdW4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50121982">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/121/982/8625213c2139e65ac6b9908614ff811d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753131463&amp;width=680&amp;sig=XUtW1JDR8UA8c2ojcuNRz8bOOhCpqh64fJE4F1JD8go%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063163">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/063/163/0084f7d7d142b81ab9de2cd9ff420725_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680648&amp;width=680&amp;sig=GMXrZJwzfNzwzi592alL7BzxR%2B16drO6nW1oIto6B4k%3D" src="https://i.kickstarter.com/assets/050/063/163/0084f7d7d142b81ab9de2cd9ff420725_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752680648&amp;width=680&amp;sig=GMXrZJwzfNzwzi592alL7BzxR%2B16drO6nW1oIto6B4k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374836">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/836/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875274&amp;width=680&amp;sig=ODyrmyvHyfkfuSKtXhpK9KEr4b4iw8uenmysOhNk7sw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50079064">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:12-Stretch-Goals">12. Stretch Goals</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/079/064/5ee8c977207efb2c432454d7268144d0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752775783&amp;width=680&amp;sig=L4ghms79aODwXTlifsg3kSjvHhvwOzPRy2sdv1jN3ZM%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Use-the-Stretch-Goal-section-to-expand-the-pre-configured-401Bot-Program-Library-as-well-as-unlock-hardware-like-End-Effectors-Grippers-401Bot-Jigs-Tools-and-so-much-more-"><span class="bold">Use the Stretch Goal section to expand the pre configured 401Bot Program Library as well as unlock hardware like End Effectors/Grippers, 401Bot Jigs, Tools and so much more.</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50202288">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/202/288/ef81e489f1603ba61db9e17c3832e8fa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753719560&amp;width=680&amp;sig=BSCv4%2FPnSdqaGmEy7zIsYuuLGJf2WJuv3kwz26lhZZA%3D"/>
+</figure>
+</div>
+<p>**Please note that the stretch goal renders are for demonstration purposes only. The final products will look different from the renders provided. Additionally, none of the stretch goals come with any included hardware, you may need to 3D print or purchase hardware to build the stretch goal items.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49955514">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/955/514/bf427ff03c3db6341e83186488a9e7b9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751927667&amp;width=680&amp;sig=I9AaYByVHj7ncOasRYuZJeD%2BYAY48kK8m1zPcgfK5BU%3D" src="https://i.kickstarter.com/assets/049/955/514/bf427ff03c3db6341e83186488a9e7b9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751927667&amp;width=680&amp;sig=I9AaYByVHj7ncOasRYuZJeD%2BYAY48kK8m1zPcgfK5BU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374937">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875746&amp;width=680&amp;sig=78r%2FcwymKnFzabwPUdPZffK1fY515%2FVFXzWUwhKs1Aw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078910">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:13-Community">13. Community</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/910/b53e68019042a908e682d5c7250dfc8c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752775162&amp;width=680&amp;sig=qzxSAnEJ0VcwYHdr11vF4xx8PVeYqDuueaApvKdiJ2s%3D"/>
+</figure>
+</div>
+<span></span><div class="text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[72rem]:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto flex max-w-(--thread-content-max-width) flex-1 text-base gap-4 md:gap-5 lg:gap-6 group/turn-messages focus-visible:outline-hidden"><div class="group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn"><div class="relative flex-col gap-1 md:gap-3"><div class="flex max-w-full flex-col grow"><div class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]"><div class="markdown prose dark:prose-invert w-full break-words dark">
+<p><span class="bold">Join the 401Bot Community on Discord</span><br/>Stay in the loop with biweekly project updates, behind-the-scenes insights, and exclusive sneak peeks — all in our community Discord. Connect with fellow makers, robotics enthusiasts, and the 401Bot team with just one click. Join the Discord <span>HERE</span></p>
+<p>In addition to the discord we will be frequently posting photos and videos of the progress updates. You can expect full breakdowns and walk throughs similar to the "How to make Robot programs video" on this page. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374937">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875746&amp;width=680&amp;sig=78r%2FcwymKnFzabwPUdPZffK1fY515%2FVFXzWUwhKs1Aw%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div></div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078944">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:14-Timeline">14. Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/944/29ccf5114d4615b128c0d1cac959fb76_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752775285&amp;width=680&amp;sig=Ohzgv6zj5HPPvehJqVcdPkl4rzABuyrAvSvtqY%2Fpjrw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50119984">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/119/984/9aa0ba85f789c4ad5822c7cb1f34a423_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753120475&amp;width=680&amp;sig=SVmp9WKw%2FZ0CvS6Geck6r8rlDSBw12l17fA37kUN%2BXg%3D" src="https://i.kickstarter.com/assets/050/119/984/9aa0ba85f789c4ad5822c7cb1f34a423_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753120475&amp;width=680&amp;sig=SVmp9WKw%2FZ0CvS6Geck6r8rlDSBw12l17fA37kUN%2BXg%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">February 2024 - After needing a robotic arm for a client project and unable to find an affordable one, the idea was born and team started designing a prototype to see if we could make one in house.</span></p><p><span class="text-italic">June 2024 - Working hardware prototype, green light for the software team to being their journey.</span></p><p><span class="text-italic">September 2024 - Working 401Bot prototype 1, confirmation it might be possible to build an affordable robotic arm!</span></p><p><span class="text-italic">September 2024 - February 2025 - Modifications, patents, setting up manufacturing, QC testing, 401Bot Versions 2 and 3... </span></p><p><span class="text-italic">June 2025 - Over a year of R&amp;D complete, very well working prototype integrated with 100% in house software as well as integrations with professional software like RoboDK. Project announced and able to show off our progress!</span></p><h4 class="page-anchor" id="h:July-22-2025-Kickstarter-Launches">July 22, 2025 - Kickstarter Launches</h4><p><span class="text-italic">August 22 - Kickstarter Finishes, it will take two to three weeks to get final Kickstarter backer report. </span></p><p><span class="text-italic">September 2025 - January 2026 - Finalizing hardware and software and sending to production. </span></p><p><span class="text-italic">March 2026 - Production Starts.</span></p><p><span class="text-italic">May 2026 - Shipment of 401Bots leave from overseas coming to our office here in NYC. </span></p><p><span class="text-italic">June/July 2026 - Shipments leave our office and head to customers.</span></p><p>Please note, the above timeline gives us a sufficient buffer.  We've been working on the 401Bot for well over a year now and a lot of the heavy lifting is complete! We hope to ship your 401Bots to you earlier than stated in the timeline. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374937">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875746&amp;width=680&amp;sig=78r%2FcwymKnFzabwPUdPZffK1fY515%2FVFXzWUwhKs1Aw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078952">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:15-Development">15. Development</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/952/8a05502045855a55ecd627baa8a09c95_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752775329&amp;width=680&amp;sig=qgz8WjVoEWOuFloodidxSI2Z56uadbCmXBuAnvU9q%2Bo%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Hardware-Development">Hardware Development</h4><p>Our current 401Bot is extremely close to being ready for production, we only have one hardware change remaining, the J1 or the base of the robot will change shape a little bit, allowing for a more precise motor and a hole through the base for the custom wiring harness to run through. This will not only improve the performance but also hide all the cabling! </p><h4 class="page-anchor" id="h:Software-Development">Software Development</h4><p>The current 401Bot software is robust enough to create, save, and run programs, however, we are currently in the process of greatly upgrading it. The updates will allow users to control the robot in a few new ways and also allow the implementation of things like third party electronics, cameras, sensors, etc. We are making it so that the software has control options for everyone from complete beginners to industry experts.</p><h4 class="page-anchor" id="h:Program-Library-401Bot-Makerspace">Program Library/401Bot Makerspace</h4><p>Web development will begin on the 401Bot Makerspace following the Kickstarter campaign. This is a pretty easy step in the development timeline, as soon as its ready users will be able to access the 401Bot makerspace via 401bot.com</p><h4 class="page-anchor" id="h:Stretch-Goals">Stretch Goals</h4><p>We have allowed some time for the development of the stretch goals!! Some of the stretch goals we have working prototypes of and others will require more work (things like the pendant and camera integrations require both hardware and software dev).</p><p><img class="image" data-id="50044128" src="https://i.kickstarter.com/assets/050/044/128/aad83f6c29cbc4da27b06c95714d314e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752575574&amp;width=664&amp;sig=7C7sWV4g43MWlH8vezC7FzJifY7KL2QEdGHU2dZBDBU%3D"/><img class="image" data-id="49374937" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747875746&amp;width=1024&amp;sig=b6FYpMxRiOGSDsUIB7hUJQLZDevj3TrfAx4tRDW9IgE%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078960">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:16-Shipping">16. Shipping</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/960/4e5600295618ba1e0d7dd3384dd0642d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752775359&amp;width=680&amp;sig=fWgkhrIm8A%2BmUsy8H1bpOfPIE%2B4ZAdouqZZMoGzTt6E%3D"/>
+</figure>
+</div>
+<p><span class="bold">The 401Bot</span> ships as an <span class="bold">easy to build kit</span>, which allows us to greatly reduce shipping costs (though we are still shipping you a large robust robotic arm!). <span class="bold">Our production is already set up</span> and all parts of the 401Bot are leaving from the same warehouse overseas to streamline the shipping process. <span class="bold">All 401Bots will be shipped to our office here in New York City </span>where we will perform QC checks and then ship direct to our backers in order of backer number. Please note, <span class="bold">you will not be charged for shipping during the Kickstarter campaign!</span> In order to give you the best shipping costs, <span class="bold">you will be charged for shipping after the campaign, when we fulfill your reward and ship your 401Bot to you!</span> Please also note, the shipping costs below do not include add-ons. Some add-ons can fit in the box and won't affect shipping costs, others may increase the cost of shipping. (The 1000mm linear rail is a pretty industrial linear rail system and will likely cost around the same as the robot to ship. If we get enough orders we will try to pack those together to reduce the costs).</p><h4 class="page-anchor" id="h:Estimated-Shipping-Costs">Estimated Shipping Costs</h4><p>Below are the estimated shipping costs for a standard 401Bot. Please note, these are the exact shipping costs at the time of this campaign (July 22, 2025), however the rates may vary in the future. (We do not anticipate them to change but want to be fully transparent). We have crosschecked many shipping companies (FedEx, UPS, USPS, etc.), and the rates are consistent. (The US and Canada shipping rates are determined by your location relative to New York (where we are shipping from). For example, if you are in New Jersey it will be $64 or below, if you are in California, it will be about $90.)</p><p>Shipping within USA - $64 - $90 </p><p>Shipping to Canada - $89-$169</p><p>Shipping UK and Europe - $100-139</p><p>Shipping to Australia and NZ - $200-$300</p><p>Rest of World Estimate - $125-$169</p><p>If you are ordering from outside of one of the locations listed above, you can shoot us a message and we can check the current rates for you!</p><h4 class="page-anchor" id="h:Tariffs-">Tariffs </h4><p>Our company is based in the USA and in order to mitigate the impact of any potential tariffs we have a few measures in place. First, we have an office in Canada that can be used in the event that there are any major changes to our import tariffs (this is the tariff we would need to pay to get the 401Bots from overseas to our office here in the USA). Second, we have a backup production facility located outside of China; this mitigates the impact of any USA - China specific tariffs. As of July 22, 2025 (the launch day for this Kickstarter), we do not anticipate any major trade or tariff issues. The ongoing tariff dispute between China and the USA has mostly come to a resolution. We have been shipping a ton of prototypes and parts back and forth for the last year and have been managing the situation accordingly. Backers will be responsible for any import costs/tariffs to their respective countries, we will do our best to keep this as low as possible.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062478">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/062/478/11b38e19895539b68d808e823af4774d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752677623&amp;width=680&amp;sig=rOSVjXQ%2BAc5kQ761w%2B756ln%2FDUJEmhyMK1mk%2FCySeRU%3D" src="https://i.kickstarter.com/assets/050/062/478/11b38e19895539b68d808e823af4774d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752677623&amp;width=680&amp;sig=rOSVjXQ%2BAc5kQ761w%2B756ln%2FDUJEmhyMK1mk%2FCySeRU%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="49374937" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747875746&amp;width=1024&amp;sig=b6FYpMxRiOGSDsUIB7hUJQLZDevj3TrfAx4tRDW9IgE%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50079480">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:17-Reseller-and-Education">17. Reseller and Education</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/079/480/7481b8f36f4206469af888cccc54dbae_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752777523&amp;width=680&amp;sig=ozgug6nHxhPEgFNALGauCbyCFDp42rgEqI2vmQgV2DU%3D"/>
+</figure>
+</div>
+<p>If you are interested in purchasing a large order of 401Bots, or becoming a reseller, please reach out directly to our team at evan@crate3d.com. If you are an educator or educational institution looking to order 401Bots for your classrooms or makerspaces, please also reach out to evan@crate3d.com. The 401Bot team is dedicated to providing exceptional robotics education to the next generation of makers around the world. <img class="image" data-id="49374937" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747875746&amp;width=1024&amp;sig=b6FYpMxRiOGSDsUIB7hUJQLZDevj3TrfAx4tRDW9IgE%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50079094">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:18-Our-Team">18. Our Team</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/079/094/64d2f6281cd4cf173e9ebb48786615a8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752775881&amp;width=680&amp;sig=LC62kF5G8lfU4fkaiqjeidWJPooWKDqmYhcqG0iifs8%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:About-Our-Team"><span class="bold">About Our Team</span></h4><p>The 401Bot team has been working on the 401Bot together now for almost two years. However, we didn't start here! Most of the team was actually formed about 7 years ago back in Alberta Canada where we did custom engineering design and a combination of traditional and additive manufacturing for clients in Canada and the USA. As we took on bigger projects we moved the company HQ to NYC where we currently are (located at 401 Broadway in the heart of Manhattan...ps yes that's where the 401Bot got its name from!). Together our team has decades of engineering, sculpting, design and production experience. We wanted to really show that off by having the 401Bot up and running before even launching the Kickstarter. The project is just about ready for production and we cant wait to see what you create with your 401Bot. You can also reach our team directly anytime though the community discord!!! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374937">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875746&amp;width=680&amp;sig=78r%2FcwymKnFzabwPUdPZffK1fY515%2FVFXzWUwhKs1Aw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50078967">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:19-The-Future-of-401Bot">19. The Future of 401Bot</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/078/967/1eca1324cc16a4a7f549821e5d94bac0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752775404&amp;width=680&amp;sig=Ok81gvlpGj7Ar%2BaM427TjNMZ4%2FXFEuFgXtqpKrj2H30%3D"/>
+</figure>
+</div>
+<p>We've been able to achieve a lot with our current 401Bot model which has encouraged us to push the limits and scope out the future possibilities.  We've put our current prototype to the test and we're excited about the future. Through the maker community and a commitment to always be expanding the potential, we hope that the future of 401Bot includes native developments like 3D Printing (really 6D printing), Light CNC work, Laser Cutting, Mobile Integrations.. and so much more. The possibilities are endless, robotics are the future and we're excited to all be a part of it. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49746051">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/746/051/ba5cb2e605e53b8dbb2d10938ea648c2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750376832&amp;width=680&amp;sig=nDt9Tfo06Aqjt2r%2FWj7xCYmiu1HBFJZ%2B9%2B6NbD5B4k8%3D" src="https://i.kickstarter.com/assets/049/746/051/ba5cb2e605e53b8dbb2d10938ea648c2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750376832&amp;width=680&amp;sig=nDt9Tfo06Aqjt2r%2FWj7xCYmiu1HBFJZ%2B9%2B6NbD5B4k8%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="49374937" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747875746&amp;width=1024&amp;sig=b6FYpMxRiOGSDsUIB7hUJQLZDevj3TrfAx4tRDW9IgE%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50079674">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Beyound-the-build-plate">Beyound the build plate</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/079/674/e6d68140e4b43836c9821c24938b89ec_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752778704&amp;width=680&amp;sig=jG%2FVkaevyi1P2bhdw7rXZ8KkVmvJpqDFZek2nL2AWQk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374937">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875746&amp;width=680&amp;sig=78r%2FcwymKnFzabwPUdPZffK1fY515%2FVFXzWUwhKs1Aw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374937">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875746&amp;width=680&amp;sig=78r%2FcwymKnFzabwPUdPZffK1fY515%2FVFXzWUwhKs1Aw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Disclaimers">Disclaimers</h3><p>Please note, all of the content and information shown and provided on this page is from our current prototype 401Bot. We are making some small modifications which may effect the aesthetic and the function of the 401Bot. The current square base will likely have a hole though the top of it in the production model that will allow all the cables to run right through the base. It shouldn't change the aesthetic very much but we want to note this directly on the campaign page! </p><p>This is a Kickstarter campaign, so you have the entire 30-day duration of the campaign to change or cancel your pledge. However, after the campaign is complete, you cannot cancel your pledge. Your pledge directly contributes to unlocking stretch goals and enabling the production of the 401Bot. </p><p>The renders used in the stretch goal and add on section are for illustrative purposes only, the actual appearance and function of the addons and stretch goals may vary from what you see listed.</p><p>Pay Over Time Option - For this campaign we have enabled the Pay Over Time Option. This is a new feature to Kickstarter than enables you to to pay your pledge across a few payments. Please note that if you select this option, your full pledge must be paid before we can ship your 401Bot. There are no refunds or partial for this option. This is a new feature that we are trying out.</p><p>Safety Disclaimer - The 401Bot is a large and heavy robotic arm that is capable of industrial automation. It is not a toy and can cause injury if not used properly. Backers of this campaign should be familiar with the safety risks associated with operating a robotic arm. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49374937">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/374/937/8e0cfd9e195aba2b81fa49115a68ff91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1747875746&amp;width=680&amp;sig=78r%2FcwymKnFzabwPUdPZffK1fY515%2FVFXzWUwhKs1Aw%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">There are no major risks or challenges. Our team has complete a working physical prototype as well as complete the beta version of the software before launching the Kickstarter. We have given ourselves extra time in estimated timeline and expect things to be ahead of schedule. Our team has experience with Kickstarter projects, engineering design and manufacturing. The manufacturing for the 401Bot is already set up! You can read more about this on the Kickstarter page!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">401Bot is an evolving and upgradable system. We have also used 3D printing and provided 3D printing files so that users can print their own parts to eliminate waste and the need for injection molding.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

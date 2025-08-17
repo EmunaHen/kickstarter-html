@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furely</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/279/577/58b7b5935e343600e355fda9c53b3d7a_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754246934&width=560&sig=quJhnvAMnIMb0gyX3pSzd2aZlDyP6ln3b26WU3xKjP0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Furely</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Furely, educational application. The app that was created by teachers and students for teachers and students!</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 22,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>28 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:-Welcome-to-FURELY-The-Future-of-Learning">🚀 Welcome to FURELY – The Future of Learning</h3><h3 class="page-anchor" id="h:-Who-Are-We-">👋 Who Are We?</h3><p>We are a passionate, global team from different countries, united by one mission: <span class="bold">to reshape how people learn and teach in the 21st century</span>.</p><p>Some of us are educators, some are students, and all of us share the same drive to make education more engaging, personal, and efficient.</p><h3 class="page-anchor" id="h:-What-Are-We-Creating-">📱 What Are We Creating?</h3><p>Half of our team has taught various subjects, and we’ve all been through the education system. We saw a gap — a <span class="bold">huge niche between how people want to learn today and what tools are actually available</span>.</p><p><span class="bold">So we decided to act!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50178006">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/178/006/8b063fca8aee4c0c24961c9c222e1879_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753488013&amp;width=680&amp;sig=zaDDlFTol1sJn4NasMyOtle9NkTMLUJ%2BPQOswpk6IyY%3D" src="https://i.kickstarter.com/assets/050/178/006/8b063fca8aee4c0c24961c9c222e1879_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753488013&amp;width=680&amp;sig=zaDDlFTol1sJn4NasMyOtle9NkTMLUJ%2BPQOswpk6IyY%3D"/>
+</figure>
+</div>
+<p>We took our combined experience, researched modern attention spans, behavioral trends, and learning patterns, and built something that’s both simple and powerful.</p><p>We’re building an <span class="bold">educational platform that feels like your favorite social app</span> but delivers real knowledge.<br/>Imagine an app where <span class="bold">you can learn anything, your way</span> — with text, videos, images, quizzes, and swipeable steps that feel like scrolling through your feed.</p><p>The idea was born in <span class="bold">December 2023</span>, and after over a year of hard work, we're proud to launch this Kickstarter campaign with a <span class="bold">functioning MVP</span> and a clear vision for the future.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50177909">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/177/909/06473753b6816b8e99dcc65eb196f617_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753487179&amp;width=680&amp;sig=5%2BplrNJOlWALq95zBUaxIiAc7PUW%2BAcU5bfHNyrhv58%3D" src="https://i.kickstarter.com/assets/050/177/909/06473753b6816b8e99dcc65eb196f617_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753487179&amp;width=680&amp;sig=5%2BplrNJOlWALq95zBUaxIiAc7PUW%2BAcU5bfHNyrhv58%3D"/>
+</figure>
+</div>
+<p>Let’s face it — classrooms haven’t changed in decades. Meanwhile, medicine, technology, even how we drive has evolved dramatically.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Not only us, but generations before spent hours in classrooms like that, isn't it?" data-id="50177854">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/177/854/ed27f95498e2b7da24278d8bc3ebef14_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753486364&amp;width=680&amp;sig=Zb%2FYoja8aNaVBXai%2BHYyWNP0h2xesDxh3%2BxpEONJHLo%3D"/>
+<figcaption class="px2">Not only us, but generations before spent hours in classrooms like that, isn't it?</figcaption>
+</figure>
+</div>
+<p>And educational apps today are either:<br/>- Long, boring video lectures, or<br/>- Gamified, flashy tools that don’t provide deep value.</p><p>We’re changing that.</p><p>Our app brings real <span class="bold">pedagogical value in a fast, flexible, intuitive format</span>. Whether you're a student or teacher, it’s designed to adapt to your rhythm and help you grow.</p><h3 class="page-anchor" id="h:-Our-Timeline">📆 Our Timeline</h3><h4 class="page-anchor" id="h:Here-s-what-we-ve-done-so-far-and-what-s-coming-next-">Here’s what we’ve done so far and what’s coming next:</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50177414">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/177/414/b735e73d96fcd3157b28b8943e1b1af6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753482349&amp;width=680&amp;sig=zphkabZ0pz8cN1bb9w%2FVm2iTnl3giLRcc3mLUYD4zxQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Budget-Breakdown">💰 Budget Breakdown</h3><p>We’ve bootstrapped this project ourselves — investing not only money, but time, effort, and passion.</p><p>Now we need <span class="bold">$22,000</span> to take it to the next level.</p><p>Here’s how the funds will be used:</p><ul>
+<li>
+<span class="bold">40%</span> – Developer &amp; team compensation</li>
+<li>
+<span class="bold">25%</span> – Marketing &amp; promotion</li>
+<li>
+<span class="bold">15%</span> - Financial and legal expenses</li>
+<li>
+<span class="bold">10%</span> – Server &amp; domain maintenance</li>
+<li>
+<span class="bold">10%</span> – Tools &amp; software</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50177547">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/177/547/613c52905ae38d843b4523891508cc78_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753483511&amp;width=680&amp;sig=uuCCgPKHfasZSQ5YY25poaEp4dXGMH0yyL1RblHFcIU%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Why-This-Matters">❤️ Why This Matters</h3><p>We believe that <span class="bold">education needs a reboot</span>.</p><p>In an age of swipeable content and social feeds, why can’t learning be just as addictive — but 10x more meaningful? Our platform delivers information in a format people actually want to consume. It’s <span class="bold">modular, fun, and impactful</span>. You’re not locked into a boring course — you’re in control, step by step.</p><p>Each course is structured like this:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Topic → Modules → Steps" data-id="50177913">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/177/913/ee7fe443a12bcb706d41666e15f56890_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753487223&amp;width=680&amp;sig=knGRJp%2BMPJHTwgN%2FuJCVygKDaF4H9ZywP0qovMje1zc%3D" src="https://i.kickstarter.com/assets/050/177/913/ee7fe443a12bcb706d41666e15f56890_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753487223&amp;width=680&amp;sig=knGRJp%2BMPJHTwgN%2FuJCVygKDaF4H9ZywP0qovMje1zc%3D"/>
+<figcaption class="px2">Topic → Modules → Steps</figcaption>
+</figure>
+</div>
+<p>Each step can include <span class="bold">text, video, image, or a quiz</span>. Swipe up, and you’re on to the next.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50177952">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/177/952/37ad4dac5e07328834ff4573e8a33c2b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753487551&amp;width=680&amp;sig=fbGw%2BB5dMxLmZPdX5HlD7H3kow%2B4gYuoMY2T4Fil53I%3D"/>
+</figure>
+</div>
+<p>In the future, we’re planning to add:</p><ul>
+<li><span class="bold">Voice recognition</span></li>
+<li><span class="bold">AI tutor support</span></li>
+<li><span class="bold">Downloadable content</span></li>
+<li><span class="bold">Messaging between users</span></li>
+<li><span class="bold">Course building tools for creators</span></li>
+</ul><h3 class="page-anchor" id="h:-Our-Revenue-Model">💼 Our Revenue Model</h3><p>To stay transparent and sustainable, here’s how our platform will generate revenue:</p><h4 class="page-anchor" id="h:-For-Learners-Users-"><span class="bold">👨‍🎓 For Learners (Users)</span></h4><h4 class="page-anchor" id="h:-Free-Plan-Users-can-access-limited-content-free-courses-with-ads-and-time-restrictions-">
+<span class="bold">Free Plan</span>: Users can access limited content (free courses with ads and time restrictions).</h4><h4 class="page-anchor" id="h:-Premium-Plan-For-just-10-month-users-can-enjoy-">
+<span class="bold">Premium Plan</span>: For just <span class="bold">$10/month</span>, users can enjoy:</h4><ul>
+<li>Unlimited access to premium courses</li>
+<li>No ads</li>
+<li>Full access to all content by any teacher after purchasing any one of their courses</li>
+<li>Ability to download and learn offline</li>
+</ul><h4 class="page-anchor" id="h:-For-Educators-Course-Creators-">👩‍🏫 <span class="bold">For Educators (Course Creators)</span>
+</h4><p>Teachers and content creators can publish courses on the platform for free.<br/>We take a <span class="bold">20% commission on sales</span> to support platform maintenance and growth.<br/>Early backers who become creators will enjoy <span class="bold">discounted commission rates</span>.</p><h3 class="page-anchor" id="h:-Backer-Rewards">🎁 Backer Rewards</h3><p>We deeply value every person who believes in our mission. As a thank you for supporting us, we’ve prepared exclusive rewards for our backers:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50177669">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/177/669/da907bfb9a61d0cb51d8a0aa66942b4a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753484814&amp;width=680&amp;sig=QuDdQPsDx92zUoUfciIekQmoPuDlcNbMTC5rT9x34m8%3D"/>
+</figure>
+</div>
+<p><span class="bold">🎨 Exclusive Merch</span> – Limited-edition <span class="bold">stickers</span> and <span class="bold">oversized T-shirts</span> with our mascot and branding. Designed with love by our team.</p><p><span class="bold">🚀 Beta Access</span> – Be among the first to use our platform, test features, and help shape its final form. You’ll get <span class="bold">exclusive early access</span> before public launch.</p><p><span class="bold">📣 Course Promotion Credits</span> – Planning to publish your own educational content? We’ll <span class="bold">promote your course</span> to early users and feature it on the front page of our app.</p><p><span class="bold">💸 Creator Boost</span> – If you plan to become a teacher/creator, you’ll receive a <span class="bold">discounted commission rate</span> on your first sales. That means more money in your pocket as a thank-you for being an early supporter.</p><h3 class="page-anchor" id="h:-Our-team">
+<span class="bold">👥 </span>Our team</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50180033">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/180/033/f21df69773c6cf9b2394cf0ff474fc50_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753509143&amp;width=680&amp;sig=g6oPL0f0e3SfYcZ5K1qHl1KCy420Aijl5EgtV4VEXn0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50180035">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/180/035/f4b15e867f1533d68d51085c3ff775da_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753509155&amp;width=680&amp;sig=gtu%2BUZf6zkwDDqOYjMNNrEM%2BKWNVIhA%2FVtI3ifchFHY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50180036">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/180/036/ff3a70c95d6f2fd312f49dee6453c7c1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753509164&amp;width=680&amp;sig=J5oko8kHnAaHS6qTQf19rE5p7k01rKc9ZBdelmHkZnI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50180037">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/180/037/2bcfa668972d4d3d3f130500cdc67a5a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753509170&amp;width=680&amp;sig=rVcRrLZHlzUv57ZZZi1ih%2F8b7XaXv8JrnEI7Fh1Vrek%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50180038">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/180/038/537347c0ce965b3211a634c19f0af028_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753509174&amp;width=680&amp;sig=S%2FR89Ai%2BOiPg%2FmwD1WuMXrHW8GtZc2HvsndYWeGCNt4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50180041">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/180/041/05ffa62e4c0c1e57559437aa3d566d93_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753509182&amp;width=680&amp;sig=k42TC7sH6ngSMbzAhdBUDVg3YKDArnoA5QLfZRUvgr0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Join-Us">🙌 Join Us</h3><p>With your support, we’ll finish development, grow our community, and give learners and teachers everywhere a tool they actually <span class="text-italic">enjoy</span> using.</p><p>Let’s make learning better, together.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50177695">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/177/695/09c40c17e512cd299c7070914f65ec96_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753485125&amp;width=680&amp;sig=H8q5RYwzTbqQG%2Fsawe0H%2B8eYr%2Fymhp2GipyC13OWLIE%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Development Delays
+While we already have a working MVP and a clear roadmap, building a polished, scalable educational platform is complex. Technical setbacks, bug fixes, or integration issues may slow us down.
+How we’ll handle it: We’ve assembled a skilled team and work in agile sprints. We’ll keep our backers updated on milestones, and if any delays happen, we’ll communicate them clearly.
+
+Scaling the Team
+As we grow, we may need to onboard more team members, particularly in development and customer support. Finding the right people can take time.
+How we’ll handle it: We already have strong hiring pipelines and global connections through our distributed team.
+
+Marketing &amp; User Acquisition
+Even the best products can struggle without visibility. There’s always a risk that reaching a critical user base may take longer than expected.
+How we’ll handle it: A portion of your support is going directly into marketing and outreach. We have a solid go-to-market strategy including partnerships, early creator incentives, and platform-native promotion.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18">My project seeks funding for AI technology.</h3><div class="flex flex-auto flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p style="margin-bottom: 1.5rem;">The owners of these works are or will be receiving credit for their work.</p></div><div class="flex flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p style="margin-bottom: 1.5rem;">For the database or source that I will use or will create, the consent of the persons whose works or information incorporated have been obtained.</p></div><div class="flex flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p>There is or will be an opt-in or opt-out for those owners.</p></div></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

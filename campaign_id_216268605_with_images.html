@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CinematicNode: Visual Automation for Creators</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/085/184/f504e922ce1948b698c72eeb73cb4262_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752818436&width=560&sig=14CZ6uhkbOhMMF0rLqRUV2EjKpY6BIUf4dJQvmp%2B4RE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>CinematicNode: Visual Automation for Creators</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A visual automation studio that lets creators build videos with smart nodes—no editing timeline or code needed.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Introducing-CinematicNode">Introducing CinematicNode</h3><p><span class="bold">A visual automation studio for creators who want to make smarter videos—without timelines or code.</span></p><p>CinematicNode is a next-generation desktop tool that lets you build videos using a powerful visual node system. Whether you're generating Shorts, automating overlays, adding subtitles, or integrating AI narration, CinematicNode helps you create content faster and smarter.</p><p>Think of it like a creative command center—each node represents a function, like text generation, audio effects, or stock video search. By connecting them together, you design a video flow that automates everything from start to render.</p><h4 class="page-anchor" id="h:Why-We-re-Building-This">Why We're Building This</h4><p>As developers and creators, we were frustrated with how slow, clunky, and repetitive most video editing workflows are. We wanted something that felt like a mix between a video editor, an automation tool, and a creative playground.</p><p>So we started prototyping CinematicNode. What began as a tool for ourselves quickly turned into something we realized others would want too—especially creators working with AI, storytelling, social content, or automation pipelines.</p><h4 class="page-anchor" id="h:The-Problem-We-re-Solving">The Problem We’re Solving</h4><p>AI tools have made it easier than ever to generate audio, video, and text—but consistency is still a huge problem. Most creators are stitching tools together manually, experimenting constantly, and getting different results every time. There's no clear <span class="text-italic">workflow</span>—just a patchwork of prompts, renders, and hope.</p><p><span class="text-italic">CinematicNode changes that.</span><br/><br/>It brings structure to creativity by letting you design repeatable, visual workflows that combine powerful tools—like AI narration, video overlays, summaries, stock footage, and audio effects—into a system that works the same way, every time.</p><p>You’re not just clicking “generate”—you’re designing a creative pipeline. That means faster output, fewer mistakes, and better results for things like:</p><ul>
+<li>Automated Shorts production</li>
+<li>Branded storytelling formats</li>
+<li>AI-assisted video creation</li>
+<li>Educational and marketing content</li>
+<li>Social media pipelines</li>
+</ul><p>Our goal is to make creativity <span class="text-italic">scalable</span> without sacrificing quality or originality.</p><h4 class="page-anchor" id="h:What-Your-Support-Will-Help-Us-Do">What Your Support Will Help Us Do</h4><p>We’ve already built a working alpha, and now we’re raising funds to:</p><ul>
+<li>Polish the UX and node system</li>
+<li>Expand support for additional AI features</li>
+<li>Package it with starter templates and tutorial flows</li>
+<li>Deliver early builds to backers across Windows</li>
+<li>Grow the creator community around modular, smart video workflows</li>
+<li>Pay for Licensing</li>
+</ul><h4 class="page-anchor" id="h:Who-We-Are">Who We Are</h4><p>We're a small but experienced dev team with backgrounds in software development, game tools, and AI integration. We've built commercial-grade software used in production and believe strongly in building tools that are empowering, not overwhelming.</p><h4 class="page-anchor" id="h:How-You-Can-Help">How You Can Help</h4><p>Support this Kickstarter to get early access, give us feedback, and help shape a new way of creating video. Whether you're a YouTuber, indie dev, storyteller, or automation nerd—CinematicNode is built for you.</p><h3 class="page-anchor" id="h:Avatar-Lead-Demo">Avatar Lead Demo</h3>
+<h3 class="page-anchor" id="h:Proof-of-Concept">Proof of Concept</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085329">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/329/34e31fbd6d4565eb0232271e703670ca_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752819997&amp;width=680&amp;sig=62NfRxPHAyEhDoxNpI8p0R39m668%2Bz%2FdRxrSUGJDuiU%3D"/>
+</figure>
+</div>
+<p>Before launching this campaign, we ran a month-long test using an early build of CinematicNode to generate AI-assisted short-form video content for a new YouTube channel called <span class="bold">Coconut Arrow Reddit</span>.</p><p>We automated the workflow for generating Reddit story-style videos — using nodes to:</p><ul>
+<li>Pull text prompts</li>
+<li>Summarize content</li>
+<li>Generate AI voiceovers</li>
+<li>Add overlays and visuals</li>
+<li>Compile and render multiple Shorts daily</li>
+</ul><h4 class="page-anchor" id="h:The-Results">The Results</h4><p><span class="bold">99,561 total views</span></p><p><span class="bold">414+ hours of watch time</span></p><p><span class="bold">Over 30 new subscribers</span></p><p>Videos had <span class="bold">0 manual editing</span> after node setup</p><p>Entire process was scalable and repeatable</p><p>Even with minimal promotion, the automated system consistently produced results. These outcomes validated not only the technical feasibility of CinematicNode, but also its practical value for solo creators and micro-studios looking to generate consistent content at scale.</p><p>We’re excited to build on this momentum—and your support will help us expand this into a fully-featured tool that’s polished, stable, and ready for creative production.</p><h3 class="page-anchor" id="h:Examples">Examples</h3><h4 class="page-anchor" id="h:Reaction-with-Muting-Pausing-and-Avatar">Reaction with Muting, Pausing, and Avatar</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="This node graph takes a base video and enriches it using AI-generated voiceover, pause and mute placements, and overlays — ultimately rendering a complete, edited video with consistent styling and structure." data-id="50087595">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/087/595/d9383872c69c5c97f32b7506107cacfa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752835712&amp;width=680&amp;sig=rhTlgwZBXJYRdbD8PtTPM4fOLSy5m34pchjmVga0r9A%3D" src="https://i.kickstarter.com/assets/050/087/595/d9383872c69c5c97f32b7506107cacfa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752835712&amp;width=680&amp;sig=rhTlgwZBXJYRdbD8PtTPM4fOLSy5m34pchjmVga0r9A%3D"/>
+<figcaption class="px2">This node graph takes a base video and enriches it using AI-generated voiceover, pause and mute placements, and overlays — ultimately rendering a complete, edited video with consistent styling and structure.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:The-Plan">The Plan</h4><p>1. <span class="bold">Input &amp; Extraction:</span></p><ul>
+<li>
+<span class="bold">File Loader</span><br/>Loads the base MP4 file.</li>
+<li>
+<span class="bold">Extract Audio from Video</span><br/>Separates the original MP3 track for further processing.</li>
+<li>
+<span class="bold">Extract Script with Timestamps</span><br/>Pulls out spoken dialogue + timestamps from the original video for subtitle and pause alignment.</li>
+</ul><p>2. <span class="bold">AI Text Generation:</span></p><ul>
+<li>
+<span class="bold">String Node</span> <br/>eg "<span class="text-italic">Your given a timestamp script, I need you to convert it into the following format. The script should not change.</span>"<br/>Supplies a prompt or setup for the LLM.</li>
+<li>
+<span class="bold">String Combiner</span><br/>Combines the custom prompt with another source (likely user-defined or video metadata).</li>
+<li>
+<span class="bold">LLM Node</span><br/>Uses ChatGPT/GPT4 to produce a new response — either narration or commentary.</li>
+</ul><p>3. <span class="bold">Voice &amp; Subtitle Generation:</span></p><ul>
+<li>
+<span class="bold">OpenAI Voice Generator</span><br/>Takes the LLM output and generates AI speech.</li>
+<li>
+<span class="bold">MP3 to WAV Converter</span><br/>Converts the MP3 to WAV format for better sync with Rhubarb.</li>
+<li>
+<span class="bold">Rhubarb Lip Sync</span><br/>Generates .JSON mouth-cue timing data for the avatar renderer.</li>
+<li>
+<span class="bold">OpenAI SRT Generator</span><br/>Creates SRT subtitle files from the audio — optionally fed into overlay node.</li>
+</ul><p>4. <span class="bold">Rendering Visual Layers:</span></p><ul>
+<li>
+<span class="bold">Avatar Renderer</span><br/>Renders a character (e.g. talking avatar) with the lip sync and background color.</li>
+<li>
+<span class="bold">Color Node</span><br/>Defines background color for avatar video (#FF18FF00).</li>
+</ul><p>5. <span class="bold">Timing &amp; Mutes:</span></p><ul>
+<li>
+<span class="bold">Video Pauses Extractor</span><br/>Finds natural pauses in the original audio based on LLM cue.</li>
+<li>
+<span class="bold">Video Mutes Extractor</span><br/>Finds where to mute original audio based on LLM cue or silence.</li>
+<li>
+<span class="bold">Video Muter</span><br/>Applies mutes at defined timestamps.</li>
+<li>
+<span class="bold">Insert Pauses into Video</span><br/>Adds delays where needed (usually for syncing voiceover or pacing AI narration).</li>
+</ul><p>6. <span class="bold">Final Assembly:</span></p><ul>
+<li>
+<span class="bold">Object Modifier</span><br/>Adjusts the position/animation settings for overlays.</li>
+<li>
+<span class="bold">Overlay Video on Video</span><br/>Places the avatar or other layers onto the background video.</li>
+<li>
+<span class="bold">Combine Video, Audio, ASS</span><br/>Final composition step — merges video with MP3 voice and ASS (subtitle overlay).</li>
+<li>
+<span class="bold">Save File</span><br/>Outputs the final rendered MP4 to disk with filename set in the UI.</li>
+</ul><h4 class="page-anchor" id="h:The-Results">The Results</h4>
+<h4 class="page-anchor" id="h:Reddit-Reading-Story"><span class="bold">Reddit Reading Story</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="This flow is designed to take a text input, generate a voiceover and captioned script, find relevant stock video (via keyword extraction), and then merge the result into a finalized MP4 with synchronized audio and subtitle overlay — all automatically." data-id="50095089">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/095/089/ce10838d9e4b3128e90ccc13c4211b9a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752890753&amp;width=680&amp;sig=QalE9tmadz8wz2h3VTAxoRnFjx%2FN%2BZ2iZ6UO%2FTxPcxw%3D" src="https://i.kickstarter.com/assets/050/095/089/ce10838d9e4b3128e90ccc13c4211b9a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752890753&amp;width=680&amp;sig=QalE9tmadz8wz2h3VTAxoRnFjx%2FN%2BZ2iZ6UO%2FTxPcxw%3D"/>
+<figcaption class="px2">This flow is designed to take a text input, generate a voiceover and captioned script, find relevant stock video (via keyword extraction), and then merge the result into a finalized MP4 with synchronized audio and subtitle overlay — all automatically.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:The-Plan">The Plan</h4><p>1. <span class="bold">Input &amp; Prompt Setup</span></p><ul>
+<li>
+<span class="bold">String</span><br/>Provides a custom text input like a Reddit story or user prompt.<br/><span class="text-italic">E.g.,</span> "<span class="text-italic">Write a fictional scary story in the style of a Reddit user posting on r/nosleep. The story should feel personal and realistic, written in first person, and gradually build suspense. Do not include a title, subreddit reference, TLDR, or any comment-style text—just the story itself. Keep the tone casual but increasingly unsettling. Include eerie or unexplained events, and end with a creepy or ambiguous twist. The story should be around 500–700 words.</span>"</li>
+<li>
+<span class="bold">LLM (Top Left)</span><br/>Converts the prompt into a formatted story, script, or summary using ChatGPT.<br/>Output: <span class="bold">Response text</span> → sent to voice and caption generator</li>
+</ul><p>2. <span class="bold">Voice &amp; Caption Generation</span></p><ul>
+<li>
+<span class="bold">OpenAI Voice Generator</span><br/>Converts the LLM response into an <span class="bold">MP3 audio voiceover</span>.</li>
+<li>
+<span class="bold">OpenAI SRT Generator</span><br/>Converts the MP3 into subtitle-format SRT based on the voice timing.</li>
+<li>
+<span class="bold">MP3 Info</span><br/>Extracts duration, bitrate, and file size of the audio — used for syncing or overlay calculations.</li>
+</ul><p>3. <span class="bold">Video Content Automation</span></p><ul>
+<li>
+<span class="bold">Time Video Keywords Generator</span><br/>Takes the SRT file and pulls out timestamped <span class="bold">keywords</span> to guide video searches.<br/><span class="text-italic">(Great for aligning visuals to voice pacing.)</span>
+</li>
+<li>
+<span class="bold">LLM (Right)</span><br/>Optional second LLM pass to enhance or reformat keyword prompt.<br/>Outputs timestamped keywords or refined search phrases.</li>
+<li>
+<span class="bold">Pexels Search Settings</span><br/>Allows customization of the video search:</li>
+<li>
+<span class="bold">Pexels Downloader</span><br/>Fetches relevant stock clips based on the keywords + settings.<br/>Returns MP4 files</li>
+</ul><p>4. <span class="bold">Video Assembly</span></p><ul>
+<li>
+<span class="bold">Merge Videos</span><br/>Combines multiple stock clips into a single background MP4.</li>
+<li>
+<span class="bold">ASS Generator</span><br/>Converts the SRT captions into a styled <span class="bold">ASS subtitle file</span>.<br/>Takes style from the ASS Style node.</li>
+</ul><p>5. <span class="bold">Final Composition</span></p><ul>
+<li>
+<span class="bold">Combine Video, Audio, ASS</span><br/>Merges:</li>
+<li>The <span class="bold">merged Pexels MP4</span>
+</li>
+<li>The <span class="bold">MP3 voiceover</span>
+</li>
+<li>The <span class="bold">ASS subtitles</span><br/>into a single synchronized MP4 output.</li>
+<li>
+<span class="bold">Save File</span><br/>Writes the final rendered video to a selected folder with a user-defined name.</li>
+</ul><h4 class="page-anchor" id="h:The-Results">The Results</h4>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Like any software project, CinematicNode carries some development risks. The biggest challenges include ensuring cross-platform stability, refining the UI/UX for both beginner and advanced users, and meeting the delivery timeline. Our team has already built a working prototype and has experience shipping production-grade software. However, unexpected bugs, integration issues with third-party services (such as AI providers), or feedback-based changes could delay release.
+
+To mitigate this, we’ve scoped the initial launch to core features with a clear roadmap and fallback milestones. We’ll also maintain transparency with backers through regular updates and early-access builds. Your support will help us polish, test, and deliver the best experience possible.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Our project is not raising funds for AI tools, nor are we using content that was generated by AI. However, we will be using AI by integrating existing AI services (like OpenAI or similar APIs) to automate tasks such as voice generation, summarization, or content structuring. These AI features are used as optional tools within the CinematicNode software to help creators accelerate their workflow.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JIYUAIRING: Smarter Health, Right on Your Finger</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/223/335/b917058d028c7aa438b0fefdc707d03f_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1753839034&width=560&sig=avAR4IBLhvI21QeeO4tmbG3mth25JR2mFUCTWbBaJtw%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>JIYUAIRING: Smarter Health, Right on Your Finger</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">AI Health Consultant | Accurate Data Collection | Smart Sleep Tracking | 15-Day Battery | IP68 Waterproof | 2.4g Lightweight</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 3,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50194732">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/194/732/8e063704d6abde2ff541bdc68b980446_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753668021&amp;width=680&amp;sig=2PCaALYYVMALIf4AUUujI0v28W2HD4C1m3bVptD8%2BS4%3D"/>
+</figure>
+</div>
+<p>This isn’t just a ring—it’s your wearable wellness expert. JIYUAIRING’s titanium‑ceramic build delivers stylish durability and hypoallergenic comfort—wear it around the clock. With up to <span class="bold">15 days of endurance</span> on a single charge, you can forget about daily recharging and focus on what really matters. </p><p>And because it doesn’t just track your biometrics like heart rate, sleep, activity, and stress—it offers <span class="bold">AI-driven health consultations</span>, analyzing your data to provide personalized wellness guidance every day. Imagine waking up to tailored tips, stress-relief prompts, or sleep improvements—all in one smart ring that belongs to your lifestyle. </p><h4 class="page-anchor" id="h:From-the-Founder-A-Hands-On-Look-at-the-JIYUAIRING"><span class="bold">From the Founder: A Hands-On Look at the JIYUAIRING</span></h4>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168121">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Body-Sleep-Activity">Body • Sleep • Activity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/121/3d8cd98abbabbab69a329728a7c6eb99_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753423198&amp;width=680&amp;sig=uaUwIU%2FwUVfaeUew1uVpLHPJXIACOySAbmDIdkk4EM4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50196768">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/196/768/ff4f199ff904d4d7bcb5171d3ceaea4a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753684292&amp;width=680&amp;sig=0%2ByjFqDqn1y5XeUVSiD1%2FY27zAEx7WcmuebI4uVXEzM%3D" src="https://i.kickstarter.com/assets/050/196/768/ff4f199ff904d4d7bcb5171d3ceaea4a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753684292&amp;width=680&amp;sig=0%2ByjFqDqn1y5XeUVSiD1%2FY27zAEx7WcmuebI4uVXEzM%3D"/>
+</figure>
+</div>
+<p>Track your body’s key metrics—heart rate, blood oxygen, stress levels, movement—and monitor sleep patterns and workouts automatically via the AIRING app. JIYUAIRING syncs every <span class="bold">5–60 minutes based on you setup</span>, ensuring your data stays fresh and relevant.Experience continuous wellness feedback that adapts with your lifestyle, empowering you to make healthier choices based on personal, up-to-the-minute biofeedback.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168134">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Precision-PPG-Health-Sensor">Precision PPG Health Sensor</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/134/65fdc104c97741a2c2334cc495b518ab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753423336&amp;width=680&amp;sig=YxXAYu45JuuQjZTQwhKLjNMLVTB0jN7Yt%2BEwQ4CVA0Y%3D"/>
+</figure>
+</div>
+<p>With optimized PPG sensing, JIYUAIRING tracks your body with exceptional precision. It’s crafted to maintain accuracy even in motion, so you get data you can actually rely on—no more guesswork in understanding your well-being.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50207888">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Smart-Sleep-Tracking-">Smart Sleep Tracking </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/207/888/34da233f45ac6845e30b84175d85a161_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753753391&amp;width=680&amp;sig=kL64aelcSQbScie%2FSL%2FcEunweaO%2Fu9cGhHjUeEwubq8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50197658">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/197/658/70a25c641246c54469708fecbdb7ea90_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753690809&amp;width=680&amp;sig=dlriaRTsSB%2BxpNwWwyCPG4SXrYImDqMhkXkJSXAT%2BrE%3D" src="https://i.kickstarter.com/assets/050/197/658/70a25c641246c54469708fecbdb7ea90_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753690809&amp;width=680&amp;sig=dlriaRTsSB%2BxpNwWwyCPG4SXrYImDqMhkXkJSXAT%2BrE%3D"/>
+</figure>
+</div>
+<p>Comfortable and precise, our ring tracks sleep stages—light, deep, REM—more accurately than bulky wrist wearables. Its optimal sensor placement provides detailed nightly insights on heart rate variability and oxygen levels, helping you understand disturbances and improve rest quality. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50196791">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/196/791/5e4736880d9368a19305a76688bca1ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753684556&amp;width=680&amp;sig=gBw10P%2B4Pu%2FZ4DZEAjY%2Bl4bQq%2BmAJfsh2giawo0RqBI%3D" src="https://i.kickstarter.com/assets/050/196/791/5e4736880d9368a19305a76688bca1ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753684556&amp;width=680&amp;sig=gBw10P%2B4Pu%2FZ4DZEAjY%2Bl4bQq%2BmAJfsh2giawo0RqBI%3D"/>
+</figure>
+</div>
+<p>When you’re winding down at night, the AIRING app delivers calming instrumental tracks proven to enhance sleep quality by reducing heart rate and easing nervous tension. With curated melodies designed for relaxation, you’ll fall asleep smoothly—no extra devices needed. It’s sleep therapy built right into the smart ring experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50207900">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-Workout-Logged-Smartly">Your Workout, Logged Smartly</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/207/900/72c52a16fdbe0449aab77bcb65e1cb46_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753753444&amp;width=680&amp;sig=JrLvcOK%2BxxdAf5xaoijigPBOIqDXpsG7tCl6WlR3KNg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210568">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/210/568/6dfb55dad1472723d0b570c3ba338d03_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753772280&amp;width=680&amp;sig=6tCPfYJ3OcE03rGlc4U9qa5mAaxUVuTg7X7nSME7byg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50196795">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/196/795/6e88f86d3c1ddb5af5e91f33946295c4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753684597&amp;width=680&amp;sig=ILQrRn7slQO5GUdrGC3awuL0f%2FEPShwYeuaFZVizo3s%3D" src="https://i.kickstarter.com/assets/050/196/795/6e88f86d3c1ddb5af5e91f33946295c4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753684597&amp;width=680&amp;sig=ILQrRn7slQO5GUdrGC3awuL0f%2FEPShwYeuaFZVizo3s%3D"/>
+</figure>
+</div>
+<p>Effortlessly log your daily movement—steps, calories, active minutes and exercise sessions—right from your ring. Unlike smartwatches, JIYUAIRING stays snug and unobtrusive, letting you track workouts or daily walks seamlessly. Every activity is precisely recorded in the AIRING app for easy review.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168222">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Personalized-AI-Wellness-Coach">Personalized AI Wellness Coach</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/222/8e5b37a7295480c1dfcc2dea0d7b514d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753424159&amp;width=680&amp;sig=S90bpLwYpH%2Bee1%2B2r26jo01YxfcA3253TT%2FdezsMAcg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168363">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/168/363/c54b7203d3f8054bbc5ee3483e8d8f31_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753425052&amp;width=680&amp;sig=hQm0%2B98vTRAaB5ND6PAWzrHi0dedTdfUkzQYNdKwLCg%3D" src="https://i.kickstarter.com/assets/050/168/363/c54b7203d3f8054bbc5ee3483e8d8f31_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753425052&amp;width=680&amp;sig=hQm0%2B98vTRAaB5ND6PAWzrHi0dedTdfUkzQYNdKwLCg%3D"/>
+</figure>
+</div>
+<p>In the app, you can also find a built-in AI health assistant that interprets your biometric data and provides personalized health suggestions. Whether it’s sleep optimization, stress management, or general wellness advice, the AI offers science-backed insights tailored to your condition.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168625">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:15-Day-Battery-Life">15-Day Battery Life</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/625/c26490d7688631a3db9100e0b0a3b34d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753427068&amp;width=680&amp;sig=QTqZ%2BfnB9pwJNPxUUOZgotENVZ5%2BKyIXhKMBEv7s4QE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50195111">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/195/111/26028c75a8d68726a86547c78825fc49_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753670429&amp;width=680&amp;sig=ORjevhBkTsVwzcKjQ2x42n3theSqPABR7oc34lvhjh8%3D"/>
+</figure>
+</div>
+<p>Say goodbye to nightly charging. Our optimized chipset and power-efficient design deliver <span class="bold">up to 15 days of continuous usage</span> on a single charge—far surpassing typical smart ring battery life (usually 6–12 days). Track your health uninterrupted, even during travel or long work weeks.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50196831">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/196/831/ce550c445dd18e252d12b29976397bd8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753684747&amp;width=680&amp;sig=t3V7nv%2Fq3voild0%2F9FUUKRDu1xKipgKxlzjggC%2BA5YE%3D" src="https://i.kickstarter.com/assets/050/196/831/ce550c445dd18e252d12b29976397bd8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753684747&amp;width=680&amp;sig=t3V7nv%2Fq3voild0%2F9FUUKRDu1xKipgKxlzjggC%2BA5YE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168599">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Ultra-Strong-Extra-Light">Ultra Strong, Extra Light</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/599/7434564dc082b4c0959da05c9765b453_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753426849&amp;width=680&amp;sig=WVVFcLcEkWCXC3wzyd%2BFBUeYzwjmogcO6KIeDSWQABQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168603">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/168/603/0780d7c431acf167ba9f2cddb1be8774_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753426879&amp;width=680&amp;sig=%2Fe1VHu2DgwXlZ9%2BEnMUFisuxpTAf8Io9nD5RqF2CZzY%3D" src="https://i.kickstarter.com/assets/050/168/603/0780d7c431acf167ba9f2cddb1be8774_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753426879&amp;width=680&amp;sig=%2Fe1VHu2DgwXlZ9%2BEnMUFisuxpTAf8Io9nD5RqF2CZzY%3D"/>
+</figure>
+</div>
+<p>JIYUAIRING <span class="bold">weighs just 2.4g</span> and disappears on your finger—unlike bulky smartwatches, it adapts to every lifestyle, from a workday to workouts and weekends away. Slip it on, and it syncs effortlessly with you phone. Its sleek, minimalist design means you carry wellness in your pocket anywhere.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210610">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/210/610/4a0e5421dc0a71c60635150a2dddb79e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753772512&amp;width=680&amp;sig=E4deQMxX8sED8DeLLZhtlb18Ngpfi0eTXkCUguUggjk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168597">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:IP68-Water-Sweat-Defense">IP68 Water‑Sweat Defense</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/597/8249ffcc0b8132816d875e6dfab087ee_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753426819&amp;width=680&amp;sig=gbfcE9M%2F%2B94GoHp5ijpA6C0nDxPTk5KuRAQKa%2F8Xdas%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50196618">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/196/618/d707e4a26af3eddf78e74efc625bed09_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753683104&amp;width=680&amp;sig=2RfxfBKp%2F6ffpFKVIKGmusIuFB57KyRImOvMQxJd2XA%3D" src="https://i.kickstarter.com/assets/050/196/618/d707e4a26af3eddf78e74efc625bed09_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753683104&amp;width=680&amp;sig=2RfxfBKp%2F6ffpFKVIKGmusIuFB57KyRImOvMQxJd2XA%3D"/>
+</figure>
+</div>
+<p>Designed with durable titanium and ceramic, JIYUAIRING resists daily wear while maintaining a sleek, lightweight feel. With an IP68 waterproof rating, it's built to withstand sweat, rain, and handwashing—so you can wear it confidently in the shower, at the gym, or even outdoors in unpredictable weather.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168619">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Anytime-Usage-Scenarios">Anytime Usage Scenarios</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/619/656dc9717a5cb97d1a4ed1e8c8170ce0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753427021&amp;width=680&amp;sig=zVv7%2Btet9JgszgQ8pehTwcMzeH4xSBRY8hmaWR84z88%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50196775">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/196/775/55c032f9337b7dcad43b6bced28c3bd5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753684375&amp;width=680&amp;sig=GM3Zj9EMpc%2FNI7he3%2FnHI0atxEeacOOwJ8ggAORy34E%3D"/>
+</figure>
+</div>
+<p>From boardrooms to bedrooms, from morning workouts to late-night wind-downs, JIYUAIRING fits into every part of your day. No need to switch devices—its minimalist design and continuous tracking work wherever you are.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168360">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Perfect-Fit-for-Everyone">Perfect Fit for Everyone</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/360/bb7d4861e9771b51543ed8b3b44a14a6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753424985&amp;width=680&amp;sig=s0HNfNDQABKYFYLurgkpe4slo748YdF41HgFD4xyI4g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168641">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Privacy-First-Design">Privacy‑First Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/641/abd395cf8cf081fb656f974fb60dec76_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753427153&amp;width=680&amp;sig=1wtdoTvEnIQ0Nfl8v67tgE8A2C3A4XYb1%2BBOZEeXDQc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50196816">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/196/816/7f270e7ec66bc94c64b43196bb18547b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753684697&amp;width=680&amp;sig=uTWtX0gCq77OcSCNRjYWe6w1f02alYGg5N9zzj7VCzE%3D"/>
+</figure>
+</div>
+<p>Your personal data is yours alone. JIYUAIRING encrypts and stores all biometric information locally on your device. Nothing is uploaded or shared—no third-party access, no cloud storage. We never track, store or use your health data. Private means truly private.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168180">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/180/0bcc4178b1dc08d0a5d92e7b69bde06a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753423770&amp;width=680&amp;sig=MYITd5ceJzJXHOP%2FFaLKMV0nwInvP9DlvzK3AljRUTA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168183">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/183/8bcf38762e61d678ded8fa8a0ca5fa5a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753423791&amp;width=680&amp;sig=w57QU60Ek%2B8lpAYweVW2wjd6abu%2FL0kfKVFOvcR5GI0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168186">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box">What's in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/186/7d60d6b49a9b2dd75cbee424c97518b4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753423817&amp;width=680&amp;sig=3fGSd5krUWP0NqNRl6dT1IEKmwJLXrHYNMnP8sJv9hM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168187">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/187/828604099c203c5d9e04da6da0958bd5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753423817&amp;width=680&amp;sig=%2Bzv95V9U2gxydQPAAkM7DFhnhFRIP8zhUHysLbabDvY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168172">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Reward">Reward</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/172/e702977c2206805aded9670a81f86979_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753423679&amp;width=680&amp;sig=G4rv2gOXelZBoqHfoSSZI8LSEObL4b7RUwsTbKDwbRk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50255407">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/255/407/aff8b791f9267be6fcaa6015ee24c024_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754038555&amp;width=680&amp;sig=s6NSBJ%2FfmssI4S3%2FnuXYnq5OICuxyiDYVdEnSkKsVeE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210813">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Advantage">Our Advantage</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/210/813/fd4e2e69c470946a9dc4b7b235f56a36_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753773923&amp;width=680&amp;sig=mqZH94OHqbI%2FTNdUWO1PzLG%2FPRByUI6wsr5oho4Tfok%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50210734">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/210/734/0475e1cfbc053837778099dc14eb3046_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753773298&amp;width=680&amp;sig=EOTkk9B6uyNsP1w36nyLI0IqSVFdrNTFVCzI6SXHXAU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168148">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Design-Process">Design Process</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/148/61b32665e6cf5ae3e27db8bb94d373e6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753423484&amp;width=680&amp;sig=EZzBiKdwFuutd4l%2BFsBnK1AilBFju6anHNHimfdnTFU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809376">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/376/8068189ee551907fba751c144638958d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750844563&amp;width=680&amp;sig=xk4S6PwW%2Fo0hkTQb6WPAgle4bCY4CYP4bpzoT5gyAug%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809372">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/372/95ceb3e7f88520fcac0b43859ce85731_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750844552&amp;width=680&amp;sig=M63Q8GLNg%2FqS9PbQbv7u5KD7jRFCDzrl19XGwDI91WU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809459">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/459/c6c0b077c351a6222afd602726d9deaf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750845129&amp;width=680&amp;sig=tHOoc%2FXnZVDAyC62u46k%2Fk%2BCnlqcElIDtUOSbKHz6PI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168162">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Testing-Manufacturing">Testing &amp; Manufacturing</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/162/fc0c325429c571160373a85de2edb98f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753423556&amp;width=680&amp;sig=tzJkholvy90MrMbM5ywQno9HdV1N6Zy%2BNjcAEzpgRRE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809361">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/361/69875657d2535f1cbe9fadac7049a2d0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750844484&amp;width=680&amp;sig=dfW1Q3oerx7%2BvUD1BqbBSnPuK%2FgoayZgVbGqqpkAOIc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49809566">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/809/566/e4cc1d82a0a7a754800e93b34e7998cc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750845714&amp;width=680&amp;sig=Eik3eRxO3OFD8%2FRoEWt%2B2zHiOogDcrVheZP0gLLrd%2Fk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168165">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Us">About Us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/165/0e180947cc74e3b2b3326ac92bad7d93_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753423585&amp;width=680&amp;sig=XNU%2FOPTi%2F3al4zkOWNmaEWgsFz05SAK%2FKaenSk4Jlxk%3D"/>
+</figure>
+</div>
+<p>At JIYUAIRING, we're revolutionizing wearable tech through dual innovation. By embedding cutting-edge sensors and AI algorithms, we make rings smarter – tracking health metrics, enabling contactless payments, and syncing with your digital ecosystem seamlessly. Simultaneously, we craft smarter rings that blend minimalist elegance with ergonomic intelligence, adapting to your lifestyle while becoming a natural extension of your personal style. This is not just jewelry evolution; it's human-device symbiosis reimagined.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168166">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/168/166/18dd94c0d73b5b9bbca0f7cdc28fd851_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753423617&amp;width=680&amp;sig=0%2FeqaQhkoYv9AG7OYO4FBq3sGOBBHltLLA4K2ZDQ6q0%3D" src="https://i.kickstarter.com/assets/050/168/166/18dd94c0d73b5b9bbca0f7cdc28fd851_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753423617&amp;width=680&amp;sig=0%2FeqaQhkoYv9AG7OYO4FBq3sGOBBHltLLA4K2ZDQ6q0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168168">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/168/3531e35430cbf90d4b910a65af2b8592_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753423635&amp;width=680&amp;sig=JyR3nWRRwQkUok3%2FZLBpu5nBIGSA6p1Nq271dtXx5H0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50314135">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/314/135/97fa465dfa1a20ed533f47673233f039_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754444039&amp;width=680&amp;sig=wGncfBJkjEYLD5r%2Fx1HFQwFEV9XWpzZ4O2EnMPxxKLc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50111531">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/111/531/8b819faf1685e3837a3211fe7a10e5da_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753067778&amp;width=680&amp;sig=FPr8adTgrlaAOmpZJI1p04wCotgdL9afVAysqkKo9u0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50111532">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/111/532/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753067778&amp;width=680&amp;sig=77lryg2oyH6qY9MdDdPQSo9Wg2BqWgzhu%2BieJjKNHMk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50111533">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/111/533/f18adea9ecc4029ebba684ea73b30f46_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753067781&amp;width=680&amp;sig=J3QyKOaXxhwZ4oc52yzAs4%2FUkTmGbUE%2Bs3Afi%2BqDiBo%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">While we’ve invested significant time in the development, design, and testing of the JIYUAIRING Smart Ring, a few potential risks remain as we move into mass production and global fulfillment.
+
+First, although our prototype has been thoroughly tested, scaling up manufacturing may bring challenges such as component delays or quality control issues. We’ve partnered with experienced suppliers and factories to minimize these risks and ensure consistent production standards.
+
+Second, software updates and app optimization may require ongoing refinement. Our engineering team is committed to continuously improving performance, stability, and compatibility across different smartphones and operating systems.
+
+Third, unexpected shipping delays or customs-related issues could affect delivery times, especially for international backers. To address this, we’ve carefully planned logistics and will keep backers informed throughout the fulfillment process.
+
+Lastly, as with any wearable technology, user experiences may vary depending on skin tone, finger size, or wearing habits. We will provide detailed usage guidelines and responsive customer support to ensure optimal performance.
+
+We’re confident in our timeline and preparations, but we believe in transparency. Should any delays or issues arise, we promise to communicate openly and work hard to deliver a product that meets or exceeds your expectations.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>The JIYUAIRING Smart Ring integrates AI into the companion app to provide personalized health consultations based on real-time body data. This AI-powered system analyzes metrics such as heart rate, sleep quality, and stress levels to offer users tailored wellness advice.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

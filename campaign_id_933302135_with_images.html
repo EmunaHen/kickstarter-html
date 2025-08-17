@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ESP32-P4-MINI loT development board</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/074/076/94a95bd393d7ce9d0b163988da3794c1_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752748234&width=560&sig=huiz3HHtsV3899jQRAbY8ZG7U%2FH%2BweRyDtJmvXDcxOw%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>ESP32-P4-MINI loT development board</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Compact ESP32-P4 development board with dual-core RISC-V | Open-source | Rich I/O | HMI | Multimedia acceleration Industrial</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 254</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:What-Is-the-ESP32-P4-MINI-">What Is the ESP32-P4-MINI?</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50059832">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/832/92c1cb9436eb5e4beeb5aa0f0842a71b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752662731&amp;width=680&amp;sig=8Ke2DLMitNOTvYl5O1MXvUkfZlnfD%2F9RfRTxvCKXHlA%3D"/>
+</figure>
+</div>
+<span></span><p><span class="bold">👉 Click to join our Discord group</span></p><h3 class="page-anchor" id="h:Why-Did-We-Create-the-ESP32-P4-MINI-">Why Did We Create the ESP32-P4-MINI?</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50059822">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/822/0184756e3716f190c27c402410a77ca6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752662665&amp;width=680&amp;sig=hQzZf93kSy7phFan5E1ualEQuG1A1FJTEqxKmSzqb90%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Why-Choose-ESP32-P4-MINI-">Why Choose ESP32-P4-MINI?</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50059871">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/871/7247d3efacf781ba6618bbafd4fc37cf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752662949&amp;width=680&amp;sig=IRhm4Skt%2FnGaW7G4imDBD%2Begt7WXHE%2FBu1eNwdjXOOE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Main-Parameters">Main Parameters</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50073637">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/073/637/597e2f1dff7383bb7f5b4fb04b6afe8d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752746026&amp;width=680&amp;sig=UfiGeVF%2BG%2FsSHDyuBO%2B7uHPutZ5AD7JOU26ukTL5mKU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:High-performance-core-system">High-performance core system</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069725">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/725/c623425ea525fae94d2eb388d5e812e2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752716702&amp;width=680&amp;sig=SonL2P2wu5%2F5keQnujQFVXzy1Px35sRoesd5z5p%2B%2Brc%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Low-power-core-system">Low-power core system</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069727">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/727/3831e5443e5a34af8576a6a6982d12af_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752716715&amp;width=680&amp;sig=S1EYl5RE3bzeca%2F1bhjw4pguBqXvNqGKaKYfqb9wM4E%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:HD-Camera-lmage-Processing">HD Camera &amp; lmage Processing</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069762">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/762/d039445b47093bf9679127b9c8f28f57_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752716926&amp;width=680&amp;sig=BuHYlXIwUlaCHtZexTEx%2FhQggSg9%2Fqfw%2Fm%2Fhjn7L9Uw%3D"/>
+</figure>
+</div>
+<p>High-resolution display &amp; human-computer interaction</p><h4 class="page-anchor" id="h:Rich-Programmable-GPIO">Rich Programmable GPIO</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069778">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/778/a1a33f5b5bb05d59953d6b16b512fc42_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752717050&amp;width=680&amp;sig=AGw1gT4o6pzwQnyb6v3zW3s2%2BM86i4zdgGCvTHvndYU%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Expand-ability"><span class="bold">Expand ability</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069786">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/786/8af5aa8a2c19364cf89b2927dfb458ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752717085&amp;width=680&amp;sig=HM4fYqqqgL6RtX1C4cpW54ogdkVmUf0%2BLeNpLAic100%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Specifications">Specifications</h3><h4 class="page-anchor" id="h:Size"><span class="bold">Size</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069796">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/796/0f71008ee2739f2d8a8fa4e54c0aac81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752717167&amp;width=680&amp;sig=q10qLAYzpdcIaN9aHuy3hhKAOxEpLjw2%2Fgmj%2B%2BY%2Bxyc%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Appearance"><span class="bold">Appearance</span></h4><p>The agile curves outline a flowing rhythm, and the avant-garde design interprets a modern fashion style.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069814">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/814/7ad9acdf2b8abe9799878e54be52a017_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752717266&amp;width=680&amp;sig=GIYGVLsw0cRll3bCBPOWff%2BBIIpyoWLHAwug8cj15b4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069802">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/802/bb09f47eff9bbc2cdb6e901469f23feb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752717200&amp;width=680&amp;sig=hMepykwiuYKEZactB6N%2Bc%2F9ifxr27z26Cb1UxjUxTkY%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Unboxing-and-Set-Up-Guide"><span class="bold">Unboxing and Set Up Guide</span></h4>
+<p><span class="bold">ESP32-P4-MINI + Smart Home Control LCD Demo</span></p>
+<h4 class="page-anchor" id="h:Product-schematic-diagram"><span class="bold">Product schematic diagram</span></h4><p>If you need clear files, please download from our <span class="bold">GitHub</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069857">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/857/4ccdd4db467478b02be633015f6acbd8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752717470&amp;width=680&amp;sig=TShSgXsz9IwrAGjy8U1nefvRsosWQEZ%2FqzAkbYNIock%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Our-Timeline">Our Timeline</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50073652">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/073/652/70fc29cf5b15089a209fc19aa2a816fe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752746090&amp;width=680&amp;sig=FQSErlzyUUQs6OI5S7WOLu6FFNL2UVz4sAM2a2PRpaA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:About-Wireless-tag">About Wireless-tag</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069874">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/874/ee2f822aa4a2408b0eb0db1bae3bac64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752717566&amp;width=680&amp;sig=F%2B1q4eoMUokBdTiJO2vKTy0c%2BaK41Vb7WyxBLbsMqWw%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Our-Team"><span class="bold">Our Team</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069879">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/879/ea79f97be9c69f1e5d99e864287332bf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752717601&amp;width=680&amp;sig=wnJlZ20XqdufbvufFLiwHyhfXi6Lw4VGJZA%2BsapNgs8%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Our-Factory"><span class="bold">Our Factory</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069883">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/883/cf7d497166c45ae547fb4af7ede356a8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752717628&amp;width=680&amp;sig=2wgOgBTIojoU7NnvCl0275wpGdhNhXqb3Mj9Sf%2BvURw%3D"/>
+</figure>
+</div>
+<ul>
+<li>13+ years experience in IoT industry</li>
+<li>100+ professional engineers</li>
+<li>4+ factories</li>
+<li>Served 5000+ companies worldwide</li>
+</ul><h3 class="page-anchor" id="h:Related-Documents-and-Code">Related Documents and Code</h3><p>Please download all relevant documents from GitHub if you need them. <img class="image" data-id="50069894" src="https://i.kickstarter.com/assets/050/069/894/dd67fb299cd15ff829ee20ada8d799b0_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752717669&amp;width=900&amp;sig=bph4Dhzfd1ISz0HPl1CmBbgJgYkRF2GQRkUmNt4S0n0%3D"/></p><p><span>ESP32-P4-MINI- Development Board Guide_V1.0</span><br/><span>ESP32-P4-MINI-Schematic Diagram_V1.0</span><br/><span>ESP32-P4-MINI-SDK</span></p><p><span class="bold">Early Bird Special Offer</span><br/>Unlock the power of ESP32-P4 at an early bird price—build smarter, faster, and more creatively than ever!</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Our team collaborates closely with designers and manufacturers to stay ahead of the curve and keep our timeline on track.
+While there are many steps and potential challenges throughout the campaign, we’re committed to minimizing any risks related to planning, production, and shipping.
+If any issues arise along the way, we’ll make sure to keep you informed every step of the journey.
+Our goal is to maintain complete transparency, addressing any obstacles in a way that ensures our backers feel satisfied and proud to support us.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixelax Robot — Your Emotive Desktop Pal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/105/236/0fa71578b4507e1e9814030a1597bb59_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1753012092&width=560&sig=SFOVHMOZoaAe%2FmJoLjt0tbFgLE6OeAKt0K5bCdQuFkw%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Pixelax Robot — Your Emotive Desktop Pal</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Touch‑reactive desktop buddy that cheers you on, calms you down, and keeps you on track.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 573</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105580">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Introduction-to-Pixelax">Introduction to Pixelax</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/580/188d28dd1d2f952a4ea7b4ce1a7436ad_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753016691&amp;width=680&amp;sig=zpg2JxadJ7%2F2M64SYK%2FEMV5cTixORPiCIAsmzCicwow%3D"/>
+</figure>
+</div>
+<ul><li>Have you ever wished for a desktop companion while working alone — something that cheers you on and offers a warm reaction whenever you need a break or feel stuck?</li></ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130183">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/183/7dd2d9db0a22b194485b72a8521d3694_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184218&amp;width=680&amp;sig=M%2BV%2B8irFmx1La9qJ3jNfDo0bo0g1%2FmoK%2BNdL0eqUU%2B4%3D" src="https://i.kickstarter.com/assets/050/130/183/7dd2d9db0a22b194485b72a8521d3694_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184218&amp;width=680&amp;sig=M%2BV%2B8irFmx1La9qJ3jNfDo0bo0g1%2FmoK%2BNdL0eqUU%2B4%3D"/>
+</figure>
+</div>
+<ul><li>Had been corporate employees ourselves, we craved a way to banish that feeling. That’s how the Pixelax Robot came to life — a desktop companion robot that can emotionally interact with you, serve as a stress‑relief toy, and act as an efficiency tool.</li></ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130184">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/184/920ad502590edaca9a07ff4a9b515c7e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184221&amp;width=680&amp;sig=EHEx%2FyRCRFnjkO1LIBCURgxYByzrmg9NWH9zhej%2BXWY%3D" src="https://i.kickstarter.com/assets/050/130/184/920ad502590edaca9a07ff4a9b515c7e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184221&amp;width=680&amp;sig=EHEx%2FyRCRFnjkO1LIBCURgxYByzrmg9NWH9zhej%2BXWY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130186">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/186/33017f4d3940581ef5d25426f5249ccb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184227&amp;width=680&amp;sig=7QiNtJF%2FJunGkhf0zJISt%2BZsZzySB7%2B9jPcp1Q07jKY%3D" src="https://i.kickstarter.com/assets/050/130/186/33017f4d3940581ef5d25426f5249ccb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184227&amp;width=680&amp;sig=7QiNtJF%2FJunGkhf0zJISt%2BZsZzySB7%2B9jPcp1Q07jKY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105592">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-Can-It-Do">What Can It Do</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/592/448089abc06b86d7a35a95d4158ecb0c_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753016806&amp;width=680&amp;sig=7ysH3IgzD0EXrk1EA9EvIudya%2BdUfRLPSIy1ttsfs14%3D"/>
+</figure>
+</div>
+<p><span class="bold">Functionality</span></p>
+<ul>
+<li>Seamlessly blends <span class="bold">emotive companionship</span>, <span class="bold">stress‑relief toy</span>, <span class="bold">focus‑boosting tool</span> and <span class="bold">multimedia control</span> into one intuitive desktop robot.</li>
+<li>Responds to your touch with various <span class="bold">animated expressions</span> and <span class="bold">ASMR</span>‑style feedback to keep you engaged and emotionally balanced.</li>
+<li>Doubles as a <span class="bold">Pomodoro timer</span> and universal <span class="bold">media controller</span> via Bluetooth, giving you seamless productivity and entertainment control at your fingertips.</li>
+</ul>
+<div class="image-uploaded gallery old-record-id-NgA2dCmy3owuUxxGs4TcxsI7ntS"><img/></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130346">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/130/346/ea73cafbf09399290d2fc0a38dd885e0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753185326&amp;width=680&amp;sig=v%2BDFBVEWmrHnYmPsGvWBtC77FM05y7JDiT3YgCNxses%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105611">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Emotive-Interaction">Emotive Interaction</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/611/4c12fcaf6a0601de1c213cc6e0b8db65_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753016958&amp;width=680&amp;sig=rQ8huBR%2BInTwSMw0QloSPA88xkqlUayNazf1uUSPaoo%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">Smart Facial Expression: </span>Lightly tap the robot to switch through finely crafted <span class="bold">facial animations</span> — from joy and surprise to crying. Each expression is optimized to convey genuine emotion and strengthen your emotional connection.</li>
+<li>It sometimes gazes around with wide-eyed curiosity, eagerly taking in every detail of its surroundings.</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130198">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/198/2de524a268e9025e1d31f9cd4f46c081_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184295&amp;width=680&amp;sig=3nxnPekqVeExshioN%2By%2FpzxiBhYafW3Vre%2B1YhHQBRA%3D" src="https://i.kickstarter.com/assets/050/130/198/2de524a268e9025e1d31f9cd4f46c081_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184295&amp;width=680&amp;sig=3nxnPekqVeExshioN%2By%2FpzxiBhYafW3Vre%2B1YhHQBRA%3D"/>
+</figure>
+</div>
+<ul><li>If it goes too long without your attention, it will feel hurt and withdrawn — but a few gentle pets will lift its spirits, and it’ll break into a happy.<img/>
+</li></ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130193">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/193/d826288fdd24bf66dc10ecb226104b5c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184278&amp;width=680&amp;sig=sE3fsan45It5%2Fo%2B7sttI2yCegTA64AxKSw45FBwnyyo%3D" src="https://i.kickstarter.com/assets/050/130/193/d826288fdd24bf66dc10ecb226104b5c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184278&amp;width=680&amp;sig=sE3fsan45It5%2Fo%2B7sttI2yCegTA64AxKSw45FBwnyyo%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-WP6SdWtJqoWVZGx2umccG2honVh"><span class="bold">Additional Emoji</span></div>
+<ul>
+<li>
+<span class="bold">Hourglass: </span>When Pixelax senses that you’re away, it’ll flicker an hourglass animation and start playing a little game to keep itself entertained — because even your purr‑fect pixel pal needs something to do!</li>
+<li>
+<span class="bold">Laughing: </span>Tap its head just right and Pixelax will break into a joyous “ha‑ha” animation, complete with animated eyes that squeeze shut in laughter — to make you smile back.</li>
+<li>
+<span class="bold">Love: </span>Show it some love and Pixelax will light up a love heart on its face, pulsing gently to let you know it truly appreciates your company.</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130200">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/200/bea513257607fb760d96799ee130ab93_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184303&amp;width=680&amp;sig=dPbDNQqEHtYJpKgv177xVkI9lG74eu5EWmg0F0U5N%2Fg%3D" src="https://i.kickstarter.com/assets/050/130/200/bea513257607fb760d96799ee130ab93_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184303&amp;width=680&amp;sig=dPbDNQqEHtYJpKgv177xVkI9lG74eu5EWmg0F0U5N%2Fg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105633">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stress-Relief-Toy">Stress-Relief Toy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/633/b1fe7f27487354915228e942a8ce7aa6_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753017050&amp;width=680&amp;sig=KyApu23xqk%2BOrja2QctPWKo1m35AUqh6BvPYK5RDxRY%3D"/>
+</figure>
+</div>
+<div><span class="bold">Your Creative Stress‑Relief Sidekick</span></div>
+<div><span class="bold">Digital “Wooden Fish” Mode</span></div>
+<ul><li>The robot transforms into your digital “wooden fish” stress‑relief toy—tap it to trigger soothing ASMR sound effects. A calming ritual that helps you reset during busy workdays</li></ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130203">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/203/6ac53fe0042435310ec04ac28e9df546_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184327&amp;width=680&amp;sig=ytBtP%2BbQSsVouPMdfMASvnPpfk3W%2FYrfmDeO%2FwjkOYQ%3D" src="https://i.kickstarter.com/assets/050/130/203/6ac53fe0042435310ec04ac28e9df546_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184327&amp;width=680&amp;sig=ytBtP%2BbQSsVouPMdfMASvnPpfk3W%2FYrfmDeO%2FwjkOYQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105643">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Productivity-Booster">Productivity Booster</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/643/94daa539d40bb2ff333e26f004d040aa_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753017113&amp;width=680&amp;sig=pXi5Oefuk3TA%2F2MQOxlwRDBIgNiy8jQcAgVY%2BXwOQ4I%3D"/>
+</figure>
+</div>
+<div><span class="bold">Pomodoro Timer Mode</span></div>
+<ul><li>Your productivity booster — helps you stay focused with timed work sessions and short breaks.</li></ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130204">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/204/2db16ae56d64c963c74849ee1a8a2e13_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184333&amp;width=680&amp;sig=ShRE20kd9wUrgvvWNrJ0%2BaVac1zVRyzld8gPMXkX0R0%3D" src="https://i.kickstarter.com/assets/050/130/204/2db16ae56d64c963c74849ee1a8a2e13_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184333&amp;width=680&amp;sig=ShRE20kd9wUrgvvWNrJ0%2BaVac1zVRyzld8gPMXkX0R0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105646">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Multimedia-Control">Multimedia Control</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/646/70ddb16058621ee0820535f7c09cf412_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753017126&amp;width=680&amp;sig=X4EJkLCp2Od%2FI2AP6f47wsWw%2BVXm9WUHjX1zcnkJppA%3D"/>
+</figure>
+</div>
+<div><span class="bold">Universal Media Touch‑Control Hub</span></div>
+<ul>
+<li>
+<span class="bold">Head/Side Touch‑Pad:</span> Touch to play/pause, fast‑forward/rewind a video or music. Smooth, stepless media control with precise feedback.</li>
+<li>
+<span class="bold">Bluetooth 5.0:</span> Ultra‑low latency connection to Windows, Android, iOS or macOS — reach up to 10m.</li>
+<li>Whether you’re streaming your favorite show or leading a presentation, this robot puts effortless control at your fingertips.</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130205">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/205/62ea7798594f07863b52e002b8e9ae85_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184334&amp;width=680&amp;sig=N7DIXgX5%2BPzFwm3Iistl7SAluYcYix%2FBNK3nmK5fIFc%3D" src="https://i.kickstarter.com/assets/050/130/205/62ea7798594f07863b52e002b8e9ae85_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184334&amp;width=680&amp;sig=N7DIXgX5%2BPzFwm3Iistl7SAluYcYix%2FBNK3nmK5fIFc%3D"/>
+</figure>
+</div>
+<div class="image-uploaded gallery old-record-id-LtSfdSLxOoMusKx00otcHGn1n4c"><img/></div>
+<div><span class="bold">Use Cases</span></div>
+<div class="ace-line old-record-id-HiM3dopn5oJJFHxAAX9cr2KYnub"><div><div>
+<ul><li>
+<span class="bold">Bedroom: </span>Beside your pillow, it lets you play, pause, or skip tracks with a tap — your personal bedside control hub for the perfect sleep soundtrack.</li></ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130208">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/208/c781754ca28a169d7164bf73cae2d4b8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184348&amp;width=680&amp;sig=uye5c7QVvCkhvIwuASDImQ7BhZEnJIwjho7C9pElxj0%3D" src="https://i.kickstarter.com/assets/050/130/208/c781754ca28a169d7164bf73cae2d4b8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184348&amp;width=680&amp;sig=uye5c7QVvCkhvIwuASDImQ7BhZEnJIwjho7C9pElxj0%3D"/>
+</figure>
+</div>
+<ul><li>
+<span class="bold">Driving Companion: </span>Resting on your dash, it offers silent presence to ward off loneliness on long drives.</li></ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130212">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/212/dd277b38c839d29a45af7e593cfce0de_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184360&amp;width=680&amp;sig=VC2mT658c%2B%2Fin%2Fs7LdXwhx6MdUzy3NX6J39BI%2FOGZ8Q%3D" src="https://i.kickstarter.com/assets/050/130/212/dd277b38c839d29a45af7e593cfce0de_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753184360&amp;width=680&amp;sig=VC2mT658c%2B%2Fin%2Fs7LdXwhx6MdUzy3NX6J39BI%2FOGZ8Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105658">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/658/0054ec22f415798ac59065a96665ea1b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753017225&amp;width=680&amp;sig=ISPGlRA8ocQyKTYVJA7R5nF%2FACja8X9nlDaAv51bHFc%3D"/>
+</figure>
+</div>
+<ul><li>
+<span class="bold">Work Buddy: </span>On your desk, it senses your emotions and responds with comforting animations, turning dull work hours into an engaging, interactive experience.</li></ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130332">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/332/0d866092e6e8daa79649917107d93775_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753185246&amp;width=680&amp;sig=ltu%2FlNCVkdoebujDOXyOsgyOOyweyH1zo%2FwLflULOGY%3D" src="https://i.kickstarter.com/assets/050/130/332/0d866092e6e8daa79649917107d93775_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753185246&amp;width=680&amp;sig=ltu%2FlNCVkdoebujDOXyOsgyOOyweyH1zo%2FwLflULOGY%3D"/>
+</figure>
+</div>
+</div></div></div>
+<div class="template asset" contenteditable="false" data-alt-text="Specs &amp; Materials" data-caption="" data-id="50105663">
+<figure class="image">
+<img alt="Specs &amp; Materials" class="fit" src="https://i.kickstarter.com/assets/050/105/663/ef33d79d13480a7008bf25e04086d76a_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753017257&amp;width=680&amp;sig=wMulo6G8zOJpaBKAS4xdCa2rpDNnR2fCV%2BDr89LN4W4%3D"/>
+</figure>
+</div>
+<div><ul><li>To materialize our vision, each element underwent meticulous engineering—transforming emotional resonance into tangible form. Discover how purposeful design choices breathe life into Pixelax’s interactive essence below.</li></ul></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130363">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/130/363/5ed16e7ed3948d8a922a52d7ad9b73e6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753185438&amp;width=680&amp;sig=dE4pu5YHq9Z7IQ7O07NJ6Sqj51oiiD5dkGO51K2%2BIgg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106032">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/032/adc43bd28096a18ceaa1d63aaadfcdfc_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753020826&amp;width=680&amp;sig=FcQgmAF9ls0ymxWXbX9PGzSyUm3M2ec06hezW2RE9as%3D"/>
+</figure>
+</div>
+<div><ul><li>Reward tiers unlocked! Grab Super Early Bird from US$53, <span class="bold">save up to 40% </span>including. Limited availability!</li></ul></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130353">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/130/353/cd8cdfd8869996e3cebd1b09dffeaf91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753185366&amp;width=680&amp;sig=Azcvz0fb3FSVLzUwXkFhw%2Fve4IdmSoGhFVARQoB%2FOkc%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130354">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/130/354/7b25e8c7440c06c7c9f4bbe51231bdb2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753185374&amp;width=680&amp;sig=rodzlFjCx36jEzazQrRHZSpJVlIa4ZFhH%2FPgtYYdFWg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105677">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goals">Stretch Goals</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/677/a31577928a8135f8dffcff4133ff3850_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753017314&amp;width=680&amp;sig=h1d082YDH6m4WFjoq8f9Px%2BniMrmUeu2wNeujMZZJqc%3D"/>
+</figure>
+</div>
+</div>
+<div><ul><li>Help us unlock amazing Stretch Goals! Reach US$10K for the mini hat accessory, and achieve 100K to bring even more new designs — <span class="bold">exciting rewards at every tier!</span>
+</li></ul></div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130357">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/357/757c6b90116cab7b679247265ce85e7a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753185407&amp;width=680&amp;sig=z8wIVj4pVW1ojAK5W3yqxw02YeSrBeikc7nmqIPxdLM%3D" src="https://i.kickstarter.com/assets/050/130/357/757c6b90116cab7b679247265ce85e7a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753185407&amp;width=680&amp;sig=z8wIVj4pVW1ojAK5W3yqxw02YeSrBeikc7nmqIPxdLM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106049">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping">Shipping</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/049/3b29b6fce4ef8139cb4c99317e96f2be_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753021088&amp;width=680&amp;sig=Q6f5hVzZ4QuM413yymzToY5G4DFPdVD%2BkXFeX5ddGKs%3D"/>
+</figure>
+</div>
+</div>
+<ul><li>
+<span class="bold">Worldwide shipping</span> at reasonable rates! Partnering with logistics experts, we deliver globally at competitive prices — complete with <span class="bold">door-to-door service</span> and reliable tracking for a seamless experience.</li></ul>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105682">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/682/91df84adbf08f1c83d79b49cd78cf277_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753017340&amp;width=680&amp;sig=O%2FZJQbUeQmJ26lqjIuMCOkOvKpYKMPbgdejyYks0XIM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105684">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/684/596be1fdbd5e4a7d59e064321f82650f_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753017358&amp;width=680&amp;sig=1SgDKvwO%2FWBJZcz5KOP5RWz%2Bji3M%2F2QR5nbHQ1XYa7w%3D"/>
+</figure>
+</div>
+</div>
+<div><ul><li>
+<span class="bold">Defined Project Roadmap: </span>Traverse our 6-month journey — from April prototyping to October shipping — where each milestone clearly charts progress from core development to worldwide delivery.</li></ul></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130359">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/130/359/ae80ddb66bb2af22fe34fdd35192bb6c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753185421&amp;width=680&amp;sig=YvXt%2BTFh0dLxaz%2FHieEGG5%2Fw8l8cozghXUfyZaGPIyY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105689">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Behind-The-Scences">Behind The Scences</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/689/120db2c189293f4413b9581e2c33bfb7_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753017386&amp;width=680&amp;sig=x2j0w%2BiSeZn1DOx%2F2TmDV4Seol61Vkjpki7Wt81Y864%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-Pt6cdSRA0otAZixTRMecKNx5n5u"><span class="bold">Appearance Design</span></div>
+<ul>
+<li>Having experienced the profound joy of companionship with our own cats, the Pixelax draws deep inspiration from these cherished bonds. Our team’s heartfelt affection for pets is woven into every curve and interaction of its design. We believe a pet-inspired form evokes genuine emotional resonance, delivering warmth and companionship through its presence.</li>
+<li>We have the privilege to introduce our professional product designing advisors below:</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130336">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/336/9b727c704e5fa02958be56484d600875_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753185264&amp;width=680&amp;sig=Yi0oXeaVXBxMo%2FOJ1a21Y%2BI7MpKXrwrXdAJZ0RQcM3w%3D" src="https://i.kickstarter.com/assets/050/130/336/9b727c704e5fa02958be56484d600875_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753185264&amp;width=680&amp;sig=Yi0oXeaVXBxMo%2FOJ1a21Y%2BI7MpKXrwrXdAJZ0RQcM3w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105690">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/690/aaf5ad0572f806f41eba732700ca64b9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753017418&amp;width=680&amp;sig=krSDZmFXbomJMySSWcJC8QY7Pm5eXpPWBC9tzBFkVwg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105692">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/692/5901ad8db38938cc6e94fc5a6d024ddc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753017427&amp;width=680&amp;sig=1UxmnDKMn3jOizJsSoHjlLtKH6T1DwHyqnTP7XWzpOM%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-WDuYd34bEoDxEsx73sYc6W1wnfc"><span class="bold">Dot-Matrix Screen Optimization</span></div>
+<ul><li>To achieve fuller brightness expression for each individual lamp unit on the dot matrix screen, we optimized the screen's structural placement. We equipped each lamp with a dedicated grid structure, achieving crisply delineated light points for crystal-clear visibility.</li></ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105695">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/695/36421766fbb01c896e0761f58d917d0f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753017446&amp;width=680&amp;sig=5C7jaTKPLa9wOHO5iHpr0mj1S%2Bx9TSY2SJtRSKO4eL8%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-LGgtd1IP9oLtqHxEPsBczeyAnzf"><span class="bold">Circuit Prototype Verification</span></div>
+<ul><li>Following the circuit design phase, basic functional verification was conducted on the prototype.</li></ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105698">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/698/f14086d0241c613cc514168f420819a9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753017463&amp;width=680&amp;sig=9ceR3yCi88mQ%2BwrjyTAGZavX7w7OMuHSnLpGeacYLsI%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-RJOvdKyk8oP2yPxgnVPcD1iNnYf">The birth of this desktop robot embodies the convergence of technological precision and human warmth. As noted in an engineer's log: <span class="text-italic"><span class="bold">"We are not crafting tools, but creating companions that walk into people's hearts."</span></span>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106962">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-The-Team">About The Team</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/962/b96abab99fd5d6116d666c64cd5f7b22_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753028433&amp;width=680&amp;sig=2jY43yrfmsThwbSRPygSQ5m099JbT6N07geVXlB2WbM%3D"/>
+</figure>
+</div>
+<p>Our team combines robotics expertise from <span class="bold">DJI </span>and <span class="bold">Segway</span>, leveraging years of experience in industrial-grade robotics development and mass production. As creators — and daily users — of desktop companion robots, we bridge technical precision with genuine user empathy.</p>
+<h3 class="page-anchor" id="h:Product-Philosophy"><span class="bold">Product Philosophy</span></h3>
+<div class="ace-line old-record-id-JcIidfMhfoy1PxxZyYEc7mosnAc"><span class="text-italic"><span class="bold">Technology Should Warm, Not Just Work</span></span></div>
+<div class="ace-line old-record-id-BWVwdJy04oB1dIxfCexchW56nMg">
+<span class="text-italic">"True innovation begins when machines understand the human heart."</span> We reject cold utility. Instead, we engineer technology that:</div>
+<div>Listens before acting — Interprets needs through behavior, not just commands. Whispers presence — Says <span class="text-italic">“I’m here”</span> through subtle light and sound. Evolves with you — Learns routines to deliver proactive warmth.</div>
+<h4 class="page-anchor" id="h:Why-It-Matters"><span class="bold">Why It Matters</span></h4>
+<div class="ace-line old-record-id-VVSzdD4ydoJrtdxRMBxcd4Nxnvd">This is more than robotics — it’s rebuilding bonds eroded by screens and efficiency. Just as dogs became family in ancient times, and machines freed hands in the Industrial Revolution, we now forge companions for the digital age’s soul.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50158670">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stay-Connected">Stay Connected</h3>
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/158/670/04cf1f1c3d0b889a9491119a997a9d08_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753361538&amp;width=680&amp;sig=%2Bz7Nog9srUgYFz9olVZYQVBmAM2HaXtlx7l1rBfo%2FVE%3D" src="https://i.kickstarter.com/assets/050/158/670/04cf1f1c3d0b889a9491119a997a9d08_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753361538&amp;width=680&amp;sig=%2Bz7Nog9srUgYFz9olVZYQVBmAM2HaXtlx7l1rBfo%2FVE%3D"/>
+</figure>
+</div>
+<span></span>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Risk: Securing specialized components like the ESP32-C3 chip and full-color LEDs may face supply chain bottlenecks. Precision assembly of the triple touch sensors and LED matrix increases production complexity, risking inconsistent quality if process controls lapse.
+
+How we deal with it: Partner with tier-1 electronic suppliers for priority access to critical parts. Implement strict factory audits and module pre-testing (e.g., 24-hour burn-in for each unit) to ensure reliability. Diversify assembly lines to mitigate single-factory risks.
+
+Challenge: Prolonged max-brightness LED animations generate heat accumulation around ESP32-C3 chip area. Left unchecked, thermal stress may degrade touch sensor responsiveness and NOR Flash write cycles.
+
+How we deal with it: Optimize thermal management for sustained LED performance. Refine adaptive dimming strategy leveraging motion-sensing triggers to dynamically balance visibility and energy efficiency.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Engineered for enduring companionship, Pixelax integrates reinforced components resistant to wear, thermal stress, and daily impacts. Industrial-grade soldering protects core electronics, while protective coatings shield interfaces from oxidation. Precision-molded materials retain integrity across thousands of interactions. Our rigorous validation simulates years of use—ensuring reliability that grows with you.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

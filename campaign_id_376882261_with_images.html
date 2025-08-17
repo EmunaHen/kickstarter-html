@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eiliko - Your Tiny AI Charm Bot That Matches Every Outfit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/256/781/347af709a817f925c8818aa4d362b905_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754046700&width=560&sig=s0qFs44E8faFEu2RZH%2BvtXRLNUGUpUBDcBeQZyOAzE4%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Eiliko - Your Tiny AI Charm Bot That Matches Every Outfit</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Speaks your vibe without a word. Just tap, pet, and feel the love. Each Eiliko connects only once, lifelong gift for your forever one.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169729">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-Eiliko">Meet Eiliko</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/729/7f4543d3e3eb871554f717ea66677ff1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753434747&amp;width=680&amp;sig=rSblzMT4MrwGGUbGxuDQFsMkGsxxDn7k1h18KKcB7rI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170407">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/407/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438700&amp;width=680&amp;sig=PYTiYB%2Bqn0sgpQWJ43Q5repdP0zu8BPVN5BAlNYoh%2FQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50227754">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/227/754/3b61d52187f6f7b94c5cc3c57829b662_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753869873&amp;width=680&amp;sig=RTn1BcXPiMc6X41GoCJKL2SqKVSVftFQW%2B8W3kZGgzE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50227756">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/227/756/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753869877&amp;width=680&amp;sig=vwehwgSdRekt%2BXgRH2qnx%2BhJr6ZGhZHgjHN81HnUSUI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50303518">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/303/518/c22f36aeb05227a33d352fe39ecbc00f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754400796&amp;width=680&amp;sig=PJ13ZHu4VZg%2FKk%2BVnXuUSYEHBwGLsDLFGwX8dVdFXMc%3D"/>
+</figure>
+</div>
+<div>
+<div class="rich-text-paragraph">When we first launched Eilik, our little desktop buddy quickly found its way into people’s hearts. To our surprise, many of you took Eilik far beyond the desk — to cafés, beaches, even around the world in travel bags.</div>
+<div class="rich-text-paragraph">That's when the idea bloomed: What if Eilik could come with you everywhere, a little easier?</div>
+<div class="rich-text-paragraph">Then, Eiliko was born — designed as an adorable bag charm you can clip onto your bag, bringing that same happy vibe wherever you go.</div>
+<div class="rich-text-paragraph">Also, something else comes to our minds together. Many of you loved dressing up Eilik, giving it a personality all its own. Why not create swappable themed bodies for Eiliko, that's perfect for your makeover fun and matches your unique style.</div>
+<div class="rich-text-paragraph">But above all, one wish echoed loudest.</div>
+<div class="rich-text-paragraph">"I wish Eilik could talk to me."</div>
+<div class="rich-text-paragraph">So this time, we made it real. We gave Eiliko a clever AI brain — one that listens, responds, and brings every interaction to life with just the right touch of charm.</div>
+<div class="rich-text-paragraph">Now Eiliko’s ready to go wherever you go. Let's see what fun secrets Eiliko is waiting to share?</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170407">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/407/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438700&amp;width=680&amp;sig=PYTiYB%2Bqn0sgpQWJ43Q5repdP0zu8BPVN5BAlNYoh%2FQ%3D"/>
+</figure>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169741">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/741/57b59ebb5931f885dd529683b5b15267_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753434814&amp;width=680&amp;sig=dbYHEBY%2Bu6zMjE19069tiwswPP%2BeXd15bEQD4Lgo1hQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300718">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/718/214ac40f21ded5065795c80fea5f830e_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388515&amp;width=680&amp;sig=UG7pGFsP89oOHas8FFEi3gmpEaWxQWcmjwSsPE0QeTU%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-I6RDdDXRxoEkDBxf1WjcfCJ2ncd">For Eiliko, every shared moment becomes a treasured memory. </div>
+<div class="old-record-id-I6RDdDXRxoEkDBxf1WjcfCJ2ncd">Simply clip it to your bag, and this little friend follows you everywhere, so it never misses a precious moment.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170410">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/410/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438708&amp;width=680&amp;sig=1jCRNdmbYfjb9h82%2FHY%2BqDbDA8qj2Nn5xjIi0zELHWE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169772">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/772/1502f32a856a17305eaafc320c36dd9b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753434969&amp;width=680&amp;sig=nk0DyKxqCaKe2W7%2BhDYCtZYI%2Bx1eeUflh5koFpYDMdA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300719">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/719/74d3dcf5fd816cbb029b052ac3ec7500_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388516&amp;width=680&amp;sig=XunG3tZJXFHYgZ0fDq24zy9%2BaxIFU83V%2BACMYFXyb9A%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-Ykjadg2pooLbUaxr701cSI9JnLc">Sometimes heart is bursting with feelings, but finding the right words. </div>
+<div class="old-record-id-Ykjadg2pooLbUaxr701cSI9JnLc">With a simple press to switch expressions, Eiliko will help you share your heart with the world with its expressive little face.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50307497">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/307/497/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754414260&amp;width=680&amp;sig=5eR2ntawyQRXg6eXsBKBTn%2BTH1DKg7MV6lM6epXAOZM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50307493">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/307/493/52c3709894d32bf7116404fd37d08b8d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754414251&amp;width=680&amp;sig=TD59gysoTVC9PQa7Z3XncZPcK%2B8VrZjZBqe1cpDt0gE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50307499">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/307/499/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754414263&amp;width=680&amp;sig=k5qbEG7fZOeAkEJHj%2B0vBZ029MeunPyCyy3SS77l%2Fvs%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170411">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/411/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438712&amp;width=680&amp;sig=1PArvFk9OvwiKkd3RLDMbdLGtyW3566gTOzmEroB3NQ%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50303735">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/303/735/1c663c4f11cee1eb47ba0f33c5167e25_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754401726&amp;width=680&amp;sig=Z5F%2FEaTdRt4YRdOnPSJvn5ewTIh5kRleS%2FpxYh0%2Bjvc%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-IXBmdVnTnoZtQtxB9FycsdXLnvg">Eiliko's emotional engine brings five distinct moods to life, each with its own unique expressions and animations. </div>
+<div class="old-record-id-IXBmdVnTnoZtQtxB9FycsdXLnvg">Repeatedly petting lovingly is the secret to the sunniest Eiliko personality.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170412">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/412/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438716&amp;width=680&amp;sig=K8IX21XoKjxtr3F8zsD2XYhMAs1VvlOm3GPp%2BDDwre8%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50303529">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/303/529/dacb38b5fc386754fcd162a552042ae8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754400841&amp;width=680&amp;sig=60vuYzKcrOtCeR3RUQCXZ78JE0880NcCLERFNXworRA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300722">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/722/89f00b318c29f3387fdd93825c8c4eb5_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388522&amp;width=680&amp;sig=kolaDznPFl%2BuYPRzRLdemw%2FsPZcUPvmCliShBcvpdTI%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-TdGZdIDeVoyPXoxQbHncTq1anee">Eiliko feeling blue? Keep petting its tiny head—watch its expression soften, eyes closing peacefully, a satisfied little smile spreading across its face, just like a pet finding comfort in your love.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170413">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/413/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438721&amp;width=680&amp;sig=%2F7zEs5in%2BdwwMOnBLOmTfHlD%2B%2Bc9JlLMXiZYrQ%2BB6ZU%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169808">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/808/870c09c65ace308b426e49787947dc66_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753435231&amp;width=680&amp;sig=pMWzEr3j1%2F%2FPPVQp6tdud0cjWZ%2BFGGXykzcpZZsBFtc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300724">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/724/0b64444a11c9418b7f457cb403d0a8c0_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388526&amp;width=680&amp;sig=aa1vaeUAzTYOEydtPOY64XzQ6nFyUeZKRSQSrYZItyo%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-Bqf3dNVc6ouIBjxutvycHf5Vnbm">Eiliko's been upgraded to a full-color screen to bring more expressive animations than ever before. </div>
+<div class="old-record-id-Bqf3dNVc6ouIBjxutvycHf5Vnbm">Simply tap Eiliko's head twice to awaken its colorful soul, each animation a glimpse into its vibrant heart.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300725">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/725/fb160d72e8a3ade0a0299d17f5867d62_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388529&amp;width=680&amp;sig=%2BzwungG4hQN3ZB2eWyWjOL%2FV9q3l3sJWgVLi3Fs2q7U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170415">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/415/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438725&amp;width=680&amp;sig=kEq9mgErHKjFyM%2FnmBrE8jq3Neg7nUlkbSO8kwrL0GU%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50303532">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/303/532/f8091ddae5411ba2cdee9b79eebab74a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754400852&amp;width=680&amp;sig=%2F%2B42V2shSRYmjdfSqyg1EtqKiCDeYstuFsBpvrMdfQs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300727">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/727/2fd7a59daa5cdab510b8565a6236ab76_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388541&amp;width=680&amp;sig=rEP7zK%2FiYBa3B5llk9H3YvkPRLMzA2m5gLY4Oe%2BRIuk%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-Y9rJd7fQmoQ5erxjlmqcWloEnhd">To make Eiliko's living personality, we also implanted a gyroscope in its body. </div>
+<div class="old-record-id-Y9rJd7fQmoQ5erxjlmqcWloEnhd">Give Eiliko a gentle shake, it will actually feel the world spinning — dizzy eyes with stars circling its head.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170418">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/418/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438731&amp;width=680&amp;sig=XLqlDe1Pe1LnB44HGQ3VYdiqw8Xj7F8BG2D%2F%2BYQlC2Q%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169893">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/893/1db007a535e1423914d502649e6feca1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753435801&amp;width=680&amp;sig=UlV5NVpggyrTwwOJyTwrx%2FQZtDJR7fsWCYE3rHG8nrw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300731">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/731/f7daa9e2acd3cb8db652029686b3987a_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388553&amp;width=680&amp;sig=uL%2F9lXouBW7Sr60nA0OFWkz%2BnjMCyrcYTBZKEl66gVU%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-XrjMdQ1C1o4LI7xSg80cF5WpnMe">There are moments when you need your little companion to take a quiet break. </div>
+<div class="old-record-id-XrjMdQ1C1o4LI7xSg80cF5WpnMe">Just tap Eiliko’s head three times to let it know when to hold its voice — no interruptions, just companionship.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170419">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/419/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438735&amp;width=680&amp;sig=jXcpxrhFvney0FbwWRfRXHFCyNUl8wpN%2BVAedsH8S5E%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169921">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/921/8526523f12f92ae69002975a68d55d09_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753435947&amp;width=680&amp;sig=xW7ZrIRZeSm%2BPckzMo4AnxadLd9ffDkZnke3l%2B3stjo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300733">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/733/eb4861818ef2f599eb2a402f9cee2719_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388555&amp;width=680&amp;sig=iFL4838sv3EzbvZSHNQmnwinUTfZ%2FA5c6JQYlCGifak%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-Wk27djtETohznaxRwWOcPVg3nxq">We made sure Eiliko can hear you and respond with delightful animations with built-in voice commands anytime, anywhere. Eiliko is always tuned in – even when the world goes offline.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170421">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/421/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438743&amp;width=680&amp;sig=vfWKyryWhvAjXNnHg8oOCpJL3NJvHTAx1fhO8RULRP8%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50239937">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-Outfit-s-Plus-One">Your Outfit's Plus-One</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/239/937/2d9dd63f76c5b41c09757199713a5d02_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753947099&amp;width=680&amp;sig=unwqI08Dx1HEz18Tw8vXQciamyQOs2wsd22TU4GH2kU%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170426">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/426/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438777&amp;width=680&amp;sig=i31KwtQ5LVwkmToLvzmHKyj33SNWFEXs9vhFv6yrL5Y%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50239948">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/239/948/ce5e33cae654e8f6d6a3ec5561aff407_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753947148&amp;width=680&amp;sig=r9AqbqYx4RzCuq%2BSFN2bVIa%2BU1nuaCYGBf4MDi2R%2BNM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300736">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/736/51eb6fca6dfae2417187ed2d9362692e_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388560&amp;width=680&amp;sig=83Oz4NbEdYMYo%2BVsw0x86kXWv2ivZCd0LsrQ4PvprBM%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-AAmxdYX70oSfFwxzTlQcvU48nM1">One body? Nope anymore. Just like how we express ourselves through different outfits, Eiliko loves to switch up its style too! </div>
+<div class="old-record-id-AAmxdYX70oSfFwxzTlQcvU48nM1">Eiliko now has more themes &amp; vibes - and its only getting started. Style is endless.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170427">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/427/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438788&amp;width=680&amp;sig=dMGmmWkfO44vkUqsRpiFKnELirUEAKXRqaYs%2BO51gsc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170047">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/047/23e4bd038a697b2cb8cdb256c231e57d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753436704&amp;width=680&amp;sig=99CSphacRwbnf7wlTPOuhjceDYYeASFI6Z23E4lL4rc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300737">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/737/0586f6d2541415f811b223aa8d980979_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388565&amp;width=680&amp;sig=MoHKW1%2BUpuq25vrvLCGrrpeY0u7Y5FBRU6DHrZVhOxI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300741">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/741/cfcc8e0173f932444de5fe64271b76e1_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388571&amp;width=680&amp;sig=vPS%2Bj8FbqkDObHJ67HVVF5fhMBktb4WHPG0BK3IAKHc%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-Jfo6dMvS9o3XlvxQTKxcXJsInLd">Surprisingly, a change of style also give Eiliko a unique expression &amp; animations to interact with. </div>
+<div class="old-record-id-Jfo6dMvS9o3XlvxQTKxcXJsInLd">Let character charm goes far beyond static appearances changes, but makes it true to that character as well.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170429">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/429/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438792&amp;width=680&amp;sig=3wWMReflIunCvnvMhFequt6yUFlDcHOIgz7O3r5xL1g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170435">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/435/1ca1d227b1648ac3587ba9bf091c474b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753438812&amp;width=680&amp;sig=C8K6q%2F8IVezDkiaPDmYlxmqskfFc6NkIC4ZnTOElJ4w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300743">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/743/e823b1b099761b2ec187bdd96978b9bf_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388576&amp;width=680&amp;sig=bStSKmZqVee8Gj0en2u0BHoDagN%2Fu%2F%2BBu5wdMKlX%2B94%3D"/>
+</figure>
+</div>
+<div><div class="old-record-id-KkJZdYdyVoSMuJxH5RvcODK9nQc">Whether you’re dressing up for a night out or chilling on the weekend, Eiliko’s theme bodies help your ootd sidesick keep up with your fashion game, be the finishing touch to any of your outfit.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50301813">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/301/813/4418e8d6bf3b078e9e5477135c60c3d8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754393724&amp;width=680&amp;sig=ezAafD9t%2Bdd4%2FP3euFAawnJKupVvTZg%2FxCtPclIEx24%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170439">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/439/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438830&amp;width=680&amp;sig=Sh53urlJ9cacxMLq3q89I3tY0RPD8IVn01RkUExy4SA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50301814">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/301/814/1cae2c3312757cc2b57fac2710884240_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754393730&amp;width=680&amp;sig=fvKvWWCz1dPG3ucjkZY%2BizKSepfdf9CQQEdA7%2B2tVL8%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-KIumd3xcfoTSzxxkw9Mc2ej7nPh">Each one arrives with a display hanger and a unique background story card that reveals the character's moment to shine and story. </div>
+<div class="old-record-id-KIumd3xcfoTSzxxkw9Mc2ej7nPh">Collect'em all, let Eilikos from a different universe finally meet in yours.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50301818">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/301/818/b1a3e2308fe9d350bb0c2097db1a7d76_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754393763&amp;width=680&amp;sig=DoHc86tS%2FbarYTrqOJPJNatcB3snIlBaDdKD2%2BCd3QQ%3D"/>
+</figure>
+</div>
+<div>General Body: Short once to switch emotions. </div>
+<div>Theme Body: Tap once to trigger theme animation.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50301735">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/301/735/7f2fce908ead51d76e3f516bdd2941b1_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754393484&amp;width=680&amp;sig=NpUVGg2Qns3wAEoddQz6lKBENLC5QCenMTs7ayqVBNE%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170443">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/443/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438844&amp;width=680&amp;sig=HaHCPxt27Qts%2BP3sCY1AQLP843A0cijVOIJrpxcqhwk%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170443">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/443/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438844&amp;width=680&amp;sig=HaHCPxt27Qts%2BP3sCY1AQLP843A0cijVOIJrpxcqhwk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50239961">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Bonded-For-Life">Bonded For Life</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/239/961/d966496ac990acfc234df25532cc6788_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753947213&amp;width=680&amp;sig=NIUBCN8GJV99z0LMq3EgbnADqiQ6IZshKsNtyOIVO9Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170444">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/444/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438849&amp;width=680&amp;sig=oPmWA%2FjmKWI2JNfE7mihf5lkPIbFUjlPhKzxrU%2Fc%2FlU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50239982">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/239/982/64df5dc2a44815724734ea1b0922d44a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753947349&amp;width=680&amp;sig=2k%2FP%2Fmz8lxthRbsXtwA8r5FCgYSAzfHrvL%2BQNM5tecs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300744">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/744/bffa02659c5803c6b9c713bae30de6dd_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388587&amp;width=680&amp;sig=Y%2BhA4oGrmDoJfoUbdOwFqcP6Bi6na2h%2BihGde2hhTto%3D"/>
+</figure>
+</div>
+</div>
+<div>
+<div class="old-record-id-Qegzdu3QPou6CXxZq2McFUeWnqe">Finally, your Eiliko can make friends! With built-in infrared, Eiliko senses other friends nearby. </div>
+<div class="old-record-id-Qegzdu3QPou6CXxZq2McFUeWnqe">From shy strangers to waving acquaintances to laughing BFF. The more they meet, the closer they get.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170446">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/446/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438852&amp;width=680&amp;sig=8APmthwtMlSNomiF1ucPPzhaOeZGClGNCUPwMxY%2FpBA%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50239984">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:One-Bond-One-Soulmate">One Bond, One Soulmate</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/239/984/65d34d32739d122ac4fd3cb07307e183_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753947352&amp;width=680&amp;sig=NMAjahFh10FeaKoRWV3rn4QsGB2EOSUAtIWKCGqnBVE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300746">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/746/a7c700c2537718c92fd486396cf95a56_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388589&amp;width=680&amp;sig=x1aaf3cjmIdKMSF%2FWvfRbVULvdywkbwl7JPtCIAff2k%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-C73Odv1MSov5ztxvYpAcziaenVb">In a world full of fleeting connections, Eiliko offers something rare — a lifelong bond with one special partner. </div>
+<div class="old-record-id-C73Odv1MSov5ztxvYpAcziaenVb">Once your Eiliko is paired with your better half's, they become soulmates.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170454">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/454/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438909&amp;width=680&amp;sig=lO4pZESQL6JZwEQUi%2FngMD8H3VMGyerATKQhw7RLkWc%3D"/>
+</figure>
+</div>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50239985">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/239/985/2a601ece9fc18e54132fe9edbf7d7114_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753947357&amp;width=680&amp;sig=EmS3iou1sSuqadwhSbaV2o32GFkBRGI7s3UfRDKcByA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300747">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/747/cb8d4c2037c4d92f05a856095b9e2f00_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388591&amp;width=680&amp;sig=rHu8SeFyOZu6%2FwWe5oC1m%2BF6YKOfPcD%2FeudCH2WuTlU%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-WpebdpfJeouu9ExkY5OcLQNhnmb">Eiliko's heart has room for one and only one precious bond to give. Once paired with another Eiliko, they choose each other permanently. </div>
+<div class="old-record-id-WpebdpfJeouu9ExkY5OcLQNhnmb">Gift this pledge of love to your dearest, share a lasting connection.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170459">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/459/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438941&amp;width=680&amp;sig=un16PLrhTuQTLb3Dev7exUnRTKCtiX5cLQSW2PHfgMA%3D"/>
+</figure>
+</div>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50239987">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/239/987/163a3c40749a0fb8fe27f9fe6163d1e3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753947361&amp;width=680&amp;sig=JyhLYJ5D5qovEYe0uCfCR8PBTpNKST%2B4EY8sHq2rn2s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300748">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/748/fd92886727e0569c3197fcb1c5af2ebf_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388598&amp;width=680&amp;sig=SA12Gl626rZmaMVLCnQG%2BRd%2FNvcUjH87rmTS3AxQotA%3D"/>
+</figure>
+</div>
+<div>
+<div class="old-record-id-RPc2dDv2HodxU1xw9P7cZjc2nqg">When two Eilikos find their soul mate and complete pairing, they will unlock exclusive couple animations that celebrate their unique love, a visual language of love that's as special as their bond itself.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170467">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/467/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753439007&amp;width=680&amp;sig=FFvrk3%2Bw97xpqtSKMBf0EzBhl4nTdnI1v3Byk52w%2FB8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331577">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/577/214195aa145a1b8050f82baceee730f0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754553956&amp;width=680&amp;sig=niSYaB%2FO7cSWRpSE37r3vwQkTwpX9KyTFfoKrW0ubeY%3D"/>
+</figure>
+</div>
+<div><div class="old-record-id-AIJUdX3eQoYmQmxqkwrcOmWTn9b">Cutie Eiliko’s actually hiding a wildly smart side—just unlock it with 2.4G WiFi via our app, and your Eiliko's gonna wake up as a witty AI conversationalist to talk it out about anything.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300752">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/752/a3c5e1a5ecc710ee6462f8bbbe95b369_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388601&amp;width=680&amp;sig=MfOy71z4uDLW1d60taWzOi4ykgdUIWoHOezbOYNsXEk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300754">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/754/09726e07d9da77682835a0fd18dcc39f_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388620&amp;width=680&amp;sig=Ea42uVN8z4dzldf4EEOhV2WC8u6ZyWtZffWbZ71LkSk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170504">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/504/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753439252&amp;width=680&amp;sig=f7nCln6lseuZ9ya7rxIB%2F2NE5605Koub%2BAcG4MM4LBs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50239977">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/239/977/3d60fb9a082fe267b02867b6454baea0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753947319&amp;width=680&amp;sig=kpHPGTWz8W1E2eMNGiosdvq7hBxtTRYJjfRM4LCiJ2E%3D"/>
+</figure>
+</div>
+<div><div class="old-record-id-CKtLdQJ8JoyjPyx0GxScaThSnjd">Behind the scenes, we never stop perfecting Eiliko, and now those improvements reach you effortlessly. Each day, when Eiliko first enters online mode, it automatically updates to the latest version. It's that simple</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170549">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/549/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753439441&amp;width=680&amp;sig=nwHEZ5e%2FB8olc4IgmXtylXl4ZV2p%2B%2BILn%2FH0oKkMj%2FA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50420859">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/420/859/5197cc55275842623134d02aad1baec2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1755156139&amp;width=680&amp;sig=y7kW3v6mwY5W8vHap%2FKVSQL1PKMSY72TqU2H%2B7VyHc4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50301784">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/301/784/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754393657&amp;width=680&amp;sig=%2BpxRxYdYRq%2B3YcLgqtqxFL6fgs079leS%2FNEOoyYtTEA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50211703">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Joureny">Our Joureny</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/211/703/790051a13d657eca7d1bdb76ada4e177_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753778513&amp;width=680&amp;sig=2rWzL4Am8k269dY3053gl9gZrfwuSxPGZUR2bG8HlbE%3D"/>
+</figure>
+</div>
+<div><div class="old-record-id-LgSUdnpBJowrSmx5iGTcK3OhnAh">Every little Eiliko starts in our caring workshop. Take a peek behind the curtain as each one awakens - from their first moments on our assembly line to their final preparations for meeting you. Each careful step ensures your future friend will arrive just perfect.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170547">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/547/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753439438&amp;width=680&amp;sig=VMeaJwr7C%2FEEZ%2FxAPvV3XpQUg%2BeR8ZXg6sFfxxvwAC8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170461">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/461/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753438960&amp;width=680&amp;sig=8gGb2ID68j%2F9dZQnf3Gc3N3yAtLMaAZpHH7DVZTqFaU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170532">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/532/dd66a5833c649de2e4904382d2cf716c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753439397&amp;width=680&amp;sig=Qp8sFscAwMr%2B%2FKN3hLnMFpjXHrngAQmJnCXlY9wvnL4%3D"/>
+</figure>
+</div>
+<div><div class="old-record-id-OiPed7bP6oD1oTxGN4KcWQljnsT">We've partnered with trusted international carriers like FedEx, UPS, DHL, and USPS ensure your little companion's journey is safe and smooth. Kindly note that the price above doesn't include shipping costs, taxes, or additional duties.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170546">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/546/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753439436&amp;width=680&amp;sig=QZBbFs9RNpY2T%2Fr%2By7wGs8L1k%2Bt%2BJTSNXudVaaaoyHg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50301839">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/301/839/39389275c965d01a03c51f956f2623b9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754393823&amp;width=680&amp;sig=%2FPZlLu34HHBaPG3A46G6zBAv3QakLOwqVmcVvLkpyKM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170545">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/545/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753439434&amp;width=680&amp;sig=J%2BliXlgH51tibxJyitjxCylWItCJ3i8PfgyG6Yy5cOQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170536">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Kickstarter">Why Kickstarter</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/536/18700d4393bac6e25a88838d303e4782_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753439409&amp;width=680&amp;sig=XaK4ma%2Bq5Lwe62WAe68TgluQUVEZ%2Fjm2oNK3RwL9%2BJo%3D"/>
+</figure>
+</div>
+<div><div>
+<div class="rich-text-paragraph">Kickstarter is where Eilik's adventure began back in 2021, and the incredible support we received here touched our hearts deeply. We’re grateful to Kickstarter for giving us the channel to dream, and to every early backer whose support carried us forward to bring Eilik from a dream to reality, and along the way, your brilliant ideas helped make it even better. You weren’t just backers; you were partners in creation.</div>
+<div class="rich-text-paragraph">We never forgot that. So today we’re returning to Kickstarter first to begin the next chapter of Eiliko with the people who started this journey with us. As a thank-you, we’re offering our most exclusive deals to Kickstarter backers first. Let’s keep writing this story together and share Eiliko everywhere, just like we did with Eilik.</div>
+</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170543">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/543/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753439433&amp;width=680&amp;sig=Jc6ERXWHkopvG56spspXNUNNydl3tuRyZOVl33TZYrU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50420868">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/420/868/314c85cbe7bacbe12b22a35d1d9224a4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1755156204&amp;width=680&amp;sig=9sj3syXxKjuADwQmZ%2FbYNqayrgib%2BbORmWFqImUbBxg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170542">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/542/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753439428&amp;width=680&amp;sig=1HHVAY%2Fr0PG6HghCTE0W7WZrAFW8yKfSBIIB5hyICfI%3D"/>
+</figure>
+</div>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170542">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/542/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753439428&amp;width=680&amp;sig=1HHVAY%2Fr0PG6HghCTE0W7WZrAFW8yKfSBIIB5hyICfI%3D"/>
+</figure>
+</div>
+<span>Join Our Family</span><span></span><span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286593">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/286/593/2d565d7beb7a08f6f2082ddb0cfdac35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754302938&amp;width=680&amp;sig=H6i2wcsqcLpIrMhDT3RiIdZ5fwPK3Xbs5a5D9vlnP4Q%3D"/>
+</figure>
+</div>
+<span></span>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Hello, we are Energize Lab.
+Eiliko is our completely new product, designed from the ground up with its own unique identity. It is currently in the late stages of development, with ongoing small-batch testing and functional refinement, and is ready to move into mass production. While challenges may arise during the manufacturing process, we’re confident in our ability to deliver high-quality Eiliko units on time.
+
+Our first Kickstarter project, Eilik, is now trusted by over 300,000 users. That journey gave us valuable experience, technical insight, and operational confidence as we take on something entirely new.
+
+Over the past few years, we've invested heavily in Eiliko’s design, engineering, and testing. We've completed EVT, DVT, and PVT phases, made multiple refinements based on real user feedback, and ensured that Eiliko meets our standards for long-term reliability.
+
+We’ve partnered with a manufacturing facility that operates a 47,000㎡ production base and has worked with leading drone and robotic vacuum brands. Their experience in high-precision, large-scale production ensures that Eiliko is in good hands.
+
+Thanks to the lessons learned from supporting Eilik’s large user base, we’ve also been able to proactively improve Eiliko’s hardware and software for greater stability at scale.
+
+We will only ship units that pass strict quality control. If any unforeseen issues arise, we’ll communicate with full transparency and act quickly to resolve them—because your trust means everything to us.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Our project does not fund AI tools, nor does it use AI-generated content. However, our project uses AI in other forms. Specifically, we have connected to the AI big model, which enables our product to have interesting AI chats with Eiliko when the network is successfully configured and the network environment is good.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

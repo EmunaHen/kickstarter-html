@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flowtica Scribe: AI-Powered Recording & Notes — Inside a Pen</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/358/170/25b0ddbc7f4d6bc99081dcdf9b83e134_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754724245&width=560&sig=3ChESdYI6xxZYMR37SUFZCa1MZtsBOyiSx3auhCuiaQ%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Flowtica Scribe: AI-Powered Recording & Notes — Inside a Pen</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">One-Press Recording｜Tap to Highlight｜15 Speaker Recognition｜100+hr Battery｜Speaker Tagging｜Voice Assistant</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 3,887</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>49 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50214809">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/214/809/45131ce437c0807978de846e5446b132_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753795745&amp;width=680&amp;sig=dwqBrTiKUtTijG7%2Bu%2BViZ8LonXfYD9vGWsljv4sJKyg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50180962">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/180/962/ee087c8e4d8cf3f91550a9cd142a9a46_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753520782&amp;width=680&amp;sig=USapqimnJ%2FMrr2OAQEaGTw2QRu%2Fln5wK1wkhgQsht%2Fg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50358102">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/358/102/ed6eddea6075a272706acddf6cf33a25_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754723378&amp;width=680&amp;sig=hmQyUN4JcMItdCxNCqysBgDg3fh2krL0gJnsAxXfOQc%3D"/>
+</figure>
+</div>
+<p>Relying on manual note-taking means constantly splitting your focus between listening and writing. Note-taking apps and AI voice recorders don’t fix that; they often make it worse. </p>
+<p>With low-quality microphones that fail to capture human voices clearly, especially in noisy environments, transcripts end up full of gaps, missed words, and misinterpreted sentences. And when the transcription is flawed, the AI summaries are too, leaving you with incomplete, low-quality content you can’t fully trust.</p>
+<p><span class="bold">Flowtica Scribe makes it better.</span></p>
+<p>Powered by AI, it <span class="bold">records </span>what’s being said, lets you <span class="bold">mark important moments </span>with a tap, and turns it all into<span class="bold"> clear, structured notes</span>.</p>
+<p>And yes — it’s a <span class="bold">real pen too</span>.<br/>You can keep writing while <span class="text-italic">Flowtica Scribe</span> <span class="bold">records </span>the conversation and <span class="bold">summarizes </span>in the background.</p>
+<p><span class="text-italic">Flowtica Scribe</span> <span class="bold">recognizes </span>who’s speaking and<span class="bold"> labels voices automatically</span>, keeping everything organized and <span class="bold">easy to review.</span></p>
+<p>It’s like a <span class="bold">second brain</span> for your meetings, lectures, and ideas.</p>
+<p>Always listening. Always ready when you are.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351630">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:1-How-Flowtica-Scribe-Works">1｜How Flowtica Scribe Works</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/630/79c3a89aeaf918e7c569e85bec3843bf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754673869&amp;width=680&amp;sig=s9ylTvaCbZMtvm82V9TiF68oDNapqL1idqRCLBfbUJI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50435385">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/435/385/65dffd1ef502c497f5bc2befddee47fa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1755258953&amp;width=680&amp;sig=10F%2BvuDS1OmJr5vVuxj5ad9US8WruiAdS3T57f8q0tk%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351641">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:2-360-Voice-Recording-and-Transcription">2｜360° Voice Recording and Transcription</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/641/392fa49ba0730a5aa328eff143084eee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754673937&amp;width=680&amp;sig=cKetNa%2BDAS6qjmwAR3n9%2BQ7iaGxCQBjVePybtakQTOI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50213879">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/213/879/c5466e4e45a0a664ab8c6a70cd1f7c6a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753790613&amp;width=680&amp;sig=7jYYfNRw7nmPhj9YN0JfDwV7vWWn7PWRtsFn6EPbnGM%3D" src="https://i.kickstarter.com/assets/050/213/879/c5466e4e45a0a664ab8c6a70cd1f7c6a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753790613&amp;width=680&amp;sig=7jYYfNRw7nmPhj9YN0JfDwV7vWWn7PWRtsFn6EPbnGM%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Flowtica Scribe</span> has <span class="bold">dual high-fidelity microphones</span> that capture voices <span class="bold">clearly</span>, even from up to <span class="bold">5 meters away.</span></p>
+<p>Poor audio means poor transcription. And poor transcription means summaries that miss the point.</p>
+<p>But with clean input, <span class="text-italic">Flowtica</span> delivers <span class="bold">accurate transcripts</span> and <span class="bold">smart, context-aware summaries</span> that actually reflect what matters.</p>
+<p>It’s not just repeating what was said, it’s creating notes that <span class="bold">get you.</span></p>
+<p>That’s why the notes feel more thoughtful. More complete. Almost like they “get” you.</p>
+<div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351696">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:3-Get-YOUR-Notes">3｜Get YOUR Notes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/696/6c763a897adf8dd5175042e0313af40f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674168&amp;width=680&amp;sig=D3eRKFjWNts2Uy353f94K4uGg2A7zeKegVLetlBJKks%3D"/>
+</figure>
+</div>
+<span></span>
+</div></div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351704">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:4-Built-In-Noise-Reduction">4｜Built-In Noise Reduction</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/704/0a5fe8627cbd30661e9c9dffc14675d1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674201&amp;width=680&amp;sig=xPInKQ3a7efEQwXN82SIzbcJdygkxyht5BROsPMZKkc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351709">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/709/e7ea99de7a025ede9e433804f741a570_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674245&amp;width=680&amp;sig=IWekG97BaIDA3MU6MgsKsihtSjwKSmcumWXLZIDUdJs%3D"/>
+</figure>
+</div>
+<p>Meetings aren’t always quiet.<br/>Coffee shops. Trade shows or events. Fast talkers. Loud rooms.</p>
+<p><span class="text-italic">Flowtica Scribe</span> is built with <span class="bold">a high-sensitivity, omnidirectional microphone</span> that captures speech with <span class="bold">clarity</span>, wherever you are. </p>
+<p>Using <span class="bold">AI-powered noise reduction</span> and <span class="bold">voice separation</span>, <span class="text-italic">Flowtica Scribe</span> focuses on what matters: the person speaking.</p>
+<p>It filters out background noise, making your recordings easier to review, transcribe, and summarize.</p>
+<p><span class="text-italic">Watch Testing Flowtica Scribe's AI Noise Cancellation (Before &amp; After)</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351735">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:5-Tracks-and-Labels-Up-to-15-Voices">5｜Tracks and Labels Up to 15 Voices</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/735/cfb29032da791e4353d33cd9dd97f053_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674425&amp;width=680&amp;sig=nY5lAaEVn2T%2F5wmcxaxyKaKr2xRn9a3iROjG1fmGa2I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351739">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/739/70554fecf3d20a19a8a48840bc6ff46f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674442&amp;width=680&amp;sig=WxQdnjlEIJ%2FsL4GB3iHhmKip8176S%2FAmLR8YTSUUzz0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352479">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/352/479/bc81994c3d4970ec4dd2f250bd9078fb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754678007&amp;width=680&amp;sig=sUZVCrVz5hYaLlyOc6ZvIHIhqgoBt7tmDuyf3IrC5bY%3D" src="https://i.kickstarter.com/assets/050/352/479/bc81994c3d4970ec4dd2f250bd9078fb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754678007&amp;width=680&amp;sig=sUZVCrVz5hYaLlyOc6ZvIHIhqgoBt7tmDuyf3IrC5bY%3D"/>
+</figure>
+</div>
+<p>Know who said what… and when. </p>
+<p><span class="text-italic">Flowtica Scribe </span>doesn’t just record what’s said, <span class="bold">it knows who’s saying it</span>. It can recognize and label up to <span class="bold">15 unique voices</span>, <span class="bold">automatically tagging each speaker.</span><br/><br/>No more “Speaker 2”. Now you can put a name to the voice; and once the voice is <span class="bold">labeled</span>,<span class="bold"> it’s remembered.</span></p>
+<p>Team calls to recurring meetings? <span class="text-italic">Flowtica Scribe</span> builds a <span class="bold">personal voice library,</span> storing up to <span class="bold">30 unique voices.</span></p>
+<p>Thanks to Smart Voice Indexing, every speaker stays consistent across recordings, and every conversation becomes part of your own searchable archive.</p>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351750">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:6-Highlight-What-Matters-Not-Everything">6｜Highlight What Matters, Not Everything</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/750/510f4b474b8e2c0381f6ee5af62e1681_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674509&amp;width=680&amp;sig=1Hq8MUybGB9sw%2Ff48WQ7FckAwtZsdhPxkRaXRjccnqo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351775">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/351/775/4edb2ea6795204c87fb21230b6aa2843_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754674615&amp;width=680&amp;sig=uOvY2U6pJfmXuUNCKp9QKFSNLJL3GVsQsJObUk2iw5E%3D" src="https://i.kickstarter.com/assets/050/351/775/4edb2ea6795204c87fb21230b6aa2843_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754674615&amp;width=680&amp;sig=uOvY2U6pJfmXuUNCKp9QKFSNLJL3GVsQsJObUk2iw5E%3D"/>
+</figure>
+</div>
+<p>Found yourself a fast-paced meeting? <br/>Don’t have time to take detailed notes or flag everything later?</p>
+<p><span class="text-italic">Flowtica Scribe</span> makes it <span class="bold">super-easy to mark the moments</span> that matter.</p>
+<p>Press of the FlowMark™ and… That’s it! </p>
+<p>With a quick tap, the AI figures out the context around that moment.<br/>Or, press and hold, and you control exactly what gets <span class="bold">highlighted</span>: like a digital highlighter.</p>
+<p><span class="text-italic">Flowtica Scribe</span> adds a highlight to the timeline and uses it to build a more relevant, focused summary.</p>
+<p>In the transcript, they stand out automatically: <span class="bold">bolded, </span><span class="text-italic"><span class="bold">italicized</span></span><span class="bold">, and highlighted in yellow.</span></p>
+<p>You’re not just recording, you’re guiding your second brain.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351785">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:7-Built-for-Multilingual-Teams">7｜Built for Multilingual Teams</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/785/3732a42e7cf47beae412ecdf85f403ee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674655&amp;width=680&amp;sig=3EBT2QzuHAvYaQQ%2F0CFZRXOVQOd6cASjzijfDRpyeUw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351786">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/786/6e14a37fd1114be287bc7f85f2e96976_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674659&amp;width=680&amp;sig=wKWY3PT%2BnenQEcsyUVtzG%2BbP7318%2BRaqrc8cFlmZHIU%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Flowtica Scribe</span> doesn’t just hear words, <span class="bold">it understands what’s important.</span></p>
+<p>It highlights key points, action items, and decisions <span class="bold">automatically — in 39 supported languages. </span>More language support is on the way.</p>
+<p><span class="text-italic">Flowtica</span> follows the conversation and pulls out what matters, so no insight gets lost in translation.</p>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351798">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:8-Voice-assistant-Hey-Flowtica-">8｜Voice assistant "Hey, Flowtica..."</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/798/cfd9d786e707a74b147f69165999b428_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674710&amp;width=680&amp;sig=VbaRhFrBZRncATUQ9sPWdmESjTlQqcWFyBK6HUek1jI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351803">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/351/803/9a7d3bde4bd1842f21fddcf0974f686d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754674729&amp;width=680&amp;sig=ouJlJcw6EPxHocCmQaCKdzPdoqrDAZbETOYCmz%2BGKpc%3D" src="https://i.kickstarter.com/assets/050/351/803/9a7d3bde4bd1842f21fddcf0974f686d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754674729&amp;width=680&amp;sig=ouJlJcw6EPxHocCmQaCKdzPdoqrDAZbETOYCmz%2BGKpc%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Flowtica</span> doesn’t just record, it makes every word, highlight, and note <span class="bold">searchable</span>.  </p>
+<p>Looking for a decision made last week? A specific quote? A key action item?<br/>Just <span class="bold">type a keyword</span> or <span class="bold">use a voice search</span>. <span class="text-italic">Flowtica Scribe</span> finds it instantly.</p>
+<p>Speaker labels, timestamps, and AI-powered tagging make everything easy to track and faster to retrieve. </p>
+<p>Saves you from digging through messy notes or endless playback!</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352245">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:9-Scribe-Review-by-Experts">9｜Scribe Review by Experts</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/245/0830512bdc6e0d0886c896279f66ad65_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676847&amp;width=680&amp;sig=IY6QWsBy9fYys%2B41VHyQkm4dsKEbSzqO9%2BvqBzLY9Rg%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351829">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:10-Transfer-Recordings-Without-Manual-Work">10｜Transfer Recordings Without Manual Work</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/829/fde96fbda0dcf171bbe1c6ef6c25b8f7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674853&amp;width=680&amp;sig=qdk24mq%2FNmi41YOPT%2B%2FPhgEO%2FZtdv3gstBRojUiv9Yk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50435418">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/435/418/e7072170d25c8b49208c65f764bea853_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1755259167&amp;width=680&amp;sig=7gBVcyEkxhJETRXCarQTeacrmGQYwhu7sPq0o8UpAts%3D"/>
+</figure>
+</div>
+<p>Captured a brilliant conversation but <span class="bold">dreading the tedious file transfer and phone processing time? </span></p>
+<p>Once your <span class="text-italic">Scribe</span> pairs with<span class="text-italic"> Flowtica App,</span> our <span class="text-italic">FlowTran™</span> technology revolutionizes the entire workflow. </p>
+<p><span class="bold">The moment you stop recording, files seamlessly transfer in the background (your </span><span class="text-italic"><span class="bold">Scribe</span></span><span class="bold"> should remain connected to your phone).</span> Our cloud infrastructure simultaneously processes transcription and generates intelligent summaries without any user intervention. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351841">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:11-Handwritten-Notes-Snap-Upload-Sync-">11｜Handwritten Notes?  Snap, Upload, Sync.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/841/58be1e174605a7dd63aface202259cf4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754674921&amp;width=680&amp;sig=El5oiLFrHkSBTMdUoZaRwUWkbQ6WUjsvzsnbafWsX1Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351869">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/351/869/6ff398470c1cbb480eb40169f484bc8c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754675084&amp;width=680&amp;sig=C2aAaWqOVulsPTZnv99adoz7LMhA60kXG4%2Fhm8VKsgY%3D" src="https://i.kickstarter.com/assets/050/351/869/6ff398470c1cbb480eb40169f484bc8c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754675084&amp;width=680&amp;sig=C2aAaWqOVulsPTZnv99adoz7LMhA60kXG4%2Fhm8VKsgY%3D"/>
+</figure>
+</div>
+<p>Not everything lives in your laptop. Sketches, diagrams, quick handwritten notes… they still play a big role in how you think.</p>
+<p><span class="text-italic">Flowtica Scribe</span> also <span class="bold">works as a regular pen</span> for your handwritten notes.<br/><br/><span class="bold">Take notes, snap a photo, upload</span> to the <span class="text-italic">Flowtica</span> app and <span class="bold">automatically sync</span> them with the corresponding part of your recording.</p>
+<p>The AI <span class="bold">understands context,</span> timestamps the moment, and links your writing to what was being said.</p>
+<p>This way, your ideas don’t live in isolation, they live in flow.</p>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351898">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:12-Recording-Power-that-Lasts">12｜Recording Power that Lasts</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/898/b9b418d3aaadee85c14f996559d13eca_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675246&amp;width=680&amp;sig=UortQaND502c8yO902U6c%2F1uh%2FhdTKbqU02GwKv%2FtSc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351903">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/903/80fb98abace424b7f3afccb766578754_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675262&amp;width=680&amp;sig=%2FPWqxj7S0VmhNQKddOcAc5vfDthTPgcm%2BwdlIVxAbZE%3D"/>
+</figure>
+</div>
+<p>Forget daily charging. <span class="text-italic">Flowtica Scribe</span> is built to last.<br/><br/>You get up to <span class="bold">30 hours</span> of continuous recording on a single charge — and with the compact charging case, that extends to <span class="bold">100+ hours of total use.</span></p>
+<p>USB-C fast charging (charging case only) keeps you ready for long workdays, multi-day conferences, or back-to-back meetings.</p>
+<p><span class="text-italic">Note: Only the Power Set includes the charging case. For extended use, we recommend choosing that reward tier.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351934">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:13-Uncompromised-Data-Security">13｜Uncompromised Data Security</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/934/ab8b3f742559ed1ccf022370e1ad3ab5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675389&amp;width=680&amp;sig=Qtdyu%2FZKsGP865JyoYL19pFYzU7z%2Fs0iN79hzfdc0UA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351937">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/937/7e63c501ec6f576797423d07fe926f31_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675401&amp;width=680&amp;sig=rTgjBMqq44RCrHzmFLUrKmNqIgQR1pa6eAnQz%2FovgoQ%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Flowtica Scribe</span> is built with privacy at its core.</p>
+<p>Your data stays in your control — with <span class="bold">AES-256 encryption</span> and <span class="bold">full transparency over what gets uploaded and when.</span></p>
+<p>Whether you're handling sensitive projects or confidential conversations, <span class="text-italic">Flowtica</span> gives you peace of mind without compromise.</p>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351944">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:14-Meet-the-Flowtica-App">14｜Meet the Flowtica App</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/944/422b1b853b0b19446a0a166c166dd40f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675450&amp;width=680&amp;sig=n7wzEQiSmg92Dk9%2BT2UmZ9RsJJ2r5Wn2iCKXqC%2B5QRQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351981">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/351/981/6829e7d4a288e8c28fbdebb3127365fd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754675610&amp;width=680&amp;sig=PhWMZfreKM1CX8Gsh6JcRjCvKDry3SeUR%2FsyQiKsACc%3D" src="https://i.kickstarter.com/assets/050/351/981/6829e7d4a288e8c28fbdebb3127365fd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754675610&amp;width=680&amp;sig=PhWMZfreKM1CX8Gsh6JcRjCvKDry3SeUR%2FsyQiKsACc%3D"/>
+</figure>
+</div>
+<p>The <span class="text-italic">Flowtica</span> App is your control center. <br/>It’s built to turn voice into action instantly.</p>
+<p>Just press, speak, and <span class="text-italic">Flowtica</span> <span class="bold">understands </span>what you need.<br/>Use natural commands that work the way your brain does, without complicated steps.</p>
+<p>Export highlights. Search transcripts. Prep for meetings.<br/>All from one place, and all with your voice.</p>
+<p>While others deliver hardware first and apps later, we did both.</p>
+<p>Over <span class="bold">1,000 beta testers</span> have helped refine the <span class="text-italic">Flowtica </span>App since January, and it’s ready for you on day one.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50212653">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/212/653/f893982b6df49d4e641f604a67a9dbda_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753782983&amp;width=680&amp;sig=Pn%2FPJOzy1tSF0otTrGphCmEP2881u%2FU3TQM4JByyKfk%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351995">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:15-Works-With-What-You-Use">15｜Works With What You Use</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/995/8074221db84ecf928d45f3bd651b1553_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675683&amp;width=680&amp;sig=gMDDmRVW2kf3C4TME75PTPTgidEGaS1LGj9CCN4cD4o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50351996">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/351/996/d47a49456c1c24658e68f8b093613cfa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675688&amp;width=680&amp;sig=BW7B50dtada2qk6ntF6RHCBwcqOROj0%2FxXv5D2GrvEE%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Flowtica Scribe</span> fits seamlessly into your daily workflow — no switching tools, no extra steps.</p>
+<p>Whether you're organizing a team project or planning solo, your insights go exactly where they belong.</p>
+<p>From summaries to raw audio, from meetings to milestones — <span class="text-italic">Flowtica</span> syncs it all where you need it.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352004">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:16-Customized-Summary-Templates">16｜Customized Summary Templates</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/004/b6d67bc492eb5928bacbfee27e5b4e93_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675735&amp;width=680&amp;sig=jlHptDf50E%2B6qimRibChqo46rXCW37b4hk%2BQivuDAV0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50357841">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/357/841/b3b543a536d044c4198dffab8a91da21_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754719676&amp;width=680&amp;sig=dQke9ERAtCcR1Bkoox6zewhS1YHwfkm6pT3HG7bfaVU%3D"/>
+</figure>
+</div>
+<p>Everyone works differently. So does <span class="text-italic">Flowtica.</span></p>
+<p>Love crisp bullet points, structured action lists, or neatly timestamped transcripts?</p>
+<p><span class="text-italic">Flowtica</span> adapts to you. It doesn’t just summarize. It learns your style and gives notes tailored just for you.<br/><br/>Customize your summaries:</p>
+<ul>
+<li>Pick the format: bullets, transcripts, timelines, or tables</li>
+<li>Create reusable templates for recurring meetings and projects</li>
+<li>Edit and refine: <span class="text-italic">Flowtica </span>learns from your edits </li>
+<li>Get smart, structured notes (like your brain wrote them for you)</li>
+</ul>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352018">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:17-Why-We-Built-Flowtica">17｜Why We Built Flowtica</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/018/93faf0744bf45288681b0dd60c55ec19_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675801&amp;width=680&amp;sig=13EbFJC8bfkuc3fAY%2BsdCSFn5nrDorAWlBAKErBaKOc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352021">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/021/b2f020cca31b1d3db9a885d593714909_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675809&amp;width=680&amp;sig=%2FuBD2t7gwr2NY86a51Z7ICpXrPu1mTC5JQF71kUrrac%3D"/>
+</figure>
+</div>
+<p>We’ve sat in the same meetings you have, trying to focus, take notes, listen, and contribute, all at once.</p>
+<p>Tools tried to help, but they added more friction than clarity. Voice recorders left hours of audio to sift through. AI assistants misunderstood context. Notes got lost, tasks got delayed.</p>
+<p>So we built <span class="text-italic">Flowtica</span> for one reason:  To give busy people the ability to capture what matters and turn it into something useful, fast.</p>
+<p>It’s a tool designed for the way people actually work. Because meetings shouldn’t be memory tests. And your priorities shouldn’t get buried in noise.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50214097">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/214/097/758a8a653b5556b96f7fe59c2799cc34_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753791932&amp;width=680&amp;sig=qql1FElSuDnCViAbB0lz5Jd6hR9O0K%2FxoHVO4fe24aA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352041">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:18-Memberships-">18｜Memberships </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/041/2695e2cab1170c37d0675f538e7d4f28_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675943&amp;width=680&amp;sig=mMzM%2BuGGZvNIeyWiiJZoQ42Ky2sQS7I6YNwBsKrAyxs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352048">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/048/e9aa5ba7f54316e58556651de42d8e3c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754675986&amp;width=680&amp;sig=2o3K9%2FD1%2BDFF%2BWf6BuXjpQp%2FyfG3Q%2FUoPziNe%2FVuNx4%3D"/>
+</figure>
+</div>
+<p>All plans above are offered at <span class="bold">our lowest price for Kickstarter Backers for the 1st year</span>. Additionally, <span class="bold">every Power Set backer includes a complimentary 3-month Premium membership</span> that activates once you receive your <span class="text-italic">Scribe</span>.</p>
+<p>* If you add a 1st-year AI Membership Add-on, you will get 15 months in total of membership.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352065">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:19-Specs">19｜Specs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/065/49f7ca1e7af093ea0531058eb132f941_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676101&amp;width=680&amp;sig=qrZ0IO9F8p4nVH1cdlTj2GtsKlbFst92J4nCWyjBhUc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352067">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/067/73d58c4436c8b90a5dc04a62fd24245c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676107&amp;width=680&amp;sig=Pf%2FQCjMJyoznP8XxAX1gLaSx9kmh6cgBr%2FTJ6y44zKQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352075">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:20-What-s-In-the-Box">20｜What's In the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/075/2223d9afcda36f2ace4b19778dae425c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676142&amp;width=680&amp;sig=8bUMiZW%2F6s7YH4%2BIRZhZiDVM5qm172H8k2S9zMNGz50%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352078">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/078/cd40f7703bc9fbe5f5705b459a5efebb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676147&amp;width=680&amp;sig=RSiiiOYVyQpQ3ydZkWdGsDHp6i2NlOadADZIJWdFkPQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50132798">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/132/798/312b432327be4728e91429f9e0379641_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753196869&amp;width=680&amp;sig=AwJBRJovvaZfaa682zulTW%2FPQAXCWY7jKvfsurWA7ZU%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">* Flowtica Scribe color preferences will be collected in a survey when the campaign ends.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352088">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:21-Rewards">21｜Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/088/8b795cab99bca876856f93763a6080dd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676163&amp;width=680&amp;sig=yhqPfd7LTEC%2Fms6xo92uG3YInreCaowpQ9Cnr%2Fod6cY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50357710">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/357/710/e6788738ed1dd019bfa50eee2e2a654c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754717695&amp;width=680&amp;sig=Hca7ZDJtLHiSfOncHrSctCC4w%2FTPNiCNKbOZdf5%2BHhg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352152">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/152/1ef10cecf2e24fa5e55d7f88589098bb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676432&amp;width=680&amp;sig=Nh0B7YUZVLaKJq0I6ZtKIb%2FZ%2FVKoMaY%2Bs7fWVYls%2B8w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352154">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/154/b4353262b19251369bc40f4e9d4a55c0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676438&amp;width=680&amp;sig=nhPJaHo0RTr7t2ej%2FN7Hvz5JSTtOorPktpphiI2wC4o%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352166">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:22-Timeline">22｜Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/166/9197fd131dbe1f6dd009d12ed931cbe8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676470&amp;width=680&amp;sig=8iBwwBuWPAnC9AliaWYF6H72vQG8IlD8QDD8QYFzNSc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352170">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/170/5c2b216506415033717b4cd21d450487_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676477&amp;width=680&amp;sig=scPREWBeH6XLzQZwtmudh5eikmgpAW7bDd%2B1ZCNYem4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352177">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:23-Production">23｜Production</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/177/0948a08e21c66b16f668512ba0484c3a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676509&amp;width=680&amp;sig=UDW0N1kFdD31iiJfAvvusceAXtAmmVDPD4TAgO%2FXliM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352178">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/178/b561683ed41a9c2e8a64bd9b21f3097c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676515&amp;width=680&amp;sig=z%2Bag33LPxKrMJKJiu3UJ34k45HHxpsjxc96viffdy64%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352183">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:24-About-the-team">24｜About the team</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/183/b0394afa2e4dc695fbb22bea350f4e98_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676547&amp;width=680&amp;sig=In8SbjtbtiIUDkzhuUye1oMYBA1khyEkVtrEFkduglI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50357715">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/357/715/27a044f9d2e3744e2aec8ce392245fd2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754717790&amp;width=680&amp;sig=85fhI9BtKb2x2R5KaL6KrWBq4hIF2jLKhLhzi4vdTPA%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Flowtica team</span> consists of passionate creators and tech enthusiasts who love combining cutting-edge technology with real-world applications. Our core team brings expertise from industry leaders including <span class="text-italic"><span class="bold">DJI, Bambu Lab, and ByteDance</span></span>, providing unique insights and deep technical knowledge. With extensive 0-to-1 product development experience, we deliver impactful innovations. <img class="image" data-id="50157299" src="https://i.kickstarter.com/assets/050/157/299/ef865599940dca94ec4744c9f40f03b1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753351300&amp;width=4856&amp;sig=NuZFtQjYPEi%2BBmi6kBKIdcvhshBDbRpRJ%2BNzCo13Voc%3D"/></p>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352195">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:25-Shipping">25｜Shipping</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/195/85555f917634324fe8e5c457d30babdc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676593&amp;width=680&amp;sig=kHRB52VqQD3pg98BKhHQfO%2F4941DDPMv0oqU4e6WShM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50352197">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/352/197/f3fe5f05c803977f021676c0f1e68af5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754676599&amp;width=680&amp;sig=CN%2FilsdfV4L2qTJ82k9qHK%2Fvbvh8QC1uj1%2B3o%2B9guXA%3D"/>
+</figure>
+</div>
+<p>For other regions not listed, shipping fee is temporarily set at $10-25 USD. The final shipping cost will be adjusted based on your delivery address after the campaign ends.</p>
+<p>The shipping fee listed above applies to<span class="bold"> one </span><span class="text-italic"><span class="bold">Scribe/Power Set</span></span> unit. If you plan to pledge multiple units, the final shipping cost will be calculated based on the total quantity. All other add-ons will ship <span class="bold">free of charge</span>.<br/><br/>The estimated shipping time is in early Q4 2025. After our campaign ends, we will send out a survey to collect your address and shipping fees.<br/><br/>By leveraging bulk sea shipping with DDP (Delivered Duty Paid) clearance, we’re able to <span class="bold">ensure that no customs duties or VAT will be charged upon delivery</span>. This is also why the shipping fee you see now is final — there will be no hidden costs later. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50215000">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Boost-Scribe">Boost Scribe</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/215/000/a825bd439cb13b3e5ad8f541466c710c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753796735&amp;width=680&amp;sig=DnhUQX9pFnleuMx4d9QAeDWgGPcMQTLGLp85AqYw8g0%3D"/>
+</figure>
+</div>
+<p>We‘re inviting you to join our affliate program through Kickbooster! Anyone can sign up and earn 10% commission on every sale made through theri unique referral link. </p>
+<p>It's simple to get started:</p>
+<ol>
+<li>Sign up on <span>Kickbooster.</span>
+</li>
+<li>Share your unique referral link with your network.</li>
+<li>Earn 10% on all sales generated through you link!</li>
+</ol>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50156580">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Follow-US">Follow US</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/156/580/df554f138bc68e6da549f48a1fc3a66c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753345882&amp;width=680&amp;sig=6cBPRJRD1SMMXv5dOY%2F4elf%2Fu8jq4kgfvAif3e062fA%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50223808">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/223/808/2c2a5297168685721a7954d07919cbf2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753842869&amp;width=680&amp;sig=fo8VRK2IOQuLyv80%2FBwq%2BwpYYpIKs3f6ahMK4yNJPl0%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">Flowtica Scribe </span></span>Kickstarter campaign is designed and fully managed by <span>TCF (The Crowdfunding Formula)</span>, <span class="text-italic">a leading, award-winning crowdfunding marketing agency. We team up and help companies to build global brands.</span><br/><span class="text-italic">With the largest team and the largest crowdfunding ecosystem on the market, </span><span>TCF</span><span class="text-italic">offers a wide range of crowdfunding services.</span><br/><span class="text-italic">We manage campaigns all the way from product concept to market validation, lead generation to email marketing, SMM and influencer marketing, PR and direct sales, video, design, and advertising - leading to the ultimate success of campaigns.</span></p>
+<span></span><span></span><span></span><p><span>This project is boosted by BackerCrew</span></p>
+<span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49960775">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/960/775/251849261c8e52543e81ff0c1d4f52e0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751961140&amp;width=680&amp;sig=BEUXeI9019AL%2B6S4DcdO4ve%2BTaIIpS3FOQH2aq9VJy0%3D"/>
+</figure>
+</div>
+<p>This project is Featured on HugeBackers, a community of over 169,000+ Backers that has raised creators over $50MM to date.</p>
+<span></span><p><span>This project is promoted by Produxhub.</span></p>
+</div>
+</div></div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Like any crowdfunding venture, there are inherent risks and challenges in developing Flowtica Scribe. However, our team's expertise in smart recording technology and AI gives us confidence in our ability to navigate any manufacturing and development hurdles that may arise.
+
+The journey of bringing an innovative product to life is filled with unexpected turns and discoveries. What makes Kickstarter special is that it invites backers to become part of this creative process, giving you a front-row seat to witness Flowtica Scribe's evolution from concept to reality.
+
+Just as we did throughout the development of Flowtica App, we will keep you informed at every significant milestone and stage of the process. During the final phases of development and production, we commit to maintaining transparent communication channels, providing regular updates to ensure you're always in the loop. We deeply appreciate your trust and support in this journey together, and we're dedicated to delivering a final product that exceeds your expectations.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

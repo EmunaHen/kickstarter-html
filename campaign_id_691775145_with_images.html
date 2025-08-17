@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZX Spectrum Next Issue 3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/963/420/624759b601c84ffe5e58e1ed18312ba9_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1751977962&width=560&sig=lYXLPnRk9qay1tB%2FUqVjv9GHBG52aBSVzJHu6JVvQZs%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>ZX Spectrum Next Issue 3</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">The Sinclair ZX Spectrum Next: the evolution of the Speccy computer, now expanded into the world of the Sinclair QL, C64 and... More!</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 335,799</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:The-Sinclair-ZX-Spectrum-Next-A-Revolution-Rebooted"><span class="bold">The Sinclair ZX Spectrum Next: A Revolution, Rebooted</span></h3><p>A machine that changed everything, reborn for a new era. The original ZX Spectrum sparked a generation of coders, gamers, and dreamers to build the future we live in. Now, the Next continues that legacy, not as a replica, but as the true next step: fully compatible, massively upgraded, and made to inspire a new wave of creativity.<br/> </p><h3 class="page-anchor" id="h:Meet-the-ZX-Spectrum-Next-Issue-3"><span class="bold">Meet the ZX Spectrum Next Issue 3</span></h3><p>The ZX Spectrum Next Issue 3 is the third generation of the modern Speccy, a beautifully engineered 8-bit machine built with a touch of nostalgia and focused on innovation. It follows the success of our two previous Kickstarter campaigns (delivering over 10,000 units worldwide) and introduces a larger, more powerful FPGA (Artix A7 XC7A35T-2CSG324C), support for additional platforms like the Sinclair QL and Commodore 64, and a ton more enhancements under the hood.</p><p>Whether you're a lifelong Speccy fan or just rediscovering the joy of owning a computer you can truly master, explore and make your own, the Next Issue 3 is the most powerful 8-bit computer out there..</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Seeeeriously cool looking computer, this ZX Spectrum Next..." data-id="50051346">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/051/346/b86e0f6b360bbebf453703b231664731_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752608542&amp;width=680&amp;sig=FkM9DkVDKQykPnTpkoKjwnT%2FWw1Od6qWBKgyx2AIbFo%3D"/>
+<figcaption class="px2">Seeeeriously cool looking computer, this ZX Spectrum Next...</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:More-Than-Retro-The-Power-of-the-Next"><span class="bold">More Than Retro: The Power of the Next</span></h3><p>The ZX Spectrum Next is what the original might have evolved into if Sinclair had kept going: a machine to rival the likes of the Amiga or Atari ST, with a full spectrum (pun intended!) of improvements:</p><ul>
+<li>
+<span class="bold">Hundreds of new games and apps</span>, most in boxed releases for collection</li>
+<li>
+<span class="bold">Improved graphics:</span> 256 colour modes, copper effects, tilemaps and hardware sprites</li>
+<li>
+<span class="bold">Enhanced sound:</span> 9-channel stereo audio + dual stereo DACs</li>
+<li>Built-in networking, faster storage, and modern ports such as HDMI</li>
+<li>Fully compatible with classic ZX Spectrum hardware and software, no emulation in sight</li>
+</ul><p>Play the classics as they were meant to be played, or re-experience them with turbo modes and enhancements. Then dive into a whole new generation of Next-exclusive games like <span class="text-italic">Saboteur Remastered</span>, <span class="text-italic">Head Over Heels Deluxe</span>, and <span class="text-italic">Lords of Midnight Next</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="These games alone are sure to keep you playing your Next for a loooong time!" data-id="50005338">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/005/338/63ed43b6106608cf5a06a12a3025d86d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752257695&amp;width=680&amp;sig=VRQyY%2BYZYkK%2FQ%2BDUeQ27LC0ttGq7trvo%2FxTlp7vrUD4%3D"/>
+<figcaption class="px2">These games alone are sure to keep you playing your Next for a loooong time!</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Create-Your-Own-Classics"><span class="bold">Create Your Own Classics</span></h3><p>The ZX Spectrum Next isn't just for playing, it's built for creating. With a powerful new NextBASIC, full C support, Assembly, and complete IDEs and toolchains, it welcomes you to explore, learn, and build. Want to make your own platformer, puzzle game, or music tracker? The tools are all here for you to try, and the community ready to help to make it so.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Not only you can code in C directly in the Next, it can compile it too!" data-id="50053460">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/053/460/8a66a918336a547df37b087f825867f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752619648&amp;width=680&amp;sig=9oEQH7Rkv5a2lD4N9DRDOKOIr1fvhTZKqFoWCiRcfNs%3D"/>
+<figcaption class="px2">Not only you can code in C directly in the Next, it can compile it too!</figcaption>
+</figure>
+</div>
+<p>With every system shipped, a SD card is included packed with games, apps, demos, documentation, and development tools to get started right out of the box.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="There are more exclusive games and apps on the Next you can possibly shake a stick at..." data-id="50053788">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/053/788/b37691056f0a57abdaebc484df1ef519_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752621818&amp;width=680&amp;sig=UYpGZKRMA3WvvmT4LsKL5TQ1YVvOqb%2FVFojNrO8BqVE%3D"/>
+<figcaption class="px2">There are more exclusive games and apps on the Next you can possibly shake a stick at...</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Not-Just-a-ZX-Spectrum-It-s-a-Platform"><span class="bold">Not Just a ZX Spectrum, It’s a Platform</span></h3><p>Thanks to its new expanded FPGA, the Next Issue 3 supports more retro cores and ZX personalities than ever:</p><h4 class="page-anchor" id="h:New-Official-Cores-"><span class="bold">New Official Cores:</span></h4><p><span class="bold">Sinclair QL/Next</span> with switchable CPU between MC68000 and 68020. Run classic QL software with full compatibility, smoother performance, while adding vibrant colour and exciting sound capabilities. Our enhanced QL core brings the system back to life, complete with modern SD storage, Internet and legacy network support, and full integration with the Next’s own keyboard.</p><p><span class="bold">Commodore 64</span> to experience and enjoy classic SID sounds while playing iconic C64 games from tapes, cartridges and even multiple disk spanning titles! </p><p>You can switch between cores and/or launch them directly from NextZXOS at boot, as easy as that!</p><p>Extra cores are available from third parties (like the <span class="bold">BBC</span> by hoglet) and more Sinclair-related cores are in the planning stage!</p><h4 class="page-anchor" id="h:Personalities-"><span class="bold">Personalities:</span></h4><p><span class="bold">Timex as well as unofficial clones</span>, such as the TS/TC2048, Pentagon, TK90X, TK95 and others.</p><p><span class="bold">Multiple Personalities</span>: ZX80, ZX81, and all original Spectrum models.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50053947">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/053/947/a887d734d15683587baf945aaa02ccd0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752623030&amp;width=680&amp;sig=8x6PPeQ4ZqBgdVzvVIs0mabbpWhL%2FdqN12qTLyCh8pQ%3D"/>
+</figure>
+</div>
+<p><br/> </p><h3 class="page-anchor" id="h:The-Specs"><span class="bold">The Specs</span></h3><p>Time to get our hands dirty with the specs of the Next Issue 3. Fasten your seatbelts, this is where it gets serious:<br/><br/><span class="bold">Native ZX Spectrum Next Issue 3:</span></p><ul>
+<li>
+<span class="bold">Processor:</span> Z80N at 3.5MHz with turbo modes at 7MHz, 14MHz and 28MHz</li>
+<li>
+<span class="bold">Compatibility: </span>Full ZX Spectrum family compatibility</li>
+<li>
+<span class="bold">Memory:</span> 2MB RAM</li>
+<li>
+<span class="bold">Video:</span> 2, 8, 16 &amp; 256 colours modes (128 x 96, 256x192, 320x256, 512x192 &amp; 640x256 high resolution modes)</li>
+<li>
+<span class="bold">Video Output</span>: RGB, VGA, HDMI, 50Hz and 60Hz modes</li>
+<li>
+<span class="bold">Extra Hardware:</span> Hardware sprites, zxnDMA, CTC, Copper, Enhanced ULA, Layer2 and Tilemap (Layer3)</li>
+<li>
+<span class="bold">Storage:</span> 1 x SD Card slot, with DivMMC-compatible protocol, 1 x internal microSD card slot with preinstalled card (fully supported by NextZXOS)</li>
+<li>
+<span class="bold">Audio:</span>  9-channel sound via three stereo AY-3-8912, plus two x 4-bit DACs</li>
+<li>
+<span class="bold">Joysticks:</span>Two ports compatible with Cursor, Kempston, and Interface 2 protocols — extended to support even Megadrive joypads or configurable as serial ports</li>
+<li>
+<span class="bold">PS/2 port:</span> Mouse with Kempston mode emulation and/or external keyboard</li>
+<li>
+<span class="bold">Special:</span> Multiface functionality for memory access, save games, cheats and more</li>
+<li>
+<span class="bold">Tape support: </span>Combined MIC and EAR port for loading and saving</li>
+<li>
+<span class="bold">Expansion:</span> Original external bus expansion port (now with +3 disk interface support)</li>
+<li>
+<span class="bold">Accelerator Board</span> (optional): GPU / 1GHz CPU / 512Mb RAM</li>
+<li>
+<span class="bold">Networking:</span> Built-in Wi-Fi module</li>
+<li>
+<span class="bold">Real Time Clock:</span> Built-in RTC with battery backup </li>
+<li>
+<span class="bold">OS:</span> NextZXOS and NextBasic, featuring an expanded command set</li>
+<li>
+<span class="bold">Alternative OSes:</span> CP/M (included),SymbOS and esxDOS</li>
+<li>
+<span class="bold">Additional cores and official ROMs:</span> Sinclair QL/Next and C64 with cores also launchable via NextZXOS. Community cores available<br/> </li>
+</ul><p><span class="bold">ZX Spectrum Next Issue 3 in Sinclair QL Core mode:</span></p><ul>
+<li>
+<span class="bold">Processor:</span> Switchable Motorola 68000 or 68020 CPU running at up to 44MHz</li>
+<li>
+<span class="bold">Video Output: </span>VGA and HDMI support</li>
+<li>
+<span class="bold">Compatibility:</span> Full Sinclair QL compatibility with MDV and FLP image support</li>
+<li>
+<span class="bold">Memory: </span>2MB of RAM</li>
+<li>
+<span class="bold">Storage: </span>SD card large storage with both QXL container and FAT32 access</li>
+<li>
+<span class="bold">Network:</span> WiFi network</li>
+<li>
+<span class="bold">Joysticks:</span> CTL1/2 Joystick ports switchable to QL Net port (requires DIY dongle)</li>
+<li>
+<span class="bold">Keyboard:</span> Full QL keyboard support with extra keys simulated via combinations</li>
+<li>
+<span class="bold">Co-Processor:</span> Hermes i8049 co-processor</li>
+<li>
+<span class="bold">PS/2 port:</span> PS/2 port for external keyboard and/or Qimi mode emulation</li>
+<li>
+<span class="bold">Real Time Clock:</span> Full support</li>
+<li>
+<span class="bold">Video Modes:</span> 4, 8, 16 (Thor XVI), 256 (Aurora compliant) and 65K colour display with dual screens for extra speed</li>
+<li>
+<span class="bold">Audio:</span> Hermes/i8049 beep, 3 channel AY PSG and stereo PCM audio</li>
+<li>
+<span class="bold">Extras:</span> Hardware Sprites and dual hardware timers<span class="bold">,</span> I2C bus</li>
+<li>
+<span class="bold">OS:</span> Support for QDOS / Minerva / SMSQ/e (WIP)<br/> </li>
+</ul><p><span class="bold">ZX Spectrum Next Issue 3 in C64 Core mode:</span></p><ul>
+<li>
+<span class="bold">Processor:</span> 6510 processor running at 0.97MHZ (PAL) &amp; 1.023MHz (NTSC) with accelerated modes in the works</li>
+<li>
+<span class="bold">Compatibility:</span> Full C64 compatibility</li>
+<li>
+<span class="bold">Memory:</span> 64KB RAM</li>
+<li>
+<span class="bold">Video:</span> Full VIC2 support (320x200 colour mode, 16 colours, sprites and raster)</li>
+<li>
+<span class="bold">Video Output:</span> RGB, VGA, HDMI - PAL and NTSC modes (switchable via hotkey)</li>
+<li>
+<span class="bold">Audio:</span> SID fully implemented</li>
+<li>
+<span class="bold">Joysticks:</span> Standard joysticks support</li>
+<li>
+<span class="bold">Storage:</span> Support for 8K and 16K cartridges, D64 disk images (single and double sided) with multi floppy software support</li>
+<li>
+<span class="bold">OS:</span> Jiffy DOS compatible</li>
+<li>
+<span class="bold">PS/2 port:</span> PS/2 supporting GeosMOUSE protocol and external PS/2 keyboard</li>
+<li>
+<span class="bold">Keyboard:</span> Full C64 keyboard support via combination keys</li>
+<li>
+<span class="bold">Tape:</span> Tape support via Next MIC/EAR socket<br/> </li>
+</ul><h3 class="page-anchor" id="h:Prepare-to-fall-in-love-with-a-computer-all-over-again"><span class="bold">Prepare to fall in love with a computer all over again</span></h3><p>Our original tagline printed on every ZX Spectrum Next box remains at the heart of our mission: to deliver a machine that is straightforward, beautiful, and powerful, with everything fully documented in the included printed manual for you to master.</p><p>From the premium packaging to the accessories and the curated goodies on the SD card, every aspect of the Next is designed to delight and surprise. To get started, all you need is a TV or monitor, a video cable and… that's it. The Next supports RGB, VGA, and HDMI output, so you’re free to choose anything from a vintage CRT to a modern high-end display.</p>
+<p>You can start your journey with your favourite Speccy game, perhaps running at a turbo mode – 3D games such as <span class="text-italic">Driller </span>or<span class="text-italic"> Castle Master</span> run at full framerate on the 28MHz mode. Experience the new titles made exclusively for the machine featuring upgraded graphics and sound, and feel inspired to create your own game.</p><p>You can connect your ZX Spectrum Next to your Wi-Fi network and browse online collections of games, demos, mods and art ready to download and play with applications such as GetIt by team member David Saphier. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="So many goodies online one can get lost and never, ever, find their way back. You have been warned!" data-id="50051439">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/051/439/7cdc0464a305ca5896d97c9143462d51_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752608936&amp;width=680&amp;sig=hz%2B%2BPuqLQrlEUjc3PQ7SMEpKirZkTDWcOayocKwYEhk%3D"/>
+<figcaption class="px2">So many goodies online one can get lost and never, ever, find their way back. You have been warned!</figcaption>
+</figure>
+</div>
+<p>Every aspect of the ZX Spectrum Next is designed to put you in control, with an open and intuitive environment that encourages you to remix, expand, or simply learn from the games and apps as you build your own. It captures the spirit of a computer that feels personal the moment it's switched on, making the Next an ideal platform for learning about computing, free from the abstraction and complexity of modern operating systems.<br/> </p><h3 class="page-anchor" id="h:Built-by-the-Community-Powered-by-You"><span class="bold">Built by the Community, Powered by You</span></h3><p>The ZX Spectrum Next was designed as a true successor of the Speccy, down to its industrial design by the late Rick Dickinson, the original in-house Sinclair designer and his partner Phil Candy. This means it packs small touches one should expect, from a responsive keyboard replacing ye ol’ rubber keys to hardware compatibility: you can even load your original games from cassette tape if you so want, or attach that ZX Spectrum expansion board you’ve got in the attic and it will just work.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Every single one of these lovely boxed games was created by a member of the Next community" data-id="50053817">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/053/817/22895dbb5ff2d25c40d00fd56c3c31a5_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752622085&amp;width=680&amp;sig=d1jKAJPhiSt1sHP%2FxQM9rWjbTjuXwIi5yZYPInxSem4%3D"/>
+<figcaption class="px2">Every single one of these lovely boxed games was created by a member of the Next community</figcaption>
+</figure>
+</div>
+<p>This ensures the Next has its roots firmly in the Speccy heritage, and takes it into the future with its myriad of hardware and software improvements, thanks to the community and team behind the project:</p><p><span class="bold">Allen Albright:</span> The brains behind the Next core, Allen keeps expanding the functionalities of the Next with every new iteration of its cores </p><p><span class="bold">Garry Lancaster: </span>If the Next is easy to use and program, it’s thanks to Garry’s NextZXOS, literally the most powerful 8-bit OS on the planet. Garry is also the author of the CP/M bios, included in the Next.</p><p><span class="bold">Tim Gilberts:</span> One of the most recognised developers of the Speccy, Tim dedicates his neurons to ensure the Next can speak to peripherals through UART drivers, Serial I/O, WiFi, Kempston Mouse support…</p><p><span class="bold">D. Rimron-Soutter (Xalior): </span>The Next accelerator enabling the loading of TZX files, playing of MP3 music, MIDI and a ton of functionalities in the NextPi distro are all the work of Xalior, who maintains the accelerator.</p><p><span class="bold">David Saphier:</span> Music players, terminal software, getit downloader, games programmer, NextBuild package for Boriel BASIC compiler… David is a powerhouse of a creator that makes the Next go way beyond the confines of its elegant case. </p><p><span class="bold">Robin Verhagen-Guest:</span> The Next talks to the world outside thanks to Robin’s ESP WiFi firmware. Robin keeps the computer connected and we get a ton of apps and content through those pipes!</p><p><span class="bold">Michael “Flash” Ware:</span> A prolific games programmer who’s pushed the envelope by providing amazing software for the previous Kickstarters and will do so again this time around!. </p><p><span class="bold">Gari Biasillo:</span> Musician? Games Programmer? Next audio system debugger? AY drivers for NextBASIC, Z80 and C via NextDAW? He does it all and he’s good looking too!</p><p><span class="bold">Mike Dailly:</span> Creator of Lemmings and GTA (you know, those classics - Ed), ported Wolf3D on the Next, made some amazing demos and author of the  #CSpect emulator that has made cross-platform debugging a breeze.</p><p><span class="bold">Matt Davies:</span> When not tweaking Lords of Midnight/Next or adding stuff to his Odin assembler (nice logo btw - Ed) he’s working on a Forth interpreter. </p><p><span class="bold">Lampros Potamianos: </span>Author of the very first real Next game ever published, he’s also the greatest hacker Greece has produced. He's the go-to guy to test new features, usually by writing a game.</p><p><span class="bold">Theo Liontakis (Leon</span>): A man of few words, always calm and collected, he’s our official cores’ author and noted modern QL hardware developer. When presented with the task of creating the C64 core, he said: “I dunno” and then presented a working core five days later.</p><p><span class="bold">Kev Brady:</span> The methodical genius brains behind our awesome burn-in test suite that makes sure that every single one of your Nexts that comes out of the factory works great!</p><p><span class="bold">Phil Candy:</span> The industrial design partner of the late Rick Dickinson, Phil continues to help us ensure the Next physical properties are up to scratch and of top notch quality.</p><p><span class="bold">Victor Trucco: </span>The hardware hacker behind more gadgets than one can shake a stick at, is the creator of the TBBlue, the roots of the ZX Spectrum Next hardware.</p><p><span class="bold">Henrique Olifiers:</span> A childhood friend of Victor Trucco and game developer who, a while back, started putting together the project that eventually became the ZX Spectrum Next and that now is, well, here!</p><p><span class="bold">Alfredo Tato:</span> The ZX Spectrum Next box became a legendary collectible item thanks to the brilliant work of Tato, who ensures a relentless dedication to the heritage of a long line of gorgeous boxes.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="We ain't kidding when we say the Next's box is one of the best looking ones out there. Hot!" data-id="50053894">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/053/894/0b10f5ef02a2ae97af93c150fafd51b6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752622614&amp;width=680&amp;sig=4qitrRQHM7qDpy0J%2BU2PNVjnxxmtcW7V%2BZrET3IKkTk%3D"/>
+<figcaption class="px2">We ain't kidding when we say the Next's box is one of the best looking ones out there. Hot!</figcaption>
+</figure>
+</div>
+<p><span class="bold">Phoebus Dokos:</span> Author of the Next manual included in the box, a book that keeps on changing as often as the team adds new features, which sure enough drives poor Phoebus, well, sort of mad.</p><h4 class="page-anchor" id="h:-Honourable-mentions-">
+<span class="bold">Honourable mentions:</span> </h4><p><span class="bold">Simon N Goodwin:</span> Our resident Spectrum and QL tech guru and prolific author of books and software (and a great influence for the Next manual, NextBASIC and QL cores). Of invaluable help to make the Next an enduring platform! Don’t forget to get his 490+ page Next Tech book!</p><p><span class="bold">Martyn Hill</span>: whose work on providing the Next with a ZX/QL Net interface pushes the platform forward by reviving one of the most overlooked network protocols ever invented.</p><p><span class="bold">Mike Cadwallader</span>: There are few people with Mike’s patience and organisational skills. He brought KS1 and KS2 backers their Nexts and covered every aspect and every possibility with his relentless attention to detail.</p><p>And of course...</p><p><span class="bold">You:</span> The people who make up the Next community are literally its lifeblood. They are the ones who make it possible by supporting the project through crowdfunding, who reward developers for creating games and apps, and who in the end use the computer, turning a bunch of plastic, copper, silicon and electrons into a machine with soul. Without you there would be no ZX Spectrum Next.<br/><br/> </p><h3 class="page-anchor" id="h:Why-Back-This-Campaign-"><span class="bold">Why Back This Campaign?</span></h3><ul>
+<li>It’s simply the most powerful ZX Spectrum Next out there</li>
+<li>Now supports new cores such as the QL and C64 with licensed ROMs</li>
+<li>A proven team with over 10,000 Nexts delivered</li>
+<li>No emulation in sight: real hardware, breakneck performance</li>
+<li>Made by lovely people of the Speccy scene</li>
+<li>A beautiful designed computer designed to last decades and decades</li>
+<li>Fully documented with printed manuals in the box</li>
+<li>Includes surprise stretch goals</li>
+</ul><p>It doesn’t matter wheter you're returning to the Speccy or just discovering it for the first time (!), there's never been a better time to join the Sinclair family!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Wait, the ZX Spectrum Next has its very own mag? Well, yes!" data-id="50053832">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/053/832/b3caff766ba534ad12fd86f8f79e6591_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752622150&amp;width=680&amp;sig=eDM9xA0xXNitSVlJhLv%2FGpyzJJTTet3YmcjRDDwvsYo%3D"/>
+<figcaption class="px2">Wait, the ZX Spectrum Next has its very own mag? Well, yes!</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:And-Introducing-The-Magenta"><span class="bold">And Introducing... The Magenta</span></h3><p>Some would call it purple, others violet, but we know the correct colour is ‘Magenta’ because that’s what’s written in our Spectrum keyboards. Sure, the ZX Spectrum Next is a great looking machine. But does it come in Magenta? Well, glad you asked!</p><p>For the fashionable geek in us all, we have an exclusive translucent magenta case that is sure to turn some heads and would make a great host for some RGB lighting for those keen to hack their Nexts to their liking by running some wires and LEDs inside it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="And the eagled-eyed amongst you will notice Magenta is colour #3 on the Speccy, as in Issue 3. See what we did there?" data-id="50059943">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/943/75a64c0f2b20a13a8b5e252bbdc0521c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752663154&amp;width=680&amp;sig=5rKq%2BlgQ42k5dvj0OYHGOijVTiMNyovsVvU2WXXto7A%3D"/>
+<figcaption class="px2">And the eagled-eyed amongst you will notice Magenta is colour #3 on the Speccy, as in Issue 3. See what we did there?</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Stretch-Goals"><span class="bold">Stretch Goals</span></h3><p>We got funded in under 7 minutes (!) thanks to your support and love for the project. Time for some 'unexpected' stretch bonuses to roll!!!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="No one expects the Spanish Inquisition!" data-id="50051549">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/051/549/ea9fa51cd3b2675492c9d711147dcb4c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752609479&amp;width=680&amp;sig=aUAX9svmiYjI6d4r%2FhIbyVzZxHQyIDAvy4JpWMLmFQ4%3D" src="https://i.kickstarter.com/assets/050/051/549/ea9fa51cd3b2675492c9d711147dcb4c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752609479&amp;width=680&amp;sig=aUAX9svmiYjI6d4r%2FhIbyVzZxHQyIDAvy4JpWMLmFQ4%3D"/>
+<figcaption class="px2">No one expects the Spanish Inquisition!</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Yesterday's news: It's ALL unlocked just FIVE DAYS into the campaign!" data-id="50192839">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/192/839/e7e6e08f61607359381bb1c35890ccb5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753649149&amp;width=680&amp;sig=XTbO9IHyZBwnBJAmaK8Y7hYGeQlIv9YhIuHEw0trT%2F8%3D"/>
+<figcaption class="px2">Yesterday's news: It's ALL unlocked just FIVE DAYS into the campaign!</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Just two, TWO, to go! Not long now!" data-id="50416159">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/416/159/95ab45f976fe721af8c6ac0cdba09da2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1755120370&amp;width=680&amp;sig=%2Fyd0g1SE1l%2BqiF5kutdFEHvO6wC%2BvGFs0IDmNNaGZIw%3D"/>
+<figcaption class="px2">Just two, TWO, to go! Not long now!</figcaption>
+</figure>
+</div>
+<p><br/> </p><h3 class="page-anchor" id="h:Join-the-Movement"><span class="bold">Join the Movement</span></h3><p>Retro computing is no longer a niche. With thousands of active users, developers, and collectors, the ZX Spectrum Next is powering a whole new wave of 8-bit creativity.</p><ul>
+<li>Back this project to:</li>
+<li>Recapture the magic of your first computer, down to that smell coming out of the box</li>
+<li>Inspire the next generation of creators, it’s ideal for kids learning computing</li>
+</ul><p>Own a piece of computing history made anew by people who love what they are doing. It’s a no-brainer! (- Ed)<br/> </p><h3 class="page-anchor" id="h:Don-t-forget-to-check-out-our-partner"><span class="bold">Don’t forget to check out our partner</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50051600">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/051/600/8d93f92462c573c1825ac24d68ab2a77_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752609800&amp;width=680&amp;sig=GpqV28H0MaX91AL9yMU0kFbvxc3swr8ReAy4%2BIUpVEk%3D"/>
+</figure>
+</div>
+<p><span class="bold">GamesYouLoved</span> — retro computing champs helping spread the word about our project. Show them some love at your favourite social of choice:</p><p>YouTube:<span>gamesyouloved</span><br/>Facebook:<span>GamesYouLoved</span><br/>Bluesky:<span>gamesyouloved.bsky.social</span><br/>Website:<span>www.gamesyouloved.com</span><br/> </p><h3 class="page-anchor" id="h:Let-s-Build-the-Future-Together"><span class="bold">Let’s Build the Future Together</span></h3><p>The ZX Spectrum Next isn’t just a computer, it’s a movement. A return to a time when you could truly own, understand, and shape the machine in front of you. Back the project now and help us take the Next to the… Well, Next level!</p><p>We can’t wait to see what you build with your ZX Spectrum Next Issue 3!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="This one? Well, this one is mine. No, really -- that's literally me in the shot." data-id="50053905">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/053/905/070c19b4882aff1a7f08677f2b586de6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752622691&amp;width=680&amp;sig=qtEnqldWSkVpfoQt9n5t0vLhtO2H3U4O6Eu3%2FUQ3jNc%3D"/>
+<figcaption class="px2">This one? Well, this one is mine. No, really -- that's literally me in the shot.</figcaption>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Every ZX Spectrum Next backed includes a donation to a British charity looking after our environment and children. A great machine that does good.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The Sinclair ZX Spectrum Next is designed and built for lastability. The machine is constantly updated through firmware with new features, and every new issue is retrocompatible, ensuring the Next never gets outdated or superseded.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">The ZX Spectrum Next case is made of ABS plastic, a recyclable material. The computer is designed to be user-maintained, meaning it's easy to open and repair, with extensive documentation and schematics available to help users to service their Nexts if necessary (although the ZX Spectrum Next is a very sturdy piece of electronics). Its open-source design allows for 3rd party expansion, maintenance and even cloning.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">Every ZX Spectrum Next backed includes a donation to a British charity looking after our environment and children. A great machine that does good.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amkov DV Camera -8X Optical+5X Digital Zoom HD Recording</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/285/775/f9247594ee3b2bfff7efcedc1cf002bf_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754296280&width=560&sig=Jif0hmkeGuEc8McEv0AI5NUh%2BeIt4E9W56C1SvzPy3w%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Amkov DV Camera -8X Optical+5X Digital Zoom HD Recording</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Portable Camcorder|8x Optica|Zoom|8K Video & 5K/30fps Recording |Time-Lapse Recording|Dual Camera Recording|External Microphone Support</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,789</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267528">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Introduction">Introduction</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/528/1c41cda3d9782b0085e6824932d7092d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122223&amp;width=680&amp;sig=VSfXdxh5a4w8SNakEd%2BpS1as7tvH9hhFlYB%2B3twTk3M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267529">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/529/ba319b4a1bbc415680953918582de053_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122229&amp;width=680&amp;sig=8XXHT0pPSg%2BbWuTEanEuOi97TYR2xIvJrGz6ldHvwsk%3D"/>
+</figure>
+</div>
+<p>With <span class="bold">V02</span>, those headaches are history. It is a versatile mini camera integrating both still photography (DC) and videography (DV) capabilities. Its<span class="bold"> 8X optical zoom</span> combined with <span class="bold">5X digital zoom</span> captures distant details effortlessly, while the high-performance <span class="bold">SONY CMOS sensor</span> delivers stunning <span class="bold">75MP photos</span> and records ultra-clear<span class="bold"> 8K video</span> or smooth<span class="bold"> 5K footage </span>at 30fps. A <span class="bold">3.0-inch IPS screen</span> ensures sharp previews and playback. The camera supports <span class="bold">creative modes</span> including <span class="bold">slow-motion, time-lapse</span>, and <span class="bold">loop recording</span>, and features flexible audio input via <span class="bold">wired or wireless external microphones</span> for remote capture—making it ideal for preserving life's most precious moments.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50314979">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/314/979/c1ab4b915fbfd68e65e581afe57197ba_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754450684&amp;width=680&amp;sig=7A8719YZ5juglWFC23Che0azbWvMpkCVJE9bKWye3Ro%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300200">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:MICRO-MACRO-PERFECTED-BY-V02">MICRO. MACRO. PERFECTED BY V02</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/200/64e48c6a98de4ccfd5df24d425e8204d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754386219&amp;width=680&amp;sig=EGF%2BPkCfcw3Cu36vvJIPznkp5rL2RIGN7HEzhF9vlIQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286025">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/286/025/8f6350841950e4681f065dcef854d50c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754298353&amp;width=680&amp;sig=GaDhwtlgtANJTOZzBt2z0CLSHuerYn2OzgqiL35bo3s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267539">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Operation-Video">Operation Video</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/539/d4d6ba20aca0702c06e572cfa35718ba_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122284&amp;width=680&amp;sig=MmwT7SumRpGDYXqWWJRA0Vmf9Ygvvn8cVHmE0xhEAG8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267540">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Mini-Camcorder-Max-Value-Pro-Shots-Peanut-Budget">Mini Camcorder, Max Value: Pro Shots. Peanut Budget</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/540/d2ab678c4abc5e6b5797bb999ebc0847_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122294&amp;width=680&amp;sig=OJYnQrEqcJaEOIWa%2FBZm7UXaRhnRYwwZAMo2tPqJp2g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286861">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/286/861/5f7b487c6682bf22d9e163666f3ee272_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305070&amp;width=680&amp;sig=vNIUn3STlv99W%2BqLfJIr7%2FVt2cvk7eFPXKZMFDO9P5g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286871">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/286/871/d4c42f4414027bf4d4327cbe83112ce3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305160&amp;width=680&amp;sig=j3Jpg3D%2FwT6IbYjPVUyFc1TwQVRTYXmkAiK6IF4sAnI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Fits any palm. Weighs nothing on the go.</span></p><p>Most DSLRs are bulky, pricey, and tiring to hold, the AMKOV V02 redefines portability. Its ergonomic vertical grip enables comfortable one-handed operation with intuitive controls – all packed with pro-level features in a compact body that outperforms same-spec cameras on mobility.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300168">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:V02-Dual-Focus-Modes">V02 Dual Focus Modes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/168/22c6dc2f20eefd43d2199aed1ee217fe_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754386047&amp;width=680&amp;sig=5YmWNHyS6t%2FRXul%2BtvBbxl3cOr0kbFKoEns6w8QUxmg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50000480">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/000/480/2c36a8187373e14af7d3162c5670dfee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752227714&amp;width=680&amp;sig=JvzMJSGIPU1FpN1R9%2FTs9I94krR4B9RiE4lsuuAwGoQ%3D" src="https://i.kickstarter.com/assets/050/000/480/2c36a8187373e14af7d3162c5670dfee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752227714&amp;width=680&amp;sig=JvzMJSGIPU1FpN1R9%2FTs9I94krR4B9RiE4lsuuAwGoQ%3D"/>
+</figure>
+</div>
+<p>The V02 features fixed focus mode. With zero autofocus lag, it captures split-second moments flawlessly. No hunting, no blur, no distractions—just pure focus on your Shooting.The V02 features fixed focus mode. With zero autofocus lag, it captures split-second moments flawlessly. No hunting, no blur, no distractions—just pure focus on your Shooting.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267585">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Professional-Macro-Shooting">Professional Macro Shooting</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/585/1ee331c025d463aa6f36105e02db658d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122564&amp;width=680&amp;sig=bkRpxuuzJNt9syglxKyQMuKTGqn6E0FP2q9RzLqgJf8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267568">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/267/568/e4ce860126727c987480472eb2647ce4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122482&amp;width=680&amp;sig=z8eZi3yFMCRK8pZUB19H4%2F5i0x1xniYEtNKU1s9a4Ac%3D" src="https://i.kickstarter.com/assets/050/267/568/e4ce860126727c987480472eb2647ce4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122482&amp;width=680&amp;sig=z8eZi3yFMCRK8pZUB19H4%2F5i0x1xniYEtNKU1s9a4Ac%3D"/>
+</figure>
+</div>
+<p>The Professional macro shooting with V02 could Blur backgrounds to isolate subjects, enhancing visual focus and artistic impact. Simultaneously magnifies intricate textures, structures, and colors for unprecedented detail revelation.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267592">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:High-Resolution-recording">High-Resolution recording</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/592/8f7951e3958b11863d389b08dd66cc7b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122614&amp;width=680&amp;sig=Qj26YM7Xwip7WrDm53rTC3IFtBIaBSr3lrMsyn%2BOrLI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267605">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/267/605/82b3d034295da1d09f4856f15122cae4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122691&amp;width=680&amp;sig=n3nmNy5pBE0SD3iV2ywfyuiWHUGwzpfCoWcVrlM5U48%3D" src="https://i.kickstarter.com/assets/050/267/605/82b3d034295da1d09f4856f15122cae4_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122691&amp;width=680&amp;sig=n3nmNy5pBE0SD3iV2ywfyuiWHUGwzpfCoWcVrlM5U48%3D"/>
+</figure>
+</div>
+<p>V02 bulit in SONY CMOS sensor delivers stunning 75MP photos and records ultra-clear 8K video or smooth 5K footage at 30fps.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286799">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/286/799/6548d742698ae0112d33b993cd6fe877_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754304610&amp;width=680&amp;sig=arTwNCoYAV%2FHD8eHaMkuhMf96MjtjaSuW2pNWCJ8hzI%3D"/>
+</figure>
+</div>
+<p><span class="bold">8K/5K ltra-HD Video</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267594">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/594/aa76d167d6484698512f2f8f783089ae_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122623&amp;width=680&amp;sig=gdpCSND5R%2ByVWsKlJlcu7Z5n%2FRgeOzeY3hObJQn1yqk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267608">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Two-Rec-Magic">Two Rec Magic</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/608/af91c0ed8434a2f8daf323b0ea81090a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122780&amp;width=680&amp;sig=v0UjmcUXWiojn9WOU3IgC%2BOjR4a2LVA3%2FK7I4wu1G58%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267610">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/267/610/6e67324c76d0b7365643671a3995982b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122814&amp;width=680&amp;sig=B%2BidpakOi7mek5nqONQ7gklW5kN2T3v93qyMM%2F3l99M%3D" src="https://i.kickstarter.com/assets/050/267/610/6e67324c76d0b7365643671a3995982b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122814&amp;width=680&amp;sig=B%2BidpakOi7mek5nqONQ7gklW5kN2T3v93qyMM%2F3l99M%3D"/>
+</figure>
+</div>
+<p>Two Rec mode captures both scenery and selfie shots in a single take, creating vibrant person-in-landscape' moments – an efficiency game-changer for daily vloggers and photography enthusiasts.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267613">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Time-Lapse-Recording">Time-Lapse Recording</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/613/077b54049ccb266ec1fc5bf39fe9eeaa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122825&amp;width=680&amp;sig=eES%2F%2Fte8HtRJNJNN%2BbZCUuF4PlGBUZS4Ulm0fUzERJg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286795">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/286/795/faac24002a3caa963d04491142ba381d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754304594&amp;width=680&amp;sig=AbHL6B4izzaARZ%2Frzbh2Zu%2Bqze5o1YGCSwTJHPkjJGg%3D"/>
+</figure>
+</div>
+<p>This functionality enables slow-motion video capture and detailed scene recording – such as sunsets, changing landscapes, blooming flowers, drifting petals, or falling water droplets – scenes often missed at normal speed. Time-lapse mode transforms these moments into visible artistry. Additionally, it condenses extended recordings into concise videos for effortless viewing and sharing.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283169">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Loop-Recording">Loop Recording</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/283/169/9cfb741cc017994c4ad791c6c135b872_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754274284&amp;width=680&amp;sig=9wSsC04IH81zg54h4zPvMVmJyU9KIz7dE%2F0YcjzjXN8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283187">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/283/187/5521cf88b0f89f9e1d343b57a15c173b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754274423&amp;width=680&amp;sig=b9HrqINfmIARBJYIM5BLamJYx1xm6f%2BSgYyBjy9c4gI%3D"/>
+</figure>
+</div>
+<p>Continuous Loop Recording, automatically overwrites oldest footage when storage is full. Eliminates manual deletion, ensures uninterrupted recording, and optimizes storage management. Larger memory cards extend recording duration proportionally.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267619">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:3-0-IPS-HD-Display">3.0" IPS HD Display</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/619/e47a51d0ee007e21c9c26eff242c913a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122860&amp;width=680&amp;sig=rhQ%2Bfnk%2Bxr%2FZSa%2F0Pn68vu3%2BbBdUawRlZ4TPkH7LupQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283241">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/283/241/90d1418a7692ff9f08adef07ed6cda68_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754275054&amp;width=680&amp;sig=pMiJmjlvdAR5Hh1uAzhTU9JyVIDz5aELwGTbgzlmcWQ%3D"/>
+</figure>
+</div>
+<p>A vibrant 3.0-inch IPS display (360×640 resolution) provides sharp image previews – making photo checks and quick edits effortless right on your camera.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267623">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/267/623/5c8df6d9c03b9e6c87f0e144d897d9f9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122914&amp;width=680&amp;sig=jF7QFXhkxyacvOk%2BLYY4KvHauWYL6Y%2BWTqljZFuF%2Bvo%3D" src="https://i.kickstarter.com/assets/050/267/623/5c8df6d9c03b9e6c87f0e144d897d9f9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122914&amp;width=680&amp;sig=jF7QFXhkxyacvOk%2BLYY4KvHauWYL6Y%2BWTqljZFuF%2Bvo%3D"/>
+</figure>
+</div>
+<p><span class="bold">90° + 270° Articulation</span></p><p>The rotating screen unlocks flexible shooting angles (low/high/overhead), while simplifying menu navigation and image review for significantly enhanced usability.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267624">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sustained-Power">Sustained Power</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/624/c1795a6b0c1721ab5e9561b5e40be796_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122915&amp;width=680&amp;sig=6AUTOUH7qSAt%2FJSJckZfuP6eabtyFpZ51Hd%2BcuW3B%2FA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283625">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/283/625/6f864d60b49c834b307ed2f65a13e2b9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754278548&amp;width=680&amp;sig=y%2F2rDIr3B%2BCxKSc%2Fc44J36j2q8k%2FJGK4zlE4tT0c%2Bz8%3D"/>
+</figure>
+</div>
+<p>1600mAh battery with USB-C charging ensures effortless power replenishment while maximizing operational endurance.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267630">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:128GB-microSD-support">128GB microSD support</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/630/8fad531449f25f4589cdadf87edacd71_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122937&amp;width=680&amp;sig=JD2bd3jJTAUMYKklbV63s86D7uYaS%2BZh%2FN%2BQf69C%2BI0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283209">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/283/209/499c74f5cd8e9a9e66d112af5a44acf7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754274684&amp;width=680&amp;sig=Kf2xhlbu0Bh7uaUvGbG557WhZBWIJegBtjbhgP3fzd8%3D"/>
+</figure>
+</div>
+<p>Unlocks massive storage for pristine-quality media. Transfer files effortlessly while keeping memories secure. Travel and shoot freely—no more card swaps</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267634">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Strong-Expandability">Strong Expandability</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/634/6db8c075c2272c9a4425e158b1170467_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754122982&amp;width=680&amp;sig=mZo3BDNfWxFYEd1a5fGWD0l8Z8OLTLZ5w1yo23baeQU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267959">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/267/959/d6ba704bfb22a1e527a3a90dcc429d71_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754127431&amp;width=680&amp;sig=6%2FbjtM%2Fb%2BV6wIfTslS9hO%2F3AhgVhmZCmdhe%2FtgMVtIs%3D" src="https://i.kickstarter.com/assets/050/267/959/d6ba704bfb22a1e527a3a90dcc429d71_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754127431&amp;width=680&amp;sig=6%2FbjtM%2Fb%2BV6wIfTslS9hO%2F3AhgVhmZCmdhe%2FtgMVtIs%3D"/>
+</figure>
+</div>
+<p>Expand your audio reach with external mic support (including wireless). Beyond the built-in mic and speaker, connect professional-grade mics for crystal-clear sound in concerts, interviews, and lectures. Perfect for vlogging, short films, and content creation – capture studio-quality audio anywhere.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267813">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/267/813/759c5fa6f22d9127b0ea443d98c45ae7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754125507&amp;width=680&amp;sig=c9GOWkzruMoA4aAr4FOxUD2o4sJOSDmNpM1IHw%2FJwTA%3D" src="https://i.kickstarter.com/assets/050/267/813/759c5fa6f22d9127b0ea443d98c45ae7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754125507&amp;width=680&amp;sig=c9GOWkzruMoA4aAr4FOxUD2o4sJOSDmNpM1IHw%2FJwTA%3D"/>
+</figure>
+</div>
+<p><span class="bold">Dual Lighting System</span></p><p>The built-in fill light could combines with external fill lights to fully illuminate your scene — even in total darkness.Activate timer shooting for effortless hands-free creativity</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267815">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Designed-for-Your-Grip">Designed for Your Grip</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/815/50780e58031e6c2cf3617f38335f126d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754125525&amp;width=680&amp;sig=rjjIwA5V95C0NyTTm9jFF20lTcRww0SI3YdyTvYtn3I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267818">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/267/818/eb0e4cda404d5a8f9061fe11151c55c9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754125552&amp;width=680&amp;sig=FpvhbxHYOMr1xwx0JcZE0UXvzh6dCKCzNaW3qQ2dKmo%3D" src="https://i.kickstarter.com/assets/050/267/818/eb0e4cda404d5a8f9061fe11151c55c9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754125552&amp;width=680&amp;sig=FpvhbxHYOMr1xwx0JcZE0UXvzh6dCKCzNaW3qQ2dKmo%3D"/>
+</figure>
+</div>
+<p>Every button and feature sits within one accessible area. Access all functions and buttons with just one hand.You can capture effortless self-portraits via the included remote control.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267822">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:WiFi-Connectivity">WiFi Connectivity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/822/5af39d59cffe962c4ced992232026b50_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754125569&amp;width=680&amp;sig=7TsTRUJO0VYJkwN1GLQbUR%2FCDIh1zTY9q%2FVK0OBmNOM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267825">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/267/825/bd75a7854be09cab26fea422e3b7fc32_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754125595&amp;width=680&amp;sig=Zpzd5KQ44tVT%2Fz64qRrnQYJ0Xh1UMzHPN%2FOcl1ByHdU%3D" src="https://i.kickstarter.com/assets/050/267/825/bd75a7854be09cab26fea422e3b7fc32_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754125595&amp;width=680&amp;sig=Zpzd5KQ44tVT%2Fz64qRrnQYJ0Xh1UMzHPN%2FOcl1ByHdU%3D"/>
+</figure>
+</div>
+<p>Connect the V02 to your phone over WiFi for instant access to photos and videos to share your moments instantly.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300114">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-AMKOV-V02-">Why AMKOV V02 ?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/114/8858c3af491bbba96b2919400d7006e8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754385825&amp;width=680&amp;sig=wCPj7zm%2FF%2BgK6bKpA%2BhjDUSLPadhc1wMjlzRQ9aLX3s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50314361">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/314/361/dd67d29d9d19b3544227e52109cf0c5e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754445850&amp;width=680&amp;sig=MoG7YwSY5Nm2gXi4xILfN2s5BAY01dV3NXxvo3M1rWk%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:See-more-details-"><span class="bold">See more details👇</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283826">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/283/826/b90b6acbf16206c9807a4045731cf171_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754280307&amp;width=680&amp;sig=APttMxIoxN4ZqGQqWqP8rsKdep5aDuUQ1gpHoapw9co%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267830">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/830/45269e88f2a2f49133a73a70981dfd12_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754125630&amp;width=680&amp;sig=m1wkebXMeQRvce%2FsSyFHirjWoh%2FThJITtb8bO1fTbJo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50268025">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/268/025/0a80e7eefa3d5dc5d4daab373d1d104b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754128303&amp;width=680&amp;sig=Mg6wZFHrmKhQuwdzG41xgqIgvn2Ni97cVOulqFbUKNk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50317338">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/317/338/6e60e63368f6c0be643f56eda3fe2f0e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754469063&amp;width=680&amp;sig=mcGVtCNs8vVlnJQN8Qh8XohA%2F%2FYgWyOzLYyKqwfBWTo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50317405">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/317/405/76b2c504484e72e7e07071bd634e62ce_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754469503&amp;width=680&amp;sig=rTusQEnTNsa4nF96U3j9W7aEwqtg%2FgsDMe0951ChmAw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300084">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/084/e3e33e56c53bcedc95e2f78a6fc97f2f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754385704&amp;width=680&amp;sig=oVZSkpbtjJWVh%2FMtRXSY%2BraQwReofpCmOf3YE4u4AHU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300597">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/597/b8f7d156fede74e91eef8fba83791d36_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388164&amp;width=680&amp;sig=6RLYmFy3sDuJzUF5HqUUrfEufct5EE9o6ZrWHvar%2B4Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300092">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-On">Add On</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/092/ac2c0cb23851d4b3feff10788f6d74f1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754385733&amp;width=680&amp;sig=YID6Nbz%2FgTFKa4JzCMILPNXEQ5%2FK2c9ZV5YyQLFjJdw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300602">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/602/0166191379faafd2bec8019b04b8b1dc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754388169&amp;width=680&amp;sig=S7G0MmewwfRPUxNDPssaUvM34jzIjkTCUSHh2s2wc04%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267958">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:TimeLine">TimeLine</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/958/30a7c835caccd998b70271a069c9baa6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754127428&amp;width=680&amp;sig=KiD6WH83Wv6Ea5Za76ORzrHksojI9XbhrEUsgJtw%2B1w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267962">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/962/2d49a7f715300b05b3f8460a946c609e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754127479&amp;width=680&amp;sig=QXrFw7VDsUErErTOSoRllZJryGMqfpVp8WmUh7rNnXo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50267837">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-US">About US</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/267/837/660e87c59dd42fc911d386bf002445d0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754125662&amp;width=680&amp;sig=AqQYjWbWLM7BtJouA%2F9MhNzwGTgLDoED6LLQYl%2FiTh8%3D"/>
+</figure>
+</div>
+<p>At Amkov, we are dedicated to redefining the art of photography and videography through cutting-edge technology and exceptional craftsmanship.Our mission is to empower creators,photographers, and content professionals with tools that combine innovation,  performance, and elegance. Each of our products is meticulously engineered to deliver unrivaled precision, versatility, and ease of use, enabling you to capture your world withunparalleled clarity and creativity. With a commitment to excellence, Amkov continues to lead the way in providing seamless, intuitive solutions for visual storytelling,wherever inspiration strikes.</p><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">With our collective experience in product development, manufacturing, and supplier development, we are confident that we can deliver outstanding products. 
+Rest assured that we will guarantee final delivery to every backer in this campaign. However, potential delays may arise due to unexpected factors. Please note that we have proven partners in production and logistics. We promise to keep our backers informed throughout the campaign in a completely transparent way about production and shipping. Thank you for your trust and support!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

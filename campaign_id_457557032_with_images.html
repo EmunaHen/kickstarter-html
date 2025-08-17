@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OMNI-R/Ultimate Multi-Tool Ruler</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/158/216/39a7affc87ee32f4189f8bb80666b8a2_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1753358364&width=560&sig=DFDuoD2JrhEDZlCIY8r40h24gBPIFJvfvYOWnexMsj4%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>OMNI-R/Ultimate Multi-Tool Ruler</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">12 pro features/ Mobile Workstation/ Redefines Measurement/EDC</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>28 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p>We bring you a Ultimate Multi-Tool Ruler，<span class="bold">OMNI-R</span></p><h3 class="page-anchor" id="h:-Why-do-you-need-OMNI-">🌟<span class="bold">Why do you need OMNI?</span>
+</h3><p>Engineer lost his protractor at the job site? Designer can't find a roller ruler for drawing parallel lines?</p><p><span class="bold">OMNI-R</span> puts an end to tool fragmentation—from a compact 3.2 inches/7.8 cm to a fully extended 12.75 inches/32.38 cm in just seconds. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50157371">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/157/371/9995d1a775911310fee9c0ce1e1872ae_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753352077&amp;width=680&amp;sig=DivDq%2FVd1InzEvG3T%2B2d3VpGwG0zQO2A2DMZujhqMTs%3D"/>
+</figure>
+</div>
+<p>Combining <span class="bold">Four Modules</span>—measurement, drawing, cutting, and positioning—into one, it features <span class="bold">12 Functions</span> and can be easily stored in your pocket, making it your mobile workstation!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50028066">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Double-fold-Ultimate-storage-and-Portability">Double fold, Ultimate storage and Portability</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/028/066/3e040edfcceb5164f3c7534ec74e151f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752484391&amp;width=680&amp;sig=il2LGnd5D%2FsQqk73A54%2BzAj7YvLXHLbarXVP8g4oDbw%3D"/>
+</figure>
+</div>
+<p>Expansion ratio of 414%: closed only the size of a cigarette lighter (3.2in/7.8cm), unfolded up to 12.75in/32.38cm professional drawing ruler specifications</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095446">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/095/446/36bd36f8304b07c935f9f354633318d9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752895211&amp;width=680&amp;sig=y4tDjnoIUp2huqpqud7Lr%2FpqYAav%2F1%2FLOmRyfnXYnPg%3D" src="https://i.kickstarter.com/assets/050/095/446/36bd36f8304b07c935f9f354633318d9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752895211&amp;width=680&amp;sig=y4tDjnoIUp2huqpqud7Lr%2FpqYAav%2F1%2FLOmRyfnXYnPg%3D"/>
+</figure>
+</div>
+<p>Aerospace-grade aluminum hinges: precision bearings, no loosening after 10,000 times of opening and closing test.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130707">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/707/f3a8d49da8bfbadff6462cbb220c6cdd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753187625&amp;width=680&amp;sig=OtNO0%2FMkW%2FEzG8kUhdgZskW%2BwdxFfQ3PmAfxskuOovM%3D" src="https://i.kickstarter.com/assets/050/130/707/f3a8d49da8bfbadff6462cbb220c6cdd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753187625&amp;width=680&amp;sig=OtNO0%2FMkW%2FEzG8kUhdgZskW%2BwdxFfQ3PmAfxskuOovM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50045751">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Dual-system-size">Dual system size</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/045/751/28fbf715654b5c488f330210259a8da5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752584604&amp;width=680&amp;sig=o5ZCXDBpSOPraFYqjEZqg4fkjH1DDLX2OAl7IVBHLJg%3D"/>
+</figure>
+</div>
+<p>Front Metric: 0.1mm precision laser etched scales, resistant to wear up to Mohs hardness level 6.</p><p>Back imperial: 1/64-inch interpolation.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50072420">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/072/420/c26727b517685277e9bee5a2d0cad2ba_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752738384&amp;width=680&amp;sig=j%2Bzjs%2F%2BFCKbLD8Tl%2FJFQ7OkL2LJ9Cfd%2FH5vLt9m9VwM%3D" src="https://i.kickstarter.com/assets/050/072/420/c26727b517685277e9bee5a2d0cad2ba_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752738384&amp;width=680&amp;sig=j%2Bzjs%2F%2BFCKbLD8Tl%2FJFQ7OkL2LJ9Cfd%2FH5vLt9m9VwM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50129492">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/129/492/66065f37068b1f3f762ed71b0ed94431_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753179404&amp;width=680&amp;sig=7ji1M7H3YZIonfgyLMwwFgfur%2BKCHpcesLuVo0zf22Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50028057">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Parallel-assistance-system">Parallel assistance system</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/028/057/0f8a8647fdab25fc16722fbb6d0ee5aa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752484319&amp;width=680&amp;sig=0uC2Cmz8wlmKIROApcBPQajJL8RJfiasUssU8xpPyxk%3D"/>
+</figure>
+</div>
+<p>Titanium alloy miniature bearing wheel: diameter 9mm, pressure-sensitive self-locking technology, single rolling error &lt;0.3 °</p><p>The titanium wheel you're pushing at your fingertips is beeping slightly - a signal that the pressure-sensitive self-locking system has been activated. Whether it's drawing 0.5-inch isometric lines for architectural drawings or marking woodwork joints, the 9mm diameter bearing compresses parallelism to within 0.3°, so students can even complete a full-page table with a ruler in one hand!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128381">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/381/ff759d5d183351745cc47c82f9be8613_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753172174&amp;width=680&amp;sig=FMzBT63cQ1XkotzpuNtdudXrmTCNmPOFjMYUZ%2Ffc%2F5Y%3D" src="https://i.kickstarter.com/assets/050/128/381/ff759d5d183351745cc47c82f9be8613_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753172174&amp;width=680&amp;sig=FMzBT63cQ1XkotzpuNtdudXrmTCNmPOFjMYUZ%2Ffc%2F5Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50073920">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/073/920/ea9c687db396d82d0f6ccbe06a18bdf5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752747421&amp;width=680&amp;sig=OI2Zfjp2gjxULhaCnyIvRtS%2FC%2FAmt9%2BtD7PWHvZ67Bc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50074007">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Cireular-Gauge">Cireular Gauge</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/074/007/3576f90ae81844f90af47a6440911cf3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752747921&amp;width=680&amp;sig=fqrux0RUtOUD8o%2FLsfVtHeiGwRoheQrTe2A45tTLdOU%3D"/>
+</figure>
+</div>
+<p>Dual laser-etched protractor: 0-180° positive and negative scales, center-axis error compensation technology</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128398">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/398/b666e71e3b7a0c2a45cf440b404f6bc3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753172338&amp;width=680&amp;sig=P35z%2BE6KzSCtkfjnq6IANeV%2FvBM5V1fIZQxS5c6LH1o%3D" src="https://i.kickstarter.com/assets/050/128/398/b666e71e3b7a0c2a45cf440b404f6bc3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753172338&amp;width=680&amp;sig=P35z%2BE6KzSCtkfjnq6IANeV%2FvBM5V1fIZQxS5c6LH1o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50129685">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Flight-Pen-Set-Three-modes">Flight Pen Set-Three modes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/129/685/c18b1661981638eab19a3b6fe86fcd7a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753180563&amp;width=680&amp;sig=WgE38CcvQjFRKlywAjWT%2F%2FCf8CPmcfkmsg6nU%2BALBog%3D"/>
+</figure>
+</div>
+<p>Modular quick release design: magnetic + snap dual fixation, 3 seconds to complete the pen ruler conversion.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50142067">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/142/067/492a628f29678c469cb6366f718cdae5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753251529&amp;width=680&amp;sig=jBYJrUDTKCNByqnh2LP%2FR4QtMw1PDdzCUuBNTTcmiDo%3D" src="https://i.kickstarter.com/assets/050/142/067/492a628f29678c469cb6366f718cdae5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753251529&amp;width=680&amp;sig=jBYJrUDTKCNByqnh2LP%2FR4QtMw1PDdzCUuBNTTcmiDo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50141665">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/141/665/68b6d5b600357b07a83ca56ddf3df579_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753247819&amp;width=680&amp;sig=D3j7FRBZ5VkFBGnZHgMZeiOdpRVfoKBbCn8jTPHWzKA%3D"/>
+</figure>
+</div>
+<p><span class="bold">Drawing Mode:</span> Secured within the ruler body via a positioning slot, the pen tip features a non-wearing tip made of high-density graphite—a single tip outperforms over 100 standard pencils.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50129995">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/129/995/34e28fe02fca2b66b53e00f80976867f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753182788&amp;width=680&amp;sig=Bu0yv3Kgwd0%2Bm%2BaqQTnZ8gbbrUe%2B5QBdXzE4Om3qdJw%3D" src="https://i.kickstarter.com/assets/050/129/995/34e28fe02fca2b66b53e00f80976867f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753182788&amp;width=680&amp;sig=Bu0yv3Kgwd0%2Bm%2BaqQTnZ8gbbrUe%2B5QBdXzE4Om3qdJw%3D"/>
+</figure>
+</div>
+<p><span class="bold">EXTENDED BLADE:</span> Suitable for #10 standard extended blades, suitable for everyday use requirements.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130000">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/000/0521c8ab1a5e487c32001524d9a952ae_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753182829&amp;width=680&amp;sig=yJh%2ByfgPpc8ZF5fPXiVDynxIJGsCkti8ENHCKrabS9U%3D" src="https://i.kickstarter.com/assets/050/130/000/0521c8ab1a5e487c32001524d9a952ae_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753182829&amp;width=680&amp;sig=yJh%2ByfgPpc8ZF5fPXiVDynxIJGsCkti8ENHCKrabS9U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50155256">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/155/256/8ccf8aa7c440dc93340269fe02cf22aa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753335262&amp;width=680&amp;sig=gk3lNu%2FR2W1DwIfXF0d5cpGkzhry04D9UZIUgt2k1ug%3D"/>
+</figure>
+</div>
+<p><span class="bold">COMPASS PATTERN: </span>Supports technical drawing with various radii, easy to convert！</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130403">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/403/9ded19a4cf31baf1cff7e2d6a0cc9bec_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753185648&amp;width=680&amp;sig=bKaADJaU%2FBn%2Fhlvp4MUwFDBXCK8Z%2F7fvpaoyPAAz7Hc%3D" src="https://i.kickstarter.com/assets/050/130/403/9ded19a4cf31baf1cff7e2d6a0cc9bec_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753185648&amp;width=680&amp;sig=bKaADJaU%2FBn%2Fhlvp4MUwFDBXCK8Z%2F7fvpaoyPAAz7Hc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50028042">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:VERNIER-CALIPER">VERNIER CALIPER</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/028/042/88b279338c360d4fe44a0ae2e30a675e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752484230&amp;width=680&amp;sig=gVNgJVG7sT2ZAq4zfN6CEPyuijUdPqB06KTegdaN%2BhY%3D"/>
+</figure>
+</div>
+<p>Precision caliper module (0-6cm),Grip, measure, and mark small objects with ease.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128324">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/324/417c52b8c98ac5de0aacd45e8704517a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753171864&amp;width=680&amp;sig=P%2Fohxqj0y4coUDesl28IFV76c0Ldu8XTfooiV4Ubx1E%3D" src="https://i.kickstarter.com/assets/050/128/324/417c52b8c98ac5de0aacd45e8704517a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753171864&amp;width=680&amp;sig=P%2Fohxqj0y4coUDesl28IFV76c0Ldu8XTfooiV4Ubx1E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50160234">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/160/234/9e75a74f32416ecdac7d8af8e285b687_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753371071&amp;width=680&amp;sig=kd269LGsDfdp3j%2BFoS5Anp775af4YOf3plwp4z7jDAI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50028090">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:BUBBLE-LEVEL">BUBBLE LEVEL</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/028/090/0b85728f655b6745d6db8fa895bf783a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752484597&amp;width=680&amp;sig=Q1B2YFf6Fe%2FgEwGjAiRJdxWnWy51ucbjjMHm8TNMPYU%3D"/>
+</figure>
+</div>
+<p>Military-grade liquid dual-axis sensors: separate bubble tubes for X/Y axes, ±0.5° accuracy.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128895">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/895/1f1c04ca9b139eadbcd0df26903165f1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753175104&amp;width=680&amp;sig=ns9BqqsX0N5rPisBU%2FoKKqVOx7E4VTohk6143tgKmeo%3D" src="https://i.kickstarter.com/assets/050/128/895/1f1c04ca9b139eadbcd0df26903165f1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753175104&amp;width=680&amp;sig=ns9BqqsX0N5rPisBU%2FoKKqVOx7E4VTohk6143tgKmeo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50129173">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/129/173/4ff445bddcad4c545f06c1c5d7956f0f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753176992&amp;width=680&amp;sig=FyOoONU35Ker%2F94WGeUDvLeNIc7y4oOpUSk0xzY3zMI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50074870">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:NIGHT-VISION-SYSTEM">NIGHT VISION SYSTEM</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/074/870/4db8a22165858e3bed10aa1234d804a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752754013&amp;width=680&amp;sig=DQ%2B24guKfIVSO9XIq1O6r1d0uXAYjMCqpKzh0XnbLL0%3D"/>
+</figure>
+</div>
+<p>The OMNI-R is equipped with a tritium slot that can accommodate a 1.5×6 mm tritium tube or glow tube, making it easy to quickly locate in low-light environments.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50130077">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/130/077/7a5c33b154f744bcce0e81e6db8b6f30_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753183286&amp;width=680&amp;sig=eQJzi7nNYMJuhHe10bxYMAr%2BgrR3bL2YxIIQJAbJr1Q%3D" src="https://i.kickstarter.com/assets/050/130/077/7a5c33b154f744bcce0e81e6db8b6f30_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753183286&amp;width=680&amp;sig=eQJzi7nNYMJuhHe10bxYMAr%2BgrR3bL2YxIIQJAbJr1Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50154968">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/154/968/e21d9867e474ec8de2546c0f26da9991_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753332287&amp;width=680&amp;sig=OmbXVkqsobdVmnAygJzn%2FxMGLsedio1GjkhU6hLUhDE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50018925">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Product-Information">Product Information</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/018/925/da59b0664cd46a22fc8a41e02bc2df3c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752405027&amp;width=680&amp;sig=YJQhi7vCUs69cLrjlOFKQV6Q1%2FvNf8B9igssvSdeLJ4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225617">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/617/ce2104023a716b15da197254cbc39034_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753856555&amp;width=680&amp;sig=RqLuulmuAIhVtgIUg8Fzmu0Fj%2BhwCnaJ47Hhnuh7TH8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50157786">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Material">Material</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/157/786/78cfcd2c7da1c0d01fc04969cb268cca_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753354865&amp;width=680&amp;sig=Q%2Bwveu5AfhbS8lnaH74h5ZR2Mbtf4Cy%2BAFwYkBshn80%3D"/>
+</figure>
+</div>
+<p>Each set includes an OMNI-R main unit, one Flight Infinity pen, and 10 #10 replaceable surgical blades.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50141952">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-In-The-Box">What’s In The Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/141/952/acc8045053aa24a9fbf6d9a4e611d35d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753250528&amp;width=680&amp;sig=2ZDhxHrbylNJveIIgM9W9Wqm7XA%2BtiCOxggdS3ygSDI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50189980">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/189/980/29d45b60181494bca1ec8a2744e23725_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753625572&amp;width=680&amp;sig=6bPpkh9wySJ%2FQV2%2FAerGkIJoOzIrJASmzg8NjTB2XX0%3D"/>
+</figure>
+</div>
+<p><span class="bold">PS</span>: The survey report after the project ends will provide more options. You can choose your preferred color scheme in the survey report!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50027953">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:TIMELINE">TIMELINE</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/027/953/58a03ec42ec729c5b7b4edf613a802bf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752483688&amp;width=680&amp;sig=35HZBzY4lUTPfyQCCxcet6%2FOKohqfP0ahHwT5qKht6I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50018842">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/018/842/1f8167c6095722a44cfc5195532c7754_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752404057&amp;width=680&amp;sig=qi%2Bux3peF9u614yMXKXbq2B2ddl%2FSayIeTK%2BXrumvRI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50018908">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:REWARD">REWARD</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/018/908/c6e99d2e1d47cf774836b5aa9bbded65_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752404838&amp;width=680&amp;sig=lD5h4WQuRIzHcXw3DP4B1PcRlT2ZZQQSkg9ajbO5L3M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50168738">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/168/738/b99ae6e372be01c93e9646768e78d5da_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753428099&amp;width=680&amp;sig=DNYmx3GtB87i8CtQviH%2FB%2FlmjGB8zWOSEkg1u8JRtU0%3D"/>
+</figure>
+</div>
+<p>If you want to upgrade your OMNI-R, please purchase products from ADD ON to customize your own OMNI!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50171212">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/171/212/78a181eb05fd10a467af83989a51fd11_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753444792&amp;width=680&amp;sig=m%2BrE6kOG0U41g8bDVcMIpMdZqjl3Cj8KUeytiY%2BaM1M%3D"/>
+</figure>
+</div>
+<p><span class="bold">P.S.: </span>We recommend two engraving areas measuring 8 mm x 22 mm, with 4-8 characters engraved.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50018899">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:EXPERIENCE">EXPERIENCE</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/018/899/da3383f7bf8b6cd4abea4595a83c14d6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752404741&amp;width=680&amp;sig=usDxYS7Z9n1VtIfSLyG3fFBMG162GUb31pe3wkse3XE%3D"/>
+</figure>
+</div>
+<p>After nearly half a year of research and development, we first simulated a feasible structure for the OMNI-R product on a computer.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49763409">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/763/409/a96725b895f1d6e6983877f1c0fac3b9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750511922&amp;width=680&amp;sig=fSP47Ped%2F9%2B7dO30%2F%2F3gltzOrY6cGmkTtPaWdH8Q%2Fas%3D" src="https://i.kickstarter.com/assets/049/763/409/a96725b895f1d6e6983877f1c0fac3b9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750511922&amp;width=680&amp;sig=fSP47Ped%2F9%2B7dO30%2F%2F3gltzOrY6cGmkTtPaWdH8Q%2Fas%3D"/>
+</figure>
+</div>
+<p>After completing the preliminary assembly experiment using 3D plastic printing</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49763325">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/763/325/f28cdd4cf7a5a813bf4ef89344d11a7b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750510796&amp;width=680&amp;sig=6HvSlasP1fawGpAt4L4Liq2A2mU5WrQlUfYGlupZ1dc%3D"/>
+</figure>
+</div>
+<p>Finally, CNC machining was used to process metal materials to verify the usability of OMNI!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49763327">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/763/327/ca972c25b7ec170737838cbc2c666f90_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750510815&amp;width=680&amp;sig=TFAKttTWsHMHk8zUFVOwJwHw7fR4JeNwPzWnLUCTaKg%3D" src="https://i.kickstarter.com/assets/049/763/327/ca972c25b7ec170737838cbc2c666f90_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750510815&amp;width=680&amp;sig=TFAKttTWsHMHk8zUFVOwJwHw7fR4JeNwPzWnLUCTaKg%3D"/>
+</figure>
+</div>
+<p>After such a long development cycle and countless experiments, we can assure you that the functionality of the OMNI-R will exceed your expectations. Don’t miss out on this ultimate ruler with so many features! We are confident that the OMNI-R will be a powerful tool to enhance your work and daily life!</p><h4 class="page-anchor" id="h:Regarding-mass-production-plans"><span class="bold">Regarding mass production plans</span></h4>
+<p>Recently, we had further discussions with the factory regarding the timeline for mass production.  <br/>For the final mass production, we plan to continue using CNC machining. The factory currently has five CNC machining centers, each capable of simultaneously processing four OMNI-R units in three hours. Based on an estimated quantity of 1,800 units for the first batch, the total processing time would be 270 hours. Assuming a daily machine operation time of 20 hours, we anticipate completing the precision machining of all OMNI-R components within 15 days.<br/>The subsequent anodizing process will take 5 working days, and assembly is estimated to take 10 working days.  <br/>In total, the entire OMNI-R production process will be completed within 30 working days.  <br/>During this period, we will complete the customization of packaging.  <br/>After receiving the products from the factory, we will need 7 working days to complete order sorting and packaging.<br/>Considering air freight times of 7–12 days depending on the region, the total time from production to delivery of the OMNI-R to your hands is estimated to be 44–49 days!  <br/>We are fully capable of fulfilling our commitment by the end of October!</p><span></span><p><span>This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them.</span></p><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">In order to make sure that the OMNI-R is practical, we have worked hard for six months and conducted many tests! We have a factory that we have worked with many times and have the ability to mass produce at any time! After the success of crowdfunding, we ensure that the shipment will be completed within 2 months.
+At the same time, we have reached cooperation with logistics courier that has many years of experience in overseas transportation! This is an important guarantee that we can fulfill the rewards!</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

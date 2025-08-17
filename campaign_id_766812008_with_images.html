@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FollowFit: World's First AI Vision-Based Auto-Follow E-Wagon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/260/552/435ed231b023a08da9eca4c8b86e05a9_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754066869&width=560&sig=rzTGJTZBkzDhkZffveSfxUkANZNUXUgRhHRzWIS2%2BP0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>FollowFit: World's First AI Vision-Based Auto-Follow E-Wagon</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">AI-Powered Follow, Obstacle Avoidance, Remote Control, Manual Assist, One-Pull Fold, All-Terrain Mobility, Auto Brake & Hill Assist</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 14,154</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50068981">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Introducing-Followfit">Introducing Followfit</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/068/981/68633c0e7fa489aa8c19ae233f33e67b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752711559&amp;width=680&amp;sig=SpQg5KXzehr5tV0oWbt88NB0qoke1snFRgzhagSMUp0%3D"/>
+</figure>
+</div>
+<p>FollowFit is a high-end electric wagon equipped with cutting-edge AI vision technology, combining convenience, functionality, intelligence, and comfort. It supports three flexible modes: AI-powered follow, manual pull assist, and remote control, catering to every adventurer's needs. Designed to enhance transportation, storage, and entertainment during camping, FollowFit meets diverse requirements in various scenarios.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50124124">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/124/124/4e7c67240758c524f974fbbb47e47d1b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753145595&amp;width=680&amp;sig=g48PTy6Te0XjNUTyycDC4OA6JJnD1DMZ9aEdaIr3k6A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50086330">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Key-Features">Key Features</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/086/330/e0a43c9382bd10e62d7c3d78b10ed5b6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752827976&amp;width=680&amp;sig=X2MVuKuHUr2I22OXuY7a41CByQ7DUsxV1g7%2B3NnDmms%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50086307">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/086/307/ba3f1160300b77694a22138e5d113f3c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752827893&amp;width=680&amp;sig=kDUjIO1KdkTLIv%2FcZ%2FCrbJjYzTDBTS5AZBj1b0xnt5Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50391291">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Review">Review</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/391/291/44a690967196d738408ef93af4f3aff8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754985698&amp;width=680&amp;sig=5FzDB66UjogBcNJvb54Y5%2FRarCD1LPJi3YGuisFsr00%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50113651">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Three-Modes-in-One">Three Modes in One</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/113/651/aa06e8995b41659774496c7f7d6caace_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753085652&amp;width=680&amp;sig=qPKmC89o%2Ba39B07fxYJeHVdXOH3WVNlRX0fNvEmRD3Y%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Smart-Follow-Mode"><span class="bold">Smart Follow Mode</span></h4><p>Adopt Al visual tracking technology to accurately identify and track users, <span class="bold">without the need for additional receivers / remote control</span> and frequent operations, achieving hands-free operation.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50153970">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/153/970/381cb125d3d1382942516f4998f4d67f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753324791&amp;width=680&amp;sig=pYPVxvf9LHbg1X7jiqUPbfwSG%2Bp8qul06DX%2Fu5G%2BSKs%3D" src="https://i.kickstarter.com/assets/050/153/970/381cb125d3d1382942516f4998f4d67f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753324791&amp;width=680&amp;sig=pYPVxvf9LHbg1X7jiqUPbfwSG%2Bp8qul06DX%2Fu5G%2BSKs%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Pull-Assist-Mode"><span class="bold">Pull Assist Mode</span></h4><p>Allows for easy navigation of narrow paths or precise control, retaining the traditional camping experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50113682">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/113/682/385835b8b5db6dfe0099fda1870f88f9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753085839&amp;width=680&amp;sig=upd0ZjhFqutdc%2Bd5NFkf4iIT9kMYs70HqYHq47oOS5M%3D" src="https://i.kickstarter.com/assets/050/113/682/385835b8b5db6dfe0099fda1870f88f9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753085839&amp;width=680&amp;sig=upd0ZjhFqutdc%2Bd5NFkf4iIT9kMYs70HqYHq47oOS5M%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Remote-Control-Mode"><span class="bold">Remote Control Mode</span></h4><p>Provides 360° flexible remote control, mastering complex terrain from a distance.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50148046">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/148/046/2ac5313cd0d3f317259da1a60edb226d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753286342&amp;width=680&amp;sig=vTqiB7ce67nY87VwRDrDISMVz9LIKLClGQgnIlGkHdo%3D" src="https://i.kickstarter.com/assets/050/148/046/2ac5313cd0d3f317259da1a60edb226d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753286342&amp;width=680&amp;sig=vTqiB7ce67nY87VwRDrDISMVz9LIKLClGQgnIlGkHdo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50068986">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:AI-Vision-Technology">AI Vision Technology</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/068/986/f0ace1da845a2a30dbb64701a9dcd581_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752711562&amp;width=680&amp;sig=UDea%2FHVpTN6f4FO19V44QGv2P2Cz51v%2Fl6DBrmHEiS8%3D"/>
+</figure>
+</div>
+<p>Equipped with low latency response, FollowFit processes data at millisecond speeds, ensuring stable following without lag and guaranteeing safety and reliability. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50086877">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/086/877/d9d2ef3933c092656e7c65aff0396ca8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752831140&amp;width=680&amp;sig=PfZQJZ1wFRALgXk%2BXzNM38UZXHK9iqxIHaAu%2BHonwpc%3D" src="https://i.kickstarter.com/assets/050/086/877/d9d2ef3933c092656e7c65aff0396ca8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752831140&amp;width=680&amp;sig=PfZQJZ1wFRALgXk%2BXzNM38UZXHK9iqxIHaAu%2BHonwpc%3D"/>
+</figure>
+</div>
+<p>Its advanced vision recognition system automatically avoids obstacles like rocks and trees, adapts to complex outdoor terrain, and can automatically brake in emergencies. This technology allows users to travel light and focus on enjoying nature rather than battling equipment.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50148044">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/148/044/6bb3d31e5429cdb443938a518739e8bc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753286333&amp;width=680&amp;sig=R0CoTkPGQJm5KFjILjoQbvNIqZsINOqBDIQQZ74DR2c%3D" src="https://i.kickstarter.com/assets/050/148/044/6bb3d31e5429cdb443938a518739e8bc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753286333&amp;width=680&amp;sig=R0CoTkPGQJm5KFjILjoQbvNIqZsINOqBDIQQZ74DR2c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50068990">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Universal-Wheel">Universal Wheel</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/068/990/7e7b38122388d89bdde3eb0007f71a81_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752711563&amp;width=680&amp;sig=kz71x7RPI27DXjpuwYdJh5ajyWZCx8TUVBVrBvC9ZK0%3D"/>
+</figure>
+</div>
+<p>FollowFit is built to withstand the rigors of outdoor exploration. Its all-terrain adaptability features anti-slip tank universal wheels that easily handle muddy, rocky, grassy, and other complex terrains. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50086275">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/086/275/d3dce9c9a1018d8359a02c115d224fa1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752827577&amp;width=680&amp;sig=mKdz5VixyefX6JrAmNTRlmCV9jTPG6YXbUEmStMlbi4%3D" src="https://i.kickstarter.com/assets/050/086/275/d3dce9c9a1018d8359a02c115d224fa1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752827577&amp;width=680&amp;sig=mKdz5VixyefX6JrAmNTRlmCV9jTPG6YXbUEmStMlbi4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50336029">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/336/029/a73e71931be7c8521387ffe57701e78b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754579246&amp;width=680&amp;sig=eu6fiGlSR%2BEONZhgzJqbWyrhY1rVWswlJE%2BGWpmbhxs%3D" src="https://i.kickstarter.com/assets/050/336/029/a73e71931be7c8521387ffe57701e78b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754579246&amp;width=680&amp;sig=eu6fiGlSR%2BEONZhgzJqbWyrhY1rVWswlJE%2BGWpmbhxs%3D"/>
+</figure>
+</div>
+<p>The high-load chassis can statically carry 100 kg. With a large capacity battery supporting all-day use and a USB port for temporary phone/device charging, FollowFit ensures you stay powered up. The low-noise motor preserves the natural tranquility, offering a silent operation that enhances the immersive outdoor experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50113713">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/113/713/3542e2f820dd8b3c345984724c26cfa1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753085975&amp;width=680&amp;sig=mHbpd%2FWcI5EGgFCPuVE9FA9pK5AzjIqzE0Vj2xm7A%2B4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50336064">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/336/064/5ac303528899e7203359a2eb36b9cb2a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754579351&amp;width=680&amp;sig=7HQFBDkePCpNhE86G5cZeRqoj4MmaPjtfIS%2B1GipGUk%3D" src="https://i.kickstarter.com/assets/050/336/064/5ac303528899e7203359a2eb36b9cb2a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754579351&amp;width=680&amp;sig=7HQFBDkePCpNhE86G5cZeRqoj4MmaPjtfIS%2B1GipGUk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50156780">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/156/780/eb67ff60acc688f04c387f8edaf2f974_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753347420&amp;width=680&amp;sig=voSjdjqtBZxjW40TvgMv7DbDIqUb%2FSYdazKV5tDcC9M%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Sand"><span class="bold">Sand</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114028">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/114/028/0bf49d33081b58ef4d74e1022f34c993_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753087810&amp;width=680&amp;sig=aCXSCOaMTnhTw6HX4JEq%2BojetKmV3EXePHYMsIXiXoM%3D" src="https://i.kickstarter.com/assets/050/114/028/0bf49d33081b58ef4d74e1022f34c993_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753087810&amp;width=680&amp;sig=aCXSCOaMTnhTw6HX4JEq%2BojetKmV3EXePHYMsIXiXoM%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Rocks"><span class="bold">Rocks</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114044">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/114/044/fb18991c375cebd9c1ba0b6649ebdecb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753087878&amp;width=680&amp;sig=7I2XjA0f9uVjsZk4p%2BIyECstr4s6W6gdA8TtkfjLjhc%3D" src="https://i.kickstarter.com/assets/050/114/044/fb18991c375cebd9c1ba0b6649ebdecb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753087878&amp;width=680&amp;sig=7I2XjA0f9uVjsZk4p%2BIyECstr4s6W6gdA8TtkfjLjhc%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Grass"><span class="bold">Grass</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114045">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/114/045/6968847dac5cd7c2f4be29ed7ab1431e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753087882&amp;width=680&amp;sig=AhU%2B4v99blSD%2Btzod6HGZSobsSj0NZnl1c81qnQSvHk%3D" src="https://i.kickstarter.com/assets/050/114/045/6968847dac5cd7c2f4be29ed7ab1431e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753087882&amp;width=680&amp;sig=AhU%2B4v99blSD%2Btzod6HGZSobsSj0NZnl1c81qnQSvHk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Slope"><span class="bold">Slope</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50256890">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/256/890/8ee078e79717fb4abc7bfa170a5d526c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754047467&amp;width=680&amp;sig=NNcmpNxvDU3IeUL9KXmjNrJnyERfCG5OBd2xYV1vU4g%3D" src="https://i.kickstarter.com/assets/050/256/890/8ee078e79717fb4abc7bfa170a5d526c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754047467&amp;width=680&amp;sig=NNcmpNxvDU3IeUL9KXmjNrJnyERfCG5OBd2xYV1vU4g%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Night"><span class="bold">Night</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143153">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/143/153/866154beeb1f741e9e71e18afb962426_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753258226&amp;width=680&amp;sig=%2Bt3tEWwl1sGAhHixOl3Cf28X9umcxFOU8cGDFQHpXCk%3D" src="https://i.kickstarter.com/assets/050/143/153/866154beeb1f741e9e71e18afb962426_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753258226&amp;width=680&amp;sig=%2Bt3tEWwl1sGAhHixOl3Cf28X9umcxFOU8cGDFQHpXCk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50126300">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Intuitive-Design">Intuitive Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/126/300/0de1503d8791534b7357499da5279de0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753158960&amp;width=680&amp;sig=V8txDWQyEBxbcHVH0ucFldLmuppvvDP7I3Khp9ltTIk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Control-Handle-Bar"><span class="text-italic"><span class="bold">Control Handle Bar</span></span></h4><p>The device features easy-to-use controls for seamless operation. The power button can be pressed and held to turn the device on or off, with indicator lights for guidance.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50138651">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/138/651/3a252cc97a355b1fed49fafecd1892e1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753227796&amp;width=680&amp;sig=%2FEUzSMk5wlQ0eCHH6djcHNZ5Ajwk2mwKkP6D8s88s8U%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:No-App-Required"><span class="text-italic"><span class="bold">No App Required</span></span></h4><p>We know you're tired of complicated apps and wireless connections. FollowFit brings outdoor living back to its natural state. With a simplified interface and easy-to-use controls, operating FollowFit is as easy as switching on your refrigerator! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170498">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/498/a07bc7c8d515f37554205378c46f386d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753439220&amp;width=680&amp;sig=nUm0u6DDSbRqyzCb9rnyO229YtYIKbc%2FvaUKOEK9fM4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:RGB-Indication-Light"><span class="text-italic"><span class="bold">RGB Indication Light</span></span></h4><p>The indicator lights use distinct colors to signal different operating statuses, allowing for quick recognition and easy use.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143800">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/143/800/438da8413a4fca5ee485970e2606e3b4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753262299&amp;width=680&amp;sig=pfUMssGmY7YXr%2BSVFMOWcN4E1xVOXOioOtoCnDGqdqQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:LED-Illumination-Light"><span class="text-italic"><span class="bold">LED Illumination Light</span></span></h4><p>The device is equipped with an LED  illumination light, providing bright and clear lighting for safe operation in low-light or nighttime environments. This feature ensures enhanced visibility, allowing users to use the device confidently and safely at any time of day.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143698">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/143/698/22c278cc9cb2d51523545839dab19817_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753261513&amp;width=680&amp;sig=2BoiNCIEicYBJDzBdnKxEucYiV50CmiSW%2B7zYCj7h5U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50068997">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Emotional-Value">Emotional Value</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/068/997/dce2e961490f0b89b3ba6ec58a50bf5e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752711565&amp;width=680&amp;sig=ihs5DDgNxUU70LRtJk%2Felpfm52Q3NSEJx4gETxmTLes%3D"/>
+</figure>
+</div>
+<p>FollowFit allows users to focus on interacting with companions and appreciating nature's details, rather than transporting equipment. It lowers transport barriers, enabling families with children and elderly users to easily participate and share outdoor fun. This emotional value fosters deeper connections with nature and redefines outdoor relationships.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50069000">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/069/000/53fa2e935364679049ea438c38a104a2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752711566&amp;width=680&amp;sig=ifEsP%2BB1G7CIgZX7wg6%2F8joiVx9z3whVIK75Em8ZwnM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50148059">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/148/059/39e8ce73f3f4b9e0218e9e393c6c6fe7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753286385&amp;width=680&amp;sig=fQXNtQfBYRP93H2UTTBayrRGroSBU42H9nnV%2FAkDEeU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50068999">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Data-Privacy">Data Privacy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/068/999/d7fe31c23a17bd35857402acb2554796_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752711566&amp;width=680&amp;sig=fS3q1JLPGFDt%2FQ0MAAXqVNHE5wcrgfalg%2FE%2F2XNetpk%3D"/>
+</figure>
+</div>
+<p>FollowFit prioritizes user privacy through local data processing, ensuring operations are performed without requiring an internet connection or complicated app controls. By avoiding cloud uploads, this edge computing deployment effectively prevents data leakage while guaranteeing user privacy and security.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50113752">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/113/752/a95577ce9d7a460babb9a9e698c1c9bd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753086097&amp;width=680&amp;sig=XO3r0%2FXUvvWHWehE77CGHI9QepyWttYUTPesZzqHjVg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50113805">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Portable-Design">Portable Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/113/805/ef68eed390e5a8591340bb3ca124909a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753086262&amp;width=680&amp;sig=s3BK1CZloNxntAQrXTY854SkqxyAKbsPtXttseVX5GY%3D"/>
+</figure>
+</div>
+<p>FollowFit's portable and foldable design ensures it fits easily into your lifestyle. Whether you're heading out for a day trip or a long journey,FollowFit's space-saving features make transport a breeze. Enjoy the freedom to explore without worrying about bulky equipment. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143152">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/143/152/becf950e7a2813147abf6fd9445379c6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753258200&amp;width=680&amp;sig=ZAwWwSfPtauH3BhIg%2B0vUiQW1u9UozJZ5CLz5qIUX4c%3D" src="https://i.kickstarter.com/assets/050/143/152/becf950e7a2813147abf6fd9445379c6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753258200&amp;width=680&amp;sig=ZAwWwSfPtauH3BhIg%2B0vUiQW1u9UozJZ5CLz5qIUX4c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128326">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/326/14c21fd0c73a1ab6829f9744c492a115_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753171875&amp;width=680&amp;sig=sJhlVtrJCdSjTxQpcjceNGIgYv0Sn98jACD3tyLlN%2BM%3D"/>
+</figure>
+</div>
+<p>The Followfit’s rear panel can be opened to significantly expand storage space, allowing you to carry items with a total capacity of up to 180 liters. This thoughtful design detail provides greater flexibility and convenience for transporting larger or more items as needed.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50132054">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/132/054/5abd9fd47abd8a183015e66041309ac4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753193888&amp;width=680&amp;sig=%2BwxIUrfJoE7ViN7TfXlJUHs2D%2BDbc3ofNo35%2BeichUg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260693">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/693/2948fbf636182f1b10b8014b81d7fbce_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754067408&amp;width=680&amp;sig=yl%2FUp3PCgkuQKe%2B9%2F%2BFQL%2BEcuGpPlltqn9M5R6gMIp4%3D"/>
+</figure>
+</div>
+<p>FollowFit is engineered with an IPX5 waterproof rating, providing robust protection against rain and splashes, so you can confidently explore in various weather conditions. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114299">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/299/d0a3d96351cb776221e86641cf66163d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753089661&amp;width=680&amp;sig=8pN9vMy8BK0Bj0ONWI4Blmi1BY8%2FE8B1pPMkWB0kb8w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50256229">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/256/229/97b4ed6c63c7a2bd717d0391d976e49b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754043447&amp;width=680&amp;sig=EhHmh7zXQ8dCVhirAW9K9U6WCaaTIRvFvWNXJOSDSjk%3D" src="https://i.kickstarter.com/assets/050/256/229/97b4ed6c63c7a2bd717d0391d976e49b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754043447&amp;width=680&amp;sig=EhHmh7zXQ8dCVhirAW9K9U6WCaaTIRvFvWNXJOSDSjk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50253195">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/253/195/b0f2686863a12631ecec46c3ce9d7d7c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754022999&amp;width=680&amp;sig=mqzJadYWPd03oM0lW7LPmEK6FcuZE5Ghup4RT08%2Bjvk%3D" src="https://i.kickstarter.com/assets/050/253/195/b0f2686863a12631ecec46c3ce9d7d7c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754022999&amp;width=680&amp;sig=mqzJadYWPd03oM0lW7LPmEK6FcuZE5Ghup4RT08%2Bjvk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50068994">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Econ-Friendly-Design">Econ-Friendly Design</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/068/994/f24102ff171bfe746acc74a29dad9af5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752711564&amp;width=680&amp;sig=ylN%2BjnZo2JtBcHRHVdJGcfMqoARtogTh2iRtmfQpdqA%3D"/>
+</figure>
+</div>
+<p>FollowFit integrates eco-friendly materials like a recyclable body and low-energy motor, adhering to low-carbon production standards. Its long lifespan design features a modular structure that supports component replacement, reducing electronic waste. This sustainable approach makes FollowFit a responsible choice for outdoor enthusiasts.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143690">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/143/690/bbaeafe6a27f8ab120ebc2b8ca100884_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753261472&amp;width=680&amp;sig=aKwy83E9bG7iQww58mYFVSU%2FWvjTYQeeW9tH6D5Ke7A%3D"/>
+</figure>
+</div>
+<p>This device features a high-capacity, detachable battery that supports continuous use for up to 15 km. The removable battery compartment allows for easy replacement, providing flexibility and extended usage. Additionally, it is equipped with a 10W USB output (5V/2A) for efficient charging of external devices.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143713">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/143/713/8113e58891016ef30b0c9075add9372c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753261595&amp;width=680&amp;sig=tMX5Uk1%2F3Px1WRWuRc4DdT90aQXrvxp%2BVL725iZVbDo%3D" src="https://i.kickstarter.com/assets/050/143/713/8113e58891016ef30b0c9075add9372c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753261595&amp;width=680&amp;sig=tMX5Uk1%2F3Px1WRWuRc4DdT90aQXrvxp%2BVL725iZVbDo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50300305">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/300/305/a087230b119c2e6cf323116cab24b379_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754386877&amp;width=680&amp;sig=JjkOedndp0I8u4%2BuSOwx1L%2F2s1m9vuZXoWB7giFML6c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50113853">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Highlights">Highlights</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/113/853/c8b254e2cc9f5ea78f9230a060a661dd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753086627&amp;width=680&amp;sig=4j2R3m3K23NZ6LQnXFFI%2FwQOtguLVlsIeLSuups0Zpw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128329">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/329/94fc52077cbf208e1d42722444779c32_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753171904&amp;width=680&amp;sig=zUIJZjS8IYATjDUTP9Tg8o7oZyIvKXU7V%2BcWk%2FZxQ34%3D"/>
+</figure>
+</div>
+<span>Rewards</span><span></span><span>Add-ons</span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50223261">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-inside-the-box">What's inside the box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/223/261/1c70046926ad812386bf0847fe3fa152_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753838424&amp;width=680&amp;sig=sNK4bEbx2uC%2B8zqk26taWUld0sT9%2B0boNuB2o6QPB8E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50223262">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/223/262/63090572f0a7cc71a34b083689e3d054_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753838431&amp;width=680&amp;sig=ACjMVbYX2Q5ryFkDndgkDqhCEriXOXHcWPbbgasKbZY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50223280">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Info">Shipping Info</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/223/280/e4ff80d91a9c1755b03bba346788d93f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753838546&amp;width=680&amp;sig=Nz%2B9WrhwKCpr2zB3EjulSKlKBNqPmi%2FyfZWTtq04neE%3D"/>
+</figure>
+</div>
+<p>FollowFit is an intelligent robot equipped with a large capacity battery, so international delivery can be costly. But we’re committed to offering our supporters the best possible value. To make things easier for you, we’ve covered all customs costs and even part of the shipping costs.</p><p>All you need to pay is the remaining portion of the shipping cost, which will be collected after the campaign concludes. There are no additional customs fees or hidden charges beyond that. For your reference, please see the table below for a detailed breakdown by region. Thank you for your understanding and continued support!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50380556">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/380/556/0af3220a3c7bb2ae908072bcc9c7e225_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754925558&amp;width=680&amp;sig=vE%2B%2FHDWhCFu4n09oAbIcA4Qej1q4IENJLwnDyYxji%2Fo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50374008">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goal">Stretch Goal</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/374/008/99848047aaad225d90afeb98768ffc3d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754874516&amp;width=680&amp;sig=6XMM95Js7EVInT8GJ%2FygVWj04jBBAqU1t6Wzhbb0eIA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50298863">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Three-Guarantees-Service-Policy">Three Guarantees Service Policy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/298/863/7424e97b4680fdec5f68d620aa36d050_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754378621&amp;width=680&amp;sig=2bu3jGbXMhW6FFrzzqF3PFBCAlDkDi5JjrVdjdYmsGA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50229012">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specification">Specification</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/229/012/a893ed9ccd2463df494b26004d7fc5f1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753879603&amp;width=680&amp;sig=cIlHcnVZ7h9ezK9u%2B0MJ%2BFCxA%2BJ%2F%2F23G8UF9y3tYFg8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49426481">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-us">About us</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/426/481/2abd929a960c67416979b4da38a96bf9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748275112&amp;width=680&amp;sig=XJXQo7UgaXwS0ovF8HmkQl1MIql7T5bQb%2FgKSxqLZz4%3D"/>
+</figure>
+</div>
+<p>FollowFit is an innovative tech company specializing in AI technology and lifestyle robots. Our mission is to create intelligent robotic products that seamlessly integrate into daily life and enhance the quality of living. Whether it's for home use or outdoor adventures, simple tasks or complex scenarios, FollowFit continuously pushes the boundaries of AI applications. Our slogan, <span class="bold">"Innovation makes an easy life,"</span> reflects our commitment to making technology approachable and practical, becoming an indispensable assistant in people's lives and making every interaction with our products warm and enjoyable.</p><p>We believe technology should empower, not hinder. That's why we focus on developing intuitive and easy-to-use devices that blend seamlessly into everyday scenarios. Guided by the principle of harmonious coexistence between humans and machines, FollowFit is committed to delivering products with stylish design, reliable performance, and innovative technology. At FollowFit, we are more than just a tech company. Driven by a passion for integrating technological innovation into various aspects of life, we have created the first camping companion with AI vision decision-making capabilities. This is not just a vehicle; it's an outdoor collaboration partner that frees your hands and enhances your adventures.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50336051">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/336/051/7c6dfd72af657e4ad5312ce7bb2f438b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754579303&amp;width=680&amp;sig=sFt3XyTlNgIhBRe88rwYWB3I0hV0yPw63f66cA0RC4E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50336053">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/336/053/487094b3358fa969f6638a8441171d4b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754579312&amp;width=680&amp;sig=80kU3cxqTx9WkCmk%2BQm%2FqM6vCjd4cLIo3f0tTGp4%2BEk%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><h3 class="page-anchor" id="h:Testing-Video"><span class="bold">Testing Video</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50253192">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/253/192/41eae8bbf0eb94448f5e76eb787cd18b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754022973&amp;width=680&amp;sig=yTrxkeqLKXR5shTh0vcimgKd%2F7GcrOBkNBLZfvyC0Ds%3D" src="https://i.kickstarter.com/assets/050/253/192/41eae8bbf0eb94448f5e76eb787cd18b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754022973&amp;width=680&amp;sig=yTrxkeqLKXR5shTh0vcimgKd%2F7GcrOBkNBLZfvyC0Ds%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50357381">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/357/381/557b2cea2d697ab5f5068a931d88b6df_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754713319&amp;width=680&amp;sig=CmH%2BD%2BvcM%2F2jbd6YCxB8AGPsXt8G38CZ4mfXdP3eRjw%3D" src="https://i.kickstarter.com/assets/050/357/381/557b2cea2d697ab5f5068a931d88b6df_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754713319&amp;width=680&amp;sig=CmH%2BD%2BvcM%2F2jbd6YCxB8AGPsXt8G38CZ4mfXdP3eRjw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Creation-Journey-of-FollowFit"><span class="bold">Creation Journey of FollowFit</span></h3><p><span class="bold">Dear FollowFit fans,</span></p><p>I am Dr. Cheng Liu from the FollowFit team. Since we founded the FollowFit Group and released Followfit E-wagon project, we have continued to receive enthusiastic attention and feedback from everyone. Every day we receive emails from all over the world expressing their love for the project, asking when it will be available, and describing how he/she will own and use it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50238206">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/238/206/b4c9b74aa638a13189aa40ebfa62fe87_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753931516&amp;width=680&amp;sig=iLV2Z3bES9ecRpOEFpsW672wZT2be92VVR5QFVnqdCM%3D"/>
+</figure>
+</div>
+<p>We are touched by your support, and it is also our greatest motivation.</p><p>Today, I'd like to share with you the development journey of FollowFit, how we designed and built it, and how the staff overcame the challenge to bring it to you. Yes, it's unlike anything you've seen before, it's real, and we did it!</p><p><span class="bold">1.  Leo’s wish</span></p><p>I have always loved the outdoors. As a father, I often take my six-year-old son, Leo, on camping trips with our traditional wagon. Every time we go out, Leo loves to sit in the wagon and ask me to pull him around. However, he’s still too young to pull the cart by himself. One day, out of the blue, Leo said to me, “Daddy, wouldn’t it be fun if the wagon could follow me around like a puppy?” That simple wish sparked an idea.</p><p>Children’s stories remind us that technology should help people, not replace them. In everyday life, it’s often the simplest, most practical features that bring us real joy and convenience. Inspired by this, we decided to turn Leo’s dream into reality.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236844">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/844/d4e56c398beba59959ee7e8dde2af07c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753921678&amp;width=680&amp;sig=5oLFHtwpFCiGcV9ONfKn7kHC6OJL%2Bb6romFHAPUYzGg%3D"/>
+</figure>
+</div>
+<p>Figure 1: Leo is helping to test the prototype, together with his portable fan.</p><p><span class="bold">2.  Just following? How hard can it be!</span></p><p>“Come on, it’s just a cart that can follow you—not a Boston Dynamics robot. How long could it take? Two months? Maybe three?” That’s what I said to my team in the beginning.</p><p>But as life often shows us, things rarely go as smoothly as planned. We soon discovered that the UWB technology commonly used for auto-follow features wasn’t as effective—or as enjoyable—as we’d hoped. As a form of radio technology, UWB comes with some fundamental limitations:</p><ul><li>An additional signal receiver must be carried</li></ul><p>For the cart to detect your approximate location, you have to carry a UWB receiver with you at all times. In reality, the cart isn’t actually following you—it’s following the receiver in your hand. If you were to toss the receiver into a lake, the cart would head straight for the water without a second thought. So, you’d better keep an eye on it!</p><ul><li>Sensitive to metal interference</li></ul><p>UWB signals also have a very weak ability to penetrate metal. In areas with lots of vehicles or metal structures, the signal can easily fail or become much less accurate. If the UWB device gets close to a metal object—like a car door or a metal shelf—the signal can even be completely interrupted.</p><ul><li>Multipath effects cause positioning drift</li></ul><p>In complex environments, like warehouses with shelves or crowded shopping malls, UWB signals can be reflected by surrounding objects, creating what’s known as multipath interference. This interference leads to errors in distance measurement and positioning, causing the cart to suddenly “jump” to the wrong location as it tries to follow its target.</p><ul><li>Electromagnetic interference</li></ul><p>The distortion rate of UWB signals near high-voltage power stations and MRI equipment can exceed 60%, leading to confusion and errors in following commands. In fact, because UWB signals are close to the noise level, any high-power, multi-frequency interference can disrupt them.</p><p>That’s why we shifted our focus to AI vision. Since AI vision technology is already capable of recognizing pedestrians in autonomous driving, we realized it could be used for following tasks as well. Unlike UWB, AI vision offers several key advantages:</p><ul><li>Complete immunity to signal interference</li></ul><p>Whether you're in a metallic environment, a high-power electromagnetic environment, or a complex multipath environment, computer vision won't be interfered with. We don't have to worry about signal interruptions or jumps anymore.</p><ul><li>Signal receivers are no longer required</li></ul><p>The camera resembles an eye, which allows the cart to recognize and follow its owner like a puppy. We don’t need an additional signal receiver anymore.</p><ul><li>Greater technical potential</li></ul><p>In addition to human body, AI vision can also recognize obstacles such as trees and stones. As a result, the AI vision technology has even greater potential to enable obstacle avoidance to further improve intelligence and safety.</p><p>Next, it’s time for our hardware and software engineers to show up.</p><p>In terms of hardware, we have carried out a lot of self-developed, mainly the design and development of PCBA boards. It includes the most core high-performance AI computing module, as well as various other control and driver boards. All PCBA boards have gone through more than three generations of iterations to ensure stable performance.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236858">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/858/e449391b5d16078958df613b23e28311_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753921763&amp;width=680&amp;sig=U6qlxx%2FR6eNYFQAoncQPjz0nYrojJ%2FbdQ7o8tA3tK6Q%3D"/>
+</figure>
+</div>
+<p>Figure 2: The self-developed AI core board</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236914">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/914/7acb0496d8c2948330106d2021f74c2c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922068&amp;width=680&amp;sig=vMxyrFhulbQB4ROdVVTWEy%2B0PObbEbRxYs8zOsAKQN8%3D"/>
+</figure>
+</div>
+<p>Figure 3: The other control and driver boards</p><p>In terms of software, we use the most popular YOLO algorithm to ensure that our model can run on the edge AI chip with lightweight and achieve centimeter-level high-precision ranging. Despite the good foundation, the development and optimization of the FollowFit AI algorithm took more than 8 months, with no less than 20 iterations and updates, and finally succeeded in improving the accuracy of human recognition from 63% to 95%.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236920">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/920/18953557bebe35189e6d0c335d6785a2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922108&amp;width=680&amp;sig=xa8pUzqwHljDJK%2FLclDsJ2g4Ud3As3zh9FMUMp0qZKQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236924">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/924/939e8bba107e7156ba5f9f023438d9ed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922113&amp;width=680&amp;sig=9uauSWp%2BUPTGSrc0wJdOenCRD1%2FwKYYCmSyBNywXoLU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236925">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/925/cae4382a16baf251c83c155ccf7bd8a9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922118&amp;width=680&amp;sig=lHJF9KGTcyRTGAZ6UV3M%2FmU%2F8%2F%2Fh6mKG4NK7ATnU2%2FU%3D"/>
+</figure>
+</div>
+<p>Figure 4: AI vision-based human recognition and accurate ranging function</p><p>At the same time, all FollowFit staff participated in the collection of AI datasets, totaling more than 8,000 pieces, to ensure that our AI model is well trained to accurately recognize a wide variety of different human bodies.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236929">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/929/5779dd4495cb16ec6de0958b9a73135e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922139&amp;width=680&amp;sig=hkg%2BGGF1BX1YZkiCG7AwON%2B8FL52L9r6F1i66KxZG3A%3D"/>
+</figure>
+</div>
+<p>Figure 5: Collection of human body datasets</p><p><span class="bold">3.  Prototype machine</span></p><p>After the main software algorithms and hardware PCBA were developed, we started to build the first prototype. It is based on a traditional hand-pulled wagon. As you can see, its motor control board and battery are all exposed, and it is covered with test traces.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236933">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/933/b86a76c3daaa77e05378ffa9d82b58ed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922164&amp;width=680&amp;sig=Goq0aUqDUW7U%2F%2F63%2BP9hbfn4fbVx%2BlingAdnfzI6Jl4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236934">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/934/bbfbf97f9e0d576546c796f3ab2f1fba_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922175&amp;width=680&amp;sig=hl%2FMFUd%2FLP9WNHPcgbRkW3a%2BpENFEwSXfhhnH72W7x0%3D"/>
+</figure>
+</div>
+<p>Figure 6: The Prototype machine</p><p>Based on the prototype machine, we completed the testing and selection of other key components. We decided to configure and design the FollowFit to the highest specifications.</p><p>Different from ordinary brushed motors, we chose a high-performance brushless hub motor. Its power conversion efficiency is higher, which can save more than 35% of electricity; Quiet operation, no physical wear and tear, and a service life of up to 7-10 years. It’s spark-free and generate low heat, making it safer and more reliable.</p><p>More robust off-road wheels are necessary. In this way, FollowFit can better adapt to various terrains, and has better passability and carrying capacity.</p><p>In terms of batteries, we selected a better ternary lithium battery pack. Its energy density is more than 5 times higher than that of ordinary lead-acid batteries, and its capacity is 5~10 times that of ordinary electric campers, thus ensuring the endurance of FollowFit.</p><p>In addition, we have equipped it with a set of automotive-grade ultrasonic radars to ensure that FollowFit is safe even in extreme cases of vision failure.</p><p>Although the cost of these parts is higher, they bring more performance and experience to FollowFit, so we still think it’s worth it.</p><p><span class="bold">4.  APP? I really don't want another one</span></p><p>With so many features, the next question was: how should we operate it? An app seemed like the obvious choice, just like many other smart devices today.</p><p>But honestly, I didn’t want to have to take out my phone, connect to a wireless device, and navigate a complicated app every time I went outdoors. That would take the fun out of the experience. We wanted FollowFit to be a reliable companion, not just another gadget full of unnecessary features.</p><p>At the same time, we knew the physical buttons on the wagon itself needed to be as simple as possible—so simple that even my grandmother could use them with ease.</p><p><span class="bold">5.  Appearance Matters</span></p><p>With the AI algorithms and core components in place, the rough appearance of our prototype no longer did justice to its powerful inner workings. So, we partnered with a professional design team—winners of both the Red Dot Award and the IDEA Award—to work on the industrial design of FollowFit. Together, we developed the following design concepts:</p><p>a) In terms of visual language, we wanted people to immediately sense the advanced technology, while still feeling the familiar charm of a traditional hand-pulled wagon. We also made sure to retain the practical folding feature.</p><p>b) Drawing inspiration from automotive design, we introduced the concept of a “front battery compartment.” This allows us to neatly conceal the battery, motor controller, and other key components, making the wagon both sleek and well-protected.</p><p>c) We added a front-facing LED searchlight, providing illumination so FollowFit can operate even in low-light conditions. It also doubles as a convenient outdoor camping light.</p><p>d) To enhance interaction, we incorporated a multi-segment RGB ambient light. Its color can change to indicate the device’s working status, making communication between FollowFit and the user more intuitive and engaging.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236944">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/944/9c5dbd267d38dcb72264fdaa72dd877f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922291&amp;width=680&amp;sig=P9BcLjrR8R6Riei7qxQTxEFEtE7kv0RhygOp%2BLxeGyU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236945">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/945/0eb1b5a52b73eb16bb3a06555f961f2f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922315&amp;width=680&amp;sig=%2B8bVQydpCyB%2BKppC6DCLJBFiOy7THkE1OQA%2BDQ2Q7Cg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236950">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/950/559eb041e1a1bee9a95556fe63c5c3c3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922323&amp;width=680&amp;sig=KhynRuJwQo8%2FClN07d1%2F5kVH1DGp76oTLfIa0Eh2amQ%3D"/>
+</figure>
+</div>
+<p>Figure 7: Exterior and structural design</p><p>"It doesn't look bad!" After the design drawings came out, everyone said.</p><p><span class="bold">6.  Life in the factory</span></p><p>Designing is one thing—bringing it to life is another.</p><p>To faithfully reproduce every detail from our design drawings, all metal parts had to be precisely machined, while every plastic component was first verified through 3D printing. Only after rigorous testing did we move on to molding, ensuring product consistency and laying a solid foundation for future mass production.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236956">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/956/3f73899aa003942b15ed1ecb10dd7f0e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922386&amp;width=680&amp;sig=g81j4np2hIUX8jP%2F7%2B79EWZXqIohdDMQ5qeKTRsVqYU%3D"/>
+</figure>
+</div>
+<p>Figure 8: 3D printed plastic parts</p><p>Time was of the essence, so we moved directly into the factory.</p><p>We examined every detail—from the choice of metal materials to the color of plastic parts, from shrinkage structures to battery mounting methods, from the height of the handle to the fabric of the storage bag. Since April 2025, we have upgraded and refined our prototypes month after month to meet our expectations. To date, the FollowFit engineering prototype has reached its fourth iteration.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236962">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/962/09a59b1fb785f1766489f1a4d77ec3b3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922424&amp;width=680&amp;sig=yBsI6toDFbdhb6Ux%2BTmZaxK1qm4HY7V0E%2BntJjTg2f0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236966">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/966/9fcaf56cbf5f0f4a6fd956b7988c5f0a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922435&amp;width=680&amp;sig=DoDubGoisohEG1GTet4e2wiUz4HqTmjyHKhBHndoJg0%3D"/>
+</figure>
+</div>
+<p>Figure 9: Continuously improved engineering prototypes</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236968">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/968/39b5bdf2c966f71447184ddfcc14b682_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922454&amp;width=680&amp;sig=%2BGRFQkA%2BbZjshFl9%2Bs5hhotTIduvG3%2B1BrF60QgwphE%3D"/>
+</figure>
+</div>
+<p>Figure 10: Leo is helping to test the cruise remote control function</p><p><span class="bold">7.  What we’ve been doing lately</span></p><p>Today, everything is on track, but we’re still working hard for FollowFit . Our current focus includes:</p><p>Extensive testing and debugging to ensure excellent product performance and user experience.</p><p>Establishing standardized production processes to get ready for mass production and delivery.</p><p>Developing test standards and conducting stress tests on every unit that leaves the factory.</p><p>Completing certifications such as UN, CB, and NG to ensure our products meet the requirements of each country and region.</p><p>We’ll be sharing product updates and test videos on Facebook and other media platforms to keep you informed. If you have any suggestions or would like to learn more, please feel free to contact us at any time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50236975">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/236/975/9a3c7ffdb0db9ee3b4f0590a7df3c184_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753922489&amp;width=680&amp;sig=sH5FrbWde6V0MhtZZXKBdv2bS0xH76%2Fpj5xuOpojDZY%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">While we’ve meticulously planned every stage, challenges like supply chain delays, technical adjustments, or funding variances could arise. To mitigate these, we’ve partnered with reliable manufacturers, completed prototyping, and built flexibility into our timeline. Our team’s decade of industry experience and commitment to transparent updates will help us navigate hurdles—backers can expect honest communication and solutions if roadblocks emerge. Together, we’re focused on delivering a quality product on schedule.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>The project is not raising funds for AI tools, nor using content that was generated by AI. The use of AI is in line with Kickstarter’s AI policy.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Carbon steel frame increases strength by 80%, supports up to 100kg; aluminum alloy linkages reduce weight and enable one-step folding for easy storage.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">FollowFit integrates eco-friendly materials like a recyclable body and low-energy motor, adhering to low-carbon production standards. Its long lifespan design features a modular structure that supports component replacement, reducing electronic waste. This sustainable approach makes FollowFit a responsible choice for outdoor enthusiasts.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VisionFive 2 Lite：Unlock RISC-V SBC at $19.9</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/252/749/7450052dcb3e440a437d16bfb4d43458_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754020194&width=560&sig=wsmjmUrd7CHYTsCby33jYIl%2BcWnQ1l25U1hd1UJmmD0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>VisionFive 2 Lite：Unlock RISC-V SBC at $19.9</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">A low-cost edge computing platform and compact media hub — delivering open-source flexibility to simplify project development.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 10,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:RISC-V-The-Open-Standard-Redefining-Computing"><span class="bold">RISC-V: The Open Standard Redefining Computing</span></h3><p><span>RISC-V</span>, the open standard <span>instruction set architecture (ISA)</span>, enables unprecedented innovation across computing domains—from edge AI to hyperscale data centers. Driven by <span>RISC-V International</span>, the non-profit foundation with 4,500+ global members, this ecosystem accelerates open specification development through technical collaboration across 70 countries. Industry analysts project that RISC-V will capture 30% of core markets by 2028, powering advancements in automotive, HPC, and industrial automation.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50252622">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/252/622/15bd4de544f63458637fd75158a3cb61_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754019397&amp;width=680&amp;sig=NhocSfLqSsm2%2F44g6MvVoxNQ4DYOxVltaMrTa7POTZw%3D"/>
+</figure>
+</div>
+<p>This year marks the 15th anniversary of RISC-V, as well as the third anniversary of the VisionFive 2 launch. Motivated by the support of our first campaign backers, we have made significant strides in software porting, development, and optimization.  </p><p>As of today, RVspace has achieved over 150,000 monthly visits and a total of more than 4 million visits. VisionFive 2 has fostered a wealth of tutorials and code resources, covering applications in education, AIoT, smart home, and IIoT.</p>
+<h3 class="page-anchor" id="h:VF2-Family-Expands-Meet-VisionFive-2-Lite"><span class="bold">VF2 Family Expands: Meet VisionFive 2 Lite</span></h3><p>As RISC-V marks its 15-year milestone, we're excited to introduce the VisionFive 2 family products - VisionFive 2 Lite, your simplest entry point to RISC-V development, starting at $19.9.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50407301">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/407/301/eefe92a9f2919bbe81abb044d2b83c6e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1755071966&amp;width=680&amp;sig=e5h59Aye9Yl2Ia7ZSWaf1RF%2Bmmw9q3%2FK5ilsk%2F1SNcY%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">**<span class="bold">Please note that project prices are in HKD, change your Kickstarter to USD currency to see pledge prices match our charts.</span>**</span></p><p><span class="bold">Compared to the previous-generation, the VisionFive 2 Lite adds integrated eMMC storage and Wi-Fi, offering a more budget-friendly solution for commercial scaling. </span></p><p>VisionFive 2 Lite is a budget-friendly and feature-rich RISC-V single board computer tailored for education, AIoT, smart home, and IIoT applications. Powered by StarFive’s JH-7110S quad-core processor, it features robust image and video processing capabilities along with versatile expansion interfaces including PCIe, HDMI, USB 3.0, and Gigabit Ethernet. With full support for mainstream Linux distributions and open-source toolchains, it enables fast development and smooth integration. Whether for learning, prototyping, or embedded deployment, VisionFive 2 Lite delivers an exceptional balance of performance and affordability.</p><p><span class="text-italic">First batch of samples:</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286518">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/286/518/63dc5ec1a1d93e1c63af8df5699fa532_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754302246&amp;width=680&amp;sig=uYXb306622UDWQNea6JcU7r5X19tSl%2BCUUmEHwfc7cc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50328652">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/328/652/8474a1ac0c2900a9eb483350dda9b5d2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754533560&amp;width=680&amp;sig=6EZuZ4%2BgHcz65Pur2OAFmlq%2BKlRWvs0%2Bm6fHQPdTGAQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Features"><span class="bold">Features</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50252635">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/252/635/1b93718d0b1000d3bf06fc7c78e4432c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754019534&amp;width=680&amp;sig=sEI0lxPmvOcjpjv1BwulmEzPAbcPYnBzvMDSvCBcIx0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50329557">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/329/557/712c2a492eaa6b56b8b1bc7ee6c13064_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754538764&amp;width=680&amp;sig=7ZL0OLEjQDgrcxW3bsPEOeb5A8c9w6TArvLqpoO0%2BS0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331793">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/793/eb9f5d186c1c1b83cfe831461f06aa9c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754555178&amp;width=680&amp;sig=ZgKx5Ak6bFjSz1z1iHMnEGwwcGG1Qd013JQTsaQ4g6g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50252643">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/252/643/e9e370e70e12f061442242962a4ec2a5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754019565&amp;width=680&amp;sig=k4h6o8b2Wh0p%2BhLp9vbGOoHZksrV5E2oG8lBfY3Poss%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Plug-and-Play-Expansion"><span class="bold">Plug-and-Play Expansion</span></h3><p>Compatible with standardized peripherals for mainstream SBCs, enabling efficient DIY project integration.</p><h3 class="page-anchor" id="h:Access-Resources"><span class="bold">Access Resources</span></h3><p>Docs, SDKs, and accessory guides launch in August on RVspace Community (<span>RVspace.org</span>).</p><p>VF2 Lite Doc:<span>https://doc-en.rvspace.org/Doc_Center/visionfive_2_lite.html</span></p><h3 class="page-anchor" id="h:How-Can-We-Use-VisionFive-2-Lite-"><span class="bold">How Can We Use VisionFive 2 Lite?</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50252646">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/252/646/77c987bbf594bd5598497c24eb7e0c3b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754019601&amp;width=680&amp;sig=BdRHI1hirHTcGNXJKHjipRPrWq4pb%2BjNF4vdKNMQLzY%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Education-Development">Education &amp; Development</h4><ul><li>Lightweight open-source RISC-V educational platform supporting toolchains like Python/OpenCV, enabling efficient development of AI vision algorithms and robotic control applications. </li></ul><h4 class="page-anchor" id="h:IIoT-Industrial-Control-Systems">IIoT / Industrial Control Systems</h4><ul>
+<li>Edge Connectivity: Features Gigabit Ethernet, Wi-Fi 6, and PCIe-based M.2 expansion for industrial sensor/device integration.</li>
+<li>Control Systems: Supports OpenPLC with IgH EtherCAT Master Stack.</li>
+</ul><h4 class="page-anchor" id="h:Smart-Home-Security-Solutions">Smart Home &amp; Security Solutions</h4><ul>
+<li>Peripheral Control: Directly drives home automation devices (sensors/access systems) via GPIO/USB interfaces  </li>
+<li>AIoT: Implements person detection using USB-connected Hailo-8 AI accelerator modules, with alerts pushed to Home Assistant via RTSP streams</li>
+</ul><h4 class="page-anchor" id="h:Lightweight-Home-Server">Lightweight Home Server</h4><ul>
+<li>Native support for OpenWrt (router OS)/CasaOS (container management)/Buildroot (embedded Linux) frameworks.</li>
+<li>Deploys software-defined routing and SMB/NFS-based NAS services with 24/7 low-power operation.</li>
+</ul><h3 class="page-anchor" id="h:Software-Ecosystem"><span class="bold">Software Ecosystem</span></h3><p>As an open-source development board, VisionFive 2 Lite supports mainstream Linux distributions.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286615">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/286/615/652c58d5e9bbbe068096a40ae111ce14_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754303181&amp;width=680&amp;sig=Rqr5k7QiXCdD2re1VY7Ey8f6IJi%2BV2K3m4Pp9tTHJaY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:VisionFive-2-Lite-Built-for"><span class="bold">VisionFive 2 Lite Built for</span></h3><h4 class="page-anchor" id="h:Students-Educators">Students &amp; Educators</h4><ul>
+<li>Learn RISC-V architecture and embedded Linux programming  </li>
+<li>Affordable teaching tool for universities and research institutions  </li>
+<li>Ideal for embedded development courses in training programs  </li>
+</ul><h4 class="page-anchor" id="h:IoT-Embedded-Developers">IoT &amp; Embedded Developers</h4><ul>
+<li>Build low-power IoT solutions  </li>
+<li>Production-ready modules for industrial applications   </li>
+</ul><h4 class="page-anchor" id="h:Makers-Hobbyists">Makers &amp; Hobbyists</h4><ul>
+<li>Beginner-friendly embedded development starter SBC</li>
+<li>Perfect for Linux platform hobby developers  </li>
+<li>Compact DIY platform for robotics/OpenCV projects  </li>
+</ul><h4 class="page-anchor" id="h:Professional-Engineers">Professional Engineers</h4><ul>
+<li>Embedded system engineers: Build real-time RISC-V systems with Linux/RTOS  </li>
+<li>Hardware development engineers: 100% open-source PCB design</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50252649">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/252/649/b05b631311e087ca2b1f5dedddeaefee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754019629&amp;width=680&amp;sig=FRNyCVRldqAGPCGY2nHAFrkZXeFQU4QiujDThIruv1c%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Compliance-Testing-"><span class="bold">Compliance Testing </span></h3><p>We are initiating CE/FCC testing for VisionFive 2 Lite, with completion targeted by September.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50328453">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/328/453/1c36d84b07958ebcd56c74100234e1a6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754532541&amp;width=680&amp;sig=mKfTWa2DlUtDq%2FI2EuLovX63Tu8MOjXXd79BXVdTkLs%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Help-Power-the-RISC-V-Revolution"><span class="bold">Help Power the RISC-V Revolution</span></h3><p>To every developer supporting the VisionFive 2 family product campaign: Your engagement drives open-source innovation. Thank you for exploring our project and supporting its realization.  </p><p>To reach our funding goal, we need sustained momentum . Even if you don’t pledge, you can still make a difference by sharing the campaign on Facebook, Twitter, and other social networks or blogs you frequent.</p><h3 class="page-anchor" id="h:-RVspace-Community-rvspace-org-">
+<span class="bold">RVspace Community (</span><span>rvspace.org</span><span class="bold">)</span>
+</h3><p>RVspace (rvspace.org) compiles all in-house applications and contributions from community developers into detailed articles, providing developers and customers instant access to these resources.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50252659">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/252/659/dfe4f6580661e160d1f8ebbcd2389594_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754019674&amp;width=680&amp;sig=%2Bt%2FfBppcsryroqoR2vnjtLD2GIeWSr4wqt6FsxaHw3U%3D"/>
+</figure>
+</div>
+<ul>
+<li>Integrated Core Resources: Product portfolio ｜ Code repositories ｜ Documentation ｜ Application notes</li>
+<li>Track SDK development in real time · Precise search for board accessories · Access 100+ ready-to-use application references</li>
+<li>Forum → Collaboration → Resource Regeneration → Ecosystem Empowerment</li>
+</ul><h4 class="page-anchor" id="h:Coming-Soon-">Coming Soon:</h4><p>★ <span class="bold">User Center:</span> Personal homepage ｜ Project showcase wall</p><p>★ <span class="bold">Organization Channel:</span> Dedicated enterprise channel</p><p>Community collaboration open to individuals and enterprises： <span>marketing@starfivetech.com</span></p><h3 class="page-anchor" id="h:About-Us"><span class="bold">About Us</span></h3><p>Founded in 2018, StarFive is a Chinese local high-tech company with independent intellectual properties. As the leader of the RISC-V software and hardware ecosystem in China, StarFive provides world-leading products and solutions on RISC-V covering CPU IP, SoC, development boards, and etc. Since its establishment, StarFive has delivered a series of RISC-V products, covering smart terminals (laptops, tablets, AI voice devices, etc.); industrial automation (PLC controllers, security gateways, EtherCAT masters, multi-axis servo drives, etc.); energy management (smart gas meters, energy routers, power IoT terminals, etc.); and machine vision (facial recognition, edge image detection, general object recognition, QR code detection and decoding, etc.).</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50252668">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/252/668/857523622220c0c2c81cc883cc415790_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754019760&amp;width=680&amp;sig=yvk727lY7wJ68b%2F7GGm%2F4fwe9wc85WbphxZIAR6epC4%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:About-Shipping"><span class="bold">About Shipping</span></h3><p>Due to the high uncertainty of cross-border logistics, final shipping costs will be determined based on actual freight rates at the time of reward dispatch.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Our established manufacturing partnerships and validated pre-production samples significantly mitigate potential challenges. All units will undergo rigorous, full-spectrum quality control and testing prior to shipment to ensure reliability. We are committed to delivering VisionFive 2 Lite as promised to our backers.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

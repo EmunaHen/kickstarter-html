@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HyperMaker: Industrial-Grade 16K 3D Printer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/227/605/a51a5c916571c2cb85d4a8a8cb9f47f3_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1753869081&width=560&sig=ALBBmZdzbgOsyvdM%2BJZeC69V9URUtVVZD2tlNX2KOxM%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>HyperMaker: Industrial-Grade 16K 3D Printer</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Ultra-fine for intricate figurines, jewelry models, dental models, and industrial prototypes.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,999</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>26 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50155771">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/155/771/711a5ebacfc0bd09601b1278b13e7945_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753339356&amp;width=680&amp;sig=CpkZrPKrdpxq3MVqxV1f7ZbYkH1d4bZOq0q9XzfFLIo%3D"/>
+</figure>
+</div>
+<p><span class="bold">In 2023, we launched Galaxy 1, The 17” Large-Scale SLA 3D Printer. It quickly became the most popular 3D printer on Kickstarter. Finally, 684 backers pledged $1,119,092 to help bring this project to life. We recieved so many support from hundreds of people and got a lot of  positive feedbacks.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50155859">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/155/859/0740790330ed005a9a9f21131c770b0d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753340030&amp;width=680&amp;sig=rUpGLFXetsFfuQ%2BS0%2BoY5U1F5HnmFvhFFeDLdPKnzlc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127751">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-Choose-HyperMaker-">Why Choose HyperMaker?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/751/c4972887af41111e9bd24188a540620b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753168588&amp;width=680&amp;sig=MOmscQchLEVQj2IA%2FEa%2FX24keuwR3omyL68k1HrjJh4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50296555">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/296/555/85220bf5781a5a0b6462bdb8629431c8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754361812&amp;width=680&amp;sig=dKuw0GI2VoSWou4bwaw8E2QRAiaK%2Fq0h5NRbAUG6h%2Fw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50156077">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Ultra-fine-Printing-Details">Ultra-fine Printing Details</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/156/077/1323f22b6e062053e462ad20a17267b8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753341805&amp;width=680&amp;sig=R%2FX9Cqee6dEpGVWp5Nu4c%2BEUZ5uKVDDLb60mIMPZkRQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50156070">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/156/070/fbf3f180bfe5c4ecf730d10e48a890ca_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753341760&amp;width=680&amp;sig=h7A1ltYavm0POcfC0uky3sLFNeAAMd34xcVrIO47v00%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50156071">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/156/071/c0d886a89e67859542397fca9532da14_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753341763&amp;width=680&amp;sig=Tux6rx07tThVLaskL4GQoQrCVmzcLYLSTL5VPMc13UU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50129508">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/129/508/b88aedbc71c99a2c3d4b4dcbccd40759_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753179527&amp;width=680&amp;sig=%2F7L3MIpQzf8hE6aGfPid5mzkop6SL0roon%2F%2BhjpTcVM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128748">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Zoned-UV-Light-Control">Zoned UV Light Control</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/748/33df62acb2279cb63e4d06ceacf9ebb5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753174496&amp;width=680&amp;sig=%2F%2FCK8h7O7A5kHJz%2Bdci6QAdy4ATuGB%2B31ePQh1i1T98%3D"/>
+</figure>
+</div>
+<p>The HyperMaker features a unique Zoned UV Light Control system that illuminates only the areas where the model is being printed, effectively eliminating stray light. This significantly extends screen lifespan and contributes to more stable print quality.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128075">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/075/82a0ac822917e0369019c4d75ac336c9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753170598&amp;width=680&amp;sig=Onk%2BEzfPTQJSX5kSl5iZYopR%2BtUDNpQSt6qrkDCe4gc%3D" src="https://i.kickstarter.com/assets/050/128/075/82a0ac822917e0369019c4d75ac336c9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753170598&amp;width=680&amp;sig=Onk%2BEzfPTQJSX5kSl5iZYopR%2BtUDNpQSt6qrkDCe4gc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128742">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Easy-Peel-Release-Technology">Easy-Peel Release Technology</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/742/c6b981c084932d27add95415303c0d99_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753174472&amp;width=680&amp;sig=FV1EmLv3b%2BchvibvNWn1mWQv63641NDmetwLzAR5elY%3D"/>
+</figure>
+</div>
+<p>Increase print success rate by <span class="bold">5%–10%.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128454">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/454/e9d64db675539c0323c894d062e96d72_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753172670&amp;width=680&amp;sig=yQu8wuaUyy8TXEE%2FD5BVdzDa47KBu2av0vBVLQlOIAA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128718">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Resin-Mixing-Scraper">Resin Mixing Scraper</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/718/6bc9be0d522e02eeac49f210a21eb118_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753174396&amp;width=680&amp;sig=E5F3cfTfN%2F%2B49Dhy86whTMRBzhh40TlGKImapuc6F7E%3D"/>
+</figure>
+</div>
+<p>The Resin Mixing Scraper stirs the resin after each layer by scraping, ensuring even mixing to improve print accuracy and stability. You can also DIY and print scrapers in different shapes</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128515">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/515/e7a049a0397d5f01b56ed4a16704e25f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753173116&amp;width=680&amp;sig=OYpn4dG%2Bwn%2BkMY1AFLthmgqWVaXjLUNrte%2Fiu0ik3ng%3D" src="https://i.kickstarter.com/assets/050/128/515/e7a049a0397d5f01b56ed4a16704e25f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753173116&amp;width=680&amp;sig=OYpn4dG%2Bwn%2BkMY1AFLthmgqWVaXjLUNrte%2Fiu0ik3ng%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128736">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Engineered-for-Professionals">Engineered for Professionals</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/736/6283e9be21787b153bcfa90cba14e192_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753174441&amp;width=680&amp;sig=ZeOcbfY7dO3J1Jb3G9NxJcGdVfN63s0jup4x14LAGtw%3D"/>
+</figure>
+</div>
+<p>Print Industrial Parts, Dental Models, Jewelry Models, and Ceramics with Unmatched Precision.HyperMaker delivers ultra-smooth surfaces and professional-grade results across demanding applications.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50345527">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/345/527/ce35a95164ac6292b2015c6049fa5854_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754636835&amp;width=680&amp;sig=bERztlHfHr%2BcTsGMF%2Bhrl%2Be%2B7SuibpT%2BtS9J5oaakZQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127278">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Maximize-Your-Productivity">Maximize Your Productivity</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/278/17e2fe82f7b38650cf94a9fdf2180c95_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753165986&amp;width=680&amp;sig=1xMRxEeA5zlu0AgJEQSuhF47NHDfXN33djdFBZS5WTo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143536">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/143/536/dc967acc4999ffdf2f2a2df060ee71ca_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753260403&amp;width=680&amp;sig=l8ZTqiSyxq59hUn0XGpIKMqxZFfAAPQVDHenEBjzPg4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127296">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:10-16K-LCD-Screen">10" 16K LCD Screen</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/296/d8c9b151b34cd4c96b5dca2dc0bf8c89_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753166051&amp;width=680&amp;sig=w6bnzy8NYFvSCpyn0q8UMkRlQPyJHhT%2BZDbjg6RH%2BP8%3D"/>
+</figure>
+</div>
+<p>Experience the future of 3D printing with our groundbreaking <span class="bold">10-inch 16K LCD screen</span>, delivering precision for your printing. Every layer is rendered with breathtaking detail, ensuring your designs transition from digital to physical with zero distortion and great accuracy.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128638">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/638/f88a3a27608ebb6b9acd482a482afddc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753173868&amp;width=680&amp;sig=uy7FvcW5z0Ge4qLcm9L3V70Psc%2Bd%2FRCH1OR8SXj1yOw%3D" src="https://i.kickstarter.com/assets/050/128/638/f88a3a27608ebb6b9acd482a482afddc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753173868&amp;width=680&amp;sig=uy7FvcW5z0Ge4qLcm9L3V70Psc%2Bd%2FRCH1OR8SXj1yOw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127305">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Wide-Range-of-Resin-Compatibility">Wide Range of Resin Compatibility</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/305/dd34355fba64a2a966e50d54729a060e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753166086&amp;width=680&amp;sig=b%2Bq4gj9yeDopa2ygA23tj703PHm20dQDrVrn%2Bk%2BK9L4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127327">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/327/94d128e8404b585344170fa5055c2c60_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753166185&amp;width=680&amp;sig=NwfGdsbCqx%2FNkXvvKBOEpmppTT3%2BledDr786%2FV2ncns%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50345340">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/345/340/33da3d9fb73511f81e37795d4d16a447_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754635531&amp;width=680&amp;sig=rfoVEP0kkmfhzfDUeqsc%2B1Rt3MZIA%2BiLXWaJXYxsiPM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127365">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Smart-User-Friendly">Smart &amp; User-Friendly</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/365/a5ecd8d2b5cfd0fc189127adfa95eeb5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753166298&amp;width=680&amp;sig=U8T50oD45uuAr2Rbc%2FgAtWTQNzb5damhyPldyJVOjaQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128757">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/757/10cbcc1973a6ad9d8657250e5f18c168_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753174567&amp;width=680&amp;sig=7EgCEDCtDe4ESS3Ouu7KoHVL3pHAIaGTcCmU%2BuuhG9k%3D"/>
+</figure>
+</div>
+<p><span class="bold">No Need to Manually Refill Resin When Printing Large Models.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128652">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/652/5eee06562b55e4c1f647944747a68809_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753173948&amp;width=680&amp;sig=Sr5jWVZobAakMom79cDJmHo8TYOjsLi%2Bv1eXUlM0%2FjY%3D" src="https://i.kickstarter.com/assets/050/128/652/5eee06562b55e4c1f647944747a68809_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753173948&amp;width=680&amp;sig=Sr5jWVZobAakMom79cDJmHo8TYOjsLi%2Bv1eXUlM0%2FjY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128760">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/760/64062cbae8b3c69d664723a0b0c9244f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753174572&amp;width=680&amp;sig=YGVfHGboDz1bQQwtlsvFNRwsufdvBtzNMef27nLTss4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Real-time monitoring and time-lapse photograph.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128680">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/680/4c4b7da89b39cacfeef5319fbded93d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174151&amp;width=680&amp;sig=%2BLz%2FxHU01Z1fgaOo2j8wXm%2FbsVqYQNpQQfo5LT327UY%3D" src="https://i.kickstarter.com/assets/050/128/680/4c4b7da89b39cacfeef5319fbded93d5_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174151&amp;width=680&amp;sig=%2BLz%2FxHU01Z1fgaOo2j8wXm%2FbsVqYQNpQQfo5LT327UY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128762">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/762/2ec8ce37e2024612903f8f74a0fec16d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753174582&amp;width=680&amp;sig=YDBe6aK64MzdAVYByULzFBN71PleI7RLrqsTfrYC2kA%3D"/>
+</figure>
+</div>
+<p><span class="bold">Precise Current Control to Protect the Screen from Pressure-Induced Damage.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128631">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/631/3e4e4f3daece242849ba1270a612f2d0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753173819&amp;width=680&amp;sig=p%2Fu8QsIOi8Us5hFP0fLO%2BT6blgH%2FRmxjqSRJ3w1lNbM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127552">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/552/7a99edb10da4ec9b204ca4d110737398_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753167452&amp;width=680&amp;sig=p3jfSJzMCXbqHywmQ2uIK5DX6n1E1uACPC2WxZ4juE4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127559">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/559/0386cdfbf5e492bbd62876218e94691f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753167489&amp;width=680&amp;sig=MiE%2BbxO0%2FL3L%2B%2FmzTQZZx6U3e%2FKuaV%2FsOYqgKZsve3A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127560">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/560/c22f43656f080dd892676dd73008699d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753167489&amp;width=680&amp;sig=E%2B0ttT7eAx46QLFx8oWTFMvYvDOCPUgko8BhsqHxBhg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50212710">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/212/710/4a0956ca510197320141d76f1109ca47_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753783303&amp;width=680&amp;sig=NGqKGtCHTShHXmxEYwLEFvlCkGJEvtJa%2FvT%2FD8dyuR4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50157548">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Accessories-in-the-Box">Accessories in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/157/548/1b2ac25def51ece723bfca93f43c1641_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753353138&amp;width=680&amp;sig=K2UDagqM87BkZOtrfpZtq%2BGmRFHQZP1EKnYp8Ufg9U4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50166589">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/166/589/113ece1e7a5afd79d4010ea172d673c0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753409573&amp;width=680&amp;sig=fbAiZK%2BHugNaXfj2f6giIyCm%2BnHY1NasPGP7OR5y64M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127572">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/572/75d8ad48e469ca37a3031cd7dc4ab5a8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753167545&amp;width=680&amp;sig=L9Gm0g6HN5guIKxXYdMDpC6x9Kiq7fmMN29LLgrQ1ys%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127601">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/601/3e2bedb7300acf1e270cf177cb5ec835_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753167719&amp;width=680&amp;sig=aIgw5ton%2BL9GLyKHXc7uN5rgubrfuub66ZkKBDYcF0s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50156107">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-ons">Add-ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/156/107/f1e680249c22845dec2ce99ac1e7bd81_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753341958&amp;width=680&amp;sig=7tUFZgKLfVmOW8Aca0xwmF9aaiPx%2BGpT%2FJyq7CBV%2B9Q%3D"/>
+</figure>
+</div>
+<p>The high-temp, high-transmittance LCD lets more UV light through and resists heat, enabling faster prints, finer details, and longer screen life.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50157476">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/157/476/efd0300b4eec4ce288b0893fcb1fa72d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753352762&amp;width=680&amp;sig=2KwtVXbJxFCte%2BhGzwHjkkEkaHfLRB8Va84wJlG%2FhkU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127621">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/621/53bf4a8b055325e0afbb4068d2e34b10_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753167833&amp;width=680&amp;sig=x6ojuK%2FU7dKjLWwidgtuvEjTavZ%2FbBhGNJDi%2FzHxYIQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50157613">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/157/613/c48700f6691c4f2083c258c6508e8f34_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753353608&amp;width=680&amp;sig=psVwkxOW%2BWl1VJmW2l5h803P9DCJ5%2BNHOfTXhBT2AP4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127632">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-Emake3D">About Emake3D</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/632/eac9eec2fb872d22b0a8537d7bd86cec_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753167923&amp;width=680&amp;sig=%2F1c5cLtLpliWYJIjb16r5coSX3c7Z7Y3528YstEg9tE%3D"/>
+</figure>
+</div>
+<p>Emake 3D Technology Co., Ltd. covering an area of more than 2,000 square meters. It is a national high-tech enterprise specializing in advanced material manufacturing technology and material research and development, production and sales of 3D printing equipment and services in related fields.</p><p><span class="bold">Technological innovation and changing the future is the vision of Emake3D. </span>We take technological innovation as our purpose and are committed to promoting the progress of the 3D printing industry. We are willing to work together with you to create brilliant future!</p><span></span><span></span><span></span><span></span><p><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">With our years of experience with products, our team is very confident with our product quality and shipping schedule for HyperMaker to ensure the best user experience. However, there might be some hidden obstacles and challenges during production. Because of that, we’ve made sure to account for some unforeseen problems that may occur in our schedule. We hold strong confidence that HyperMaker is well-prepared in order to provide a carefree experience throughout the campaign. Please be aware that there may be extra customs fees due to the policy of different countries. But we will cover them with our shipping plan. We promise to keep our backers updated and informed about any issues and about the way in which we are solving them.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

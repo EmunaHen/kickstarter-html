@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flow Timer: For Productivity and Focus</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/359/437/8279a649d6c46bfe455d97af8a8f25d2_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754741211&width=560&sig=oQ088z6sOy5dgY5wTCPxc2opbJDN%2Bef1sPJfMdRbLbs%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Flow Timer: For Productivity and Focus</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Thoughtfully-designed solid metal Pomodoro timer. Dual customizable focus & break presets for deep work, focus sessions and flow.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 6,517</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50255637">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/255/637/46fc9755c16b2cd2acc9805ec880a22f_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754039877&amp;width=680&amp;sig=O8f7M5hhva4zXn4PpJwjse4Q3gGFmSioDtI%2FVjhuo0c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225763">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Find-your-Flow">⏰ | Find your Flow</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/763/75fa835487e72e4cd128d21a7212eae8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753857696&amp;width=680&amp;sig=38nqTNaABjYD3xLp9ehTqCgq%2F2G833TjBeCs2uKj4a0%3D"/>
+</figure>
+</div>
+<p>Meet the Flow Timer. A premium, solid metal timer designed to help you <span class="bold">take control of your time, focus fully and enter distraction-free flow</span>.</p><p>Mindful work and rest intervals, guided by five gentle alarm tones allow you to <span class="bold">keep your focus sharp, recharge effectively, and overcome procrastination.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50253462">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/253/462/3093d4a04d8a09bc0f600555b394d035_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754025873&amp;width=680&amp;sig=51sRFu0YhkhkcTSPkP6el%2F3MhYpzWB97aIepx%2Fb4dEA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50253463">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/253/463/d680c8bc67656886c1082c4884e9235c_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754025875&amp;width=680&amp;sig=aBeCVEYgh2LuU0SQDtEqTo9YeoPUq4vxTFtvjP476y0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50253464">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/253/464/f28ce4d2013bda2992a0988004d3b274_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754025880&amp;width=680&amp;sig=%2FxxYGMCpsGNSK5inAt89BWRG7YtxhDglJdaV3ZaR8EQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">And after 1.5 years of work and 3,900+ VIPs already on board, all we need is your support to start production. Shipping is expected to begin in November 2025. Delivery is expected in early December.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50253486">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/253/486/c2d6396e133bd775fafa8c05d8792456_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754026094&amp;width=680&amp;sig=71xS5VBb%2F6YNGXVmr3wCvtjYhoInv0nnVdbOAJvHdPs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50287974">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Features-Walkthrough">🛠️ | Features Walkthrough</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/287/974/6f6a9b9bed61fca412648599f1ca8496_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754313197&amp;width=680&amp;sig=w6ZT4qGRe7prHgn%2FWbg7txhE8H1IZIB7DXZWvMv0Yd8%3D"/>
+</figure>
+</div>
+<p>Check out our comprehensive features walkthrough below with our Co-founder, Sam. Using our final pre-production prototype!</p>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225764">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-The-Problem">⚡ | The Problem</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/764/ba2d3833e641293f10f95c1f9a94c298_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753857705&amp;width=680&amp;sig=qp%2B5c5vsrZTE7BXmGsUfYyIQeWpBOVSXl4DoOl6VcLg%3D"/>
+</figure>
+</div>
+<p><span class="bold">Without intentional breaks, focus declines,</span> making it harder to keep working and <span class="bold">easier to procrastinate.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50211860">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/211/860/4c0d2cd726baaeb20a8ff759c387cbd3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753779229&amp;width=680&amp;sig=Y8RLApwCz4ATYccXHPnLHHP1AHW2sVyOXM6QF2l4nWY%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:The-Pomodoro-Technique"><span class="bold">The Pomodoro Technique</span></h4><p>A 2014 study in the <span class="text-italic">Journal of Applied Biobehavioral Research</span> found that alternating periods of focused work and short, mindful breaks, known as the <span class="bold">Pomodoro Technique</span>,<span class="bold"> significantly reduced procrastination </span>and<span class="bold"> improved time management.</span></p><p><span class="bold">Flow Timer puts this proven method into your hands, helping you focus longer, recharge effectively and stay in control.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225766">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Designed-for-Focus">🎯 | Designed for Focus</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/766/27dcd07aca2455932a5e11a62bbfd936_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753857717&amp;width=680&amp;sig=Y6tbu1vXjxrtAP9t1UaWWOYTUqEiVMx28Qa%2Fva8lP2E%3D"/>
+</figure>
+</div>
+<p>Flow Timer shows both your<span class="bold"> focus and break times</span> clearly at a glance. No apps. No notifications. </p><p><span class="text-italic">Just a tactile, premium tool to help you get started, stay on track, and finish strong.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50087225">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/087/225/69a7fadd69e09b9175b1279848fde0ae_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752833125&amp;width=680&amp;sig=07Y45%2FBxoik48n0iau8Zy60T7lJ4AvUQ2kMTNDTPPso%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Beautifully-designed"><span class="bold">Beautifully designed</span></h4><p>The ergonomic dial and tactile buttons provide intuitive analog control for all settings, and the orange accents help the Flow Timer stand out on your desk or wherever you choose to place it.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50266096">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/266/096/842f0e367c516b8e7c545f40f4a1c8d5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754105188&amp;width=680&amp;sig=AIMZ4exhZgle0ykWO9PoEbDRioMVyZZQRfK6zkU1DDc%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Built-to-last"><span class="bold">Built to last</span></h4><p>The Flow Timer's premium metal alloy construction is built to withstand day-to-day life and anything you throw at it.</p><p><img class="image" data-id="50188026" src="https://i.kickstarter.com/assets/050/188/026/2643857e71169b27986404b9cb76dfa7_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753598296&amp;width=680&amp;sig=pPgd8EJBqRWSsN9B8965lHLOVJOKLJWuCQcXlu4bavQ%3D"/></p><h4 class="page-anchor" id="h:Feature-packed-with-customizability-in-mind"><span class="bold">Feature-packed with customizability in mind</span></h4><p><span class="text-italic">We understand that everybody works differently, so the Flow Timer was designed with customizability in mind.</span></p><p>Choose from the two most popular Pomodoro presets or save your own custom focus and break intervals.</p><p>Select from five gentle alarm tones to gently notify you when the timer reaches 0.</p><p>Screen brightness and volume are also adjustable through the settings menu, with 5 levels of adjustability.</p><h4 class="page-anchor" id="h:Focus-anywhere"><span class="bold">Focus anywhere</span></h4><p>With its slim design, matching carry case, and built-in kickstand, the Flow Timer is easy to take on the go, perfect for working from anywhere.</p><p>Or keep it docked and charged at your desk with the included magnetic charging dock.</p><p>The Flow Timer comes with a built-in 1500mAh rechargeable battery that lasts up to 3 days of typical use or ~21 hours of continuous use.</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225769">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Is-Flow-Timer-for-Me-">🤔 | Is Flow Timer for Me?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/769/583763a5eea169634230b2b38f2600a6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753857728&amp;width=680&amp;sig=OYlP60ktuhkECl5FZEInQW9YkDJIG05Si1C4ecWdP3g%3D"/>
+</figure>
+</div>
+<p>If you…</p><ul>
+<li>✅ struggle to start</li>
+<li>✅ get lost in endless tasks</li>
+<li>✅ feel drained after long stretches</li>
+<li>✅ want a clear, effective way to focus</li>
+</ul><p>It helps you work the way your brain prefers, using proven principles supported by research:</p><ul>
+<li>Short sessions lower resistance so you can just get started</li>
+<li>Clear limits create urgency and focus</li>
+<li>Breaks prevent fatigue and keep your mind fresh</li>
+<li>Small chunks make big tasks feel doable</li>
+</ul><p><span class="bold">These are the same principles behind Pomodoro and timeblocking.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225770">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Not-Just-a-Pomodoro-Timer">⏳ | Not Just a Pomodoro Timer</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/770/519cc59f82c60a7fb2356aeb8f8a4098_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753857735&amp;width=680&amp;sig=eLc4dJog9Jbx3ndvMKFU3ZkZtdWmkn59lEKSiIOaoBI%3D"/>
+</figure>
+</div>
+<p>Switch to stopwatch or countdown mode anytime with a single press. Use it anytime you need a timer.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50237888">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/237/888/9782e6ae37b7ad5f06e9e748f377cfc8_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753929919&amp;width=680&amp;sig=creO%2BxW7%2FwrRCXLGUylFWuJ9%2BHormuv505CFsNYyoHQ%3D"/>
+</figure>
+</div>
+<p>Ever unlock your phone to check a notification, and get lost scrolling for hours? Apps are designed to be addicting. That's why they suck for productivity.<br/><br/>That's why we designed the Flow Timer to be digital-distraction free. Your productivity companion. <span class="bold">No apps or notifications required.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50211796">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/211/796/93f0a109a71a6b851817fad79642486b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753778996&amp;width=680&amp;sig=yysXh%2BDZ4RMWngTPjn3uTl6GgkUPyqkaRFQKIVdfU7M%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50266194">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-The-Flow-Bundle-Productivity-Kit">📋 | The Flow Bundle – Productivity Kit</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/266/194/72b4a96b603c7cbe9ac3cf1998012c6e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754106299&amp;width=680&amp;sig=reXgsI8UOoqplxvfXDVep%2FxkL5NnJxRWkFCZY0NgGHY%3D"/>
+</figure>
+</div>
+<p>The <span class="bold">Flow Bundle</span> builds on this approach. Included is a month's supply of<span class="bold"> Time Blocking Cards</span>, a year's supply of <span class="bold">Weekly Planning</span> and <span class="bold">Habit Tracking Cards</span>, displayed neatly on a <span class="bold">Walnut Stand.</span></p><p>The Flow Bundle allows you to, time block your day, plan your weekly events, and keep track of your habits, plus use your Flow Timer to keep you on track while you do so.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50299535">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/299/535/a3239d97421b9727e27d43547729e91f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754382298&amp;width=680&amp;sig=3ydzVPEmqvLblTtsFBOf3iGPpspoH%2Fp8koG4khTwgCc%3D"/>
+</figure>
+</div>
+<p>The Flow Bundle was designed not only to complement your desk setup, but to work with the Flow Timer to bring you focus, structure and intent.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50285084">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/285/084/0f2e2c481de229f4198302c85af900c1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754292158&amp;width=680&amp;sig=RbMyx%2B1iwp%2BJxXP3UU3sXf3bSzpHXieC85146qvxG0U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50296195">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/296/195/115a4626a2f38b2b20a01c225d2dfdc9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754359759&amp;width=680&amp;sig=cKqIrJTL8LVXFJLqYwCEc3pZvf%2FhApXBmwEVuwGgw94%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50296196">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/296/196/53e313f62b2563456caa5b3745e069da_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754359763&amp;width=680&amp;sig=ea%2BmDYsc4%2Ba7ZnC3znqvgK0H8twz%2B6OUV4pUBzR61uE%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225772">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-The-Design-Journey">🎨 | The Design Journey</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/772/2baaa591323d5fdf47490e8a6e12d535_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753857740&amp;width=680&amp;sig=dx7rAhZzKcS2HE%2FWCT0uEnfNF70uexYIjCedX9rqTl0%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Concept-sketches-early-3D-renders"><span class="bold">Concept sketches &amp; early 3D renders</span></h4><p>The idea started simple. We wanted a dual timer that looked beautiful on your desk and worked flawlessly. Something minimal, with a clean form factor and a strong focus on usability. At first, we explored a few directions. The earliest versions were close to what we have now, but they had too many buttons and felt more complicated than they needed to be.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50197680">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/197/680/84392de5f573e8a38570263eca140fff_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753690967&amp;width=680&amp;sig=bGDEDwl3Hx3dc24xXl4%2FbpVkbc8kTSOlwefzmUExqzY%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Community-feedback-design-improvements"><span class="bold">Community feedback &amp; design improvements</span></h4><p>As a small team of three, it was a huge gift to be able to gather feedback from people who care about productivity. We tapped into our Instagram audience (+200K followers) and thousands of existing customers to gather feedback on our initial designs. Eventually, this early group turned into a supportive Discord community that was part of the design journey with us.<br/><br/>What we heard was clear. People loved the concept, but it felt too fiddly. So we stripped it back. All the extra switches became one simple settings menu. Just enough control, without the clutter. As Dieter Rams would say, less but better.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50198031">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/198/031/c480aaf4d15b83ec31d750b9af988be6_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753693117&amp;width=680&amp;sig=hHXIegC1KIo03dKW6A14VVdgHCGBk7NJ8Ispf%2F6bdcQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Engineering-factory-visits-first-prototypes"><span class="bold">Engineering, factory visits &amp; first prototypes</span></h4><p>From day one, we partnered with a trusted timer and metalwork factory to bring this to life. Our standards were high, and we made sure to work with suppliers who were just as obsessed with quality as we were. <br/><br/>Their engineering team helped us turn our early CAD model and renders into real objects, so we could feel the shape and weight in our hands. Over the 1.5 years, we’ve visited them in Shenzhen 6 times. And we’ll be back again after the Kickstarter to oversee quality assurance and testing!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50198099">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/198/099/a683d3526a08376aaffe33e1d53048d9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753693512&amp;width=680&amp;sig=5SI9ZSBK%2BJbq0Js3ilkzqnVTD5Qhu8ntdUPTqGUYePw%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Improving-every-little-detail"><span class="bold">Improving every little detail</span></h4><p>Those first prototypes looked incredible, but they didn’t feel complete. The firmware was buggy. The speaker wasn’t clear. And the battery didn’t last long enough. So we kept refining. For nine more months, we reworked every part. We increased battery life by 50% to support three days of typical use, tweaked audio bitrates to get the alarm tones just right, and even redesigned the internal layout so we could fit the larger battery, by moving the USB-C port to the side. These are the small details that we wanted to get right before bringing the Flow Timer to life.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50198334">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/198/334/f39b3b416218b267d3f2489f82849cb4_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753694898&amp;width=680&amp;sig=ZpX77ii0kvsV4C%2FdWc1XQwfO1Zu0JYmas7b0O%2B%2BCwxo%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:And-now-we-re-gearing-up-for-manufacturing"><span class="bold">And now, we’re gearing up for manufacturing</span></h4><p>Now, we’re extremely happy with how far our samples have come, so we’ve already invested in creating production molds, and we’re currently completing pre-manufacturing validation, and all we need is your help to get us over the line.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50198782">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/198/782/0fd05398816f5a15940f73e2cfd5a17b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753697473&amp;width=680&amp;sig=9PwNq7UiCuNTm9ndeFwPPTD2RVAb%2BQV0YOCUh%2F8TN6c%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50257117">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Rewards">🎁 | Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/257/117/456409e85dc6f57a80efd98499615659_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754049341&amp;width=680&amp;sig=n9OUDTRWXTKa2Sq0I8YMCPhb%2F408%2BHODsWo9MduSM%2F4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50287773">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/287/773/6f9e88479c80a908594b32bf1cb015ca_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754311889&amp;width=680&amp;sig=HNdyPuf%2Fkh9w%2BqQJL46Ih8JAd2rbW2UMOHgp%2Fr63ipc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50360065">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/360/065/156f941b86e98ec60b389774787aad5b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754747399&amp;width=680&amp;sig=BMerGxYpVZZaMy4so%2BdT6Rf4l2ukELOyyp9eLY1eRRM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50360066">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/360/066/122c34a509529bee18da320fb82ace01_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754747400&amp;width=680&amp;sig=%2BhdUqINRE1dMxmKNKf%2FlGIMs29JfvzR3Nf7XMgV5mtw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50360069">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/360/069/f006cc93edb83c24d3d3d6114e534366_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754747403&amp;width=680&amp;sig=3chjSD5rbuB0QRxzWKFVjhP0bdov%2BLdjNtosX%2F%2BqpyQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50287834">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/287/834/dd844e2c15d5fa0c6936f7033c8ee318_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754312219&amp;width=680&amp;sig=28Zej4Cy8bq1IqWbcSfd8UTHgQXf13F8RhXeCg3j5Fw%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50257163">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Add-Ons">➕ | Add-Ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/257/163/27779013bf5506d4f855a175837ff22f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754049691&amp;width=680&amp;sig=XoQMiKpx4gE%2FAwbIRGrB0JE%2BYrBiSBRhx%2BrDGU%2BLLdA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50359440">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/359/440/66a68540dd80758e70a1398d27d763cc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754741241&amp;width=680&amp;sig=%2B50N8TT46EMy06A4UtdiMUPpZ5Sc7f0QAjlxOsJuxCo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50285108">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/285/108/82552936f276427539d3c6b40ef4f7c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754292292&amp;width=680&amp;sig=ONU7TD3xTVz1JjNdkdoO68KQlZK5aXAm0xh4fKzM8VM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50297870">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/297/870/9f7a448ac01e49b47243630dcfe99e9c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754370951&amp;width=680&amp;sig=hiicfRe9PRDjU%2BGpgjAdjt7J3gZHJTBUVeQGGXt7cvA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50266088">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/266/088/7f1fb4099a56bedfbfa354175cf5bc6f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754105116&amp;width=680&amp;sig=DpEoLUCUsJHCz0CSV7Cy0GIXpRHAQB3ItLwL6AebXcQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50266089">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/266/089/e8703f75e6c88fa92f2f10a82148bb79_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754105119&amp;width=680&amp;sig=E2gQQ4Gt1QQU38nl52wqq7QIoDIleVnFJhjRE%2FwWYvg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50266090">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/266/090/7db03d36454c36075bc1fc0b313624ae_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754105121&amp;width=680&amp;sig=YG6SeKjUy%2FsAi7hUki%2Fzwhuf%2FRVq0eyznq8BBOWHU3M%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50285575">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Stretch-Goals">🚀 | Stretch Goals</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/285/575/9c740f61d650bf229e2793cad77a2c0a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754295136&amp;width=680&amp;sig=V8udZECeW7SQZg3xQTz1np0voxxt2APi4zbzxyqNW3E%3D"/>
+</figure>
+</div>
+<p>We are excited to unlock exclusive rewards as we reach new milestones together.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50360192">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/360/192/28c6dcec795be0a43768e7c9685655d3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754748657&amp;width=680&amp;sig=XeiFdn0oixF227ahiimEsK7pY54wxzssHt2mKJ8hWb4%3D"/>
+</figure>
+</div>
+<p>Our first Stretch Goal has been unlocked! Everyone who backs The Flow Bundle can choose a free upgrade to our exclusive new Birch colorway. A perfect match to the Frost White Flow Timer.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50313848">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/313/848/f13c5463fa0270d7aefc8f54c3ffa458_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754442460&amp;width=680&amp;sig=JPKsB0lC%2FQtUuSMTQMWS44h19dnzT3nJ94h8o5Jfuo8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50298670">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-What-s-in-the-Box">📦 | What’s in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/298/670/b786ccf8365970e35503147e8cd4556a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754377350&amp;width=680&amp;sig=mZyA%2F2IFi2UW1xRZv5xbL0qhuRxJ71Un4IU3JU1K43Q%3D"/>
+</figure>
+</div>
+<p>Each Flow Timer package includes a Flow Timer, Magnetic Charging Dock and Braided Nylon USB-C in the box. <span class="bold">Our plush vegan leather magnetic carry cases are an additional perk for all tiers that will be provided as an extra for all backers. Thank you for your support!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50298676">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/298/676/f9b1cfb9c0fe7f7c1991a25d82edf509_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754377386&amp;width=680&amp;sig=eUv6hgXlf24wz3KC0wHWxHrq%2F%2BnklIgXFQQAwn3KEQ0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50257277">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Shipping">🚚 | Shipping</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/257/277/46ef842b484fdd63a6bbbc49d30e5f92_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754050441&amp;width=680&amp;sig=wJHKgTdlCgvLBXKDnJ57RMMNyPuYDtrdvOPa3a85hq8%3D"/>
+</figure>
+</div>
+<p>We’ve shipped thousands of products worldwide and built a loyal customer base in 50+ countries.</p><p>We already have our suppliers and logistics in place. We just need your help to fund production.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50313821">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/313/821/a595fdb87f7af72bc463c76950d86907_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754442355&amp;width=680&amp;sig=CZmXVhY9Hxg5PyVSAINdxTVBfnkp5LX0WvwuQisPrYs%3D"/>
+</figure>
+</div>
+<span>📅 | Project Timeline</span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50240099">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/240/099/ffd83f5cb6309bba0bd00a4b6089ba71_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753948106&amp;width=680&amp;sig=WtTbhIb4SKciIhb3pSfUGXJSOdZJ4%2FW80Oyqe1uBVWw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50240102">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/240/102/bb577ece86948175634ceabd7a2fff15_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753948107&amp;width=680&amp;sig=xyOD%2FNKUqPKjO6%2Bzmk%2BvFHSMbxThilpVeiGOqcRdsrI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50240131">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/240/131/8fc5d2364bec348f6713216716e8f243_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753948252&amp;width=680&amp;sig=0oEol%2FpFAiTp9wzs31jLgBo4VHVNvDkaVMP8KpfHlbA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50266013">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/266/013/383b944fdf836c938898794dcd6934a8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754104426&amp;width=680&amp;sig=WC9y1s9u4FUiVlo48ji0HrVoI3rBBm3r1gzvd9YIkVc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50240456">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/240/456/9f4313646d64ab16c3c4af026a561e36_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753950316&amp;width=680&amp;sig=kmj9b6NSniujMBdqkuSAw5n9MfwmjIt5jByQP3mi8%2BU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50240231">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/240/231/c970d2c4331087c3658befea17e1c849_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753948929&amp;width=680&amp;sig=4UDPTjpr3JqxGRAye9J1LV%2FW%2Bxp9uD4h0v5P1QfNoNY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50240100">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/240/100/af47068aff94364b88ca29cda9ea8360_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753948107&amp;width=680&amp;sig=1CZW8AqnUW%2F%2BDC1L9eqW%2FQLjVyzZrjjg20fvW6fto7g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50240104">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/240/104/39da3d4a591cbbafde9156046328d385_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753948108&amp;width=680&amp;sig=12n6WLSytgCIx32J6%2FBSKG8xfaih9bdCTNRXWV%2FkSag%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50240106">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/240/106/b926d36abbf50b1e481eb92549daaf97_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753948108&amp;width=680&amp;sig=REtk4xS0egHajwzwon94AcW2GbBxDsDratI8sUsBwmw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50240107">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/240/107/bbf2ad0e50d6228ad3144010c6053d8a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753948108&amp;width=680&amp;sig=AftvQZQicKaz%2BBfKuHeUfIS%2FMyH41D3W4IuO43z%2Bloc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50240108">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/240/108/7e9f1e32a74ce7312b86af4c73b5bd75_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753948109&amp;width=680&amp;sig=MciCS3kpr7J6sivcqcDYx%2FKiZ%2BS67U%2F1%2BIwnKXxXqZs%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225813">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Follow-the-Journey">📱 | Follow the Journey</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/813/9799c4fe66411f517556412fdaa81dcc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753857991&amp;width=680&amp;sig=uno%2BM5CdDrX1Jxl712hveEeKMA%2BgVv4H1MwT6uluAAA%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><p>We've been posting daily updates on Instagram, TikTok and YouTube, showing the behind-the-scenes of the development process, factory visits and everything we've been doing to bring the Flow Timer to life. <br/><br/>We'll continue to post updates throughout the manufacturing process, so follow us to keep up to date!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50223806">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/223/806/d609f0ec3c4c492a679913042e976a91_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753842862&amp;width=680&amp;sig=GGPHeS6IBd8Hvt6Haf4rUy88cM6kOXB4yihhEwNTK0M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225811">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Meet-the-Team">👥 | Meet the Team</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/811/9ff69033928c9a630f2fa5c7f69cdbf6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753857984&amp;width=680&amp;sig=FBIaun2r1M64ryRbfC8Lw%2FF2OVsb%2BA8hvDYCu%2BbaLmw%3D"/>
+</figure>
+</div>
+<p><span class="bold">Our mission is simple: help you work better and feel better about how you work.</span></p><p>We’re a small team from Melbourne, Australia, who turned our love for clean, inspiring workspaces into a business that now reaches thousands of customers around the world. been designing and selling productivity tools for over 4 years.<br/><br/>Minimal Desk Setups started as an Instagram page sharing desk setup inspiration during the pandemic and grew into a trusted brand with over <span class="bold">200,000 followers</span> and a full range of products.</p><p><span class="bold">Questions about the product, or just wanna talk to the founders? We're available on Facebook Messenger chat for the duration of the Kickstarter campaign! </span>Simply click the button below to open a chat with us.</p><p><span></span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50285178">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/285/178/d1010516f9d496b1244ad5d394fbecfb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754293011&amp;width=680&amp;sig=ZEN6mtyxkhlR%2FRWJEuiTC%2FFmrh1xal1CJktLXgFD6nc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50285180">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/285/180/51adbdcba97365b41ee5cfe1a1848180_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754293014&amp;width=680&amp;sig=BGsvlVhzUZWSMKFVdNxNFT7zVFo6r0hmeF77BnPD6JM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50285181">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/285/181/32b71af02b5805726b2743ff78df7a9b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754293017&amp;width=680&amp;sig=oIeLbHT7a99Mzq767zj4BqTwbaQaN3i6hNUomoWR41Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50225809">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Specifications">⚙️ | Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/225/809/e2e85ff654a6b2d975d21c02ca4d3218_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753857970&amp;width=680&amp;sig=VJQfgoc9cRdFp1Mm7qS00x8yKBgeMYtG37Swym9JmHA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50287654">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/287/654/3ef11409716760c075a33c744a3364a9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754311057&amp;width=680&amp;sig=p6iC3zdzmXxk4MZejz4Ol5%2F8hXXZmcQsPZUHoQ%2F9Ldc%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50298609">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Featured-On">📰 | Featured On</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/298/609/b15aa8127ce738754ec3ab1f9b765d64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754376907&amp;width=680&amp;sig=qSqEUAkeoFxW6jfTWDW2BGCIG1Zs2LGKQoU2dbeOTRQ%3D"/>
+</figure>
+</div>
+<span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We have already invested over 1.5 years into designing, prototyping, and refining the Flow Timer, including multiple visits to our factories in Shenzhen to oversee quality and strengthen relationships. We have also shipped over 30,000 units of earlier timer models from the same production partners, which gives us confidence in our ability to deliver on time.
+
+Still, there are a few risks worth noting:
+
+•	Logistics and Tariffs
+International shipping and import tariffs, particularly in the United States, can change unexpectedly. In the past, we absorbed much of these costs ourselves and only made modest adjustments to customer prices and shipping charges when necessary. We plan to handle any future tariff changes with the same approach, minimizing the impact to backers as much as possible.
+
+•	Production Delays
+Like any hardware project, there is always a risk of delays in manufacturing, shipping, or customs. We have mitigated this by finalizing our suppliers, completing several rounds of prototypes, and approving tooling. The project is already at an advanced stage, with only production and logistics remaining.
+
+•	Quality Assurance
+We take quality control seriously and have visited our factories to inspect their processes firsthand. Both of our manufacturing partners have decades of experience, international certifications, and established systems to maintain high quality at scale.
+
+With a mature design, strong supplier relationships, and our experience shipping thousands of products globally, we believe we are well-prepared to deliver the Flow Timer on time and at the level of quality our customers expect.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">We’ve designed the Flow Timer to be durable by using a zinc alloy front housing, which provides excellent strength and a premium feel compared to plastic. Zinc alloy is known for its toughness and longevity, ensuring the timer withstands daily use while maintaining its look and function for years. The internal components are enclosed in a robust ABS backplate, which complements the metal front without adding unnecessary weight. Together, these materials create a product that feels solid, reliable, and made to last.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">We’ve partnered with two highly experienced manufacturing partners. One specializes in precision metal casting and one in advanced electronic timers. Both operate under internationally recognized certifications including ISO9001, ISO14001, and SA8000, demonstrating a commitment to quality, environmental responsibility, and ethical labor practices.
+
+The metal factory has decades of experience producing durable zinc and aluminum parts using lean manufacturing processes, energy-efficient equipment, and in-house surface finishing to reduce waste and emissions.
+
+The timer factory has over 25 years of experience in designing and manufacturing timers and smart home electronics. Their facilities include dust-free labs, automated production lines, and rigorous quality-control systems, ensuring products meet CE, RoHS, and FCC standards while minimizing environmental impact.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

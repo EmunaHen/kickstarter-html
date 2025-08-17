@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GamePad Quest | DIY Portable Video Game Electronics Kit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/283/138/c8a23604fd1cea77e44293034e8a0fd2_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754273962&width=560&sig=BW3ew3aiJwt3P%2FjYSidUqn1tW3jOmOLR%2FyD6%2BJRer7E%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>GamePad Quest | DIY Portable Video Game Electronics Kit</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Build your own portable video game console and learn to build your own video game!</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p>Introducing the Gamepad Quest Kit a portable electronics and coding adventure where you don’t just play the game…</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50172973">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/172/973/58b4a810dcf1e9c6fb28cb2d660a9cb2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753456185&amp;width=680&amp;sig=5s0N8xQOLwhpjewRmeUBARHl3o2yieZ%2F4a1hgAvg9tA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50172970">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/172/970/5c3140ee3e6fa6294599a53f26d6fb0b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753456179&amp;width=680&amp;sig=c2pz76Jt3miUO7sHNb8XQylqKhivTP%2FnHWxhPKpj60o%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-What-s-in-the-Kit-">
+<span class="bold">What's in the Kit?</span><img class="image" data-id="50120170" src="https://i.kickstarter.com/assets/050/120/170/cd06d47303a10a61baebe33627e34bfb_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753121561&amp;width=1280&amp;sig=OVU3UBIHSb5fCwINgEAegwsTKppGg9BbZ02Ti%2B1DZeU%3D"/>
+</h3><p>The <span class="bold">Gamepad Quest Kit</span> is a hands-on educational kit that teaches electronics, coding, and hardware design by guiding you through the ultimate quest: <span class="bold">building your own portable video game console</span> from scratch.</p><p>It’s not just an electronics kit</p><p>It’s a <span class="bold">game inspired learning adventure</span> filled with the magic of electronics. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Start the electronics adventure - help us green light this kickstarter!" data-id="49386568">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/386/568/395144b6876b9776da0ce7f61de266cb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747943773&amp;width=680&amp;sig=IGEi8lAdTYfeKenEZv2Y4kGY2s2gVP7R6CHxoMzagjQ%3D" src="https://i.kickstarter.com/assets/049/386/568/395144b6876b9776da0ce7f61de266cb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1747943773&amp;width=680&amp;sig=IGEi8lAdTYfeKenEZv2Y4kGY2s2gVP7R6CHxoMzagjQ%3D"/>
+<figcaption class="px2">Start the electronics adventure - help us green light this kickstarter!</figcaption>
+</figure>
+</div>
+<p>All kits come with digital instructions, video training, code, and additional supporting files. Depending on your reward level, you can also get all the parts you need, printed versions of our training documents, custom PCB board, tools, poster, and achievement stickers, and controller grips.</p><p>We believe the best way to learn electronics is by <span class="bold">building something awesome. </span>We want to build upon game design principles to teach learners how to build their own electronics. Whether you're a total beginner or an experienced maker, this kit <span class="bold">guides you step by step;</span> teaching essential soldering skills, electrical concepts, and how circuits work! </p><p>A lot of kits stop there, why not? right? Isn’t that enough? No way! Once you build your gamepad, we teach you about coding; even how to code a simple video game! </p><h3 class="page-anchor" id="h:How-does-it-work-"><span class="bold">How does it work? </span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50164434">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/164/434/16e1b841bfbfcc4e270c0acc15333a8b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753393754&amp;width=680&amp;sig=xYiC89x%2FlcHMlhXRwUEKdepR1iqOsMozWkijYz%2BrncQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Main-Quest"><span class="bold">Main Quest</span></h4><p>During your electronics adventure you will get to build your own portable video game controller - this is the main quest. However, there is so much more to do with your Gamepad! It is entirely up to you on how much you want to learn and build. <span class="bold">You can choose to jump straight to the main quest or go for 100% completion </span>and show off your achievements! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50162920">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/162/920/018ec4a3a33ad22d4f95d67d8417aeb8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753384872&amp;width=680&amp;sig=eAjj%2BXKWM41rVvIH8PfZRiyDC2hBqGZbiR6pfEbbX8Q%3D"/>
+</figure>
+</div>
+<p>The main quest of this adventure is to build the console on a our custom PCB board. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="GamePad Quest prior to assembly" data-id="49128633">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/128/633/62321314644203fe6d675e39d7a57808_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746188516&amp;width=680&amp;sig=CPQk797qpHpnE4UQDw28APKwT0enlEjPdGbviLwy2ww%3D"/>
+<figcaption class="px2">GamePad Quest prior to assembly</figcaption>
+</figure>
+</div>
+<p>For the main quest and each of the side quests you get to follow our illustrated tutorial instructions and video tutorials to learn how to put it all together and tips and tricks along the way. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Soldering the GamePad Quest" data-id="49128649">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/128/649/e430d5ca588448965f7f0997a81fe3fd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1746188565&amp;width=680&amp;sig=7qwTMCI0OtN97ucTXiGv0UaGfpUKqO63ZuX69V5MH9o%3D"/>
+<figcaption class="px2">Soldering the GamePad Quest</figcaption>
+</figure>
+</div>
+<p>We currently have <span class="bold">7 different games</span> we have adapted to the GamePad and are looking to add more! Please note: we are not developing the games, those are given credit in our github page. Our current list can be seen in this demo video </p><h4 class="page-anchor" id="h:Play-"><span class="bold">Play!</span></h4><p>Once you build your portable console you can then play games based on the Atmega 32 architecture. Many of these games are modified versions created by the Arduino community, and you can also learn to create your own game!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Introducing the GamePad Quest A DIY Hands-On Electronics Adventure Kit" data-id="49020604">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/020/604/5b47092532c0514950ddd0be62311913_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745467874&amp;width=680&amp;sig=8toZ2F2koWqrFj0Qzk4FsVnmBO5U5qtW8xWbcPOpIqQ%3D"/>
+<figcaption class="px2">Introducing the GamePad Quest A DIY Hands-On Electronics Adventure Kit</figcaption>
+</figure>
+</div>
+<p>But that is just one small part of the adventure! In electronics lore, you learn about each component. In sidequests, you learn how to build control circuits and play music. And once you build your controller, we teach you the basics of coding your own game, such as how to control a pixel on a screen and how to create a timer. The kit is designed to be - <span class="bold">Open World</span> - all quests and lore are optional, but certain side quests and lore help you understand and prepare you for the main quest, and you are also free to go straight to the end.</p><h3 class="page-anchor" id="h:Build-the-game-console-then-build-the-game-"><span class="bold">Build the game console then build the game! </span></h3><p>Learn how to build simple video games in code. We start you off by learning the basics such as controlling a pixel on a screen</p>
+<p>Then we teach you how to code the in game timer, states, adding levels, and more!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="We will teach you how to build a basic pixel tag video game from scratch, including timers, game variants, speed changes, and how to add levels!" data-id="49515354">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/515/354/270095550a53700ac6ec75839eb9bd5a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748874890&amp;width=680&amp;sig=Co112BwzhvIc85Hb4ZRTdA9lFUEb6X7zYvjotrjYJ3s%3D" src="https://i.kickstarter.com/assets/049/515/354/270095550a53700ac6ec75839eb9bd5a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1748874890&amp;width=680&amp;sig=Co112BwzhvIc85Hb4ZRTdA9lFUEb6X7zYvjotrjYJ3s%3D"/>
+<figcaption class="px2">We will teach you how to build a basic pixel tag video game from scratch, including timers, game variants, speed changes, and how to add levels!</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Add more enemies and create harder levels!" data-id="50175893">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/175/893/450b6ee78904e0588121df9abad15db6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753471330&amp;width=680&amp;sig=C8QERTzxxm6OjpUxNkYiklRNFnFTUiBygQxYXQZe2vE%3D" src="https://i.kickstarter.com/assets/050/175/893/450b6ee78904e0588121df9abad15db6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753471330&amp;width=680&amp;sig=C8QERTzxxm6OjpUxNkYiklRNFnFTUiBygQxYXQZe2vE%3D"/>
+<figcaption class="px2">Add more enemies and create harder levels!</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Explore-Electronics-"><span class="bold">Explore Electronics  </span></h3><p>The kit, its organization and structure is all based off video game design. For example, our instructions are based on open world game design principles. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50163648">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/163/648/5c55c5fa12d685624c078b704f9b37b8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753389073&amp;width=680&amp;sig=xW4ZHw5qT1jj7Il6NMsie6rn7kAdObHhOrLqj2BSzYA%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Side-Quests">Side Quests</h4><p>Are optional electronics activities. Some are designed to be completed before the main quest and others must be completed after the main quest. Learn electronics piece-by-piece (buttons, displays, LEDs, microcontrollers). There will be a lot of optional side quests you can go on as you use the kit. Examples of side quests that you can do as a part of your kit include:  Build an LED circuit, Discharge a capacitor, Build a 555 timer circuit, Build a stopwatch, Control a pixel on a screen. And we are developing more and more! There are different types of side quests:</p><ul>
+<li>
+<span class="bold">Tutorial - learn the basics with a tutorial quest</span><img class="image" data-id="50162935" src="https://i.kickstarter.com/assets/050/162/935/69423a9e3695633bde18752598cb8506_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753384966&amp;width=1920&amp;sig=Pgg3XO36S5ngIVFHIihKLW3ADjU95EdrEkE1%2BpFHHTI%3D"/>
+</li>
+<li><span class="bold">Level up - a more challenging application of skills learned</span></li>
+</ul><p>Build on the skills learned in tutorial quests with more challenging level up quests!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50173624">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/173/624/33a595e6bfedd4dc6f73d83a909feaaf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753459495&amp;width=680&amp;sig=5Kd2JS2sMEAkHfTzoFebY3WzRIkryCoZ%2Bd8xlwfH%2FOM%3D"/>
+</figure>
+</div>
+<ul><li><span class="bold">Modding - a technical challenge that requires multiple skills</span></li></ul><p>Put multiple skills together to modify the hardware and software of the GamePad. For example turn your GamePad into a music player!</p>
+<p>or learn how to design your own GamePad printed circuit board</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50173978">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/173/978/d166937f60d5e023833c5dee4ff2e7bc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753461481&amp;width=680&amp;sig=vb4fAm1kX0mtGCoRWUhBe8vkVFblJa5%2Bx5fYeBB9%2B0g%3D" src="https://i.kickstarter.com/assets/050/173/978/d166937f60d5e023833c5dee4ff2e7bc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753461481&amp;width=680&amp;sig=vb4fAm1kX0mtGCoRWUhBe8vkVFblJa5%2Bx5fYeBB9%2B0g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50174004">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/174/004/b1b19e6e79587ace0b90c5d0d1442760_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753461617&amp;width=680&amp;sig=vbMfmKVorAlGYn4KJlvCZc8%2BDd2zOOukRPHupxMezLA%3D" src="https://i.kickstarter.com/assets/050/174/004/b1b19e6e79587ace0b90c5d0d1442760_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753461617&amp;width=680&amp;sig=vbMfmKVorAlGYn4KJlvCZc8%2BDd2zOOukRPHupxMezLA%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Electronics-Lore"><span class="bold">Electronics Lore</span></h4><p>Is where you learn what components do, how they work, and tips for how to use them. You can dive in and learn as much or as little of the lore as you want! Don’t want to learn about the lore of the components. That’s fine – just like in a video game, you can skip the lore and go to what you find interesting. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Shows current example pages from the instructions booklet (note the exact layout may change with increasing awesomeness)" data-id="50174861">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/174/861/0e2744078175aa42ad2eebe9e78faf95_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753465855&amp;width=680&amp;sig=LsZ30F6qbQ0ckSA75eiTO%2BC0nJJRlubWcm2IzP8m46I%3D"/>
+<figcaption class="px2">Shows current example pages from the instructions booklet (note the exact layout may change with increasing awesomeness)</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Shows current example pages from the instructions booklet (note the exact layout may change with increasing awesomeness)" data-id="50174927">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/174/927/b97ae3d0f9760d9f6b1650246d26ee43_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753466136&amp;width=680&amp;sig=vOwQ9V6TUVGQ%2BWPLBgSP7%2Bl%2BGs2mTDiHsQ01m5PuxxM%3D"/>
+<figcaption class="px2">Shows current example pages from the instructions booklet (note the exact layout may change with increasing awesomeness)</figcaption>
+</figure>
+</div>
+<p>A list of all the current quests in the kit:</p><p><span class="bold">Main Quest</span></p><ul>
+<li>Building the Gamepad</li>
+<li>Uploading games</li>
+<li>Coding a simple video game</li>
+</ul><p><span class="bold">Lore: Components</span></p><ul>
+<li>Battery</li>
+<li>LEDs</li>
+<li>Diodes</li>
+<li>Capacitors</li>
+<li>Resistors</li>
+<li>555 Timer</li>
+<li>OLED Screen</li>
+<li>Push Buttons</li>
+<li>Buzzer</li>
+<li>Microcontroller: Arduino</li>
+</ul><p><span class="bold">Lore: Tools</span></p><ul>
+<li>Soldering iron</li>
+<li>Breadboards</li>
+<li>Multimeter</li>
+</ul><p><span class="bold">Tutorial Quests</span></p><ul>
+<li>Resistors in series and parallel</li>
+<li>Building a 555 Timer on breadboard</li>
+<li>Soldering a simple circuit</li>
+<li>Measuring voltage</li>
+<li>Charging and discharging a capacitor</li>
+</ul><p><span class="bold">Level Up Quests</span></p><ul>
+<li>Building a debouncing circuit</li>
+<li>Building the GamePad on a breadboard</li>
+<li>Code a stopwatch on the GamePad</li>
+<li>Control a Pixel on a screen</li>
+<li>Program video game music</li>
+<li>More possibly added...</li>
+</ul><p><span class="bold">Modding Quests</span></p><ul>
+<li>Cheat Codes:  Change the game code</li>
+<li>PCB tutorial: building a better Gamepad</li>
+<li>Vide game music</li>
+<li>More possibly added.....</li>
+</ul><p><span class="bold">Easter</span> <span class="bold">Eggs -</span> hidden elements or features that encourage puzzle solving and attention to details. I can't give to many details away - but there is a special bonus if you find it. How will you know? Well you will know it when you see it : )</p><p><span class="bold">Achievements</span> - a digital/physical reward that signifies a player's mastery of a specific task or challenge within a video game. As you build the GamePad there will be opportunities to earn achievements!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Achievements chart, each badge or achievement matches the design of the stickers swage (vinyl stickers) that can be earned (exact look may change)" data-id="50230348">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/230/348/d55fd74614127d05fbf0778578cebd12_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753886763&amp;width=680&amp;sig=Xxur2Pb4WA1atmOP7IH4Nq%2F1LV27ACvkqXvShXJEM6w%3D"/>
+<figcaption class="px2">Achievements chart, each badge or achievement matches the design of the stickers swage (vinyl stickers) that can be earned (exact look may change)</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Who-is-it-Designed-for-"><span class="bold">Who is it Designed for:</span></h3><ul>
+<li>Hobbyists, hackers, and retro game lovers</li>
+<li>Beginners and young makers (ages 12+)</li>
+<li>STEM classrooms and afterschool programs</li>
+<li>First year and second year college students tired of lectures and who want hands on learning!</li>
+</ul><h3 class="page-anchor" id="h:Testimonials"><span class="bold">Testimonials</span></h3><p>Here are some pictures of our early alpha tester! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50160125">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/160/125/245e432d4aa1e4ba2049e7906c2c192d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753370446&amp;width=680&amp;sig=EexeQ3IyZWsgBGIoDu8JtAsqVfc6HYSy2eNAEDCdsP4%3D"/>
+</figure>
+</div>
+<p>Grayson was one of the first people to build the GamePad quest, he used the training videos while his dad supervised him using the soldering iron. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50160159">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/160/159/8e95059be6be565c98cc444d7f24c1b7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753370611&amp;width=680&amp;sig=glJG9fFg%2FK5TeAnOYG%2BHKTN3qsZR6I8BWeBNzP4c1K8%3D"/>
+</figure>
+</div>
+<p>Tanner had taken a soldering lesson during a class at high school, he was willing to come in and try the GamePad quest, he enjoyed and wanted to learn more about how it works and how the code functions. </p><h3 class="page-anchor" id="h:What-if-I-can-t-solder-"><span class="bold">What if I can't solder?</span></h3><p>If the person you are getting this for is too young to solder - not a problem. There are side quests that can be completed on a breadboard and the GamePad itself can be built on a breadboard! We'll have some fun introductory videos like the one below</p>
+<p>The training includes a step by step wiring video and wiring guides to help</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50161598">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/161/598/a9226d468f7b72d3bd3afbff8780a5ef_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753378021&amp;width=680&amp;sig=B2eO2XqeMspdesaRGYSObWxae4FyEaFdnO9%2Fml375HY%3D" src="https://i.kickstarter.com/assets/050/161/598/a9226d468f7b72d3bd3afbff8780a5ef_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753378021&amp;width=680&amp;sig=B2eO2XqeMspdesaRGYSObWxae4FyEaFdnO9%2Fml375HY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Figure shows part of our step by step guide to build your own game controller on a breadboard" data-id="49020880">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/020/880/9d66e882d2a11c59a1cc1a642fa1ec3d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745470590&amp;width=680&amp;sig=IZnXs6thh5pTGgXq4FENZ6ATqK1ndZZxFOXU41qr9tc%3D"/>
+<figcaption class="px2">Figure shows part of our step by step guide to build your own game controller on a breadboard</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-What-are-the-Different-Reward-Levels-">
+<span class="bold">What are the Different Reward Levels?</span><img class="image" data-id="50175118" src="https://i.kickstarter.com/assets/050/175/118/fc830fa42f00d3fa4cba96f5eed39dd3_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753467071&amp;width=1920&amp;sig=EnNnzyZ%2FXYblp5f7SCxV6itsvy4avj4fvNjJK56v0Ok%3D"/>
+</h3><p>Our tier list for different award levels is shown below. If you're new to electronics and programming, we recommend at least getting the Definitive edition. If you already have a lot of the tools needed, you can get the Standard edition. And if you are experienced and like to source your own parts, you can get the Digital edition. The digital tier will be available immediately at the end of the successful campaign. This tier is for early adopters who want to be a part of the feedback and design process. If any updates or changes are needed, the updated digital resources will be made available to all backers. </p><h3 class="page-anchor" id="h:Rewards">Rewards</h3><h4 class="page-anchor" id="h:Limited-Edition-S-Tier"><span class="bold">Limited Edition - S  Tier</span></h4><p>The limited edition pulls out all the stops - our way of saying thank you for supporting the project. You get</p><ul>
+<li>Custom GamePad PCB Board version 2.2</li>
+<li>3D Printed Grips designed for the Gamepad Quest <img class="image" data-id="50164086" src="https://i.kickstarter.com/assets/050/164/086/b115027a111bc62358e2da71bff88465_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753391630&amp;width=800&amp;sig=yVnpzksiTagKOL%2B6sctRKU3Cq49aaNwF%2FivYoNrHCVg%3D"/>
+</li>
+<li>1.5" Extra Large OLED screen</li>
+<li>All Electrical Components and supplies to complete the main quest and side quests</li>
+<li>Full Color Printed Instructions</li>
+<li>Full access to all training videos</li>
+<li>Full Color Trifold Map  </li>
+<li>Stickers that are based on the artwork found on the video thumbnails and the instruction booklet</li>
+<li>Themed Packaging Box</li>
+<li>Physical Achievement Badges - vinyl stickers</li>
+<li>Poster based on GamePad Quest Art - Size 18″ × 24″</li>
+<li>Access to code used in quests</li>
+</ul><h4 class="page-anchor" id="h:Definitive-Edition-A-Tier"><span class="bold">Definitive Edition - A  Tier</span></h4><p>Our recommended tier for most backers - has everything you need and more!</p><ul>
+<li>Custom GamePad PCB Board</li>
+<li>1.3" Large OLED screen</li>
+<li>All electrical components and supplies to complete the main quest and side quests</li>
+<li>Full Color Printed Instructions</li>
+<li>Full access to all training videos</li>
+<li>Full color trifold map  </li>
+<li>Stickers that are based on the artwork found on the video thumbnails and the instruction booklet</li>
+<li>Themed packaging bubble mailer</li>
+<li>Physical achievement badges - vinyl stickers</li>
+<li>Access to code used in quests</li>
+</ul><h4 class="page-anchor" id="h:Standard-Edition-B-Tier"><span class="bold">Standard Edition - B Tier</span></h4><p>The standard edition has everything included and needed to complete the main quest. However, it does not have every tool needed to do all the side quests such as jumper wires and a breadboard. </p><ul>
+<li>Custom GamePad PCB Board</li>
+<li>All electrical components and supplies to complete the main quest and side quests</li>
+<li>Digital instructions (pdf)</li>
+<li>Full access to all training videos</li>
+<li>Full color trifold map  </li>
+<li>Themed packaging bubble mailer</li>
+<li>Digital achievement badges</li>
+<li>Access to code used in quests</li>
+</ul><h4 class="page-anchor" id="h:Digital-Edition-C-Tier"><span class="bold">Digital Edition - C Tier</span></h4><p>Includes all our digital resources - great if you have your own components and just want to learn a couple of the side quests.  </p><ul>
+<li>Digital instructions (pdf)</li>
+<li>Full access to all training videos</li>
+<li>Digital map  </li>
+<li>Digital achievement badges</li>
+<li>Access to code used in quests</li>
+</ul><h4 class="page-anchor" id="h:Timeline">Timeline</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50247741">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/247/741/e0603737aaade11fe0a6449b36860a88_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753986616&amp;width=680&amp;sig=QuXeJPbiWfbi0O%2BqcVL5piHgZ6rHxvSFmmCtM%2FuMWtI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Stretch-Goals">Stretch Goals</h3><p>Help us unlock even more features for the kit! </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50394521">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/394/521/52c30b01a83751664d8ab5995e3d3efa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1755003040&amp;width=680&amp;sig=LXWcJAbcHRxx1%2BuUgEvvy2Ez4co2S3oW5Xit5nH%2Bj94%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Why-Kickstarter-"><span class="bold">Why Kickstarter?</span></h4><p>We’ve tested this kit in classrooms and workshops—and the results are incredible. Now we need your help to <span class="bold">scale production</span>, polish the packaging, and build the online quest platform and resources.</p><p>Your support will help us bring this to <span class="bold">students, makers, and future inventors everywhere</span>.</p><h4 class="page-anchor" id="h:-Back-This-Project-If-You-Want-To-"> Back This Project If You Want To:</h4><ul>
+<li>Learn electronics in the most fun way possible</li>
+<li>Build something real and playable</li>
+<li>Inspire the next generation of game designers and engineers</li>
+<li>Have input on the project and suggest new videos</li>
+<li>Provide Future Guidance for <span class="bold">Possible DLC</span>
+</li>
+</ul><p>Potential DLC ideas include: Teach someone how to build the PCB board itself (or perhaps a simplified version). How to design a 3D printed PCB holder for the Gamepad.</p><p>I want to learn and hear back from interested learners – tell me what to add!</p><h4 class="page-anchor" id="h:Why-am-I-the-person-to-do-this-">Why am I the person to do this?</h4><p>I currently run a small company (2 part time people) that sells kits for medical device technicians. I have developed my supply chain and my logistics of shipping kits and packaging electronics. Also I am a college educator with years of experience teaching and managing grants for STEM projects. I have directly managed over $600k in grant funding and I have been part of a teams that manage millions of dollars to build STEM programs at our local 2 year college. I was a Tiger Woods Foundation educator who championed STEM education in the local community and through out the country. I have self published two books, and have developed relationship with in the book design world to help create the resources for the kits.  I have devoted my talents to making technical education more exciting and more accessible to everyone. It takes too many years before engineers get to build things in school and I am on a mission to change that! </p><p>I also have a lovely family who supports me and my kids can’t wait to play it - I told them they have to build it themselves if they want to play : )</p><h4 class="page-anchor" id="h:Team-Members">Team Members</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50394504">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/394/504/c2a83eb6edaec42ffebb31572b909a19_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1755002940&amp;width=680&amp;sig=w5NXzuZIPlSWta%2FiBgrJBjEA7EEVFDT1jtozmOszNc0%3D"/>
+</figure>
+</div>
+<p>Brian Bell earned his Ph.D. in Mechanical Engineering at the University of South Florida and his B.S. in Physics at Stetson University. During his education, his research focused on optimizing the functional properties of polymer microfibers and nanofibers for smart filters, sensors, and flexible electronics. He is a Florida native who is working to advance his local community through education and innovation.<br/><br/>Currently, Brian Bell teaches courses in engineering technology with a focus on biomedical engineering technology (also known as healthcare technology management). Over the years Brian Bell has worked with biomeds, educators, and technicians to create content and resources for the biomedical engineering technology learning community. You can learn more about this field through his educational <span>youtube channel</span> and the website <span>htm-workshop.com</span>. </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50394492">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/394/492/87dbbec2166cd6ab24a2fab754922cab_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1755002835&amp;width=680&amp;sig=4APwr4xoiLr%2Bedc1j2x2VCLKwVUWrS5yVXp91uoL%2B2A%3D"/>
+</figure>
+</div>
+<p>Kevin Williams is a self-taught electrical engineer and programmer with a deep passion for electronics, education, gaming, and photography. Holding a bachelor's degree in cybersecurity from St. Petersburg College, Kevin has combined his technical expertise and engineering skills to create several low-cost circuit kits and educational videos for the HTM Workshop. Kevin has created multiple open-source software and hardware projects, including several discrete-logic computers with custom architectures.</p><p><br/> </p><h4 class="page-anchor" id="h:How-the-money-will-be-used">How the money will be used</h4><p>1. Purchase supplies in sufficient quantities for discounts (i.e. printing costs and components)</p><p>2. Building unique illustrated resources that are themed and inspired by video game history</p><p>3. Developing new video resources and quests - we have great ideas - help us raise the bar!</p><h4 class="page-anchor" id="h:Fulfillments-Shipments-and-Taxes">Fulfillments, Shipments and Taxes</h4><p>Packaging: To ensure a smooth fulfillment, our team will start final product packaging as soon as all elements are ready. Contents will be sealed to protect them from scratching and moisture; the kits will be lined inside the box to ensure they stay secure and undamaged during shipping. The shipment mailer or box will also be sealed for a further layer of protection. </p><h4 class="page-anchor" id="h:Typical-shipping-time-">Typical shipping time:</h4><p>Shipment may take up to 4 weeks depending on the distance and customs clearance speed of your country (but most of the backers should expect less than this time). Due to the volume of work and limitations of the Kickstarter platform, we usually DO NOT explicitly attach the tracking order for everyone, to save a bit of our labor (a small team with a limited workforce that must concentrate on product development), but if you are seeing an exceptionally long delay, feel free to send us a message and we will look into your reward. </p><p>For European backers concerning VAT: Since Kickstarter does not handle VAT charges, EU backers may incur VAT on their orders. We will declare a reasonable value on shipments to help minimize unnecessary costs.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49020750">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/020/750/a587e08fc3161a6b7123e9848d9c3762_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1745469156&amp;width=680&amp;sig=3HkfgnsRAWRmTPH%2B%2FkBT8JDrNcP70RC8NEWDYosi2%2FI%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">The biggest challenge is not getting the word out! I have already developed the kit, tested with multiple people, now I just need to keep perfecting it. There is some uncertainty with global tariffs and trade - we have pre-purchased most of the electronics items needed for the kit. But the printed items may still see impacts from tariffs, most of our print suppliers are from the US, however as their costs for raw materials go up they may pass those on to others. We do not anticipate issues but there are always risks. This may delay printing or delivery of some kits materials.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

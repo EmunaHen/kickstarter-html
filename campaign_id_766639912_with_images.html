@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TradeBinder – A Simple Way to Track Your Option Trades</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/268/656/a769b81b758f535f1a55b2bfccae34c6_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754135947&width=560&sig=XyND9ni7meD6fRnxnxI7bb6DY2P2y9LRqFi%2Bkw5SY5U%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>TradeBinder – A Simple Way to Track Your Option Trades</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Placing trades is easy—tracking them shouldn’t be hard. TradeBinder helps you stay organized, review your trades, and trade smarter.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 7,500</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>60 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:My-Story"><span class="text-italic"><span class="bold">My Story</span></span></h3><p>I still remember the feeling I felt when I realized I had lost <span class="bold">over $500</span> — not just in money, but in momentum. Every mistake I made while trading felt heavier than the last. Missed entries, mismanaged exits, forgotten expirations — all buried inside messy spreadsheets and scattered notes.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50285721">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/285/721/e3b377ca8a2d858b56759a8d074b0c10_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754295850&amp;width=680&amp;sig=%2B7wUk3Ks3QwRlDZIXFB%2BoFb%2BKL8BTmmyj2fxbNAENOw%3D"/>
+</figure>
+</div>
+<p>I wasn’t just losing trades — I was losing confidence.</p><p>Trading started as a passion — something I believed could unlock freedom, discipline, and maybe even financial independence. But somewhere along the way, it became overwhelming. My spreadsheets grew out of control. I was tracking dozens of trades manually, jumping between tabs, calculating profits, logging dates, and hoping I didn’t overlook something important.</p><p>And then one day, I made another mistake — a simple one.<br/>I forgot about a trade I had open, and it cost me.</p><h3 class="page-anchor" id="h:-The-Spark-Where-It-All-Changed"><span class="bold"> The Spark: Where It All Changed</span></h3><p>That night, I stepped away from the screen and really asked myself:<br/><span class="bold">“Why am I doing this the hard way?”</span></p><p>I realized something powerful — I wasn’t the only trader struggling to stay organized. There had to be a better way. I didn’t need another spreadsheet. I needed a system. A tool designed specifically for options traders, built from the ground up with the clarity and control we all need.</p><p>That’s when <span class="bold">TradeBinder</span> was born — not just as an app, but as a solution built on lessons learned the hard way.</p>
+<h3 class="page-anchor" id="h:Features">Features</h3><h3 class="page-anchor" id="h:-Trade-Entry-Made-Simple">💻 Trade Entry, Made Simple</h3><p>This is a screenshot of the Trade Entry screen in <span class="bold">TradeBinder</span>, the all-in-one options trading journal I've been building for everyday traders.<img class="image" data-id="50305252" src="https://i.kickstarter.com/assets/050/305/252/e947b9b4c4d2f4de5fdfaa2266b92471_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754407561&amp;width=1602&amp;sig=UNj%2BzLkYa2H43clpi19O4dYVl5TxJwIpRfimW8lSZos%3D"/></p><p>At the top, you can input your <span class="bold">starting balance</span>, <span class="bold">stock symbol</span>, <span class="bold">strategy type</span>, <span class="bold">net premium</span>, and the <span class="bold">credit received</span> — so you stay organized and in control of every trade.</p><p>Below that, you can build out your custom trade with multiple <span class="bold">legs</span> — selecting Buy/Sell, Call/Put, strike price, and expiration date with just a few clicks. Whether you're entering a basic covered call or a complex multi-leg spread, TradeBinder makes it intuitive and fast.</p><p>Once your trade is set up, hit <span class="bold">Add Trade</span> and it gets logged instantly into your portfolio.</p><p>On the right side, you’ve got access to all your major actions:<br/>✅ View your <span class="bold">Journal</span><br/>✅ <span class="bold">Close</span> an open trade<br/>✅ <span class="bold">Save</span> or <span class="bold">Load</span> your portfolio<br/>📊 View a <span class="bold">Performance Chart</span> of how you’re doing over time</p><h3 class="page-anchor" id="h:Why-I-m-Building-This">Why I’m Building This</h3><p>TradeBinder isn’t just software. It’s built from <span class="bold">real pain</span>, <span class="bold">real experience</span>, and a genuine desire to help other traders avoid what I went through.</p><p>It’s for anyone who’s ever forgotten an expiration date, who’s fumbled with a position mid-trade, or who just wants a better way to stay organized without the chaos of Excel or Notion.</p><p>This is more than code — it’s my <span class="bold">promise to every trader</span>:</p><p>With your help, we can build the tool we’ve all been missing — one that helps us trade smarter, protect our capital, and reclaim control over our time and decisions.</p><p>Let’s trade with purpose.<br/><span class="text-italic"><span class="bold">Let’s build the future of trading journals — together.</span></span></p><h3 class="page-anchor" id="h:NO-AI"><span class="text-italic"><span class="bold">NO AI</span></span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283266">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/283/266/78558c94450130f2d1a18f4380cae25c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754275421&amp;width=680&amp;sig=DYYrFbH2fwPpSGm6dNdNVS%2FkIVzoCKC8btDSFsaklUk%3D"/>
+</figure>
+</div>
+<p>In a world where more and more apps are generated by artificial intelligence, I want to be completely upfront with you: <span class="bold">TradeBinder was not, and will </span><span class="text-italic"><span class="bold">NOT</span></span><span class="bold"> made with AI.</span></p><p>No generative tools.<br/>No auto-written code.<br/>No automated design systems.<br/>No shortcuts.</p><p>Every button you click, every feature you use, and every detail inside this app was hand-built through long nights of coding, testing, fixing bugs, and adjusting it based on real user needs — not machine guesses. This is a product born out of frustration with the tools that exist and the desire to build something <span class="text-italic">better</span>, not <span class="text-italic">faster</span>.</p><p>I didn’t rely on AI to write the code or design the interface. I spent real time learning, experimenting, and building. It took longer this way — but that’s the point. I know exactly how every part of TradeBinder works because I built it myself. I didn’t feed a prompt into a machine and hope for the best — I sat down, figured it out, and made it real.</p><p>That means when something goes wrong, I can fix it. When you give feedback, I can improve it. When you need help, I’m the one responding — not a chatbot.</p><p>Supporting this project means supporting <span class="bold">real work</span> from someone who cares about helping traders take control, stay organized, and learn from every move — because I’ve been there too.</p><p>So if you're tired of faceless apps and one-click clones, this is your chance to support something truly personal.<br/><span class="bold">TradeBinder was built by a trader, for traders — no AI, just real effort.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286022">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/286/022/41ede4624d9de9ea2899052176788df5_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754298332&amp;width=680&amp;sig=YrB5KV0TzAzcDuO%2F5mAzusU0uWfWDT3TOh79NynEEq8%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div class="relative flex justify-center items-center h50"><svg height="250" preserveaspectratio="xMinYMid" viewbox="0 0 250 250" width="250"><g transform="translate(125, 125) scale(2.5, 2.5)"><defs><pattern height="1" id="bg1" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/xglb1yux-hatch_light_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=clgJlzhY3k416hIJWrLOR2MdAEuRyBIYLy5Q4Y0qGuE%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg2" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/qm5rth84-dot_line_white_2_pattern_overlays_20190901.png?origin=static&amp;sig=X4u8yLPJQSLFYyFAWhfks%2Bb0l7JvccL9Ns4mZ%2BdcX%2Fs%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg3" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/2pgrzep-scattered_dots_black_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=7dYAvrHvJlUMrHNcRby2NfD16BbES28QnocyMYhS%2BjU%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg4" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/l9o3ber7-grid_dark_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=w1sAH2Z8b0%2Bm44c8oN%2BES4hwspBpkhrrhc1YpFJSPyQ%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg5" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/v0js8b2e-dot_line_white_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=j1%2Biz4vH2TtOn5EX0sEl2Xque0oEBcJupM5qVbNe8CM%3D" width="160" x="0" y="0"/></pattern></defs><path class="innerArc innerArc0" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,0,1,31.927530649208084,29.984542461806523L25.652155627879765,23.73751064545388A34.949999999999996,34.949999999999996,0,0,0,1.2748087586060675,-34.92674280016648Z" fill="#059968" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc1" d="M30.12876399417885,31.79147024255204A43.8,43.8,0,0,1,-43.4627647805445,5.424765214372034L-34.64804270489584,4.584281483473033A34.949999999999996,34.949999999999996,0,0,0,23.853388972850535,25.54443842619939Z" fill="#71A0FF" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc2" d="M-43.704773170077296,2.8866593411920447A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-34.89005109442865,2.0461756102930417Z" fill="#a3a3a3" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArcTexture" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,0,1,31.927530649208084,29.984542461806523L25.652155627879765,23.73751064545388A34.949999999999996,34.949999999999996,0,0,0,1.2748087586060675,-34.92674280016648Z" fill="url(#bg1)" style="opacity: 1;"></path><path class="innerArcTexture" d="M30.12876399417885,31.79147024255204A43.8,43.8,0,0,1,-43.4627647805445,5.424765214372034L-34.64804270489584,4.584281483473033A34.949999999999996,34.949999999999996,0,0,0,23.853388972850535,25.54443842619939Z" fill="url(#bg2)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-43.704773170077296,2.8866593411920447A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-34.89005109442865,2.0461756102930417Z" fill="url(#bg3)" style="opacity: 1;"></path><path class="outerArc" d="M1.274808758606064,-49.983745984359565A50,50,0,0,1,39.470865059716445,-30.692846258332835L36.41150431707754,-28.436637518656173A46.2,46.2,0,0,0,1.2748087586060677,-46.18240858410247Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M39.19296868834864,-31.046919418746256A50,50,0,0,1,47.78461096268226,-14.718388333819247L44.12435337788089,-13.692386168374444A46.2,46.2,0,0,0,36.274404458674866,-28.61131910919993Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M47.65017982721468,-15.147949116434978A50,50,0,0,1,49.981523531183576,-1.359156172683044L46.180191543594205,-1.3527412897336477A46.2,46.2,0,0,0,44.05803193026068,-13.904309491381824Z" fill="#003322" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M49.96726321153352,-1.8090348668084943A50,50,0,0,1,48.51388058581018,12.099726877320423L44.850181027698504,11.086084150080852A46.2,46.2,0,0,0,46.17315623113159,-1.574688431250457Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M48.62083662299583,11.662514569334835A50,50,0,0,1,43.48928707070732,24.671479689747212L40.23183581186533,22.712097816078337A46.2,46.2,0,0,0,44.90294766686434,10.870385955744252Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M43.70961764022793,24.278989388874386A50,50,0,0,1,36.32313555511272,34.3602942863548L33.62910709549416,31.678433609630773A46.2,46.2,0,0,0,40.340535647470865,22.518463173030533Z" fill="#003322" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M34.52436890008349,36.16722206710031A50,50,0,0,1,-42.80190365855925,25.845638765629538L-39.49877299448021,23.96428450695996A46.2,46.2,0,0,0,31.830340440464937,33.48536139037628Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-42.56750688802211,26.22989434477749A50,50,0,0,1,-49.63706280547843,6.013484517730993L-45.852888623901165,5.652663517680398A46.2,46.2,0,0,0,-39.38313361461889,24.15385655942081Z" fill="#3B3BCC" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-49.87907119501123,3.4753786445510264A50,50,0,0,1,-44.35403827362632,-23.080712485139866L-41.02778063585934,-21.2405559271834A46.2,46.2,0,0,0,-46.09489701343398,3.114557644500403Z" fill="#cccccc" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-44.56001371516851,-22.6805021484092A50,50,0,0,1,-29.426913129579695,-40.42346822903956L-27.26876439927266,-37.29416158243754A46.2,46.2,0,0,0,-41.1293983854214,-21.043112613235138Z" fill="#999999" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-29.789612919593505,-40.156929191620065A50,50,0,0,1,-15.36594395621876,-47.58032961565466L-14.29033026967481,-43.93434261239852A46.2,46.2,0,0,0,-27.447701927707513,-37.16266485180687Z" fill="#848484" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-15.793639559575606,-47.44007746054182A50,50,0,0,1,-1.2748087586061145,-49.983745984359565L-1.2748087586061245,-46.18240858410247A46.2,46.2,0,0,0,-14.501333408618487,-43.86514937136412Z" fill="#cccccc" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><text font-size="8" height="250" style="opacity: 1;" text-anchor="middle" width="250" x="-1" y="3">$6,940</text></g></svg></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$2,600</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Marketing &amp; Promo</div><div class="m0 type-16 text-nowrap">$1,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">API Scripts</div><div class="m0 type-16 text-nowrap">$400</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Desktop Packaging</div><div class="m0 type-16 text-nowrap">$300</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Mobile Optimization</div><div class="m0 type-16 text-nowrap">$300</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Play Store Setup</div><div class="m0 type-16 text-nowrap">$300</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">UI Polish</div><div class="m0 type-16 text-nowrap">$300</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Fulfilling</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$2,500</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Labor</div><div class="m0 type-16 text-nowrap">$2,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Physical products</div><div class="m0 type-16 text-nowrap">$500</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">$1,840</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Taxes</div><div class="m0 type-16 text-nowrap">$630</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">$510</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">$350</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">$350</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated August 5, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Building a tool like Trading Binder comes with real challenges — and I want to be upfront with you about them.
+
+🛠️ Development &amp; Testing
+This is a one-man project, which means every feature, bug fix, and update takes time. There’s always a chance of unexpected issues during development, especially when adding new tools like strategy scanners or app store integration.
+How I’ll overcome it: I’m keeping the design simple, functional, and focused — and I’ll be testing it every step of the way with real traders to make sure it works.
+
+📱 App Store &amp; Google Play Approval
+Getting listed on both stores involves reviews, requirements, and delays outside of my control.
+How I’ll overcome it: I’ve already started preparing the app with those requirements in mind. I’ll be transparent with backers if any delays come up.
+
+💾 Cross-Platform Compatibility
+Making the app run smoothly on different devices (Windows, macOS, Android, iOS) takes extra time and attention.
+How I’ll overcome it: The first release will focus on desktop (Windows/Mac), with mobile versions rolling out afterward. Feedback from early backers will shape what comes next.
+
+💡 Scaling with Features
+As more features are added, things can get complex — especially keeping the interface clean and intuitive.
+How I’ll overcome it: I’m sticking to a “simple but powerful” design philosophy and building the app in modular pieces that grow with users’ needs.
+
+Your support helps me bring this vision to life — and I’m fully committed to finishing strong. If challenges come up, you’ll hear it from me first. Let’s build something real together.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">I’ve built this app with longevity in mind — it’s designed to stay relevant and useful for the long haul, with consistent updates and improvements based on user feedback.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">While the app is fully digital, if I offer any physical rewards, I’ll make sure they’re either reusable or recyclable to minimize waste.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">Any physical perks (like merch or printed materials) will be made with sustainable or recycled materials wherever possible.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">If I manufacture anything for backers, I’ll work with partners that prioritize eco-friendly production practices.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">For shipping any rewards, I’ll use minimal packaging and choose fulfillment options that reduce environmental impact — like carbon-neutral shipping when available.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

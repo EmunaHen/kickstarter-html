@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Physics for Makers - Project Based Learning Course & Kits</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/118/741/fe8845336411229b62cc873ce994bc11_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1753114409&width=560&sig=JrHambjdepWXBSy9JUAsMUyH6QT%2FTEPnt4Fb0yFoocI%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Physics for Makers - Project Based Learning Course & Kits</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Learn physics - physically! These hands-on Curriculum + Project Kits teach the science behind making cool things.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 3,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>24 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:Physics-for-Makers-A-Hands-On-Homeschool-Curriculum-with-16-STEM-Crates">Physics for Makers: A Hands-On Homeschool Curriculum with 16 STEM Crates</h3><div class="template asset" contenteditable="false" data-alt-text="What is Physics For Makers?" data-caption="" data-id="50057115">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-is-Physics-for-Makers-">What is Physics for Makers?</h3>
+<img alt="What is Physics For Makers?" class="fit" src="https://i.kickstarter.com/assets/050/057/115/539ff6cc60f73ca2ad859788877387d3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752645170&amp;width=680&amp;sig=yfcvI%2FDSfYVdXtBSqDUYuyijgbnsrlnN9j0P9Gia%2F48%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Physics for Makers</span> is a year-long, hands-on homeschool curriculum for middle and high school students — built by makers, for aspiring makers. Each unit pairs engaging, real-world physics with 2 physical STEM project that kids actually build and use for experiments and learning activities. </p><p>That's right, this course is loaded with STEM kits in the curriculum, and is written for OLDER kids, because wanting to have fun while learning doesn't just stop at age 12. </p><p>Are your kids on the younger side of things? Help us unlock our stretch goals so that we can expand the course materials to include them too.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50068677">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/068/677/f6f33ea20018b97aa1ca33221b4c3ccc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752709466&amp;width=680&amp;sig=YYXHgd1j8sxTnv1ApVP%2FwJxJ%2F4XoQFfiES88B8aZiBc%3D"/>
+</figure>
+</div>
+<p>You're probably wondering why I crossed out "Textbook" and put "Learning Book". That's because this is not your grandma's boring, old-fashioned textbook.  </p><p>This thing is <span class="text-italic">so </span>fun and easy to read that even your most semi-illiterate classmates will be turning pages like Hermione Granger! (If you don't know who that is, then you might be the semi-illiterate classmate).  </p><p>In fact, this Learning Book is magic! Not the "it's-actually-a-small-monster-that-will-try-to-bite-your-feet-off" magic, but more like the "<span class="bold">you will actually want to read it</span>" magic!<br/><br/>Seriously, this book is so entertaining that calling it a textbook feels wrong.<img class="image" data-id="50063858" src="https://i.kickstarter.com/assets/050/063/858/9a67a4c6ab3a1f4fbdc5870bf36aac02_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752684039&amp;width=320&amp;sig=qSUiFHvyWEWAvt%2BNhxEBex9aAHfARH20uY10vo8lnnM%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50068663">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/068/663/aed0af242da57a8d6dde6473a1903641_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752709399&amp;width=680&amp;sig=R9u9DN83Wqo4SM45AuTqxR8NwhN11MUCOnNAhSCa2Xs%3D"/>
+</figure>
+</div>
+<p>Have my bullet points not convinced you? Go ahead and look at the "<span>About this Book</span>" section of the curriculum, because I put a lot of work into making that section pretty awesome and I don't want to do all that work again just to duplicate it here.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50065912">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Who-Is-This-For-">Who Is This For?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/065/912/817c01e4382d86209c0d6bdfe02b0e3e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752693354&amp;width=680&amp;sig=nVEeONXsQWKMQYwklqFMYSSKw3MHQ3yCZFON7YPUXzY%3D"/>
+</figure>
+</div>
+<p>This curriculum is ideal for:</p><ul>
+<li>Homeschooling families looking for an engaging STEM curriculum</li>
+<li>Middle and high schoolers with an interest in science or engineering</li>
+<li>Maker-minded parents who want to build alongside their kids</li>
+<li>Co-ops or microschools that want flexible, hands-on science</li>
+</ul><p>For now, we are starting off with a course at a basic high school level, which will work well for the standard high school or advanced middle school student.  If we reach the stretch goals*, however, that will allow us to expand the curriculum to multiple age levels including:</p><ul>
+<li>
+<span class="bold">AP/Collegiate Level </span>- did you know that anyone can register to take an AP test? You do not have to be in a special "AP Class" or even a high-school student.  There is no age limit, and even adults can take AP tests for a chance to earn college credit at a fraction of the cost! - This level would be meant to prepare individuals to pass the <span>AP Physics 1: Algebra-Based Exam</span>
+</li>
+<li>
+<span class="bold">Basic Middle School Level</span>: Grades 6-8</li>
+<li>
+<span class="bold">Upper Elementary Level</span>: Grades 3-5</li>
+<li>
+<span class="bold">Lower Elementary Level</span>: Grades K-2</li>
+</ul><p>All levels that we unlock with the stretch goals* will be available to all backers who purchase the course <span class="bold">at no extra cost! </span>All levels will use the same 16 Crates, but the activities and learning that accompany those Crates will be tailored to match that level.<br/><br/>This means that your single purchase of the course could potentially apply to all of the children in your family!<br/><br/>Does this sound good to you? If so, tell all of your friends who may also be interested so that we can reach the stretch goals* and unlock all of these stretch rewards!</p><p>*All of the Stretch Goals are listed several sections down.  If you're confused by that term, <span>here is Kickstarter's explanation</span>.</p><div class="template asset" contenteditable="false" data-alt-text="Why We Built This" data-caption="" data-id="50057140">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-We-Built-This">Why We Built This</h3>
+<img alt="Why We Built This" class="fit" src="https://i.kickstarter.com/assets/050/057/140/05749e50f26fb0471ebb930486628eab_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752645358&amp;width=680&amp;sig=y9wPj0CPx7A4Y1v7nuoo6Md4QJxuEVYjB1kWQ3AvdKA%3D"/>
+</figure>
+</div>
+<p>I love Physics, Engineering, Science, Building, Making, etc.  My knowledge of these fields lets me make some pretty cool, fun, and useful stuff.  I want to pass this knowledge along to the next generation.</p><p>I also believe that most traditional science / math classes are actually pretty bad at teaching useful knowledge and skills, and they are <span class="text-italic">definitely </span>bad at being fun (at least for most kids).  Why?  I think that they are taught a bit backwards.  They dump facts and procedures on students, until they can't help but wonder:</p><ul>
+<li>Why do I have to learn this?</li>
+<li>When will I <span class="text-italic"><span class="bold">actually</span></span> use this?</li>
+</ul><p>I prefer more of a "Project Based Learning" style of teaching. What does that mean?<br/>Basically this:</p><p><span class="bold">Step 1:</span> Give someone a task that they <span class="text-italic">actually </span>want to do and problems that they <span class="text-italic">actually </span>want to solve.</p><p><span class="bold">Step 2:</span> They will seek out the knowledge and skills necessary to complete those tasks and solve those problems.  <br/><br/>This makes motivation more natural and makes learning stick, because it's tied to physical, emotional experiences in your memory, and makes it so that the knowledge and skills gained are actually applicable to getting better at the things that you <span class="text-italic">want </span>to be good at!</p><p>I don't believe in a 100% Project-Based Learning model either, which is why my course features a hybrid approach.  You can learn more about my teaching philosophies by watching this <span>Episode of the OpenEd Podcast</span> where they had me as a guest. <br/>(Sorry, I know it's long. But we <span class="text-italic">are </span>talking about your – or more likely your kid's – education, and I am asking for a large chunk of change, so it's probably worth the time to research if my style is the right fit for you.)</p><p>Here's another example of learning with a project and then gaining some new knowledge after:<br/>  <br/>In this example, a couple of young kids participated in an online bridge-building competition that I held.  After I received the video submissions, I made <span>my own video</span> where I picked a couple of them to talk about and teach some good engineering principles. <br/>(I'm sorry about the poor video quality. I have gotten better equipment since this video was made, and my editing skills are also rapidly improving.)</p>
+<p>I actually showed that video to my 10-year-old nephew Shane, who is also one of the kids in the video.  Afterwards, I quizzed him on the stuff that I had taught in the video.<br/>  <br/>The result? <br/><br/>He fully understood ALL of the concepts that I had explained in the video, even the Moment of Inertia stuff (which is a college-level engineering concept)!  How was this average 10-year old able to grasp college level concepts? </p><ul>
+<li>
+<span class="text-italic">Was it because I did such an amazing job at explaining it? </span><br/>- I wish I could say that I'm just that good, but that's not really the case.<br/> </li>
+<li>
+<span class="text-italic">Was it because the video was super engaging with top-tier production value? </span><br/>- Nope, no. Definitely not.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50064639">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/064/639/219cca78b089c112f59dcb1db8470695_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752687440&amp;width=680&amp;sig=a9Q4Nfdu%2BAIQbqNMyvKpO3QcydMe0X%2ByOrr78R9UE9c%3D" src="https://i.kickstarter.com/assets/050/064/639/219cca78b089c112f59dcb1db8470695_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752687440&amp;width=680&amp;sig=a9Q4Nfdu%2BAIQbqNMyvKpO3QcydMe0X%2ByOrr78R9UE9c%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="text-italic">Was it because Shane is some kind of genius, wiz kid? </span><br/>- He's bright, but.... no.<br/> </li>
+<li>
+<span class="text-italic">Was it because he was worried about retaining the knowledge so that he could get a good grade? </span><br/>- No. This wasn't even school-related and he had no idea that I was going to quiz him afterwards.<br/> </li>
+<li>It was because <span class="text-italic"><span class="bold">he was invested and interested in the whole video because he had a personal emotional experience to tie it to</span></span> and that <span class="text-italic">experience </span>brought out a desire to try to get better at bridge-building.</li>
+</ul><p>That's what we are doing here: <span class="text-italic"><span class="bold">Blending tangible experiences with the theoretical concepts so that those concepts make sense and stick in your brain.</span></span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50064637">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-Will-You-Get-">What Will You Get?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/064/637/7cf92ba048ad3388111dc6a83e816225_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752687426&amp;width=680&amp;sig=yEWEFvxFuPpzkOl7ynChlRsRNgIKJyuBr0NbxtRT9mY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50065503">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/065/503/c170d8ce3e6531c894173e61cb8f4842_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752691231&amp;width=680&amp;sig=WssND0mm2W29lDZH%2FcN6msm5duQGenfKbRj0CdtaD%2BU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50151177">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/151/177/a831204f89cf863b4d15a2bf9ff6efab_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753302631&amp;width=680&amp;sig=Nwzec7OUYWg3QtiTmuo6hjdN%2B2RK0bYRvCqA5EplbDM%3D"/>
+</figure>
+</div>
+<p>A few of these crates have been fully designed so far:</p><ul>
+<li>The Track Builder Crate</li>
+<li>The Car Launcher Crate</li>
+<li>The Bottle Blaster Crate</li>
+<li>The Car Booster Crate</li>
+</ul><p>The rest of the Crate images above are simply mock-ups, so the final design may look very different from what you see above, or I may even decide to do another crate entirely.</p><h4 class="page-anchor" id="h:What-s-in-the-Crates-"><span class="bold">What's in the Crates?</span></h4><p>Each crate includes:</p><ul>
+<li>Tools and parts for a hands-on project</li>
+<li>A mini lesson plan linked to core physics concepts</li>
+<li>QR code to video tutorials and challenges</li>
+</ul><p>The Crates go hand-in hand with the curriculum for a comprehensive learning experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50065882">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Curriculum-">What's in the Curriculum?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/065/882/f63d66b3901cd0fe5922d1d3d104e88a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752693163&amp;width=680&amp;sig=r5sl8S%2BHpbn%2F3a2RnWBFKGR0nP4nW13YPxOZdWc06y4%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">One full year of instruction</span> (organized into 8 units with 2 Crates each)</li>
+<li>
+<span class="bold">Interactive online textbook</span> (videos, text, animations)</li>
+<li><span class="bold">Printable or optional printed workbook</span></li>
+<li>
+<span class="bold">Real-world project guides and physics challenges</span> with video instruction</li>
+<li>
+<span class="bold">Simple math explanations that support the concepts</span> (not the other way around)</li>
+</ul><p>All of this means that as a homeschool parent, you don't actually have to know anything about physics to help your kid learn.  <br/><br/><span class="text-italic"><span class="bold">My</span> </span>job is to know the physics. <br/><span class="text-italic"><span class="bold">Your</span> </span>job is just to make sure that they follow the course materials.  <br/>(Sorry, your job is still pretty hard, but this course should make your job easier.)</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50065895">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goals-">Stretch Goals: </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/065/895/e2579fdb34d9a08294bec30040e67843_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752693275&amp;width=680&amp;sig=v7lUn%2BqIj%2FIs4w99EhahMeHXg%2BY8zKwet9WJ9MIpmDI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50322131">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/322/131/8753454552bdae5adfc468a1a80ecf81_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754495829&amp;width=680&amp;sig=0nOMfXJEWgjNogWLqkHC%2BNme5Rv62daFPOt4%2FWnypLk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50322119">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/322/119/2bbaa2a443ea34004e4c27e3b70e3d5e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754495751&amp;width=680&amp;sig=%2BPtSPku%2BMtJ53Cc9ZpTq40RJEpRLCwTU%2Fye%2BygkASNE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50108473">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Current-Status-of-Development">Current Status of Development</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/108/473/451d6055a20ef197bc7146c855a46e6e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753040849&amp;width=680&amp;sig=7y2XKywa64UsNnXRqr5zu1zs7zLeOiOLRcblABNp83Y%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">Learning Book (including Videos and Activities):</span> In-Progress. <br/>I have written about 1 of the 8 units.  <br/>The main reason that I need the funding is to have more time to work on writing this.<br/> </li>
+<li>
+<span class="bold">Workbook and Answer Key:</span> Not yet started<br/> </li>
+<li>
+<span class="bold">16 Crates:</span> In-Progress. <ul>
+<li>4 of the 16 have been fully developed (including several stages of prototyping, testing and redesigning). These are: The Track Builder, Car Launcher Crate, Car Booster, and Bottle Blaster Crates</li>
+<li>3 have been prototyped and tested, but need a bit more refining.  </li>
+<li>The other 9 are not yet started.</li>
+</ul>
+</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50109231">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Development-Cycle">Development Cycle</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/109/231/6d0a5c1250869dd35f78db12680085e7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753046790&amp;width=680&amp;sig=rXpghPnuwSGpW1lQTiHNTtyGZLypc%2FwGFCHXYe8BZ8E%3D"/>
+</figure>
+</div>
+<p>Each crate goes through a development cycle as shown below.  It involves several trips around the cycle visiting the following steps each time:</p><ul>
+<li> <span class="bold">Design:</span> Usually on the Computer.  I create both 3D and 2D CAD files for each custom component of the design, and research to find the best options for off-the-shelf components.<br/> </li>
+<li>
+<span class="bold">Prototype:</span>  I create a physical version of the design.  I make all of the protypes myself, often using my Laser Cutters, 3D Printer, and a variety of hand tools.  This allows me to crank out prototypes much faster and cheaper than many designers which allows me to do a lot of design iterations (trips around the design cycle) so that I can identify and fix all of the problems and finish with a better overall product.<br/> </li>
+<li>
+<span class="bold">Test: </span>We do 2 phases of testing:<ul>
+<li>In-house Testing (to make sure it works) </li>
+<li>Beta Testing (to make Sure that kids can use it)</li>
+</ul>
+</li>
+<li>
+<span class="bold">In-House Testing:</span> I test the crates myself to make sure that they function properly.  I also get some friends or family to test it a bit to make sure that someone besides me can also get it to function properly. <br/>This phase is typically done quite literally in my house.<br/> </li>
+<li>
+<span class="bold">Beta Testing:</span> I send crates and instructional materials out to kids to see if:<ul>
+<li> those kids and parents can figure out how to properly use the crate without my help, </li>
+<li>if they find new ways to break it that I hadn't anticipated, and </li>
+<li>if the kids enjoy it.<img class="image" data-id="50109237" src="https://i.kickstarter.com/assets/050/109/237/4c413dbf0b4bcd1dd11e9725208c4806_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753046817&amp;width=2151&amp;sig=Dw7vJ%2B3Xr4YJBxsxNNSXPpz9FnCLq1Z0Vmf26P5ls9o%3D"/>Some crates involve just a few trips around the cycle for me to get it right. Others involve many more.  <br/><br/>The Bottle Blaster shown in the graphic above took about 50 iterations or trips around the cycle (which is a lot more than most).  <br/><br/>Why did it take so many trips around the cycle, you ask? How could this process matter enough to do 50 times?<br/>In the words of Elyse Myers, "Great question. I'd love to tell you."<br/><br/><span class="text-italic">The product is a bottle rocket that is safe and easy enough for even kids as young as 5 years old to be able to use themselves in their own backyard, and fun enough for teenagers and adults to enjoy.  </span><br/><br/><span class="text-italic">I experimented with different 3D-printing materials to make the nozzles from, as well as other fabrication methods to make the nozzles -- like epoxy molding in silicone molds, and injection molding.  </span><br/><span class="text-italic">I tried small changes in the shape and size of the plastic parts. </span><br/><span class="text-italic">Different sizes and materials for the rubber gaskets.  </span><br/><br/><span class="text-italic">After a while, it worked great for </span><span class="bold">me</span><span class="text-italic">, but it was still too hard</span> <span class="bold">for kids</span><span class="text-italic"> to use themselves.</span><br/><br/><span class="text-italic">So I overhauled the </span>whole design<span class="text-italic"> to incorporate a gun-style hose attachment that made it 1000% easier for kids to both attach and release their rockets.  </span><br/><br/><span class="text-italic">Finally, after a few </span>more <span class="text-italic">tweaks and iterations, and </span>lots <span class="text-italic">of beta testing to get that all perfect, I arrived at the final design</span> (See video below. Seriously, watch it. I put in a lot of work to birth this kit)<span class="text-italic">.</span>
+</li>
+</ul>
+</li>
+</ul>
+<p>Here's a video of me testing a prototype of the Track Builder Crate with my wife and kids:</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50109819">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/109/819/bc67c9ab9461394ebe494e7ab0b0d1d8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753053310&amp;width=680&amp;sig=yZ9UKKN50alzFZVJcL4JLDEyfHppc%2FJUrvi2cIym0uQ%3D"/>
+</figure>
+</div>
+<p>I'd love to show you detailed images and progress of all 16 crates as well as the curriculum and activities, but it's just too much to include here. </p><h3 class="page-anchor" id="h:Testing-the-Course-Itself"><span class="bold">Testing the Course Itself</span></h3><p>The course/curriculum will be tested by 2 groups of testers during the 2025-26 academic year:</p><ul>
+<li>
+<span class="bold">A small homeschool co-op class of high-school aged students</span> that I will be teaching myself to get real-time feedback.</li>
+<li>
+<span class="bold">All the Kickstarter backers who choose the Beta Testing Reward</span> (this one could be you!)</li>
+</ul><p>Since this Beta Testing version of the course will have a few errors/kinks to work out, The Beta Testing Students will have the ability to: </p><ul>
+<li>Call me directly on Zoom for up to 30 minutes per week to ask me questions about the course </li>
+<li>Email me directly with unlimited questions or feedback.  </li>
+</ul><p><br/>Read below to see the timeline of how taking/testing a course that is not yet fully written or developed will work.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50109634">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Development-Fulfillment-Timeline">Development + Fulfillment Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/109/634/2c7a92391830d6dbe6c3e4df5b8fa037_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753050871&amp;width=680&amp;sig=gRQsKNINGPlTh5Eznqw%2Bs9JnWeco7QyegMUQakg%2Bpfo%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:BETA-VERSION-Course-and-Crates-2025-26-Academic-Year-"><span class="bold">BETA VERSION Course and Crates (2025-26 Academic Year)</span></h4><p>I will develop the beta testing curriculum for the 2025-26 academic year at a rate fast enough to stay ahead of the students taking the course.  I will work on it one unit at a time and complete everything that has to do with that unit (that unit of the learning book, workbooks, and the 2 Crates that correspond to that unit)  <br/><br/>Each unit will be fully written and the Crates will be shipped by the following dates (likely earlier):</p><ul>
+<li>
+<span class="bold">Unit 1:</span> Sept 18, 2025</li>
+<li>
+<span class="bold">Unit 2: </span>Oct 10, 2025</li>
+<li>
+<span class="bold">Unit 3:</span> Nov 12, 2025</li>
+<li>
+<span class="bold">Unit 4:</span> Dec 15, 2025</li>
+<li>
+<span class="bold">Unit 5:</span> Jan 28, 2026</li>
+<li>
+<span class="bold">Unit 6:</span> Feb 27, 2026</li>
+<li>
+<span class="bold">Unit 7:</span> Mar 30, 2026</li>
+<li>
+<span class="bold">Unit 8:</span> May 1, 2026</li>
+</ul><h4 class="page-anchor" id="h:Regular-Course-and-Crates-2026-27-Academic-Year-and-Beyond-"><span class="bold">Regular Course and Crates (2026-27 Academic Year and Beyond)</span></h4><p>I will take the feedback that I have gotten from beta testing the Course and Crates, make any necessary changes and send out the Course and Crates in 2 phases:</p><ul>
+<li>
+<span class="bold">Phase 1:</span> First half of the Learning Book and Workbook + the First 8 Crates.  <br/><span class="text-italic">Shipped by Aug 1st 2026.</span><br/> </li>
+<li>
+<span class="bold">Phase 2:</span> Second half the of Learning Book and Workbook + the Last 8 Crates.<br/><span class="text-italic">Shipped by Nov 6th 2026.</span>
+</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50065859">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Why-I-Need-Your-Support">Why I Need Your Support</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/065/859/4c545ccaf41c4f3b8ee6807bd1486346_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752693029&amp;width=680&amp;sig=0WgglbtBBCZLOZsUSKE5VPigldMpURfP31lTyAfTm18%3D"/>
+</figure>
+</div>
+<p>I’m developing this cool curriculum, but I need your help to make it a reality.  I’ve been working on it for a while, but it’s been pretty slow - Why? Because I have to make money to support my family, and haven’t been able to dedicate much time to designing kits and writing curriculum.  Sure this stuff should make me money in the future, but:</p><ul>
+<li>That’s in the future and I need money now (I have savings, but I can’t just let them dry up completely while I pursue this).</li>
+<li>That future money isn’t guaranteed.  I don’t want to burn through my savings, banking on the curriculum and kits making me money down the road if the reality is that they might not make much money.  Education isn’t exactly a goldmine, and I can’t count on huge returns for my time investment down the road.  <br/>I truly believe in what I am creating and that it will create <span class="text-italic">immense </span>educational value for children (and enough monetary value for me to support my family with it).  Because I believe in it so much, I am willing to take some monetary risk to pursue this endeavor, but I’m not willing to risk my financial assets to the point where I am gambling my children’s future in order to pursue this dream.</li>
+<li>I am the hare – not the tortoise – from “Tortoise and the Hare”.  <br/>You know that Aesop’s Fable about the tortoise racing the hare and the tortoise wins because “slow and steady wins the race”? <br/>Well, I don’t think that Mr. Aesop had a very strong understanding of ADHD when he wrote that little diddy about 2,500 years ago.  <br/><br/>I have ADHD, and my personal flavor of ADHD means that I’m incapable of “slow and steady.”  I can try, but I will run into motivation issues or jump ship to a new, exciting project. <br/><br/>I struggle with long-term projects with vague deadlines.  <br/><br/>I thrive on tight deadlines, weird requirements, and big projects that scare the typical person. I’ve completed a whole lot of huge projects over the past 15 years – this curriculum is absolutely not my first rodeo. <br/><br/>But I’m gonna be completely transparent here and admit that although I have been working on this curriculum for about 7 months, I have struggled with maintaining motivation and focus when it comes to completing it -- mostly because I constantly wonder if people will like it enough to buy it, even after all of the time, effort, and funds I’ve put into making it something great (hence the reason I’ve decided to put this on Kickstarter).  <br/><br/>I still believe in this curriculum and the positive impact that it will have on kids’ learning, and that’s what has kept me going. But if progress continues at the current pace, I will run out of motivation before I can finish this curriculum.  <br/><br/>Having additional funds to pull from will help speed up the pace of developing <span class="text-italic">Physics For Makers</span>. Perhaps it’s not a good business plan to admit to all of you that these are real struggles of mine, but I’m telling you so that you can understand how supporting this campaign will drastically help me lean into my strengths and avoid my weaknesses.<br/> </li>
+</ul><h4 class="page-anchor" id="h:How-Your-Support-Will-Help-Me-Complete-this-Project-Despite-my-ADHD-"><span class="bold">How Your Support Will Help Me Complete this Project Despite my ADHD:</span></h4><ul>
+<li>
+<span class="bold">Your support gives me a tight deadline and a clear finish line.</span><br/>I’m a (metaphorical) sprinter - just like the hare.  I’m bad at slow and steady, but if you give me a tight deadline and finish line that is within my view, I suddenly turn into Usain freakin’ Bolt (a famous Olympic sprinter).  <br/><br/>I was the kid who had 6 months to do a science fair project and didn’t touch it until 1 or 2 nights before the science fair.  At that point, I’d switch to sprint mode and bang out one of the best projects in the class.  <br/><br/>As an adult, I try not to procrastinate nearly as much, but I am still that kid at my core.  <br/><br/>What does this have to do with a Kickstarter campaign? The pledges that you make and my associated promises that go with those pledges give me a tight deadline and a clear finish line.<br/> </li>
+<li>
+<span class="bold">Your support provides me with a proof of concept.</span>  <br/>I would no longer be creating a product that people will <span class="text-italic">maybe</span>, <span class="text-italic">hopefully</span>, <span class="text-italic">someday </span>want.  I would be creating something that people FOR SURE, actually want<span class="text-italic"> right now,</span> because they decided to give me money in exchange for that product.  It’s <span class="text-italic">a million times easier</span> for me to stay motivated to finish something when I <span class="text-italic">know </span>that you actually want it.<br/> </li>
+<li>
+<span class="bold">The campaign provides me with the structure that I need</span> in order to take this massive undertaking and break it down into manageable chunks with specific deliverables and deadlines.  These things are good for all brains, but especially ADHD ones.<br/> </li>
+<li>
+<span class="bold">Your Pledges make me accountable.</span>  <br/>Despite my shortcomings with maintaining focus and motivation,<span class="text-italic"> I am no flake.</span> <br/><br/>If someone is counting on me, then I will do whatever it takes to deliver whatever they are counting on me for.  If you are counting on me because you paid money in order to get something in return, <span class="text-italic">then I will deliver</span>.  <br/><br/>More importantly, if your <span class="text-italic">child </span>is counting on me because you made educational plans based on my ability to get them quality educational resources on a specific timeline, <span class="text-italic">then I will deliver</span>.  <br/><br/>I do not take the responsibility of a child’s education lightly.  If that responsibility is placed on me, then I will <span class="text-italic">not </span>fall short, because failure to deliver in that regard is simply <span class="text-italic">not an acceptable outcome for me</span>.</li>
+</ul><p>Let’s build something amazing. Together.</p><p>– Jack Casdorph<br/><span class="text-italic">Physics for Makers</span></p></div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">66%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Labor</div><div class="m0 type-16 text-nowrap">45%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Manufacturing</div><div class="m0 type-16 text-nowrap">15%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Research &amp; Development</div><div class="m0 type-16 text-nowrap">6%</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">23%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">8%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">5%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">5%</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Taxes</div><div class="m0 type-16 text-nowrap">5%</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Funding</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">6%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Labor</div><div class="m0 type-16 text-nowrap">6%</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Fulfilling</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">5%</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Packaging &amp; Shipping</div><div class="m0 type-16 text-nowrap">5%</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated July 16, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">The Main Challenge:
+
+Writing the textbook, workbook, and accompanying videos and activities will be the biggest challenge.  I have never been a classroom teacher and I don't particularly enjoy writing.  I do, however enjoy sharing my knowledge, and this is a subject that I am very knowledgeable and passionate about.  I've never written an academic course before, but I do know Physics quite well and I know Fun even better.  Not only am I capable of combining Physics and Fun, I don't actually think that I can stop myself from combining those 2 things.
+
+My biggest challenge would be pacing myself over a long period of time to develop everything that I need to for an entire year's worth of written material, videos, and kits.
+
+My Plan to Overcome This: I am actually going to be teaching this same curriculum in-person to 3 high-school students at a local homeschooling Co-Op and to a small group of online-only beta testers.  I will be writing the curriculum as I go so that I can stay ahead of the students.  This will give me the structure and motivation that I need to keep writing/designing/filming/editing at a steady pace while focusing on the essential parts of the course and not getting distracted by unnecessary "side-quests".  These students will also help me out by giving me immediate feedback on the course materials and helping me catch gaps/mistakes in the instructional materials.
+
+Other Challenges (that aren't very big challenges for us because we already have a decade of experience with aspects of creating and delivering cool products) :
+
+ - Designing, Testing, + Improving the Kits: I am a mechanical engineer with a talent for innovative product design, so this is totally in my wheelhouse.  I will manufacture almost all of the custom pieces using one of my 3 laser cutters, my 3D printer, or any of the other tools + machines that I have within a 50 ft radius of where I am writing this right now.  Doing it in-house allows me to prototype, test, re-design, and iterate very quickly.  It also means that the exact same methods will be used to make the finished crates as the prototype crates.  That way, when I am done prototyping (which means that the protype that has been thoroughly tested, successfully duplicated and performs to my level of satisfaction) all I have to do to finalize the design is move that cut file into my "Final Versions" folder.  This means that I won't be ordering 1000 of an item from an offshore manufacturer, waiting 3-4 months for the parts to arrive, and then finally opening the box to see that they are all wrong due to some miscommunication or the manufacturing tolerances being different than expected.
+
+-Manufacturing, Packaging, + Fulfilling:  This is what my wife and I have done for about 10 years now with our business.  We are a good team and we know what we are doing. We do a good job and meet our deadlines, even if it requires working some intensely long hours for a stretch of time.  Once again, we will be doing most of the manufacturing, assembling, boxing, and shipping in-house so we can guarantee doing a good job (most of the time - we are human) and we will not be at the mercy of a 3rd party doing their portion of the process whenever they feel like getting around to it.
+
+- Quality Control + Support: We will do our best to not have any issues here, but if they do arrive faulty, you will be able to contact us DIRECLY for help, so you won't be dealing with a foreign call center or a clueless, underpaid employee.  You will be talking directly to the guy who wrote the whole course and designed and manufactured all of the Crates (or maybe talking to his wife because she's pretty awesome too and I get really busy sometimes).</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Incorporating Modular Design.  The physical components should rarely break or wear-out, but if they do, it should be easy to replace the faulty piece rather than replacing the whole thing. Many of the parts will be generic, off the shelf things - Motors, switches, rubber bands, paper clips, etc. that can be easily replaced and even upgraded in may cases.  The kits are made to be assembled by the users without glue, so they can also be easily disassembled for long-term storage or for repair.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">While many of the components will not be particularly recyclable, the physical kits will be very reusable and re-purpose-able.  The kits can all be dissembled and stored in their original packaging to be pulled out later and used again with another sibling.  They will very rarely include anything that will get dried up, used up, or otherwise made unusable over time.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">The Crates will be made almost entirely from wood from ethically farmed lumber.  All kits are designed to minimize material waste when they are cut from the sheet materials.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">I will ship using a pick-up service and by shipping as many items together as I can.  I ship over 50% of my products using re-used packaging material (boxes, bubble mailers, packing paper, etc.) rather than using exclusively new materials.
+
+When I have to use new materials, I always make sure that they are as minimal as possible and in many cases, I make my own boxes from reclaimed carboard scraps.
+
+I use online instructions rather than hard-copy instructions.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

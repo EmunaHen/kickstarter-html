@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360Crafter • new 360° virtual tour software</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/182/341/9ee7a08bd9f8042407ff4d579ca6ed7b_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1753537030&width=560&sig=X3V3tTT%2Bv024o0q4SkAOpXLyTUpbgBVcwt8bq0qimyE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>360Crafter • new 360° virtual tour software</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Source-available 360° virtual tour builder with bring-your-own-S3 storage</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 13,943</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>26 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p><span class="text-italic">360Crafter empowers creators to build beautiful 360° virtual tours without compromise. Self-host for complete data control, customize every detail, and create immersive experiences that truly belong to you.</span></p><h3 class="page-anchor" id="h:360Crafter-Features-v1-">360Crafter Features (v1)</h3><h4 class="page-anchor" id="h:Create-a-workspace-to-work-as-a-team">Create a workspace to work as a team</h4><p>Create a workspace, choose to connect it to your own s3 storage bucket. Then you can invite your teammates and clients to the workspace, so that you can collaborate on projects while keeping work in sync using your own s3 storage. No more exporting backup projects that need to opened by another user who imports files from a different folder creating missing files and all those type of headaches. Everyone works on the same files. Hopefully real-time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Creating a new workspace to organize and store your projects into. Selecting Bring Your Own S3 as your storage provider." data-id="50291106">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/291/106/e6be2e9599870f72942bb933327f5bdd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754329290&amp;width=680&amp;sig=vXZM4q8zxbPeBqc%2BGx%2BvUeVCIfuAjfBkZJ4aWQ0Cps0%3D"/>
+<figcaption class="px2">Creating a new workspace to organize and store your projects into. Selecting Bring Your Own S3 as your storage provider.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Connect-your-own-s3-storage-bucket">Connect your own s3 storage bucket</h4><p>Creating a workspace you can choose to have the files in the bring your own s3 storage bucket. Bringing your own s3 storage bucket you will need to provide a few things such as api keys, url and some other details.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Name your connection, select s3 provider of your choice, provide endpoint url, region, bucketname, access key id and secret access key. Current strategy is to have the secret access key stored in the browser using a zero-knowledge method, but this might change depending on what makes most sense balancing out security with convenience." data-id="50231213">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/231/213/b64567d01fb8a7f04ad5b891260a0f3e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753891122&amp;width=680&amp;sig=Gij8l2OjhT632rrJZaJHKBzMOEPObbgyqJuWdSEKd6g%3D"/>
+<figcaption class="px2">Name your connection, select s3 provider of your choice, provide endpoint url, region, bucketname, access key id and secret access key. Current strategy is to have the secret access key stored in the browser using a zero-knowledge method, but this might change depending on what makes most sense balancing out security with convenience.</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="List of compatible S3 providers to store your workspace data into." data-id="50231238">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/231/238/593086abbaa2bb7450a15dca3c096052_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753891255&amp;width=680&amp;sig=nrXgbgQQmEXibp%2Bd9guDVfrmAo06IspBryj88DPRw7k%3D"/>
+<figcaption class="px2">List of compatible S3 providers to store your workspace data into.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Hotspot-Styling">Hotspot Styling</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Inside each project you can upload your 360° panoramas, add hotspots to the panoramas, change colors of hotspots, add preselected or custom SVG icons which can change its colors without reuploading an icon." data-id="50231266">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/231/266/ee139f04365ee001113f5aa25b322a56_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753891400&amp;width=680&amp;sig=lxPiMcQOIzJAMLneeWcAdcEjKgsOCBmILhP0eK61Z4E%3D"/>
+<figcaption class="px2">Inside each project you can upload your 360° panoramas, add hotspots to the panoramas, change colors of hotspots, add preselected or custom SVG icons which can change its colors without reuploading an icon.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Skin-Design">Skin Design</h4><p>In the skin you can design components on top of your 360° viewer to create something like a left side menu, mobile responsive with breakpoints. Text, image, video-url's, embedding websites like google maps location. Adding actions to the skin components when the user clicks on any of them.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Placing components inside a container, changing order, positioning, styling and more." data-id="50231277">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/231/277/c7b0dd75a863485fafecfe37bcb52f71_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753891502&amp;width=680&amp;sig=Y2S5xWIN7NGTHu76ZR%2Fc%2BlDjUw%2Fa4dPipe6liS5Et6U%3D"/>
+<figcaption class="px2">Placing components inside a container, changing order, positioning, styling and more.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Hotspot-minimization">Hotspot minimization</h4><p>There's panorama settings to minimize all hotspots in a panorama, which make it feel like the application that lets you view streets in 360.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Applying hotspot minimization" data-id="50231402">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/231/402/c8fbb28696a5789ebcc70631c284b3ab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753892142&amp;width=680&amp;sig=yVsNQ4ejv2gJgOja%2B4mGhj1yK5S1O8P6Mm5ol5bTdpo%3D" src="https://i.kickstarter.com/assets/050/231/402/c8fbb28696a5789ebcc70631c284b3ab_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753892142&amp;width=680&amp;sig=yVsNQ4ejv2gJgOja%2B4mGhj1yK5S1O8P6Mm5ol5bTdpo%3D"/>
+<figcaption class="px2">Applying hotspot minimization</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Hotspot-tooltips">Hotspot tooltips</h4><p>Setting to show the hotspot names as a tooltip on rollover of a hotspot.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Panorama option to turn on or off to show hotspot names as tooltips" data-id="50231416">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/231/416/5e719a005191e305404d9320e3bf174e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753892215&amp;width=680&amp;sig=2S8MXH9Vcggmo4cYW1zXOSPYVxp8A2HQAsFc1vA2sKU%3D"/>
+<figcaption class="px2">Panorama option to turn on or off to show hotspot names as tooltips</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Interactivity-by-adding-Actions">Interactivity by adding Actions</h4><p>And in order to make it all interactive, you can appy actions to both skin and hotspots as your triggers. Actions to show or hide hotspots, show or hide skin components, action to show a temporarily or fixed notification to inform the user of something, open url and copy deeplink to navigate to the exact camera view the user was looking at.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Actions such as linking a panorama, adding notification, downloading files, edit visibility (both hotspots &amp; skin)" data-id="50231323">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/231/323/c3c07e908cacbfde48f7541bcf3e71f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753891710&amp;width=680&amp;sig=TdmryiozYuDknVf8%2Fl5aNg1zGpCn%2BMfN6E8WI5TX2CU%3D"/>
+<figcaption class="px2">Actions such as linking a panorama, adding notification, downloading files, edit visibility (both hotspots &amp; skin)</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Export-project">Export project</h4><p>Once you're finished working on the project, you can start exporting the 360° virtual tour. Both locally to your computer as well as directly to your s3 storage.</p><p>Having it locally on your computer might serve as a backup to archive which can be imported later again into 360Crafter when you need to.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Selecting both Project Data as well as Published 360° Tour to wrap up the project." data-id="50231605">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/231/605/05aca1bd1228b874a17a4da14f42ea0b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753893053&amp;width=680&amp;sig=scgqqKkYOBicRY%2Bm0yFFpTFFnei5THDgXkgDi10x54M%3D"/>
+<figcaption class="px2">Selecting both Project Data as well as Published 360° Tour to wrap up the project.</figcaption>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Quality-of-Life-design">Quality of Life design</h4><p>Software should be easy to use, yet bring you the flexibility to customize. The tours that you will be creating yourself and showing to your customers should be easy to use, as well as the software itself that you're building it with.</p><p>Everything in 360Crafter is within the details making it easy. Take for example adding a new action to a hotspot. Notice how a "1" appears next to the Actions button, as well as a "⚡️" icon on the hotspot itself on the left side panel. It's these small details that make you understand the scene instantly without checking each hotspot one by one to see where you might have added that action that's messing something up.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Adding an action shows in the Actions tabs how many actions are applied to the hotspot, as well as an action-icon on the hotspot itself." data-id="50212278">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/212/278/24f393351f580e574a5d5e7315b43db4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753781214&amp;width=680&amp;sig=4XBlPNQeVpcFMqgEKWL9vF06oLpu2ph6O4VhK76TDrE%3D"/>
+<figcaption class="px2">Adding an action shows in the Actions tabs how many actions are applied to the hotspot, as well as an action-icon on the hotspot itself.</figcaption>
+</figure>
+</div>
+<p>And there's many more details in this. The "👀" icon, the 6 dots drag icon to change order of both panoramas as well as hotspots. The consistent use of icons across the application. When deleting an action, hotspot, panorama, project or workspace that it first asks you if you are sure to delete it. But also the ability to ⌘ command or control click the trash icon to skip this question and just delete it instantly. Making sure command/control "Z" actually just works undoing an action. It sounds basic, but these basic things just need to work as you might expect of a modern application.</p><p>Instead of having multiple actions to Show/hide hotspot, show/hide components, open pdf popup, open image popup, it's all combined into one single action called "Edit Visibility". And in there you can choose whether you want to edit Skin visibility of Hotspot Visibility.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50212507">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/212/507/1c72e9a436bb873d58adfe17565ca968_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753782035&amp;width=680&amp;sig=5u0pS8%2Fst0LQN2UDnAw2GcxB%2BOPSjq9HnuRrYmT71Ig%3D"/>
+</figure>
+</div>
+<p>Once added the action, you will see the action appear in "Applied actions". And you see the icon that represents visibility, the title that tells you it's visibility related to the Skin and a subtitle that shows you exactly what you are showing or hiding, so that you do not need to edit the action in order to see what's on there. And of course a delete icon to delete the action.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50212617">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/212/617/ed6dccbf7196a0ff1fd9fe96552ff8b1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753782650&amp;width=680&amp;sig=FA0015U0v1tTrPI9Z95W311j%2FYccg50LA1D%2Fr73DeoM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Enshittification">Enshittification</h3><p>Software can look great, have amazing features, work really well, deliver a ton of value. Start for free, built community, listen carefully to everyone and grow market share as the software gets develops. Until it dominates the market. Then it can start exploitation. Make the app worse, add in ads, spy more, move features to higher price tiers, increase pricing, let AI train on customer's software by forcing clients to click accept or else they don't have access anymore. Most of this enshittification comes from the fact that most software is proprietary closed source software. Meaning that everyone got fully dependent on it and it's made very difficult to say "No thank you" because you can't just take the latest version that you liked and use that. Everyone's supposed to either accept or delete their account.</p><h4 class="page-anchor" id="h:Times-when-it-went-wrong-with-closed-source-software">Times when it went wrong with closed source software</h4><p>There's been lot of times where companies are taken over and have disappeared. Think of <span>GoPro killing Kolor</span>. What if pricing goes up and the privacy policy changes to let the company that you disagree with like <span>Adobe</span> did a year ago or more recently <span>WeTransfer</span>? Or <span>if you upload your data to a company like Matterport</span> providing them with an unrestricted, irrevocable, perpetual, transferable, sublicensable, worldwide, royalty-free license to use, reproduce, display, publicly perform, transmit and distribute any such material you submit, without any payment or accounting to you or others? All of this is no good...</p><p>To learn more about enshittification, I'd recommend watching <span>Techlore's video</span> on it and videos from <span>Louis Rossman</span>.</p><h4 class="page-anchor" id="h:What-s-the-remedy-against-enshittification-">What's the remedy against enshittification?</h4><p>The more you dive into this subject, the more you will learn that when a company offers you the ability to fully self-host the application on your own server, you're getting in much better hands. Even if you don't know how to do it, their cloud subscription has much lower chances of getting enshittificated. Why? Because if the software gets worse, clients start moving away from their cloud and self-host the application on their own. When you're able to view the source code of the application, you're able to check what happens in there. Even if you don't know how to code, you can ask an ai to check things for you. Open source and source available might not be the full remedy against enshittification, but it's a huge step in the right direction for sure.</p><h4 class="page-anchor" id="h:How-is-360Crafter-going-to-be-licensed-">How is 360Crafter going to be licensed?</h4><p>That's exactly why 360Crafter is going to be licensed as <span class="bold">source-available </span>following the <span>fair-code principles</span> similar to how n8n does this with a <span>Sustainable Use License</span>.</p><p>You can get a full copy of all its source code and run it on your own server. You can use the source-code as it is, completely for free, make money with it creating and selling virtual tours as you are supposed to. But changing the source code and making money with it as if it is your software running it on your own server requires a different commercial license. That's the idea of a Sustainable Use License.</p><p>Having the source code available allows anyone to always downgrade or upgrade to their own liking, review the code as they want, make sure all the data is on their server to have it GDPR compliant. And all of this together makes sure there is <span class="bold">no vendor lock-in</span>. That's freedom that very few SaaS companies offer anyone nowadays. And that is exactly how 360Crafter plans to create<span class="bold"> real longterm trust</span> in the 360° virtual tour industry.</p><h3 class="page-anchor" id="h:How-is-360Crafter-created-maintained-">How is 360Crafter created &amp; maintained?</h3><p>For a very long time I thought about creating my own 360 Virtual Tour software and the cost I would have to hire a team of developers for at least a year and the huge investment I would need to pitch this idea to investors. Maybe €500.000? Having investors on board would mean I need to find investors that understand and share the same values of open-source and fair-code which is quite a large challenge already in itself. Beside that, investors generally speaking intent to motivate enshittification in order to make more money. So I discontinued the idea and moved on with other things quite some time ago in the past.</p><p>Until I started prompting in Lovable and Cursor 25th of June. I figured that a lot of these things I could prompt my way through and do it myself. So far I've spent over 100 tracked hours on 360Crafter. I've figured out how to ask the questions, solve complex bugs and use my imagination to make it in the way I think makes sense.</p><p>I'm aware there's vulnerabilities being a so-called vibe-coder. That there's things on security to double check with developers that understand code much better than I do. Allthough I ask the ai tools to be secure and not save API keys on the server whenever possible to avoid that using zero-knowledge strategies. But it does need to be checked anyway. That's going to be part of the cost creating this project, but it's going to cost much less than having a team of developers working full time on a project that hasn't sold itself yet on the market and having investors on board with different values. So I'm quite happy I need a much lower investment than I initially thought I would need.</p><h3 class="page-anchor" id="h:Vision-Expectations-Priorities">Vision, Expectations &amp; Priorities</h3><h4 class="page-anchor" id="h:Promise-Vision">Promise &amp; Vision</h4><p>A big challenge is to provide everyone with the vision without overpromising. That's why I split features up into v1 which is my promise that will be delivered at the end of this Kickstarter campaign and v2 which are ideas I'm having, but I will very likely need more time in order to integrate those into 360Crafter. Besides that, I would love to hear everyone's opinion is about the v2 ideas and which ones are important to you. So that I can validate which ones require higher prioritization. I am super eager to have Design Tokens &amp; CMS integrated, but I'm not entirely sure if I can manage to integrate those within the 3 months period. That's why I put those in v2.</p><h4 class="page-anchor" id="h:Roadmap">Roadmap</h4><p><span>Link to roadmap</span> showing features that have already been crafted, features that are coming with the first release in december this year, new features that I'm eager to work on right after that. The 360Crafter cloud/publisher so that people don't need to bring their own s3 storage and easily can publish their tours to their own custom domain is something I'd probably start working on later in v2.</p><h4 class="page-anchor" id="h:Cost-of-new-features">Cost of new features</h4><p>New features of 360Crafter will be free of charge as much as I can provide those free of charge. If there's going to be integrations with ai, you can bring your own ai api keys. If I start hosting your data such as in a 360Crafter Cloud or Publisher, then that'd be something seperated from the core 360Crafter application and that'd be optional. My intent is to bring equal value in terms of new features as much as I can to both BYO s3 and 360Crafter Cloud users.</p><h3 class="page-anchor" id="h:Vision-of-360Crafter-v2-">Vision of 360Crafter (v2)</h3><p>As soon as v1 is finished, 360Crafter can start working on the extra awesome features of v2 after December this year.</p><h4 class="page-anchor" id="h:Design-tokens">Design tokens</h4><p>Nothing more annoying than changing the background color on 100 hotspots manually. Instead of using css classes and combo classes, 360Crafter will be using Design Tokens which brings more flexibility to design with ease. It's a modern industry web standard being used by Webstudio, Tailwind &amp; Penpot.</p><h4 class="page-anchor" id="h:Static-CMS">Static CMS</h4><p>From experience building <span>skincms</span> connecting Airtable with 3DVista, I can tell that external systems to manage data can be both a blessing as well as a curse. That's why I want to start creating a CMS that's based on formats like CSV or JSON that can be exported from many applications, and then imported into the 360Crafter. The idea is that when the user exports the virtual tour, the data from these files comes static as well with this extra file in the exportfolder. Making it a single package to deliver to the client and still keeping the tour relatively easy to manage as there's no need to duplicate a popup many times.</p><h4 class="page-anchor" id="h:Dynamic-CMS">Dynamic CMS</h4><p>Static CMS has it's benefits being a single package to deliver, but the downfall with it is that it's not in sync with actual data being used by whatever system the client is using. With a dynamic CMS, the client can have it's own systems to update content and it's being reflected live on the exported tours. Whether that is Airtable, Baserow, Strapi, Wordpress, Ghost, Craft, Notion or any other CMS system is up to you. Users can connect a skin popup easily to a database. Or add dynamic tooltips to hotspots, edit visibility state and many more interesting things.</p><h4 class="page-anchor" id="h:Publish-tour-to-360Crafter-CDN">Publish tour to 360Crafter CDN</h4><p>A CDN stands for Content Delivery Network which generally has many servers all around the world. Let's say you are located in Amsterdam and hosting your files there. If someone from New York visits the virtual tour, it needs to travel a long distance virtually which takes more seconds to reach the server and load in the data.<br/>With a CDN there's servers all over the world and the user in New York will be automatically connected with the server closest to his location, improving loading time tremendeously.</p><h3 class="page-anchor" id="h:Market-prices-after-crowdfunding">Market prices after crowdfunding</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="Suggestive oricing table with full prices that will probably go live after the Kickstarter campaign once 360Crafter Cloud is build." data-id="50232289">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/232/289/73d4b2b0aa593408219402324f6aadf1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753895984&amp;width=680&amp;sig=4Oq9wYJ78UtrLpMzgfSwKJIl79AA3j%2BCXrhKCUE7QZI%3D"/>
+<figcaption class="px2">Suggestive oricing table with full prices that will probably go live after the Kickstarter campaign once 360Crafter Cloud is build.</figcaption>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Special-thanks">Special thanks</h3><p>I want to say thank you to all the nice comments I received on my Youtube channel, Facebook pages and groups sharing my knowledge about 360° Virtual Tours and open source projects.</p><p>I want to give special thanks to open-source and source-available (co)founders Oleg Isonen from Webstudio, Bram Wiepjes from Baserow, John O'Nolan from Ghost, Paul Copplestone from Supabase, Jan Oberhauser from n8n for starting these awesome open-source and fair-code projects and making them all a huge success. And not just that, also for presenting yourself online as an individual. Whether that is showing up in the communities, in online interviews on Youtube or just chatting with me directly. I love how accessible you guys are as individuals and the awesome positive energy you guys share.</p><p>And I want to thank my fiancée, my family and my friends for always supporting me through thick and thin. Love translating dutch expressions literally to english.</p></div></div></div></div></div></div><div><div><div class="pt4"><div class="pt4" id="project-budget"><div class="mb3 mb10-sm"><h2 class="normal mb4">Project budget</h2><div class="w100p flex-column"><div class="flex relative justify-center w100p border border-grey-400 bg-grey-100"><div class="w100p flex-column justify-center pl2 pb4 pr2 pl10-sm pr10-sm"><div class="relative flex justify-center items-center h50"><svg height="250" preserveaspectratio="xMinYMid" viewbox="0 0 250 250" width="250"><g transform="translate(125, 125) scale(2.5, 2.5)"><defs><pattern height="1" id="bg1" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/xglb1yux-hatch_light_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=clgJlzhY3k416hIJWrLOR2MdAEuRyBIYLy5Q4Y0qGuE%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg2" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/qm5rth84-dot_line_white_2_pattern_overlays_20190901.png?origin=static&amp;sig=X4u8yLPJQSLFYyFAWhfks%2Bb0l7JvccL9Ns4mZ%2BdcX%2Fs%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg3" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/2pgrzep-scattered_dots_black_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=7dYAvrHvJlUMrHNcRby2NfD16BbES28QnocyMYhS%2BjU%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg4" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/l9o3ber7-grid_dark_green_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=w1sAH2Z8b0%2Bm44c8oN%2BES4hwspBpkhrrhc1YpFJSPyQ%3D" width="160" x="0" y="0"/></pattern><pattern height="1" id="bg5" patternunits="objectBoundingBox" width="1"><image class="bgimage" height="160" href="https://i.kickstarter.com/v0js8b2e-dot_line_white_pattern_overlays_20190901.png?fit=scale-down&amp;origin=static&amp;width=1000&amp;sig=j1%2Biz4vH2TtOn5EX0sEl2Xque0oEBcJupM5qVbNe8CM%3D" width="160" x="0" y="0"/></pattern></defs><path class="innerArc innerArc0" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-6.956004732246443,43.2441209664963L-5.295912438761107,34.54642979297535A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="#059968" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc1" d="M-9.46041279652391,42.76611497107689A43.8,43.8,0,0,1,-31.744444977528,-30.17830699473874L-25.507207371339067,-23.893197193249495A34.949999999999996,34.949999999999996,0,0,0,-7.800320503038581,34.06842379755594Z" fill="#71A0FF" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArc innerArc2" d="M-29.934714169927116,-31.974253510672686A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-23.697476563738185,-25.689143709183444Z" fill="#a3a3a3" style="opacity: 1; transition: opacity 100ms ease-in-out;"></path><path class="innerArcTexture" d="M1.2748087586060648,-43.7814442729906A43.8,43.8,0,1,1,-6.956004732246443,43.2441209664963L-5.295912438761107,34.54642979297535A34.949999999999996,34.949999999999996,0,1,0,1.2748087586060675,-34.92674280016648Z" fill="url(#bg1)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-9.46041279652391,42.76611497107689A43.8,43.8,0,0,1,-31.744444977528,-30.17830699473874L-25.507207371339067,-23.893197193249495A34.949999999999996,34.949999999999996,0,0,0,-7.800320503038581,34.06842379755594Z" fill="url(#bg2)" style="opacity: 1;"></path><path class="innerArcTexture" d="M-29.934714169927116,-31.974253510672686A43.8,43.8,0,0,1,-1.2748087586060604,-43.7814442729906L-1.2748087586060795,-34.92674280016648A34.949999999999996,34.949999999999996,0,0,0,-23.697476563738185,-25.689143709183444Z" fill="url(#bg3)" style="opacity: 1;"></path><path class="outerArc" d="M1.274808758606064,-49.983745984359565A50,50,0,0,1,3.9336155259330594,49.84502652114992L3.7312719131154917,46.04907827427598A46.2,46.2,0,0,0,1.2748087586060677,-46.18240858410247Z" fill="#33ad7e" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M4.382161159621764,49.80759644442906A50,50,0,0,1,-8.118821265871558,49.33644435154232L-7.40614100866897,45.602511722050046A46.2,46.2,0,0,0,3.9525613907836368,46.03061218854347Z" fill="#00664b" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-10.623229330149023,48.8584383561229A50,50,0,0,1,-48.49334113417809,12.1817841732741L-44.78413554674657,11.34994287785762A46.2,46.2,0,0,0,-9.910549072946443,45.12450572663063Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-48.381715797044386,12.617827726436346A50,50,0,0,1,-49.3203936902359,-8.215763278000304L-45.58786885518868,-7.495746343234824A46.2,46.2,0,0,0,-44.7290653137678,11.565064468332853Z" fill="#3B3BCC" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-49.392353601075364,-7.7714481112812885A50,50,0,0,1,-44.36375355495305,-23.062033095878405L-41.036721328086706,-21.223277377468204A46.2,46.2,0,0,0,-45.62337019526807,-7.276543961629384Z" fill="#00007D" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-44.56956045094727,-22.66173605903477A50,50,0,0,1,-36.11333641873685,-34.58073065606241L-33.43568041198568,-31.88252303986555A46.2,46.2,0,0,0,-41.13825592589459,-21.025791290117926Z" fill="#5555FF" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-34.30360561113599,-36.37667717199634A50,50,0,0,1,-4.8644699909012035,-49.762806710510425L-4.591220171962683,-45.9713029762325A46.2,46.2,0,0,0,-31.62594960438479,-33.6784695557995Z" fill="#cccccc" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><path class="outerArc" d="M-5.312237764562917,-49.717000411657494A50,50,0,0,1,-1.2748087586061145,-49.983745984359565L-1.2748087586061245,-46.18240858410247A46.2,46.2,0,0,0,-4.812125893272178,-45.948704490848264Z" fill="#999999" style="opacity: 1; transition: opacity 70ms ease-in-out;"></path><text font-size="8" height="250" style="opacity: 1;" text-anchor="middle" width="250" x="-1" y="3">€18,490</text></g></svg></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Making</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">€9,800</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Research &amp; Development</div><div class="m0 type-16 text-nowrap">€9,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Server cost &amp; AI tools</div><div class="m0 type-16 text-nowrap">€800</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Taxes &amp; Fees</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">€6,390</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Taxes</div><div class="m0 type-16 text-nowrap">€3,330</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Margin of error</div><div class="m0 type-16 text-nowrap">€1,210</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Kickstarter fee</div><div class="m0 type-16 text-nowrap">€925</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Payment processing fee</div><div class="m0 type-16 text-nowrap">€925</div></div></div></div></div></div><div><div class="border-top border-grey-400 pt2 pb2 pointer" role="button"><div class="flex justify-between"><div class="flex flex1 items-center m0 type-16">Multiple/Other</div><div class="flex items-center"><div class="m0 pl1 pr3 type-16 text-nowrap">€2,300</div></div></div></div><div aria-hidden="true" class="rah-static rah-static--height-zero" style="height: 0px; overflow: hidden;"><div style="display: none;"><div class="pl5 pr5"><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">External developers</div><div class="m0 type-16 text-nowrap">€2,000</div></div><div class="flex justify-between border-top border-grey-400 pt2 pb2"><div class="flex flex1 m0 clip clamp-3 type-16 mr2">Open Source donations</div><div class="m0 type-16 text-nowrap">€300</div></div></div></div></div></div><div class="text-center mt6 support-500"><span>Last updated July 30, 2025</span></div></div></div></div><div class="mt2 support-500">This is a projected budget provided by the creator and may be subject to change.</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">One of the greatest risks is overpromising. I love to excite myself and everyone else, but need to be clear about what will be delivered. That's why I seperated features in v1 and v2.
+Another risk is code vulnerabilities. As a vibe-coder I will need to have someone at my side to check the code on vulnerabilities and correct me where I'm wrong in what I've done so far. There's money allocated for that.
+I will also need to double check the legal licenses to have something similar to n8n with their sustainable use license.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18 mt5">I plan to use AI-generated content in my project.</h3><h4 class="bold lh4" style="margin-bottom: 1.5rem;">What parts of your project will use AI generated content? Please be as specific as possible.</h4><p class="border-left border-create-700 border-left5px pl3">360Crafter is created using Lovable &amp; Cursor. The code is "vibe-coded" as described below "How is 360Crafter created &amp; maintained?".
+Everything else is created by me personally, such as the full story on kickstarter &amp; images. I would like to explain a bit more why I think this is creative work. I think it's mainly having the vision and experience that makes this a creative work. Knowing what things of other software in this field did wrong and being able to fundamentally offer something very new in the field because of my values of open source and fair code which are barely there in the 360° virtual tour industry. There's mainly proprietary software available in this field.
+I've already created a few videos on my Youtube channel about progress made (@360Creators) since 7th of July. I can share my tracked work hours (100+) with Kickstarter if needed.</p><h4 class="bold lh4" style="margin-bottom: 1.5rem;">Do you have the consent of owners of the works that were (or will be) used to produce the AI generated portion of your projects? Please explain.</h4><p class="border-left border-create-700 border-left5px pl3">The project uses third-party libraries and dependencies. All those licenses are permissive, so they don't impose copyleft obligations. I can provide a full overview of dependencies with licenses if needed.
+On Lovable pricing page FAQ (<span>https://lovable.dev/pricing</span>) it is said that:
+Who owns the projects and code?
+You do. You can collaborate at source or check out your changes using GitHub. Learn more.
+
+On Cursor pricing page (<span>https://cursor.com/pricing</span>) FAQ:
+Who owns the code generated in Cursor?
+You! Regardless of whether you use the free, pro or business version of Cursor, all generated code is yours and free to be used however you like, including commercially.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The project will be publicly available on a Github or Gitlab page with version control. Each version is saved there publicly. If for whatever reason I would quit on 360Crafter and stop managing the cloudversion of my product, there's options to selfhost the application.
+Beside that even people using the cloudversion, can connect their own s3 storage so that 360Crafter doesn't save projectdata and exportdata into their own cloud. If the 360Crafter application server would go down, people still have access to their own data who use their own s3 storage and can reconnect it with hosting the application on their own server with the publicly available source code if needed.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">I know this question is more for creatives that use kickstarter to create a fysical product, but I still want to answer this question as a software developer. My "materials and packaging" are mainly the code dependencies which are open source and permissive licenses like Three.js being one of them. My intent is to have a percentage of my income donated to the maintainers of these dependencies, so that they can keep working on it and pay their bills.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">I'm planning to host the 360Crafter application using a Hetzner server which have written this on sustainability:
+https://www.hetzner.com/unternehmen/nachhaltigkeit/</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">I've given it a lot of thought whether I should go for an open-source license myself, whether that should be permissive or copyleft. And whether that is sustainable. There's a lot of debate whether giving away everything completely for free and letting anyone copy your code and reselling that is fair or not. Fair-Code is not open-source according to OSI (https://opensource.org/), but I think it does solve the commercial aspect to have commercial limitations on using the source code while following a lot of open-source values such as providing privacy with the ability to host it where people want to, insights in the code and removing artificial limitations in order to sell something. Combining the technicalities with the legal aspects to have a middle ground for financial success while still being very open about the whole thing.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

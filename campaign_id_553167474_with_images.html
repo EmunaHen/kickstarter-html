@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Incarnify: an AI Home Camera like ChatGPT, But with Eyes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/345/431/6663b05a9ecf3c2c4e379911cf86d3e7_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754636131&width=560&sig=GvvlBUek0X4ZkyrjJgqxS8GJkWzGw4lqfCH4kTWycUk%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Incarnify: an AI Home Camera like ChatGPT, But with Eyes</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Your home camera can now Talk, Think, and Understand what it sees — in words and voice.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 9,997</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50126328">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/126/328/0b41c3deb1b8e2fd4b97d18acd75b5a1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753159223&amp;width=680&amp;sig=rOiKgPv1LOam0kGec4BfNMR5MbxzrxjmYBqHHlcGt8M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114139">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/139/d968c6dca78c40d9d8aa4999df2718a4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753088588&amp;width=680&amp;sig=aETKoCNkJwm8B2woxsvxe6WCiPt%2B%2Bl%2Fa9kiz5hiw2z8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114130">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/130/7a81632476d2ae932a803f74c2ec1c90_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753088531&amp;width=680&amp;sig=fHYZCeEDvITBmBqW7GABt8xhE0I0W5jvseui54Agd7A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114138">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/138/58045ec4b7496bf20c3dbe9c20fdc1a8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753088582&amp;width=680&amp;sig=3W%2B%2BwsbO126imtWajYjuddP%2BZJnjmXAmcxaNGMIGY%2FU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50097140">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/097/140/e0dbcc45229b05cd6f6a983af3c7c3f8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752917962&amp;width=680&amp;sig=IFxfxmZSzxvJcT6Xmu73hEi91Tp3B0BGPguergfi3Us%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49696343">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Your-home-cam-sucks-">Your home cam sucks.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/696/343/230f2a2a90ebfef6bccae59d72130b0d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750086058&amp;width=680&amp;sig=vSML4TbUNetHfq1QHg0FdfWFbjgoexrTGpbJ0O%2FQcCI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057557">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/557/ce994a2c3b2258fb9da553d71b4b38b5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648721&amp;width=680&amp;sig=QEbk3luMk%2BjipGp23maATM7v39JQlFwpMXvk7y4HneY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169668">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/668/3f488c6cfbb307316e7b0d709ac74364_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753434326&amp;width=680&amp;sig=NgHl73YW38hinvEYLCWuT8iTm%2FVjB6slu9vshpvTWYg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057562">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Introducing-Incarnify-">Introducing Incarnify.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/562/ff1678f701acccbb0128496747556a06_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648730&amp;width=680&amp;sig=Kyw3gcAiNmVQPlhKhLTTHi9YGzxm2n7CAXDtwcDtjiw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057563">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/563/13087e841f577ba95ca828d47f538893_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648733&amp;width=680&amp;sig=oiWF%2FfFuhsCH4be8pszO9OxggQ12Lrrm7lH8%2FQ8zdmU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49647940">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/647/940/b12d4d66c9ae6d7ae52d59633593f7d3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749715538&amp;width=680&amp;sig=Y4Qa4Vra4dnhZeV9Xhx7Knm60Zso%2FNMc7eHkMdgz9i8%3D" src="https://i.kickstarter.com/assets/049/647/940/b12d4d66c9ae6d7ae52d59633593f7d3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749715538&amp;width=680&amp;sig=Y4Qa4Vra4dnhZeV9Xhx7Knm60Zso%2FNMc7eHkMdgz9i8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169301">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/301/51b9114e012ba6fb99ef7e46ecd532a3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753432009&amp;width=680&amp;sig=uWaK6De5Hc4dvNJYo1Hi44F8ZJQ5EgA9LE6jW5teeYo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095511">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/095/511/01530edabddb094128f1ae2fccf19bee_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752896367&amp;width=680&amp;sig=rnZiweTJ6RvUJHVsu8KysW5wi4iLooi16hiL7YcpQRc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057565">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/565/151c24e15991326d0a45b84c506920f9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648742&amp;width=680&amp;sig=U%2FQkbjNwIaG7lpeAIIpEblZ%2B%2BMlh25oUJtirMEQR5Fs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057572">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/572/78307295d58b5e648b76af6d9ac61a4a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648755&amp;width=680&amp;sig=O3MLOQIa%2BK3R9msSI8kEGWo0rOZj%2Fi8bA3LgDOD%2FDeY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057573">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/573/2b6af32b2bba355e9c666895fd27b752_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648769&amp;width=680&amp;sig=2ajaMgHbvNogu59y%2BeKnzwXR8qCioTapeDth0KTrhq4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49707043">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Media-Press-reports-">Media &amp; Press reports.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/707/043/248b7afc1d1d449a05823e28300dc534_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750146201&amp;width=680&amp;sig=qqmbX5yngfm9CE7U7xRIMPbPiEDKHH19uvoZNcZl7nQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057595">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/595/88f2e7b40beec367275398568560f180_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648863&amp;width=680&amp;sig=XLb%2Be1UO6jfBBgskGsdWOZoXfdeDMAwayyWrCd5ag2s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49690305">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/690/305/aa79327624c970135389e4f677ff2f6f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750050253&amp;width=680&amp;sig=x3sGqnfEuMsk63NNXIxzAzuk4JPTngY4WJUiGfnQih8%3D" src="https://i.kickstarter.com/assets/049/690/305/aa79327624c970135389e4f677ff2f6f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750050253&amp;width=680&amp;sig=x3sGqnfEuMsk63NNXIxzAzuk4JPTngY4WJUiGfnQih8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057622">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:AI-features-intro-">AI features intro.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/622/fabbd88f6a6ef87988a553bf39aef34b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649057&amp;width=680&amp;sig=ceMyXFHP0wwjHk6XyWX16f%2Bo0WhVVriP3%2Fy7134aYy0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057586">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/586/6df2d8c1480d5f55b68220e1f24fd86e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648821&amp;width=680&amp;sig=JGu4yrvIJSDPHDWQX1Vkh8R4zN4EsspMIm63%2BW88YYU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057587">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/587/e68a89edd915c96e7bd390bba2b112d0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648826&amp;width=680&amp;sig=xJA67T6byy3yxbcEs%2BBPNs2df3QfN4aOzPjieO5dcHg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49696362">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Every-detail-rethought-">Every detail, rethought.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/696/362/037a5cc0abd641184b757ba43ef24cee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750086130&amp;width=680&amp;sig=y06a1vf8EcdM5w8Bm5Ohxl2y0lBuo%2FWk89HaHv7u5kA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057593">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/593/cad1c5d9db9dce792ba4ef5fbd585f5d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648852&amp;width=680&amp;sig=%2BywylaeZCjU%2FQkqLw2Tacosk2imH1H%2FhS17jKpAz670%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057624">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:AI-behind-Incarnify-">AI behind Incarnify.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/624/23136b0a22f4802a58615c12fa5232b1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649073&amp;width=680&amp;sig=CKIg9CKq864WTNU1uNSRtMegvZ0KhZrb0rfMJGShrQk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095514">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/095/514/65da1d58da0a3d79bfdbd6321baa5941_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752896410&amp;width=680&amp;sig=q%2BM9nJBqw6f7AJuadMKnmbdyWkvBZZ6y6ykNzLZXt3s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095515">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/095/515/cef2cadbe7e1dbefaf6aa6331c63a2a2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752896414&amp;width=680&amp;sig=fuNI90zSlOyMyZ42UIO34U1R5uHRI%2BPL9%2FI4neZ8ecw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095517">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/095/517/86b85314d891f4c5f4449c16b6b80e05_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752896418&amp;width=680&amp;sig=HbmgOphjwCJV8dzm%2BaJLbnwwPqv6YeVT3NIKGY%2B0zs0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095518">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/095/518/df5ea93bf2f8056c42bc7210eac018c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752896425&amp;width=680&amp;sig=NGPiw0YKYCnxbkIMD6s%2FsEyczaZoHyaM36ItqQ5N1b8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057608">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:AI-features-details-">AI features details.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/608/5ea3b06acdaa68382e126ac6b5a2a5f0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752648931&amp;width=680&amp;sig=w5nb1W14GY8sG4S%2Br%2FZSIpIrt4eqRK4Ckn11vCc1FpA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49671961">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/671/961/dde4c1d246cd696971513a705a1c36f7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749873308&amp;width=680&amp;sig=eEzNfxpbDTs9KqPW8OEqexiKhb29Cq4%2BCS0rLUwvqOs%3D" src="https://i.kickstarter.com/assets/049/671/961/dde4c1d246cd696971513a705a1c36f7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749873308&amp;width=680&amp;sig=eEzNfxpbDTs9KqPW8OEqexiKhb29Cq4%2BCS0rLUwvqOs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095519">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/095/519/10cc4a35d4c61498f7e828b11964f3f2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752896441&amp;width=680&amp;sig=cCajKs0BN3XV8Bkft3i12NJGA3yvgvw%2FPq6nvTwPiQ4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49671945">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/671/945/7b85ffce6eb94eb9488e8ffffabaf879_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749873130&amp;width=680&amp;sig=OPnjLK%2FSyuSevRiGyXppY3Xa%2B8wymuW9UGiUlk3TYic%3D" src="https://i.kickstarter.com/assets/049/671/945/7b85ffce6eb94eb9488e8ffffabaf879_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749873130&amp;width=680&amp;sig=OPnjLK%2FSyuSevRiGyXppY3Xa%2B8wymuW9UGiUlk3TYic%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057636">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/636/ca987d4865fa325e83ea9353794451c4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649130&amp;width=680&amp;sig=DTBmklvzn56Xj39A22xX6JV7FiJYlCmpP2zcQ4c5qvU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49672034">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/672/034/73fffbcab633f18b2fea7af5904ee29a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749874151&amp;width=680&amp;sig=HPDeqpXsWWwChg1VxYbrOztzD3HKx64ll%2B1AY8otgpY%3D" src="https://i.kickstarter.com/assets/049/672/034/73fffbcab633f18b2fea7af5904ee29a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749874151&amp;width=680&amp;sig=HPDeqpXsWWwChg1VxYbrOztzD3HKx64ll%2B1AY8otgpY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095520">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/095/520/d918f1b6b5f9342b4070347961f647a5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752896452&amp;width=680&amp;sig=nBTlmgd1S8YcB4PYWWCSJW1kAEkhfnAqzpPEx856jJw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057644">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/644/746e2cf72e312236a5951d633dc57f9d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649151&amp;width=680&amp;sig=kKGNVYlOluRdBOHB4YVxoSIxL355ghMB1AQMdRms1X8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095521">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/095/521/df8d4954cc204cc812f40671b785c877_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752896458&amp;width=680&amp;sig=ia44CtFh9ZJqgvggvnGXNFMRPlaqRy6N8tFwAYvvQ%2F8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057645">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Core-AI-feature-AI-Command-">Core AI feature — AI Command.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/645/7a6161dfa4cc328deda445c7bd21c66c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649155&amp;width=680&amp;sig=b7CJ5X54otPSxGOMR9p99Tpfdkmgnc8OyE9Kavb0fWc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49648151">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/648/151/689c59cfdc27e099e6b86a9141a09cd3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749716898&amp;width=680&amp;sig=vscgqDBzSZl0xQDZI8mLp%2BS7IWQnLOegkOyNabtwYeM%3D" src="https://i.kickstarter.com/assets/049/648/151/689c59cfdc27e099e6b86a9141a09cd3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749716898&amp;width=680&amp;sig=vscgqDBzSZl0xQDZI8mLp%2BS7IWQnLOegkOyNabtwYeM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057647">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/647/8a09fd5b4a3d94401c44b40b1cf06313_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649162&amp;width=680&amp;sig=IpZq60yJH5BJWyxHB9bFT6k8zBKO0cy7JOZ4paBJeFA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057648">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/648/2e3a62d6ade810f21c47ecdf538d420d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649167&amp;width=680&amp;sig=VrL0pSlGIsr2WstvqfpAf14sI4DBAxADPJ%2Bi%2FWnkz78%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057653">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/653/db70e4e966fc37d3d125805c6d583c73_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649186&amp;width=680&amp;sig=SUFHAuLx%2BXU4lJpJpfgyIISG2NijRyzNciXH%2BEyHNjU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057652">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/652/01b25a3fed02c99bbec09876963465a0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649184&amp;width=680&amp;sig=ib4IP4%2FV6aINbBWVXoVFjppx6EKMkQTfgI6EG8wOG%2BE%3D"/>
+</figure>
+</div>
+<span>AI Command playground.</span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057655">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Drop-a-comment-Win-">Drop a comment &amp; Win!</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/655/67f50acff7f850e6cd3ac6987b7b33ef_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649199&amp;width=680&amp;sig=6HRjov5U0npx3wFxVp2f6pUW2li%2BanrqgGJJJNtMDxE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49705107">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/705/107/d3ba8fb0b19cb7627111ca8a8516fe15_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750131883&amp;width=680&amp;sig=RUaPKafNs0IpCBny%2FlJ3XdqK%2FZA2F1mW5v2T5kgSS%2Fc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49672042">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/672/042/7ec7855c1e23c51ebb333802c2d1e745_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749874286&amp;width=680&amp;sig=ezshN4HEGTGzFaQmRTKEJ6aiRDyJTi%2FboY0gPUtM2RA%3D" src="https://i.kickstarter.com/assets/049/672/042/7ec7855c1e23c51ebb333802c2d1e745_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749874286&amp;width=680&amp;sig=ezshN4HEGTGzFaQmRTKEJ6aiRDyJTi%2FboY0gPUtM2RA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057658">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/658/8e596cbdfef80445016013562ac03af1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649200&amp;width=680&amp;sig=Nw0G%2BDT5m4s2mg7BF0volmC2iht1eYY%2Fh6jiQzv7u%2FA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057659">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Inclusive-design-Technology-that-cares-">Inclusive design. Technology that cares.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/659/0eb08020b78b453ec4b5516592450ea7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649207&amp;width=680&amp;sig=%2B7mGQ2umca5oL5y1VZub0IK9slnqejIOdl9OhQLKU7g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057660">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/660/e6193402138cd1f79187ea819e6ff019_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649212&amp;width=680&amp;sig=jwXt47yGhg%2BB4qAUdqDcFP6%2F47%2BFzT%2BxDT2JTU8tcc8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057662">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/662/197d129b2aa240522bfa1a337057e5fa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649219&amp;width=680&amp;sig=o%2F7bS%2Bpc0wZlNsLW%2F9hI1G3vDEJhWdkboOLM4u09FNc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057664">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/664/b0e3818912aa0eb5206cc8c106f76a84_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649230&amp;width=680&amp;sig=0tvetT6JLEStNCUO7WgBroaJovqNmUPfHctFbkBE9r8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057665">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/665/f3de2d671c5ac85cb0e6509937655792_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649232&amp;width=680&amp;sig=IYCNg4yYGLQ3FM26%2B5LyHGXTpJ7feLhpgbAzoE0%2FW7E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49696410">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/696/410/d3ba8fb0b19cb7627111ca8a8516fe15_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750086277&amp;width=680&amp;sig=x3%2BePSYotpeot%2FQhiQ7%2FbR44uqnX0tS78zmk5BYPWG0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057667">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:More-essential-features-">More essential features.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/667/8ad2f60dfd0774887a0ce77651ec94fe_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649238&amp;width=680&amp;sig=s7Vpnz8mCjqB5lhGiu4j%2BfaE0GvhrrCaW0AEzu87mzM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057670">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/670/50c4df3f2b0dca2975412817d9576be8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649251&amp;width=680&amp;sig=D8g7WD2eBaPJ3DB6cOuHx70MoZwJ%2Bw4KdiF7b6iCTxc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057673">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/673/02420a82cc0e89c2295d0afcd6c21827_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649255&amp;width=680&amp;sig=974LMdFl9pOhOAEXW57W6K%2Ba9WaQWkNWlYfYTgWstuo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057672">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/672/d2e3a5ef065b8ac3856d05a50c357363_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649254&amp;width=680&amp;sig=w0qa7JF6n7%2B9YmZ0enYi%2Fr%2FA464BesmTITFp4Ne5ULA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057674">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Place-it-anywhere-">Place it anywhere.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/674/c87d15f73a707fb7bcaacb8975b7e391_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649259&amp;width=680&amp;sig=H9ZywY7qaP9muHqMfJleKFYrZLZfRjKxRQJoZ1JgaE8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057676">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/676/2b7759cd6c21c9f5358c02e525dcc640_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649269&amp;width=680&amp;sig=Ngg8jQQ0Y07bXS4QLR%2BuvKrTyBHlxJhM1AzF7%2BZTNXI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49657701">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/657/701/0ce772ef8d32597bf5e2d4380e44b0cf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749773093&amp;width=680&amp;sig=nykL0qXhibQXbKIWmFN%2F1bYEuaxZNbwy49%2FJ282zGi4%3D" src="https://i.kickstarter.com/assets/049/657/701/0ce772ef8d32597bf5e2d4380e44b0cf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749773093&amp;width=680&amp;sig=nykL0qXhibQXbKIWmFN%2F1bYEuaxZNbwy49%2FJ282zGi4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057677">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/677/db719e357bfa3e6940253a75e971482b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649271&amp;width=680&amp;sig=CvWNIaOhlQ1CappvViRcFloYDv8sBraR5ARaeEy%2FP70%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057680">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/680/45bc8ba688e709d64258304102670e13_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649284&amp;width=680&amp;sig=FudpcB4SxO7OdN9sYZ7iyBAqYpjd6R6%2BOieuxikLoOk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057681">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/681/ad60249ee01f781c6a4db002fbe0c260_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649286&amp;width=680&amp;sig=itplHDLTRwC0%2FGj3QU7uLCRGbe3h4JmzzHqKlKGRNZA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057682">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/682/4cd89465ba1ef2a57091496adf441183_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649286&amp;width=680&amp;sig=SWbDKDGivAlstoc412%2Fs6royGw%2FfPfX3SRbrBVUxWos%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057684">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/684/23f7159f4bc57d19c6f53436de301589_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649295&amp;width=680&amp;sig=qbo%2BpJjdTUwrg%2BHgK6Wm2qShWVV4ULLuDRWPPowgrh8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057685">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/685/08e788a03f33ffec65e5d65f0232309d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649297&amp;width=680&amp;sig=64vjphLOPzWrwHB8OOCLuUIi6ElFzsMv2QPuCKEvZXA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057686">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/686/a6f69f6dbe532d1009acb12c0aa7f4f0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649302&amp;width=680&amp;sig=TNH9U5vLTrPw0mZfusilwCNgw%2BuAP6wf2ubvWcNLemc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057697">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/697/d9e8497be0d1386795cc482dd60750c5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649331&amp;width=680&amp;sig=UVGphjN2L9y2PWzDxwyg2%2BMq7kxV7NsDVEjgVUI3%2FLI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057690">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/690/a575ce3cb15f1dd43c38d87c82f7803d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649314&amp;width=680&amp;sig=5gss4Ov1pjMLZheMecs9XeoMVzozrA8VOu2tva1tp3E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49696428">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/696/428/d3ba8fb0b19cb7627111ca8a8516fe15_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750086358&amp;width=680&amp;sig=8PPb2%2FWxrFxncadKKPKJ1TtmvMRPtAu5lPDi%2B5GC8qQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057696">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Privacy-data-security-policy-">Privacy &amp; data security policy.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/696/2d817ed4ea24a9adc542ad3e1da47c36_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649327&amp;width=680&amp;sig=U3%2BjEVpDAIr48nqOt7zTm%2F0slMxwkS13ll8Z052Mcew%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057695">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/695/01e53545029ca456ece8e359b6ae4d06_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649326&amp;width=680&amp;sig=pWa1LZHFOhlmsdyFQUYieeZI208YYQ5nMafN8Y8%2FO%2BE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057699">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/699/37b6eff42d6f6fb626f4258baadf86be_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649334&amp;width=680&amp;sig=F4IAo7YP1G7RwXQ0vbKvQzlGR34ononnZW%2ButKmUZOA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057700">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/700/deab687d41f0535fe815d22b2ff9919b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649338&amp;width=680&amp;sig=pyxeB2qDTGy5A9o8ucCwmWqYuu2mtFN0cuPF7aVVTOo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057709">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Comparison-">Comparison.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/709/541f9c2e93a7e1fd86b0ea8b7b122895_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649357&amp;width=680&amp;sig=zfr2Iyh8srQZV89HSFd%2Fu4IRzBf4BIZPXxVNR%2FpJlW8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50167451">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/167/451/95ee7ed762c49bb92cfcd4910001c553_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753416781&amp;width=680&amp;sig=wi4fSyKiUGyhcA6f%2FGIS2vKVzP%2FPgCYPfYxXn%2FzqTpw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50059119">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/119/2f4a29adbf253659b41f9116e27a800c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752658631&amp;width=680&amp;sig=TU2wREbQjejWQpO6IEe%2F9CtdCfXomdCJf31hTPTYNjc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095540">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/095/540/5e6b90cdab3719331ba03948897f5dcb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752896771&amp;width=680&amp;sig=2gy4GQGMV81T9pbxa6D%2FAaylA%2FI4Tq7dEIhSEh88T%2Bg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057714">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards-">Rewards.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/714/9f41e1f5c4b2ce0ea16a886a2cdf80d7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649387&amp;width=680&amp;sig=kFQVroa6x936nhXg9Gxd4NLk7kiAnFxHgCgBehgJieY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50095535">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/095/535/28dfd89f85bc9351d872e34b8b8f7fa2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752896731&amp;width=680&amp;sig=zuhrnRjlO6W9Yi%2B3i7poDovoamoQF9hHOfT%2BfroMkbo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057716">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Subscription-plans-">Subscription plans.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/716/71b3f6330e1b537d1aee7f28811337b4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649413&amp;width=680&amp;sig=8i3pJncxjg8LCTl2qhELgxDSntmXG9Cc%2BgNlQEB6KxI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057720">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/720/54864c151a89b1df53351c251a7bfe46_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649424&amp;width=680&amp;sig=7sHFnDbC8QuxHWIlU%2BvhwHzHn%2BFYkGX8qxvEcdRBwCA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057721">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-ons-">Add-ons.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/721/e0ee243184494687b366453bc8290259_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649428&amp;width=680&amp;sig=ClXMjI3x95JRKYr%2FSnG01oySIzRkD9h2ikUuYL2rSfo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057722">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/722/20c26f2d6aab796e124df905ef1744fa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649440&amp;width=680&amp;sig=c4P4f%2FwT2mSXvBIK%2F%2BiPlQBsBOl82JukaUtrhNfI7EM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057725">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-goals-">Stretch goals.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/725/c2654d018730d547a70d5f98fe3129d7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649444&amp;width=680&amp;sig=vZZ7PInnrZRDyEes%2FXrgav25qTg29N%2FDMhHqVs0XTS0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057726">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/726/ab680ea945c279415e2fb4477ade2f6d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649452&amp;width=680&amp;sig=0UfTdv9nbhTOru4djJf9VRFZdqzEK2gQPCESeuHvxD8%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057732">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-box-">What's in the box.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/732/b0d169d4b198a9792cfd6b73a5b3180a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649496&amp;width=680&amp;sig=YpAF2a4GNH4YwMBHQMpms0Vg6aDyiwEz%2F%2Fbq%2FYYCeKk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057733">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/733/4ccedc079d44ad6fe2c27e07f1b50775_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649502&amp;width=680&amp;sig=BDMRSj8NlhI9l2FneIRe5xveYOXn2ODMkx8l%2B38fQVA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057737">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-">Shipping.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/737/ba2a75f5dc0c5146ea0e939b7a0bfb39_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649512&amp;width=680&amp;sig=B1FRPnyaWINLvvcMFu4y2a8KyQsO%2BqSuHblNCCaFuRo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057738">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/738/9573624c36a7a3d3b097e3deb673fc64_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649519&amp;width=680&amp;sig=QCh2gPTQEbAulKmgotE%2BZb0QsEEbel%2Fdk%2FZYoo2qJ0A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057739">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:After-Sales-Policy-">After Sales Policy.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/739/30372b1dd2e42feb0950881eb4766791_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649527&amp;width=680&amp;sig=nBGful0ikRcRcQhU7aRyfInl5f%2Bod9qnynhJMhBpyU0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057740">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/740/9bd23143c5a0c604bc665c65834068c5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649531&amp;width=680&amp;sig=25rI53Y9d3F2mZhtfVZmZv3SlaT%2FJnbZP%2FMg4B39QaI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057741">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications-">Specifications.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/741/71b3819d92b5642edfe152a32dd95dcc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649537&amp;width=680&amp;sig=ZNNKu043YLOeHTrR9MsvsxvgmWaDAh2sy9G2CNcqWVc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49672146">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/672/146/76b5fe2f979ced739cb759f6f302dfaf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749875098&amp;width=680&amp;sig=5ikUZTE8JXBLJpvilWlcXt%2FMawm2GpBqGvjg8bbe3T4%3D" src="https://i.kickstarter.com/assets/049/672/146/76b5fe2f979ced739cb759f6f302dfaf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749875098&amp;width=680&amp;sig=5ikUZTE8JXBLJpvilWlcXt%2FMawm2GpBqGvjg8bbe3T4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057743">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/743/3a6802efa74c202aea2f963bbcbcd9d9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649545&amp;width=680&amp;sig=zTjOcB4rn52O2vZ3mW%2B%2B5EHfdjas9%2FSaoQNmRGIzK9c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50103066">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:A-word-from-founder-">A word from founder.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/103/066/e92d6d274d701f74ba9b703e9a17ba7e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752983542&amp;width=680&amp;sig=QSGz9ozXskTM2U50vfC7qXDYLcmfD38mBurAfvS7MZc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057744">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-team-intro-">Our team intro.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/744/6349501094d2425d39adc8e45afa8ccf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649550&amp;width=680&amp;sig=yxhx%2BE%2FjjCZjKSTfyfO%2BgbbFrDnFOHi4Dzfe7exvckg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128709">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/128/709/355dfd10919d72e6e42cdebb68fa1751_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174332&amp;width=680&amp;sig=vzkQ%2FAunF7hnHBlxlcrZLfGVDkQ0Ou8Sg61pR9uAQjc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057750">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Project-timeline-">Project timeline.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/750/0feb5d99598737ec99cb51adb0bec7e0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649567&amp;width=680&amp;sig=rOmDqKkhd3aYtJWXOArvO%2FBYHQ4zEt%2FnIFCeiEiQB4I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057751">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/751/a67d69409ee2bbab18b9bd00a3e3a8dc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649575&amp;width=680&amp;sig=YE45sJ%2FA1hub3yVIsXu8nPyFU0r%2FMLw5eFS%2FzZljqO8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057754">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-our-design-">About our design.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/754/526a2ccddbb7911881923f0d7855dad9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649585&amp;width=680&amp;sig=CySZDMigl9w0ev%2FzuLqPs%2FxWIaPwjJ54LqWQ7yHSMTM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057757">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/757/b40efc36987dd1195814b66a94b2e758_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649596&amp;width=680&amp;sig=O6NVQAgM6OeOnsQ6hRrYwgSa7uaOTT5Y1l9nvGn6aZE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057758">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Trusted-manufacturing-partner-">Trusted manufacturing partner.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/758/7cc46c379302589019b2b9207040c0f8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649597&amp;width=680&amp;sig=QyDJBw%2Fabc7GfZHFJDewK2ldIY8MBW%2Bkfb%2FRvPNC11s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057759">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/759/4098ae31308ca438a425eb6a0a80f9a8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649601&amp;width=680&amp;sig=QwevMc0gOLszRDoNvtSkvyCdgOe022kVwSUcGFQfUJo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057762">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/762/31f1be2d58c6160e2b183ca39d9b8442_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649616&amp;width=680&amp;sig=1imw1ZvQMBdSQDhKcF1GZ4WrPC6foAck7J5yNHKtoOQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50057763">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Thank-you-for-spreading-the-word-D">Thank you for spreading the word : D</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/057/763/6df1d436d51ce5a8d92c1371c8005b00_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752649616&amp;width=680&amp;sig=D3upLGpkcVJnUdJ98v%2FWQDiRHJiH5Yr9yeuDnU9y0vs%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49790946">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/790/946/2c96895c4b91aa1181ba5c5ad8e34fb4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750737448&amp;width=680&amp;sig=t8T8sIttQYoO40tot5iqYG1izCCn6NuoIrJnKjAnerM%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><p><span>This project is boosted by BackerCrew</span></p><span></span><p><span>This project is featured on HugeBackers, a community of over 169,000+ Backers that has raised creators over $100MM to date.</span></p><span></span><p><span>This project is promoted by New Backer, a community of over 400,000+ members that has raised creators over $100MM to date.</span></p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">1. Manufacturing and Supply Chain
+We have partnered with experienced manufacturers to ensure smooth production. However, mass production can come with unforeseen challenges. To mitigate risks, we have backup suppliers and a structured production timeline.
+
+2. Product Development
+Our prototypes have been tested extensively, but minor refinements may still be needed. We are committed to keeping backers informed about any updates.
+
+3. Fulfillment and Logistics
+Global shipping and customs clearance may cause unexpected delays. We are working with reliable logistics providers and planning ahead to ensure timely delivery.
+
+4. Software and AI Optimization
+Our AI camera features cutting-edge visual processing. To ensure an evolving and optimized user experience, we will provide regular software updates and continuously improve AI capabilities.
+
+5. Regulatory Compliance
+We are in the process of obtaining necessary certifications such as FCC, CE, and RoHS. This ensures our product meets global safety and quality standards, though the process may take time.
+
+6. Tariff Policy Uncertainty
+Recent changes in global trade dynamics — especially around import regulations — have introduced some uncertainty in international pricing and logistics, particularly for U.S.-bound shipments. While our manufacturing is based in China, we’re actively monitoring developments and will adapt our fulfillment strategy if needed. We’re committed to delivering on time and at the best possible value for all backers, regardless of region.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18">My project seeks funding for AI technology.</h3><div class="flex flex-row"><svg aria-hidden="true" class="svg-icon__icon--check icon-20 fill-ksr-green-700 mr3 shrink0"><use xlink:href="#icon--check"></use></svg><p style="margin-bottom: 1.5rem;">For the database or source that I will use or will create, the consent of the persons whose works or information incorporated have been obtained.</p></div></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Weather Resistance: Designed to be waterproof and dustproof, making it suitable for both indoor and outdoor environments.
+Smart Optimization: Supports OTA (Over-the-Air) updates, continuously improving AI algorithms for better recognition accuracy and fewer false alarms.
+Energy-Efficient Hardware: Optimized for low power consumption, reducing energy usage and extending product lifespan.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Modular Design: The camera's key components (lens, motherboard, battery, etc.) are designed for easy disassembly, allowing for repairs or upgrades rather than full replacements.
+Recyclable Materials: The casing is made from recyclable plastic and aluminum, ensuring proper recycling at the end of the product’s lifecycle.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">Eco-Friendly Housing: Uses renewable plastics and recyclable aluminum, minimizing unnecessary coatings and decorations to reduce carbon emissions.
+Sustainable Packaging: Made from FSC-certified (Forest Stewardship Council) paper, using plastic-free fillers to ensure full biodegradability or recyclability.
+Reduced Harmful Substances: Our product complies with RoHS (Restriction of Hazardous Substances) regulations, eliminating hazardous materials like lead, cadmium, and mercury for safer manufacturing and usage.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">Green Energy Usage: Our manufacturing facilities partially rely on solar and wind energy, with a long-term goal to increase the proportion of renewable energy sources.
+Low-Emission Manufacturing: Production processes comply with ISO 14001 environmental management standards, optimizing energy consumption and reducing wastewater and air pollution.
+Non-Toxic Processing: Uses low-VOC (Volatile Organic Compounds) coating technology to minimize air pollution and create a safer work environment.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">Optimized Supply Chain: We use localized warehousing and distribution strategies to reduce emissions from long-distance shipping, while an intelligent logistics system minimizes empty transport space and increases efficiency.
+Low-Carbon Logistics: Partnering with logistics providers to support carbon-neutral transportation, including the use of electric or hybrid delivery vehicles.
+Minimalist Packaging: Reduces unnecessary packaging layers and optimizes size to lower carbon emissions during transportation, while ensuring product protection.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
