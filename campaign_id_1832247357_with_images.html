@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SALTGATOR: The 1st Desktop SoftGel Injection Molding Machine</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/133/436/3f4f391723a0b54937bd2a72ab8df98f_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1753199690&width=560&sig=ttXlczKc8u5q3TpY6K%2FPI8w07mVLDx8I5plnyUunei4%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>SALTGATOR: The 1st Desktop SoftGel Injection Molding Machine</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Rapid Soft Part Making | 10-Minute Ready | 3D-Printing Mold Support | For DIYers & Designers</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 15,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50147403">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/147/403/72c14706089a68808a826b6b73385074_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753283474&amp;width=680&amp;sig=%2Fy71a5Ke0v%2BOsk%2FXFMHbPW%2Bmg%2F2tiPTC36FPaE%2FXI48%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984412">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/412/12c0fad38df29f186e2c0930eec543d5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114453&amp;width=680&amp;sig=aQMDqbeKsahNeR4xpof97OHi27mwqxoavblqmA7NCVk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984419">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Journey-to-Reinvent-Desktop-Soft-Molding">Our Journey to Reinvent Desktop Soft Molding</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/419/74ac1f9aac635ced3188f3b59bc47f67_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114525&amp;width=680&amp;sig=BPVsT4FzVFpyKSQrDP1L10ZlPsLTA3%2FfJP2Mk8RUCTc%3D"/>
+</figure>
+</div>
+<p>For every maker who’s ever thought: 'There has to be a better way.'</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984422">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/422/2739cd667eeafdabc41a491e2fb02a1c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114563&amp;width=680&amp;sig=L50ct7902T8xcSiIhY0Hd0E97uAjSH05%2BzPVJEmlf0o%3D"/>
+</figure>
+</div>
+<p>Because the old way was built for factories—not for people like us.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984428">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/428/ec6625fed1abbed963f623c165bc03ca_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114592&amp;width=680&amp;sig=vBdCUagAMT2atU6K0jn6a3SjDQEd87zgWErBdnAnW84%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984431">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/431/6a7e70ffdb6bd94f89e437a51f8fddb2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114622&amp;width=680&amp;sig=pKhQSUycdl9NDN%2BdKhZhppU%2FLaB0Lof%2FswZ9793DC08%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984432">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/432/6b0fbd12702cb395238483481b5f0555_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114634&amp;width=680&amp;sig=adf2NQGSPs11PmqtLhMV6U6GGLzL%2FXXQkvzcvMyHqZc%3D"/>
+</figure>
+</div>
+<p>We didn’t just shrink the machine—we reimagined the whole experience. SALTGATOR puts the power back where it belongs: on your desk, in your hands.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984435">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/435/3b0e7f1fab75760d16c83e813d1b2762_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114646&amp;width=680&amp;sig=HwX97%2FUg%2BlVnNl693KQwgjMsPty8%2FUl7THqkBdDFDho%3D"/>
+</figure>
+</div>
+<p>More materials. More molds. More freedom—all from your desktop.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984442">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/442/5e4507e8a6103874c855993512da67a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114671&amp;width=680&amp;sig=Pr0GShAWhIlkj4tplYUgVoG1bLiwp66bjKwEEkP9tXI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984445">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/984/445/cc6f6f3df901380e159ccf17aae97e2d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114681&amp;width=680&amp;sig=sZ6p3xqXE893aH%2BOl%2Bql9jTFPTTQxINiCny17m3wbfk%3D" src="https://i.kickstarter.com/assets/049/984/445/cc6f6f3df901380e159ccf17aae97e2d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114681&amp;width=680&amp;sig=sZ6p3xqXE893aH%2BOl%2Bql9jTFPTTQxINiCny17m3wbfk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49997211">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/997/211/a011eefb0d5ec90f54849b8d650cb8c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752202512&amp;width=680&amp;sig=MQGo0FSu8d6Uan%2BFu8i5iAEfRg%2F%2Foe26FapLOFZwx%2FE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984449">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/449/77a9518743a9789db92b20d2c0a7ab0b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752114700&amp;width=680&amp;sig=FZ%2F8LxIhQonNB4ggN6L%2BHbienD4%2BtGMt3DquANyIUcM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984650">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-Can-You-Make-With-SALTGATOR-">What Can You Make With SALTGATOR?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/650/aa4259986b37fc74cb586aec6630c2f5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116323&amp;width=680&amp;sig=SbXcFCNWYtt6RRpctSTrJErZ708O8viavRJxuS5o8FE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984651">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/651/3bab9678b921b813b40f6d7b2bcf101d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116325&amp;width=680&amp;sig=pa6s4MHNB5Rzs%2BfpY9xWUcKZQYWNLahfeDLtrwhUYLg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984658">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Who-s-SALTGATOR-Really-For-">Who's SALTGATOR Really For?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/658/b7a09788968109c142ffc56b8421f83e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116371&amp;width=680&amp;sig=KsYxyUfQoyVaFQrvPrOakJMIZSEX3vmXnGhZNanPkCM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984659">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/659/53c56054ecb15bf4d76ddbf93fc74276_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116372&amp;width=680&amp;sig=l%2Fr2JZxQz1cWwvRW2k9pNNhaNWhjxxsPZKZFheS%2FI04%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987793">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Demo-Video">Demo Video</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/793/e7dcd6b01ae67079429e93b9ca3f33e9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752142581&amp;width=680&amp;sig=oIJ%2BRTen1OX9tf3nlh%2BRW7QbhKT%2F35FTU7VNN0GW1E8%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-How-It-Works"><span class="bold">🔧 How It Works</span></h4><p>We’ve prepared a quick demo video — come see how easy it is to make your own soft plastic baits with SALTGATOR!</p>
+<h4 class="page-anchor" id="h:-Reuse-Your-Leftovers"><span class="bold">♻️ Reuse Your Leftovers</span></h4><p>Interested in the recycling feature? Check out the video to see how leftover soft plastic can be reheated and reused again and again.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984662">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:As-Featured-In">As Featured In</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/662/bbfa5644f2c518bdb0711b7f3e48712b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116406&amp;width=680&amp;sig=lT3gASSTc2Ub9zNmZrIp5E4pdpQSCy9taxEOliLdWOY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50305613">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/305/613/3ce41757540f1a8c1fbbea5c4ff80704_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754407692&amp;width=680&amp;sig=Jjj8gG%2FuIob7KI6HfwsRYi5CIAECxG%2F1gmauzy3z%2BT8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987790">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Reviews-Are-In">Reviews Are In</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/790/151456612277e4e28dfd2c35d177ae79_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752142574&amp;width=680&amp;sig=m4XgoOGuejcI4p9RKJThvb6lWQbhvEyY0VoAJXz5bxo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50119060">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/119/060/3d06bd5e9f7ef015ae06a1062d091311_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753115871&amp;width=680&amp;sig=ZbDMTxv3c%2BjNu66ZxQvM3adY3lHmJLtE7T7DJCNmQYo%3D"/>
+</figure>
+</div>
+<p><span class="bold">@CatchEmAllFishing </span>didn’t just review SALTGATOR — he used it to craft his own soft plastic lures and took them straight to the water. The result? Real fish, real action, all DIY.  <span class="bold">Watch the full fishing journey below!🎣</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50349301">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/349/301/7dfef786a50661fc2a64f17e28a62a04_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754661374&amp;width=680&amp;sig=ll2mUMIpdfQ5lS6i0lmtICqfSZIxzaxSOfRwTCqaSCk%3D"/>
+</figure>
+</div>
+<p>At ICAST 2025, <span class="bold">@JoeOceanside</span> stopped by to check out SALTGATOR! Jump to <span class="bold">13:27</span> in his show-floor video for a quick look at our live demo from the world’s biggest fishing trade show. 🎣</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50119061">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/119/061/d2ec00799b385b2023a2908c71597aab_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753115872&amp;width=680&amp;sig=bY5%2Fan5LvcDvESGmq8JsNF0nTf%2BiUeMhzDdlbMej5UU%3D"/>
+</figure>
+</div>
+<p>Professional tech reviewer <span class="bold">@Samiluotech</span> puts SALTGATOR through its paces — from unboxing to molding his first soft plastic bait. A detailed, hands-on review that’s both informative and fun to watch. <span class="bold">Check out the full review now👇</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50119063">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/119/063/d35ee6df1639372116d66854ec197783_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753115873&amp;width=680&amp;sig=QaM85p6C%2FFSajYVRFJeWORGvt0h8Figl35NLO9fu%2Bec%3D"/>
+</figure>
+</div>
+<p>Hong Kong fishing creator<span class="bold"> @極限國度 </span>shows how he uses SALTGATOR to craft custom soft plastic lures — then heads out to see what bites. Local waters, personal style, and plenty of action.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984670">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Big-In-Function-Small-In-Space">Big In Function, Small In Space</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/670/4a0962eb473f83f1f8433cc658243815_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116459&amp;width=680&amp;sig=u6epTqbM9RQ01x1ZWhwJEhFLIhUnbtG3iO8UtIaWD3Y%3D"/>
+</figure>
+</div>
+<p>SALTGATOR packs full-scale soft molding into a compact, desktop-friendly form. Heat, stir, inject—it’s all built in, no extra gear required.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984671">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/671/cc2d0233081c00a77c017e2584c60479_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116465&amp;width=680&amp;sig=x1gMdDkacLExyRtvQh9YHFMa8q78c4SydCMxr5mG7HU%3D"/>
+</figure>
+</div>
+<p>Compact enough for your desk. Powerful enough for your ideas. That’s SALTGATOR.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984676">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Easy-Fast-Made-for-Everyday-Creators-">Easy. Fast. Made for Everyday Creators.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/676/13e4489d3f8ca5b748589498b69894c3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116504&amp;width=680&amp;sig=%2Fjg9gsgKTnjGEjoIQyhyyKmWd5q7UikIPYdWz%2FQ1Tv8%3D"/>
+</figure>
+</div>
+<p>Say goodbye to bulky machines, complicated setups, and long waits. With SALTGATOR, every idea gets molded fast—right from your desk, your studio, or even outdoors. It’s fast, fuss-free, and always ready to turn your ideas into reality – in an interesting way.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984680">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/680/4b3ddf1e03791d5065a251cfb7189edd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116539&amp;width=680&amp;sig=%2BXpeXKBX9kA4zsQwbYxET7bJlZQx4izZEzN%2F%2Fz19qjA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984682">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/682/2ce0d886ed46fd0794a1ce458b89492d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116567&amp;width=680&amp;sig=uAqeFnJJ9NUp05A55knE%2BY9y%2BGWrDgr4cFO%2FO%2Fw%2F%2F0w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984684">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/984/684/9ed67ec36ab8f0bb74f1b25afc87e1be_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116581&amp;width=680&amp;sig=K%2BJP%2BBD4XIT7xyv34exzbynZ9tgMKVttSZ6aqvliiLg%3D" src="https://i.kickstarter.com/assets/049/984/684/9ed67ec36ab8f0bb74f1b25afc87e1be_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116581&amp;width=680&amp;sig=K%2BJP%2BBD4XIT7xyv34exzbynZ9tgMKVttSZ6aqvliiLg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984689">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/689/5934898ad94714a294682c64eca33d5f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116594&amp;width=680&amp;sig=IxXFrDVGesFBhQsuGJxyIWcl6d6uW9JpJsnR%2FzbVMzs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984687">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/687/2fb324fbe2e68ee0b984ba74699dbbc1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116585&amp;width=680&amp;sig=L487adlbfDCQBkCeqe429vuZLq7cYhT4kVML8ZrQwL4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984699">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/699/817c1befa8f8dec171f70a9e6ee62b91_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116610&amp;width=680&amp;sig=CQySXDYCtk8%2BVQH8r8HFdyyPUtkSQUnCeZRUp6TY7P4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984702">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/702/54a88ca4e6ea5ef20279260dee0039c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116622&amp;width=680&amp;sig=NgTGS1W4THiuVfHdyQ7ZBmO%2FUXekKCa9AFLuwTxS6RQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984713">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Built-Safe-So-You-Can-Create-Fearlessly-">Built Safe. So You Can Create Fearlessly.</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/713/43c4d50e1a11de146f477bf506402713_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116657&amp;width=680&amp;sig=6KfQCpKeQ4d6jBau8kmVSFWTUWv10ZLXfGvjuDhMByY%3D"/>
+</figure>
+</div>
+<p>From material selection to structural design, your safety comes first—ALWAYS.</p><p>SALTGATOR uses sealed construction and eco-safe formulas to eliminate fumes, burns, and other common hazards. Every step is designed to give you peace of mind while you create.</p><div class="HcOXKn c9GqVL QxJLC3 lq2cno YQcXTT comp-maljlotj wixui-rich-text">
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984723">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/723/f218162a4061e6155110589b7d07923a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116700&amp;width=680&amp;sig=m%2BOrm95ggPN%2FKVLCBSPUzLj%2BUcJWAc5RKjICuJ3RPCc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984727">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Create-What-You-Want-How-You-Want">Create What You Want, How You Want</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/727/1304b66fd51b03d3cfb0f30e2802ec22_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116732&amp;width=680&amp;sig=nLZKqVlytYPta1uLioim70FqxqC5NFUfBvDRRqno7UA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984731">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/731/cf6baf19321d443aa4b5b9dc49a762ef_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116785&amp;width=680&amp;sig=r8iHGaDgzQdtAGqk4EhSHUyIFxWe2VJl32zufgnGCgg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984744">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/744/8602c3d2b87243f14acb7893534c3e12_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752116871&amp;width=680&amp;sig=3DJLMkqjP2ncsY0YfJ5dHADfBbFr0F7RQZKQmH%2FSzhc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984782">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:We-Give-You-Molds-Videos-Confidence">We Give You Molds, Videos &amp; Confidence</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/782/1ec4d632fd7fb9d3c404e6d90e2c1876_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117045&amp;width=680&amp;sig=a0w0NCT1Hui8nNV5AgReh8dFU1ZRyZ7zwqtB32nLybQ%3D"/>
+</figure>
+</div>
+<p>No clue where to start? We’ve made it foolproof.</p>
+<p>SALTGATOR comes with a preset mold library and easy-to-follow video guides, so even if you’ve never molded anything before, you’ll be up and running in 30 minutes. </p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984785">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/785/29007b8128575f80a47d51c238619521_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117060&amp;width=680&amp;sig=DYw7obPqw8lVb1DRTJAjJLYZz4Dg63zn7DQ2MJ8BcgY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984790">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/790/b197159a97860fa2ae0fee093fcc9969_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117089&amp;width=680&amp;sig=dz8yliJYdYuz2g2vAVQ%2BbT1soS%2FMNt6%2FTIolbb%2Fnw7I%3D"/>
+</figure>
+</div>
+<p>Molding isn’t just one shape, one color, one idea. With SALTGATOR, you can go further, mix it up, and get creative with pro-level techniques—all from your desk.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984794">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/984/794/db4fb43d1c42a43abbe1448ca7af3027_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117103&amp;width=680&amp;sig=UT%2FzF4AOFt%2BslhQ5SlGXYVzNAmUtuUhDBsEAzQdQUYI%3D" src="https://i.kickstarter.com/assets/049/984/794/db4fb43d1c42a43abbe1448ca7af3027_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117103&amp;width=680&amp;sig=UT%2FzF4AOFt%2BslhQ5SlGXYVzNAmUtuUhDBsEAzQdQUYI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984798">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/798/0420dd3c02076d1789957affaeba5bc5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117111&amp;width=680&amp;sig=%2FMm48vaKXcnRaSnxVM5jtUS2YsGnc8cT4C%2Bz3Bhwgnw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984800">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/800/4e57ce3b5fe3d9e5dfefa081c93a303c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117117&amp;width=680&amp;sig=gcE9C%2BO3V0bDAWjgPoXsEJIDR%2FsEDwH6GApVbbYDR7E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984803">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-We-Stack-Up-Against-the-Competition">How We Stack Up Against the Competition</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/803/0d880b2c6df86e522c084315a0b971fc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117133&amp;width=680&amp;sig=mHxLmL6xgp8vrmXTXltRUUrqjeNCDwetJBAahrs3Gzg%3D"/>
+</figure>
+</div>
+<p>With SALTGATOR, you’re not just getting a machine—you’re getting the fastest, safest, and most complete soft molding experience ever made for your desk.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984805">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/805/dd369ad0007d25f46081e6aed3355d4b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117139&amp;width=680&amp;sig=CZWz4da8c4LFBGB6DB4VInWGc9O75Vf0R9qCgaiMLKY%3D"/>
+</figure>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984813">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Tech-Specs">Tech Specs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/813/0c0a0a1b448241cdf07d119b7e72cb2e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117173&amp;width=680&amp;sig=rOzRuRwnRWigc1PTJsMpWtKQ9e64TDsUFPs0mtcc%2F7c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127581">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/581/386b78cbb0e917c6f516f9473d15a61e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753167590&amp;width=680&amp;sig=DD9oy%2F9iy9F9Ut8y8QlGJv0PIvg8cf6LEHCTz1onUYI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984823">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box-">What’s in the Box?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/823/e2c8736aa8f65e13f8a63350d455f3b6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117211&amp;width=680&amp;sig=VdxwTThWHM5Z6LfGgNETc6yuJ8MH8o90bdZiOo%2BbE1c%3D"/>
+</figure>
+</div>
+<p>Everything you need to start creating - straight out of the box.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127571">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/571/d4f846caee89b3890d4dd64010f0609f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753167545&amp;width=680&amp;sig=9QHpRP7L4D84dRwkptNbYve0vN%2BfkZqQ0eCS3iknyoo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984839">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/839/28973ce68ee10da318c17180b0dfae7c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117251&amp;width=680&amp;sig=mQ5L%2BcBCEUiukHqlQ5MWUUUaM5WfzOIws3GBw3VRM1s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50226195">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/226/195/42c5c3ec6d43f7c0503e6fb99e4c6e19_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753860351&amp;width=680&amp;sig=oGCiFeyI%2BdfDRqKVZAXh9m32jXdxOjxE4EA3DzZkqbQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50129138">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/129/138/cf7e7abaf7bba512865a033d90a79103_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753176702&amp;width=680&amp;sig=j0Vud6MoVBT5ptNOF%2FoGZRmw2x%2FXv0tmo4MjsKyJXds%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984869">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/869/2d8b07b51d0351f080954e6fdb49725e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117334&amp;width=680&amp;sig=rt50wdfy4bgNqTyGUKowazBLkBGE9biajwFUNmtfS10%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50071183">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/071/183/3ced8f69bd0749d077effa4bb3b420da_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752727596&amp;width=680&amp;sig=NaRSINNNIh8RkukpTAUW8m8b%2Fi%2B1NRAlsadkeOgwIj8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50131030">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/131/030/5e29b31d9ae77833dcbad57e6be20042_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753189360&amp;width=680&amp;sig=VD36YSO%2FAgpr7u6E60DYvophhNdCAZW%2FRmkiA1ST3Y0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50194221">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/194/221/1eeb54a0dece81c5d6962c8d4bfd1138_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753662608&amp;width=680&amp;sig=%2F2NdIsWGXhKaz9mXxY5vyOllU6SrwE0u3OyXtZBRHbw%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984859">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/859/539ce1c6d38311f0e81d2091a18975e6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117303&amp;width=680&amp;sig=Pzyh2bREsK6b%2B%2B7Dei6mVlLKjAnqXpNFZCnna8in%2Fd4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50071187">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/071/187/251674c2c9f58f27d15fc7671696574e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752727614&amp;width=680&amp;sig=y4Itm%2BTo%2FbYpR9Dj5w%2BgRmr9uMr%2Bd%2FOP4TjVcO5akBc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984880">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Worry-Free-Guarantee">Worry-Free Guarantee</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/880/e458d654de6fa0a814c5cb2721ca6f99_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117392&amp;width=680&amp;sig=CqW9eqGrfhSLjsGNhgRmCsFo0g%2FX%2BX2S9QtcbCVOHUQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984882">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/882/c31c47991a6369aa65e3335a50ac2c96_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117399&amp;width=680&amp;sig=ohvLPWtr%2FecCdkxSEEqW%2BcIfGkx%2B%2FBKmPy0rjGO%2FWgA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984890">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Plan">Shipping Plan</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/890/082ea3cefc1e0cd1ff97bf810e177783_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117465&amp;width=680&amp;sig=SMEl6MEkEDt3hjuVCWpzJPgmvHYyO9hFvc3jU9bzF7I%3D"/>
+</figure>
+</div>
+<p>We’re doing everything we can to ensure SALTGATOR is delivered safely and efficiently to every backer.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50107559">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/107/559/ac52a6db6eacb483863a50a14765d736_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753033180&amp;width=680&amp;sig=zZRhzjdkjN3tAhpkHwhD7AmdnsTdcOzLepD96HSkVLk%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-BnpNdELy8oB752xsbRac6UwznWf"><span class="text-italic">*The shipping costs will be determined and billed after the campaign concludes, during the post-campaign survey.</span></div></div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984922">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Design-Journey">Design Journey</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/922/592041a75703f8055cee508564cd3008_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117674&amp;width=680&amp;sig=4nRsMbnP%2FDDdzMeU0GKi7dHcozSD7fPy7pbM8vXhUyI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984924">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/924/44893a57c99db2641f486bdbf24f83ed_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117679&amp;width=680&amp;sig=uN%2BR%2F0OG2MIxcMUSOnjodvMLxV%2FKRg23K1G4WUO8gws%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984927">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Built-Tested-Perfected">Built, Tested, Perfected</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/927/db6543ef16eef725b071a7fc55ccc0e1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117694&amp;width=680&amp;sig=I0QN9KVlDQC6BdLSEk7Ra1FDF2bYZBaZP1trBQ2cz0A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120834">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/120/834/968584ae9fc8af391c8c0c6d1ecf7d4c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753125848&amp;width=680&amp;sig=wtAAKwBCOq3OmgY1u%2FxjN98yJDsV3YxItjhJUj7aSL4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987841">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Mass-Production">Mass Production</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/841/e41ffe1ef54388e1b442a075f1371211_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752142926&amp;width=680&amp;sig=n2KO0M4LInxXfMKMtbVcZzWAjkKQnqYn3NszdR0WciY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120841">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/120/841/67f9745411dd986801bbe9be363a082f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753125867&amp;width=680&amp;sig=JB0AmXqhHF%2BrBjdNaf4CBglIbJqCy5ab27fDn02mTBk%3D"/>
+</figure>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984940">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-The-Team">Meet The Team</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/940/2731e40106c18ead91f8d19ad3abf7ad_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117807&amp;width=680&amp;sig=tEyYkDe%2F6tboiySm9V36igvnFAmh2mOr6kBnNn12HHk%3D"/>
+</figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987816">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/816/e6f5e675e093a23ea4125e355a272d24_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752142749&amp;width=680&amp;sig=rZ29N1aVIPr1rDeHFjVlwCi3MxXBugn0RaNI6SuHlr4%3D"/>
+</figure>
+</div>
+<p>With 15+ years of product and mold expertise, our engineers build SALTGATOR to last. Backed by a multilingual support team, we’re here to help you from first setup to everyday use — wherever you fish or create.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987808">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/808/4ca674085a20144580bbab86ee6c98ba_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752142661&amp;width=680&amp;sig=ZGYvZlBfsCaX4CF1wfWlLv%2BVXsVeeEr8jdblTOWdUow%3D"/>
+</figure>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120843">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/120/843/cc4768a69f7e558e7f1dea28394c9520_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753125884&amp;width=680&amp;sig=eUshLXc2JS6KMpomB2b7YuKS77%2Bj%2FNW4L7FuwUjsqGE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49987825">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Story">Our Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/987/825/f68d0a0065c7a696f7f8c7d0a6e49685_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752142823&amp;width=680&amp;sig=uu4%2F1wu56aA%2B%2FLfDjQP7%2FFz9okr%2FmGnKkEI1Dt5FsB0%3D"/>
+</figure>
+</div>
+<div>
+<span class="bold">“A smoking cup from a botched microwave experiment. A room filled with an eye-watering, burnt plastic stench.” </span><br/>That was our very first shot at making soft baits — and yeah, it went about as badly as it sounds. <br/>SALTGATOR started with a small group of hobby anglers and garage tinkerers, living between Texas and Hong Kong. We’re engineers by trade, but when we’re off the clock, we’re out with our rods chasing fish — in the ocean, on lakes, down winding rivers. Fishing is how we decompress. It’s our escape. But the more we fished, the more we noticed a problem — broken baits everywhere. Soft plastics torn apart by bites, tossed aside and forgotten. We started collecting them — half-bitten tails, torn bodies, misshapen chunks — and realized just how much waste a few hours on the water could generate. That’s when the idea really clicked.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50071199">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/071/199/44d05ca0251ae2666ae8dd81073dfa3e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752727708&amp;width=680&amp;sig=CQzKruoYkQ6Ls1dssuy2Gf6rmqYyaoCDyRUhJfNdC%2B8%3D"/>
+</figure>
+</div>
+<div>What if we could <span class="text-italic">recycle</span> these chewed-up baits? What if we could melt them down, re-mold them, and give them new life — while customizing them to our own fishing style? It’d save money, reduce waste, and let us experiment with action, color, and softness all at once. <br/>Naturally, we started tinkering. <br/>We tried existing injection tools — too expensive, too clunky, or just plain unsafe. Then we turned to 3D printing, thinking it could do it all. Nope. I personally tried printing a bait mold using 80A TPU, thinking it’d give me the right balance of softness and strength. The material jammed constantly, and even when the print worked, the bait was too stiff — and split right at the layers. <br/>That’s when it hit us: If we wanted the right gear, we had to build it ourselves. <br/>So we did.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50107570">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/107/570/cfcf9444ac2a2073216562d16c127e4a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753033272&amp;width=680&amp;sig=MPJpCwLliSQO1SOAQuGcs1ezJn5TfwHClN86Gv6Dr40%3D"/>
+</figure>
+</div>
+<div>
+<span class="bold">SALTGATOR is a desktop soft plastic injection machine — designed for makers, anglers, and DIY’ers who want total control. It heats, mixes, and injects — all in one streamlined, compact unit. It’s easy to use, safe in your workspace, and powerful enough to create high-quality baits that actually perform.</span><br/> </div><div>And yes — it works perfectly with recycled baits. That was part of the mission from day one.<br/> </div><div>The name? Inspired by a gator we came across during a fishing trip — cutting through both saltwater and freshwater with the same ease and confidence. That’s what we’re all about: adaptability, grit, and chasing the kind of fishing experience you can’t buy off the shelf.</div><div>
+<br/>SALTGATOR isn’t just a machine. It’s a mindset.<br/>It’s about freedom — the freedom to create, customize, and take ownership of your craft. Whether you're casting off the Gulf Coast or experimenting dockside in Hong Kong, SALTGATOR puts the power of bait-making in your hands — and helps you give old baits a second life while doing it.</div><p><span class="bold">SALTGATOR — make it simple. make it solid. make it yours.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50136024">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/136/024/88e68f30f3be4df636b752e43064cd7e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753213036&amp;width=680&amp;sig=Qkhz7hvTiU0fvpQzGY8CKJuwv1vmaIM7zbUwkcY5ADE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49984958">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Social-Media">Social Media</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/984/958/96736071674a683b68b3e895f553b157_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752117932&amp;width=680&amp;sig=XKh5jsHtOsrRfriIjrdrJxWBPSWwLGbRtSYOPeuZrWg%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">At SALTGATOR, we are dedicated to ensuring the smooth and secure execution of every project and product delivery. As part of our commitment to excellence and customer satisfaction, we guarantee 100% Shipment — every order will be shipped promptly and efficiently, with no compromise on product quality or integrity.
+
+We are also committed to providing transparent and timely updates on any potential risks or challenges that may arise during the development or delivery process. Your trust is our top priority, and we strive to keep you fully informed at every stage.
+
+In addition, our customer support team is always ready to assist with any questions or concerns. We are here to offer timely and effective solutions, ensuring a smooth and worry-free experience for every valued SALTGATOR customer.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

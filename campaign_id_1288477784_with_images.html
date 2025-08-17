@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Columbus Egg Your offline assistant for passwords and macro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/142/957/263ab7a624b90d773bf82c476bdd6c10_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1753257038&width=560&sig=d64VFvFw1TyoLQJ78zDUhFSqQWEzQJcYsX%2FREbEPsGM%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Columbus Egg Your offline assistant for passwords and macro</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Your offline assistant for passwords and macros - an accessory for quick and easy operations - you will no longer be able to do without</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 56,937</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>57 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><p><span class="bold">History</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49947190">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/947/190/43954f7b8c21699b6f66fabedcda4d9a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751881115&amp;width=680&amp;sig=vQ2os%2BaQgyMC2pRD1TG%2BWg%2BXm0SFD533JyoUwbGdF5s%3D"/>
+</figure>
+</div>
+<p>Welcome to DigilabTek, our company present on the market since 2001, we have always worked in the electronics sector and we can count on about 30 industrialized projects, many of these related to industrial electronics and boards for the control of LED panels, both mono and RGB.</p><p>With this new idea we have come a little out of our Core Business which until now has been in the industrial world to dedicate ourselves this time to a consumer product applying our experiences and skills to a product that can truly be "Columbus' egg" for those like us who make professional use of the computer but also for the user who wants to simplify and speed up some recurring operations.</p><p><span class="bold">Columbus Egg, what is it for?</span></p><p>Columbus Egg revolutionizes the way you log in, write, and protect. A powerful, secure, and pocket-sized device that automates every daily task with a single touch. Say goodbye to weak passwords, browser vulnerabilities, and wasted time: with Columbus Egg, productivity and security are always at your fingertips.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49947214">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/947/214/33decd0b23a89d6c11968f5c59fe2edf_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751881408&amp;width=680&amp;sig=y%2BQkT8W%2B6DdF7GXvy3Apn6gboGE2OvL49wD5bAm8BPQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">Columbus Egg – Access, protect, simplify. With one touch.</span></p><p>In a world where the computer has become an indispensable tool both for professional and home use, we have noticed that many operations are now repetitive, many texts, many operations and above all access to portals or Emails are daily and recurring, how many times a day to access our services do we have to type our login and password? This device allows you to quickly accelerate these operations with the simple press of an icon, if we consider the use of the device for our work we can imagine at the end of the day a saving of time and no more problems of having forgotten an access password.</p><p><span class="bold">Your security, your time, zero passwords saved on your PC, one touch. All done.</span></p><p>As regards the security of our personal data we all know how inadvisable it is to save our passwords when we use a Browser, there is a real risk of Trojan programs that can extrapolate our access credentials without great difficulty, or to use easily memorable passwords, such as dates of birth, names of children, etc., not to mention the fact that probably for security reasons in the future it will no longer be possible to choose to store passwords automatically.</p><p><span class="bold">Protect your credentials with the strength of a password as long as the universe itself.</span></p><p>Having said that, do you know how long a hacker with modest knowledge and a normal PC with a latest generation video card can take to find an 8-character password? About 3 hours, the Columbus Egg device can manage any type of password thanks to its internal generator of 12, 16 or 32 characters including special ones, with a password of this complexity to be able to find it even with the most powerful computers we are talking about times of billions of years, probably more than the life of the universe, on the other hand these complex passwords are difficult to manage and enter, but with the use of our Columbus Egg device these entries are possible with the simple press of an icon, furthermore the strong point these passwords do not reside or stored inside our computer, therefore they cannot be extrapolated by any type of malicious software.</p><p><span class="bold">From repetitive to immediate, automate your day, one click a command, every touch a benefit.</span></p><p>As you can see, the device looks like a small Tablet with a 3.5” IPS color LCD screen, the small device includes a capacitive touch screen for interaction with its user, the connection to the computer is via a normal USB cable, the device is powered by the computer and therefore does not require batteries or charging operations.</p><p>The Columbus Egg, this is its name, is actually a keyboard emulator, it allows you to automatically insert recurring texts, emails or login texts, passwords, commands associated with the CTRL+ key, the launch of applications by simply pressing an icon and the device includes a password generator to facilitate the management and security of access.</p><p>Each of the 48 available keys can be customized and programmed to perform one of the available functions, the Columbus Egg can manage up to 4 independent users, the data of each user is visible only by the same user, all data and passwords are protected by PIN and encrypted with a unique 128-bit key.</p><p>Currently the device is compatible with the operating systems, Windows, MacOS, Linux-Ubuntu and can support up to 7 languages, American (US), Italian (IT) Spanish (ES), Portuguese (PT), French (FR), German (DE), English (UK).</p><p>The device in addition to the use described, allows the Backup of data for each individual user, the restoration or migration of data always for each individual user, the possibility of updates and scalability.</p><p>The device has functions for energy saving and reduction of display brightness.</p><p><span class="bold">Columbus' egg, how is it connected?</span></p>
+<p>As you can see in this video, the Columbus Egg will load its operating system once connected, on the screen we can see the logo and the name of the manufacturer at the top, at the bottom right we have a QR Code that when framed can take us to the manufacturer's website where it will be possible to download the documentation such as DataSheet and Manuals and other technical information, furthermore at the bottom right we can see the version of the software currently installed.</p><p>For orders in quantity it is possible to customize this page by inserting the logo and name of the customer's company, taking advantage of this possibility the Columbus Egg also thanks to a low cost could be a beautiful Gadget to give to your customers for advertising, or a corporate gift for your collaborators or an accessory to match your hardware, as you can imagine the possibilities of use are endless, our company will be happy to accompany you towards any customizations.</p><p><span class="bold">Columbus' Egg, how do you access it?</span></p>
+<p>As you can see from the video after a few seconds you arrive at the Login page, here one of the four available users can log in, entering their PIN, which by default is 1234 but obviously can be changed, the PIN entry is masked by asterisks for security reasons, but it is possible to make it visible by pressing the green button, in case of an entry error it is possible to cancel the entry with the red button and repeat the operation.</p><p>At the top left there is the icon to activate or deactivate WiFi, activation allows the device to be reachable from any device with WiFi and from the Browser to carry out the configuration and programming of the keys.</p><p>In normal operation it is always recommended to keep WiFi turned off, in this way the device being disconnected from any network cannot be reachable by any attack attempt.</p><p><span class="bold">Columbus' Egg, how is it used?</span></p>
+<p>In this video we can see the normal operation of the Columbus Egg, we have made some of the most common examples, we think that the device once customized for your needs can be used in an infinite number of applications, from office use, industrial, development but it can also be very useful for home use, for access management and many other occasions.</p><p>In the video you can see how it is used to easily access Windows,</p><p>how to quickly access an Email,</p><p>how to write the text of a frequently used Email and how to choose it from those stored,</p><p>use the keys already programmed with the functions select, copy, delete, paste, save, print, etc.,</p><p>the use of special characters in the mathematical, commercial and other chapters,</p><p>the use of the built-in password generator,</p><p>the simplified start of applications,</p><p>the use of the device for entering prices,</p><p>these are just examples, all the other possible things depend on the user and his imagination.</p><p><span class="bold">Columbus' Egg, Password Generator?</span></p>
+<p>In this video you can see how to use the password generator, very often when we register on sites or portals that ask us to enter a password and ask us that this is of a certain complexity, also for security it is strongly discouraged to use passwords used for other registrations, these must always be original and unique, for this reason our device makes this operation extremely easy, as you can see from the video, at the time of the request it is sufficient to press for a few seconds the icon in which we want to store our password, then we can choose the degree of difficulty, we generate the most complex one and insert a "return" at the end to confirm the insertion when it is emulated, once saved the icon will become white and renamed "Random Password", these settings can subsequently be changed at will and renamed as we like.</p><p>Columbus' egg, how do you set the icons?</p>
+<p>In this video we enter the live part of programming, the configuration or variation of a new user, this is an initialization phase in which it is necessary to specify with which operating system the device is used and the keyboard layout to choose from the 7 available languages, this phase is very important, do not perform this first phase or a configuration error could cause errors in the emulation of the stored texts.</p><p>In this last video we can see the configuration or variation of each single key of the 48 available, first of all it is recommended to select the function of the key, if text, password, CRTL+ command, RUN+ command, in case of password generate the string or insert the text or command that we need to use, select the color and insert the name of the key in the two input boxes, check if we want to apply a Return (cr) to our command at the end and save the configuration.</p><p>Our key is configured and ready to be used, obviously its configuration can be modified at any time.</p><p><span class="bold">Attention: To perform the configuration you need a computer, tablet or smartphone with WiFi.</span></p><p>How the Columbus Egg was born.</p><p>After thinking that having a tool like the Columbus Egg could be a winning idea, we began the first feasibility studies, researching the main components, and then the first rudimentary prototype.</p><p><span class="bold">Here is the first Columbus Egg, it all started here, photo from below:</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169228">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/228/0a7d301b271d9cd0330b1e09d12a9133_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753431618&amp;width=680&amp;sig=4lxNNRJYwUmeMaT01G70thzwUpOb2XV7sG84xyJ4EX0%3D"/>
+</figure>
+</div>
+<p><span class="bold">Here is the first Columbus Egg, it all started here, photo from above:</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169263">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/263/7c9757b47d4dd6d281d95be6d272740b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753431807&amp;width=680&amp;sig=G7GaaWPDtDrspIZv1MvZesdALe%2BtAun2W61QQuCmF8c%3D"/>
+</figure>
+</div>
+<p>From the first very rudimentary prototype we created the first compact and functional product.</p><p><span class="bold">Version 1.0.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49948198">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/948/198/cf46ba0e295ca12607aec4242f896a66_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751888201&amp;width=680&amp;sig=94lFaedXrPunjO%2B4RE8txkTyLfYCpFmXrwbKbJrEg20%3D"/>
+</figure>
+</div>
+<p>Even though version 1.0 didn't give us any problems after a series of tests and updates, we decided to make some changes, the main ones being the replacement of the buttons with larger, more robust models and the addition of an audio buffer to increase the volume and its robustness.</p><p><span class="bold">Foto CAD Ver: 1.1:</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169281">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/281/4986f1ce3296179e8e7f498835acb08c_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753431909&amp;width=680&amp;sig=HUbyarBORFDIj7t%2BMTTA8MMPZBgK6ph5qk6tcekXCe4%3D"/>
+</figure>
+</div>
+<p><span class="bold">Full card photo e PCB Ver: 1.1:</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169291">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/291/64e7f3ad1dd7330b13f19515cbf19c7d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753431955&amp;width=680&amp;sig=wn6lxBZcvgCVtxNKjU%2BrHoIPPtxsmANFY3oaIzwiYxI%3D"/>
+</figure>
+</div>
+<p>After the electronics were designed by our mechanical engineer, the first prototype enclosure was created. We attempted to create a small box that could fit inside a small container and feature a rear bracket for tilted use, as you can see in the photos. Robustness was not overlooked; its wraparound shape was designed to cushion and protect the screen as much as possible from any impacts or falls.</p><p>As you can see, both the hardware and software were developed entirely in-house by our programmers and engineers, using the latest technologies available today and materials with excellent value for money.</p><p>Since we own all intellectual property rights to the device, we can, if necessary, evaluate any requests for modifications or customizations from interested companies.</p><p>For any further information, please contact us.</p><p><span class="bold">CAD photo:</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169302">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/302/d1aaed038926fb3e2794cb4868fbf809_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753432012&amp;width=680&amp;sig=t3UVhduykE2OGy77p5BMBCEsS3SI3KxhW6ajk9dTxnI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Photo of 3D printed prototype, front.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50169309">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/169/309/b7c76a44b3450d84698af3735f9ffd79_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753432060&amp;width=680&amp;sig=7S7I1EtFzqUzr0PtgeYfljcx%2FilWFU8%2BpTgjQ6DZ%2FH4%3D"/>
+</figure>
+</div>
+<p>Finally, the electronics component has now reached its final stage and its industrialization is complete. The mechanical component is in an advanced stage of design, with the first 3D-printed prototypes tested and ready for use. The next step is the creation of a steel mold for industrial production of the box, reducing costs with large-scale production. We are confident that this fundraising campaign will be completed to finance this final phase, which is necessary to reduce production costs.</p><p><span class="bold">A Live Use of the Columbus Egg</span></p>
+<p><span class="bold">A Live Generic Programming Show from Columbus Egg</span></p>
+<p><span class="bold">Datasheet</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49974504">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/974/504/d512d010e70632e79495e13fe8bc5db8_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752052107&amp;width=680&amp;sig=b%2Fi1d1BBT9cJ3fatBbCvkoxGQczta8bdUtMm%2BATdzRs%3D"/>
+</figure>
+</div>
+<p><span class="bold">Timeline</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50127719">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/127/719/2fe4afd610b5beb5ae574f02c9d02bee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753168422&amp;width=680&amp;sig=AApHngDN9ccuoQiN5VhCqxSnAICu%2FPNlTWGHgM5zAxQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">Kickstarter Exclusive Launch Offers</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50211720">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/211/720/fc9fe528366e6ccae5e0df8ae366bab7_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753778596&amp;width=680&amp;sig=M03%2FsHFTRsee7o5p4MFreevL5de5DuYy673wW2qk5hM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50211723">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/211/723/a80338995810f3fac1a6a7b7410e49e4_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753778612&amp;width=680&amp;sig=RbAAA7Pvle1UF1pxEBRgyDAwWGOJl8IaTGHyLJ473LE%3D"/>
+</figure>
+</div>
+<p>The cost of the device does not include shipping costs, VAT, duties, and other taxes applicable to the destination country. For these additional specific costs, please contact the relevant authorities in your country.<br/>All shipments depart from Italy.<br/>Here are some examples of shipping costs.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50211969">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/211/969/0bcefb3509a9b8428d3c5dd27dd84993_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753779921&amp;width=680&amp;sig=xT9TVK8LMfiBrGVrzO1cA1E1%2FrlHRNmPs4QOl2Wmskg%3D"/>
+</figure>
+</div>
+<p><span class="bold">Link - Our company</span></p><span></span><p><span class="bold">WARNING: The Columbus Egg device can be used to store sensitive data and passwords. Although the device has been designed for protection and made as reliable as possible, DigilabTek is in no way responsible for any loss of this stored data. To avoid this, we recommend periodically backing up your account.</span></p><p><span class="bold">The user access PIN is unique and cannot be recovered if lost. We recommend using a code that you can easily remember.</span></p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As you can see, the product is now ready and in the industrialization phase, it has already passed all the reliability tests both Hardware and Software, the phases that we are completing are the mechanical part with the study of a mold for the mass production of the container and the procurement of components for large-scale production.
+Although unlikely, obviously the possibility of some delay not directly dependent on us is always possible, but operating in the sector of design and industrialization of electronic parts over 24 years of experience we have never had difficulty in resolving any unforeseen event that can happen in this profession, furthermore any update in the production phase will be published and communicated in order to keep you updated.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18 mt5">I plan to use AI-generated content in my project.</h3><h4 class="bold lh4" style="margin-bottom: 1.5rem;">What parts of your project will use AI generated content? Please be as specific as possible.</h4><p class="border-left border-create-700 border-left5px pl3">In my project AI was used to support the development of the Firmware.</p><h4 class="bold lh4" style="margin-bottom: 1.5rem;">Do you have the consent of owners of the works that were (or will be) used to produce the AI generated portion of your projects? Please explain.</h4><p class="border-left border-create-700 border-left5px pl3">No intellectual property outside of Digilabtek has been used.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The components and the container have been chosen and designed to withstand prolonged and demanding use, this indicates the device is suitable for both occasional and professional use.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">The container was made entirely of Polypropylene, a completely recyclable plastic material, to reduce as much as possible the polluting impact and the recyclability of the materials used, particular attention was also paid to the choice of the material used for the packaging, as recyclable as possible.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">In the creation of this device, particular attention was paid to respecting the environment, the use of lead is not foreseen and all the components comply with the RoHS directive.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

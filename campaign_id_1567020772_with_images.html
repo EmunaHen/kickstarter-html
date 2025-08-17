@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ROGBID M2: World’s 1st Tungsten Steel Offline GPS Watch</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/987/219/a6bd59e99d4431eb1131c3fe0effcba1_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752137908&width=560&sig=NZr04J1P2%2FQfGyhoAwLsZeN0tjE0ycgQqcyS2361qtE%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>ROGBID M2: World’s 1st Tungsten Steel Offline GPS Watch</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">All-in-One Sports Tracking with Sleep, Mood & Fatigue Algorithms | 3ATM Waterproof | Offline GPS Maps</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 2,789</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50142482">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-ROGBID-M2-Smart-Watch">Meet ROGBID M2 Smart Watch</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/142/482/0bedd6a2a488911e87b33d12d3fceba2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753254064&amp;width=680&amp;sig=TtVrtRwfc5VK7mL5up%2BYzepK7Ajy94bemr05HPHAedQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50112601">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/112/601/9434cfe546f8bc3978306b96cb75eb24_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753078438&amp;width=680&amp;sig=jt%2B6058JkGVjMrKH7xmM1Bfy5wpYHvtH7cUmF9CQPQw%3D"/>
+</figure>
+</div>
+<p>Unleash the perfect blend of cutting-edge technology and captivating design with the ROGBID M2 smartwatch. Powered by an advanced Airoha chipset, its dual-mode GPS locks onto your location with pinpoint accuracy, while precision algorithms elevate your fitness journey. It combine all these features: professional algorithms for trail running, triathlons, 6-axis swimming, plus 24/7 sleep tracking, mood monitoring, fatigue analysis, and training status assessment—all in one.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114505">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Refined-Mechanical-Aesthetic">Refined Mechanical Aesthetic</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/505/6474fbe652f9b5d5f073605106d23447_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753090963&amp;width=680&amp;sig=Uq2%2F6eUR4ylJFGSJ7qgq0irHKtH%2BVgCH%2BdhPsqP%2BO7Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50112602">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/112/602/75156cc611d963d85c9b9496a69891e7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753078446&amp;width=680&amp;sig=RK4cyVPzfFZJjZSSeidddrZ%2FiR6f7D9wU2YMbEKhK18%3D"/>
+</figure>
+</div>
+<p>Inspired by Transformers' iconic resilience, the ROGBID M2 marries cutting-edge tech with a tungsten steel unibody frame—a material 10x harder than stainless steel. This sleek, corrosion-resistant design cradles a 1.6-inch edge-to-edge display, blending rugged durability with high-end style. Its modular construction, featuring detachable screws and customizable side inserts, invites DIY personalization, while triple-layer plating preserves the tungsten’s lustrous finish. From boardrooms to trails, M2’s tungsten armor makes a statement: strength meets sophistication.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114787">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Vibrant-1-6-inch-AMOLED">Vibrant 1.6-inch AMOLED</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/787/bac7e18b6316a72fb9248a2ebd043ffa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753092974&amp;width=680&amp;sig=8e7L3sxxpN8gkQyZbymyKbtztiOFqlhojVXXg%2FpcrQA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50112640">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/112/640/173276c9e0eab1ed9d23d1a46d19c9fe_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753078758&amp;width=680&amp;sig=I31hDUffe4bjQp9Moo9cGLLhWHAWgJv5MDuXKImK2%2BY%3D"/>
+</figure>
+</div>
+<p>With a peak brightness of 1500 nits, it ensures you caneffortlessly view every turn on the map and every detailof your workout.</p><h3 class="page-anchor" id="h:Take-a-close-look"><span class="bold">Take a close look</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50208935">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/208/935/2f1246e06c588f03adf8000ab9191013_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753760270&amp;width=680&amp;sig=MyQh1vkPYltXMfOVZCMIYv6z%2FF%2BgH%2BccHFxtbp0NJ7g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50208939">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/208/939/e9a7c3bf4d6f1bce8825de1d60c80eb5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753760301&amp;width=680&amp;sig=XEPmv%2FLMd9VJOF1Jgn452OaNVqhsY8VBhaCvqFIwuT0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114829">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Carve-and-Lead-Your-Own-Way">Carve and Lead Your Own Way</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/829/a013ce92a782f2d47b415a0abe70f7e3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093182&amp;width=680&amp;sig=VY2KWXNJBDe%2FN9YaR2F0C9QR9kq%2BbQyfbQoaBaGpzKk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114832">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/832/9bf21fc70a529df6d4c0b5fd2e306f4d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093186&amp;width=680&amp;sig=nyCR2%2B19HDJZtLnNuAOtcmzZm445vFENn034WWB4WMo%3D"/>
+</figure>
+</div>
+<p>Spend less time looking and more time progressing in the right direction, thanks toprecise dual-frequency GPS and fast connections via six satellite systems.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114839">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:GPS-Motion-Trajectory">GPS Motion Trajectory</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/839/41e8ea227c4e5394063d93ad1b3ce14d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093213&amp;width=680&amp;sig=M4xuq%2FKkf%2FiBr4aevukwbKOl5FMEQqtI5i5qMddUBNA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114841">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/841/afa96f70e15ef1a7d53104c6a7cfd898_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093217&amp;width=680&amp;sig=a4aea2TZ5XVCqfBmCaMQr7DlYb10L9y6HF0Gvmw1KLk%3D"/>
+</figure>
+</div>
+<p>Equipped with an advanced trajectory optimizational gorithm (Coros standard trajectory algorithm), the smart watch allows users to plan routes via their phone and save them on the watch. During workouts, users can selecta pre-planned route and follow it seamlessly.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114849">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Offline-Map-Support">Offline Map Support</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/849/58b4f74e95f3219611b76cb1a332e7af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093242&amp;width=680&amp;sig=Fhj%2F4Hgl8a6fhkhvohKox2uCTz9JI%2FpUAqVK7XD0jkE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114851">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/851/965b3aaf07e5157eedc7155bd8627c89_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093246&amp;width=680&amp;sig=yoWWzVYtmxXrtaR9QME6t%2FHuQuzhlCVRMsAQxuKLl9w%3D"/>
+</figure>
+</div>
+<p>Track and save your routes effortlessly. Whether you're running, cycling, walking, or driving, the system generates the best path for you. Then, you can easily save and sync your route to your smart watch.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114859">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:All-In-One-Adventure-Companion">All-In-One Adventure Companion</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/859/ac6f3eb2755310aecfb2eb9a243f3f48_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093274&amp;width=680&amp;sig=GEC%2BhnH9YOx2eeiL4eZ9EVM4DW9oDjatb7UO7dIJE88%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114862">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/862/1f4e105ed85ec071b91bd7d5633fef6a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093278&amp;width=680&amp;sig=HWQULsZ9IXE%2BCORXg4WZO17sHHbRT4JU33LDhQ04pXY%3D"/>
+</figure>
+</div>
+<p>From detailed elevation data and severe weather alerts to environmental information, the ROGBID M2 has everything you need for confident adventures.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114789">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Built-for-Adventure">Built for Adventure</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/789/061a7551d9fc4ca5482123e3acb3eceb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753092979&amp;width=680&amp;sig=U2Y8hI61uy6yoooe4X3pN8dq8vwqwbPAXBT4%2BIsCy5M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50141858">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/141/858/1ec7934c27611381ad849f47609e4965_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753249747&amp;width=680&amp;sig=U%2Bhw15dsJxpRw2iheDhF5dqZKQnFjI2NS07H0UBcWGc%3D"/>
+</figure>
+</div>
+<p>Military-grade quality, tested through 15 military-standard tests. withstand extreme heat, cold, humidity.and shocks-nothing will stop you from your next adventure, even in harsh weather.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50142344">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Dive-Deeper-With-3ATM-Waterproofing">Dive Deeper With 3ATM Waterproofing</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/142/344/ea5e9972a07350f3042504a37a750ca3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753253319&amp;width=680&amp;sig=UoeCm6LUbwBBJUyLkLhKLz%2B9azZUIox9QyVmhQaLM3I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50125391">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/125/391/8632731253d7749db52315db88e1c393_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753152740&amp;width=680&amp;sig=aF75581dKLBrM6vGQ8o2CEoj4EBU2IT5AjPRZ8mlhHI%3D"/>
+</figure>
+</div>
+<p>ROGBID M2 built for adventure with 3ATM waterproofprotection.lt allows you to swim, surf, and explore without limits.Stay connected in any environment!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114801">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Smart-Recogmitionof-10-Sports">Smart Recogmitionof 10 Sports</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/801/3e875d41304545addac9ef5461ca8e26_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093047&amp;width=680&amp;sig=TF%2FiayTg8i25gOYVEUVphxHRL%2FhakkjvI4u%2FpC%2BS4mA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114802">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/802/721bc89b892de11bcdf65b64ffecdf1b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093051&amp;width=680&amp;sig=p3a6Czqxh2Tk3wUNUmNsgqqDJOL7c3Vlqcsk%2BplMVvs%3D"/>
+</figure>
+</div>
+<p>With a 6-axis ST Microelectronics sensor, ROGBID M2 recognizes 10+ exercise modes, filters non-exercise motions, and delivers accurate fitness data.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114818">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:100-Sports-Modes-Supportive">100+ Sports Modes Supportive</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/818/3f2350d9aba83c9b3d64743ca4e6de72_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093137&amp;width=680&amp;sig=1jvhUBtsCp%2FDkAsqztux8BU8ij0IAUIWx%2BDy8rk08Qg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114819">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/819/d4bb4ed49539b6241dd2e0c0d5f0a53d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093142&amp;width=680&amp;sig=EIe03s8jEg1WccZ6Ac8h3lc%2FngOxG9w8iqyH%2F8OM4Jw%3D"/>
+</figure>
+</div>
+<p>The ROGBID M2 supports over 100 kinds of sports modes, including hiking, running, swimming, mountaineering, rope skipping, yoga, and more, offering fitness tracking and comprehensive workout analysis in various scenarios.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114822">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Over-4-Weeks-of-Battery-Life">Over 4 Weeks of Battery Life</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/822/0f11622d4869f4456abcc4d257f99481_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093156&amp;width=680&amp;sig=ch9axGq3mOnisYR6iHlPK58b5PCBLyiPIErorSll4S0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114824">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/824/7bb403d823028fbf952a5910aeb2ae8b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093161&amp;width=680&amp;sig=5pASNOkLGfflbQhFvTCydf6%2FiW1Y72zF3s6anJvTXa8%3D"/>
+</figure>
+</div>
+<p>Whether it's camping, hiking,or an adventurousgetaway, the ROGBID M2 powers your long journeysand triumphs.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114868">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Offline-Music-Anytime-Anywhere">Offline Music, Anytime, Anywhere</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/868/41d50b0dfe5f3a222fc53bc6762ca53f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093305&amp;width=680&amp;sig=QyEoqutrpky6BAnudX%2B%2FyQz5vNN3GSMwwf%2BZ36JdBQ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114870">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/870/714ba8db3446ef87a62c761f2fe505a0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093317&amp;width=680&amp;sig=p7zJFmjOSsctz45XY9IntvFM6aLWBT8iD7srCp2zprY%3D"/>
+</figure>
+</div>
+<p>Save your favorite music on your smartwatch and listen anytime, anywhere-no phone needed. Enjoy playback directly from the watchor connect to Bluetooth headphones for a better experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50142464">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:High-Precision-Sensors-For-Accurate-Health-Tracking">High-Precision Sensors For Accurate Health Tracking</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/142/464/cdf63cc442a40473aa3f6fe620b9c941_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753253929&amp;width=680&amp;sig=C4FztjyjPTl0E6wMOGj1mhtPUl%2BYvvSqeJfdNwOifsM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114881">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/881/cc5d8e9c8c31156115502f97f6b77120_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093342&amp;width=680&amp;sig=bwQ%2BZZwrs8Rk4XoVFr411OolIvVNU%2B26R4vNkPYPndo%3D"/>
+</figure>
+</div>
+<p>Upgraded multi-channel heart rate and blood oxygen sensors, combined with Al<br/>algorithms,ensure continuously improved measurement accuracy.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114911">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sleep-Monitoring-Tracking">Sleep Monitoring Tracking</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/911/d2416fd2fb45844513082e0fc724648e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093460&amp;width=680&amp;sig=t6ZWVahzZHvVfWk1Nur61rUs%2FywtZYUhXmNRR604Tl4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115017">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/017/acaabe1bcb2033cd3f03df18242b3579_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093932&amp;width=680&amp;sig=Ucarn8SMER0fUCJFHYKjruX7QFI86XCceJaE%2B8i4534%3D"/>
+</figure>
+</div>
+<p>Offers sleep reminder's, wake-up alarms, sleep goals, and sleep patterns. it tracks deep sleep, light sleep. REM sleep, and awake states, providing valuable insights into your sleep quality.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114914">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Emotion-Monitoring">Emotion Monitoring</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/914/8a65e7d51099ec3ca82ae8446778d28d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093466&amp;width=680&amp;sig=NcTjfELhQRFZbAi%2BcTovg2qY2gI5lrOMF3fy4Jvq90o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114916">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/916/22f956a19cb6efafc5c53bb933b276f8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093472&amp;width=680&amp;sig=cW4NghO8SFYa0IvurS%2B8%2BhscZqnaFASGRPVK8fh%2FpRY%3D"/>
+</figure>
+</div>
+<p>Track your emotions around the clock to better understand, manage, and improve your mood. Receive maintain emotional well-being personalized guidance to develop healthier habits and maintain emotional well-being.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50142439">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Fatigue-Level-know-Your-Limits-Stay-Healthy">Fatigue Level know Your Limits,Stay Healthy</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/142/439/6e2949fbd91128da4f8691c887976c46_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753253805&amp;width=680&amp;sig=9yl2wOGIUnNwliy2zLdD89l3aPzbUWjQDPh6gSurLLE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114941">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/941/2d80fe6ec7b90f769bc09c838930f001_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093557&amp;width=680&amp;sig=qCDaZLqJo2rGiMo3bxbwJizoT6QjGQGStfuGLh7s50Y%3D"/>
+</figure>
+</div>
+<p>Get real-time insights into your body's fatigue levels,helping you stay aware of your physical condition.Prevent health issues caused by overexertion andmaintain a balanced, healthier lifestyle.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114947">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Training-Status-Stay-in-Control">Training Status Stay in Control</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/947/ae256bc01d0af9a377fbebd81d6602f9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093591&amp;width=680&amp;sig=ssgcwaXgCzvmesQMnjGigpRZTILB08366veLCtIaWv8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114949">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/949/4315322a876d6d96e1ca54bc8e7b390c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093596&amp;width=680&amp;sig=zvDBwp2Ik1nVofLdnfNXov%2FBbwqFSl8qlaVHttAqucw%3D"/>
+</figure>
+</div>
+<p>Get real-time insights into your training progress and performance. Monitor your workout intensity,recovery, and overall fitness to optimize your routine and achieve your goals effectively.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114953">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Endless-Excitement-Awaits-Your-Discovery">Endless Excitement Awaits Your Discovery</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/953/c5a1fa2014e33990a996b5e6c7aedb92_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093622&amp;width=680&amp;sig=zs7FD26vy%2FfAwihPWIUCqlYaZmc%2FPExIpuEokoe3YVc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114954">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/954/78b88e9ae305889862de30ced6cf2a45_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093628&amp;width=680&amp;sig=yfktkVEAZcFKdNs6sHBE6IDJsIvOD3T0USHn4uCMWqs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114957">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specifications">Specifications</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/957/0e1ce9170ef3a858594f882d366839b8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093648&amp;width=680&amp;sig=gGFyRojp%2BrY4W42YL3cljtAjnJLV0JwTJ1ELQUQCvLc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50141874">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/141/874/ac9dc75a79ca808c89a420c14ea574ef_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753249928&amp;width=680&amp;sig=1m7iuWkbf1zqmQs3Mbu3DsdCtiRHDZ7lRfsdmt2goCQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143817">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/143/817/b170c8361c3a7219ab6b9b6fc777460f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753262484&amp;width=680&amp;sig=onJpnwMQyL7mjArQ6nhdyNUWVKQBA1gVDw6BaGISi7M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143818">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/143/818/04cd063dd670f036edcfc26d4937d4c2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753262485&amp;width=680&amp;sig=zCvLBadolkYLh6s0PqqZhNvRpgEEkIZo5PBxMWnpovg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50144185">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/144/185/2f45ef614b816b5fbbdbbbe8cff3a163_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753264697&amp;width=680&amp;sig=B3YFjGwqNCwGQiUgSP8AbqYBGakDLmJGTTw7%2Fw1VaLA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50142281">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/142/281/6cca2df84cfb9cb74922b91336575b7f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753252928&amp;width=680&amp;sig=3D9rT6KognvaOHxcht1W6wcJVUVcSAm%2BvX6IC2TgaNY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50144282">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/144/282/b3bffd64eb15d589231895f4c5e69f45_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753265342&amp;width=680&amp;sig=ST83jqFKkUKXUlgGeh69Dx17ItsRa8rj4H0evSS8buI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50144178">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/144/178/f1325eb42ef1283b149ccdabc794940d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753264673&amp;width=680&amp;sig=5L%2FU%2BIDJaiH98YEWbMW2iSkvD0fOePOWUT%2FiNjJyt%2Fk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50144199">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/144/199/c2ef8abec9852b21eef6ff7f38b632c6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753264788&amp;width=680&amp;sig=yLExiFjLNXs17YT0vREAM0ZdbU5nG1tjVJgU7X0towg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50144201">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/144/201/55f6414d8f522cf1cabb2de625538645_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753264793&amp;width=680&amp;sig=%2FID7sEA4PEg1GEzJFkSkPL%2BOtdOZ0wksRxklJ3w9pOw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114998">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/998/2cc6ae174b36fa477028b9fbad870bde_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093819&amp;width=680&amp;sig=fZetHjm%2BBd%2FPd%2BDcblO64blT5Iu2Duct26mza861Ke8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50141876">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/141/876/e9011bd548c4c008973b80a80354dd18_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753249938&amp;width=680&amp;sig=dlFuAARynpr%2FLBYYlsYAB2RHIT89HJDAabHSk8SKrEc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50114967">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-US">About US</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/114/967/758fdd35eab1ef586d148b6899258267_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753093672&amp;width=680&amp;sig=DG9goKWX5unxSQ9EmuR%2BvHCKuqujZu3fDeXzEfMcNiU%3D"/>
+</figure>
+</div>
+<p>ROGBID is a company dedicated to outdoor technology innovation. We are a vibrant andpassionate young team, enthusiastic about outdoor sports and committed to technological innovation. Our mission is to create a youthful and fashionable outdoor technology band, with environmental protection, creativity, and quality as our core values, providingmore enjoyment and convenience for outdoor enthusiasts worldwide.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As we launch our crowdfunding campaign, we want to be transparent about potential challenges：
+
+Supply Chain Delays: Despite experienced manufacturers, there's a risk of delays due to sourcing, technical issues, and global logistics. We'll work closely with partners to address any delays and keep you updated.
+
+Manufacturing Quality Control: We'll monitor production closely to ensure high quality. If any issues arise, we'll replace or repair items promptly.
+
+Regulatory Compliance: Meeting safety standards may take extra time and cost. We'll work with authorities to ensure compliance and notify you of any delays.
+
+User Feedback and Improvements: Your feedback is important. We'll gather input after delivery and continuously improve the jacket. Updates may take time, but we'll keep you informed.
+
+Every project has risks, but we're committed to overcoming them for your satisfaction.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

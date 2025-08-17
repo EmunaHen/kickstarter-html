@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iKKO: Card-Sized AI Smartphone with Free Global Internet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/049/988/757/aa12f002ec6a2f64728e44ff9e384148_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752150466&width=560&sig=7aNgYV%2BgG5B5gozJ6iiYfLA6s46MqeFt67cOhIOABDM%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>iKKO: Card-Sized AI Smartphone with Free Global Internet</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">4.02" AMOLED | Android 15 + iKKO AI OS | Free Built-in Global AI Internet in 60+ Countries | 180° Sony Flip Cam | Hi-Fi DAC | QWERTY</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 6,369</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115760">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-MindOne">Meet MindOne</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/760/086069ce17a8c8a892f0200f06591f79_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753098826&amp;width=680&amp;sig=y%2FYFUfFjgi7EhlRr2DeykseJ64YHZOseYy2Gzh3IcTQ%3D"/>
+</figure>
+</div>
+<p>You’ve probably never seen a phone...<br/>This <span class="bold">small. </span>This <span class="bold">thin. </span>And definitely not this<span class="bold"> smart.</span></p>
+<div class="document"><div class="section">
+<p>Two years ago, we launched <span class="bold">ActiveBuds</span> on Kickstarter: a bold new kind of earphone with a built-in Smart OS. Since then, it’s reached users in over 30 countries. It wasn’t perfect. But it was real, used by over 100,000 people in everyday life. Together with our community, we shipped 100+ OTA updates to make it better, smarter, and smoother. Our users told us what worked.</p>
+<p><span class="bold">MindOne is our answer.</span><br/>It’s where <span class="text-italic">focus</span> meets <span class="text-italic">freedom</span>. <br/>While most phones fight for your attention, MindOne gives it back.</p>
+<p><span class="bold">Smaller. Smarter. Built with you.</span></p>
+</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50107301">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Card-Sized-Phone">Card-Sized Phone</h3>
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/107/301/76bdffa27ce814f1d352394b13c395c7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753030912&amp;width=680&amp;sig=7udk6An2JguzVdeYTqPJRYdYA8l6XXiYmD5LiXM8SlE%3D" src="https://i.kickstarter.com/assets/050/107/301/76bdffa27ce814f1d352394b13c395c7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753030912&amp;width=680&amp;sig=7udk6An2JguzVdeYTqPJRYdYA8l6XXiYmD5LiXM8SlE%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:MindOne-Rethink-what-a-phone-can-be-"><span class="bold">MindOne. Rethink what a phone can be.</span></h4><p>We’ve seen mini phones before — and of course, oversized ones too. But most are clunky, outdated, or just not that smart.</p><p><span class="bold">So we built something different: </span>a phone that helps you focus, get work done, and stay present in real life. Whether you’re looking for a simpler phone for everyday use or a second device that actually adds value — MindOne is here to do more, by doing less.<img class="image" data-id="50104760" src="https://i.kickstarter.com/assets/050/104/760/406a060577110cc95c79fb233747505e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753006920&amp;width=1100&amp;sig=Q4w3l8ErMbK7GbZObs2fW9uwY2Ap5uTK1mn7LoiicbE%3D"/><img class="image" data-id="50104024" src="https://i.kickstarter.com/assets/050/104/024/e460fd4902d6120299a59fa8f3ea9354_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752995871&amp;width=1092&amp;sig=sMH7ikLIE7ZJ7Ast5GfEbXtfSyAXSrA3Nr%2FUPq82lVI%3D"/><img class="image" data-id="50104760" src="https://i.kickstarter.com/assets/050/104/760/406a060577110cc95c79fb233747505e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753006920&amp;width=1100&amp;sig=Q4w3l8ErMbK7GbZObs2fW9uwY2Ap5uTK1mn7LoiicbE%3D"/><span class="bold">MindOne is a card-sized smartphone with built-in global internet. </span>It’s <span class="bold">GMS Certified</span>, runs <span class="bold">Android 15</span>, and features our <span class="bold">lightweight iKKO AI OS</span>, made to help you focus and travel light.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101012">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:The-Pro-Model">The Pro Model</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/012/64a5315215130bcf49bc6116432884fb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959328&amp;width=680&amp;sig=iOv1b%2Bg4onohqdaOaBr2Cv0Aft4lq9J08FKK8ylMG%2FE%3D"/>
+</figure>
+</div>
+<p>This journey started right here on Kickstarter. With your early support, we stayed independent — building with purpose, not pressure. We’ve come this far without a single investor, because we’d rather grow with people who truly care. <span class="bold">That’s why we’re launching the Pro model here first — to say thank you</span>, and share the excitement with those who believed from the start.<img class="image" data-id="50104090" src="https://i.kickstarter.com/assets/050/104/090/959d6a34888d5a8a7762f79dd790ef6d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752996695&amp;width=1000&amp;sig=x9B4laTEwsV0iTH%2BUM8zaX7olvfThwptSgEjyiEDkME%3D"/></p><div class="document"><div class="section">
+<h4 class="page-anchor" id="h:For-our-Kickstarter-community-we-re-bringing-the-Pro-model-without-the-Pro-price-"><span class="bold">For our Kickstarter community, we’re bringing the Pro model — without the Pro price.</span></h4>
+<p><span class="text-italic">MindOne Pro features two major improvements that distinguish it from the standard version:</span><img class="image" data-id="50101109" src="https://i.kickstarter.com/assets/050/101/109/5372bdf47713348a51644fb4477a6790_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959998&amp;width=1419&amp;sig=tiRVjbfdUfb5YTYbMPNF%2FQl5ANYlN47xJQ5qQes5XBk%3D"/>MindOne Pro features a full <span class="bold">Sapphire Glass screen</span> <span class="text-italic">(9H hardness)</span>, tougher than regular tempered glass. We’ve <span class="bold">thickened the glass</span> and added <span class="bold">precision curved edges</span> to make it even more resistant to cracks and drops. It won’t scratch. It won’t crack easily. <span class="bold">That means no screen protectors, no worries!</span><img class="image" data-id="50101010" src="https://i.kickstarter.com/assets/050/101/010/e93569c2fd9ad180f862a894872dc6a6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959318&amp;width=1419&amp;sig=%2BZ3Uh72MaQCBT1ljrocOOXlchK8xby5z0VkMxunSknc%3D"/><span class="text-italic"><span class="bold">So, how does MindOne connect without a SIM? </span></span>Because it has a vSIM system built right into the hardware, no SIM card needed. And we’ve optimized it on two levels. (<span class="text-italic">More — Sections 2 &amp; 12.</span>)</p>
+<div class="document"><div class="section"><div class="document"><div class="section">
+<ul>
+<li>
+<span class="bold">NovaLink: </span>Free internet for all built-in AI tools in 60 regions</li>
+<li>
+<span class="bold">vSIM: </span>Full internet in 140 countries, available via easy top-up</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120063">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/120/063/46101ea73686d4674f2163cc078637ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753120977&amp;width=680&amp;sig=wW2PA17hiozFjSp7TMMXfMO%2BVxfbmLAE6htg9SWz%2Bbo%3D" src="https://i.kickstarter.com/assets/050/120/063/46101ea73686d4674f2163cc078637ca_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753120977&amp;width=680&amp;sig=wW2PA17hiozFjSp7TMMXfMO%2BVxfbmLAE6htg9SWz%2Bbo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Hands-On-Demo"><span class="bold">Hands-On Demo</span></h3>
+<p><span class="text-italic">(Note: UI Optimizations in Progress, Stay Tuned for More Videos!)</span></p>
+</div></div></div></div>
+</div></div><h3 class="page-anchor" id="h:-"><span class="bold">------------------</span></h3><h4 class="page-anchor" id="h:So-now-let-s-talk-about-MindOne-"><span class="text-italic">So, now let’s talk about <span class="bold">MindOne</span>.</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115763">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:01-Ultra-Compact">01. Ultra Compact</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/763/0f553c5fa7cd0981d95d56a94f5b8e3d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753098849&amp;width=680&amp;sig=MKtH7%2BSd0lr02k1D6%2F3YlcxuLrazw5WCDw7jChic8tY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115220">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/115/220/93a130aae5a76a8b3258fb0361014dee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753095445&amp;width=680&amp;sig=JtW54U01IrhLeW4FzjnkOZTi4LnKc0ExBei2rrSI4ho%3D" src="https://i.kickstarter.com/assets/050/115/220/93a130aae5a76a8b3258fb0361014dee_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753095445&amp;width=680&amp;sig=JtW54U01IrhLeW4FzjnkOZTi4LnKc0ExBei2rrSI4ho%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section"><p><span class="bold">Only 8.9mm thin. Just 86×72mm. </span><br/><span class="bold">4.02" AMOLED display — protected by Sapphire Glass.</span></p></div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49817111">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/817/111/9ab323859223cb9cb9c8c877e5b536ba_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750883857&amp;width=680&amp;sig=2TtG%2FIuArzorfhEL%2BKGOg%2FFsNzYZwwdtfIYSzgudq%2F4%3D" src="https://i.kickstarter.com/assets/049/817/111/9ab323859223cb9cb9c8c877e5b536ba_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750883857&amp;width=680&amp;sig=2TtG%2FIuArzorfhEL%2BKGOg%2FFsNzYZwwdtfIYSzgudq%2F4%3D"/>
+</figure>
+</div>
+<p>We know many of you miss <span class="bold">smaller phones</span>, but still want something smart, stylish, and capable. That’s why we set out to create one that’s both <span class="bold">ultra-portable</span> and <span class="bold">modern</span>.<img class="image" data-id="50256127" src="https://i.kickstarter.com/assets/050/256/127/1f8f5ed4f9dc933d87676a2782e82dab_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754042894&amp;width=1006&amp;sig=NKgJrNr9uqLUNnkDUGoOnrDXhPzWy1MNI4xbqDL7CFA%3D"/><span class="bold">MindOne never weighs you down. </span>Whether it’s your minimalist second phone or your everyday carry, it delivers the essentials in the <span class="bold">smallest, smartest form</span>.<img class="image" data-id="50119986" src="https://i.kickstarter.com/assets/050/119/986/561e1b4dc71ef332a0031dd6a137599a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753120492&amp;width=1138&amp;sig=mQWnHHkvJeG%2Bc3ybXqTXRWqTzJSq4OU6pdA%2FFxPc6XM%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115766">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:02-Built-In-Internet">02. Built-In Internet</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/766/810cf2e39f638c62289ea2a5c6bc45ad_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753098864&amp;width=680&amp;sig=VmL7BjAzseXhZgsORPQU%2Bq6fxzGImcXDJbA8IyCjaLo%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section">
+<p>We’ve all heard “<span class="bold">connects right out of the box</span>”... but no one really delivered. </p>
+<h4 class="page-anchor" id="h:So-we-made-it-real-"><span class="bold">So we made it real.</span></h4>
+<p>MindOne Pro has two levels of <span class="bold">built-in global internet</span>. No contracts, no SIM card — just turn it on, and it works. In many places, <span class="bold">vSIM is more stable than eSIM when roaming</span>. <span class="text-italic">(Full connection list in section 12.)</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50107110">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/107/110/84310ff6a65ef609641c50eeb42f24e7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753029487&amp;width=680&amp;sig=ujOVvodYRoWIFAEFnrCyQzZYJ5PSCnPKM%2FoPkQLXuG0%3D"/>
+</figure>
+</div>
+</div></div><div class="document"><div class="section">
+<p><img class="image" data-id="50101016" src="https://i.kickstarter.com/assets/050/101/016/ba56fc57a578293e7b31fba425b77591_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959350&amp;width=1419&amp;sig=Ah3T8a1jtJKV9dbvRCf9rY9bP9lLE9b%2F2gtoMEWoBAI%3D"/>We created NovaLink to <span class="bold">keep your AI tools connected, anytime, anywhere</span>. With built-in free global access in <span class="bold">60+ regions</span>, MindOne Pro powers your AI features the moment you turn it on. No SIM. No Wi-Fi. Just translate, take notes, or ask on the go — it just works.</p>
+<ul>
+<li>
+<span class="bold">Use it for:</span> All <span class="bold">AI tools</span> in <span class="bold">iKKO AI OS</span> — real-time translation, voice notes, summaries, podcasts, AI assistant, and more.</li>
+<li>
+<span class="bold">Perfect for:</span> Travel, off-the-grid moments, or a fast start.</li>
+<li>
+<span class="bold">How to use:</span> Simply power on. Your AI tools <span class="bold">connect automatically</span>.</li>
+<li>
+<span class="bold">Pro tip:</span> NovaLink shines when you're traveling or off the grid. At home, you'll likely use your own Nano SIM or Wi-Fi instead.</li>
+<li>
+<span class="bold">Coverage:</span> 60+ regions. <span class="text-italic">See the full list in <span class="bold">Section 12</span>.</span>
+</li>
+</ul>
+<p><img class="image" data-id="50101017" src="https://i.kickstarter.com/assets/050/101/017/944aac209408be212cafe7ac80660544_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959351&amp;width=1419&amp;sig=W0BAIPE0huyGRB14nIcYzS7vlP5Ptr%2FxR3Kdu6krKoM%3D"/>Need to <span class="bold">browse, stream, or use your apps</span>? MindOne’s built-in <span class="bold">vSIM</span> connects to local networks in <span class="bold">140+ countries</span>, no SIM card needed. <span class="bold">You can even share it as a hotspot.</span> </p>
+<ul>
+<li>
+<span class="bold">Use it for:</span> Full data access across <span class="bold">Android 15</span> and <span class="bold">iKKO AI OS</span> — web browsing, streaming, messaging, downloads, and tethering.</li>
+<li>
+<span class="bold">Perfect for:</span> Travelers, digital nomads, and remote work on the go.</li>
+<li>
+<span class="bold">How to use:</span> Open the built-in <span class="bold">vSIM settings</span> on MindOne to top up data when you need it — it’s <span class="bold">pay-as-you-go</span> with no contracts. (The vSIM system <span class="bold">automatically connects to the strongest local partner network in each country</span>, so you get stable coverage without needing to manage specific carrier profiles!)</li>
+<li>
+<span class="bold">Pro tip:</span> Great for daily connectivity when you're abroad. Use it solo or turn your MindOne into a <span class="bold">global hotspot for your other devices</span>.</li>
+<li>
+<span class="bold">Coverage:</span> 140+ countries. <span class="text-italic">See the full list in <span class="bold">Section 12</span>.</span>
+</li>
+</ul>
+<p>(<span class="bold">Note:</span> vSIM provides <span class="bold">data-only service</span> — it does <span class="text-italic">not</span> support calls or SMS. For those, please insert your own nano SIM.)</p>
+<p><img class="image" data-id="50101018" src="https://i.kickstarter.com/assets/050/101/018/934727f1d2b0516a50196105f5a8f7e6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959353&amp;width=1419&amp;sig=EkUoUF%2FfVxL4CyAs4d1hKXNIr%2BiO0%2BsXLaDbc7XPJH8%3D"/>MindOne comes with a <span class="bold">Nano SIM slot</span>, fully unlocked and ready for your own SIM card — with support for <span class="bold">global bands</span>.</p>
+<ul>
+<li>
+<span class="bold">Use it for:</span> Your <span class="bold">existing mobile data</span>, calls, and texts — just like a regular smartphone.</li>
+<li>
+<span class="bold">Perfect for:</span> Everyday use at home or when you want to keep your current number and plan.</li>
+<li>
+<span class="bold">How to use:</span> <span class="bold">Insert your Nano SIM</span>.</li>
+<li>
+<span class="bold">Pro tip:</span> Use your Nano SIM alongside NovaLink and vSIM for the best of all worlds — local reliability + global flexibility.</li>
+<li>
+<span class="bold">Compatibility:</span> Works with most carriers worldwide. Fully unlocked with support for global frequency bands. <span class="text-italic">See the full list in <span class="bold">Section 12</span>.</span>
+</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50122943">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/122/943/3f658279fdad6d2cb87f0f8f773538bb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753136740&amp;width=680&amp;sig=LYh0UeJEv19UKU7hoz%2BAtheSa9J92kOiUDqqSN%2Frw%2FI%3D" src="https://i.kickstarter.com/assets/050/122/943/3f658279fdad6d2cb87f0f8f773538bb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753136740&amp;width=680&amp;sig=LYh0UeJEv19UKU7hoz%2BAtheSa9J92kOiUDqqSN%2Frw%2FI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50122950">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/122/950/406a060577110cc95c79fb233747505e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753136782&amp;width=680&amp;sig=qB3AkXISbxih%2BWXk29LaGwBCWl8r1ygE2%2F%2Fg%2BW8pAdk%3D"/>
+</figure>
+</div>
+</div></div><div class="document"><div class="section">
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101020">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:03-Sony-Camera">03. Sony Camera</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/020/2907e104dd27c613e76b4c900a17f93e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959363&amp;width=680&amp;sig=ai%2FADW1H6I9krGbuxwI7xtyhQ0lpiJpfWSE3qi1Fgn4%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section">
+<p><span class="bold">Most compact devices compromise on selfie cameras — we didn’t.</span><br/>What if one great camera could do it all?</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115366">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/115/366/9468ae930a06e732269ebcff60c77615_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753096161&amp;width=680&amp;sig=ltxx6utIdIufgzdi6AFbqEbb4E9pKD9Igunp%2Ff5GpYQ%3D" src="https://i.kickstarter.com/assets/050/115/366/9468ae930a06e732269ebcff60c77615_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753096161&amp;width=680&amp;sig=ltxx6utIdIufgzdi6AFbqEbb4E9pKD9Igunp%2Ff5GpYQ%3D"/>
+</figure>
+</div>
+<p>MindOne features a <span class="bold">50MP Sony 1/1.56” sensor</span> with custom <span class="bold">OIS</span> and a bright <span class="bold">F1.88</span> aperture — the kind of setup usually reserved for rear cameras only. <span class="bold">But here’s the twist:</span> <span class="bold">this one flips</span>. <span class="bold">So it’s both your front and rear camera, in one.</span> And just like the main screen, the camera is protected by <span class="bold">Sapphire Glass</span> — highly resistant to scratches and built for long-term durability.</p>
+<ul>
+<li>
+<span class="bold">Flip it up:</span> selfie camera.</li>
+<li>
+<span class="bold">Flip it down: </span>main camera.</li>
+<li>It <span class="bold">rotates 180°</span>, locks at any angle.</li>
+</ul>
+<p><span class="text-italic">(More Sample photos will be shared throughout the campaign.)</span></p>
+<p><img class="image" data-id="50256753" src="https://i.kickstarter.com/assets/050/256/753/edf45cd0a2d80fbb8f13d1dda0132c23_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754046441&amp;width=1001&amp;sig=j4%2B6Ed%2Fq8JIRqWGtmMI%2BT8ze5uFmZZnJJo4toXDzfrU%3D"/><img class="image" data-id="50130139" src="https://i.kickstarter.com/assets/050/130/139/f3aaae2e799414cc8d8e15428565ef85_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753183785&amp;width=1138&amp;sig=0ZKAjFyFan9AT7E%2BIRoaAKy8d9KlDuNhRzDu67qO7hQ%3D"/><img class="image" data-id="50117234" src="https://i.kickstarter.com/assets/050/117/234/bcf8bd06a11927d89dcaeb6989b2f35d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753106695&amp;width=1138&amp;sig=WK2QF1xz74lAZGmj65Y0e8hQiW8fqWsj3WvpLUzz6BQ%3D"/><img class="image" data-id="50130156" src="https://i.kickstarter.com/assets/050/130/156/c3dd3e950ffa3d3b2a6457d43fb62a40_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753183931&amp;width=1138&amp;sig=NQORc4HZLZCilpFE0Gbxv7rD345anm5iIqRfBrBpIGs%3D"/>We’ve all <span class="bold">struggled with</span> <span class="bold">low light or shaky hands</span>. Most phones give you one great camera, and one compromise. <span class="bold">MindOne gives you one that does both, beautifully.</span></p>
+<div class="document"><div class="section">
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="MindOne OIS Performance Test" data-id="50116771">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/116/771/206183337bb508700de0f478caa2cfe9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753104622&amp;width=680&amp;sig=dwwk4Z7RWBh75kyP1TNB4n%2FBRaseDaSZ6Lb7v8GZJPo%3D" src="https://i.kickstarter.com/assets/050/116/771/206183337bb508700de0f478caa2cfe9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753104622&amp;width=680&amp;sig=dwwk4Z7RWBh75kyP1TNB4n%2FBRaseDaSZ6Lb7v8GZJPo%3D"/>
+<figcaption class="px2">MindOne OIS Performance Test</figcaption>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="Flip Mechanism Stress Test" data-id="50120289">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/120/289/f69b1fa41dd64ed7e46366eada776e6c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753122253&amp;width=680&amp;sig=RZzEphpgl4A%2FKEQ36g8YMGF3fs3cH7CQZ78yAVvJqrs%3D" src="https://i.kickstarter.com/assets/050/120/289/f69b1fa41dd64ed7e46366eada776e6c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753122253&amp;width=680&amp;sig=RZzEphpgl4A%2FKEQ36g8YMGF3fs3cH7CQZ78yAVvJqrs%3D"/>
+<figcaption class="px2">Flip Mechanism Stress Test</figcaption>
+</figure>
+</div>
+</div></div>
+</div></div>
+</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101021">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:04-Android-15">04. Android 15</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/021/1d84d736c91100aaae8dcd24db468007_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959367&amp;width=680&amp;sig=HHAKpVPqDA2%2BAbLjv3Dgz14b1OefIcr%2FKrCx%2FUCH1d0%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section">
+<p><span class="bold">MindOne runs Android 15 and is fully GMS-certified </span>(Google Mobile Services). We support <span class="bold">3 major Android upgrades</span> and <span class="bold">5 years of security patches</span> — so your device stays secure and up to date for the long haul.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104027">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/027/030947a68ee984b9c9104a405cb99b6a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752995894&amp;width=680&amp;sig=UKgpnn%2BkZN7L8iUq%2FBbUXjF%2BwhnU92p4wlfz30e6uVI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50116521">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/116/521/d65ad718fcace3caafcb1eb4012423b7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753103362&amp;width=680&amp;sig=BBDt0IFxtRutniSsZk75bdHVOZXyZbeJpCgqHfhUBZM%3D" src="https://i.kickstarter.com/assets/050/116/521/d65ad718fcace3caafcb1eb4012423b7_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753103362&amp;width=680&amp;sig=BBDt0IFxtRutniSsZk75bdHVOZXyZbeJpCgqHfhUBZM%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section">
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115798">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/798/6b874cb6fcd805544f7a98acee4ff73a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753099019&amp;width=680&amp;sig=NYP%2FRj%2FQAAvSJKvJU6gOYY2TzYnMuQaIiYlKcH5tWG0%3D"/>
+</figure>
+</div>
+<p><span class="bold">We fully support open development</span> and will <span class="bold">release all required source code under the GPL v2.0 license</span>.</p>
+<p>In addition, we plan to open-source select components of <span class="bold">MindOne’s hardware drivers</span> and an <span class="bold">unlocked base ROM package</span> on GitHub, providing developers and enthusiasts the freedom to explore, modify, and build.</p>
+<p>We welcome custom ROM development, but please note that flashing unofficial firmware will void your warranty and may cause your device to become non-functional. As such, we will not be able to provide support for any issues resulting from custom ROM installation.</p>
+<p><span class="text-italic"><span class="bold">If you need further clarification, feel free to contact us.</span></span></p>
+<p><img class="image" data-id="50115803" src="https://i.kickstarter.com/assets/050/115/803/0a2432c6e7ec082b2dcfa773000758ea_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753099049&amp;width=1000&amp;sig=Qs%2FjMR7F%2BUhmebDxlZwFoI0bwnq6syoGinBK7Bcbfs4%3D"/><span class="text-italic"><span class="bold">Note: </span>This is demo testing; the final UI will be further refine</span></p>
+<p><img class="image" data-id="50115887" src="https://i.kickstarter.com/assets/050/115/887/e35a853d7d19b61d011fdcd2bea818fe_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753099547&amp;width=1138&amp;sig=Sro%2B6aTlIaYvvLbaytlSriY%2FPP8qoVM2wW4okizsKHY%3D"/><img class="image" data-id="50115884" src="https://i.kickstarter.com/assets/050/115/884/34db47695026c5e28e59bd5339f17652_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753099522&amp;width=1138&amp;sig=XJGdcq0q7ZKPgQu2Jh6hYz9e9CRAyn1AuRPrDYaugNk%3D"/><img class="image" data-id="50116008" src="https://i.kickstarter.com/assets/050/116/008/a9f4c5c57e059793615cac5c3bdaf620_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753100495&amp;width=1138&amp;sig=Ip2AqjUrWeWWF6bjn%2BBwWpfxfemr7rN87XpmBFeJFas%3D"/><img class="image" data-id="50130063" src="https://i.kickstarter.com/assets/050/130/063/8e250f91c2fe7c32ae8120289cf3fef3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753183232&amp;width=1138&amp;sig=uCdtWY2%2Fl3j2%2BN56nNNictGUNyyXKadQ5ClD87aa37I%3D"/></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101022">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:05-iKKO-AI-OS">05. iKKO AI OS</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/022/34dbdcfedce0a06d98b85e0e09b3a657_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959371&amp;width=680&amp;sig=I3BczaFhoSw1Pon4%2B%2FziH%2BSVQOTv2%2BQ9QPWufBwv0KE%3D"/>
+</figure>
+</div>
+</div></div>
+</div></div><div class="document"><div class="section"><div class="document"><div class="section">
+<p><span class="bold">MindOne</span> also comes with our custom <span class="bold">iKKO AI OS</span> — a <span class="bold">lightweight companion to Android 15</span>, designed to enhance focus and productivity.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50116793">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/116/793/aded040ca1c53a697ffa9edae917a9ce_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753104700&amp;width=680&amp;sig=xYErybgTYD2wpubeDmgnZLGeDrn8Z5PhF1jhdM2RMyE%3D" src="https://i.kickstarter.com/assets/050/116/793/aded040ca1c53a697ffa9edae917a9ce_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753104700&amp;width=680&amp;sig=xYErybgTYD2wpubeDmgnZLGeDrn8Z5PhF1jhdM2RMyE%3D"/>
+</figure>
+</div>
+<p>After real-world testing, we realized most users are deeply familiar with Android and still rely on its app ecosystem. Instead of developing two fully isolated systems, which would require a reboot each time you switch and consume more memory, we chose a <span class="bold">primary/secondary structure</span>. This allows you to enjoy the best of both worlds.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50116687">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/116/687/4b91e6e62bb5492fa0b60d2f9b1a07da_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753104266&amp;width=680&amp;sig=FqMKW8MlyxzAGoycS0ncd9whDe%2FO8O4XGaECGEnNmyo%3D" src="https://i.kickstarter.com/assets/050/116/687/4b91e6e62bb5492fa0b60d2f9b1a07da_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753104266&amp;width=680&amp;sig=FqMKW8MlyxzAGoycS0ncd9whDe%2FO8O4XGaECGEnNmyo%3D"/>
+</figure>
+</div>
+<p>In this setup, <span class="bold">iKKO OS</span> acts as a dedicated <span class="bold">focus workspace</span>, ideal for work and study. It’s completely under your control, <span class="bold">protected by a separate password</span>, and designed to be distraction-free. <span class="bold">You can even drag your favorite Android apps into this space</span>, creating a personalized environment tailored to your needs. With a long press of a physical button, you can switch seamlessly between the <span class="bold">iKKO OS</span> and Android, ensuring flexibility and ease of use.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50122851">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/122/851/be059bcdc475e6b2b2bb9d3660c5bb3a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753136078&amp;width=680&amp;sig=aMvgoY238nNwMj%2B%2F60gV3NBQV%2Bmk70Fe83Xiw5HetCY%3D"/>
+</figure>
+</div>
+<p>It includes a full set of built-in <span class="bold">AI tools</span>: translation, voice notes, summaries, podcasts, and more — <span class="bold">all ready to use out of the box with no subscriptions or setup required</span>. Each tool <span class="bold">automatically connects to the right AI model</span> for your task, giving you smart, instant answers <span class="bold">without juggling multiple apps or subscriptions</span>.</p>
+<p><span class="text-italic"><span class="bold">Note: </span>This is demo testing; the final UI will be further refined.</span><img class="image" data-id="50122896" src="https://i.kickstarter.com/assets/050/122/896/18b55fcea4d00eb907094e34c7642a29_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753136397&amp;width=1138&amp;sig=Li4pTb2wXK6feQCxJ0XIZXcNCD9JrnjKYO4yWmeTM%2FM%3D"/><img class="image" data-id="50122891" src="https://i.kickstarter.com/assets/050/122/891/87d3487f85c3ed9dcc3e36f6eede69c6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753136356&amp;width=1138&amp;sig=Hu80Ckaa1y46kMwYnLW7%2Bg1aPzrzbSmCl6wptYZqCO8%3D"/><img class="image" data-id="50122893" src="https://i.kickstarter.com/assets/050/122/893/5bc4cc66ee081fd95f1f277f7f16c892_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753136371&amp;width=1138&amp;sig=LKFxpOLH0m2cm1OI13l7rSOypf5OBiRsdFRXS2n4tX0%3D"/><img class="image" data-id="50122915" src="https://i.kickstarter.com/assets/050/122/915/2917bc21710da0c6044984db7b03547d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753136471&amp;width=1138&amp;sig=G36pPq2VhnXMgdsvl%2BKDfUO0ucMTTD8v04NEjv%2FJxrQ%3D"/><img class="image" data-id="50122887" src="https://i.kickstarter.com/assets/050/122/887/fcfcf5c302d04bce20bd8bd907c0b749_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753136329&amp;width=1138&amp;sig=UrDl%2BvMKlCEbgEf0%2FuuHdbvzs3dlyInpcU0JLcqnYZY%3D"/></p>
+<h4 class="page-anchor" id="h:We-fully-respect-your-privacy-"><span class="bold">We fully respect your privacy. </span></h4>
+<p>The <span class="bold">AI OS</span> is <span class="bold">ad-free</span> and <span class="bold">super clean</span>. <span class="text-italic"><span class="bold">It never listens to you, collects your data, or uses it for training.</span></span> Instead, it <span class="bold">connects to the most appropriate AI model for each task</span>, ensuring a secure, efficient experience.</p>
+<p>On the <span class="bold">Pro model</span>, you also get <span class="bold">free global internet</span> for all AI tools across <span class="bold">60+ regions</span>. (See Section 12 for the full list.)</p>
+</div></div></div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101024">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:06-Display">06. Display</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/024/097cc16cc0d2f23a9053b85e85b64fb5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959372&amp;width=680&amp;sig=FL8pUoKplB04in%2Bjt2nSHJ6%2FHazDINIsREuOtZeS9Rk%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section">
+<p>MindOne Pro features a <span class="bold">4.02" AMOLED</span> display with <span class="bold">full sapphire glass</span> — tougher than most phone screens. </p>
+<p>With a <span class="text-italic">hardness rating of 9H</span>, it’s far more <span class="bold">scratch-resistant</span> than typical tempered glass — nearly <span class="bold">impossible to break</span> unless you hit it with something harder than sapphire, like a diamond. We’ve also <span class="bold">thickened the glass</span> and added <span class="bold">precision curved edges</span> to make it even more resistant to cracks and drops.</p>
+<h4 class="page-anchor" id="h:For-once-you-can-skip-the-screen-protector-"><span class="bold">For once, you can skip the screen protector.</span></h4>
+<div class="document"><div class="section">
+<p>And <span class="bold">with AMOLED</span>, you’ll get <span class="bold">deep blacks</span>, <span class="bold">vivid colors</span>, and <span class="bold">crisp contrast</span>, all on a screen that’s <span class="bold">ultra-thin</span>, <span class="bold">power-efficient</span>, and beautifully responsive to your moment, whether under sunlight or winding down at night.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50119865">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/119/865/c3e2e01c0299e67701d8d1bf8707c342_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753119897&amp;width=680&amp;sig=o6zmVgHXGD7R3wwh0oiUpnDLdPyZYSuecVoAiaIBfhk%3D" src="https://i.kickstarter.com/assets/050/119/865/c3e2e01c0299e67701d8d1bf8707c342_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753119897&amp;width=680&amp;sig=o6zmVgHXGD7R3wwh0oiUpnDLdPyZYSuecVoAiaIBfhk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50119867">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/119/867/7263dd2c980a04911d155c4080a8a33d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753119911&amp;width=680&amp;sig=e7vnCwbNkFOgpf6IfoSaQix9Akv8S8fkY411kXZ%2FaoM%3D" src="https://i.kickstarter.com/assets/050/119/867/7263dd2c980a04911d155c4080a8a33d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753119911&amp;width=680&amp;sig=e7vnCwbNkFOgpf6IfoSaQix9Akv8S8fkY411kXZ%2FaoM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50121208">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/121/208/406a060577110cc95c79fb233747505e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753127612&amp;width=680&amp;sig=DI58O1dZIcsSkxOEaBQLDvBsX6C0%2Fklyuk1cyFVS%2BvY%3D"/>
+</figure>
+</div>
+</div></div>
+</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101025">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:07-Processor">07. Processor</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/025/3bca46b02b3ee3908248fcff89e56ba2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959377&amp;width=680&amp;sig=ddXLBk6MmhJv6schs1afNbzxlg77Fsz9GbtOcuQeuxA%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section"><div class="document"><div class="section">
+<p><span class="bold">MindOne runs on the MediaTek MT8781</span></p>
+<h4 class="page-anchor" id="h:A-high-end-4G-platform-made-for-low-power-always-connected-devices-"><span class="text-italic"><span class="bold">A high-end 4G+ platform made for low-power, always-connected devices.</span></span></h4>
+<div class="document"><div class="section">
+<p>In a product as compact and integrated as MindOne, it’s the perfect fit. We didn’t set out to build an entertainment phone. We wanted something more stable, more efficient, more focused — a digital assistant you can carry anywhere, and rely on every day.</p>
+<p>MT8781 is a platform specifically <span class="bold">built by MediaTek for IoT and connectivity-first applications</span>. It’s part of <span class="bold">MediaTek’s new vSIM initiative in AI-driven environments</span>, and we’ve developed MindOne on this platform <span class="bold">with their direct technical support</span>. The chip is optimized for low power consumption, stable connectivity, and global roaming — exactly what our “always-connected” MindOne experience is designed for.</p>
+</div></div>
+<p>It runs cool, sips power, and fits perfectly into a compact phone like this. Even with a 2200mAh battery, you still get <span class="bold">all-day uptime</span>. It stays <span class="bold">quietly online in the background</span>, and<span class="bold"> handles multitasking</span> without breaking a sweat.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50123006">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/123/006/6a44d84add5893b1bc824a2a1326408a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753137308&amp;width=680&amp;sig=mYC%2Bm1tGU8eHId7eReOc71kPOpJmupfez31FdEN0IA4%3D" src="https://i.kickstarter.com/assets/050/123/006/6a44d84add5893b1bc824a2a1326408a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753137308&amp;width=680&amp;sig=mYC%2Bm1tGU8eHId7eReOc71kPOpJmupfez31FdEN0IA4%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section"><div class="document"><div class="section">
+<div class="document"><div class="section">
+<p><img class="image" data-id="50101027" src="https://i.kickstarter.com/assets/050/101/027/72891a5dc6b37885abdfd536291285a0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959384&amp;width=1419&amp;sig=FFeIbCr43J830H0WAyeEJz%2FSkl2qxlGwZFZtKjrchOU%3D"/>As the designer and creator of MindOne, <span class="bold">we take full responsibility for making sure it’s built to last</span> — and a joy to use every day, not just something that looks good on a spec sheet.</p>
+<p>We know <span class="bold">5G </span><span class="text-italic"><span class="bold">sounds</span></span><span class="bold"> fast</span> — but in a device this compact, <span class="bold">it comes with trade-offs: more heat, faster battery drain, and reduced global stability.</span> That’s not what we want for a phone that needs to stay reliably connected all day.</p>
+<p><span class="bold">Here’s the truth:</span> 5G still runs on 4G infrastructure with different base stations. And globally, 4G remains the mainstream. <span class="bold">4G+ (with carrier aggregation) offers stronger coverage</span>, smoother roaming, and greater power efficiency.</p>
+</div></div>
+<h4 class="page-anchor" id="h:That-s-why-we-went-with-4G-it-s-faster-saves-power-and-just-works-better-around-the-world-"><span class="bold">That’s why we went with 4G+, it’s faster, saves power, and just works better around the world.</span></h4>
+<div class="document"><div class="section"><p>For what MindOne is made to do — smart, efficient, always-on connectivity — 4G+ is the right choice. In fact, in many places, it’s still the most reliable network available.</p></div></div>
+<div class="document"><div class="section">
+<p><img class="image" data-id="50101028" src="https://i.kickstarter.com/assets/050/101/028/83006f39aaa547f6298a3163d1fea5f2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959386&amp;width=1419&amp;sig=4OiqlgtL%2BSb7wWF4GkxwnYa97NphcXK3Oz9ukpTVm6M%3D"/>One common question we get: </p>
+<h4 class="page-anchor" id="h:How-does-MindOne-offer-global-connectivity-even-for-free-"><span class="bold">How does MindOne offer global connectivity — even for free?</span></h4>
+<p>The answer lies in the chip itself. <span class="bold">With MT8781’s built-in vSIM support, we’ve pre-configured a global virtual network at the hardware level.</span> So when you're traveling or working remotely, there's no SIM card to insert — just power it on and go online.</p>
+<p>We didn’t choose this chip to chase benchmarks or headlines. We chose it because <span class="bold">it helps us strike a rare balance</span>: compact size, all-day battery, seamless connectivity, and reliable performance. It’s not about raw specs — it’s about building something that simply works, everywhere.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50123218">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/123/218/a49a191eb938f71deec2df0216b6d96a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753138897&amp;width=680&amp;sig=TsXIecbW%2BTXaBReLwZ9d2vblcuZbokod33POVCRpW08%3D" src="https://i.kickstarter.com/assets/050/123/218/a49a191eb938f71deec2df0216b6d96a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753138897&amp;width=680&amp;sig=TsXIecbW%2BTXaBReLwZ9d2vblcuZbokod33POVCRpW08%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101029">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Snap-In-Case-">---Snap-In Case---</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/029/8d07c41871dc3e43c16c0b81a98db49a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959393&amp;width=680&amp;sig=wbVUVcBUIRjYa1GRVK5zgtdRrloDLxnO8XqKycpzRBI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105494">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/105/494/8146173074ce5b5100c5ca112e94ec5d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753015544&amp;width=680&amp;sig=v%2B6HGWiED7RIAyWd5xUBHpWIS2pdf3akpAI%2BH%2FgJ0AA%3D" src="https://i.kickstarter.com/assets/050/105/494/8146173074ce5b5100c5ca112e94ec5d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753015544&amp;width=680&amp;sig=v%2B6HGWiED7RIAyWd5xUBHpWIS2pdf3akpAI%2BH%2FgJ0AA%3D"/>
+</figure>
+</div>
+</div></div>
+</div></div></div></div>
+</div></div></div></div><div class="document"><div class="section"><div class="document"><div class="section">
+<h4 class="page-anchor" id="h:One-Compact-Case-Five-Big-Upgrades-"><span class="bold">One Compact Case. Five Big Upgrades.</span></h4>
+<ul>
+<li>QWERTY Keyboard</li>
+<li>Cirrus Logic CS43198 DAC</li>
+<li>3.5mm Audio Jack</li>
+<li>500mAh Built-In Battery</li>
+<li>Magnetic Attachment</li>
+</ul>
+<p><span class="bold">Snap on power, precision, and performance — all in one sleek keyboard case.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170605">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/605/8581f01c6b2e813b524806e63d11f9cf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753439740&amp;width=680&amp;sig=j%2B8jmD9TmxRqw8mJw2ARS4PkNR4WeYdvLtHHYRYMs20%3D"/>
+</figure>
+</div>
+<p>No setup needed. Our <span class="bold">QWERTY keyboard</span> is fully plug-and-play, by Google Keyboard (Gboard), so you can start typing in your preferred language instantly.</p>
+<p>Inside, we’ve integrated a <span class="bold">Cirrus Logic CS43198 DAC</span> and a <span class="bold">3.5mm headphone jack</span> — delivering lossless, high-fidelity sound for audiophiles on the go.</p>
+<p>A<span class="bold"> built-in 500mAh battery</span> adds backup power for your MindOne and can even charge it when needed. The case itself doesn’t require charging to operate the keyboard. If the battery runs low, it may draw a small amount of power from the phone — though keyboard power usage is extremely low. Once recharged,<span class="bold"> the case can also double as a mini power bank for your phone</span>.</p>
+</div></div></div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115771">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:08-QWERTY">08. QWERTY</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/771/f1b552146c9ca8cf86f695933af5474f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753098885&amp;width=680&amp;sig=knhdYz%2Bo2sqWr247AEVJlKjsYThHMxGuOjl6RFl4gdA%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section"><div class="document"><div class="section">
+<p>We know some of you miss <span class="bold">real keys</span> — so we brought them back</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50121799">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/121/799/8fe1517a7a0755eece03b55d792a00af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753130468&amp;width=680&amp;sig=ZvdraboLUZGLxn0x7WjTnIUk7PM76bzX60ns6xB30x0%3D" src="https://i.kickstarter.com/assets/050/121/799/8fe1517a7a0755eece03b55d792a00af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753130468&amp;width=680&amp;sig=ZvdraboLUZGLxn0x7WjTnIUk7PM76bzX60ns6xB30x0%3D"/>
+</figure>
+</div>
+<p>Our <span class="bold">QWERTY keyboard</span> attaches to the <span class="bold">Snap-In Expansion Case</span>, turning MindOne into a compact, tactile typing machine. With <span class="bold">raised, separated keys</span> and a <span class="bold">sloped surface</span>, typing feels natural and satisfying.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115772">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:09-Hi-Fi-Dac">09. Hi-Fi Dac</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/772/dd037ddef53fc6086b69441dba7dd90c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753098901&amp;width=680&amp;sig=C9hND0rspD6F2tP4ymEdkuoLGcKUvTzwHxEXs%2BM7auw%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section">
+<p>If you’re familiar with us, you already know our beloved adapters and in-ear monitors. So when we built MindOne, we knew exactly how to deliver the best sound. Inside the Snap-In Expansion Case, you'll find the <span class="bold">Cirrus Logic CS43198 DAC — a flagship component trusted by audiophiles</span>.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50121751">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/121/751/cbd657dc4217ead15eb2da188c438b48_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753130229&amp;width=680&amp;sig=VxXp8AuLB9fJvQBxgkrQ7awJdwP45n%2BII2WDfhXYo6E%3D" src="https://i.kickstarter.com/assets/050/121/751/cbd657dc4217ead15eb2da188c438b48_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753130229&amp;width=680&amp;sig=VxXp8AuLB9fJvQBxgkrQ7awJdwP45n%2BII2WDfhXYo6E%3D"/>
+</figure>
+</div>
+<ul>
+<li>
+<span class="bold">128 dB Dynamic Range</span>: Captures every nuance, from whispers to peaks</li>
+<li>
+<span class="bold">–115 dB THD+N</span>: Ultra-low distortion for clear, detailed sound</li>
+<li>
+<span class="bold">Supports 32-bit / 384 kHz PCM &amp; DSD256</span>: Ideal for Hi-Res, lossless audio</li>
+</ul>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115773">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:10-Audio-Jack">10. Audio Jack</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/773/a225349a2886504fc656f2615662efd3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753098906&amp;width=680&amp;sig=76htUfSFGOGa%2FJS9AIep1wMbfGysGNGYe%2F2W4wSM7yQ%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section"><div class="document"><div class="section">
+<p><span class="bold">Yes, the headphone jack is back — no dongles needed.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50121790">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/121/790/95eafd352e92adf335841c11f00ad546_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753130392&amp;width=680&amp;sig=zLnyqr3B9qDhy%2BVsOt1h1gOVi49SpsL%2FOYFhkmp%2Fqy0%3D" src="https://i.kickstarter.com/assets/050/121/790/95eafd352e92adf335841c11f00ad546_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753130392&amp;width=680&amp;sig=zLnyqr3B9qDhy%2BVsOt1h1gOVi49SpsL%2FOYFhkmp%2Fqy0%3D"/>
+</figure>
+</div>
+<p>We’ve added the <span class="bold">3.5mm audio jack</span> to the Snap-In Expansion Case, so you can listen your way — whether you're into Hi-Fi, podcasts, or just prefer the simplicity of wired.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115776">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:11-Specs">11. Specs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/776/e8a5cff9ec5366d42a504d36972db968_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753098921&amp;width=680&amp;sig=ivUuIsaA1cJYw5GU%2FnEEGmMMqe44W4F4ODh4Hix7rP4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50164148">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/164/148/e5ae7e2bf460270f1517e558ab68b1eb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753392034&amp;width=680&amp;sig=L6p%2Fjbxb0NLhMGHuwOBInJyXOYGzh1uVY0mfqxTkcPE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120112">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/120/112/406a060577110cc95c79fb233747505e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753121257&amp;width=680&amp;sig=Ilay6cIe447V6Zj6QU3Cr7nSO9EMVtFZLmXP5YkWhHs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101050">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/050/4a6887f8fdc1aafeb05e2908baa7f3e4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959526&amp;width=680&amp;sig=TasftJ1N%2FJe7KbW2w5hCrrmVdYXtq1ouR7p4kfIDsuQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50422686">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/422/686/a7d7c44b071a40443d807fd1c755b7cc_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1755168640&amp;width=680&amp;sig=MjDFOzDQPDOluCMQ2mZ9Yav%2Fp0nZftb6WEnM3bTB6%2F8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120187">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/120/187/406a060577110cc95c79fb233747505e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753121702&amp;width=680&amp;sig=UVIuseDysvpwgJ5TSG1%2B1UQZqB7MkvziMK6HgTupm%2FI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101049">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/049/c89395138b4538e20d39ca7a9cbb4f00_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959525&amp;width=680&amp;sig=TQ88NUYFP2uzsXRxxmE0YxHwa%2FI0vQbw8a4Mbyzstpo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106378">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/378/f33a22b27237b5f437c2d52c6c72c5d5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753024190&amp;width=680&amp;sig=s0kTFSUcF%2BLHBzfHEiGrT3%2FG9Q%2FuFIfnCuNJsnH%2BMOE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120188">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/120/188/406a060577110cc95c79fb233747505e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753121707&amp;width=680&amp;sig=oDLuYoA7fLPRpq8ehvoRja4KyrNIgH%2FMcH2xplgrqhs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50119898">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/119/898/406a060577110cc95c79fb233747505e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753120035&amp;width=680&amp;sig=6jaYNVebFSo%2BkVAN6f7%2FRRQ68XODzocfY4PT%2BVVFDqQ%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section">
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115786">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:12-Global-Coverage">12. Global Coverage</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/786/80282f67b7c3f2c05078c3ba9e5ed881_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753098966&amp;width=680&amp;sig=RvyrYqxZ0v3BKm3kQh0GP%2FHxzqWys0A9z7iXoBpCk6E%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Nano-SIM-Card-Global-Bands"><span class="bold">🌏 Nano SIM Card - Global Bands</span></h4>
+<div class="document"><div class="section"><p>MindOne supports <span class="bold">broad global 4G+ LTE bands</span> via its <span class="bold">Nano SIM slot</span>, so you can stay connected with local carriers almost anywhere in the world.<img class="image" data-id="50104737" src="https://i.kickstarter.com/assets/050/104/737/762d1db2d7f9ebb3b860c8d35497c702_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753006553&amp;width=1100&amp;sig=VDFDDnYnPqWr6aAzj8Kn0X7puowGuIHgVF077jXjXiQ%3D"/></p></div></div>
+</div></div>
+<div class="document"><div class="section">
+<h4 class="page-anchor" id="h:-vSIM-Global-Internet"><span class="bold">🌏 vSIM - Global Internet</span></h4>
+<div class="document"><div class="section">
+<h4 class="page-anchor" id="h:-Regions-with-Free-AI-Internet-Access-Pro-Model-Only-"><span class="bold">🔍 Regions with Free AI Internet Access (Pro Model Only)</span></h4>
+<p>With MindOne Pro, you get <span class="bold">free built-in internet</span> for AI features in 60 regions — no SIM, no setup. <span class="text-italic">(Note: This is perfect for traveling! At home, just use your own nano SIM for full connectivity. The built-in AI network is made for seamless access abroad or in areas with unstable internet.)</span><img class="image" data-id="50104738" src="https://i.kickstarter.com/assets/050/104/738/97c95534e6554a926bd4988c6d916b77_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753006555&amp;width=1100&amp;sig=WykTZVfvNbr5lgjEmdRy4l%2B%2BLByTncepqm7LqRD7bf0%3D"/></p>
+</div></div>
+</div></div>
+<h4 class="page-anchor" id="h:-Coverage-with-Rechargeable-vSIM-Full-Data-Use-"><span class="bold">🔍 Coverage with Rechargeable vSIM (Full Data Use)</span></h4>
+<div class="document"><div class="section"><p>MindOne also comes with a <span class="bold">built-in vSIM</span>, giving you access to mobile networks in 140 countries and regions for browsing, streaming, apps, and more. <span class="bold">Top up data directly</span>, no physical SIM or Wi-Fi needed. <span class="text-italic">(Note: vSIM pricing in line with what you’d typically pay with local carriers.)</span><img class="image" data-id="50104739" src="https://i.kickstarter.com/assets/050/104/739/12d56487cdd54cf134fe274b807a1a5e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753006558&amp;width=1100&amp;sig=9trsEpTQUPyYAhOH%2F8HxjPwNqiV5%2F%2BQO87CE6b7AJZo%3D"/></p></div></div>
+<div class="document"><div class="section">
+<h4 class="page-anchor" id="h:-Supported-AI-Translation-Languages"><span class="bold">🌏 Supported AI Translation Languages</span></h4>
+<div class="document"><div class="section"><p>MindOne’s AI translation currently supports the following 60+ languages:<img class="image" data-id="50104740" src="https://i.kickstarter.com/assets/050/104/740/9e33f71cfa29976e7c72f58733fbdf27_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753006562&amp;width=1100&amp;sig=5u4bx3hGBwO9D2n%2Be9%2Bom2fu9P4%2FanYF22TSd68fwrc%3D"/></p></div></div>
+</div></div>
+<p><span class="text-italic">(Note: All countries are listed alphabetically. More regions may be added in the future. Contact us if you need specific support.)</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50119902">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/119/902/406a060577110cc95c79fb233747505e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753120074&amp;width=680&amp;sig=AkEl0R8BjhHUgy%2FkryobOKCoMWQOQBfR5eeHM2YBIa4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101051">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:13-In-the-Box">13. In the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/051/55e6e920a6588eccb70ff968ae578516_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959530&amp;width=680&amp;sig=zHS1WjhlQXf8xr6ePoo4DzX%2BoPU555%2BFY0cJ1CsSNC4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50124802">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/124/802/e7a6204c9eb50eee248436c5f92acd96_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753149570&amp;width=680&amp;sig=3QsDge1samyjyN%2FXSSNx6R%2Bls0YfQmyYK6BKZJGjq0w%3D"/>
+</figure>
+</div>
+<p><span class="bold">* Already Unlocked Stretch Goal – For All Backers</span></p>
+<ul>
+<li>Every MindOne will now ship with 4 screen protectors: 2× HD Clear and 2× Matte.</li>
+<li>Plus, you’ll also receive our lanyard-style silicone phone case (available in 4 colors, see Update #2). You can choose your favorite color in the post-campaign survey!</li>
+</ul>
+<div class="document">
+<h3 class="page-anchor" id="h:-"><span class="bold">------------------</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101052">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/052/6ab72badf1928d9d39815807fc822f11_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959539&amp;width=680&amp;sig=ldVidottpCbwxDhrPOs4uxtHlWjGnpAh9PzSLYkeutM%3D"/>
+</figure>
+</div>
+</div>
+</div></div></div></div>
+</div></div>
+</div></div></div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120739">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/120/739/fd228a187d6ea62896a3db9578866fd8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753125220&amp;width=680&amp;sig=1p8K7YFSX%2FK9iMLMiFnA4beBjvazfbcU6ledjxci2H0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50164154">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/164/154/4447036906f48ab0ec722d0ea4c33d5e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753392053&amp;width=680&amp;sig=jKYHTA8shqWvXtD8EMv6u%2FkIucjmx3x9CckksTpvbKI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50164155">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/164/155/2580687257924392361e70fb859c656a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753392059&amp;width=680&amp;sig=RTOhK4BC7daMDSvtA%2B6Z%2Fm4XpS6odujQ5y%2FymwTUg5k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101056">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-Ons">Add-Ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/056/83973d078eab2aafd7ba92318dade03e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959552&amp;width=680&amp;sig=rolh%2Bhk1pGKJg63MGTfHAcLDxMgJkt91PsPtOK8zg1k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50124809">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/124/809/92e33579759024ac60de04319971b937_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753149591&amp;width=680&amp;sig=LalsybHHbyFmZ2Gk33F7P2hXGcAGAvdo6EWykInb0Co%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101059">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Pledge-Guide">Pledge Guide</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/059/50de2f8e1cf2cf8c7d126cde129d87f4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959566&amp;width=680&amp;sig=744jx3ssXxIHJbv870Upua%2BEa3LwhzyHF3CbvXL9JAw%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section">
+<p><span class="bold">Step 1. Log In or Sign Up: </span>Make sure you’re logged into your <span class="bold">Kickstarter account</span>. If you’re new, creating one only takes a minute.</p>
+<p><span class="bold">Step 2. Pick a Reward Tier: </span>Scroll through the reward options and choose the one that fits you best. Click <span class="bold">“Back this project” </span>to get started. Need something custom? Just drop us a message — we’re here to help!</p>
+<p><span class="bold">Step 3. Set Your Country: </span>Select your <span class="bold">shipping country</span> from the drop-down list, then click “<span class="bold">Pledge</span>.”</p>
+<p><span class="bold">Step 4. Add Extras (Optional): </span>Want to grab a <span class="bold">Snap-in Case</span> or an <span class="bold">extra MindOne</span>? You can add them in just one click on the next screen. </p>
+<p><span class="bold">Step 5. Review Your Pledge: </span>Take a quick moment to review your pledge summary — including add-ons and shipping info — then click “<span class="bold">Continue</span>.”</p>
+<p><span class="bold">Step 6. Add Payment Info: </span>Enter your payment details and confirm that you understand Kickstarter rules.</p>
+<p><span class="bold">Step 7. Confirm Your Pledge: </span>Click “Pledge” to confirm your support. You’ll get a confirmation email right after.</p>
+<p><span class="bold">Step 8. After the Campaign: </span>Within 4 weeks after the campaign ends, we’ll send out a survey to collect your shipping details and color preference. If we hit our $500K stretch goal and unlock Blush Pink and Sky Blue, you’ll be able to choose your preferred color!</p>
+<p>Thanks so much for being part of this journey with us — we can’t wait to deliver MindOne to you.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50123235">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/123/235/7c04298113628a9f9504a6534ddb503e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753139011&amp;width=680&amp;sig=Mciooc9y4BhYwYneVsGXEn0%2FJafzRUYVQ8QpHGg6qAg%3D" src="https://i.kickstarter.com/assets/050/123/235/7c04298113628a9f9504a6534ddb503e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753139011&amp;width=680&amp;sig=Mciooc9y4BhYwYneVsGXEn0%2FJafzRUYVQ8QpHGg6qAg%3D"/>
+</figure>
+</div>
+</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101058">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/058/4aa3480bcb8620f24c0abfc079632bd6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959566&amp;width=680&amp;sig=fajwvYtpVyZWyAW6wiNBzJC%2BbBl2nFZGDTf7jwFjWLI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120844">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/120/844/10fee73c5025dcba594c9d3c0aee0aec_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753125885&amp;width=680&amp;sig=PkwkXHtG1vs7qaa2CJ1id2mwfqmiGHtxOgN4Gh9a4qc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50101060">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:About-iKKO">About iKKO</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/101/060/3fa64d36b571d234e227c1cc6f345cf8_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752959567&amp;width=680&amp;sig=lEKaTkKOfbZ%2Bip2NJxHXckixIhHVDo78ShiZoeA7%2F6Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104429">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/429/768313b6cb16ddf2cc067e3df0966a8d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753002554&amp;width=680&amp;sig=p9L2Ny8hQn3tzEmn2aU0QVkkjDFrCCrJzQP6X4%2B8S28%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104492">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/492/165671cbcdccc4394610de04c9bffb16_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753002992&amp;width=680&amp;sig=ZSFHuwHku2vDV1bQsQByeGCsyW17d%2FOKymIcZtaPiHA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49818452">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/818/452/bc9f2541ff865bb9e68ceece1d881319_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750891993&amp;width=680&amp;sig=gPzwr0n71rr2OMvftp0ONB3R%2FPR%2B08%2BLESd1i598a3w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50125557">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/125/557/fb34625784d1c7dc9803a54609165cf4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753153758&amp;width=680&amp;sig=wpqqDMdn0m96xmrO39PY0m9KswH3YL1bk%2FqFPgpDhA0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49817952">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/817/952/f2db2810a3ba7e071ec0cc439706d1c6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750888812&amp;width=680&amp;sig=ZUKl9xsG%2BqUovPle76ztwL38cP7SbOJHSj23zo9%2BPPg%3D" src="https://i.kickstarter.com/assets/049/817/952/f2db2810a3ba7e071ec0cc439706d1c6_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750888812&amp;width=680&amp;sig=ZUKl9xsG%2BqUovPle76ztwL38cP7SbOJHSj23zo9%2BPPg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120250">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/120/250/ebb550dfb46c3754ae1c73959ac0f7ed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753122088&amp;width=680&amp;sig=mRg6xsKws943YDTZB%2F%2BVOggw3iioikQU6ma3P41pW%2Bo%3D" src="https://i.kickstarter.com/assets/050/120/250/ebb550dfb46c3754ae1c73959ac0f7ed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753122088&amp;width=680&amp;sig=mRg6xsKws943YDTZB%2F%2BVOggw3iioikQU6ma3P41pW%2Bo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120230">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/120/230/6de8f24b05f0abee48151b471bac7bdd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753121968&amp;width=680&amp;sig=3gVJzowmGLI0E%2B1fTE1ohyFfAFW3CdkrHAzp5OtWQ2M%3D" src="https://i.kickstarter.com/assets/050/120/230/6de8f24b05f0abee48151b471bac7bdd_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753121968&amp;width=680&amp;sig=3gVJzowmGLI0E%2B1fTE1ohyFfAFW3CdkrHAzp5OtWQ2M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50120350">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/120/350/e5dbc113ed39c7c8b89c741d437fde7e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753122615&amp;width=680&amp;sig=%2Fog1ymJkVLYpFeEr2OP5JMZbDTbhdjXHrLSxCKRUNSI%3D" src="https://i.kickstarter.com/assets/050/120/350/e5dbc113ed39c7c8b89c741d437fde7e_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753122615&amp;width=680&amp;sig=%2Fog1ymJkVLYpFeEr2OP5JMZbDTbhdjXHrLSxCKRUNSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49687023">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/687/023/44019b939192f2e00e5a81b013b7ef76_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750022733&amp;width=680&amp;sig=K0rdJY808iN7lFO01R72g1ST54SGe3wAuz1nzykPPgI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50100175">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/100/175/4786d5e85c68285bc24a555f02a831f9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752951905&amp;width=680&amp;sig=6sHagJsbM8y4csNA0oEymiATv1LrOq6Gm4SOm%2FXjXd8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50100176">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/100/176/f8e875d9eb0ff473315ad57c9745bc7d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752951910&amp;width=680&amp;sig=5%2FI0krtqZHjgrYBHVfrPc0S9kktnAnU0LXaFS%2FwYrsc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50123250">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/123/250/f5c1c991fc25f4d1e9f1090b9bbdd0de_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753139230&amp;width=680&amp;sig=U9Tz7VxJGsmlyNA8NHh6ceu7VKvVbWzMC2BLAnxViOk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50107230">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/107/230/80646787cccce6c661146b41b897c518_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753030430&amp;width=680&amp;sig=%2FpqMmTX%2FEEvBtyGtivO44m0yNs5kacBoXjlIhJymF9I%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106977">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/977/9bfd6cea78e41573a21c98e6c102fed4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753028570&amp;width=680&amp;sig=bHl9unMDm0pPbqRjb64DpnXLfOhyMqIiZgRtZ4%2B4u%2Fo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49829116">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/829/116/b8bf2a98901d0a5354665d4bc724dc9c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750962821&amp;width=680&amp;sig=S3bTJJfZk0iutZ7dw5k50RVXuFLVH%2BXqXlUcEqwHv1o%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Hey, this is the iKKO Team :))</span></p><p><span class="text-italic">If you’ve been with us since ActiveBuds, you know this journey started with a dream — to make AI truly useful for everyday people. If you’re just meeting us now: welcome. We’re a team of creators who believe technology should help you focus on what really matters.</span></p><p><span class="text-italic">Over the past two years, we’ve been listening, learning, and building alongside this incredible community. This time around, thank you for being here — whether it’s your first time, or you’ve been with us all along.</span></p><p><span class="text-italic">💜 xoxo,</span><br/><span class="text-italic">The iKKO Team</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858371">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/858/371/307d470266ba82957f827a73c8b0c123_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751218912&amp;width=680&amp;sig=QaAQmSEHQAMDYVEqT8sYiKqh2EH2oMHEUzJfeBEujMs%3D" src="https://i.kickstarter.com/assets/049/858/371/307d470266ba82957f827a73c8b0c123_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751218912&amp;width=680&amp;sig=QaAQmSEHQAMDYVEqT8sYiKqh2EH2oMHEUzJfeBEujMs%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">This project is promoted by </span><span>Jellop</span><span class="text-italic">, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49686037">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/686/037/12fd6c7dfa5a68f93880e7f3e4f7f26e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750015000&amp;width=680&amp;sig=3ewXunzH7VLnZ%2BSOvYNJ9ONqFGa7PxhGQ1BUpxET1qQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49829119">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Taxes">Shipping &amp; Taxes</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/829/119/f039566afa2f8ed1ad01ae875d5dd95e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750962824&amp;width=680&amp;sig=aQ6Z4kO3OtEWW%2BficDDN1ggz9MyU4mHTBdYwAZq7q%2FI%3D"/>
+</figure>
+</div>
+<div class="document"><div class="section">
+<p>We will collect shipping fees and applicable taxes through a post-campaign survey right before we ship your MindOne. This ensures accurate rates based on your final location and chosen shipping method.</p>
+<p>● Prices shown do not include taxes. Import taxes or VAT (typically 5–20%, depending on local regulations) will be paid by the recipient.<br/>● Standard shipping is available in most major regions, and we will do our best to use tax-inclusive delivery methods whenever possible.<br/>● Express shipping uses commercial couriers and does not include import taxes or VAT.</p>
+<p>You’ll confirm your shipping address, method, and any applicable options in the post-campaign survey after the campaign ends.</p>
+</div></div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Mind One is our second hardware product built on AI — following the success of ActiveBuds, which launched right here on Kickstarter. Since then, we’ve shipped to 30+ countries, delivered over 100 OTA updates, and earned global recognition, including the iF Design Award.
+
+We’ve spent the past years refining both the hardware and AI system behind Mind One. Our engineering team has experience across smartphones, IoT devices, and embedded AI. Our manufacturing partners are the same trusted teams who helped us deliver ActiveBuds successfully to backers around the world.
+
+That said, no hardware project is without risk. Supply chain delays, component shortages, or unexpected software bugs can occur. But based on our track record — including our ability to push rapid firmware updates and deliver globally — we’re confident in our ability to handle these challenges.
+
+We promise transparency. If anything changes, you’ll hear it from us first. And every decision we make — from materials to timelines — will be guided by the same belief we started with: Build something real. Useful. And worth your trust. 
+
+Thank you for helping us bring the next wave of AI hardware to life.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Mind One is a smartphone-like AI device that integrates a suite of AI-powered tools built to support productivity, learning, and communication in everyday life. The device uses AI capabilities such as real-time translation, meeting transcription and summarization, photo-based object recognition, AI tutoring, personalized podcast generation, and more — all delivered through our proprietary app ecosystem.
+
+Our AI tools are integrated through a hardware-software system and made available to users with free built-in global internet (vSIM). These features are the core experience of Mind One, but no AI models are being trained by user data, and no AI-generated content is used on this Kickstarter page.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">We believe tech should be smarter — and more sustainable. Mind One is built to reduce digital waste and extend aproduct lifespan, with a minimal footprint. Mind One features a precision-engineered metal frame, durable components, and OTA software updates — all designed to keep your AI device useful, relevant, and reliable for years. No annual upgrades. No throwaway cycles. Just smarter use of tech.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

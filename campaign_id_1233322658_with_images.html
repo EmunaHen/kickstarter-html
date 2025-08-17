@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swasher Pro: Clean Air Made Simple with Water Purification</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/303/748/36acc1eb06b3c2ef82b1123c9e28fe6d_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754401784&width=560&sig=fI16lTH2Q0Uwfl3z6%2By4Hsa7cqYzZqm8F8uR3jr81E0%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Swasher Pro: Clean Air Made Simple with Water Purification</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">💧Filterless Air Purification|🌪️Double Vortex & Water Power|🚫No HEPA Filters or Replacements|💸Only 50¢ a Month for Pure, Fresh Air|</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 5,000</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286905">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/286/905/9a1aa1564da967f7a52ed57b8999c4af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305493&amp;width=680&amp;sig=w4aU2orJov2JL%2B5VEJ5RKO3C6zM2r4NvG746LSIzBwk%3D" src="https://i.kickstarter.com/assets/050/286/905/9a1aa1564da967f7a52ed57b8999c4af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305493&amp;width=680&amp;sig=w4aU2orJov2JL%2B5VEJ5RKO3C6zM2r4NvG746LSIzBwk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330907">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/907/ea05a97f67cc294059d41755977c8873_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548657&amp;width=680&amp;sig=A9rKZbXLpXqz%2FUqc7pDqHNJvraPCxnqrWk2kALmodVo%3D"/>
+</figure>
+</div>
+<p>The most natural way to breathe cleaner air — meet <span class="text-italic"><span class="bold">SWASHER PRO.</span></span><br/>It purifies your space with clean water instead of complicated filters.<br/>Even without a HEPA filter, it captures everything from ultrafine dust to everyday particles. Small in size, yet quietly attentive to your surroundings.<br/>With no disposable parts, it’s both economical and environmentally friendly.<br/><br/>With <span class="text-italic"><span class="bold">SWASHER PRO</span></span>, even the smallest changes in the air become part of your everyday calm.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286920">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/286/920/9f34edf98ca522902adea2dac43d0da2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305568&amp;width=680&amp;sig=k5T14f3so3LRU%2F7QmZRTjREmZEGjqBVr74qX5xotork%3D" src="https://i.kickstarter.com/assets/050/286/920/9f34edf98ca522902adea2dac43d0da2_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305568&amp;width=680&amp;sig=k5T14f3so3LRU%2F7QmZRTjREmZEGjqBVr74qX5xotork%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986174">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/174/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752129790&amp;width=680&amp;sig=fGAFe%2BvuxP5g4XlEMv6Kb%2FJUsoI34r99v2fs%2FpmBCkc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330913">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/913/9af720b0a2cc87d2e02983621fdf3b9b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548679&amp;width=680&amp;sig=2QzVfiveLoyFCIu8cuLQB9mAFS6xN70Aelq2nX5Y6y4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331795">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/795/3034e4e5e8d081a45e3de12c9950a7f7_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754555220&amp;width=680&amp;sig=ogQ6wbHEFzgubwU7p%2FE4LiA3yP1icIoV0oguxpbvEBs%3D"/>
+</figure>
+</div>
+<p>HEPA filters are expensive and need frequent replacements.<br/>After disposal, they are often incinerated, adding to pollution.<br/>Cleaning pre-filters can also be a hassle.<br/><span class="text-italic"><span class="bold">SWASHER PRO </span></span>solves all of these problems — with just water.<br/>A simpler, more sustainable way to purify your air.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986174">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/174/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752129790&amp;width=680&amp;sig=fGAFe%2BvuxP5g4XlEMv6Kb%2FJUsoI34r99v2fs%2FpmBCkc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330916">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/916/034c20c2d55c8135b54cb0e4b9b6cd8e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548701&amp;width=680&amp;sig=5hKQrmiDCTJ8KHFXODcU7BT%2BSFHUAMDw4LKgFRshlkM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49985164">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/985/164/a3c02476b1fd5b5af38427732c1cd5d0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752118993&amp;width=680&amp;sig=KdQePQesYTaTWAFNkbf79I%2F1AaWRnVGmqwFgvZAHAkg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330931">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/931/2309ccd1e9747fb20c15d543ae09ab63_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548796&amp;width=680&amp;sig=oC%2BTw0exEkXQ9Fvj%2FGS7dKT6YCYi8Negz8OoFiMe1Ks%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">SWASHER PRO</span></span> creates two powerful vortexes in air and water, harnessing the natural force to gently wash away fine dust. Carbon fiber electrodes release a soft electric charge that energizes dust particles, which are then drawn gracefully to the water surface by the double vortex. The swirling water embraces pollutants, completing a natural purification process. Without filters, it delivers quiet and efficient clean air. </p><p>This innovative technology blends with nature’s harmony, bringing a breath of fresh air to your life.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286933">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/286/933/4fb9661bbe7b7705328f21080a0a26c8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305709&amp;width=680&amp;sig=3ZTVTudiNVCq%2F76%2Fdzu8cG%2B39I0FqBeLLkfgh6HYKvA%3D" src="https://i.kickstarter.com/assets/050/286/933/4fb9661bbe7b7705328f21080a0a26c8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305709&amp;width=680&amp;sig=3ZTVTudiNVCq%2F76%2Fdzu8cG%2B39I0FqBeLLkfgh6HYKvA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286936">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/286/936/637618a8460e8dcce4a7690ce6efcd53_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305739&amp;width=680&amp;sig=btxI4PKK5CTdMck%2B7AmgAY%2FdWMF23AFyAFsxwc1%2FJpk%3D" src="https://i.kickstarter.com/assets/050/286/936/637618a8460e8dcce4a7690ce6efcd53_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305739&amp;width=680&amp;sig=btxI4PKK5CTdMck%2B7AmgAY%2FdWMF23AFyAFsxwc1%2FJpk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49985236">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/985/236/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752119334&amp;width=680&amp;sig=PepQdRvwDAgFtplJUK1SXCJJ8aKLerh50L8pOgpnHOc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49985234">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/985/234/47b243ece019dda55ddd413b5135e207_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752119318&amp;width=680&amp;sig=QHk%2F2Z%2FtZEg3edv%2Fs9mI%2FfVcJDIWeDUKELHgFDx3IAY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50303634">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/303/634/2d0506df0ad7318450072b6912d43b00_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754401290&amp;width=680&amp;sig=Mv136n78f3zq1LQR%2BcdVgCyFGUdMAdIbGlAHLYgS5bw%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">SWASHER PRO</span></span> requires only about $0.5 per month for water and needs no filter replacements, making it both economical and eco-friendly. In contrast, HEPA filters cost $20 to $40 each and gradually lose performance as they become clogged with dust. Additionally, disposing of used HEPA filters can release toxic substances when burned, posing environmental concerns. <span class="text-italic"><span class="bold">SWASHER PRO</span></span> provides consistent and efficient air purification quietly and cleanly.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986174">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/174/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752129790&amp;width=680&amp;sig=fGAFe%2BvuxP5g4XlEMv6Kb%2FJUsoI34r99v2fs%2FpmBCkc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330933">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/933/5a7e8f44b813917b4567e6d87fba8e2c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548848&amp;width=680&amp;sig=is8XKLGZwAXW0enrzgnpc%2Fjy%2Bxt%2B1RVOZNfn87yxIsw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50275916">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/275/916/9d2a7568e3dfd3771cc0f15fe608c5b0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754214757&amp;width=680&amp;sig=9i0FY6Y5LhrYVi%2BaH2muBQN6U2q8kR1OhKfTWJkwook%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286944">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/286/944/cfd6bfdd7ed4f2ea6697638d90524044_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305897&amp;width=680&amp;sig=86JyM9yr04ij%2F%2Bz1NHP1uPHynMENAoV8FoGmeES9Ba4%3D" src="https://i.kickstarter.com/assets/050/286/944/cfd6bfdd7ed4f2ea6697638d90524044_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754305897&amp;width=680&amp;sig=86JyM9yr04ij%2F%2Bz1NHP1uPHynMENAoV8FoGmeES9Ba4%3D"/>
+</figure>
+</div>
+<p>Water is the most powerful natural filter. <span class="text-italic"><span class="bold">SWASHER PRO</span></span> operates with just 30 fl oz( 900ml) of tap water, making it affordable and easy to maintain.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50275917">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/275/917/3c9a4005ec5e20e0e3e90f15e5f9a8f4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754214761&amp;width=680&amp;sig=Z44QTB1Qbm%2FY5nha0xpuqjzHvrcnIpcXOMX59sB3Krs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330938">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/938/c5984ba0cc1df234e13167367f628fe4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548874&amp;width=680&amp;sig=9HEUcSDU7QA0iP%2B4JAC1tqJATtz7gbJKDwIuD8KOpsk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330941">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/330/941/3dbe32bb2fde413e259ab388d15a1104_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548898&amp;width=680&amp;sig=Xjr9r4vPwGFK%2F5kKaH6KHQAe01Cr8XC%2BkEyIMvoqu8c%3D" src="https://i.kickstarter.com/assets/050/330/941/3dbe32bb2fde413e259ab388d15a1104_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548898&amp;width=680&amp;sig=Xjr9r4vPwGFK%2F5kKaH6KHQAe01Cr8XC%2BkEyIMvoqu8c%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">SWASHER PRO</span></span> can be easily cleaned by simply rinsing and wiping the water tank by hand under running water—no special detergent or cleaning tools needed. Its easy disassembly and cleaning ensure hygienic use, and after rinsing, just refill with tap water and start the device, making it truly convenient.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331100">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/100/17d580abeab0a0fca19732ce4e3b9c64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754550099&amp;width=680&amp;sig=0ubqcKDOe8r1WsVfgpHta6OxySA%2F9DqOqTVt%2FCu3M7s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49985422">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/985/422/5fee962766cb1cbd3ab7e365d017b28c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752121478&amp;width=680&amp;sig=jRyhwaBQ1eeFDoE%2FwlxzQEgjn8duLw19rPL42mEkGyY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49985423">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/985/423/9bd4a99102765fd0211ab8ca43b141df_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752121481&amp;width=680&amp;sig=RLsP1n1LCCgoYNaJDRP%2FnUz5X7jestneCMQAD7a73%2Bo%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">SWASHER PRO</span></span> isn’t sensitive to water quality—it works with tap water, rainwater, river water, seawater, muddy water, and even hard water. It operates reliably in various environments and maintains consistent air purification regardless of the water source. As long as there’s water, you can use it anywhere, anytime.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50317694">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/317/694/7c8cfd172ffada8eccdd785d9fc96c4d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754471264&amp;width=680&amp;sig=dvU5AbpyigjNF6%2BJUd6Khw4HDlVmVzPji31FRWlAzDg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50316298">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/316/298/1163ac4d603716c862532ab12cecf58a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754461344&amp;width=680&amp;sig=dJuXyt0ZCMapkMGPomLbspM7JeeNT1nmG2bvKMhlyOM%3D"/>
+</figure>
+</div>
+<p>The test shows that there's little difference in air purification speed between muddy water and tap water. <span class="text-italic"><span class="bold">SWASHER PRO</span></span> performs similarly well regardless of the water type.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986174">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/174/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752129790&amp;width=680&amp;sig=fGAFe%2BvuxP5g4XlEMv6Kb%2FJUsoI34r99v2fs%2FpmBCkc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330946">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/946/6b70b64de3600a04af1ddfc12156af38_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548917&amp;width=680&amp;sig=EmvCNRtRIbOXfgL1p4WQytrnDD0wWBjTPq6AG5kClM4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50275943">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/275/943/66a5b5d7cea1c7db90fe732e051626fb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754215120&amp;width=680&amp;sig=i56OCasEMBH23WkhEJKRz7r6eeIv7Hmxhv9qplswgZU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50275944">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/275/944/4dc7a5391ab5040c75bdb15e3b5bbf37_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754215122&amp;width=680&amp;sig=oCeCPuVvRXWMInDi481AbNmflIBf1Ux6VdHeUKvNwX4%3D"/>
+</figure>
+</div>
+<p>From invisible ultrafine particles to tobacco smoke, viruses, and pollen—<span class="text-italic"><span class="bold">SWASHER PRO</span></span> captures a wide range of pollutants from PM 0.01 to 100. It quietly and powerfully removes the unseen threats that affect your family’s health. Even pet dander, mold spores, and dust mite allergens don’t stand a chance. Breathe deeply and freely, knowing your air is safe. <span class="text-italic"><span class="bold">SWASHER PRO</span></span> is here to protect every breath you take.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50317700">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/317/700/78843ad6bb65182853cb85475092a2b9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754471284&amp;width=680&amp;sig=%2F%2FjXqa5Wqko3Mr0fBw8cDBJc3cqGOWQ%2FK8pBR2hz%2BkU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50317698">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/317/698/5bb93115026527399bc9810779b21e7f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754471283&amp;width=680&amp;sig=GAj2NzbvBcuuXWx2vXwfB9jdpcWPp%2FLKk71880ze0B0%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">SWASHER PRO</span></span> helps rapidly and effectively reduce ultrafine dust, smoke, viruses, bacteria, harmful gases, and odors in the air. Tests were conducted across a wide range of particle sizes and pollutant types, focusing on its purification performance. It targets even invisible airborne substances to support a fresher and cleaner indoor environment.<br/><br/>Below is information about the testing institutions involved in the product tests referenced on our product detail page.</p><p>These tests were conducted by the following organizations, all of which are KOLAS-accredited. KOLAS (Korea Laboratory Accreditation Scheme) is operated by the Korea Agency for Technology and Standards (KATS) under the Ministry of Trade, Industry and Energy.</p><ul>
+<li>
+<span class="bold">KTL (Korea Testing Laboratory)</span>: Bacteria, Virus</li>
+<li>
+<span class="bold">KCL (Korea Conformity Laboratories)</span>: Low-concentration Formaldehyde, Ozone, Microbial Emission, Nitrogen Dioxide (NO₂)</li>
+<li>
+<span class="bold">KETI (Korea Electronics Technology Institute)</span>: Smoke, KCI</li>
+<li>
+<span class="bold">KATR (Korea Analysis Test Research Institute)</span>: High-concentration Formaldehyde</li>
+</ul><p>The original test results are written in Korean. To improve clarity, we have created and included visual graphs on the product detail page using the final test data.</p><p>While the tests were conducted through accredited institutions, please note that the data is provided for informational purposes only and does not represent any form of official certification.</p><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986193">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/193/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752129919&amp;width=680&amp;sig=P2Mna52KG68QH0gtsu0D125tjgMzcKyP%2FTJP69243Fg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330951">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/951/49419581fa1d5ed4aafd388599497eb1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548932&amp;width=680&amp;sig=7s%2FN4oqTvcmaAZbJCh0z1ytTN1dicxOSlGcJQG4OmS8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50303619">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/303/619/d2f1569d32c02cd7e29e471b8f95dccf_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754401239&amp;width=680&amp;sig=uQzJDU%2BW%2FUbfSDNuRUswHRjLprGbpBIMOgovHLb0138%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330973">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/973/a6da8c403dbad5f803081aaa0ea6dc0f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754549067&amp;width=680&amp;sig=pnaBd%2B0a0gy1HxYtl765xliyageqsb5EQIv9fEoslm0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330977">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/977/17d580abeab0a0fca19732ce4e3b9c64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754549097&amp;width=680&amp;sig=bezky86EIN%2B%2BQMraxrzqDtjlMGonggpNN218Be09AqI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331096">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/096/6509bade3c5151347eb0c3bbd28c1580_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754550029&amp;width=680&amp;sig=%2FIhIzrG3CD6HVLai6aZ6ZLrUUPY3U9ZQMwC2jmfPVVE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331095">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/095/4fc707077c42d8c1a61c141b5bc3568b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754550026&amp;width=680&amp;sig=oPY0LunR%2FWl0UclE%2B0KMl84wH2LJlLHej4bWEXcXC2A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302312">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/302/312/5d954449e959d64820b5cd32aa8880be_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754396120&amp;width=680&amp;sig=Eww68UM%2ByPT3gA6VlwxwtLz8KKTMSF8CKEUbJVcEylY%3D" src="https://i.kickstarter.com/assets/050/302/312/5d954449e959d64820b5cd32aa8880be_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754396120&amp;width=680&amp;sig=Eww68UM%2ByPT3gA6VlwxwtLz8KKTMSF8CKEUbJVcEylY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986193">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/193/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752129919&amp;width=680&amp;sig=P2Mna52KG68QH0gtsu0D125tjgMzcKyP%2FTJP69243Fg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331022">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/022/21c291a0e24d7c224a7eb38769cdfa11_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754549380&amp;width=680&amp;sig=dQoZEl9nAgXJAjuqYQIGcCJi558%2FbVKtAqbLX9KajEQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331649">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/649/17d580abeab0a0fca19732ce4e3b9c64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754554412&amp;width=680&amp;sig=xvfQYjL8UkDzfqrwN3qKg7%2FHjsK9B%2B%2BNS6I5y%2BUHqwc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331614">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/614/9684bf6f2b76b94614d5a77e9ed0ce2e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754554216&amp;width=680&amp;sig=DM%2Ft1MBi3T3%2F5JCSFmWDPUjolTRN9TbK0ut89o%2BQFUk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302130">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/130/61565aa4999b40466654b8c4072498c1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395339&amp;width=680&amp;sig=Tb6oFwEMsX4C88mWhdKVzrsJnq3eqneg3%2FtBRJA3D58%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986175">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/175/3b776c49a92112ce454f99ba690df15c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752129793&amp;width=680&amp;sig=oGZiR0cyo1HaRo4im%2BCy86hAj3ahrVuA9rGoLFuuAj0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331616">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/616/4eaf8b055432d2e8f6e412f2af7cd1b1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754554221&amp;width=680&amp;sig=WnYKYDtQcpAkQkT9xo3iv5Na4PTKY3WVHQCfv4oWuIU%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">SWASHER PRO </span></span>senses what you can’t see in the air. In Auto Mode, it continuously monitors air quality and adjusts the fan speed to ensure optimal purification at all times. Like a silent guardian, it protects your breathing space without needing your attention. Just sit back and enjoy the freshest air, effortlessly.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286967">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/286/967/706d41981165b8fddfac828c0736a8ce_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754306171&amp;width=680&amp;sig=c8ycApoxp7sdpP07XnxpSvsu1wKzzTY9S%2FTCxO0fQlE%3D" src="https://i.kickstarter.com/assets/050/286/967/706d41981165b8fddfac828c0736a8ce_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754306171&amp;width=680&amp;sig=c8ycApoxp7sdpP07XnxpSvsu1wKzzTY9S%2FTCxO0fQlE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986193">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/193/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752129919&amp;width=680&amp;sig=P2Mna52KG68QH0gtsu0D125tjgMzcKyP%2FTJP69243Fg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331025">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/025/80c02e2571911311be3e616c84bfc9aa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754549391&amp;width=680&amp;sig=MObQagDV20tCFXNhgUoMulUpkkxCDzRnZ5EXmHzlWtc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50275960">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/275/960/3db69d4f9c6f36cc8e4912c1ddfbfce9_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754215301&amp;width=680&amp;sig=gtoXlCk0szl8DpehEfIakIraibrP1UfVZREEUdeOfoA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986194">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/194/0ba5912fa05e7418f48ad322d9fd34ff_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752129922&amp;width=680&amp;sig=sFqTLKz8%2BvnMMdS%2BGlVgfhsSKWzxFxjviRzqPDsZTPk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50286975">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/286/975/5b2810321d34522eedd770c7426c7a62_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754306224&amp;width=680&amp;sig=y%2FZDfTAV%2BL0Kz70ay1ciIhg%2BIQYPynLbkkUn8bA68%2BA%3D"/>
+</figure>
+</div>
+<p>With its intuitive touch buttons and simple controls,<span class="text-italic"><span class="bold"> SWASHER PRO</span></span> is easy for anyone to use.<br/>Enjoy the best air purification experience with zero complexity—just a touch away.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986193">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/193/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752129919&amp;width=680&amp;sig=P2Mna52KG68QH0gtsu0D125tjgMzcKyP%2FTJP69243Fg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331033">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/033/61a621699de3888e30c0874e7007c987_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754549449&amp;width=680&amp;sig=8JHxzf5PVzpYYq1NE9J7kPf2npHEbd1cieuq6gj5FqY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50275967">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/275/967/e94c20726e38f11155b81b0ad8390774_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754215337&amp;width=680&amp;sig=JfpzTkBt%2BL3cM4LPBnH2huaWLFmmySEQSu2Lolo6ACY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50275969">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/275/969/89e6460e1c8963afe2b9694f2fb2e103_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754215342&amp;width=680&amp;sig=BH65R4k3x8ESIx8ABsX7%2F5iWDxExfxpRYUIF%2BfQcbE0%3D"/>
+</figure>
+</div>
+<p>There are two ways to purify 100g of ultrafine dust. See how each method impacts the environment and our future.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50301949">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/301/949/5295a5c15ef27c62598b97b67e3c9db3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754394282&amp;width=680&amp;sig=42s2vVL5QGRa%2FQFZZY7lVzgTYekjktbGOw4vYoOkHTM%3D"/>
+</figure>
+</div>
+<p><span class="bold">HEPA Filter – “Clean air now, pollution later.”</span><br/>Every clean breath you take may come at the cost of burning more dust elsewhere.<br/>Disposable HEPA filters end up in incinerators, releasing even more ultrafine dust and toxic emissions.<br/>It’s a cycle that cleans your home but pollutes the planet.<br/>Is that the kind of “clean” we want?<br/>It’s time to break the cycle—and choose better.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331640">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/640/e2597b27297b5a8215107c6b8463d802_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754554373&amp;width=680&amp;sig=pK7tNLaVVBwTox%2FEeglezXLIJ7h3IiwZi711AiNHnC8%3D"/>
+</figure>
+</div>
+<p><span class="bold">SWASHER PRO – “Flush the dust, not our future.”</span><br/><span class="text-italic"><span class="bold">SWASHER PRO</span></span> doesn’t burn dust—it washes it away with just 500ml of water.<br/>No filters, no incineration, no added pollution—just clean air, the natural way.<br/>Every breath is a choice, not just for now, but for the planet’s future.<br/>Choose the purifier that protects both your air and the earth.<br/>With <span class="text-italic"><span class="bold">SWASHER PRO</span></span>, every breath becomes a step toward a cleaner tomorrow.<br/><br/>"<span class="bold">There is no filter waste, but doesn’t the water get polluted?"</span><br/><br/>Airborne pollutants are extremely fine, making it difficult to collect them in gram quantities under normal conditions.<br/>For example, rainwater carries ultrafine dust from the air, yet we purify and drink rainwater safely.<br/><br/>Therefore, the water collected in <span class="text-italic"><span class="bold">SWASHER PRO</span></span> contains ultrafine dust but is relatively cleaner than everyday wastewater such as from bathing, laundry, or dishwashing.<br/>In contrast, disposable filters generate non-biodegradable incineration waste, and the dust from incineration is treated with water again.<br/><span class="text-italic"><span class="bold">SWASHER PRO</span></span> is the world’s first sustainable air purification technology product with significantly lower social and environmental costs compared to disposable filter systems.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50275982">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/275/982/e4c52ae46c3b675c122dd0d1d972b0d8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754215474&amp;width=680&amp;sig=mmwKKVO%2FV1opQcRuIsjs%2BmTu0h2njquoRtqM3NlKo4o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331142">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/142/1f99514f5aa01f6e1e37a21a5dc5edea_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754550305&amp;width=680&amp;sig=cZV8L3e1rBfoRIUlowxXMx8%2B%2FrwohrTPd%2BiLogu63zo%3D"/>
+</figure>
+</div>
+<p>Are you spending $100 a year just to breathe clean air?<br/><span class="text-italic"><span class="bold">SWASHER PRO</span></span> purifies air for only about $6 per year using water.<br/>Even in places like California, where water is expensive, it stays affordable.<br/>No more costly filter replacements—save money with a smarter choice.<br/>Clean air, the economical way.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331144">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/144/17d580abeab0a0fca19732ce4e3b9c64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754550318&amp;width=680&amp;sig=3jQAWZ03qWC6kHPxYVmPfihpqTsRqqJm7G4fEK6nGr8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331045">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/045/ff88ea6facf617006463159a52c24d8c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754549541&amp;width=680&amp;sig=wpJqjIMPYjnsVoo8Hy0qm9wuZ5AIcrmGDpGzJ%2B8g1mE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986239">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/239/e10ffecf90cdd365c1dca237ab203369_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130286&amp;width=680&amp;sig=5SmAJmfKIyI7GnEqFMmCz6%2F7HqWCUiyJ2RkWvnJeamc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331046">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/046/a7ada77815c93e580a8bec2cf2367a24_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754549551&amp;width=680&amp;sig=OaHT0dbANdHJgYwb0dEcidGjLyWoLoryr6IRLlTw%2FM0%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">SWASHER PRO</span></span> operates quietly across all modes. Even at its strongest Turbo Mode, it runs at 50dB—comparable to a quiet café—while Sleep Mode is as low as 25dB, almost silent. It delivers powerful air purification without disturbing your comfort. Enjoy fresh air without the noise.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50275998">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/275/998/b38140193389fc3619eb743fd6873a58_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754215704&amp;width=680&amp;sig=BakV%2FCvpP9XvefJn15DGyHquaU4Sw7e9nXlZ5DTkGug%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50331050">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/331/050/3b07db8fb2fb08b116f0d39f1d0b71f9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754549578&amp;width=680&amp;sig=uyTWkton7GaCZSmsFhTjAv%2BfWuWwUJlnCcydZCSsAZM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50276057">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/276/057/aa73ca568af3e740a5dff652f9b9ddbb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754216834&amp;width=680&amp;sig=tdfbbkNHoBFlvowJWdYn5LVPwgXGDGgDuzKkz3bNLuk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50276058">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/276/058/89fd14f01d22f746d019362b94d83f59_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754216840&amp;width=680&amp;sig=OiecNGwjPwyPMDT%2FSeXBByx7QtdtQ8p4NVJLKxKoSi4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986365">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/365/61565aa4999b40466654b8c4072498c1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130882&amp;width=680&amp;sig=Po7MJ9WXrcDdsJVahxHp6p55OAnfcMAPQF4PgEEqZng%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50276060">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/276/060/7266721c3196886d28bb0a4025bc9744_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754216853&amp;width=680&amp;sig=b4ac9bb89vXSFl1XuHcK1tjO2jM67CPwxBWoDrlCQ%2Bw%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">SWASHER PRO</span></span> features a sleek and elegant design that complements any space. Its soft mood lighting creates a relaxing ambiance, even at night. More than just an air purifier, it becomes a stylish focal point in your interior. It enhances both the air quality and the atmosphere of your room.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302168">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/168/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395422&amp;width=680&amp;sig=hZl2tWvdRRzicLlyS%2BEww29w6yfgo%2BzApqzzsW7CDm4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330782">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/782/0a141c460c0a3b5e50505b6fb5532e25_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754547786&amp;width=680&amp;sig=QZDVZ4zwmvoFlACEKqlvkskw%2Bf446a4NN2yO6hPKLYI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330785">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/785/a738d7b31a1e06a97ac5465dae101d12_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754547794&amp;width=680&amp;sig=a9ayE7OuucD%2FpEL16MFCn7%2F9U2gHPiooU%2FlFhgf7sIo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302178">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/178/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395434&amp;width=680&amp;sig=vMSWO57ynMqsDl6KeyyLfoEfTKQJwB7elwEWkl53y7s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330789">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/789/8cb4597eafc3da3ecee37c4ae84d2124_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754547825&amp;width=680&amp;sig=Tv37oIzo%2BqLI%2BvHpicxAsh9mGD9VbgLGgJDkSTshQ%2Fo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986265">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/265/9c063718547a0adf839dedf38f6ac56c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130396&amp;width=680&amp;sig=jP%2F71gubCMqCiseptggrJ5994lsoh7SZJJuIWmKUXy0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986267">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/267/f82824e84e1ba3952139d36698e00b7b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130403&amp;width=680&amp;sig=bR6IrXY%2B6yHxIgCpR6idNVp61IoqHlXVwYXbMOLpyx0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50317717">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/317/717/17d580abeab0a0fca19732ce4e3b9c64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754471400&amp;width=680&amp;sig=VjiwEsDogw%2Bl27%2BjS6cND33qEVB3EVeh3jjkAR3KsPk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986270">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/270/cc76bb202299f885032bf1b05f6608df_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130409&amp;width=680&amp;sig=EY4uBGhykHyRWpr1NcJniW3XM41YxC4yi21VvdicdzI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986283">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/283/79809d89a00e1312b6c6d7639aa33c26_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130450&amp;width=680&amp;sig=9R1ICwmeNjWiune%2By6d4Wks%2B6FLoR9NBCbMHaPfWQXQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50317719">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/317/719/17d580abeab0a0fca19732ce4e3b9c64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754471405&amp;width=680&amp;sig=D27XIgYdUlgCpUA9%2F3Bu3uaWgphGxq%2BORa0cvzPoXfE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986278">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/278/742ff22faadf5c6b025f57b7797d013c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130434&amp;width=680&amp;sig=ONAsh2VWONqTIF%2Bp4j3O99W%2Bo%2BxmuO6NibytDCiAQ%2B0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986271">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/271/84d3052ab97c9d0ab19f9106d35b2f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130415&amp;width=680&amp;sig=cFqdIzmW%2FaEPrQKMtB5MBnlkFP3nfPSh41dX%2BtADEnI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50317721">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/317/721/17d580abeab0a0fca19732ce4e3b9c64_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754471407&amp;width=680&amp;sig=0vMJxqgfkFwUal%2FnFwP%2BTS2EdZN9%2FpNaAbLgdMuXqJg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986275">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/275/2ce61624ebf30b5dc5afec7e81a05472_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130425&amp;width=680&amp;sig=UJDDclyEbnxLZ0lMbEsKlVKPsJBzrmljAJKjtZowcVA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986285">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/285/c8bcfabdb1f073a9de12d42cd8d03e52_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130458&amp;width=680&amp;sig=wrH%2FIedEfGVT2pOxzq9iXubjpAVyEl%2BDYDvwwCPqH2Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50317722">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/317/722/e71b60a966c7812004d7f7d8e87be7d5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754471412&amp;width=680&amp;sig=Y%2BSePFQ7MOzhAe5vs9mXLovRsYFGsirq%2FxSoak6aZ5E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330802">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/802/63023c7738175e5bb4238d6d40e5cf4d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754547889&amp;width=680&amp;sig=j%2FmLticgoZA46feHNF3v%2FVDbANm2RLV7%2BFImRQB70Qk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330821">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/821/05f08b69a3e598b8481ac8894d21e097_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548001&amp;width=680&amp;sig=cm5MGoUvg8jVRNprKf%2Flly75a1Lg1NOvc7AENuRtidA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302196">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/196/06b434ebefd3e26f49acd40914603c1d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395536&amp;width=680&amp;sig=VqCRj5J72imbGbVwJd0d%2BIBapAgSNZTBbL1%2FhQKka70%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330823">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/823/f1431686abca6a70c81d7ea984a150ed_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548012&amp;width=680&amp;sig=0zMf7aHC5oTaMBLCCgOl0NsUyhY8zr7vItWVepbz7Lo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302189">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/189/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395489&amp;width=680&amp;sig=Y19zUGxDpl3A%2B70c6Ib0sRlC%2BHd9gKPz8TnI1pTqaRk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330827">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/827/d48a52cea6d9d8f848c9d52ef592258b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548052&amp;width=680&amp;sig=DTomnaifPkRP2rKG39Vnp4gio%2FuTTp4B0FJRvGzZJ9w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302201">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/201/149816185d43bc084713fff08c2ad154_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395539&amp;width=680&amp;sig=6U%2F2uBtPBW6UgI4LSbPgjfGeVNMkiykyNobrBHJtNAM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302202">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/202/ac358ba50bc65c1317a34bd5e0ebabf1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395547&amp;width=680&amp;sig=3XuNyC2HvwvCBxmd6uyF8t7fpA5aA10tDh6jVk%2BJBBI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302205">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/205/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395558&amp;width=680&amp;sig=PugZHlqqQ5FxuJajs7pm50NOhZml%2F3vU7jZ8M5%2BM%2FrM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330837">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/837/08344eb0a06ee862976fcdfb1bde2190_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548104&amp;width=680&amp;sig=8PEh%2BlHsbdLy15rwnY4ObE7JX4jRSDeh%2F42spKbXPv4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302274">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/274/cd3d36e03d36dacb6efc834f9ec03a75_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395951&amp;width=680&amp;sig=WyrCk2htrX7rryfElgd9QmMM8795a2R2iMwLg3ny1Vo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302207">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/207/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395568&amp;width=680&amp;sig=9qbkKReC%2FLQ%2FWDO8KSCdqzkK8AC3VsU6Z7NYnc3MU88%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330862">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/862/41f2807923a6af1c84c4bea9fd3a6764_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548223&amp;width=680&amp;sig=qY0eqWMHQg4AHNBXRTPrubALEIWnxMSNKX1evSahYKs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50314471">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/314/471/f6a78ddc5b15ed8c8de690d30fe68c1f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754446821&amp;width=680&amp;sig=f3JnASBLNTJUBAOnQzY7PPcnZ5XXuNu%2FMHxWzVozous%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50314468">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/314/468/ac8dc2b088e1c9d30895b771e7b7d9f3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754446814&amp;width=680&amp;sig=LXEDrY41RAvvBeP%2FBfQQ4Zp8%2BoK%2BMMCwM1zrvnGHjJ8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50314469">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/314/469/e08659d367d105f4f79bbc0eebd8483e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754446818&amp;width=680&amp;sig=3TAhh0K4Xk0lRq1PEPuWQAtznf7vDqqVZpO6YwCJRPs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50317733">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/317/733/e71b60a966c7812004d7f7d8e87be7d5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754471463&amp;width=680&amp;sig=JIYJMgEcRYRV8KYHbaNJbNDKSNFKa23g8k5dG3nHmZE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986336">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/336/c196f59eb13b99c7427f01ec349ba24a_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130682&amp;width=680&amp;sig=NIf2HGFHL2wYWeHKISRnlc9zMq%2FCIA8V0I2941P2KCI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986337">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/337/d297cb1e72d5c30564d1e4cb7173487f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130687&amp;width=680&amp;sig=0QoFbjw8lT5h7mQXa14ttguISeS9xWhb3Yef5EHsIfY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986338">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/338/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130700&amp;width=680&amp;sig=jzgCnKe0UCH%2FAog6Z26XI3zGn%2BSNJLJzqTJ2gb2M3Gw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49986339">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/986/339/5a7c1100dcf88fa36bc847dd79388093_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752130702&amp;width=680&amp;sig=fbWn1layhfXwMKMRwFR8bI8v7%2FE3QjS3t3JXoK2bF%2FA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302226">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/226/9a20070dd5fd026f9544419a8d7c99d4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395663&amp;width=680&amp;sig=I2cduOXkFaW861knam7a0%2F0eLqVU8yhjAKTaZcv4BiQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302229">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/229/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395668&amp;width=680&amp;sig=q9EDJKBakleZ0AdTJHmOk%2BqF13F5VndBQZ%2B3%2BUiOFX4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330881">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/881/ba78b90ea633b4d35207e9c70bd0fd50_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548441&amp;width=680&amp;sig=LrFJry50yF6Mj4Ev6lVXlKXm1V0JBalyG46%2BCePJD9w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50330878">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/330/878/027f886ac6ac61903edcd8ce043989cb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754548433&amp;width=680&amp;sig=8Mp%2Fg0TVMpzTBLxBexLaOFgORxikItfWyVWo1N3gFgw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50302102">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/302/102/52bf98ff389984203960e4917a528f80_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754395275&amp;width=680&amp;sig=nx8CzYCnBG3hr3ML18dTJzUIgDclOIQE2k2fOjTrnsU%3D"/>
+</figure>
+</div>
+<span>Altos is a product launch consulting agency that specializes in helping b2c tech startups launch their products in the global market!</span><span>This campaign is promoted by Setoworks, a full-service crowdfunding agency for 500+ creators globally from video production, content creation to marketing since 2016.</span><span>This project is promoted by Jellop, the ad tech power behind the best Kickstarters with 3,500+ successful Kickstarter projects with over $1B raised between them.</span><span>https://www.backermany.com</span><span></span><span>Include the following text: This project is boosted by BackerCrew</span><span></span><span></span><span></span></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">SWASHER was born through tireless effort and trial-and-error, built on a completely new idea — purifying air with water, without disposable filters. As with any innovation, we faced numerous technical challenges, but we've met each one with care and persistence.
+
+Most importantly, SWASHER PRO was developed based on extensive feedback from users of our first-generation model, SWASHER.
+The original SWASHER received a warm response upon release, especially from users who resonated with our eco-friendly approach to air purification. Their real-world feedback gave us valuable insight into how we could improve performance, usability, and convenience — and we took every suggestion seriously.
+SWASHER PRO is the result of that collective journey with our early adopters.
+
+In the early development stages, we focused on engineering a stable dual-vortex structure, while fine-tuning our electrostatic dust-capturing system. It took numerous prototypes to perfect the balance between airflow, water circulation, and quiet operation.
+
+For mass production, we anticipated the unique structure of SWASHER would require custom components and tooling not found in conventional air purifiers. To reduce potential delays, we worked closely with our production partners to pre-secure critical long-lead parts and pre-validate the assembly process.
+
+We’re currently conducting final durability and performance tests while actively preparing for any unexpected hurdles that may arise during full-scale production.
+And although we've done everything possible to minimize delays, we acknowledge that unforeseen challenges can still occur.
+
+If there are any changes to the delivery timeline, we promise to keep you informed with full transparency and regular updates.
+Your trust means everything to us — and we’re doing everything we can to deliver SWASHER PRO on time and at the highest possible standard.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Something else</h3><p class="mb2 text-preline">Our air purifier requires no disposable filters, which means zero filter manufacturing, zero incineration, and zero waste. By eliminating the need for constant filter replacements, we drastically reduce resource consumption and long-term environmental impact. It’s our way of protecting the planet—one breath at a time.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

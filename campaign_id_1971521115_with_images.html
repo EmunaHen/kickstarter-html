@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KeyGo: Ultra-Slim Folding Keyboard with Smart Touch Screen</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/376/925/28892aaeee272e269542de8d0e1b85b4_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754903615&width=560&sig=d7RTEonn%2Bj6RSJTmlv745d%2B7PPzuEF8bvOv4hj5l7xs%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>KeyGo: Ultra-Slim Folding Keyboard with Smart Touch Screen</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Three Lighting Modes, 0–180° Foldable Keyboard with Touchpad, USB-C Connect, and Secondary Screen Support for Windows, macOS, Android</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,273</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128772">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/772/4826cf2b4b77d8bb2e650bb69a38a576_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174623&amp;width=680&amp;sig=xtnbpAm8lywocl3Ohk7y05pkD0%2B5YtGtuqnptpe4ik4%3D" src="https://i.kickstarter.com/assets/050/128/772/4826cf2b4b77d8bb2e650bb69a38a576_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174623&amp;width=680&amp;sig=xtnbpAm8lywocl3Ohk7y05pkD0%2B5YtGtuqnptpe4ik4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50388149">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/388/149/2e4de12a5a2b758caef472fc8b349fcb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754966179&amp;width=680&amp;sig=6x8ETLu7ShA7pQ3ovvjMmJOL1ML%2ByBQdTKNsnP0bSnA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:TEST-VIDEO"><span class="bold">TEST VIDEO</span></h3>
+<h3 class="page-anchor" id="h:Introducing-KeyGo"><span class="bold">Introducing KeyGo</span></h3><div>KeyGo Keyboard — Where Function Meets Flair.</div><div>
+<span class="bold">12.8” touch-integrated display, ten-finger control, and dual Type-C power — redefining input</span>. And we didn’t stop there: <span class="bold">three dynamic lighting modes</span> (activated via FN + Q/W/E) add visual rhythm to your workflow. Try FN + Q for a stunning ripple animation that brings it to life, even in low light.</div><div>It’s not just a productivity tool — it’s a joy to use. Be first to experience smarter, brighter workflows.</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128745">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/745/b677021912bbe074a4b52f5cc9e0470c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174481&amp;width=680&amp;sig=%2BO2Cpjm%2B6ALx8UrwuyCPmzTewLRElZ1fpIuIrjadXCI%3D" src="https://i.kickstarter.com/assets/050/128/745/b677021912bbe074a4b52f5cc9e0470c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174481&amp;width=680&amp;sig=%2BO2Cpjm%2B6ALx8UrwuyCPmzTewLRElZ1fpIuIrjadXCI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Elevate-Your-PC-with-a-Seamless-Display-Upgrade">Elevate Your PC with a Seamless Display Upgrade</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170369">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/369/0f0f2de7215025c2d1f919814ecf9f21_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753438492&amp;width=680&amp;sig=bxmPlXfSWZ7Uiwgh0RSB5If%2FI0H%2Bi4G4GOL4gqg38Uw%3D"/>
+</figure>
+</div>
+<p>KeyGo is the perfect companion for PC and MiniPC users. By adding an external display above your keyboard, it dramatically enhances productivity and user experience, whether you're multitasking, coding, or managing content with ease.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50170376">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/170/376/96d5580fa84dc33437d830316db2e2a1_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753438523&amp;width=680&amp;sig=TSE9CavczAGAUPWragBDIdHvANHjdvxnEFDO7Q7yoJ0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Light-Up-Your-Workflow-KeyGo-s-Dynamic-Lighting-Modes">Light Up Your Workflow: KeyGo’s Dynamic Lighting Modes</h3><p>KeyGo Features Three Lighting Modes (Activated by <span class="bold">FN + Q/W/E</span>) – Elevate your workspace with vibrant visuals that sync with your workflow.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50155520">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/155/520/5cd4d0556e833820b9d16e55499f3db5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753337272&amp;width=680&amp;sig=s0HjVvc5jWlwE7d4GnJtTCc12HoZSTayK%2Brv8y%2FgVsg%3D"/>
+</figure>
+</div>
+<p>✨ <span class="bold">FN + Q</span>: Breathing Light Effect – Enjoy a smooth, pulsing gradient that brings your keyboard to life, perfect for low-light settings.</p><p>💡 <span class="bold">FN + W</span>: Solid Single-Color Backlight – Keep it sleek and minimalist with a clean, uniform glow across all keys.</p><p>🌈 <span class="bold">FN + E</span>: Rainbow Wave – Watch dynamic color transitions ripple with every keystroke for an energizing typing experience.</p><p>More than just a productivity tool—KeyGo transforms your desk into a visually immersive experience.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50155529">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/155/529/249c8b9374c709d8e5fac6b1eab9a180_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753337390&amp;width=680&amp;sig=9MZ8l%2Fygy3Sjxpf27EgiQOVny1eF7DT76vmU4hx3spw%3D" src="https://i.kickstarter.com/assets/050/155/529/249c8b9374c709d8e5fac6b1eab9a180_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753337390&amp;width=680&amp;sig=9MZ8l%2Fygy3Sjxpf27EgiQOVny1eF7DT76vmU4hx3spw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Redefine-Input-Keyboard-Touchscreen-All-in-One"><span class="bold">Redefine Input: Keyboard + Touchscreen, All-in-One</span></h3><p>Break the rules of traditional keyboards! A 12.8-inch fully laminated glass display merges with a scissor-switch keyboard. It’s not just a keyboard – it’s a <span class="bold">touch-controllable extension screen</span>! Swipe to adjust settings, tap to switch apps, drag files with your fingertips… One device, two superpowers: precise typing + intuitive touch interaction.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128789">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/789/e2f9d106896b4d2da60938ff53a1fb79_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174673&amp;width=680&amp;sig=VUT7xsYKatKEtE6%2BLW8TGOlWM8NntAH4laqb29VMD%2Bs%3D" src="https://i.kickstarter.com/assets/050/128/789/e2f9d106896b4d2da60938ff53a1fb79_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174673&amp;width=680&amp;sig=VUT7xsYKatKEtE6%2BLW8TGOlWM8NntAH4laqb29VMD%2Bs%3D"/>
+</figure>
+</div>
+<p>Ten-finger touch + scissor-switch keyboard = <span class="bold">double productivity</span>! Type quietly and precisely for focused work; use touch gestures (swipe to switch, pinch to zoom, drag to move) to replace mouse clicks. Multitask like a pro – faster, smoother, and more intuitive than ever.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128848">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/848/cdca50b38488c79f28d14469a28b3233_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174861&amp;width=680&amp;sig=9jXgXhN7jknzffbVP141LqlKYcLCFVf7wvsutfR78hY%3D" src="https://i.kickstarter.com/assets/050/128/848/cdca50b38488c79f28d14469a28b3233_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174861&amp;width=680&amp;sig=9jXgXhN7jknzffbVP141LqlKYcLCFVf7wvsutfR78hY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Immersive-Visuals-Pro-Grade-Screen-for-Crisp-Clarity"><span class="bold">Immersive Visuals: Pro-Grade Screen for Crisp Clarity</span></h3><p><span class="bold">1920×720 resolution + 72% NTSC color gamut</span>, powered by IPS dark-state technology. The fully laminated glass <span class="bold">eliminates the “air gap”</span> – whether you’re editing documents, streaming videos, or designing creatively, every pixel is vivid and sharp. It syncs seamlessly with your main screen for a dual-display experience!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128796">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/796/6f3b2e97f50d2629b803c77755b87d09_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174703&amp;width=680&amp;sig=tlpNzCY07gm4g7vdFJ6%2FRmdSkvmAdPKk%2FduSFToeHEA%3D" src="https://i.kickstarter.com/assets/050/128/796/6f3b2e97f50d2629b803c77755b87d09_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174703&amp;width=680&amp;sig=tlpNzCY07gm4g7vdFJ6%2FRmdSkvmAdPKk%2FduSFToeHEA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128801">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/801/5adeb7ac41da028aa78ffec5fa26a1fc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174718&amp;width=680&amp;sig=DAFAZ%2BAyKieqn8hJUnDUr2c%2FUzaDAee9olkfUqhFnpM%3D" src="https://i.kickstarter.com/assets/050/128/801/5adeb7ac41da028aa78ffec5fa26a1fc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174718&amp;width=680&amp;sig=DAFAZ%2BAyKieqn8hJUnDUr2c%2FUzaDAee9olkfUqhFnpM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Universal-Compatibility-Connect-All-Your-Devices"><span class="bold">Universal Compatibility: Connect All Your Devices</span></h3><p>Dual Type-C ports (full-function + power-only) + USB-A - A support – works with <span class="bold">phones, tablets, laptops (Windows/iOS)</span>! Turn your phone into a touch-enabled extension; add touch interaction to old devices… One keyboard, endless possibilities. No more “device mismatch” headaches.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128821">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/821/714525dbeaa4249896d3d1d8b4bbc60b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174771&amp;width=680&amp;sig=PcvVnx3HcmhtE3L9yy%2F9WXFeGyWxSQdRxXdZUQfPfsk%3D" src="https://i.kickstarter.com/assets/050/128/821/714525dbeaa4249896d3d1d8b4bbc60b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174771&amp;width=680&amp;sig=PcvVnx3HcmhtE3L9yy%2F9WXFeGyWxSQdRxXdZUQfPfsk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128820">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/820/5522bd3ec7479f30ec15abd1f1f531d9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174766&amp;width=680&amp;sig=aFjRyMH8NnNHww%2FYJuHI3qsAijsqAEZADTRGBkCi4Ds%3D" src="https://i.kickstarter.com/assets/050/128/820/5522bd3ec7479f30ec15abd1f1f531d9_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174766&amp;width=680&amp;sig=aFjRyMH8NnNHww%2FYJuHI3qsAijsqAEZADTRGBkCi4Ds%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Premium-Build-Portability-CNC-Aluminum-Foldable-Design"><span class="bold">Premium Build &amp; Portability: CNC Aluminum + Foldable Design</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128814">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/814/394c633db0a50e43ce8b44e8cbea1256_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174749&amp;width=680&amp;sig=bUgA0v6zIyYykhMNL52uCySp8dxXO6LrR7vcyJRwrsg%3D" src="https://i.kickstarter.com/assets/050/128/814/394c633db0a50e43ce8b44e8cbea1256_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174749&amp;width=680&amp;sig=bUgA0v6zIyYykhMNL52uCySp8dxXO6LrR7vcyJRwrsg%3D"/>
+</figure>
+</div>
+<p>Crafted with CNC-anodized aluminum for a <span class="bold">sleek, durable finish</span>. 180° foldable design (324mm compact size, 800g weight) fits any scenario: desktop setup, on - the - go work, or even as a car mount. Style and practicality in one package.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128825">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/825/89c368a69c54debf446a2788f5141b14_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174785&amp;width=680&amp;sig=nx8eSi%2FpNDzNQRQ0WmN6u1eXhJGeutzGTgsdjhqJkDk%3D" src="https://i.kickstarter.com/assets/050/128/825/89c368a69c54debf446a2788f5141b14_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174785&amp;width=680&amp;sig=nx8eSi%2FpNDzNQRQ0WmN6u1eXhJGeutzGTgsdjhqJkDk%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Scene-Specific-Solutions-For-Work-Play-Beyond"><span class="bold">Scene - Specific Solutions: For Work, Play &amp; Beyond</span></h3><p>Remote workers: Turn your tablet into a “touch keyboard + screen” for mobile productivity. Gamers: Use it as a secondary display for guides/macros. Creators: Adjust settings and drag assets with taps. Even fits medical/car scenarios – <span class="bold">touch - friendly and easy to clean</span>. Your perfect tool, anywhere.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128830">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/830/ac5dbe2b2b9413b9f173e1ae706235af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174801&amp;width=680&amp;sig=OADUHsZQ2dUlWtLOuD2QIB3Y9wsM7UDUTBBvTLBnyQU%3D" src="https://i.kickstarter.com/assets/050/128/830/ac5dbe2b2b9413b9f173e1ae706235af_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174801&amp;width=680&amp;sig=OADUHsZQ2dUlWtLOuD2QIB3Y9wsM7UDUTBBvTLBnyQU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128839">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/839/140491fbb456be06d96bdcc3bce48752_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174818&amp;width=680&amp;sig=Z6z%2FXH6j6dkCCkKWk0sH%2BOTWftFRNM%2BFqcfrpRzPE7c%3D" src="https://i.kickstarter.com/assets/050/128/839/140491fbb456be06d96bdcc3bce48752_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174818&amp;width=680&amp;sig=Z6z%2FXH6j6dkCCkKWk0sH%2BOTWftFRNM%2BFqcfrpRzPE7c%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Trust-in-Details-Tested-Quality-Craftsmanship"><span class="bold">Trust in Details: Tested Quality &amp; Craftsmanship</span></h3><p>Fully laminated glass eliminates pixel distortion. <span class="bold">60Hz refresh rate + 800:1 contrast</span> (lab -calibrated). Scissor - switch keys: quiet and responsive. CNC aluminum passes durability tests. <span class="bold">No empty specs – just proven performance</span>. Back your choice with confidence.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50128844">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/128/844/ad1b7c69db61529ce2b913cfaaf5cd7d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174849&amp;width=680&amp;sig=NF0Wj9Rq0AN5R9kvqCJKdZ3exAVa43J8Y8KdS%2FmgQHM%3D" src="https://i.kickstarter.com/assets/050/128/844/ad1b7c69db61529ce2b913cfaaf5cd7d_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753174849&amp;width=680&amp;sig=NF0Wj9Rq0AN5R9kvqCJKdZ3exAVa43J8Y8KdS%2FmgQHM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Compatibility"><span class="bold">Compatibility</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50418333">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/418/333/2c4c4a36d41d8d5875a5a265bb2edc94_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1755136470&amp;width=680&amp;sig=Nv9AlClvHEXbLFWD%2BOqzxDP9zIYi7j8%2Bi6S0BBilw3M%3D"/>
+</figure>
+</div>
+<p>KeyGo is compatible with multiple systems, including <span class="bold">Windows, macOS, and Android</span>.. It is also compatible with multiple devices, including <span class="bold">desktop computers, laptops, MacBooks, Mac minis, and more</span>, and is designed for <span class="bold">desktop computers and mini PC</span>.</p><h3 class="page-anchor" id="h:Specification">Specification</h3><p><span class="bold">Length unit:  mm    (1 mm = 0.039 in)</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50418759">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/418/759/5dc1e1723b84c349d3e9a5d866a449c5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1755139454&amp;width=680&amp;sig=MahjnX5dT29xaqvek6qXJvdW1JpEVWgiEFdKOxR6ucY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Reward">Reward</h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143552">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/143/552/626fa33e16ed37c0de6334b62aa60bd6_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753260501&amp;width=680&amp;sig=mTPFhbF9LLX56a4xCl8r8xXRHt9SiczWKEEupMWEqr0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:About-the-Shipping">About the Shipping</h3><p>Due to the high uncertainty of cross-border transportation, the exact amount will be determined based on the actual freight costs at the time of reward shipment. We assure you that any increase in freight costs will <span class="bold">not exceed 10%</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50143484">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/143/484/73ae0c441efc4c22be86c025c167a973_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753260182&amp;width=680&amp;sig=auOwjZTd%2FtAe1m3M%2FL2yfstJB01O6Bg5zxaEqWlJmPg%3D"/>
+</figure>
+</div>
+<p>After the crowdfunding campaign concludes, we will gather each backer's shipping address via Email. Shipping is scheduled for <span class="bold">Nov. 2025</span>, and we offer a <span class="bold">1-year quality guarantee.</span> If you receive a product with any quality issues, please contact us, and we will promptly arrange a return or replacement.</p><p>Any further questions just contact us at: <span>KeyGoKS@outlook.com</span></p><h3 class="page-anchor" id="h:About-Warranty"><span class="bold">About Warranty</span></h3><p><br/>Warranty Period: Our product warranty is valid for <span class="bold">12 months</span> from the date you receive the product. During the warranty period, if there is a malfunction due to manufacturing or material defects, we will provide free repair or replacement services.</p><p>Warranty Process: If your product malfunctions within the warranty period, please contact our customer service team at <span>KeyGoKS@outlook.com</span> as soon as possible, providing the backer number and detailed information about the issue. We will promptly address the problem and provide the necessary repair or replacement services.</p><h3 class="page-anchor" id="h:What-s-in-the-Box-">What's in the Box?</h3><p>Ultra-Slim Folding Keyboard* 1 &amp; Type-C Cable* 1 </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50154332">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/154/332/205570b659c094811a76c02d789216e9_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753327323&amp;width=680&amp;sig=FpC3fdXzq8VSsQMVwQIuwyH9JCjU3LiDv7x%2B3YBP%2Fwc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Design-Process">Design Process</h3><h4 class="page-anchor" id="h:3D-Model-">3D Model </h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864575">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/575/738a7c318255627e4095b233ed62adb3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751271287&amp;width=680&amp;sig=Jl%2FxjetS9i7ZTCWWbpwTg0il31aEhKRFG9YXzzBlk0E%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864572">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/572/0eb4745887a96f283310d6c652d686ee_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751271285&amp;width=680&amp;sig=z4SoNCvraizqFp89U2X6LJRFKBzJvDAbFjxqB4Au8mU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49864592">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/864/592/e110c413dc6c8871ffdd1b50db5ea241_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751271376&amp;width=680&amp;sig=m%2Bp%2B8RvR80xxSjrAsRtk9r3xYBU18CwS0V7YgSop610%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:About-the-Team-">About the Team </h3><p><span class="bold">We’re not just makers — we’re problem solvers.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49890926">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/890/926/375786a17fd2de28afa4344def784770_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751422651&amp;width=680&amp;sig=SKJ7z6PIKKdvhsBjIs0Gj793kI1spzWqMcbfxdRWaWQ%3D"/>
+</figure>
+</div>
+<p>Our team is made up of experienced engineers, product designers, and manufacturing experts with over 20 years of experience in the consumer electronics industry. We’ve delivered dozens of successful ODM and OEM hardware projects — from portable docks to wireless charging hubs — for global clients.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49890930">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/890/930/c1d9f77ed178e11c94325318484a9ded_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751422704&amp;width=680&amp;sig=emMRCmDSCl54vvsLUuOVYlt3FXgUSElO51WATEvp2uE%3D"/>
+</figure>
+</div>
+<p>The idea behind <span class="bold">KeyGo</span> was born from real-life frustration: watching mobile users juggle keyboards, stands, and screens just to get simple work done. We wanted to build one tool that could fold, display, touch, and type — all at once.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49890935">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/890/935/c14ba8c67c8a878318d03f84f09455dd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751422718&amp;width=680&amp;sig=5KBMOgn2eBGe71wWaUmXX%2FXqPGPZtbHR%2Bz6bnUc17hQ%3D"/>
+</figure>
+</div>
+<p>From early mockups to working prototypes, we’ve tested materials, optimized circuit layouts, and refined every detail to ensure seamless plug-and-play performance. With full in-house production and quality control, we’re fully capable of bringing KeyGo from concept to your hands — on time and with care.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49890950">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/890/950/d80faee8f88631d34380aee4acc3eec9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751422836&amp;width=680&amp;sig=IdQ6VSPnq8UA0Gr5PZJ%2F4pZYVcbgD6teEkOKNkNGp5U%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:TimeLine"><span class="bold">TimeLine</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50155540">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/155/540/adbeee5822ff6bd1b0424bdfca428c29_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753337556&amp;width=680&amp;sig=sQmLjhEHMhkczAmMrQsVL5CubKFY8U3uxwayvTyo4E8%3D"/>
+</figure>
+</div>
+<span>Our Facebook Grop</span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50154382">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/154/382/4a9ac7c13efbcd94d771ec4765f634af_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753327792&amp;width=680&amp;sig=Aqh26KD7iNRp1cbyPKg%2B1Kda1pLzf%2B%2FqB85VK8W4l5I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50154383">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/154/383/af467a1527344ec0b022068d5871dd20_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753327810&amp;width=680&amp;sig=igUCC6Yb6g9ZBE4LwPVQK8jycBhFXjZ0iXTOM6GjfUs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50154386">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/154/386/8b819faf1685e3837a3211fe7a10e5da_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753327825&amp;width=680&amp;sig=JBcEf75PbN2VgdUwBVPqIIUgz9by1Lwn1U7q7qIXe7k%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50154387">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/154/387/ac882060b218b1bb7a271d97181e251c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753327843&amp;width=680&amp;sig=rQdEyKmFmgSe7HkalWaJ6VOxmWudjFytB8To4RO9idE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50154388">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/154/388/54781de5c0e9a9ee87c9f5c58f7dff5b_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753327863&amp;width=680&amp;sig=LtscqxXXhfH6rd%2F6faT4WA5BpBh81Ej%2F4pwaaEhHhMs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50154529">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/154/529/2a4fb6dfdad3e0851c68f4eb1ca9f1c5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753328756&amp;width=680&amp;sig=RMWINnio0HLuZK1M1pwe0XJpkFDXPgQcfV%2FiJNzZ%2F9o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50237270">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/237/270/c8f110d736c9ea39f38630c1d956b7b3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753925045&amp;width=680&amp;sig=NPyOCdCEOE1qqb989XGuo9djRN%2BKuansQmzAtAnBINI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50316210">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/316/210/a6fbd4b2ba64ce9509a8312811d77c7e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754460695&amp;width=680&amp;sig=XKdq0%2BpdMZ09S6SqY74EROIwqapCL7AgYX2%2FBZfwGF0%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">While we’ve already completed prototyping and small-batch testing, there are still challenges ahead as we scale for mass production. These may include:
+
+Supply chain volatility — We’ve secured long-term relationships with key component suppliers, but sudden shortages (e.g. display panels or ICs) could cause delays. We’ve built in buffer stock and have backup vendors in place.
+
+Quality consistency — As this is a foldable touchscreen keyboard, small variances in hinge precision or lamination can affect usability. We’ve partnered with an experienced CNC and display module factory to ensure consistent assembly and durability.
+
+Cross-platform compatibility — We’ve tested with major devices and systems (Windows, macOS, Android, iOS, mini PCs), but there may be fringe cases with rare configurations. We will continue expanding our compatibility list and offer firmware updates where possible.
+
+With a proven manufacturing track record and hands-on project experience, we’re confident in delivering KeyGo to backers smoothly — and will keep you transparently informed every step of the way.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

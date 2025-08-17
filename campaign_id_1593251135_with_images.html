@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LifeTag</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/077/867/fed88f23ed4e40a9e3a049660d0336c2_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752770501&width=560&sig=JC%2FAHl1LvPt4pP1c7oya0g3cldHWDWL8nsCTDRK2f0U%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>LifeTag</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Access vital medical information instantly with just one scan. Safety for seniors, children, athletes, and everyone we love</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 9,295</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:What-is-LifeTag-"><span class="bold">What is LifeTag?</span></h3><p>LifeTag is a smart wristband with built-in NFC and QR technology. When scanned with any smartphone, it instantly opens a secure medical emergency profile, displaying critical information such as:</p><ul>
+<li>Medications</li>
+<li>Allergies</li>
+<li>Medical conditions</li>
+<li>Emergency contacts</li>
+<li>Blood type</li>
+<li>Real-time location (optional)</li>
+</ul><p>All of this works without any apps or complicated registration. It functions even if the person is unconscious, disoriented, or unable to speak.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50065945">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/065/945/0eff2810b79676a4af35cd3f4e078d98_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752693621&amp;width=680&amp;sig=a4ta3OFJp5Ln7muceIQOFpFSHqqJTKYhZPUmQMoyD4Y%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-How-does-it-work-"> <span class="bold">How does it work?</span>
+</h3><p>1- The user activates the wristband by scanning the QR or NFC chip</p><p>2- They create their medical profile on our secure web platform</p><p>3- The wristband is ready: in an emergency, anyone can scan it and know how to help</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060127">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/127/ae2e85087e55132d008800bc462c5898_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752664049&amp;width=680&amp;sig=2fV9ybimMY8gC36FRzK1XiSFEzAsW97%2B%2FK1225utG1A%3D"/>
+</figure>
+</div>
+<p><span class="bold">Part 1: Public View (Medical Profile)</span></p><p>When someone scans the QR code or taps the NFC on the bracelet, this public profile opens automatically.</p><p>Only the essential medical information for an emergency is displayed here:</p><ul>
+<li>Allergies</li>
+<li>Relevant medical conditions</li>
+<li>Current medication</li>
+<li>Emergency contact for quick notification                                                                     This information is accessible without needing to log in and is protected so that private data is not shown and no edits are allowed.                                                           This way, anyone or any healthcare professional can immediately obtain vital information, which can make a difference in a critical situation.</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060178">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/178/5f09768d1be26b895fcc7313303c13bb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752664488&amp;width=680&amp;sig=BjBFd%2B%2FMVflvBfQ9WnOqFL6JtDPQJPFFQ2m45TkI2fM%3D"/>
+</figure>
+</div>
+<p><span class="bold">Part 2: Contacts</span></p><p>In this private section, the user can manage their close contacts: family members, friends, or trusted people.</p><p>From here, they can view the medical profile of each contact they have created and authorized to share information.</p><p>Additionally, the app allows initiating a direct conversation (chat) with any of these contacts to coordinate or share important information.</p><p>In the future, we plan to integrate advanced features such as GPS tracking to send automatic alerts in case of emergency, further enhancing safety and rapid response.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060155">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/155/a538c96c70cf1ff0e8cf1ba47e39b02f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752664318&amp;width=680&amp;sig=HifGtqkSVQvDl%2FeSaGwcSc2GKyyjB3CksIDiYCY8qHE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060159">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/159/5a626139558c5d41d7041a28ced335ef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752664333&amp;width=680&amp;sig=VGCH%2B5bsMbiNtf9d%2FHDhxZxnmxh5qF0l%2BoRAeLKMpDY%3D"/>
+</figure>
+</div>
+<p><span class="bold">Part 4: QR Code (Fast and Secure Access)</span></p><p>In addition to being integrated into the physical wristband, the unique QR code will also be available within the app.</p><p>This allows the user to easily share it with family members, friends, or medical services at any time.</p><p>When this code is scanned, the public medical profile opens instantly, providing quick and secure access to vital information in emergencies.</p><p>In this way, the QR code acts as a bridge between wearable technology and the app, ensuring that help is always within reach.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060206">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/206/7471b53e128321f76167d2b44c72b960_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752664638&amp;width=680&amp;sig=RSK08%2F%2BqPKTBeV6PG4CorO9meSXn1Q15qUxtxqZN%2Fi8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Who-is-it-for-"> <span class="bold">Who is it for?</span>
+</h3><ul>
+<li>Elderly people who live alone</li>
+<li>Children of any age (in case they get lost or have an emergency)                         During school outings, an emergency may occur or a child might get lost.<br/>To increase safety, the school provides each student with a LifeTag wristband.<br/>Each wristband is linked to their medical information and emergency contacts, and connected to the teachers in charge.</li>
+<li>Athletes, cyclists, hikers...</li>
+<li>People with chronic or specific medical conditions</li>
+<li>Families who want peace of mind in any situation</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50065950">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/065/950/43f0562545d7f32053fc840eda2f3f01_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752693649&amp;width=680&amp;sig=xWUkTdDy3xOYNil0JvuhBjA5N%2Bw4XpN9Bj2Z0oZ6m4U%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Why-is-it-different-"> <span class="bold">Why is it different?</span>
+</h3><ul>
+<li>No apps or complications required</li>
+<li>Affordable, accessible, and customizable</li>
+<li>Suitable for all ages</li>
+<li>Fully private and secure</li>
+<li>Future expansion planned (mobile app and smartwatch integration)</li>
+</ul><h3 class="page-anchor" id="h:-Where-will-the-funds-go-"> <span class="bold">Where will the funds go?</span>
+</h3><p>Your support will help bring LifeTag to life, from manufacturing to public launch. Our goal is to create a product that is accessible, practical, and reliable from day one. Here's how the funds will be used:</p><h4 class="page-anchor" id="h:-1-Production-of-the-first-batch-of-NFC-wristbands">🔹 1. Production of the first batch of NFC wristbands</h4><p>Manufacturing the bands with embedded NFC chip and QR code</p><p>Custom design, printing, and packaging</p><p>Quality control to ensure each unit works perfectly</p><h4 class="page-anchor" id="h:-2-Development-of-the-online-platform-and-user-zone">🔹 2. Development of the online platform and user zone</h4><p>Secure website where users can create and manage their medical profiles</p><p>Admin access for family members or caregivers</p><p>Safe, encrypted, and mobile-friendly design</p><h4 class="page-anchor" id="h:-3-Shipping-and-logistics">🔹 3. Shipping and logistics</h4><p>Individual packaging and labeling for backers</p><p>National and international shipping costs (if we exceed our goal)</p><h4 class="page-anchor" id="h:-4-Marketing-and-awareness">🔹 4. Marketing and awareness</h4><p>Visual content and campaign video production</p><p>Promotion through social media, press outreach, and strategic partnerships</p><p>Educational materials to help people understand how LifeTag works</p><h4 class="page-anchor" id="h:-5-Maintenance-and-tech-support">🔹 5. Maintenance and tech support</h4><p>Secure hosting of the platform for at least 1 year</p><p>Initial support for users setting up their profiles</p><p>Updates and improvements based on community feedback</p><h3 class="page-anchor" id="h:-What-if-we-surpass-the-goal-"> <span class="bold">What if we surpass the goal?</span>
+</h3><p>Even better! If we receive more support than expected, we’ll expand by:</p><p>Producing more units in new colors and sizes</p><p>Developing a mobile app (Android/iOS) with SOS button, alerts, and live tracking</p><p>Smartwatch integration</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50058404">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/058/404/4710e7c9866ec7864747c50523ad18fc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752653994&amp;width=680&amp;sig=TF84idfmGU%2Bzn8sWcVySDSAgrtyM9YaLYFpiarCEtfk%3D" src="https://i.kickstarter.com/assets/050/058/404/4710e7c9866ec7864747c50523ad18fc_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752653994&amp;width=680&amp;sig=TF84idfmGU%2Bzn8sWcVySDSAgrtyM9YaLYFpiarCEtfk%3D"/>
+</figure>
+</div>
+<p>Distribution to pharmacies, schools, and medical centers</p><h3 class="page-anchor" id="h:-About-Me-"> <span class="bold">About Me</span>
+</h3><p>Hi, I’m Javier, the creator of LifeTag. This idea came from a real concern: what if something happens to someone I love, and no one knows how to help? A food allergy, a fall, a chronic condition… every second counts, and having medical information instantly available can make all the difference.</p><p>With the help of experts in tech and design, I turned that concern into a real, simple, and useful project: a wristband with NFC and QR that anyone can scan to know who you are, what you need, and who to call.</p><p>This project is more than a product—it's a tool to care for the people we love. And with your support, we can launch it, improve the platform, and bring LifeTag to those who need it most.</p><h3 class="page-anchor" id="h:-Estimated-Timeline-"> <span class="bold">Estimated Timeline</span>
+</h3><ul>
+<li>End of campaign: 30 days after launch</li>
+<li>Production and development: 1–2 months</li>
+<li>Backer deliveries: ~90 days after the campaign ends</li>
+</ul><p> Let’s make LifeTag a reality</p><p>With your help, we can launch a product that is practical, affordable, and truly life-saving in critical moments. This wristband can make a difference.</p><p>Thank you for trusting us.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50049465">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/049/465/15fa1e293d9f183bcd197c37ad00dc1a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752600639&amp;width=680&amp;sig=7QDNeQXmqVZ3LZ6cgIJ8Kop7aJ%2BD1bA%2Fgi9pPgB7AZk%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Sketch-sample">Sketch sample</h3><p>This is a hand-drawn sketch I created to give you a visual idea of how the final design and functionality of the product might look.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50066789">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/066/789/0fca98631726d3fd7d1f34c8d8b1e5cd_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752698456&amp;width=680&amp;sig=nG8%2Bl%2Fq2d7hYoxrvtCGKGN8YOffABbFGHfHmdagTWa8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50079938">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/079/938/9a3897e48288aa9e519d64aea32472dc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752780253&amp;width=680&amp;sig=%2FxfzFv6Yex8k03ACi25%2BJeXoTPrqbt3zlgbzSGclC40%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:SPANISH">SPANISH</h3><h3 class="page-anchor" id="h:-Que-es-LifeTag-">¿Qué es LifeTag?</h3><p>LifeTag es una pulsera inteligente con tecnología NFC y QR integrada. Al escanearla con cualquier móvil, permite acceder de forma instantánea a un perfil médico de emergencia, con información como:</p><ul>
+<li>Medicación</li>
+<li>Alergias</li>
+<li>Enfermedades</li>
+<li>Contactos de emergencia</li>
+<li>Grupo sanguíneo</li>
+<li>Ubicación en tiempo real (opcional)</li>
+</ul><p>Todo esto sin necesidad de apps ni registros complicados. Funciona incluso cuando la persona está inconsciente, desorientada o no puede hablar.</p><h3 class="page-anchor" id="h:-Co-mo-funciona-">¿Cómo funciona?</h3><p>1- El usuario activa su pulsera escaneando el QR o chip NFC</p><p>2- Crea su perfil médico en nuestra web segura</p><p>3- La pulsera queda lista: en una emergencia, cualquiera puede escanearla y saber cómo ayudar</p><h3 class="page-anchor" id="h:-Para-quie-n-es-">¿Para quién es?</h3><ul><li>Mayores que viven solos<ul>
+<li>Niños de cualquier edad (por si se pierden o tienen una emergencia)                    En las salidas escolares, siempre puede surgir una emergencia o un niño puede extraviarse. Para aumentar la seguridad, el colegio entrega una pulsera LifeTag a cada alumno. Cada pulsera está vinculada a su información médica y contactos de emergencia, y conectada con los profesores responsables.</li>
+<li>Deportistas, ciclistas, montañistas</li>
+<li>Personas con condiciones médicas específicas</li>
+<li>Familias que quieren estar tranquilas</li>
+</ul>
+</li></ul><h3 class="page-anchor" id="h:-Por-que-es-diferente-">¿Por qué es diferente?</h3><ul>
+<li>Sin apps ni complicaciones</li>
+<li>Accesible, económico y personalizable</li>
+<li>Apto para cualquier edad</li>
+<li>Totalmente privado y seguro</li>
+<li>Con posibilidad de expansión futura a app y smartwatch</li>
+</ul><h3 class="page-anchor" id="h:-A-que-destinaremos-los-fondos-">¿A qué destinaremos los fondos?</h3><p>Vuestra aportación servirá para hacer realidad <span class="bold">LifeTag</span>, desde la fabricación hasta el lanzamiento público. Queremos crear un producto accesible, útil y seguro desde el primer día. Así es como se distribuirán los fondos:</p><h4 class="page-anchor" id="h:-1-Produccio-n-del-primer-lote-de-pulseras-NFC">🔹 1. Producción del primer lote de pulseras NFC</h4><p>Fabricación de las pulseras con tecnología NFC y código QR integrado</p><p>Personalización del diseño, impresión y packaging</p><p>Control de calidad para garantizar que cada unidad funcione perfectamente</p><h4 class="page-anchor" id="h:-2-Desarrollo-de-la-plataforma-web-y-zona-de-usuario">🔹 2. Desarrollo de la plataforma web y zona de usuario</h4><p>Creación de la web donde los usuarios podrán registrar su ficha médica</p><p>Sistema de gestión para familiares o cuidadores</p><p>Zona segura, cifrada y fácil de usar desde cualquier dispositivo</p><h4 class="page-anchor" id="h:-3-Preparacio-n-de-envi-os-y-logi-stica">🔹 3. Preparación de envíos y logística</h4><p>Embalaje individual, etiquetas, y preparación para envíos a mecenas</p><p>Costes de envío nacional e internacional (en caso de superar el objetivo)</p><h4 class="page-anchor" id="h:-4-Marketing-y-visibilidad">🔹 4. Marketing y visibilidad</h4><p>Diseño del contenido visual y vídeo para la campaña</p><p>Promoción en redes sociales, notas de prensa y colaboraciones estratégicas</p><p>Creación de materiales explicativos para que cualquier persona entienda cómo funciona la pulsera</p><h4 class="page-anchor" id="h:-5-Mantenimiento-y-soporte-te-cnico">🔹 5. Mantenimiento y soporte técnico</h4><p>Alojamiento seguro para la plataforma durante al menos 1 año</p><p>Soporte inicial para usuarios que necesiten ayuda al activar su pulsera</p><p>Actualizaciones y mejoras según el feedback de los primeros usuarios</p><h4 class="page-anchor" id="h:-Y-si-superamos-el-objetivo-">✅ ¿Y si superamos el objetivo?</h4><p>¡Mejor aún! Si conseguimos más apoyo del previsto, ampliaremos:</p><p>La producción a más unidades y nuevos colores/tamaños</p><p>El desarrollo de una app móvil (Android/iOS) con botón SOS, alertas y localización</p><p>La integración con relojes inteligentes</p><p>Distribución en farmacias, colegios y centros médicos</p><h3 class="page-anchor" id="h:Sobre-mi-">Sobre mí</h3><p>Hola, me llamo Javier y soy el creador de <span class="bold">LifeTag</span>. Esta idea nació de una preocupación real: ¿qué pasaría si le ocurre algo a alguien que quiero, y nadie sabe cómo ayudarle? Una alergia, un golpe, una caída… cualquier segundo cuenta, y tener la información médica accesible puede marcar la diferencia.</p><p>Con la ayuda de expertos en tecnología y diseño, he convertido esa preocupación en un proyecto real, sencillo y útil: una pulsera con NFC y QR que cualquier persona puede escanear para saber quién eres, qué necesitas y a quién llamar.</p><p>Este proyecto es más que un producto: es una herramienta para cuidar de los que más queremos. Y con tu ayuda, podemos lanzarlo, mejorar la plataforma y llevar LifeTag a muchas más personas que lo necesitan.</p><h3 class="page-anchor" id="h:FECHAS-ESTIMADAS">FECHAS ESTIMADAS</h3><div class="_tableContainer_80l1q_1"><div class="_tableWrapper_80l1q_14 group flex w-fit flex-col-reverse"><p>Fin de campaña: 30 días después del lanzamiento Producción y desarrollo: 1-2 meses Envíos a mecenas: 90 días después del final                                                                                                                                                                                                                                                                                                                                                                                 Ayúdanos a que <span class="bold">LifeTag</span> sea una realidad. Con tu apoyo, podremos lanzar un producto útil, accesible y capaz de ayudar en momentos críticos. Esta pulsera puede marcar la diferencia.<br/>Gracias por confiar en nosotros.</p></div></div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">LifeTag es un proyecto realista y técnicamente viable, pero como en cualquier proceso de desarrollo y producción, pueden surgir ciertos retos. A continuación te explico los principales riesgos que hemos identificado y cómo planeamos enfrentarlos:
+
+1. Producción y calidad de las pulseras
+Riesgo: Que el proveedor tarde más de lo previsto o que haya errores en el lote inicial.
+Solución: Ya hemos contactado con varios fabricantes fiables y solicitaremos prototipos antes de lanzar la producción completa. Además, realizaremos controles de calidad en cada etapa.
+
+2. Plataforma web y funcionamiento técnico
+Riesgo: Posibles retrasos o ajustes técnicos en la plataforma para los perfiles médicos.
+Solución: Contamos con desarrolladores web con experiencia. La primera versión será simple pero funcional, y se irá ampliando con actualizaciones. Usaremos servidores seguros y escalables desde el principio.
+
+3. Envíos y logística
+Riesgo: Retrasos en el envío de las recompensas, especialmente si la demanda supera nuestras previsiones.
+Solución: Planificamos con margen, trabajando con empresas logísticas confiables y gestionando los pedidos por lotes para garantizar tiempos de entrega razonables.
+
+Soy joven, pero estoy completamente comprometido con este proyecto. Lo he pensado desde la base, con la intención de ayudar y crear algo útil. Quiero que cada persona que apoye LifeTag reciba un producto funcional, fiable y con sentido.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><h3 class="normal type-18 mt5">I plan to use AI-generated content in my project.</h3><h4 class="bold lh4" style="margin-bottom: 1.5rem;">What parts of your project will use AI generated content? Please be as specific as possible.</h4><p class="border-left border-create-700 border-left5px pl3">En fases futuras, si el proyecto tiene éxito, podríamos estudiar el uso de IA en la app para enviar alertas inteligentes o analizar datos médicos de forma responsable, siempre respetando la privacidad del usuario y cumpliendo con la normativa vigente.</p><h4 class="bold lh4" style="margin-bottom: 1.5rem;">Do you have the consent of owners of the works that were (or will be) used to produce the AI generated portion of your projects? Please explain.</h4><p class="border-left border-create-700 border-left5px pl3">No se ha usado ningún material con derechos de autor sin permiso, ni se ha entrenado ningún modelo con obras privadas o protegidas.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Las pulseras están diseñadas para durar años sin necesidad de batería ni mantenimiento. No generan residuos electrónicos y pueden seguir funcionando indefinidamente con un simple escaneo NFC o QR</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Si un usuario desea cambiar o actualizar su LifeTag, podrá conservar su ficha médica y transferirla a una nueva pulsera. Además, planeamos implementar un sistema de recogida de pulseras antiguas para su reciclaje responsable.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">Estoy evaluando proveedores que ofrezcan silicona reciclada o materiales biodegradables. En las primeras unidades, usaremos silicona médica libre de tóxicos y apta para contacto prolongado con la piel.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">Buscaremos colaborar únicamente con fabricantes que trabajen bajo normativas medioambientales y laborales adecuadas.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">El packaging será reducido, reciclable y sin plásticos innecesarios.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

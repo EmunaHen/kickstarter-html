@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sproushi - AI Powered Mushroom Grower</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/086/262/e5ad849a998ddae641703859d1b13b93_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752827438&width=560&sig=9OAyFR9A%2FxyeJM4WQ2ZIJU05972sLtqSJnENs61kEgc%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Sproushi - AI Powered Mushroom Grower</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Grow mushrooms in under 7 days | 100% on autopilot with SproutSense AI | Because the best mushrooms are the ones you can't buy</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 23,239</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50425163">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/425/163/1a534b9ef2dea57b6807b1ee23ecda86_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1755183937&amp;width=680&amp;sig=9HHX%2BLRt2yY%2BMmNcDzfFQ7N0dk3RsOb8ahH3ZE9URhw%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50048204">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/048/204/b3861df4cf2d7992a63d521281c6c002_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752594146&amp;width=680&amp;sig=bK31eC1k3acL9fYw9OAuP%2Fg0Q%2BlnQ6eLrZTzmi%2FsbtU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062628">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Nature-s-Secret-to-Health-Focus-and-Calm">Nature's Secret to Health, Focus, and Calm</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/628/be5f3a3e150ce42aec7f47c5b376d581_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752678326&amp;width=680&amp;sig=i8LEID%2F3yQyKg8ew0FizOFrIanF%2BZ%2BNmZ36m2sSQ2Yo%3D"/>
+</figure>
+</div>
+<p>You’ve discovered their benefits - Lion’s Mane for focus, Reishi for stress relief. Maybe you have already tried growing them at home - because getting them fresh from the store? Nearly impossible. </p><p>Unfortunately many grow kits disappoint. And smart mushroom devices? More promise than performance. You're stuck with slow, unreliable results - full of mess, guesswork, and disappointment.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060339">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/339/17b238b804bf0434b11e1fb7eda144e4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752665647&amp;width=680&amp;sig=66h86x5gRZ1WQbvRTrzyhD6TiQZU6IwYX6Xsubi8G%2Fk%3D"/>
+</figure>
+</div>
+<p>Take the guesswork out of growing with Sproushi - the first AI-powered mushroom grower that <span class="bold">creates the perfect climate</span> for both mushrooms and herbs. <span class="bold">Get larger harvests</span> of almost any gourmet or functional mushroom - <span class="bold">within days, not weeks</span>. <br/>Just insert a capsule, start the program, and grow on autopilot.</p><p>Engineered for 2 years. Fully tested. Mass-produced and <span class="bold">ready to ship</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50023743">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-Sproushi">Meet Sproushi</h3>
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/023/743/0813f460b0fd505fdbe4e4acb2968d3c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752450753&amp;width=680&amp;sig=ZtOnzfSI075PG0G%2FQ7fl0z%2BAxYw5qZwvMnolJX2hSks%3D" src="https://i.kickstarter.com/assets/050/023/743/0813f460b0fd505fdbe4e4acb2968d3c_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752450753&amp;width=680&amp;sig=ZtOnzfSI075PG0G%2FQ7fl0z%2BAxYw5qZwvMnolJX2hSks%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060323">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/323/181e3b64d5e2cb3f15c71483caf8fad2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752665536&amp;width=680&amp;sig=J2S8RJE6YhF6DUQ%2B7exuC1LoQuK07tCbqxH2xLkuVJo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060356">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/356/157cdd682796fb7c03f73ed1a885deed_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752665780&amp;width=680&amp;sig=LDlXUedWs%2ByvZCoy1F5xD%2Bp6EIENGY2FgsiyZvIGKP0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50048174">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/048/174/122da2287666fa87719b19f0712f731f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752594048&amp;width=680&amp;sig=HQIQLfZ4R2v%2Bmy6nZd7LdRf%2FgKjxgX9E0tAao6VSOA8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060093">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Mushrooms-are-magical">Mushrooms are magical</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/093/625e3290086288ce8b737bfeee71b862_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752663781&amp;width=680&amp;sig=y6jNS5srD%2Fs%2FglCqq6UZNyV5biWSFSIbCx1%2FXqjh5BU%3D"/>
+</figure>
+</div>
+<p>Mushrooms are everywhere right now - used by top chefs, wellness brands like Four Sigmatic, and celebrities like <span class="bold">Gwyneth Paltrow</span> and <span class="bold">Joe Rogan</span>. Here’s why:</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50067835">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/067/835/91f5c8ff1efe92181aa4632340d7dc1a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752704478&amp;width=680&amp;sig=OSB5cmIiDySP0jacq2WuYOEuKNDCjRUlxxqb3DMN%2FRI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49800711">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/800/711/6e60f9be023f003d5359d8ba0807579b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750788772&amp;width=680&amp;sig=mn6TvYYd98ky2HPCPX4ff1NsIlk1cj2B351UCr8F%2BS8%3D" src="https://i.kickstarter.com/assets/049/800/711/6e60f9be023f003d5359d8ba0807579b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750788772&amp;width=680&amp;sig=mn6TvYYd98ky2HPCPX4ff1NsIlk1cj2B351UCr8F%2BS8%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Elevate your plate with a lion’s mane steak, umami-rich perfection</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50061903">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/061/903/fd975fd549ac13d41909d748cf25bad5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752674525&amp;width=680&amp;sig=ivyneLLutnZPzvBvv0jUB%2FNG6KOnT0AfdKciK%2B4%2BfXU%3D"/>
+</figure>
+</div>
+<p>Because the best mushrooms are the ones you can't buy:</p><p>💊 <span class="bold">Better than supplements.</span> Functional mushrooms often found in powders and pills - like Lion’s Mane or Reishi - degrade quickly after harvest. Maximize the potency and bioavailability of key compounds like polysaccharides and beta-glucans.</p><p>🌱 <span class="bold">Get access to rare mushrooms.</span> Many mushrooms are too delicate to ship and too short-lived to stay on shelves, therefore extremely hard to find.</p><p>🍣 <span class="bold">Taste, smell and feel the freshness. </span>By harvesting and eating your mushroom with only minutes apart, there is <span class="bold">zero loss of texture and flavor</span> with maximum nutrients.</p><p>🤩 Watching mushrooms grow is just <span class="bold">satisfying and mesmerizing</span>. Compared to plants it is nature on fast-forward, and Sproushi is your window into this magic.</p><p>♻️ On top of this, our capsules consist of <span class="bold">plant-based, compostable grow blocks</span>. Made entirely from agricultural waste.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062319">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/319/7652ad662e5ff8aefeda5cda220b5764_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752676781&amp;width=680&amp;sig=hchBQqjPAI4ze0CGQTDn4sAYtv1XdSSWTsMxB08ykhE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49728433">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/728/433/32b4eb3bfc6201a428921c6b0a2a8c89_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750264603&amp;width=680&amp;sig=mJKShGz4KBRSYCBK%2FQBj7g5tff4TsFMX9lna9itGAqk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49873982">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/873/982/c34edfb242b3d13a466eba65d4bd1c6a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751321355&amp;width=680&amp;sig=tGUEcbTWX%2FThywT4w4UkndgaUmsenS23dHQ%2B4vvCFmM%3D" src="https://i.kickstarter.com/assets/049/873/982/c34edfb242b3d13a466eba65d4bd1c6a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751321355&amp;width=680&amp;sig=tGUEcbTWX%2FThywT4w4UkndgaUmsenS23dHQ%2B4vvCFmM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50080718">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/080/718/ab9092accef82004adf8ccbd9f192cc0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752785533&amp;width=680&amp;sig=I7QVRBvavush1KECQkbbG6iJQSggYkaecbZk4N6cSyk%3D"/>
+</figure>
+</div>
+<p>We’ve seen what happens when ambitious mushroom growers rush to market: endless delays, loud fans, broken sensors, and products that simply don’t work as promised.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062490">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sproushi-is-Built-Differently">Sproushi is Built Differently</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/490/60dd8c927f2fc4201c205b058bbf652e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752677662&amp;width=680&amp;sig=PsGmTuOpV4OLawCDNDoX8s4%2B2Kk6Jo9UaqoDNiVk0mQ%3D"/>
+</figure>
+</div>
+<p>We’ve spent over two years engineering a device that can thrive in one of the most technically challenging environments: constant high humidity. Balancing airflow and moisture while packing in sensors, a camera, and automation isn’t easy, but we’ve solved it. And we didn’t stop there.</p><p>Instead of launching with a prototype and a promise, we waited until Sproushi was fully developed, beta-tested, and in mass production. That’s why you’re not backing an idea: you’re supporting a proven product that’s already real</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50081655">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/081/655/0d2049a5e82279d7487d0ce61e7a037e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752791175&amp;width=680&amp;sig=z6f%2BDZZCioH%2FiBofotnyFKz6pse0HaG3zumLPApEPaY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060195">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/195/8cffcfc832346eb368023940d3a7949c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752664594&amp;width=680&amp;sig=Kpfk88ySCP9ZiF%2FnWbACWEYwpBU4f%2BtK7i%2Bwa9DaKl8%3D"/>
+</figure>
+</div>
+<p>Your support will help us grow Sproushi beyond the US, into Europe, Australia and the rest of the world. As well as fund final tooling for Sproushi's add-ons:</p><p><span class="bold">SproutTray™</span> for herbs, greens, and microgreens<br/><span class="bold">SproutDock™</span> for stackable, expandable growing</p><p>🤝 Back this project to <span class="bold">get Sproushi</span> <span class="bold">at up-to a 30% discount.</span> The campaign ends <span class="text-italic">(as well as that discount)</span> on August 15th and we expect earliest orders to ship in the US end-August 2025.</p><p>This is our invitation to be among the first to grow differently, eat better, and help change the way we interact with our food. We can't wait for you to start growing!</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50059675">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-How-it-works">🍄 | How it works</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/675/023f25972ef15ad8f1a52f75de5c20ef_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752661767&amp;width=680&amp;sig=IZBw4L%2BAmJ%2BUONs6mFt73djd3ZX%2B%2FrbuS1sd0pS97Qw%3D"/>
+</figure>
+</div>
+<p><span class="bold">👇 Place a mushroom capsule</span> - Choose from gourmet or functional varieties.</p><p>📷 <span class="bold">Built-in camera tracks progress</span> - Constantly monitors your mushrooms.</p><p>✨ <span class="bold">AI software adjusts climate settings</span> - Based on your mushroom's growth phase.</p><p>🌧️ <span class="bold">Humidifier + fan create optimal environment</span> - Like a self-contained forest.</p><p><span class="bold">🔔 Receive an alert when it's done</span> - Harvest your mushrooms in just 7 days, with timelapse footage to enjoy.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060542">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/542/afcce8d865a0a70d20816a78d20c91c6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752666751&amp;width=680&amp;sig=pR53CGNEHnV%2FPhcIYpwnya7Vmn8CByAirlmcRDC0yZM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737760">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/760/8b940128bef06ef10fbc247a9ce42604_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750324835&amp;width=680&amp;sig=URssZwDWhCtxR4fY6ZUYBRQMcDTdo8HV5Zeyg3hrFlg%3D" src="https://i.kickstarter.com/assets/049/737/760/8b940128bef06ef10fbc247a9ce42604_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750324835&amp;width=680&amp;sig=URssZwDWhCtxR4fY6ZUYBRQMcDTdo8HV5Zeyg3hrFlg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737785">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/737/785/718252f1208190fe8e9921242bc6b025_original.webp?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750324997&amp;width=680&amp;sig=jQ0XAcNmcbYZ3zMHrnpTfYChP8xLaX5y1eb3XgW35Vw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063459">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Our-Spores-or-Use-Your-Own">🧫 | Our Spores or Use Your Own</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/459/019d9d487d978655f1c39147c013da76_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752682209&amp;width=680&amp;sig=BUvPw4y6f6goMviYrZHU0urfra5GJQidy6kEeLNjW0g%3D"/>
+</figure>
+</div>
+<p>Sproushi’s capsules are compact grow blocks, filled with organic plant-based material, the ideal food for mushrooms.</p><p>💉 Each one is pre-loaded with specific <span class="bold">living mushroom mycelium</span>, depending on your chosen variety.<br/><br/><span class="text-italic">A variety of ready-to-grow mushroom capsules will be available at launch (Lion's Mane, Pink Oyster, Italian Oyster, Blue Oyster, Black Pearly King Oyster, and Chestnut).</span></p><p>⏸️ They arrive <span class="bold">sealed in breathable bags</span>, keeping everything fresh but dormant until you decide to start growing your mushroom.</p><p>🍄 The moment you place your capsule inside Sproushi the <span class="bold">climate wakes it up and triggers the mushroom</span> to start growing.</p><p>🧑‍🌾 We source every capsule from trusted local mushroom farmers, ensuring that <span class="bold">no fillers or chemicals are used</span>.</p><p>🚀 That means <span class="bold">faster fruiting, bigger flushes, and no waiting</span> on overseas shipments.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50108746">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/108/746/fb20b9e485faca608850961a07f78c48_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753043445&amp;width=680&amp;sig=o4Fg%2B9nbv8Vb%2BqG0i04NL5iPoMsO%2FuAi3s4xsUWm1gU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063693">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/063/693/b85012d6453796ffef30fb02baa858ed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752683267&amp;width=680&amp;sig=hcn4AigxL1fz3aMOwNBLD6mEs7OEEeB0Nu8ldz7O9A0%3D" src="https://i.kickstarter.com/assets/050/063/693/b85012d6453796ffef30fb02baa858ed_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752683267&amp;width=680&amp;sig=hcn4AigxL1fz3aMOwNBLD6mEs7OEEeB0Nu8ldz7O9A0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50108751">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/108/751/0347ca3836a983b830a62762497381e2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753043487&amp;width=680&amp;sig=%2BY9eQEVoQMr2%2FwD%2Bddvx3r4qAgHHOJMmcIBe52ZWVeQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50109090">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/109/090/87716ce5f935b1b5067ef1db050fdadc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753045561&amp;width=680&amp;sig=9jHxvEoLCTVCVEIDGOlAu%2BjS7bAA55n7jtoVqLypNx8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50108774">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/108/774/ad26b48dfbee2360b1cfc73f9afeb776_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753043613&amp;width=680&amp;sig=8L8deJGq2nPInwnZyDGFWrxfLdRSjKu9f6J5%2F6tVU%2FA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50138187">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/138/187/6d25c5288694aa8c06271b756fa864c4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753225093&amp;width=680&amp;sig=NOSYCs6uvtP8Riywy3GLCQM18WvVY5sELM48oqFAwF8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50061924">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Grow-on-Autopilot">✨ | Grow on Autopilot</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/061/924/4ede4700d5622cb06b341575074e3e71_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752674636&amp;width=680&amp;sig=4qwKpXgAhQOAt1yJr01brMzQl1hORY8xOKdg56cD3Ns%3D"/>
+</figure>
+</div>
+<p>Mushrooms need care and attention when grown indoors. </p><p>Sproushi has a built-in camera that identifies growth stages and adjusts climate in real-time. Automatically setting optimal humidity, airflow and light levels for your mushroom to thrive.</p><p>✨ <span class="bold">Grow on autopilot and harvest at the perfect time.</span> <br/>Just sit back and receive a notification once your mushroom is ready to harvest.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060215">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/215/6a3f7f1122b29be0aa9c7be09e17b4c1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752664701&amp;width=680&amp;sig=NeGiaSSx4CmjTMoRyzevNrAjOzlLi%2FMJeSLbtTbkUaQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49858650">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/858/650/8585c04958662f65172691fcd81b799d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1751220541&amp;width=680&amp;sig=n7Xod6wJWsO%2BgchkWg3%2FloewdHe7x2A5JgbjQZHAVXE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060532">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/532/819a975ebd3ace48d50558805e8fcbf2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752666689&amp;width=680&amp;sig=oOMjTI%2BIxzid53xAUiGC4Zfy%2FCf6KpJ0RWJVgajTZU4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737712">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/712/bfe2c7faa04f48e6f1e19a6c351cc202_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750324523&amp;width=680&amp;sig=SNM8INM%2Bmyzfa7JsEGD47NY3oQyjERNUfTXU09ercz4%3D" src="https://i.kickstarter.com/assets/049/737/712/bfe2c7faa04f48e6f1e19a6c351cc202_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750324523&amp;width=680&amp;sig=SNM8INM%2Bmyzfa7JsEGD47NY3oQyjERNUfTXU09ercz4%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Sproushi's camera also generates stunning timelapse videos so you can watch your mushrooms journey after harvest.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062087">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-7-Days-to-Harvest">⏳ | 7 Days to Harvest</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/087/3d7e27b3ef95eaca251766f1b27dc3aa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752675450&amp;width=680&amp;sig=3wQKZ%2Fq7W%2B14EahCacfhy7UZaNqX8rB7x%2FjEhfG5Zbo%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="49858036" src="https://i.kickstarter.com/assets/049/858/036/a45d583dc3822a7845c64d29b58379c9_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751216400&amp;width=960&amp;sig=9l%2B%2Fj1SijAA%2B0QrVq6IrwfkGxtjl8wmNQbAIh0Rso%2BY%3D"/>Mushrooms breathe, like humans. However, they need more than just air, they need the <span class="bold">right kind of air for each growth phase:</span></p><p>😶 High CO₂ when mushroom is colonizing (not visible, but growing)<br/>🌬️ High oxygen when mushroom is pinning (coming out)</p><p>Sproushi is the <span class="bold">only mushroom grower to tell the difference between growth phases</span> and automatically adjust its airflow</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062096">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/096/aa486b1e6daee7396a8bc268dd6afff8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752675518&amp;width=680&amp;sig=YfO6EKE73xoTsL5O4umxwYd4C22jB%2BIfaH3q7D31u78%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="49802452" src="https://i.kickstarter.com/assets/049/802/452/a80af9c06ede465d007c36fccc170055_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750796717&amp;width=785&amp;sig=fg%2FaGdHAVUh%2BVZHJs%2B4YVvHZbQYGrxm0MoWvGuT%2BewI%3D"/><span class="text-italic">Sproushi's fan is whisper-quiet and no louder than your average laptop (&lt;35dB).</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062113">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-4-Portions-per-Capsule">👨‍🍳 | 4 Portions per Capsule</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/113/c898a2bf26bd1d46ffd285ce6cab8eb6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752675606&amp;width=680&amp;sig=vxBLnakcWMRGvy8RGzve57NB%2Fu9iZ12ZCoXdlZQ1fkk%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="49858143" src="https://i.kickstarter.com/assets/049/858/143/006965a60de2e63215b3a82b90004a33_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1751217225&amp;width=960&amp;sig=qIxHxRCoD16EB8db5q97bzfqofeNiKDtHOKS1n9TljM%3D"/>Mushrooms don’t like humidity, they require it. Sproushi uses an ultrasonic humidifier to get to 80%+ humidity easily, like a damp mushroom forest. <span class="bold">Precise, fast and completely silent.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062387">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/387/3a1fc5a48572590ffd8beb2abb024f95_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752677216&amp;width=680&amp;sig=oBvgUDlNQ668UpZmcu1JjVGRcrYN4jiru4k7EKhhE6o%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="49802421" src="https://i.kickstarter.com/assets/049/802/421/20c8b86c03cf714c245437f887eb4a73_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750796569&amp;width=784&amp;sig=nMAGkeqky%2B6NE%2F93pkNvnB8eE6Sj2TvLtcvPO32SBVw%3D"/><span class="text-italic">Sproushi's humidifier is wirelessly powered and waterproof, making it super easy to clean and durable.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50218185">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Temperature">❄️ | Temperature</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/218/185/05443895f763f7f42938f522b1175ce6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753810122&amp;width=680&amp;sig=qWHzLtYezBoQFeJrFoT%2B4ZukiElgWfS8%2FAfs03ox1vk%3D"/>
+</figure>
+</div>
+<p>Sproushi monitors your grow environment and alerts you if it gets too hot or cold—but we don’t actively control the temperature. Why? Because we found a better way to grow.</p><p>Most popular mushrooms thrive at normal indoor temperatures:</p><p><span class="bold">Lion’s Mane</span>: 60–75°F (16–24°C)<br/><span class="bold">Pink Oyster</span>: 68–86°F (20–30°C)<br/><span class="bold">Yellow Oyster</span>: 68–81°F (20–27°C)<br/><span class="bold">King Oyster</span>: 60–75°F (16–24°C)<br/><span class="bold">Chestnut</span>: 59–72°F (15–22°C)<br/><span class="bold">Reishi</span>: 75–86°F (24–30°C)</p><p>Rather than inflate cost and complexity with active heating/cooling systems, we focused on what actually drives growth: using AI to recognize growth phases. Dynamically adapting humidity, airflow, and light—delivering consistently bigger harvests, faster.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060647">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Premium-All-Around">🦾 | Premium All Around</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/647/3a48ba0f3d36266fcc17b7afd158d556_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752667375&amp;width=680&amp;sig=FSKTVLzy8%2FS80com6Vk0XRCdTO36nEnV2dKeOfrUzwE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106222">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/222/a0f4fe8625a68022782904bbc2694f7d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753022828&amp;width=680&amp;sig=WhJwTEggS57MjBUCedATb0e%2B9ycmQvV4GKbxp3tghYk%3D"/>
+</figure>
+</div>
+<p><span class="bold">Enjoy for years to come.</span> Sproushi is built like a countertop appliance, with a <span class="bold">powder-coated metal exterior.</span></p><p><span class="bold">Display your mushrooms as living art.</span> Sproushi not only blends effortlessly into any kitchen but also stands out as a stunning centerpiece in your dining space.</p><p>🧼 <span class="bold">Clean easily.</span> Nature is wild and mushrooms don’t wait for you. When you miss the harvest window your mushroom will spread spores. That’s why Sproushi is sealed edge-to-edge with precision-cut silicone. The spores will be contained and easily wiped off.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060650">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/650/71df92b053c527579e7876e7f0c1c066_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752667408&amp;width=680&amp;sig=z9fHVkeXzXFM7DgjBD5qb9bn6F14qEgOrucrIXLqTTY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="46984670">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/046/984/670/082d7948970f26ce0c5d08ba8c30ded9_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1729612506&amp;width=680&amp;sig=JHxGg9l4s0ThS4Qn9LUqQItWc06M%2F%2BgZ8fuzIEAUCRQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060665">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Custom-Grow-Programs">⚙️ | Custom Grow Programs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/665/22c1c113e41082e114794e51595e020d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752667482&amp;width=680&amp;sig=uGyXjejIYHWINfUeZpUistV5KL8MOwUFS5H8SlgyNag%3D"/>
+</figure>
+</div>
+<p><span class="bold">Control settings effortlessly without an app.</span> Use the built-in touchscreen for quick access to everything essential.</p><p>Access <span class="bold">time-lapse videos, harvest alerts and remote access </span>with Sproushi's mobile app. No subscription needed.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060675">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/675/1010b6d9e26241050de3e1078e7bb28c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752667563&amp;width=680&amp;sig=kUjUURnE99CWTxpaK%2FU37dgeBUjA4a3QL8AGUtgHusI%3D"/>
+</figure>
+</div>
+<p><img class="image" data-id="50062452" src="https://i.kickstarter.com/assets/050/062/452/5b4e5de8242cf0b052bfd220b2b08dec_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752677547&amp;width=3000&amp;sig=55xPxy5PNzaKyRKY0TNmq4pyFScWMV%2FOdcTp3hAwzvU%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062372">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/372/856727330467f42f3450a4e3908c346c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752677079&amp;width=680&amp;sig=ziO8kRArock5RqbtA5iVmClxulpTYkdohQMSqNz%2Bxck%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49737848">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/737/848/b76916bcdb89f657f36803607e618651_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750325352&amp;width=680&amp;sig=5%2BxGAcEm90Yw3JHFpJ%2FtSH%2FwP87IjUH3Hfg76ST%2Faiw%3D" src="https://i.kickstarter.com/assets/049/737/848/b76916bcdb89f657f36803607e618651_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750325352&amp;width=680&amp;sig=5%2BxGAcEm90Yw3JHFpJ%2FtSH%2FwP87IjUH3Hfg76ST%2Faiw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49739230">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/739/230/a3d2dfca950fd2cd6a1f1df519c97b29_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750335185&amp;width=680&amp;sig=CDugOxUA7qcQhaOK7o6gQo4ZF2C2Daolzwlm02tKtOI%3D" src="https://i.kickstarter.com/assets/049/739/230/a3d2dfca950fd2cd6a1f1df519c97b29_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750335185&amp;width=680&amp;sig=CDugOxUA7qcQhaOK7o6gQo4ZF2C2Daolzwlm02tKtOI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062300">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Mushrooms-and-Herbs">🌿 | Mushrooms and Herbs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/300/6b78fe03f356a2ed18cc15f072384b06_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752676632&amp;width=680&amp;sig=IAIOx7%2FZ3pJOC16yfkiuHIENB%2B42v7RXnfH7pd1PiO4%3D"/>
+</figure>
+</div>
+<p>Transform Sproushi into a countertop herb garden with SproutTray™, a custom insert to <span class="bold">grow leafy greens, herbs, and microgreens.</span></p><p>Just snap it in, fill the basin with water, and let the already integrated full-spectrum LED grow lights speed up your basil, mint or arugula grow.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062241">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/241/929626b641b083bc4b29fe7d5cb59e72_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752676350&amp;width=680&amp;sig=WsVP4cjjsJv51dLPzqCIvBz9d4OhX5%2BRuDWBJ61z5Nk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49763286">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/763/286/b8611345a087f3481d67500e89f065c8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750510380&amp;width=680&amp;sig=MIiGe7S2tvw73M0P9LhIa4hS%2FVrJ9sPgmM60wIq1tQs%3D" src="https://i.kickstarter.com/assets/049/763/286/b8611345a087f3481d67500e89f065c8_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750510380&amp;width=680&amp;sig=MIiGe7S2tvw73M0P9LhIa4hS%2FVrJ9sPgmM60wIq1tQs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49763117">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/763/117/7cad858a9b3be74787c772ab24e8f6c4_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750509275&amp;width=680&amp;sig=0clXD3AwoEY4Lb8VZsaVdlL7dBQgtzs62offu1vDeYI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062235">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Stack-and-Grow-More">📚 | Stack and Grow More</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/235/7648caf4e84fc2bbedbfc9cc6a95036f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752676268&amp;width=680&amp;sig=pQaxwriRIxmQllrPrMgmUAI1bf1mHbcxufbe3Bn%2B%2FZk%3D"/>
+</figure>
+</div>
+<p>Stack up to 3 Sproushi units vertically and <span class="bold">harvest multiple times per week</span> with the SproutDock™. A sleek powder-coated metal connector plate.</p><p>Each unit stays fully independent so you can <span class="bold">grow different mushrooms and herbs at the same time.</span></p><p>One plug powers them all: energy passes seamlessly through magnetic connectors. No cables, no clutter.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062230">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/230/d7bff4e544b57487c69eb67f53252a68_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752676233&amp;width=680&amp;sig=JvcXU5Sj%2FmKv%2BWQSsGmrxMuvhrmUCEZefXy%2BZhmxOVk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49765548">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/765/548/93c8deeaec76d6ba45a76a4f72e66d19_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750530295&amp;width=680&amp;sig=uuKp2mhoR1jBV3C%2BUSB%2BEr%2F5mTHuzXf%2FmStCZEEPFVY%3D" src="https://i.kickstarter.com/assets/049/765/548/93c8deeaec76d6ba45a76a4f72e66d19_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750530295&amp;width=680&amp;sig=uuKp2mhoR1jBV3C%2BUSB%2BEr%2F5mTHuzXf%2FmStCZEEPFVY%3D"/>
+</figure>
+</div>
+<p>s</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50105915">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/105/915/05109c14af87c30cfd370e2e4f224720_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753019636&amp;width=680&amp;sig=27h28vseK0wqOhW0RY2uIuzfCIlByTIBDLn%2BktVdwjI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104318">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/318/2464defd82422347d959cabcfdb03245_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753000759&amp;width=680&amp;sig=Bu23N12dNHafX809lXDA%2FsfSHVnXjDx%2FWzXvLIqF6fg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50059824">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-in-the-Box">What's in the Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/824/04a0fd672d951ce0d0a4c5cbd1824be8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752662680&amp;width=680&amp;sig=%2BUYxYSKbCKIeadzz8SqXQZzmLAhyryuR6vK3oS5q8gc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062153">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/153/1ba17844763641e9f0897374bfbaf9b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752675848&amp;width=680&amp;sig=uUFj2BKU8LChS6zPr4Qqg2%2BS1dFKVjtJ0b3%2FxDbg0kI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49739295">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/739/295/1829655f5a8117959c4c67853281a2b6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750335609&amp;width=680&amp;sig=V53jdAwWKaes2E0w8%2Bax75EFohZl7E14IGb20HDw2Bw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50060001">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specs">Specs</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/060/001/d1650e939f00bc10174919257adf0b22_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752663368&amp;width=680&amp;sig=eX05Q%2FLYMrmNttE9yLqlStIwfxuOFOMMVljlrArnwNQ%3D"/>
+</figure>
+</div>
+<p><span class="bold">Size:</span> 15" length x 7.5" width x 12.2" height (38cm length x 19cm width x 31cm height)<br/><br/><span class="bold">Grow area:</span> fits any grow block under 9" length x 6" width x 6" width (23cm length x 15cm width x 15cm height)</p><p><span class="bold">Colors:</span> Pearl White, Forest Green, Midnight Blue, Matte Black<img class="image" data-id="49656738" src="https://i.kickstarter.com/assets/049/656/738/82942ad67d7208c1a7b056246454dced_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1749765282&amp;width=1360&amp;sig=Uw0VGT%2B1XTKRzfvUqcUmRnVO9mQyfqeeWApzwDH1ie4%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063372">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/063/372/7367d546eb6203739f0b9bf637285179_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752681747&amp;width=680&amp;sig=cySUiRI1pJzGacBW0FRORe5wEQj5W4VeI6TmEr8EP6E%3D" src="https://i.kickstarter.com/assets/050/063/372/7367d546eb6203739f0b9bf637285179_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752681747&amp;width=680&amp;sig=cySUiRI1pJzGacBW0FRORe5wEQj5W4VeI6TmEr8EP6E%3D"/>
+</figure>
+</div>
+<p><span class="bold">Materials:</span> Powder-coated metal exterior, silicone gaskets, acrylic inner parts and transparent grow enclosures</p><p><span class="bold">Noise Levels:</span> &lt;35dB (whisper-quiet)</p><p><span class="bold">Features: </span>waterproof humidity sensor, full spectrum LED grow light, wide-angle timelapse camera, ultrasonic humidifier, silenced fan, anti-slip metal feet, touchscreen</p><p><span class="bold">Sensors:</span> Humidity, temperature, water level</p><p><span class="bold">Control:</span> Humidity level (0-100%), fan speed (low, medium, high), light intensity (0-100%), light warmth (white, cold, neutral, warm, red), light plan (on/off hours and day)</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50059833">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Rewards">🎁 | Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/833/3b9cad1f904a8ec1ca5daba49f72d03e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752662737&amp;width=680&amp;sig=LqNafBtVtw%2Bm6JKpSXpFkj7LCpXVVV0xgk9GeR5a5zI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50137383">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/137/383/08c5bcf24bac9a5f471c13ac6af2e5fa_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753220224&amp;width=680&amp;sig=rsLB4rvqYRzsh77%2B854BCWcfp72QpJ2pxB751Dzk1mY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50059838">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Add-ons">➕ | Add-ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/838/63d8a208d428eb81f64537b640814ea8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752662775&amp;width=680&amp;sig=9cZTxKFChdjnMyx82JRJPQjoT3DVBawnqvfDGKk0n5Q%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50137813">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/137/813/0385d99ef3088a2b7e0354005b6ab4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753222722&amp;width=680&amp;sig=UPl8I4xiuVtnGPF8XVrKm4JkG6%2FBcHInbLnjPRhx2eo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50206750">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Shipping-Timeline">🚢 | Shipping &amp; Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/206/750/288379bb547ebcde44df3dc39008e49e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753745358&amp;width=680&amp;sig=VXCIbR0en15Mm%2BHxvF2rK9yTtybT4JKeZ4codvOV2X8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50207105">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/207/105/bab3bb05b54fe38b7751f32a3781e02e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753747927&amp;width=680&amp;sig=0wQc0iWIOmV8jShlJPl2h5ljLgjV7nXi62YTyoXDqAU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50206801">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/206/801/dba915efc5fe6b13e51241abb55da64c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753745753&amp;width=680&amp;sig=BO5WtjiKedH5SBRW8QZAivytw89kOeSE4zzHXKVFNv4%3D"/>
+</figure>
+</div>
+<p>This avoids issues at the border and with any biosecurity laws. <br/>It also ensures your mushrooms are always fresh, fast, and fully compliant with local regulations. No customs surprises. No global shipping drama. Just mushrooms that are ready to grow.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50059859">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/859/ab204588de864a88f37edb6347a8d7b4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752662821&amp;width=680&amp;sig=8tDoDhLz%2FSJ%2Fofbju5e5PK97Fp7VaZCET6WnMsRLmyI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49803080">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/803/080/eab3e01e3acecf9cc7c29dda833fed4b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1750799480&amp;width=680&amp;sig=pqwcUc%2BC5G%2FZ0pq%2B5u%2BbzZmhfDO74Xhft1AI1SUB4UE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50059861">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-Our-journey">🙏 | Our journey</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/059/861/75d2714e8586d689ce9f5bc48fc4f4f1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752662856&amp;width=680&amp;sig=aNiJiwpC%2FIagB8ply1w097d6Ov2ytT2GZruyfb7Tw2U%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062168">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/168/3c89749652a65d3e322eabd043413f4d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752675905&amp;width=680&amp;sig=93wc0LQeN13XwEUUjsRvzJ5z4AbL6TCpolwUn6GsJNc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826261">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/826/261/c36a32ff948989ae7db8e1600a3159ff_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750947807&amp;width=680&amp;sig=nEcvuS6BjjQO0fEy7fcXd5N9S7GohpHrH%2Bjyc2xkzLM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062170">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/170/5b734a978048b62cd3a3841022fc808a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752675930&amp;width=680&amp;sig=yrQnH7xfmacXUjboUHp58YXU5m%2Bf9WWPXElNMJdYeMY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826428">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/826/428/90428f4becd5e2dc02399f3f8ee4e363_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750948936&amp;width=680&amp;sig=jfVTria%2FSsT67T73Ifpv9pMuyrthPXR70xLK5EMkX0M%3D" src="https://i.kickstarter.com/assets/049/826/428/90428f4becd5e2dc02399f3f8ee4e363_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750948936&amp;width=680&amp;sig=jfVTria%2FSsT67T73Ifpv9pMuyrthPXR70xLK5EMkX0M%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826359">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/826/359/2f1e7cf6a453955dbad27502520919ca_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750948479&amp;width=680&amp;sig=FtY24B2Fs8DtpD4OWZk4c5P9znZwli4d%2Fw6bV8zRKIs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826496">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/049/826/496/659715cc88dffc305089a0e34fef498c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750949299&amp;width=680&amp;sig=eBVpsp4mzMDwFPjsZA%2FRYlwSOB%2FcTCvw7%2FdRkNPhO%2B8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062174">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/174/f2bae18cb9bb5dbb78b5807e83b8bdce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752675953&amp;width=680&amp;sig=X7XbYcgBnkfb2micr8OnAO6c%2FWc%2FhyjV5pwj0kZ20AQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826903">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/826/903/627a59f5e5cce4f7ec79c7b8cd2ea10a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750951715&amp;width=680&amp;sig=8YsLaieao0Wc4PlHPUDWhwymSaM3DP29wKmKvda%2Bcug%3D" src="https://i.kickstarter.com/assets/049/826/903/627a59f5e5cce4f7ec79c7b8cd2ea10a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750951715&amp;width=680&amp;sig=8YsLaieao0Wc4PlHPUDWhwymSaM3DP29wKmKvda%2Bcug%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49826465">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/826/465/6f8fe4adce544044e7f303acf44ae9e0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750949145&amp;width=680&amp;sig=lHL7Wg%2Bqk3r0QZNUkbFGUOAUiIzBAEeTAnPObVmQTmA%3D" src="https://i.kickstarter.com/assets/049/826/465/6f8fe4adce544044e7f303acf44ae9e0_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750949145&amp;width=680&amp;sig=lHL7Wg%2Bqk3r0QZNUkbFGUOAUiIzBAEeTAnPObVmQTmA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49827356">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/827/356/a17b616c765aaf916cd9526a82c4ac8f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750953965&amp;width=680&amp;sig=nP4D%2BbkpZiwPvdkdTIuJcFhAFCifsolHjQnFgufmaxI%3D" src="https://i.kickstarter.com/assets/049/827/356/a17b616c765aaf916cd9526a82c4ac8f_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750953965&amp;width=680&amp;sig=nP4D%2BbkpZiwPvdkdTIuJcFhAFCifsolHjQnFgufmaxI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062181">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/181/c3a67726cca2b7beca0ff27ae4f6866b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752675989&amp;width=680&amp;sig=LHbzDVcwKiykyVkTnzAbNwh0iaOXpeWM6sGmQAuMlOY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="46984037">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/046/984/037/db59f3bdc67d4040936ecd264960e94a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1729610332&amp;width=680&amp;sig=wKhmuqFgZ3ser40uWC0cIAAUc0AUGa5u%2Bqt7NQgcvXA%3D" src="https://i.kickstarter.com/assets/046/984/037/db59f3bdc67d4040936ecd264960e94a_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1729610332&amp;width=680&amp;sig=wKhmuqFgZ3ser40uWC0cIAAUc0AUGa5u%2Bqt7NQgcvXA%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="49827437">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/049/827/437/b459cabc89033cbc205f338c05236864_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750954365&amp;width=680&amp;sig=bsXy9A6GVC5HkIsR%2FDFB8k1756Ma4s%2BAfB0tZtKXFwE%3D" src="https://i.kickstarter.com/assets/049/827/437/b459cabc89033cbc205f338c05236864_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1750954365&amp;width=680&amp;sig=bsXy9A6GVC5HkIsR%2FDFB8k1756Ma4s%2BAfB0tZtKXFwE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062194">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Meet-the-Team">Meet the Team</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/194/db85d88d6f0126e6042d5d2992842bf8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752676077&amp;width=680&amp;sig=nnqB%2B0hd%2BdlMeKehrwBdZBacY4LZ75YJqpNgXVbKGVg%3D"/>
+</figure>
+</div>
+<p>With years of experience in engineering and product design combined with a healthy obsession for mushrooms - or mycophilia - we have worked tirelessly for the past 2 years.<br/><br/>By keeping our team as lean and effective as possible we could focus fully on our one goal:<br/><span class="bold">Create a smart mushroom grower that you actually want to have in your home.</span><br/><br/>We hope you will enjoy it just as much as we do!<br/><br/>Mush love,<br/>Merlijn, Ali and the Sproushi team</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="46984194">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/046/984/194/b97e10bb70b82e27db187ca1c5d226a1_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1729610773&amp;width=680&amp;sig=pttsBLCuM8eAJ3Qg1L27ZkyTG4SnvUg9x7D%2BHmIGpSw%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><p>This project is boosted by BackerCrew</p><span></span><p><span class="text-italic">This project is promoted by </span><span>Jellop</span><span class="text-italic">, the ad tech power behind the best Kickstarters with 6,000+ successful Kickstarter projects with over $1.3 Billion raised between them.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50062201">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Commitments">Our Commitments</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/062/201/e02b746c0e74ef5fa264b81e5da16b60_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752676100&amp;width=680&amp;sig=jT5qyK0eixGVmNtM5oZRLGmmf9SOF%2FKkiJhFLN9queo%3D"/>
+</figure>
+</div>
+<p>We believe the future of food shouldn’t cost the future of the planet.<br/>Every decision behind Sproushi, from materials to supply chain, reflects that.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50138217">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/138/217/3841c8b32b7405eb9f00cb7cc94b145d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753225253&amp;width=680&amp;sig=aACyXuq5F%2BGY6aDs7vefm270%2BnJq%2BrRLCpVdmyZ1L%2Bw%3D"/>
+</figure>
+</div>
+<p>Sproushi isn’t built like a gadget. It’s built like an appliance, with precision engineering, premium materials, and a modular design that’s made to be repaired, not replaced.<br/>The body is crafted from powder-coated metal, not plastic. And key components can be easily removed, cleaned, or replaced.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50138229">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/138/229/0717aef676cb3e5fb69ab6b0d3c207ac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753225286&amp;width=680&amp;sig=Xoe%2FwPyu5MBhb6l6R1g5GtteBFw%2BB1L5LfAIWREq1Oc%3D"/>
+</figure>
+</div>
+<p>Our mushroom capsules are crafted from <span class="bold">100% plant-based agricultural waste</span>, giving discarded materials a second life. Each grow block is fully compostable after use.</p><p>To preserve freshness and prevent premature sprouting, the capsules are sealed in <span class="bold">FDA-compliant Unicorn Bags,</span> the gold standard in mushroom cultivation. While these use plastic, they’re essential for delivering clean, high-quality growth with zero contamination.</p><p>At the moment we are exploring even more sustainable packaging solutions, but we won’t compromise on food safety or performance.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50138233">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/138/233/c5d01823a00a2e14e6e422c4a5a7ef4d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753225306&amp;width=680&amp;sig=MxKkEKehc9jJZ19qJ%2BKs9Igkamc2h17tAL1c4p%2BY%2FiA%3D"/>
+</figure>
+</div>
+<p>Sproushi is fully <span class="bold">FCC certified</span> and undergoing <span class="bold">CE</span> and <span class="bold">RCM </span>certification for Europe, UK and Australia, so you know it’s safe on your counter.<br/>It’s also <span class="bold">RoHS compliant</span>, meaning no harmful materials inside.<br/>Because your grower should be held to the same standard as your oven or fridge.</p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">We believe every Kickstarter backer deserves three things:
+
+1. A product that actually gets made
+2. A product that’s made to last
+3. A product that ships when promised
+
+This is our first Kickstarter, but not our first rodeo. We have over a decade of experience designing, manufacturing, and delivering products to customers across the U.S. and Europe, backed by a fully operational logistics and fulfillment network.
+
+The first 850 units of Sproushi are already produced and scheduled to ship to U.S. backers starting mid-August 2025. That means you’re not backing an idea, you’re joining a product launch that’s already in motion.
+
+Our growing ecosystem - like the SproutTray™ and SproutDock™ add-ons, and our mushroom capsules - will continue to expand. While sourcing local mushroom partners in new countries may take time, we’re actively building those relationships now.
+
+If we hit an unexpected bump, you’ll be the first to know. We’re committed to full transparency, and honestly, our team thrives on solving the kinds of problems most people would rather avoid (like building a self-regulating humid forest in a box).
+
+Sproushi is just the beginning and we’re here for every step of the grow.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>This project is not raising funds to develop AI technology, and no AI-generated content was used to create this Kickstarter page.
+
+However, Sproushi product itself does make use of AI. Not for marketing, but to help users grow better food. Inside each device, a camera and sensor system works with custom-built computer vision software to recognize growth phases in mushrooms and herbs. This data is matched against an internal database of growth patterns and environmental needs (like humidity, airflow, and light cycles) to create the optimal conditions - automatically.
+
+The database powering this system was developed entirely in-house, based on the team’s own cultivation experiments and research. Everything runs in a closed system designed solely to benefit the grower.
+
+This project fully supports Kickstarter’s commitment to human creativity and transparency and complies with all of the platform’s AI use guidelines.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Sproushi is built like a true kitchen appliance, not a gadget.
+
+With a powder-coated metal body, high-grade silicone seals, and modular parts that are easy to clean and replace, it's designed to thrive on your counter for years to come.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

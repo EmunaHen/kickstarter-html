@@ -1,0 +1,841 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YOUL: 10 kWh Plug&Play Batteriespeicher für die Steckdose</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/287/317/9be8b5f81c21394b14b73f683249fa71_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754308675&width=560&sig=FRYfDyxkH2BruYVH4T%2BJlOVQpmiPTHNdIxdhjNgy8aQ%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>YOUL: 10 kWh Plug&Play Batteriespeicher für die Steckdose</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Technik-Wirrwarr? Preisfallen? Installateur-Suche? Spar dir den Stress. Speichere Strom einfach selbst. Mit YOUL.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 23,239</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>34 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><span></span><span></span><p><span class="bold">                    Gemeinsam stark – mit Deiner Empfehlung!</span><br/>                 Wenn Du unsere Idee teilst oder weiterempfiehlst, belohnen wir das. <br/>                 Wie genau, erfährst Du unten im Kapitel <span class="bold">„Empfiehl uns weiter".</span></p><p><span class="bold">                       +++ Please scroll down to find the English version below +++</span></p><h3 class="page-anchor" id="h:Warum-Stromspeichern-bisher-frustet-und-wie-es-besser-geht"><span class="bold">Warum Stromspeichern bisher frustet – und wie es besser geht</span></h3><p>Du willst Stromkosten senken und unabhängiger werden, landest aber schnell im Technik-Dschungel: kryptische Datenblätter, versteckte Aufpreise und Installationen, für die man dann doch einen Elektriker oder starke Nerven braucht. Am Ende bleibt ein plumper Kasten, selten in Deutschland entwickelt, kaum wohnzimmertauglich. Fortschritt? Fehlanzeige.</p><p>Zeit für eine Speicherlösung, die anders ist:</p><p>Plug&amp;Play, kompakt und ästhetisch, leise und intuitiv. Entwickelt und gefertigt in Deutschland.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50288278">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/288/278/cb2f20adfe64a21f739b6a5bcce46789_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754315260&amp;width=680&amp;sig=4hZLPjECS%2B2DeLHBNnGqnZy4dAfgjjBVaGlhg827374%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Du-bist-PV-Besitzer-"><span class="bold">Du bist PV-Besitzer?</span></h3><p>Mit einer PV-Anlage allein kannst Du typischerweise nur etwa 30 % Deines selbst erzeugten Stroms auch selbst nutzen. Den Rest speist Du ein – und kaufst abends und nachts teuren Netzstrom zu.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50288403">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/288/403/0747b58b4f7498846c8bc11af558a89b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754315945&amp;width=680&amp;sig=1hmdbUINIb5XOHfWEys16289EUXJWrPNmn23EuiIpRc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50291619">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/291/619/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754332147&amp;width=680&amp;sig=j2DRWbH6NoW2%2Fzey4OQXRL1m%2Bvl8HuSlpc4oP0PPV%2FA%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Du-bist-PV-Volleinspeiser-aber-Deine-EEG-Vergu-tung-la-uft-aus-"><span class="bold">Du bist PV-Volleinspeiser, aber Deine EEG-Vergütung läuft aus?</span></h3><p>Wenn Du jetzt überlegst auf Eigenverbrauch umzustellen, ist der YOUL one die ideale Ergänzung.</p><p><span class="bold">Mach mehr aus Deinem Strom!</span></p><h3 class="page-anchor" id="h:Du-besitzt-eine-Wa-rmepumpe-"><span class="bold">Du besitzt eine Wärmepumpe?</span></h3><p>So sinnvoll und nachhaltig diese Technologie auch ist: Die Stromkosten können enorm sein - und Du zahlst den Preis für Deine zukunftsfähige Entscheidung selbst. Jeden Monat.</p><p><span class="bold">Verringere Deine Stromkosten spürbar!</span></p><h3 class="page-anchor" id="h:Du-mo-chtest-oder-nutzt-bereits-einen-dynamischen-Stromtarif-"><span class="bold">Du möchtest oder nutzt bereits einen dynamischen Stromtarif?</span></h3><p>Strom dann kaufen, wenn er billig ist und diesen jederzeit nutzen, wann Du ihn brauchst. Mit dem YOUL one kannst Du das optimieren und Dich zusätzlich vor plötzlichen Preissprüngen schützen.</p><p><span class="bold">Hol ganz einfach mehr für Dich raus!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260261">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/261/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065690&amp;width=680&amp;sig=KH75VJ%2FkjzrwwYsImZ8iOqFPs%2B%2FAvRyo1oFecxFhqus%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Unsere-Lo-sung-ist-Deine-Freiheit-"><span class="bold">Unsere Lösung ist Deine Freiheit </span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50211098">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/211/098/df6717cfdd5a322cfc7c3a1102b339f6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753775496&amp;width=680&amp;sig=f28Xh2tHqKhOSujPyGUpNPrEwzvlpj4%2FofxYbiaRV24%3D"/>
+</figure>
+</div>
+<p><span class="bold">Wir fanden: Es muss endlich eine einfache Lösung her!</span></p><p>Denn wir sind überzeugt: Energieunabhängigkeit sollte nicht von Vorwissen, Elektrikerauslastung oder Preisvergleichen abhängen - sondern allein von Deinem Entschluss, selbst zu starten.</p><p>Mit dem <span class="bold">YOUL one</span> nimmst Du Deine Energieunabhängigkeit endlich selbst in die Hand.</p><p>💡 Versorg Dich endlich rund um die Uhr mit Deinem eigenen Strom!</p><p><span class="bold">Es ist so einfach.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259282">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/282/2ad6e3662cbac1d8d5d7dabebc991102_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754061679&amp;width=680&amp;sig=UqEyQmam4nK7NuTKg3L%2B3zSllft1DkhZuXe9NkT6uPY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260264">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/264/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065701&amp;width=680&amp;sig=VIqNlDDxARtZlmpGw8PzYHcGkbqgqAdYwM0n72%2BZhiw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Deine-Situation-ist-individuell-doch-YOUL-passt-immer-"><span class="bold">Deine Situation ist individuell – doch YOUL passt immer </span></h3><h4 class="page-anchor" id="h:Fu-r-Dich-gemacht-"><span class="bold">Für Dich gemacht </span></h4><p>Der <span class="bold">YOUL one</span> ist der erste wohnraumtaugliche Plug&amp;Play-Batteriespeicher mit 10 kWh Kapazität - perfekt für:</p><p>✅ Wärmepumpenbesitzer<br/>✅ PV-Nutzer<br/>✅ Haushalte mit dynamischem Stromtarif</p><p>Egal ob Du Strom einsparen, den Eigenverbrauch Deiner PV maximieren oder Deiner Wärmepumpe in den teuren Abendstunden den Druck nehmen willst - der <span class="bold">YOUL one</span> ist Deine Lösung. Für Haushalte mit oder ohne PV-Anlage. Für Eigentümer und Mieter. Für alle, die Strom einfach speichern wollen.</p><p>Der <span class="bold">YOUL one</span> bringt die starke Kapazität von 10 kWh mit, die auch Mehrpersonen-haushalte zuverlässig mit eigenem Strom versorgt. Er speichert Strom dann, wenn er am günstigsten ist oder selbst erzeugt wird - so musst Du weniger zukaufen und holst endlich das Maximum aus Deiner Energie heraus.</p><p>Denn Energieunabhängigkeit sollte nicht von Fachwissen, Handwerkerverfügbarkeit oder dem guten Willen von hilfsbereiten Freunden oder Nachbarn abhängen - sondern allein von Deinem Entschluss, selbst loszulegen.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259575">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/575/9b5010946de4f1c1a595312d48699e23_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754062732&amp;width=680&amp;sig=QLKOK4VTjWjxDbcm%2F6mIseGfzSMZkVLiVsQiFwvJWM0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260267">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/267/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065715&amp;width=680&amp;sig=MaOfA90WbE6z12ugMGTe73J1YfXhnXCSK8ODCMbUaok%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Echte-Innovation-liegt-im-Einfachen-"><span class="bold">Echte Innovation liegt im Einfachen </span></h3><p>Du brauchst keine Genehmigung, keinen Elektriker und keine Vorkenntnisse. Du packst ihn aus, steckst ihn ein - und er beginnt zu speichern. So einfach.</p><p>🔌 So funktioniert's: Batterie an die Steckdose anschließen, Auslesegerät per Magnet auf dem Stromzählergehäuse anbringen, App laden, loslegen!</p><div>Und das alles: <span class="bold">Made in Germany</span> </div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50202291">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/202/291/a4b604f6dd842da4fc6b5a282c9c1f86_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753719581&amp;width=680&amp;sig=5Cz6%2Fa6q%2FiPQvN4WOnKhLjZ2dcCE5XFLEWVFDHqsJG4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260274">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/274/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065733&amp;width=680&amp;sig=nZq0spEa0oRBY%2BfZhkkDs%2B76ZvnzEa%2B%2FAyB7gCTpeyw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Mach-mit-"><span class="bold">Mach mit! </span></h3><p>Hilf uns, Stromspeicherung neu zu denken - einfach, sicher und für alle zugänglich. Unterstütze unsere Kampagne, teile unsere Vision und werde Teil einer Bewegung, die die Energiewende dorthin bringt, wo sie hingehört:<br/><span class="bold">Zu Dir nach Hause.</span></p><h3 class="page-anchor" id="h:Was-bekommst-Du-"><span class="bold">Was bekommst Du? </span></h3><p>Wenn Du Dich für einen <span class="bold">YOUL one</span> entscheidest, erhältst Du:</p><p>✅ Einen wohnraumtauglichen, eleganten Batteriespeicher mit 10 kWh Speicherkapazität aus hochwertigen und robusten Materialien wie sortenreinem Stahl und Echtholz<br/>✅ Einen intelligenten optischen Auslesekopf von Everhome für Deinen Stromzähler<br/>✅ Eine intuitive App zur Steuerung und Analyse<br/>✅ Ausführliche Step-By-Step-Anleitung und persönlichen Kundenservice<br/>✅ Und: kostenlose Lieferung direkt zu Dir nach Hause</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50202543">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/202/543/bae406353563c5d00b53446ebb4c5d42_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753720774&amp;width=680&amp;sig=XhldfSbQg%2B5m3NVBrvvUxnPKrSEzPSLfrBQunZBLtFc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260278">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/278/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065744&amp;width=680&amp;sig=P9AW6GpOTy0nMeVcTMG0ciLto%2FjBbaDCMMv%2FULBRErc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Unser-Spezial-Bonus-Eine-Limitierte-Edition-Laser-Gravur-mit-individueller-Nummerierung-"><span class="bold">🌟Unser Spezial-Bonus: Eine "Limitierte Edition" Laser-Gravur mit individueller Nummerierung! 🌟</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260282">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/282/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065752&amp;width=680&amp;sig=R%2FuQXdGYIlGcNvoV5TRnNa3%2BdgYUoKZy%2BrqxAmxFd4w%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Qualita-t-Made-in-Germany-"><span class="bold">Qualität – Made in Germany </span></h3><p>Unser Team aus Ingenieuren, Informatikern und Energieexpert:innen entwickelt und fertigt in Deutschland.</p><p>Das gibt uns Kontrolle über Qualität - und Dir Sicherheit.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50201978">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/201/978/dbbb85a6e65c5f6d27352a912cb57e79_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753717956&amp;width=680&amp;sig=evnnQoaKAGgZvH1%2FXsctH3A0WRBv3l99Uh3qyDZGpFQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260285">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/285/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065770&amp;width=680&amp;sig=8iKyywfSwpgoaN1cXyKfgRMxH9uR6qRAzYK6tbN5sco%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Wohnliches-Design-"><span class="bold">Wohnliches Design </span></h3><p>Der <span class="bold">YOUL one</span> ist ein wohnraumtauglicher Batteriespeicher mit 10 kWh Kapazität - ideal für Mehrpersonenhaushalte.<br/>Sein elegantes Design passt in den Flur neben Deinen Stromkasten ebenso wie in den Technikraum.</p><p>Er ist <span class="bold">DEINE persönliche Energie-Revolution</span> - leise, leistungsstark und sofort einsatzbereit.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50201935">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/201/935/6cee8c325f7bc1e139ba7c50b13396e7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753717738&amp;width=680&amp;sig=1hIDx8kORQagnXl5wUhhgwD%2BsSsR1hSEIU3Otxpoars%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260287">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/287/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065778&amp;width=680&amp;sig=ms0KAxBtdYk3NDVpZ0odd%2BiffZGQvGETxZp2rxIXxDI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Dein-Preisvorteil-einfach-erkla-rt-"><span class="bold">Dein Preisvorteil – einfach erklärt </span></h3><p>Nur hier auf Kickstarter erhältst Du den <span class="bold">YOUL one</span> mit <span class="bold">20 % Rabatt</span> auf den späteren Webshop-Verkaufspreis.</p><p>Da wir gesetzlich verpflichtet sind, zwischen PV-Besitzern und Haushalten ohne PV-Anlage bzw. Gewerbe zu unterscheiden, gibt es zwei einfache Preisvarianten:</p><p>🔆 <span class="bold">Du hast eine PV-Anlage (bis 30 kWp, inkl. Balkon-PV):</span><br/>Du zahlst keine Umsatzsteuer (§ 12 Abs. 3 UStG) - Dein Preis: <span class="bold">3.990 €</span> (statt 4.990 € netto).</p><p>💡 <span class="bold">Du hast keine PV-Anlage oder möchtest den YOUL one für gewerbliche Zwecke nutzen:</span><br/>Dann fallen 19 % Umsatzsteuer auf den reduzierten Preis von 3.990.- Euro an.</p><p> <span>Lies hier mehr auf der offiziellen Seite des Bundesfinanzministeriums</span></p><h4 class="page-anchor" id="h:Und-so-la-uft-s-ab-"><span class="bold">Und so läuft's ab: </span></h4><p>Nach dem Kauf kontaktieren wir Dich per E-Mail und fragen kurz nach Deiner Nutzungssituation. Die Rückmeldung ist schnell erledigt - erst danach bestätigen wir Deinen Kauf verbindlich.</p><p>Keine Sorge: Wir führen Dich Schritt für Schritt durch den Prozess und sind jederzeit für Dich da.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50228284">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/228/284/ff61b966b6582e2ee95fe5d70206fbdb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753874456&amp;width=680&amp;sig=dUdb9WqaQc12EEAj7DgH5Jy18kyLFzqEQgJtvUxE%2FFU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260288">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/288/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065787&amp;width=680&amp;sig=pGDjl5R1O%2FbvPy8Wvd3uzbmI0Z7zkziEHfOhac99HVI%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Webseite-"><span class="bold">Webseite 🌐 </span></h3><p>Besuche auch unsere Webseite: <span>https://youl.de</span>  </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260289">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/289/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065793&amp;width=680&amp;sig=Gz9%2Bhu8izbvZHpi60f7SH0YpwUAOipjC7IYxkvPXHNM%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Flyer-mit-technischem-Datenblatt-"><span class="bold">Flyer mit technischem Datenblatt </span></h3><p><span>➡️ Hier Flyer runterladen</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50257547">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/257/547/f304f3d5ec8084ff920abf377dd76e01_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754051926&amp;width=680&amp;sig=8pRCPAsrLruMAQ9l81meZMtE15ajMhdKH48HnerlX4o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260292">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/292/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065801&amp;width=680&amp;sig=nYUQsev7jLY9FYRtpN1UiAzelhusBuCLZabpOp0wp38%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Folge-uns-"><span class="bold">Folge uns 👉</span></h3><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50288593">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/288/593/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754316890&amp;width=680&amp;sig=28cxmRmrL3zbLaEW5Y8TYKNJZRSrERxv1JC1LoAYB3g%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Unsere-Entwicklungsreise-von-der-ersten-Vision-bis-heute-"><span class="bold">Unsere Entwicklungsreise - von der ersten Vision bis heute </span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50261016">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/261/016/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068823&amp;width=680&amp;sig=7zgrFfRarUiA%2BnK6fbJ4cybg%2BF2P8lYN8kCsZtynkvg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Warum-YOUL-Der-Anfang-"><span class="bold">Warum YOUL? – Der Anfang </span></h4><p>Energie-Unabhängigkeit darf kein Technikprojekt sein – sie muss sich wie ein Alltagsgerät anfühlen. Kein Elektriker, kein Technik-Wirrwarr. <span class="bold">Einstecken, sparen, stolz sein.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258575">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/575/a2acb5f4613606d985a92a57af2e7b17_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754058347&amp;width=680&amp;sig=kJPrkx5nC2ojW0ADWGJNuP7r1D16fWB6ZhZZKDsdFmU%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Im Bild: allererste Skizzen und Machbarkeitsstudien beginnen...</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260776">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/776/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754067762&amp;width=680&amp;sig=V3VWrh1l1jgKxbjRfviQK8SOJjEydhwmshiO5pgok2s%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Zeitlicher-Ablauf-"><span class="bold">Zeitlicher Ablauf </span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50289207">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/289/207/fa43ab43750b25105cd974c9e524fc16_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754319738&amp;width=680&amp;sig=ZNc2kliAVTOW%2BIPVSXj2rMNJ3I41v8YT1gaP4GDeGL4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258459">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/459/0497c6e2f893a655958bc0923c9b75cb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754057794&amp;width=680&amp;sig=qlvZrc0E8jUNCUTZlmYK3Knfw7XKKHcFQKU%2B%2B5Jdo4w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260783">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/783/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754067779&amp;width=680&amp;sig=FTShW1oQkbd55Rgtd3YGtIHTXu8isBoG3yuEoEgugpA%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Vom-Prinzip-zur-Architektur-"><span class="bold">Vom Prinzip zur Architektur </span></h4><p>Wir setzen auf ein Niederspannungs-System mit zwei LiFePO₄-Modulen (je ≈ 106 Ah), gekoppelt an einen bewährten in Mitteleuropa entwickelten Wechselrichter. Eine integrierte AFDD-Fehlerlichtbogen-Schutzeinrichtung (Brandschutzschalter) und ein AC-Detektor überwachen den Betrieb.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258466">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/466/16c5339e8b422f90959945f1f160430b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754057831&amp;width=680&amp;sig=F0P0HsQooMlAJ1E2jasJnBqoNgbLJisNM8Prrs6QJlk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260537">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/537/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066824&amp;width=680&amp;sig=5BB7GtoyVPZN8C10BALFqIy7pQxMBasNQk1%2B7LOdi7I%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:So-ist-der-YOUL-one-aufgebaut-jedes-Teil-hat-seinen-Platz-"><span class="bold">So ist der YOUL one aufgebaut – jedes Teil hat seinen Platz. </span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50289080">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/289/080/d2424da31ab8b93b449e18675dc47558_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754319172&amp;width=680&amp;sig=1Ra11ZkBjYXOobVUKAoIIrZd7bbWcrFOyX%2Bws3ETDxs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260551">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/551/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066868&amp;width=680&amp;sig=9sXQhl4T81RaLMYmKKqbjvNGLQOhxBm%2FWvck%2FDrRa4w%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Sicherheit-Thermik-Akustik-"><span class="bold">Sicherheit, Thermik &amp; Akustik </span></h4><p>Eingebaute Lüfter führen die Luft durch definierte Kanäle – flüsterleise. NA-Schutz im Inverter, AFDD Brandschutzschalter und die normgerechter Einspeisestecker sind serienmäßig. </p><p><span class="text-italic">Gekühlt, nicht gehört.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258469">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/469/cfed21ad8a714f77ebef6dbd484359db_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754057848&amp;width=680&amp;sig=%2F%2BZQ%2Fdo81ds13xjQCO3Qmu%2BuLNRJtgA6A8%2BIdpV0%2Bww%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Im Bild: Team mit unserem ersten Prototypen des YOUL one</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260556">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/556/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066883&amp;width=680&amp;sig=hvD%2B%2Bq09GYEDZG77IKafItb1TT6SWUTvAQRW5GHYuVg%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Form-folgt-Alltag-Geha-use-Mo-bel-Anmutung-"><span class="bold">Form folgt Alltag: Gehäuse &amp; Möbel-Anmutung </span></h4><p>Technik darf schön sein. Der Deckel aus <span class="bold">massivem, unbehandeltem FSC-Holz</span> (2,9 kg) macht den YOUL one wohnzimmertauglich. Durch abgerundete Kanten und verdeckte Verschraubungen fügt sich der YOUL one schick und dennoch zurückhaltend in Dein Interieur ein.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50256007">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/256/007/1809d0557d873fc10c2de0645e2f1bd5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754042161&amp;width=680&amp;sig=AtrUlg4iKtOFz9helmIpLqR9XpD4HPXLnn1D2pF6170%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Möbel-Look statt Maschinen-Look.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260559">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/559/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066900&amp;width=680&amp;sig=CWooRx%2FWYynkWiGRK%2Fc0JLKlywOrgEC4RzsaCn0Xxkk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Warum-die-Form-so-ist-wie-sie-ist-">
+<span class="bold">Warum die Form so ist, wie sie ist </span><br/> </h4><p>Drei Layout-Studien von ~119 l bis ~172 l wurden durchgespielt. Am Ende gewann die ausgewogene Balance aus Stand­sicherheit, Wohnzimmertauglichkeit und Handhabung.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258160">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/160/64b41ea83540e6145305a24ad994f5b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754055913&amp;width=680&amp;sig=DclM%2BJGtU4XK2vu6FA6iQymjNE5uRmqJmwO4Rd4D7eI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50256433">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/256/433/5ccb803e54e0d2b58f4eaeb66c4b5f1c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754044580&amp;width=680&amp;sig=qPAXH0amh966ugOoSi0%2BiEquKaJtQOOBMuKPENBNCgo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260567">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/567/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066925&amp;width=680&amp;sig=HvZV9w4zv7eU91gk1EnYHcUHVXVI1oprB1saXDhNq0Y%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Und-so-sehen-die-CAD-Zeichnungen-aus-"><span class="bold">Und so sehen die CAD-Zeichnungen aus </span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50257804">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/257/804/eb50d57f5bafbd3c804a4d1e351f148d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754053862&amp;width=680&amp;sig=XHv3m2u27fBLh%2FGh26%2BIfj5bXpYjhVf5Grd4%2BlvxEao%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50257803">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/257/803/f629776835bf20712fd19ba24758773f_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754053862&amp;width=680&amp;sig=PUG%2FW9salVD7JAS5zlbAKSJvcFN6cc2%2BrL4i9VVedeI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50257805">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/257/805/23b8eba795d67aaa1ce2ee5539ad9ff2_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754053863&amp;width=680&amp;sig=AX1F08g8OOwxXOMhRKpAXsuNduadl0n19vvc5t1Y4FM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260569">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/569/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066936&amp;width=680&amp;sig=x9XRudjUAg11mSLpjEmVJqMgmXh7dxaSMi1YSrlWQ%2BM%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Bedienung-die-man-fu-hlt-"><span class="bold">Bedienung, die man fühlt </span></h4><p>Plug, snap, proud: Mit dem magnetischen <span class="bold">Optik-Reader</span> <span class="bold">von Everhome</span>, den wir im Preis inbegriffen mitliefern, dauert die Kopplung an euren Stromzähler &lt; 10 Sekunden – kein Siegelbruch, kein Kabel.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50256450">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/256/450/2691199137702df93166f0355febef31_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754044667&amp;width=680&amp;sig=UCXJzQqxqhVRr%2FLHzpQK0VrDqSJRObZZY%2BoaxslFzR8%3D" src="https://i.kickstarter.com/assets/050/256/450/2691199137702df93166f0355febef31_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754044667&amp;width=680&amp;sig=UCXJzQqxqhVRr%2FLHzpQK0VrDqSJRObZZY%2BoaxslFzR8%3D"/>
+</figure>
+</div>
+<p><span class="bold">Snap &amp; Go:</span> Andocken – App öffnen – fertig.</p>
+<p>App-Kickstart: Live-Daten in der YOUL-App nach wenigen Klicks.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260573">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/573/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066955&amp;width=680&amp;sig=T3tJs7ZqSJIE3NFKU3S5BlRCYv6pCWI%2B7%2FFcY6JNl6k%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Plug-Play-in-10-Sekunden-"><span class="bold">Plug &amp; Play in 10 Sekunden 🔌</span></h4>
+<p><span class="bold">Stecker rein, fertig:</span> Jens zeigt, wie einfach der YOUL one In Betrieb genommen wird - einfach in eine haushaltsübliche Schuko-Dose stecken - und schon kann's los gehen. Er zeigt außerdem den <span class="bold">integrierten AC-seitigen Brandschutz­schalter. </span>Eine LED-Füllstands­anzeige ist im Seriengerät integriert – hier noch Dummy.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260576">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/576/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066963&amp;width=680&amp;sig=CjiNp32P4ZnNW9YiTgTYaDOY3fi4aKLWy6bHmWxI160%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Was-heute-schon-steht-und-was-als-Na-chstes-kommt-"><span class="bold">Was heute schon steht – und was als Nächstes kommt </span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258472">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/472/86159a9805b0b25625df0921a6f6047e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754057878&amp;width=680&amp;sig=YKnlNy%2BjiGRSxOVaZglEIwMoSHDpvstpWYaAQWbuQ2c%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260665">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/665/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754067319&amp;width=680&amp;sig=wei2JpD918PEGp2Wu1EgDjlZLkWavvrlMPDLDW22E98%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260668">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/668/47a62ec0af786095a115439d75c2091a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754067327&amp;width=680&amp;sig=tzqwl4hpkZr7P2LKI%2FGTz7L6IxAIpG5YcKJ1GNa63Qo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258474">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/474/8ec87d6942f4f3f114d954c7e85ba576_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754057890&amp;width=680&amp;sig=1iKIoAAj6BCOE068tFI3kGH6g64rv40RBSQlUwsojEI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260675">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/675/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754067339&amp;width=680&amp;sig=j72WbUo1OtHGMrrglR1Bat1QcFIM07Et7NMHCFwd7DI%3D"/>
+</figure>
+</div>
+<p><span class="bold">Die Zertifizierungen unserer einzelner Komponenten sind herstellerseitig alle abgeschlossen. </span></p><p><span class="bold">Für unser Gesamtsystem werden bis Herbst noch folgende Zertifizierungen durchgeführt: DIN EN 61000 und VDE 0100-712.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260678">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/678/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754067347&amp;width=680&amp;sig=YBQO1RgPZ%2F%2FXoc813lWmLz3urKiMyvmZ0T%2BrzPggy%2Bk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50257565">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/257/565/f304f3d5ec8084ff920abf377dd76e01_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754052048&amp;width=680&amp;sig=NNU7kj9l0mMg%2BmhJ4WYoHeDYYZ5kkqFBwfrvufG%2Bo70%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260298">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/298/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065832&amp;width=680&amp;sig=PxE%2FtyJlQXj4CqNGVnS2%2BOMuVRwwyw2dI7p2y8cdVPc%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Wofu-r-Deine-Unterstu-tzung-sorgt"><span class="bold">Wofür Deine Unterstützung sorgt</span></h3><p>Mit Deiner Unterstützung starten wir ab Oktober 2025 die erste Serienproduktion und Auslieferung ab November. Unser Prototyp steht - jetzt fehlt nur noch Deine Stimme, um den Stein ins Rollen zu bringen!</p><p>Hier die Details:</p><p>Produktion der ersten Charge / Prototypreihe: inkl Technik, Gehäuse &amp; Holzdeckel</p><p>Produktion / Einkauf der Bauteile für die erste Serie</p><p>Fulfillment-Vorbereitung &amp; Verpackung</p><p>Kontinuierliche Tests und App-Verfeinerung</p><p>Zertifizierung des Gesamtsystems</p><p><span class="bold">Plug, play, proud.</span> – Danke, dass Ihr diese Reise mit uns geht!</p><h3 class="page-anchor" id="h:Empfiehl-uns-weiter"><span class="bold">Empfiehl uns weiter</span></h3><p><span class="bold">Deine Empfehlung zählt – und wir sagen Danke!</span><br/>Wenn Du unsere Kampagne teilst und weiterempfiehlst, wartet im Oktober eine kleine, aber feine Überraschung auf Dich. Was genau? Lass Dich überraschen – aber so viel sei verraten: Es lohnt sich!</p><p>Tagge uns dazu bitte mit <span class="bold">#youl_gmbh</span>, <span class="bold">#einfachspeichern</span> und <span class="bold">#youl_one</span>, damit wir Deine Empfehlung sehen können.</p><p>Schicke uns anschließend eine E-Mail mit einem Screenshot Deiner Empfehlung an <span class="bold">kontakt@youl.de</span> und gib bitte Deinen Vor- und Nachnamen an.</p><p>Mit Deiner Teilnahme erlaubst Du uns, Dich einmalig zu diesem Zweck zu kontaktieren. Du wirst dadurch <span class="bold">nicht automatisch</span> in unseren Newsletter aufgenommen. Wenn Du diesen erhalten möchtest, kannst Du Dich jederzeit über <span>https://youl.de</span> anmelden.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50290891">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/290/891/e2deba3aaef61a3587399667512145d7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754328207&amp;width=680&amp;sig=n6DqoMXcJ5TSnXShZ41tsOEyWQFl1TdiWMPP6zxbQQo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260303">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/303/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065846&amp;width=680&amp;sig=9iq5EdncFtom5Fez4%2Fm5tdwktVwo88Mp%2FQSfYaP1iXQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Unser-Team-sagt-DANKE-"><span class="bold">Unser Team sagt DANKE! 💚🔋</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258435">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/435/4b81ac83b84e1d22f0d2b2f615733ec7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754057676&amp;width=680&amp;sig=P574TS223MxEJJEjbkCQOTTQlT6TPiZLBcsctAP88b4%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Im Bild: Roger, Katrin, Janina, Norbert, Stephan, Jens</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258483">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/483/283a7e703dd32186e1e1042417a5c3a6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754057922&amp;width=680&amp;sig=q%2FLmU6wcoCaQGzZ%2F91sBYaCRlhpetiqLG4pLQQYAq8A%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Im Bild: Stephan und Gründer Norbert</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259716">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/716/e9b8d3f964875038de3793cc8ff67ebb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754063125&amp;width=680&amp;sig=XeA6caaCu3Mi8dM231uXW9Xedm9KRzIP2aKsVaXyQjY%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Im Bild: Gründer Norbert</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258484">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/484/b8222c3834090bdb41dfdbb2814800d6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754057927&amp;width=680&amp;sig=kKvK1JtVM8c8GXCX8THKnnif%2FshoCm84EqBFZQuQ%2F60%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Im Bild: Mitbegründer Jens</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258486">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/486/6f982ac54fc3158104aeaeaf36d623ae_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754057938&amp;width=680&amp;sig=RRCozjKXcxK0UVsdVegd4uML%2BEUYeytv1nvy%2BouxEcc%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Im Bild: Janina</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258490">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/490/a8993d61a6a2a007f0f37d1738b141bb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754057955&amp;width=680&amp;sig=Y%2FVs2oz3T489rhFbootpyXnVSWTA74G1yLTMKT3LZq0%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Im Bild: Katrin und Janina</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260306">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/306/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065855&amp;width=680&amp;sig=GioLjGylvf0h1NbhdS%2BzHsIxHlk%2FWEjiH3YxQ1piP6U%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Risiken-und-Herausforderungen-"><span class="bold">Risiken und Herausforderungen </span></h3><p>Unsere schicke Batterie sieht aus wie ein schmuckes Möbelstück. Sie bringt mit ihren 110 kg aber einiges auf die Waage. Daher hätten wir Dir gerne eine Lieferung bis an den gewünschten Aufstellungsort bereitgestellt - wenn Du sie z.B. im Keller aufstellen möchtest oder sie beispielsweise in den 3. Stock ohne Aufzug muss. Die Suche nach geeigneten Fullfillment-Partnern gestaltete sich dabei jedoch sehr schwierig. Mit einer Auswahl an Anbietern sind wir in konkreten Verhandlungen und Abstimmungen und arbeiten daran, diese Option als Add-on buchbar machen zu können, so dass gegen Aufpreis auf Wunsch eine Auslieferung im Herbst bis zum gewünschten Aufstellungsort erfolgen kann (erfordert 2-Mann-Lieferung). Eine kostenlose Lieferung des YOUL one bis an die Bordsteinkante ist jedoch jetzt schon im Preis enthalten.</p><p>Eine genaue Skalierung unserer ersten Charge fällt uns schwer, da wir ganz neu gestartet sind und noch keinen bestehenden Kundenstamm haben. Die Kickstarterkampagne hilft uns hier enorm!</p><p>Damit Dein YOUL one perfekt funktioniert, setzen wir auf den intelligenten Auslesekopf von Everhome, der an nahezu alle modernen Stromzähler passt. Mehr als 98 % der Haushaltszähler in Deutschland sind kompatibel.</p><p>Trotzdem möchten wir ganz sichergehen, dass auch Dein Zähler dazu gehört – bevor wir Dir Deinen YOUL one liefern. Deshalb kontaktieren wir nach Ende der Kampagne alle Unterstützer:innen persönlich per E-Mail und bitten um ein Foto des Stromzählers (über unser kurzes Formular).</p><p>Falls Dein Zähler zu den sehr wenigen Ausnahmen gehören sollte, die aktuell noch nicht unterstützt werden, hast Du selbstverständlich die Möglichkeit, Dein Backing problemlos und vollständig zurückzuziehen.</p><p>Wir möchten, dass Du Dich mit Deinem YOUL one von Anfang an sicher und richtig beraten fühlst – und keine unangenehmen Überraschungen erlebst. Deshalb nehmen wir uns für Dich die Zeit, vorab alles gemeinsam zu klären.</p><h3 class="page-anchor" id="h:Verpflichtung-zum-Umweltschutz-"><span class="bold">Verpflichtung zum Umweltschutz </span></h3><p><span class="bold">Beständiges Design</span></p><p>Robustes Gehäuse aus sortenreinem Stahl - in Deutschland gefertigt. <br/>Kein Plastikgehäuse.<br/>Sorgfältige Montage von echten Profis aus und in Deutschland.<br/>Umfangreich VDE, ISO, IEC und EMV zertifiziert. <br/>Garantie über 10 Jahre. <br/>Mit hochwertigem integrierten Wechselrichter und Steuerung.<br/>Sichere Lithium-Eisen-Phosphat (LFP) Technologie.<br/>Mit eingebautem Brandschutzschalter.<br/>Typische Lebensdauer der Batterie: 6.000 Ladezyklen</p><p><span class="bold">Wiederverwertung und Recyclingfähigkeit</span></p><p>Die Verpackung wird rein aus Kartonage und einer Holz-Halbpalette bestehen. <br/>Wir nutzen kein Plastik für die Verpackung. <br/>Das Gehäuse aus sortenreinem Stahl ist besonders gut recyclingfähig.</p><p><span class="bold">Nachhaltige Materialien</span></p><p>Für den Holzdeckel nutzen wir FSC-zertifiziertes Bambusholz.</p><p><span class="bold">Umweltfreundliche Fertigungsanlagen</span></p><p>Unser Fertigungspartner ist ISO 9001 zertifiziert und besitzt eine eigene Herstellungsstätte in Deutschland. Made in Germany.</p><p><span class="bold">Nachhaltiger Versand</span></p><p>Nachhaltigkeit ist uns in allen Belangen ein Anliegen, allerdings müssen wir derzeit noch unsere Versandpartner validieren.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260085">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-">+++</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/085/e39fe51212c64337bd0f3771a69454fc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754064781&amp;width=680&amp;sig=D1XKQ9uxj6s7xlyxquuZisz%2FemrllEJqucsdmHrwUms%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260424">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:ENGLISH">ENGLISH</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/424/e39fe51212c64337bd0f3771a69454fc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066371&amp;width=680&amp;sig=2RexfxpNaDP2wY2X5WloYtutaMzgO4JlIdTeQkaY%2F7I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260448">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:VERSION">VERSION</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/448/e39fe51212c64337bd0f3771a69454fc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066449&amp;width=680&amp;sig=yae7HMvcvtSQ4sNaAUlvvO8LxRvAdd6OWfRlHkCyoCY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260454">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-">+++</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/454/e39fe51212c64337bd0f3771a69454fc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066471&amp;width=680&amp;sig=xiI3L3e8REsiV44zvfSlWRoup7PaZklvrK7kahr7N8g%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260490">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/490/70dc6c678ba2c1591e0456998020bdcf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066620&amp;width=680&amp;sig=cpJxPyD0OoljV%2FeNY23YBVppK5QE6ID3sg4ldK2Y%2Fzw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260322">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/322/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065937&amp;width=680&amp;sig=KNbgP4cJBdGc%2FCOH7hfsLIL7rlKYd%2Bwrz2%2FfL4%2Fm2YI%3D"/>
+</figure>
+</div>
+<p><span class="bold">ℹ️ KINDLY NOTE: ℹ️</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260327">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/327/31213462881ff81a9943f19fc089312c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065951&amp;width=680&amp;sig=eyLKOeTIFvJh0dAiYLlF3DFnE0phyYihIfgAt4aK%2BVM%3D"/>
+</figure>
+</div>
+<p><span>CONTACT@YOUL.DE</span></p>
+<h3 class="page-anchor" id="h:YOUL-one-10-kWh-plug-and-play-battery-storage-for-your-power-outlet-"><span class="bold">YOUL one: 10 kWh plug-and-play battery storage for your power outlet </span></h3><p>Confused by the technology? Worried about compatibility issues? Concerned about hidden costs? Need to find an installer? </p><p>Save yourself the stress. </p><p>Simply store your own electricity. With YOUL.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260315">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/315/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065891&amp;width=680&amp;sig=3DZWGw10QuJh%2Fwh1qobwYOaYk43ClhVgKqVZfzzV7ps%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Why-electricity-storage-hasn-t-yet-been-appealing-">
+<span class="bold">Why electricity storage hasn't yet been appealing</span> </h3><p>You want to reduce your electricity costs and become more independent – and you may already have started looking for a suitable battery storage system.</p><p>But anyone searching for solutions online today quickly gets lost in the technical jungle: a jumble of components, a flood of models and expansion modules, incomplete information, opaque pricing, missing special accessories, technical know-how as a prerequisite for installation that is far too complicated. In the end, you often come to the conclusion that without an electrician, permits and a lot of time for DIY, nothing will work. And even then, much of it seems more like a temporary fix than a real, permanent solution.</p><p>Everything is too complicated and therefore very confusing.</p><p>What's more, most storage systems look like they belong in a utility room, sound like a refrigerator on continuous mode – and don't fit in the hallway or living room. Hardly any systems have been developed in Germany, let alone built.</p><p>In short, what is supposed to bring progress and independence often feels like dependence and frustration.<br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50227574">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/227/574/6eef3ef92080d1dc31cedc31a4e6d0b8_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753868900&amp;width=680&amp;sig=XH33EEuJFPQ1Q7P2%2FqlP%2BRcogc8V65ctvJpPP7QEoAg%3D"/>
+</figure>
+</div>
+<p><br/><br/> </p><h3 class="page-anchor" id="h:No-matter-what-electricity-situation-is-stressing-you-out-right-now-we-have-the-solution-"><span class="bold">No matter what electricity situation is stressing you out right now, we have the solution </span></h3><h4 class="page-anchor" id="h:You-are-a-PV-owner-">You are a PV owner </h4><p>Perhaps you are one of the many PV owners who already use their electricity for their own consumption. And yet, month after month, you still have to buy far too much grid electricity – in many European countries like Germany, often at five to six times the price you receive for your feed-in. This is frustrating – and feels anything but fair.</p><p>Or perhaps you have been feeding all of your PV system's output into the grid and your feed-in remuneration is coming to an end. Without the subsidy, there is hardly anything left of your return – many are now considering switching to self-consumption. A wise and sustainable decision! But even then, you will still have to buy expensive grid electricity.</p><h4 class="page-anchor" id="h:You-own-a-heat-pump-">You own a heat pump </h4><p>It becomes even more burdensome if you also use a heat pump. Because as sensible and sustainable as this technology is, electricity costs rise enormously – and you pay the price for your sustainable decision yourself. Every month.</p><h4 class="page-anchor" id="h:You-use-a-dynamic-electricity-tariff-">You use a dynamic electricity tariff </h4><p>Even if you don't have a PV system, but use a dynamic electricity tariff as a tenant or owner, you too want a solution that protects you from sudden price jumps, stores electricity more intelligently and significantly reduces your costs. Until now, however, there has been no solution for this.<br/><br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50230466">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/230/466/b46be951c863727cab6394df8731fbc0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753887424&amp;width=680&amp;sig=nb5sHI5%2FwEMtVIgiLO2RdCgdO%2FlojoN%2Bx%2BMKLh%2FEwfw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260313">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/313/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754065882&amp;width=680&amp;sig=OPyC8PKqx0SZWQvlJ9bbRGBEk%2FtI1RVbuD8BbixZ7Ko%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Our-solution-is-your-freedom-"><span class="bold">Our solution is your freedom </span></h3><p>We realised: it's time for a simple solution!</p><p>Because we are convinced that energy independence should not depend on prior knowledge, electrician availability or price comparisons – but solely on your decision to get started.</p><p>With YOUL one, you can finally take control of your energy independence.</p><p>💡 Finally, supply yourself with your own electricity around the clock!</p><p>It's so easy.<br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258724">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/724/2ad6e3662cbac1d8d5d7dabebc991102_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754059020&amp;width=680&amp;sig=g3nu12qfQxzf4Wfcg237XA6SfphXkFBxdOsiFSFm8%2BE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260343">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/343/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066021&amp;width=680&amp;sig=OWGzbLEjUtvBexmswLd0aF70OYgRXSDQfUj2bmt%2BNoY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Your-situation-is-unique-but-YOUL-always-fits-"><span class="bold">Your situation is unique – but YOUL always fits </span></h3><p>Made for you </p><p>YOUL one is the first plug-and-play battery storage system with a capacity of 10 kWh that is suitable for residential use – perfect for:</p><p>✅ Heat pump owners<br/>✅ PV users<br/>✅ Households with dynamic electricity tariffs</p><p>Whether you want to save electricity, maximise your PV self-consumption or take the pressure off your heat pump during expensive evening hours – the YOUL one is your solution. For households with or without a PV system. For owners and tenants. For anyone who simply wants to store electricity.</p><p>The YOUL one provides the ideal capacity for multi-person households and stores electricity when it is cheapest or when it is generated by the system itself – so you have to buy less and can finally get the most out of your energy.</p><p>Because energy independence should not depend on specialist knowledge, the capability and availability of electricians or the goodwill of helpful friends or neighbours – but solely on your decision to get started yourself.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260357">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/357/9b5010946de4f1c1a595312d48699e23_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066073&amp;width=680&amp;sig=hzL29SnV5%2Fs79R45OhH4il0gGkBGOgAaX2cmIcsB7Es%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260358">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/358/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066073&amp;width=680&amp;sig=Z74qx%2BSXNUErfeTRTlcM8S1o5JYftcSwruyvp8CMSJo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260362">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/362/a4b604f6dd842da4fc6b5a282c9c1f86_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754066101&amp;width=680&amp;sig=aAYTpUpt%2B8yLq3a71vUyNI2gw%2BA6ahJgE1oWndwBQPk%3D"/>
+</figure>
+</div>
+<p><br/> </p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50227595">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/227/595/8cde539cd453b96285852f4f213bfbce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753869060&amp;width=680&amp;sig=soGiE37NdYJjETJpVtWXW5NDTNr1yMNcxXk5%2BZ06hUY%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">In the pictures: Our first real prototype YOUL one (with dummy LED - we are recently deciding on a supplier for real LEDs, to implement them into the punching of the chassis)</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260367">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/367/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066119&amp;width=680&amp;sig=tpM0je8wMZ68YbHNDG9%2B1dmknFfOSbsvIEG8ZtVuU9Y%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Join-us-"><span class="bold">Join us! </span></h3><p>Help us rethink electricity storage – simple, safe and accessible to everyone. Support our campaign, share our vision and become part of a movement that brings the energy transition where it belongs:<br/>to your home.</p><h3 class="page-anchor" id="h:What-do-you-get-"><span class="bold">What do you get? </span></h3><p>When you choose YOUL one, you get:</p><p>✅ An elegant battery storage unit suitable for living spaces with 10 kWh storage capacity made from high-quality, robust materials such as pure steel and real wood<br/>✅ An intelligent optical readout head for your electricity meter<br/>✅ An intuitive app for control and analysis<br/>✅ Detailed step-by-step instructions and personal customer service<br/>✅ And: free delivery to your home<img class="image" data-id="50227654" src="https://i.kickstarter.com/assets/050/227/654/11bb6a35fc2f32032da5353eb8156ea1_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753869337&amp;width=6912&amp;sig=y%2B3scm3ogu81X5QltlMqzYM33eXuT16fczAoVIWPE5E%3D"/></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260375">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/375/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066136&amp;width=680&amp;sig=SSEzTN7lmLYJk40rYSho29%2F9XdL4MSRBM8ZU8YhDlZ8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Our-special-bonus-a-Limited-Edition-laser-engraving-with-individual-numbering-"><span class="bold">🌟Our special bonus: a "Limited Edition" laser engraving with individual numbering!🌟</span></h3>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260376">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/376/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066143&amp;width=680&amp;sig=jcrJZp1CoIYCVLjJ1RP9qdKM6DJCqRkVd7v%2BsjivacE%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Quality-Made-in-Germany-"><span class="bold">Quality – Made in Germany </span></h3><p>Our team of engineers, computer scientists and energy experts develops and manufactures in Germany.</p><p>This gives us control over quality – and you peace of mind.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50228252">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/228/252/34e54a99b3bd6095ad5782b6a2c9bf13_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753874223&amp;width=680&amp;sig=QAJ2nmEDQCnX247JxGfev%2Bn%2F2llmEBfeXM%2B5hCAZtow%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260383">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/383/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066163&amp;width=680&amp;sig=3%2Br%2BrX9hwMHZ5GjKiIdWbRLp2%2BE7Fp4KhNuLe%2F62Lg8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Homey-design-"><span class="bold">Homey design </span></h3><p>The YOUL one is a battery storage unit with a capacity of 10 kWh that is suitable for living spaces – ideal for multi-person households.<br/>Its elegant design fits just as well in the hallway next to your fuse box as it does in the utility room.</p><p>It is YOUR personal energy revolution – quiet, powerful and ready to use right away.</p><h4 class="page-anchor" id="h:YOUL-ove-">YOUL.ove !</h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50228271">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/228/271/6cee8c325f7bc1e139ba7c50b13396e7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753874333&amp;width=680&amp;sig=gbjIiy7M1vyNMTj4h%2BcHt%2BgjvJL7d4TXlHg1O31GZr4%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Above: photo of our prototype YOUL one in a hallway setting (with dummy LED)</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260397">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/397/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066240&amp;width=680&amp;sig=wUIzmkVSjajB1HdWB5NUUEnh5yCRS2n8JfLHWQGx%2FNo%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Follow-Us-"><span class="bold">Follow Us 👉</span></h3><p><br/><span>Facebook</span></p><p><span>Instagram</span></p><p><span>YouTube</span></p><p><span>LinkedIn</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260401">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/401/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066246&amp;width=680&amp;sig=5kWXu6P1BYmn6WOdB%2F%2FD14G5CgQWO6i5WaDKHSRt7G8%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Our-Development-Journey-From-the-First-Vision-to-Today-"><span class="bold">Our Development Journey – From the First Vision to Today </span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260999">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/999/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068739&amp;width=680&amp;sig=suognsMZ0ELTOmz8ED6PofEQaqk3ZyHJN8onparRj1U%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Why-YOUL-The-Beginning-"><span class="bold">Why YOUL? – The Beginning </span></h4><p>Energy independence shouldn’t be a technical project – it should feel like an everyday appliance. No electrician, no technical chaos. Just plug it in, start saving, and feel proud.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50258820">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/258/820/a2acb5f4613606d985a92a57af2e7b17_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754059472&amp;width=680&amp;sig=5Nt4GaTnHjARPvNHrTwEkh5Q9tx3J7vIkmUnThQeW%2FQ%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Image: Very first sketches and feasibility studies begin...</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260899">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/899/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068284&amp;width=680&amp;sig=F%2F%2FXowHn8NtF9a2mVEVgB0QIecffxE7xdU8Rmz0RXSk%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-Timeline-">
+<span class="bold">Timeline </span><br/> </h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259039">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/039/c5a2afbaf78e20282e0ccdc02890ce78_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754060482&amp;width=680&amp;sig=DBO46GyMxU%2B49qouFk7t%2FV4ndognAwwQIHltGK3JlqY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260907">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/907/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068326&amp;width=680&amp;sig=Tlp4OdqcuOcTZtLc5W6Li8hcMgzO9LctgJ%2Fz6e%2FzXhI%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:From-Principle-to-Architecture-"><span class="bold">From Principle to Architecture </span></h4><p>We rely on a low-voltage system with two LiFePO₄ modules (≈ 106 Ah each), connected to a proven inverter developed in Central Europe. An integrated AFDD arc fault detection device (circuit breaker) and an AC detector monitor safe operation.</p><h4 class="page-anchor" id="h:This-is-how-the-YOUL-one-is-built-every-component-in-its-place-"><span class="bold">This is how the YOUL one is built – every component in its place. 🪜</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259138">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/138/5f0a0d632c531f1d8eaacb4b1e104e65_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754060902&amp;width=680&amp;sig=tcO3Zvb3ggrtVFt5FRjB%2Bx7s5kf6bhS1e4L2r0RfPMI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260923">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/923/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068387&amp;width=680&amp;sig=6RASon5S6fo%2BpnuSBLkrHl8TCZfEC0F4vNhMKue7N0Y%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Safety-Thermals-Acoustics-"><span class="bold">Safety, Thermals &amp; Acoustics </span></h4><p>Four fans guide airflow through defined channels – whisper-quiet &lt; 45 dB. Built-in grid disconnection (NA protection) in the inverter, a circuit breaker, and robust Wieland feed-in connection are standard.</p><p><span class="text-italic">Cooled, not heard.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259141">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/141/16c5339e8b422f90959945f1f160430b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754060919&amp;width=680&amp;sig=X4GsOj7jpsKqj1UFDjJElwvaLCmMM0cFIQQc8gs8B54%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Image: Team with our first YOUL one prototype</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260928">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/928/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068410&amp;width=680&amp;sig=LDapQJ4MmoJ0stK578iwcjeBUbwT8mwUqiK4UdrEEd0%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Form-Follows-Everyday-Life-Housing-Furniture-Aesthetics-"><span class="bold">Form Follows Everyday Life: Housing &amp; Furniture Aesthetics </span></h4><p>Technology can be beautiful. The lid made of solid, untreated FSC-certified wood (2.9 kg) makes YOUL living-room-friendly. Rounded corners and hidden screws integrate the device into your home – instead of calling for attention.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259148">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/148/1809d0557d873fc10c2de0645e2f1bd5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754060956&amp;width=680&amp;sig=Z7Q4yt0V%2FAQG7viq09Uy%2FhpS7DCvjMfENTGCKviWnHw%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Furniture look instead of machine look.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260984">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/984/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068671&amp;width=680&amp;sig=nMXZI9o6G8EGcw%2Fgy5k0Aaaxd5LtEdT64IwkcRo5Ut4%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Why-it-s-shaped-the-way-it-is-"><span class="bold">Why it’s shaped the way it is </span></h4><p>Three layout studies from ~119 l to ~172 l were evaluated. The final design won thanks to a balanced mix of stability, living-room suitability, and handling ease.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259149">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/149/64b41ea83540e6145305a24ad994f5b2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754060984&amp;width=680&amp;sig=dTTf3V7K2pdMekW7FvSwaxz6myHV6e4ZFe2wytRhtto%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260941">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/941/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068460&amp;width=680&amp;sig=i2rSdKv5AWWlJI9lmw%2BrY475TxoB8t3FLNEBwZUaQXQ%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Intuitive-Interaction-You-Can-Feel-"><span class="bold">Intuitive Interaction You Can Feel </span></h4><p><span class="text-italic">Plug, snap, proud:</span> With the magnetic optical reader, linking it to your power meter takes &lt; 10 seconds – no seal breaking, no wires.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259187">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/259/187/2691199137702df93166f0355febef31_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754061173&amp;width=680&amp;sig=fF4gTFgm0s9q4dYJLeSVNgwif%2F7GJKAvgwFpededzZ8%3D" src="https://i.kickstarter.com/assets/050/259/187/2691199137702df93166f0355febef31_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754061173&amp;width=680&amp;sig=fF4gTFgm0s9q4dYJLeSVNgwif%2F7GJKAvgwFpededzZ8%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Snap &amp; Go: Dock – open the app – done.</span></p><p><span class="text-italic">App Kickstart: Live data in the YOUL app after just a few taps.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260947">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/947/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068496&amp;width=680&amp;sig=%2FB%2BhavNOvKA9uJHQlHqlR%2BNb%2BW973Jkf6%2F4h3gNsUJ8%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:Plug-Play-in-10-Seconds-"><span class="bold">Plug &amp; Play in 10 Seconds 🔌</span></h4><p>Just plug it in: Jens shows how easy it is to commission the YOUL one – simply plug into a standard household socket – and you’re good to go. He also explains the built-in AC-side arc fault protection switch. The final device includes an LED fill-level display – still a dummy in this prototype.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260951">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/951/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068509&amp;width=680&amp;sig=GaKMdfCIymX9M2Dr7W5cIayFSVFkltoAmcBR04PSKaY%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:What-s-Already-in-Place-and-What-Comes-Next-"><span class="bold">What’s Already in Place – and What Comes Next </span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259189">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/189/820baba976f140274656e2599af521f1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754061192&amp;width=680&amp;sig=qn1eq8zHrWHl0IXT6ZSnq976wjcPHNz2pSZOZ%2B95cNA%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">[IMAGE: Roadmap / Milestones ]</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260973">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/973/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754068622&amp;width=680&amp;sig=X24%2B93c7C01OaGJDL6vn8Nsps75v0tkOJQtQvPs59Pw%3D"/>
+</figure>
+</div>
+<h4 class="page-anchor" id="h:-All-certification-processes-are-already-completed-"><span class="bold">📜 All certification processes are already completed! 📜</span></h4><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260404">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/404/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066271&amp;width=680&amp;sig=jXy5cl7q1yAT78AG%2FwWm8LCfJN4fwDcDvaB0qIX%2BQio%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:What-Your-Support-Enables-"><span class="bold">What Your Support Enables </span></h3><p>With your support, we’ll begin series production and shipping in October 2025. The prototype is complete – now we just need your voice to set things in motion!</p><p><span class="bold">Here’s what’s included:</span></p><p>Production of the first batch / prototype series: incl. tech, housing &amp; wooden lid</p><p>Manufacturing / procurement of parts for the first series</p><p>Fulfillment preparation &amp; packaging</p><p>Continuous testing and app refinement</p><p><span class="text-italic">Plug, play, proud. – Thank you for joining us on this journey!</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50260410">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/260/410/e6ca996a772bb3e05846bd022877a4ce_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754066294&amp;width=680&amp;sig=Qq0sncAdZug7owullEpqr486LQwMqRSXTbtMt%2BRz8%2Fk%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Our-team-says-THANK-YOU-"><span class="bold">Our team says THANK YOU! 💚🔋</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259202">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/202/4b81ac83b84e1d22f0d2b2f615733ec7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754061251&amp;width=680&amp;sig=DnaGQBEOOnX8gGgcuftc30n6MGlGRXtSWLrCYDb7TKE%3D"/>
+</figure>
+</div>
+<p><br/><span class="text-italic">Image: Roger, Katrin, Janina, Norbert, Stephan, Jens</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259204">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/204/283a7e703dd32186e1e1042417a5c3a6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754061254&amp;width=680&amp;sig=KtGkmhzjChDhyENNhvok8bkA7Bt1mwepwHj181xhwuo%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Image: Stephan and founder Norbert</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259220">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/220/e9b8d3f964875038de3793cc8ff67ebb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754061300&amp;width=680&amp;sig=wU4upJ7DTGw%2FMqHtQByIM5SNMkQl7pVPP5Wb49f0W2U%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Image: Founder Norbert</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259208">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/208/b8222c3834090bdb41dfdbb2814800d6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754061265&amp;width=680&amp;sig=Q23ayqUxe7%2Fq3MA%2FUdjcdwsKwF%2FsrmTqmlGdsD1cs%2Bk%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Image: Co-founder Jens</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259210">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/210/6f982ac54fc3158104aeaeaf36d623ae_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754061275&amp;width=680&amp;sig=PDfByMZoQ%2BUPNFFAObcsUt90afV3FQdhKnQ%2Ba2yU2go%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Image: Janina</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50259213">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/259/213/a8993d61a6a2a007f0f37d1738b141bb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754061281&amp;width=680&amp;sig=qn2s7VRvVHUwIiOErORNY%2Fg%2F6fDtubfUd%2Fj56ZGd7Zw%3D"/>
+</figure>
+</div>
+<p><span class="text-italic">Image: Katrin and Janina</span></p><p><br/><br/><br/> </p></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Unsere schicke Batterie sieht aus wie schmuckes Möbelstück. Sie bringt mit ihren 110 kg aber einiges auf die Waage. Daher hätten wir Dir  gerne eine Lieferung bis an den gewünschten Aufstellungsort bereitgestellt - wenn Du sie trotzdem im Keller aufstellen möchstest oder sie beispielsweise in den 3. Stock ohne Aufzug muss. Die Suche nach geeigneten Fullfillment-Partnern gestaltete sich dabei jedoch sehr schwierig. Mit einer Auswahl an Anbietern sind wir in konkreten Verhandlungen und Abstimmungen und arbeiten daran, diese Option als Add-on buchbar machen zu können, so dass gegen Aufpreis auf Wunsch eine Auslieferung im Herbst bis zum gewünschten Aufstellungsort erfolgen kann (erfordert 2-Mann-Lieferung). Eine kostenlose Lieferung des YOUL one bis an die Bordsteinkante ist jedoch jetzt schon im Preis enthalten. 
+
+Eine genaue Skalierung unserer ersten Charge fällt uns schwer, da wir ganz neu gestartet sind und noch keinen bestehenden Kundenstamm haben. Die Kickstarterkampagne hilft uns hier ernorm! 
+
+Damit Dein YOUL one perfekt funktioniert, setzen wir auf den intelligenten Auslesekopf von Everhome, der an nahezu alle modernen Stromzähler passt. Mehr als 98 % der Haushaltszähler in Deutschland sind kompatibel.
+
+Trotzdem möchten wir ganz sichergehen, dass auch Dein Zähler dazu gehört – bevor wir Dir Deinen YOUL one liefern. Deshalb kontaktieren wir nach Ende der Kampagne alle Unterstützer:innen persönlich per E-Mail und bitten um ein Foto des Stromzählers (über unser kurzes Formular).
+
+Falls Dein Zähler zu den sehr wenigen Ausnahmen gehören sollte, die aktuell noch nicht unterstützt werden, hast Du selbstverständlich die Möglichkeit, Dein Backing problemlos und vollständig zurückzuziehen.
+
+Wir möchten, dass du dich mit Deinem YOUL one von Anfang an sicher und richtig beraten fühlst – und keine unangenehmen Überraschungen erlebst. Deshalb nehmen wir uns für dich die Zeit, vorab alles gemeinsam zu klären.
+
+                                                        +++ English version +++
+
+Please understand that at this point in time, we are only able to deliver our YOUL one battery to residents in Germany! If you would like to purchase the YOUL one from another country, please contact us via contact@youl.de.
+Our stylish battery looks like a piece of decorative furniture. However, it weighs 110 kg. We would therefore be happy to deliver it to your exact installation site such as your utility room in the cellar  – whereby, it would be a shame as the YOUL one is far too stylish for that ;-) -  or, for example, on the third floor without a lift. However, finding suitable fulfillment partners proved to be very difficult. We are in concrete negotiations and discussions with a selection of providers and are working on making this option available as an add-on, so that delivery to the desired installation location can be made in autumn for an additional charge (requires 2-man delivery). However, free delivery of the YOUL one to the kerbside is already included in the price. 
+
+It is difficult for us to accurately scale our first batch, as we are just starting out and do not yet have an existing customer base. The Kickstarter campaign is helping us enormously in this regard! 
+
+To ensure that your YOUL one works perfectly, we rely on our intelligent readout head, which fits almost all modern electricity meters. More than 98% of household meters in Germany are compatible. 
+
+Nevertheless, we want to make absolutely sure that your meter is one of them – before we deliver your YOUL one. That's why we will contact all supporters personally by email after the end of the campaign and ask for a photo of the electricity meter (via our short form).
+
+
+If your meter is one of the very few exceptions that are not currently supported, you can of course withdraw your backing completely and without any problems.
+
+We want you to feel confident and well advised about your YOUL one right from the start – and not experience any unpleasant surprises. That's why we take the time to clarify everything with you in advance.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">Robustes Gehäuse aus sortenreinem Stahl - in Deutschland gefertigt. 
+Kein Plastikgehäuse.
+Sorgfältige Montage von echten Profis aus und in Deutschland.
+Umfangreich VDE, ISO, IEC und EMV zertifiziert. 
+Garantie über 10 Jahre. 
+Mit hochwertigem integrierten Wechselrichter und Steuerung.
+Sichere Lithium-Eisen-Phosphat (LFP) Technologie.
+Mit eingebautem Brandschutzschalter.
+Typische Lebensdauer der Batterie: 6.000 Ladezyklen
+
+                                     +++ English version +++
+
+Robust housing made of pure steel – manufactured in Germany. 
+No plastic housing.
+Careful assembly by real professionals from and in Germany.
+Extensive VDE, ISO, IEC and EMC certification. 
+10-year warranty. 
+With high-quality integrated inverter and control system.
+Safe lithium iron phosphate (LFP) technology.
+With built-in fire protection switch.
+Typical battery life: 6,000 charging cycles</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Die Verpackung wird rein aus Kartonage und einer Holz-Halbpalette bestehen. 
+Wir nutzen kein Plastik für die Verpackung. 
+Das Gehäuse aus sortenreinem Stahl ist besonders gut recyclingfähig.
+
+                                       +++ English version +++
+
+The packaging will consist solely of cardboard and a wooden half-pallet.
+We do not use plastic for packaging.
+The housing, made of pure steel, is particularly easy to recycle.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">Für den Holzdeckel nutzen wir FSC-zertifiziertes Bambusholz.
+
+                 +++ English version +++
+
+We use FSC-certified bamboo wood for the wooden lid.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">Unser Fertigungspartner ist ISO 9001 zertifiziert und besitzt eine eigene Herstellungsstätte in Deutschland. Made in Germany.
+
+                                                +++ English version +++
+
+
+Our manufacturing partner is ISO 9001 certified and has its own production facility in Germany. Engineering art made in Germany.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">Nachhaltigkeit ist uns in allen Belangen ein Anliegen, allerdings müssen wir derzeit noch unsere Versandpartner validieren. 
+
+                                               +++ English version +++
+
+
+Sustainability is important to us in all respects, but we are currently still in the process of validating our shipping partners.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

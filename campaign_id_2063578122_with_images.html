@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UTECHWEAR UTRACK: The Ultimate Thermal AR Glasses for Hunter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/086/633/247846aad1862a0548656f5a3904de71_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1752829543&width=560&sig=YX3f%2FQtYsCjUxcxp6%2FC3o8DsVuV0%2B%2ByxNEtlt2WNzc4%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>UTECHWEAR UTRACK: The Ultimate Thermal AR Glasses for Hunter</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Hands-Free Hunting AR Searching|1500m Thermal Vision|80" AR Display|AI Recognition| 384×288@12μm, 25mK|Sonar Fish Finding</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 12,738</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>45 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50070771">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/070/771/0924398f927f447c58fe84e8ed799e3a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752723584&amp;width=680&amp;sig=IXp0Td14iydqh9AEW7tg3lJ4QelaMokWQIpESaN6%2FX4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50087232">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/087/232/3ee99547ba12d2806dbdfe57f7bb4aaf_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752833146&amp;width=680&amp;sig=PfCK34VWcd1E1CGKnZHWNsqZ1LXDiYdm70xAolrN4L8%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-MMUCdiB6LooIzfx61jQc6II4n2N">UTRACK flips conventional thermal gear on its head: a <span class="bold">head-mounted, flip-up design</span> that keeps your hands free and your view clear for<span class="bold"> effortless night observation</span>. On-board<span class="bold"> AI recognition</span> classifies wildlife and estimates size in real time, turning raw heat into useful insight. A professional-grade <span class="bold">384 × 288 </span>sensor with<span class="bold"> 12 µm </span>pixels, <span class="bold">25 mK </span>sensitivity and <span class="bold">1,500 m (1,640 yd) </span>detection range delivers razor-sharp thermal detail that standard scopes can’t touch—<span class="bold">all in one lightweight AR package.</span>
+</div>
+</div><h4 class="page-anchor" id="h:Demo-Video-For-AR-Hunting-Thermal-Function"><span class="text-italic"><span class="bold">Demo Video For AR &amp; Hunting Thermal Function</span></span></h4>
+<h4 class="page-anchor" id="h:Demo-Video-For-AR-Fish-Finder-Sonar"><span class="text-italic"><span class="bold">Demo Video For AR &amp; Fish Finder Sonar</span></span></h4>
+<h4 class="page-anchor" id="h:Demo-Video-For-AR-Endoscope"><span class="text-italic"><span class="bold">Demo Video For AR &amp; Endoscope</span></span></h4>
+<div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50305620">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:World-s-Toughest-AR-Optics">World’s Toughest AR Optics</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/305/620/0bac16f639bae2b3676c6f85f7877962_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754407712&amp;width=680&amp;sig=De2uCy84a3MXZdotwTuyYddIdBuiSP6EuFIsPlk%2Fvgw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50305643">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/305/643/6fd3da3e62330d58816b4a11e865632c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754407768&amp;width=680&amp;sig=m%2BOvdh8LfCdYyLRUBXGAlJ6MuEf6AngLtKxl5KN8jQQ%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-KMeNdh10eoM4YPxwdsGc18zkn7f">UTRACK’s optical module isn't just advanced—it’s <span class="bold">insanely hard to build</span>. <span class="bold">Fewer than 3 companies on the planet</span> have the tech to shape these <span class="bold">ultra-precise, freeform optics</span>. Think <span class="bold">aerospace precision</span> crammed into hunting gear.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50305654">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/305/654/08129603f996dcc7e0e215b72f9749c2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754407796&amp;width=680&amp;sig=UZ%2FFcNyiaSoaw6O7gx%2FILDxbC6RF5%2FJnngAUsGumfnY%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-DgAYdPTfMoItzjxxsgYcBMI3nJb">We cranked the brightness to a <span class="bold">blazing 1000 nits</span> and pushed <span class="bold">transparency to 60%</span>, making it <span class="bold">the only</span> AR visor bright and clear enough for real outdoor use, even at high noon. Simply put, nothing else comes close—this is <span class="bold">military-grade vision</span>, now strapped comfortably to your head.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50305627">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:-1-000-000-Powerhouse-Chip">$1,000,000 Powerhouse Chip</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/305/627/1305551981c73edf17713f631c18cd2e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754407723&amp;width=680&amp;sig=smsGaV28bPfvO0ClksjIC5LZYzKdFqWaDGM4pr87fP0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50305659">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/305/659/e7b9d2d777008d4665d2d12f9d8068bb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754407811&amp;width=680&amp;sig=TRbsxiuHwLiW1sDmihNTWVB9zITVIgW2S8c0kK5%2FpvQ%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-De5VdhVvvoQTG3xehkBcs1U2ned">We poured a cool <span class="bold">$1 million</span> into forging UTRACK’s custom <span class="bold">7 nm, 8-core processor</span>—the kind of silicon muscle you usually find in <span class="bold">flagship phones</span>, now strapped to your head. It <span class="bold">slams thermal feeds, optical video, and on-device AI together in real time</span>, <span class="bold">slashing power draw by 25 %</span>. Need <span class="bold">Wi-Fi streaming </span>or an <span class="bold">eSIM data</span> ping? Easy. The result: <span class="bold">smoother frames, quicker target callouts</span>, and battery life that just keeps rolling while lesser goggles choke.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50305615">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sony-48MP-Camera-GoPro-Killer">Sony 48MP Camera GoPro Killer</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/305/615/e1ce6513198fdd034be0b4d17cb5e0dc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754407697&amp;width=680&amp;sig=iTZM449aZe9g%2B3ZSaRlQk%2F76%2BXobKJCZSsRDBvmju%2BQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063862">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/862/fc1f051f4f3ee78da541471a637a0634_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752684063&amp;width=680&amp;sig=c5%2FzinGzYZU%2FI6YCK7S3KV%2FWi00Y1XyBOw4BdPXPOPQ%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-De5VdhVvvoQTG3xehkBcs1U2ned">We poured a cool <span class="bold">$1 million</span> into forging UTRACK’s custom <span class="bold">7 nm, 8-core processor</span>—the kind of silicon muscle you usually find in <span class="bold">flagship phones</span>, now strapped to your head. It <span class="bold">slams thermal feeds, optical video, and on-device AI together in real time</span>, <span class="bold">slashing power draw by 25 %</span>. Need <span class="bold">Wi-Fi streaming </span>or an <span class="bold">eSIM data</span> ping? Easy. The result: <span class="bold">smoother frames, quicker target callouts</span>, and battery life that just keeps rolling while lesser goggles choke.</div></div>
+</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084392">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hands-free-AR-View">Hands-free AR View</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/392/2404fcf4ebca4d144a0c1b398cb962b6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752811509&amp;width=680&amp;sig=oRGn37dqi5X24c3yfm3TCXGmvGIAZHzDmU3NID6etTg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50071991">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/071/991/d7629a513677c3ae8632da2f1c2fec48_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752735423&amp;width=680&amp;sig=NjvM7gIki%2BGJC2Xew0ihnd8wjr7hzyAt%2FlXpIjNfTp4%3D" src="https://i.kickstarter.com/assets/050/071/991/d7629a513677c3ae8632da2f1c2fec48_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752735423&amp;width=680&amp;sig=NjvM7gIki%2BGJC2Xew0ihnd8wjr7hzyAt%2FlXpIjNfTp4%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-BwqMddQlNogxHrxY6E7csWeJnnd">Traditional thermal scopes force you to freeze in place—one eye glued to a tiny eyepiece, both hands occupied while game slips away. UTRACK flips that reality. Our <span class="bold">high-mobility headset</span> tracks every head movement and projects a pin-sharp <span class="bold">HD 80″ AR image</span> right before your eyes, <span class="bold">freeing your hands</span> for gear adjustments or an instant shot, and its <span class="bold">Over-the-Glasses design</span> keeps prescription wearers comfortable, and alert through marathon night watches.</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084395">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Spot-1500m-Beyond">Spot 1500m Beyond</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/395/0eba19832c5f5f1df3e7b10487b5ed2a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752811527&amp;width=680&amp;sig=OZqQkp6Z%2B6WcqwoalA7wOeTyYebTgBUZ1q01C4E3Tag%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063455">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/455/e369db56089aac096511440d03e95d47_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752682152&amp;width=680&amp;sig=f9uHyxlHzLk1CVU63%2FHhMSK2wHS1vCfK305H2F34%2BWM%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-LKdHdoqffoYDXfx5G4RcUj84nkc">On open farmland, rain-slick trails or fog-covered forest edges, nocturnal predators can slip within striking distance before you ever hear a hoof or howl. UTRACK reaches out to <span class="bold">1,500 m (1,640 yd), piercing drizzle, mist and dense foliage</span> to reveal every hotspot early. Spot threats sooner, act faster, and keep livestock, crops and camp safe—night after night.</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084396">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Sensitive-High-Res-">Sensitive, High-Res </h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/396/471978bd2f6434beccf7aaed26789b87_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752811538&amp;width=680&amp;sig=Ot7jOrpmeAu16odQgQQWQi%2Btg%2F4toPOB2M5FoQASeaQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50086758">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/086/758/17f714ce33d7fced79c202585c71da00_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752830304&amp;width=680&amp;sig=Sbdk70KnECN%2BRfQnRiZul6wd5n0CqNXUmQKBr3V5r8Y%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-AiuhdWx87o9RBGxPAKrcRmpBnyp">UTRACK’s <span class="bold">25 mK sensor</span> coupled with a <span class="bold">384 × 288@12 µm resolution </span>sets a new high-end bar. It renders <span class="bold">razor-sharp thermal frames</span>—picture fresh coyote tracks glowing on frost—so hidden heat pops in seconds. Whether you’re tracking a lost beagle through wet brush or scanning ridgelines for predators, <span class="bold">detail</span> <span class="bold">stays vivid </span>through <span class="bold">rain, fog, and timber</span>.</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063495">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/495/b8b870b5ca27c4511f67d25dd134c73f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752682393&amp;width=680&amp;sig=usM6bvYtGQIK9nax%2F1K7UYEqnmTFXSvwAZlV6P9XIUw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084398">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:60Hz-Fluid-Vision">60Hz Fluid Vision</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/398/a3ae5c1afec710bc9668c7a298b552d6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752811554&amp;width=680&amp;sig=tNYTcM7gWGnh1hflnxMmjGXhBWX5DefqOVmCGZU7%2BRY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50072001">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/072/001/350ac28f8bb11b332041561e8c70463b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752735508&amp;width=680&amp;sig=wfWCJaMjW3QjsLHIEOXd%2FE82rqaxePwEcZgAKngVJ%2Fo%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-LbDIdLPbRoeXDoxlmGPcNKrBnqF">Conventional 25–30 Hz thermal scopes stutter when you pan or ride, smearing fast-moving heat signatures into blurry streaks; eyes strain and targets slip away frame by frame. UTRACK’s display refreshes at a gaming-grade<span class="bold"> 60 Hz—twice the speed</span>—so heat signatures stay <span class="bold">razor-clear</span> while you<span class="bold"> ride shotgun</span>, <span class="bold">sweeping fence</span> <span class="bold">lines</span> for hogs or stray calves<span class="bold"> at highway pace</span>.Smooth motion means quicker recognition, surer decisions, and less fatigue during long night patrols.</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084401">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-Others-Say">What Others Say</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/401/085c27c5aee9b9eb13a830a2ac60d704_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752811589&amp;width=680&amp;sig=vrQ2EqOXf2ASfBzATRJnaQrXrxIZiQFSmQHMZZaYD%2Fc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50086759">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/086/759/1de959fd5ba048090ba7ff4dc781b004_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752830333&amp;width=680&amp;sig=o4Fj7h4et%2F13UYTVelVxKYgmAXC3ZBqpeI6kzscgsxo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063549">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/549/8324ffefef7ba497cc4b4f338cbb721f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752682681&amp;width=680&amp;sig=7Z3sZBx6g7DGwr0SOfk87CSwlkLcMRN8P%2BiVOM95by4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063797">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/797/90ef5fad45c5a92d2b87efa858b4dc83_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752683768&amp;width=680&amp;sig=XaQppFBO9Re2xyUU7mlFxIUjxQl1%2Bse7znQQg8CbGOs%3D"/>
+</figure>
+</div>
+</div><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084417">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:AI-Recognition">AI Recognition</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/417/59da0dba033ad767ac08c5921688fe18_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752811665&amp;width=680&amp;sig=cwe4Kh7pI2IQ%2BVLlenKSi3tJrNFuHpOa%2FEI3cRxDs2A%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50086789">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/086/789/25e17365fc9b645bb04620f9aebabf35_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752830552&amp;width=680&amp;sig=4jmtAGqwaYjhLYZ9sS6fdTQYGbRKn0hGdwho4ZgFLxc%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-T23idvVyNoQfh5xRTeWcaxWsnCf">UTRACK’s<span class="bold"> edge-AI</span> turns every thermal blob into<span class="bold"> usable intel.</span> See a shape—your HUD flashes “<span class="bold">Wolf, 150 ft</span>”; hover over ripples—“<span class="bold">Largemouth Bass, 6 lb</span>.” It can even label shrubs and tracks. Instant IDs mean quicker safety calls, better fishing strikes, and richer field notes—<span class="bold">no wildlife handbook or second guess required</span>.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084430">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:5-Color-Thermal-Palette">5-Color Thermal Palette</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/430/39eaa7eeadaa348521c1a6ff0eb2cd9a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752811741&amp;width=680&amp;sig=eklDWQ82ae1%2Fx2b%2FqOlpeMNy8JsBUQ86y7G26uzYiQs%3D"/>
+</figure>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104217">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/217/84ea59fa61f4455ea3ad08c6d630f3cc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752999257&amp;width=680&amp;sig=9l%2BFr1LRSEc88rWff44fWkaUdlXC4gUEMVwbLyOF9SI%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-TfiId0K4coQn4ixAKkgcvSXJnEy">Switch palettes on the fly to fit any task. UTRACK offers <span class="bold">five thermal color modes</span>, each optimized for speed, clarity or long-haul comfort—so no heat source ever slips past you.</div>
+<ul>
+<li>
+<span class="bold">Black Hot – </span>Open-Field Pursuit</li>
+<li>
+<span class="bold">Ironbow – </span>Rapid Scan</li>
+<li>
+<span class="bold">Gray Scale –</span> Balanced Contrast Watch</li>
+<li>
+<span class="bold">White Hot – </span>Rich Detail</li>
+<li>
+<span class="bold">Green Hot –</span> Hours-Long Watch</li>
+</ul>
+</div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084494">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:HeatBoost-Pet-Mode">HeatBoost Pet Mode</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/494/afdfb25ef35ac345b40e4177d4287a55_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752812221&amp;width=680&amp;sig=quGwbmx39l%2Fr3gHAcVC%2BcKH%2FiBKm7DBMKPxgR4Zh0yw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104228">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/228/895d6257349808d44be009940255cc1a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752999448&amp;width=680&amp;sig=RGEfUiD96OvPMYiLqnVhxCrjFQleRKr1JrD5Uof4Jjk%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-GeVUdCkHCo2Dw6xPG8xc1X6dnig">Scorching summer nights can flatten thermal detail—soil, rocks, and brush all glow alike, hiding animals in plain sight. Activate <span class="bold">HeatBoost Mode </span>and UTRACK <span class="bold">dynamically lowers the background baseline</span> while lifting tiny living heat signatures, making every paw print or flicking ear shine through. One tap in the app restores crisp contrast, so ranchers, naturalists, and security teams keep spotting and recording, even when the whole landscape feels like a furnace.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084623">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hot-Swap-Power-Pack">Hot-Swap Power Pack</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/623/dea0b854a49c8feb14e721e6d7c7a051_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752813065&amp;width=680&amp;sig=muqbXPo5n89YeafaA3uu5lvqwGgunr5syU88alyrKLY%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50072019">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/072/019/87cd3ff1cbfa79db9aa2845f9c7fb2b1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752735603&amp;width=680&amp;sig=AZMKqoRRIRTBvrXaB2MiyRFR5gziYbJXIECfYH1XtTw%3D" src="https://i.kickstarter.com/assets/050/072/019/87cd3ff1cbfa79db9aa2845f9c7fb2b1_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752735603&amp;width=680&amp;sig=AZMKqoRRIRTBvrXaB2MiyRFR5gziYbJXIECfYH1XtTw%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-MEYAd7U4LoJxiCxU9rgcvAWbn4b">A <span class="bold">3,500 mAh</span> module powers UTRACK for roughly<span class="bold"> 3 hours </span>of full-blast searching (<span class="bold">11 hours standby</span>). When it runs low, pull the pack—an internal buffer keeps the headset live for<span class="bold"> 3 extra minutes</span>, so you can slot in a fresh battery without dropping the feed or losing settings. Continuous thermal vision,<span class="bold"> zero power anxiety.</span>
+</div></div>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085288">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Always-Upgrading">Always-Upgrading</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/288/c31d1399329a4ef2fc2f1ed7b5485884_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752819582&amp;width=680&amp;sig=vCNIdkgNJ2brcUqX3J2WBuKqSLlCVy%2BFEA7aPxULkHo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063804">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/804/901e40230df364522991f3eb14983bf3_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752683809&amp;width=680&amp;sig=q9%2FWTj1WB6n8Y0ZJavXQsCCN36Dpc%2BkGEy7GDQBVqNo%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-SZ2ndNqBloYxMyxA6E6cNn69nte">UTRACK isn’t frozen at launch. <span class="bold">Over-the-air updates</span> push new AI models, speed tweaks, and user-requested features straight to your headset—<span class="bold">no cables, no downtime</span>—performance keeps getting better with every field season.</div>
+<span></span>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104231">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Fish-Finder">Fish Finder</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/231/b9d887e3655f99ee33633ca6995932f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752999539&amp;width=680&amp;sig=1bZMXW5iZOMJdOu7qqP2lgQupgL0xwvcpMsW%2FZ%2FWWc8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063808">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/808/39c6f57ce6f7bdc7d02bad8a07a1e844_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752683843&amp;width=680&amp;sig=wGP6GcgrKnqaa03CGYHHB267RPgkK4xkilPjiUHT0Hw%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-VZFkdMVEHoxeaQxzHXDc4eTBnAg">Drop our <span class="bold">palm-sized sonar</span> beside your lure and the lake’s hidden world jumps onto UTRACK’s visor. The puck<span class="bold"> sends sonar underwater</span>,then beams a <span class="bold">live map via Wi-Fi</span> straight to your AR display—<span class="bold">fish icons, depth lines and bottom shape</span> float in front of your eyes while both hands stay on the rod. No more juggling a phone; just glance, reel, and strike.</div></div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104863">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/863/8f290f8cfb1f424379df6c4fed6ce175_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753008235&amp;width=680&amp;sig=4sng%2B9R4jwffq%2F6ltZdh7%2FkmjMmTP1XA2X7z4cX2tQc%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-P9GDdSeogon005x978ZcthMdnSh">Inside the puck, a <span class="bold">dual-beam </span>transducer <span class="bold">auto-switches</span> between <span class="bold">120 kHz</span> wide-area sweeps for shallow coves and<span class="bold"> 300 kHz </span>precision pings for deeper holes, flagging fish size, count, and depth in real time—<span class="bold">even through churned-up, murky water</span>. An inline <span class="bold">temperature sensor</span> hints at species, the<span class="bold"> built-in night light</span> keeps charts readable after dusk, and the signal holds past <span class="bold">45m depth</span> and <span class="bold">50m range</span>. Result: less guesswork, more bent rods.</div></div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063618">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:AR-Endoscope-Precision">AR Endoscope Precision</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/618/d4eac6646a34baefb4c613099a829855_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752682974&amp;width=680&amp;sig=XCEfArUkOs4L%2Bgk90idcp9sTUnA7n0A%2FfUkd5Rl1EWs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063832">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/832/b417fc7019b96c5469372943c610e3dc_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752683923&amp;width=680&amp;sig=BF38rDlG79DyWBQ0HDWCDKes2UuwASC3NC7YGGG68QQ%3D"/>
+</figure>
+</div>
+<div><div class="ace-line old-record-id-MPJddkdEOoOpZUxntHOccWGunAc">Traditional inspections tie one hand to a screen and the other to a probe—awkward under a hood or beneath floorboards. Clipped to UTRACK, our<span class="bold"> bendable dual-camera endoscope</span> streams both forward and side angles straight to the<span class="bold"> 80″ visor</span>, keeping your hands on tools. Dial the <span class="bold">LEDs</span>, flip to<span class="bold"> high-contrast black-and-white</span>, or <span class="bold">capture before/after shots</span>. Find a hot spot with thermal, zoom in with the scope, and finish repairs in a single fluid workflow.</div></div><div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104859">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:All-Day-Comfort-Fit">All-Day Comfort Fit</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/859/52ea0cc6719910a0d54bbf94adb0dc3d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753008169&amp;width=680&amp;sig=m%2FCqGBXBPZR9i8XUImb2VZE%2Fb2S%2Bs01Hj33g045IUyY%3D"/>
+</figure>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50064032">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/064/032/d7f507d3cd63a727a2265cb4f1a8433c_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752684666&amp;width=680&amp;sig=C%2FS9jKT3piod9pyZKehaGcF1CkD%2FA9LlMXUiNY2AGxE%3D"/>
+</figure>
+</div>
+<div><div>
+<div class="ace-line old-record-id-TmhfdUGXEoZAArxcF0vcDahHnZg">To achieve true universal comfort, our engineers conducted in-depth research on a<span class="bold"> database of tens of thousands of head models,</span> covering diverse <span class="bold">global ethnicities, genders, and ages</span>. Every curve and every contact point of UTRACK has undergone meticulous ergonomic calculation and validation to ensure it perfectly fits the vast majority of users, providing a stable and pressure-free experience for long-duration wear.</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104276">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hands-Free-Every-Mission">Hands-Free Every Mission</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/276/a7d653d0c51da682c1c5b0b3c9ba8142_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753000260&amp;width=680&amp;sig=tYLoOFoq%2FnD8AXu8aGTfJTD%2BDfXwKvTOpY%2FCZr%2FNNr8%3D"/>
+</figure>
+</div>
+</div></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50070844">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/070/844/6fa24756b676de5cda0b43c6e0b6465c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752724010&amp;width=680&amp;sig=1iTfebyKB2QIt9MVLDBljQbRb3Bf2l9at2ZaczgeSA8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063873">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/873/a89e34c7bfdde8157512952a455c49f1_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752684133&amp;width=680&amp;sig=Dgc0oF5jbiBBOv6hToz6WctpljvwtNHAPnyZglM6ZyM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085409">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Specification">Specification</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/409/836390b985c3f978ac262f37aff351e7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752820598&amp;width=680&amp;sig=LMj%2BqNhreMzIbYEZ4QrGf4R5DkWIq4%2BeVnLSIws%2B4hs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063887">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/887/1e6f0382e42f4c7807597d0eb64df523_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752684175&amp;width=680&amp;sig=bYshna81W9quAwaDNdY7%2FL5krVO1nSXHQUCtcNwPvOQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104295">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/295/09dbdee2b11e3fc849906d8903fe397f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753000563&amp;width=680&amp;sig=%2FA%2BCJmHwLTqyH%2BzCYGf%2B%2FacTJ2WbREvjQmFC%2Blozwvg%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106532">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/532/682c3beec919b26aaae16b4c3e76a113_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753025544&amp;width=680&amp;sig=eKiRb3xFzA9mjf0Ceyho1qZRwz2p02D6CJ1K%2FjW%2BsDY%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085410">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-s-In-The-Box">What's In The Box</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/410/d80500d8f4ff4fe78abca7adb2fef049_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752820602&amp;width=680&amp;sig=UOccx6r4YGpIRNF4AgMLkzTIPGH6Ux3gEEW%2Ba8EynPM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50072942">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/072/942/60e3537e00fff8520902445a8d8347b4_original.jpeg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752742029&amp;width=680&amp;sig=gxVsRs5xaLwisL48jvUgDiyoma%2FrRa3tnZ2h9Z0xMMA%3D"/>
+</figure>
+</div>
+<div><ul>
+<li>UTRACK AR Headset x 1</li>
+<li>Battery Pack x 2 (one pre-installed)</li>
+<li>Cleaning Cloth x 1</li>
+<li>Magnetic SunShield x 1</li>
+<li>Power Adapter x 1</li>
+<li>Charging Cable x 1</li>
+</ul></div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085415">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/415/9a570a031ab10c517abddab111d8047b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752820654&amp;width=680&amp;sig=egP5B3%2BSLVdU0uEcPp7MBPAzNQTuiCJcaanWHxEyJYM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50073207">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/073/207/e68a9fe2381c5f613ee55b1bcc2c76f0_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752743864&amp;width=680&amp;sig=SqATo96DC0gbv9DOHaN0gFy7MAWjaanEIXirg0lzl1o%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085417">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Comparison">Comparison</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/417/207c47e857eb00927b8bc58b88bf488f_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752820672&amp;width=680&amp;sig=YOwnRGB3q0HEIPTv5RLsaTDUY9zQYVUyHQna8pwqIMw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104860">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/860/2463229632dafd2c49b0337134ad57c2_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753008191&amp;width=680&amp;sig=1cF%2B47rvznNThxxjtNyLdywtpy15hOCS%2BQM1d8Spu7o%3D"/>
+</figure>
+</div>
+<span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085426">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Rewards">Rewards</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/426/93a8a764ccd22b635bb8064ba42e87e4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752820727&amp;width=680&amp;sig=opMwqo%2BwvyXRvm62048JXgLSa2DmUL9QQdDxJmrrDTI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106771">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/771/2d5553d93724a5794e1388d54ca94b7d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753027187&amp;width=680&amp;sig=IYnDkb%2FSzcDJAJA3Ljlf8YrUu69qUSy93RY%2BN8VT2lw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106773">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/773/d71a4227f551aa3f46cae7775e73bb27_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753027191&amp;width=680&amp;sig=uh%2FYlevWJpYJnUPm%2Bk8lbFpXgHMwD%2FIwsB9v29CIkXo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106789">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/789/b2172338fad3756a2681b4c459381b6d_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753027214&amp;width=680&amp;sig=Z4z2hRAQqORdmd83bps1KQGHI23qXZ2x1bJeWuBL8%2B4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106788">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/788/5ad9ccf1e4554384d55de1f3c6dcd750_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753027213&amp;width=680&amp;sig=KQ%2FshxkPrCuAOF%2Brw8WRCcp4e3KDdK%2FE3D511GM7vBc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085427">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Add-ons">Add-ons</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/427/35571582861792ed204c9ee172b5e08b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752820735&amp;width=680&amp;sig=swHVwIORaPYOdengSPM5Y0Hsd4u02eV0LB4hqmug1M0%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063930">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/930/9af20a8409399049aded43fc8b35ae1a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752684318&amp;width=680&amp;sig=FXXHU26EcbJCD9WXN0JHedM09LS4HaZ7DA1UV55m2EQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106922">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/922/84faa3fb0b5b333d1efe8e24033e0a6d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753028100&amp;width=680&amp;sig=tbWVKuuWQKZNO%2B1DAH1vd4W7M2qxhqwTJwZGfrReaq4%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106973">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/973/fd02e397be84b3c8efe8d4ab5f3ded54_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753028533&amp;width=680&amp;sig=s9hrjb2mrYH2zXtKAUUqJcYEGJa5iwBzapK%2BlwRiXwk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50107015">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/107/015/bf2ef379cb23dc5ca3f7676b68d5ad9e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753028826&amp;width=680&amp;sig=hIruzfF1w55f1Yt%2Fce6W01cYR95xnYn%2FBQnG%2BRHgrxc%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063942">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/942/785113ce4faf5da3f2859d46418e9b95_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752684336&amp;width=680&amp;sig=f1Gw6EazQsFqDm3JACDtuumD4dY5QJcMcF%2BvMIKbeDw%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085428">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goal">Stretch Goal</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/428/2a1b35b067a4c47351f38743ac6fbd79_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752820741&amp;width=680&amp;sig=JQ7C8xqL4zd8huZclGutaAbSPj8g7fcBTfvzMvAjbNQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106373">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/373/d9f48cd80b82c10c55402bc444004e35_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753024178&amp;width=680&amp;sig=%2B9onRKmAm5%2BzaQv6lKgr34GhLOkboVQPJ8gWK3akNOk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106375">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/375/f103fd3b1e98d8b02ce83454143c6462_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753024182&amp;width=680&amp;sig=aoaMMyd7d6DyEPqOvPpv%2BVxXPaxDSZgKVX8TQdgiysU%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50106380">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/106/380/465465bf54a69750f816e877e7c462bb_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753024194&amp;width=680&amp;sig=lhIU8ikj3cvFLDU2z2BMVPjQs0ScT7yg5u%2F69kDo1lk%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115723">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Customer-Service">Customer Service</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/723/425b9f00b012e24c9e3ac49e6616023a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753098622&amp;width=680&amp;sig=OubNtdDuQRXOvAifvgQ61nBWXvvOcND5u0KR%2BOTycNQ%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50287939">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/287/939/9f5c137910514d5156b31b47e2484025_original.PNG?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754312978&amp;width=680&amp;sig=efalnL40pnrhOq%2BjY1Kg7zwYtDYD67eBlHu%2B7AKVaoM%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50135142">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Purchase-Guideline">Purchase Guideline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/135/142/7351c4c08750daf932ac9682dbe0b4ee_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753208158&amp;width=680&amp;sig=DOXhgfZuqs%2BxU70UHObomcaCoJCT5Unkp3AbfuJgrdI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50115925">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Shipping-Table">Shipping Table</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/115/925/f4b5712be1d031100e34c7d8417713d7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753099947&amp;width=680&amp;sig=AkJ%2FszjKGpgFaQi0uM%2FD9bm6ZxbqgFZwvc8XoTY87HE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085430">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Our-Story">Our Story</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/430/d7921248c10d166d0b02fae679fbb73a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752820748&amp;width=680&amp;sig=xDe1FbCRI4J4uar%2FMTWcdUnibRhpk2rFRXvHIPmPb8Y%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063964">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/964/559fa7066cec852c69ab87dddff6fa14_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752684399&amp;width=680&amp;sig=B6x3s4lP9xQ6HxJndyzIi5D2gcD7CRPA%2FuyJyd8g2YU%3D"/>
+</figure>
+</div>
+<div>
+<h4 class="page-anchor" id="h:Why-we-built-UTRACK"><span class="bold">Why we built UTRACK</span></h4>
+<div class="ace-line old-record-id-ShwsdbeqYoZTioxYRYvccVKZnhq">We believe the world doesn’t need more gadgets — it needs smarter tools. UTRACK was born from a simple insight: modern explorers, workers, and creators often face environments where phones, smartwatches, and standard wearables fall short. Whether you're navigating the wild, repairing a system, or scanning a hidden space — you need your <span class="bold">hands free, your vision sharp, and your tech reliable</span>.</div>
+<div class="ace-line old-record-id-Yw1LdCrKVoyK4hx321zcG5aGnVL">Over the past two years, we worked closely with field testers — hunters, DIYers, and outdoor pros — to design a wearable that’s not just “smart,” but purpose-built. We’ve packed thermal imaging, sonar detection, POV video, and AR overlays into a single, rugged form — built for real work and real adventure.</div>
+<div class="ace-line old-record-id-F4k5d6iMsoDL4SxuZm4cWa8fn0g">
+<span class="bold">UTRACK is not a gadget. It’s your second set of eyes in the field.</span> And this is just the beginning.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50063994">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/063/994/035f364f4001950fd899332c01b186cb_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752684522&amp;width=680&amp;sig=DCXfNeN6aZCZTkpnBDiLMEnuVtJhRiNc266UBvcnSfc%3D"/>
+</figure>
+</div>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50085434">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Timeline">Timeline</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/085/434/caa8024ff1b9777b42e202d451d4592d_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752820757&amp;width=680&amp;sig=KLom1i4MC%2FOisBJph3UIfhwc6S0eaSss3fLPEcMTrvs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50104928">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/104/928/e61d9486ab52aaa755c4f057857d7166_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753008767&amp;width=680&amp;sig=wKcRy7XdQC25%2BCSdDMFE9j7q4SrBimCellzMR%2FDqFXg%3D"/>
+</figure>
+</div>
+<span></span><span></span><span></span><span></span><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50113442">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/113/442/99c9af6ce798c3f03758ca2c9252a30e_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753084480&amp;width=680&amp;sig=fEjjCYuWpcaEin3OW4sMtM4g4JFdblTNmUNT6b8jhto%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50113451">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/113/451/86e5957baff02d118a7bb7b0235c02f7_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753084528&amp;width=680&amp;sig=z1fkonoOZxxMGmpdD9LOExNBgOacEoXNze5oeObYK4I%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50113452">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/113/452/1b7e6ea1d03e46c2130d56f28d95b4ba_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753084530&amp;width=680&amp;sig=RDx9c2D13u3DeCreMwCYMTLVpnWL1ch7LoVoqbwmqII%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50113480">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/113/480/3f8f6f169d8a9ec33aa8dd5ee9ffed08_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753084749&amp;width=680&amp;sig=TQoDvM%2BjiEuvZ1ikRqLTennks2xy0Byuqo%2Bl0qyvlsU%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Our team has extensive experience in hardware development and project management, and we deeply understand the challenges of bringing an innovative product from prototype to reality. We promise to maintain full transparency with all backers throughout the crowdfunding and production process and will promptly communicate any issues and solutions we encounter. Our greatest goal is for every backer to be happy with their decision to support UTRACK.
+
+1. Manufacturing &amp; Supply Chain
+We are working with reputable manufacturing partners to ensure our product meets the highest quality standards. Nevertheless, scaling from a prototype to mass production is always challenging and may present unforeseen delays. We will collaborate closely with our partners to ensure product quality and strive to maintain the original schedule.
+
+2. Product Development &amp; Software
+The prototype you currently see is largely functional, but the final mass-production version may still have minor tweaks and optimizations based on testing feedback to achieve the best user experience. Our software supports OTA (Over-the-Air) updates, which will allow us to continue fixing potential bugs and refining features after the product has been delivered.
+
+3. Fulfillment &amp; Logistics
+Global shipping and customs clearance is a complex system that can be affected by global events beyond our control. We have planned to partner with experienced international logistics providers to minimize shipping risks. Should any uncontrollable delays occur, we will immediately notify all backers.
+
+4. Global Certification &amp; Compliance
+As an electronic product sold globally, we need to obtain corresponding safety and compliance certifications (e.g., CE, FCC) in different countries and regions. We have already initiated this process and will provide updates on its progress. The time this process takes may affect the final delivery timeline, but it is an essential step to ensure the product you receive is safe and reliable.
+
+Most importantly, we promise to communicate with you with the utmost sincerity. At every step of the journey, from crowdfunding to delivery, we will remain open and transparent about any challenges we encounter and will always keep everyone updated on our progress and timeline for resolving them. Your trust is our most valuable asset.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3"><div class="mb6"><h2 class="normal mb1">Use of AI</h2></div><div class="border-bottom mb2"><p>Our product, U-Track, features an on-board, edge-AI system designed to enhance the user's perception. The AI's primary role is for real-time object recognition through the thermal sensor, helping users identify animals or other heat signatures. This AI is a functional feature of the hardware itself and is not used to generate the creative content for this campaign page.</p></div><div class="mt5"><span class="ksr-green-700 bold type-16">Learn about AI policy on Kickstarter</span></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">We are maximizing U-Track's lifespan on two fronts: hardware and software.
+
+On hardware, we use high-strength, durable modified nylon for the body and have designed a hot-swappable battery system, which prevents the entire device from becoming obsolete due to battery degradation.
+
+On software, we support Over-the-Air (OTA) updates. This means U-Track is an evolving platform that will continuously improve with new features and optimizations long after you receive it, dramatically extending its useful life.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Reusability and recyclability</h3><p class="mb2 text-preline">Product: U-Track's modular design encourages repair and upgrades over disposal. Users can individually replace or upgrade batteries and function modules, extending the life of the core device. The main structural materials we use, such as PA nylon, are recyclable.
+
+Packaging: We are committed to minimalist packaging. We will use 100% recyclable cardboard and print with eco-friendly soy-based ink to minimize our environmental footprint.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable materials</h3><p class="mb2 text-preline">Product: U-Track's modular design encourages repair and upgrades over disposal. Users can individually replace or upgrade batteries and function modules, extending the life of the core device. The main structural materials we use, such as PA nylon, are recyclable.
+
+Packaging: We are committed to minimalist packaging. We will use 100% recyclable cardboard and print with eco-friendly soy-based ink to minimize our environmental footprint.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">When selecting our manufacturing partners, we prioritize factories that are ISO 14001 certified for their environmental management systems. Key aspects we consider include their implementation of effective waste management and recycling programs, their use of energy-saving measures, and their clear commitment to environmental responsibility throughout their supply chain.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Sustainable Distribution</h3><p class="mb2 text-preline">To reduce the carbon footprint of our global distribution, our strategy is to "consolidate shipments and reduce parcel miles." We will ship products in bulk to regional fulfillment hubs (e.g., in North America and Europe) and distribute them to local backers from there, rather than sending thousands of individual packages across the globe from a single point. Our compact packaging design also reduces shipping volume and weight, further conserving energy.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

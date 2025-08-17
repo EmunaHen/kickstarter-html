@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EPEM Ethernet Power Energy Monitor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/246/022/70a4a0c0000b54e328fd4130a07497b0_original.jpg?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1753978514&width=560&sig=ZXEotu7WD512vCURQ6%2FeXzTxj7Q8eKejIQqhtAbaals%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>EPEM Ethernet Power Energy Monitor</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">EPEM is a compact and powerful STEM Community board which is designed for IoT monitoring of mains power circuits.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 1,343</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><h3 class="page-anchor" id="h:What-is-EPEM-"><span class="bold">What is EPEM?</span></h3><p><span class="bold">EPEM </span>is an acronym for <span class="bold">Ethernet, Power Energy Monitor</span></p><p><span class="bold">EPEM </span>is a compact and powerful STEM Community board which is designed for IoT monitoring of mains power circuits.</p><p><span class="text-italic">Photo: The below is a photo of the prototype board that is currently working through successful testing, in parallel with firmware for bring up and user examples.  You will see this in operation in the video using the beta version of my test FLEX code.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50248027">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/248/027/70a4a0c0000b54e328fd4130a07497b0_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753987831&amp;width=680&amp;sig=CskaL6wO%2Bh1%2FCal2E5%2BxiCy7pcTShrTMhQuZ%2B1Itzcw%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:What-is-a-Power-Energy-Monitor-"><span class="bold">What is a Power Energy Monitor?</span></h3><p>A power energy monitor is a device that safely samples the AC voltage and current flow, from one, or more, electrical phases, and from this, derives a range of accurate mains power measurements which can then be used for smart metering, or energy monitoring purposes. </p><p>These individual measurements can then be extrapolated into a range of useful real-time data such as total RMS power, active, re-active power, harmonic power, power factor, phase angles, frequency,  etc.</p><p>The purpose of extracting the power energy data within Solar Inverter installations, as an example, will enable you to much better manage what you do with the available energy, ways of storage, EV Charging, divert under certain conditions, and control flow from, and to, the grid.  </p><p>Devices such as the Microchip (formally Atmel) ATM90E36A, is such a device which provides heart to this monitoring.</p><p>All this data is far more extended information than the basic electric meter functionality, allowing for smart IoT systems and greater efficient use of our own energy.  It may sound complicated but it does not need to be and all depends on your setup, use-case and what you want to achieve.</p><h3 class="page-anchor" id="h:Where-can-EPEM-be-used-"><span class="bold">Where can EPEM be used?</span></h3><p>The <span class="bold">EPEM </span>board can be used in a number of projects and installations such as:</p><ul>
+<li>Homes</li>
+<li>Education</li>
+<li>Offices</li>
+<li>Commercial</li>
+<li>Factories </li>
+<li>Farms</li>
+<li>EV Charging</li>
+<li>Smart Metering</li>
+<li>Greenhouses</li>
+<li>Factories</li>
+<li>Industry</li>
+<li>Solar Farms</li>
+<li>Wind Farms</li>
+<li>Off Grid Systems</li>
+</ul><h3 class="page-anchor" id="h:EPEM-History"><span class="bold">EPEM History</span></h3><p>The <span class="bold">EPEM </span>board is a natural design evolution of the original and popular ESP32 based <span>IPEM</span>(IoT Power Energy Monitor), and some features from the <span>IPEM PiHat</span>. These boards are in use around the World and continuity in supply was needed.</p><p>Due to some part obsolescence on the original IPEM ESP32 board and natural 'upgrade' options such as USB Type C, a redesign was required and thus the <span class="bold">EPEM </span>concept was placed on the drawing board.  With various ingredients in the pantry, this moved around like a small game of snakes and ladders in candle light and a final design came out of the kitchen oven.</p><h4 class="page-anchor" id="h:The-key-ingredients-changes-">The key ingredients changes:</h4><ul>
+<li>
+<span class="bold">Swap ESP32 to ESP32-C6</span> - Increased speed and superior radio with Zigbee Mesh</li>
+<li>
+<span class="bold">Standardize ATM90E36</span> only - This version provides all of the ATM90E32 features, plus a lot more functionality and is the more popular of the two</li>
+<li>
+<span class="bold">Add Ethernet</span> - Power is naturally available so PoE overhead not considered a requirement </li>
+<li>
+<span class="bold">Add RS-485</span> - For local data gathering and interfacing</li>
+<li>
+<span class="bold">Move to USB Type C</span> (x 2)</li>
+<li>
+<span class="bold">Add Rogowski Inputs</span> - allows for high current monitoring where needed</li>
+<li>
+<span class="bold">Standardize on ESP32-C6 U.FL</span> only - compact and most popular package</li>
+</ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50266673">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/266/673/0c1d2c564ed0fd671f57735bcea1b1be_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754111885&amp;width=680&amp;sig=1Eo%2FancrtGWQJNO7HJrgIeU6qOafg4fMGqIVyj2AXFQ%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Challenge"><span class="bold">Challenge</span></h3><p>My design focus was to maintain the original IPEM board size of 85x55mm, maintaining mechanical compatibility, where possible, but also squeeze in:</p><ul>
+<li>Ethernet Controller with Full TCP/IP Stack</li>
+<li>RJ45 Connector</li>
+<li>RS-485 Interface (MODBUS)</li>
+<li>DS3231DN RTC &amp; Battery Backup Option</li>
+<li>Remove Solder Jumpers </li>
+</ul><p>In addition, although the board is multi-layer, I wanted to try and keep all SMT ideally to one side in order to keep the board mechanical skyline as low and compact as possible, this meant all standard passive components shrinking down to very small size and so including more features for the user.</p><h3 class="page-anchor" id="h:MCU-Change"><span class="bold">MCU Change</span></h3><p>All original IPEM boards and variants were based on the ESP32-WROOM.</p><p>With the advances in Espressif MCU technologies, moving away from the humble ESP32 to the newer ESP32-C6 provides increased speed advantage plus the superior and powerful radio with Zigbee, thread and mesh, so the move to using the ESP32-C6 in <span class="bold">EPEM </span>was an obvious choice.  It also has a much smaller footprint, which is a big bonus.</p><h3 class="page-anchor" id="h:Ethernet"><span class="bold">Ethernet</span></h3><p>For a while, users have been asking about possibility of adding Ethernet to the IPEM board, largely due to either the boards being mounted inside cabinets for example, or away from access points, and also for security or low power closed IoT systems.</p><p>The ESP32-C6 does not have an internal EMAC with MII/RMII (as with original ESP32), so I have opted to use the SPI interface to the popular WIZnet W5500 Ethernet Interface.</p><h3 class="page-anchor" id="h:Radio-and-U-FL"><span class="bold">Radio and U.FL</span></h3><p>With <span class="bold">EPEM</span> boards potentially going into metal, or shielded cabinets, or needing external antennas, aside from ethernet, the U.FL connection interest has also peaked.</p><p>As previously mentioned, the ESP32-C6 includes a powerful radio module, opening up a range of IoT applications and supporting the following standards:</p><h4 class="page-anchor" id="h:Wi-Fi-6">Wi-Fi 6</h4><ul>
+<li>2.4 GHz (2400 ~ 2483.5 MHz)</li>
+<li>802.11ax (20 MHz bandwidth)</li>
+<li>802.11b/g/n (20/40 MHz bandwidth)</li>
+<li>CE Max EIRP 19.81 dBm</li>
+</ul><h4 class="page-anchor" id="h:Bluetooth">Bluetooth</h4><ul>
+<li>2.4 GHz (2400 ~ 2483.5 MHz)</li>
+<li>Bluetooth LE</li>
+<li>Bluetooth 5.3</li>
+<li>Bluetooth Mesh</li>
+<li>CE Max EIRP 18.46 dBm</li>
+</ul><h4 class="page-anchor" id="h:-Thread-1-4-">
+<span>Thread</span>1.4 </h4><ul>
+<li>2.4 GHz (2405 ~ 2480 MHz)</li>
+<li>802.15.4</li>
+<li>Thread Mesh</li>
+<li>CE Max EIRP 10.29 dBm</li>
+</ul><h4 class="page-anchor" id="h:-Zigbee-3-0">
+<span>Zigbee</span>3.0</h4><ul>
+<li>2.4 GHz (2405 ~ 2480 MHz)</li>
+<li>802.15.4</li>
+<li>Zigbee Mesh</li>
+<li>CE Max EIRP 10.40 dBm</li>
+</ul><p>Zigbee and mesh are expanding in an range of home, farming and industrial applications, so will be interested to see how this develops over time.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50278312">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/278/312/636a9db9e8550b14444e1602137c3f78_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754238573&amp;width=680&amp;sig=hMeHk6GGZmfVtKc31P00b792mqv7K6dYK5kcMein3os%3D"/>
+</figure>
+</div>
+<p>Using a mix of Ethernet and Zigbee, installations could offer remote mesh systems, with a mix of communications technologies.</p><h4 class="page-anchor" id="h:Tip-MHF3-Antenna-Connection"><span class="text-italic"><span class="bold">Tip: MHF3 Antenna Connection</span></span></h4><p><span class="text-italic">The ESP32-C6-MINI-1U uses an </span><span>IPEX MHF3</span><span class="text-italic"> antenna connector (also known as IPEX3), which is much smaller than the standard commonly used IPEX MHF1, for example, on the ESP32-WROOM-32UE.</span></p><p><span class="text-italic">NB. This MHF3 connector, together with its very similar but different MHF4 variant, are commonly used on M.2 cards and laptop type Wi-Fi cards.  The MHF3 and MHF4 connectors are not compatible as they are very so slightly different diameter and heights (mating depth).</span></p><h3 class="page-anchor" id="h:RS-485"><span class="bold">RS-485</span></h3><p>To interfacing to other Smart Meters, Devices and Smart Batteries which have an RS-485 MODBUS interface, the <span class="bold">EPEM </span>includes a standard industry interface which allows you to collect, or control, other devices on the RS-485 bus.</p><p>This RS-485 interface could also be used to control local CCTV on remote installations, or even send data from the <span class="bold">EPEM </span>board over a single twisted pair, up to around 1,200 meters (4,000 feet),  in distance.  Ideal for farms and remote installations.</p><h3 class="page-anchor" id="h:Real-Time-Clock"><span class="bold">Real Time Clock</span></h3><p>The need to maintain a very accurate real time clock when metering, or logging, was requested by some users.  Ideally battery backed up.</p><p>This feature was included on the <span>IPEM PiHat</span> and so I have included it on the EPEM too.</p><p>Using the same extremely accurate and low power DS3231SN real time clock IC, with integrated temperature compensated crystal oscillator (TCXO), this is easily controlled via I2C and maintained via external optional plug-in CR2302 3V coin battery.</p><h3 class="page-anchor" id="h:Board-Configuration"><span class="bold">Board Configuration</span></h3><p>Earlier IPEM boards used solder jumpers and whilst these worked, I wanted to make it easier to configure the boards.  </p><p>On the IPEM PiHat's, I used DIP switches which worked well but these take up board space and are expensive.  So on EPEM I have opted to use plug-in 2mm jumpers which give the best of both worlds.</p><h3 class="page-anchor" id="h:Outline-Features-and-Specifications"><span class="bold">Outline Features and Specifications</span></h3><p>The <span class="bold">EPEM</span> IoT <span class="bold">Ethernet Power Energy Monitor</span> board main features and Outline Specifications:</p><h4 class="page-anchor" id="h:Board"><span class="bold">Board</span></h4><ul>
+<li>
+<span class="bold">Compact and Flexible Proven Design</span><ul>
+<li>Only 85mm x 55mm</li>
+<li>Fully Populated and Tested</li>
+</ul>
+</li>
+<li><span class="bold">All connections are Low Voltage, for Safe Installation and Operation</span></li>
+<li><span class="bold">Easy to interface and Program</span></li>
+<li><span class="bold">Powerful Radio or Ethernet Connections to IoT Network</span></li>
+<li><span class="bold">Board Jumpers for Easy 'No Solder' Configuration</span></li>
+</ul><h4 class="page-anchor" id="h:Devices-and-Interfaces"><span class="bold">Devices and Interfaces</span></h4><ul>
+<li>
+<span class="bold">Espressif ESP32 C6</span><ul>
+<li>ESP32-C6-MINI-1U-N4 (MHF3 Antenna Connector)</li>
+<li>32-bit RISC-V MCU</li>
+<li>Single Core MCU up to 160 MHz</li>
+<li>Wi-Fi 6 | 2.4 GHz | 802.11ax | 802.11b/g/n</li>
+<li>Bluetooth | LE | 5.3 | Mesh</li>
+<li>Thread 1.4 | 802.15.4 | Mesh</li>
+<li>Zigbee 3.0 | 802.15.4 | Mesh</li>
+<li>4 MB Flash</li>
+<li>3 UARTS</li>
+<li>I2C</li>
+<li>SPI (2xCS)</li>
+<li>USB (Type C)</li>
+<li>ADC </li>
+<li>User LED</li>
+</ul>
+</li>
+<li>
+<span class="bold">TYPE C Interfaces (x2)</span><ul>
+<li>ESP32-C6 USB | JTAG | Debugging | 5V Supply</li>
+<li>UART (esp32-c6-devkitm-1 compatible) | CH343P | Serial Monitor | 5V Supply</li>
+</ul>
+</li>
+<li>
+<span class="bold">ATM90E36A Energy Monitor</span><ul>
+<li>Enhanced Poly-Phase Energy Metering IC</li>
+<li>High-Performance Wide-Span</li>
+<li>High Accuracy<ul>
+<li>±0.1% for Active Energy</li>
+<li>±0.2% for Reactive Energy</li>
+</ul>
+</li>
+<li>AC 50Hz-60Hz Energy Monitor</li>
+<li>Measures Currents (Board Configurable)<ul>
+<li>Single phases (up to 3)</li>
+<li>Two phase</li>
+<li>Dual phase</li>
+<li>Split phase</li>
+<li>Three-phase four-wire (3P4W, Y0)</li>
+<li>Three-phase three-wire (3P3W, Y or Δ), systems</li>
+</ul>
+</li>
+<li>Selectable Current Input Connections (3 Phases Line +1 Phase Neutral inputs)<ul>
+<li>3 x Phases Line CT Clamp Inputs via 3.5mm Jack (Example YHDC SCT013000)*</li>
+<li>3 x Phases Line Rogowski Current Transformer Inputs via 2.54 Pin Header</li>
+<li>1 x Phase Neutral CT Clamp Input via 3.5mm Jack (Example YHDC SCT013000)*</li>
+<li>1 x Phase Neutral Rogowski Current Transformer via Input 2.54 Pin Header</li>
+</ul>
+</li>
+<li>AC Inputs<ul>
+<li>3 x Low Voltage Voltage Inputs (12V AC RMS)</li>
+<li>AC Low Voltage Input (for Safety)</li>
+<li>Power Safely Derived from a SELV / Wall AC/AC Power Supply 12V AC RMS</li>
+<li>(Examples Bell Transformer, GreenBrook DAT01A or TLC TC TR7)</li>
+</ul>
+</li>
+<li>DMA Mode (Logging via SPI)</li>
+<li>SPI Mode</li>
+<li>Split Phase (1+3 Typically USA)</li>
+<li>Power Modes Settings</li>
+<li>ATM Status, Active, Re-Active, Fundamental, Harmonic, LEDs</li>
+<li>Warning/IRQ Monitor</li>
+<li>Single Point Calibration per Phase</li>
+</ul>
+</li>
+<li>
+<span class="bold">W5500 Ethernet</span><ul>
+<li>WIZnet Hardwired Internet Controller</li>
+<li>Integrated Full TCP/IP Stack</li>
+<li>RJ45 with Active and Link LEDs</li>
+<li>SPD/DUP LEDs</li>
+</ul>
+</li>
+<li>
+<span class="bold">RS-485 CS48520D Interface</span><ul>
+<li>MODBUS or Other Protocol</li>
+<li>Selectable 120R Load Resistor</li>
+<li>Up to 20Mbps (limited only by the ESP32-C6)</li>
+<li>Driver with Current Limiter and Thermal Shutdown Protection</li>
+<li>Open, Short and Idle Bus Failsafe Protection </li>
+<li>Optional Ground for Shielded Cable to Asymmetrical TVS Diode</li>
+<li>Chipanalog Half-Duplex Transceiver</li>
+<li>EN/TXD LEDs</li>
+</ul>
+</li>
+<li>
+<span class="bold">24C64 EEPROM </span><ul>
+<li>Memory64kbit (8192x8)</li>
+<li>Parameter Settings</li>
+<li>Logging</li>
+<li>Meter Readings</li>
+<li>P24C64C</li>
+</ul>
+</li>
+<li>
+<span class="bold">DS3231SN Real Time Clock</span><ul>
+<li>Extremely Accurate Real Time Clock</li>
+<li>Battery Back Up Option</li>
+<li>INT_RTC Monitor</li>
+</ul>
+</li>
+<li>
+<span class="bold">TMP102 Temperature</span><ul><li>Ambient PCB Temperature Sensor</li></ul>
+</li>
+<li>
+<span class="bold">OLED I2C Interface</span><ul>
+<li>I2C Interface</li>
+<li>OLED I2C Connector</li>
+<li>Configurable Power Pins (Solder Pads)</li>
+</ul>
+</li>
+<li>
+<span class="bold">WS2812B RGB LED</span><ul>
+<li>RGB Status LED</li>
+<li>Associated LM2775 5V SMPS</li>
+</ul>
+</li>
+<li>
+<span class="bold">AP63203 Onboard SMPS Board Power Supply</span><ul>
+<li>5V From Either Type C USB</li>
+<li>Power taken from DC Input (4.5V to 20V)</li>
+<li>Power LEDs</li>
+</ul>
+</li>
+<li>
+<span class="bold">Tactile Buttons</span><ul>
+<li>Reset Button</li>
+<li>User Programmable Button / PGM</li>
+</ul>
+</li>
+</ul><h3 class="page-anchor" id="h:CT-Clamps-and-Rogowski-Current-Transformer"><span class="bold">CT Clamps and Rogowski Current Transformer</span></h3><p><span class="bold">EPEM </span>was designed primarily for the standard CT clamp such as the YHDC SCT-013 100A-50mA.  Inputs for each channel 1, 2, 3, plus N are via standard 3.5mm jack sockets.</p><ul><li><span class="bold">YHDC SCT-013 100A-50mA</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50278403">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/278/403/5813b341fa871dc39a64b26f8c96a46b_original.JPG?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754239099&amp;width=680&amp;sig=ZsyD97yNDI5U6mYOJAqX3sJqTtBckqNnDcl%2FR2xV5Qs%3D"/>
+</figure>
+</div>
+<ul><li><span class="bold">Rogowski Current Transformer PA3202NL from Pulse Electronics</span></li></ul><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50278410">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/278/410/2d52e6516d96079cecb7e0a34b2ff4b5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754239121&amp;width=680&amp;sig=7htcRoxzk188PL1Qm2cOvk%2FgQkJUIVtXosVDYSjkgTA%3D"/>
+</figure>
+</div>
+<p><span class="bold">Alternative Example Rogowski Current Transformer - but not tested.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50278419">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/278/419/a10259e887e7cf1a724972a8beea9273_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754239151&amp;width=680&amp;sig=lxBbz7eUvaccHTc4EwGTK%2BJe0qqEgwX%2FKT%2FHfKI42VY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Mains-Monitoring"><span class="bold">Mains Monitoring</span></h3><p>All my boards are designed to be safe and easy to use - with NO live working, mains electricity parts or dangerous exposed high voltages. </p><p>The <span class="bold">EPEM </span>uses only low voltage 12 V AC such as from a bell transformer and clip on CT Clamps.</p><h4 class="page-anchor" id="h:Electrical-Circuit-Types"><span class="bold">Electrical Circuit Types</span></h4><p>The <span class="bold">EPEM </span>is capable of monitoring a number of variations in energy monitoring systems such as:</p><ul>
+<li>Accurately monitors <span class="text-italic">both </span>Import and Export</li>
+<li>Single phase (Home, Office etc.)</li>
+<li>Multiple Single Phases. (Different circuits or home/office rings, Inverters etc.)</li>
+<li>
+<span>Dual, Split</span> Phase (2 x Live -Typically for USA. i.e. 2 x 110V)</li>
+<li>Three Phase Star (3 x Live and 1 x Neutral)</li>
+<li>Three Phase Delta (3 x Live)</li>
+</ul><p>Further information on Three Phase circuits can be found <span>here</span></p><h3 class="page-anchor" id="h:Data-Output"><span class="bold">Data Output</span></h3><p>Data provided from the <span class="bold">EPEM </span>can be extrapolated through your code in any way you wish, in order to easily integrate with your IoT Home Automation system, or Solar Installation monitor.</p><p>All software and code is open source, community based and allows you to develop and integrate as you wish.</p><p>The main process typically used for publishing data (internally or externally), is via MQTT, or you could use other direct publishing routes such as to Domoticz, Zabbix or Home Assistant.</p><h4 class="page-anchor" id="h:Data-from-the-ATM90E36-includes-">Data from the ATM90E36 includes: </h4><ul>
+<li>Mains RMS Voltage (each phase)</li>
+<li>Mains Frequency (each phase)</li>
+<li>Import and Export Values<ul>
+<li>Mains RMS Current</li>
+<li>Calculated RMS Power </li>
+<li>Active Power (Absorbed or Used by the Load) </li>
+<li>Calculated Total Active Power</li>
+<li>Re-Active Power</li>
+<li>Calculated Total Reactive Power</li>
+<li>Apparent Power (Total Amount of Power Flowing from Source to Load)</li>
+<li>Calculated Total Apparent Power </li>
+<li>Fundamental Power</li>
+<li>Harmonic Power</li>
+<li>Power Factor</li>
+<li>Phase Angle</li>
+</ul>
+</li>
+</ul><p>Example plots</p><h3 class="page-anchor" id="h:IoT-MQTT-Integration-and-Home-Assistant-"><span class="bold">IoT MQTT Integration and Home Assistant </span></h3><p>Data from EPEM Includes:</p><ul>
+<li>Line Voltage RMS (Each Input)</li>
+<li>Line Average Voltage RMS (V1+V2+V3/3)</li>
+<li>Line Current RMS</li>
+<li>Line Current Voltage RMS (A1+A2+A3/3)</li>
+<li>Active Power (Pmean - Line Mean Active Power)</li>
+<li>Reactive Power (Pmean - Line Mean Active Power)</li>
+<li>Apparent Power (Pmean - Line Mean Active Power)</li>
+<li>Total Active Fund Power</li>
+<li>Power Factor</li>
+<li>Phase Angle</li>
+<li>Harmonic Power</li>
+<li>Mains (Line) Frequency</li>
+<li>Chip Temperature</li>
+</ul><p>Using the ATM90E36 internal registers, gains can be updated where needed, from the baseline.  Examples are gain_voltage and gain_ct.</p><p>Data from EPEM can be sent out to other IoT platforms via MQTT or you can used ESPHome directly within Home Assistant.   Examples will be added to the GitHub.</p><p><span class="text-italic">NB.  IPEM ESP32 is already working on <span class="bold">Home Assistant</span> using <span class="bold">ESPHome, </span>based on the this </span><span>example</span><span class="text-italic"> and others which users have integrated around the world.   <span class="bold">ESPHome</span> is working on the EPEM and the ATM90E36 in the lab, and a video will be produced during the next week to demonstrate this in more detail.</span><br/> </p><h3 class="page-anchor" id="h:Calibration"><span class="bold">Calibration</span></h3><p>The ATM90 series of monitor devices are proven for accuracy.  The <span class="bold">EPEM</span> core is the <span>ATM90E36A</span>which is used around the world in power monitoring instruments that also need to measure voltage, current, THD, DFT and mean power.</p><p>The <span class="bold">EPEM </span>board requires little, to no, calibration and is easy to setup.  You can even use ATM90E32 code for the standard functionality.</p><p>As the <span class="bold">EPEM </span>board only safely sample the AC via a low voltage transformer, you are able to monitor varying AC (RMS) voltage mains around the World, such as:</p><ul>
+<li>USA and Canada which typically is  120 V or 230 V @ 60 Hz<ul><li>With ranges around 114 V to 126 V</li></ul>
+</li>
+<li>Europe and UK which typically is 230 V @ 50 Hz<ul><li>With ranges around 216 V to 253 V </li></ul>
+</li>
+<li>Japan which typically is 100 V @ 50 Hz or 60 Hz<ul><li>Eastern Japan is 50 Hz, and Western Japan is 60 Hz</li></ul>
+</li>
+<li>Should you wish to know more, see this <span>Wiki</span>
+</li>
+</ul><h3 class="page-anchor" id="h:Programming-and-Development"><span class="bold">Programming and Development</span></h3><p>Development is primarily supported through Visual Studio Code (VSCode) and Arduino IDE.   This also includes platforms like ESPHome.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50278447">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/278/447/560f3e6959d666dd9bb3871f2468cb98_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754239306&amp;width=680&amp;sig=bG%2BlxZZzELaEM9yZAJWhScciycQ3acILgj9gXpPcPao%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50278461">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/278/461/b934cf164da0a16d0f87abca07e60860_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754239400&amp;width=680&amp;sig=SAIxLHgPVM4Q7tVXKtQ4SyL6kDmdLW1K%2FFuV8uVK9UE%3D"/>
+</figure>
+</div>
+<p>A range of libraries are already available which support the devices on the <span class="bold">EPEM</span> such as the:</p><ul>
+<li>ESP32-C6</li>
+<li>M90E36</li>
+<li>W5500</li>
+<li>24C64</li>
+<li>DS3231</li>
+<li>TMP102</li>
+<li>WS2812</li>
+</ul><p>Code support is available in my existing <span>GitHub</span>IPEM and FLiX repositories, with a specific core EPEM <span>code</span>repository being provided as the board evolves, together with a new <span>FLeX</span>test and bring up firmware, which is in development.</p><p>This is a worldwide community project and is able to be integrated in so many systems.</p><h3 class="page-anchor" id="h:AC-Input-for-Voltage-Source-and-Power"><span class="bold">AC Input for Voltage Source and Power</span></h3><p>You may provide 12V AC RMS power source, such as from a Bell Transformer.  </p><p>The <span class="bold">EPEM </span>is factory calibrated for the 12V AC output from the GreenBrook DAT01A or TLC TC TR7.  This having a typical off load voltage of up to around 18V AC RMS.</p><p>The same transformer can be used as a reference transformer on each input.</p><p>Input 1, can be used to both power the EPEM and provide a reference voltage to the ATM90E36.</p><p>Input 2 and input 3 are just for reference voltages.</p><h3 class="page-anchor" id="h:EPEM-Project-Updates"><span class="bold">EPEM Project Updates</span></h3><p>Project updates are posted on my GitHub Page, link provided below.</p><p><span>GitHub DitroniX EPEM</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50278479">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/278/479/2dcae5d901f81c4f461ad8ab3584fc63_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754239535&amp;width=680&amp;sig=tUQ2DuiBrhtHAvwgLurghyi0fjxBf7fXx94iP1phIDY%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Ship-Kit-"><span class="bold">Ship Kit </span></h3><p>Each <span class="bold">EPEM </span>board will be packaged complete with:</p><ul>
+<li>2mm Jumpers</li>
+<li>2.54mm Header Strip (optional fitting)</li>
+<li>Miniature Screw Driver (for the Terminal Connectors)</li>
+<li>DC Power Pigtail (JST to open ended)</li>
+</ul><p>[Photo to follow]</p><h3 class="page-anchor" id="h:-Supporting-STEM-Worldwide-">
+<span class="bold">Supporting STEM Worldwide</span> </h3><p>As with all my projects, setting a seed to our future engineers is very important. Makers, Education, Communities and Hackster's all help contribute to the world we live.  Thank you.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50248127">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/248/127/b45d9c7a157b3e2915dbe89f585fe568_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753988157&amp;width=680&amp;sig=T%2BvpWeXTNcvCVBGzXGFyuepU%2BCfQvYrQPQZCRkRRxuo%3D"/>
+</figure>
+</div>
+</div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">As with any Electronic design and R&amp;D project, component availability can always potentially delay, or change the specification, of a product launch. The EPEM is no exception, although some buffer stock is being ordered.
+
+Component bill of materials has been selected to hopefully mitigate against any delay in bringing the EPEM to market.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-commitments" id="environmentalCommitments"><div class="mb6"><h2 class="normal mb1">Environmental commitments</h2><span><span class="ksr-green-700">Visit our Environmental Resources Center</span> to learn how Kickstarter encourages sustainable practices.</span></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Long-lasting design</h3><p class="mb2 text-preline">The EPEM has been designed to be as flexible as possible for the end user, so reducing the need for adding other components, or modules, where possible.</p></div><div class="js-commitment-category mb2 border-bottom border-grey"><h3>Environmentally friendly factories</h3><p class="mb2 text-preline">The board manufacturer is a global leader in electronic and mechanical manufacturing. It is committed to sustainability and environmental responsibility via continuously reviews and optimizing its manufacturing processes to improve efficiency where possible.</p></div></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>

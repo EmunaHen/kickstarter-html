@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loopii Food Recycler: From Kitchen Scraps to Garden Gold</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #05ce78;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero img, .hero div {
+            width: 60%;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            width: 40%;
+            font-size: 0.9rem;
+        }
+
+        .sidebar p {
+            margin: 0.5rem 0;
+        }
+
+        .tabs {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tabs span {
+            margin-right: 2rem;
+            font-weight: bold;
+            color: #4c4c4c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 2rem;
+        }
+
+        h2, h3 {
+            color: #05668d;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: white; border-bottom: 1px solid #e6e6e6; padding: 10px 40px; display: flex; align-items: center; justify-content: space-between; font-family: Arial, sans-serif;">
+      <!-- Non-clickable Kickstarter Logo -->
+        <div style="height: 60px;">
+          <svg width="250" height="60" viewBox="0 0 181 20" xmlns="http://www.w3.org/2000/svg" aria-label="Kickstarter logo">
+            <path fill="#00b282" fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.9257 15.2442C16.9257 14.3321 16.6731 13.4527 16.1362 12.6709L14.1153 9.77192L16.1362 6.87291C16.6731 6.12373 16.9257 5.21169 16.9257 4.29964C16.9257 1.88924 14.9994 0.0325731 12.7258 0.0325731C11.3996 0.0325731 10.0733 0.716607 9.25228 1.88924L8.24179 3.32245C7.86286 1.40064 6.2524 0 4.19984 0C1.83151 0 0 1.95438 0 4.36479V15.2768C0 17.6872 1.86309 19.6416 4.19984 19.6416C6.22082 19.6416 7.79971 18.3386 8.21022 16.4494L9.09439 17.7523C9.91541 18.9901 11.2733 19.6416 12.5995 19.6416C14.9994 19.6741 16.9257 17.6546 16.9257 15.2442ZM18.1794 4.6984C18.1794 2.15344 20.2063 0 22.7399 0C25.2735 0 27.3004 2.15344 27.2688 4.6984V14.9435C27.2688 17.4885 25.2735 19.6419 22.7082 19.6419C20.2063 19.6419 18.1794 17.5211 18.1794 14.9435V4.6984ZM44.8219 14.2437C44.8219 12.1624 43.8247 10.699 41.8304 9.82097C43.8247 8.94294 44.8219 7.51207 44.8219 5.39828C44.8219 2.24386 42.2979 0 38.247 0C32.825 0 28.8365 4.19505 28.8365 9.82097C28.8365 15.4469 32.825 19.6419 38.247 19.6419C42.2979 19.6419 44.8219 17.3981 44.8219 14.2437ZM62.5236 12.6709C63.0614 13.4527 63.3145 14.3321 63.3145 15.2442C63.3145 17.6546 61.3846 19.6741 59.0119 19.6416C57.6831 19.6416 56.3228 18.9901 55.5002 17.7523L54.6144 16.4494C54.2031 18.3386 52.6213 19.6416 50.5965 19.6416C48.2554 19.6416 46.3888 17.6872 46.3888 15.2768V4.36479C46.3888 1.95438 48.2237 0 50.5965 0C52.6529 0 54.2664 1.40064 54.646 3.32245L55.6268 1.88924C56.4493 0.716607 57.7781 0.0325731 59.1068 0.0325731C61.3846 0.0325731 63.3145 1.88924 63.3145 4.29964C63.3145 5.21169 63.0614 6.12373 62.5236 6.87291L60.4988 9.77192L62.5236 12.6709ZM79.3001 13.5975C79.3001 11.6269 78.3578 10.2474 76.9444 8.93364L75.7822 7.84978C77.4783 7.58702 78.6091 6.40463 78.6091 4.66389C78.6091 1.74075 76.379 0 71.6676 0C67.0504 0 64.3493 2.43048 64.3493 6.27325C64.3493 8.24391 65.3229 9.59052 66.7364 10.9371L67.8671 12.021H67.8357C65.7313 12.021 64.255 13.3019 64.255 15.3054C64.255 18.1957 66.5793 19.9693 71.542 19.9693C76.4104 19.9693 79.3001 17.506 79.3001 13.5975ZM103.096 16.2274C104.166 18.5363 105.675 19.6419 107.531 19.6419C110.865 19.6419 113.224 16.4875 111.777 12.9429L107.908 3.57717C106.965 1.26827 105.55 0 103.128 0C100.738 0 99.3222 1.26827 98.3472 3.57717L94.4787 12.9429C93.0005 16.4875 95.3908 19.6419 98.6932 19.6419C100.517 19.6419 102.027 18.5363 103.096 16.2274ZM113.465 5.2049C113.465 1.99671 115.107 0.327148 118.045 0.327148H123.509C126.826 0.327148 129.416 2.94607 129.416 6.31794C129.416 8.15119 128.69 9.65707 127.489 10.6064L129.132 13.3236C129.574 14.0438 129.764 14.8295 129.764 15.6479C129.764 18.0704 127.931 19.9691 125.626 19.9691C124.204 19.9691 122.814 19.2162 122.025 17.8412L121.583 17.0228C121.046 18.7578 119.561 19.9691 117.666 19.9691C115.36 19.9691 113.465 17.9394 113.465 15.4842V5.2049ZM138.32 19.9691C140.922 19.9691 142.865 17.9722 142.865 15.5497V8.77318C144.965 8.67498 146.689 6.84173 146.689 4.55017C146.689 2.19313 144.871 0.327148 142.646 0.327148H134.12C131.895 0.327148 130.077 2.1604 130.077 4.55017C130.077 6.84173 131.801 8.64224 133.901 8.77318V15.5497C133.901 17.9722 135.875 19.9691 138.32 19.9691ZM159.934 12.5742C161.522 12.9043 162.675 14.3238 162.675 16.2054C162.675 18.3181 161.055 20.0016 159.093 19.9686H152.552C149.562 19.9686 147.943 18.3181 147.943 15.083V5.21276C147.943 2.0107 149.562 0.327148 152.552 0.327148H159.093C161.055 0.327148 162.675 2.0107 162.675 4.1234C162.675 6.03803 161.553 7.42449 159.934 7.75459C160.681 8.24976 161.086 9.07503 161.086 10.1644C161.086 11.2537 160.65 12.079 159.934 12.5742ZM168.13 19.9691C165.824 19.9691 163.929 17.9394 163.929 15.4842V5.2049C163.929 1.99671 165.54 0.327148 168.509 0.327148H173.973C177.29 0.327148 179.88 2.94607 179.88 6.31794C179.88 8.15119 179.153 9.65707 177.953 10.6064L179.596 13.3236C180.038 14.0438 180.227 14.8295 180.227 15.6479C180.227 18.0704 178.395 19.9691 176.09 19.9691C174.668 19.9691 173.278 19.2162 172.489 17.8412L172.046 17.0228C171.509 18.7578 170.025 19.9691 168.13 19.9691ZM92.0807 15.5497C92.0807 17.9722 90.1023 19.9691 87.5587 19.9691C85.1092 19.9691 83.1308 17.9722 83.1308 15.5497V8.77318C81.0268 8.64224 79.2997 6.84173 79.2997 4.55017C79.2997 2.1604 81.121 0.327148 83.3507 0.327148H91.8609C94.0905 0.327148 95.9119 2.19313 95.9119 4.55017C95.9119 6.84173 94.1847 8.67498 92.0807 8.77318V15.5497Z"></path>
+          </svg>
+        </div>
+
+      <!-- Search Box (decorative) -->
+      <div style="flex-grow: 1; max-width: 400px; margin: 0 40px;">
+        <input type="text" placeholder="Search projects, creators, and categories" style="width: 100%; padding: 7px 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 20px;">
+      </div>
+
+      <!-- Optional Navigation -->
+      <nav style="font-size: 14px; color: #333;">
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Discover</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Start a project</a>
+        <a href="#" style="margin: 0 12px; color: #333; text-decoration: none;">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+        <img src="https://i.kickstarter.com/assets/050/300/047/6650def04144023a406c255fc89e531d_original.png?anim=false&fit=cover&gravity=auto&height=315&origin=ugc&q=92&v=1754385477&width=560&sig=Iv8wO47VJpnpgvEYktDAMlzVBvL7P8Gle2TOlsjtLFs%3D" alt="Hero image">
+
+        <div class="sidebar">
+            <h2>Loopii Food Recycler: From Kitchen Scraps to Garden Gold</h2>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: #4f4f4f;">Shrinks food waste by 90% in just 2 hours. No smell, no mess. Large capacity. Low energy. For cleaner kitchens and a greener planet.</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;">pledged of <strong>US$ 14,967</strong> goal</p>
+            <p style="margin: 0; font-size: 14px; color: #4f4f4f;"><strong>30 days</strong> to reach the goal</p>
+
+            <!-- Non-clickable Back This Project button -->
+            <div style="
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 12px 20px;
+                background-color: #028858;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 4px;
+                font-size: 15px;
+                cursor: default;
+                user-select: none;
+            ">
+                Back this project
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <span>Campaign</span>
+        <span>Rewards</span>
+        <span>FAQ</span>
+        <span>Comments</span>
+        <span>Community</span>
+    </div>
+
+    <div class="content">
+        <div class="max-w113 m-auto"><div><div><div><div class="mb3" id="story"><h2 class="normal mb3 mb7-sm mobile-hide page-anchor" id="story">Story</h2></div><div class="story-content"><div class="rte__content ck ck-content"><div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50200861">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Hello-This-is-Loopii">Hello, This is Loopii</h3>
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/200/861/901de74095189d40ebfaca5a39e53a3b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753711912&amp;width=680&amp;sig=n%2BujRBM1B92EdoBLRjpnNqjh1zPQRDGmKc4c%2BRGiQHs%3D" src="https://i.kickstarter.com/assets/050/200/861/901de74095189d40ebfaca5a39e53a3b_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753711912&amp;width=680&amp;sig=n%2BujRBM1B92EdoBLRjpnNqjh1zPQRDGmKc4c%2BRGiQHs%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50425125">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Stretch-Goal">Stretch Goal</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/425/125/d2a20d5f28020339a2f2e2e6a0a7ca38_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1755183746&amp;width=680&amp;sig=72l4URqzYa8z%2BXpTw%2F%2FJfODEKavVaqHZs%2Bh3Zis4H6s%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50276899">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/276/899/69fb703dee89cf98eb3c2efa8f856dac_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754227126&amp;width=680&amp;sig=apRKRvgeEmn%2B9H21FeIjw%2BlXIf1cL525mQrMEmXopoE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50276905">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/276/905/22a0e69d892c5783c35628baec4e593b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754227141&amp;width=680&amp;sig=HM6xhcUHXGEGCNHRcy31dDPezUHsaCTrNehhuGB3fNE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50276910">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/276/910/83ed4d8aa1cb24f9244d254074e74f06_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754227154&amp;width=680&amp;sig=6xCb1hTu4lz2BAJqyH5SlRdHYB0UoTRaSnySJ%2FuHpG8%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50379150">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/379/150/d7557c156fa061aef23440d4fc978f62_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754917872&amp;width=680&amp;sig=1S0PT3Pa2SUcCIV%2Ffz2giTgxsCZdMmbxQ3OwimpqD6E%3D"/>
+</figure>
+</div>
+<p>We want Loopii to be the real deal for solving your everyday trash headaches. Here’s what some people had to say about it⬇️.</p><ul>
+<li>Food waste and leftover fruit always give off an unpleasant smell, attracting annoying little bugs.</li>
+<li>Current food waste solutions either aren't environmentally friendly or don't truly meet the needs of users.</li>
+</ul><p>That's why we created Loopii. We hope to find an effective and eco-friendly way to <span class="bold">recycle our leftovers</span>, turning waste into valuable resources.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50252297">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:How-Loopii-Works">How Loopii Works</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/252/297/441d7829fc1658673159765b29259b1c_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754016891&amp;width=680&amp;sig=%2F%2Fdr%2FpkBE3mI6AS4ZN2P5emDoR%2B9a1WhjlJQzSyhRPA%3D"/>
+</figure>
+</div>
+<p><span class="text-italic"><span class="bold">Step 1: </span></span>Put in food scraps / kitchen waste.</p><p><span class="text-italic"><span class="bold">Step2: </span></span>Start Loopii with one touch.</p><p><span class="text-italic"><span class="bold">Step3: </span></span>Get clean and odorless reduced-volume material.</p><p><span class="text-italic"><span class="bold">Step4: </span></span>Use for gardening or discard.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084655">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/655/e3e9fb2515378f99f9aeb8ca6c0114f6_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752813279&amp;width=680&amp;sig=s30hZWw74BesqjlVXNWoO8m1t9eTC83du7seoEmKr9Q%3D"/>
+</figure>
+</div>
+<p>I know you've definitely heard of food recyclers! <span class="bold">But hold on</span>, Loopii is truly different.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50252367">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/252/367/d90d8cd5122c4ce6f9d2798fb4c31bda_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754017469&amp;width=680&amp;sig=rYiWirSIgA%2F3jLhgM%2FrxaCkEZx3OK%2FdTuQUTG%2FElUVw%3D"/>
+</figure>
+</div>
+<p>Basically, you've got two kinds of old-school food disposers. One just grinds the food up. The other type tries to dry it out with direct heat. And the problem? Well, let's just say it's... painfully <span class="bold">slow</span>😭.</p><div>
+<div class="ace-line old-record-id-A37udANnyoFwxWx907JcKzojnwp">Our goal was simple: quickly turn wet food waste from trash into treasure. So, Loopii uses a fast, efficient combo of heated air and blades to get it done. </div>
+<div class="ace-line old-record-id-A37udANnyoFwxWx907JcKzojnwp">And, not to brag, but we're the <span class="bold">first in the world</span> to actually pull it off.<img class="image" data-id="50084702" src="https://i.kickstarter.com/assets/050/084/702/dd690e53ff031103e1763e08bdfec512_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752813612&amp;width=680&amp;sig=nHqwnG3903Vqn4qY%2BxuwWAbYL1LLh57Nqp31WOzhQxM%3D"/>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084673">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/084/673/0bdc1dbfdb540d0181b4f3a006a4dd24_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752813388&amp;width=680&amp;sig=et7DFltRNmIY78m6RQ14vbIk3%2FywQJTWuPortSSEI6c%3D" src="https://i.kickstarter.com/assets/050/084/673/0bdc1dbfdb540d0181b4f3a006a4dd24_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752813388&amp;width=680&amp;sig=et7DFltRNmIY78m6RQ14vbIk3%2FywQJTWuPortSSEI6c%3D"/>
+</figure>
+</div>
+<div class="ace-line old-record-id-A37udANnyoFwxWx907JcKzojnwp">Each cycle uses just 0.86 kWh — or as little as 0.5 in Quick Mode. Now that's what we call clean energy.</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084727">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Fast-Powerful">Fast &amp; Powerful</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/727/b1cb76a83556464b11f62fea6660b833_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752813766&amp;width=680&amp;sig=QTMFCU2xOMNuHuIwzUmOdvv5nTIN%2FiQU6Ceewnnt2jk%3D"/>
+</figure>
+</div>
+<p>A full cycle in Loopii only takes about <span class="bold">2 hours</span>. Basically, it's all finished and waiting for your next round of scraps before you've even started cooking again.</p>
+</div><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283522">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/283/522/93d1f9a22fd164619df3d22aebd36efa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754277617&amp;width=680&amp;sig=7hIfZTTxJLMXpu9PH4cH0ro5n3g7YcmRDRtNENBLTlo%3D" src="https://i.kickstarter.com/assets/050/283/522/93d1f9a22fd164619df3d22aebd36efa_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754277617&amp;width=680&amp;sig=7hIfZTTxJLMXpu9PH4cH0ro5n3g7YcmRDRtNENBLTlo%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50084821">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/084/821/8178fb10529746b927c2093a9bc9c274_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752814667&amp;width=680&amp;sig=mRNMwvurhIwWkMqkmx9%2B8LEk%2F9xA%2FIX46ebKclEtgCU%3D"/>
+</figure>
+</div>
+<p>With regular <span class="bold">home composting</span>, you're looking at a 3 to 6-month wait. Yeah... not exactly instant gratification. Now, that’s assuming you’re just dumping your food waste in as-is. Give it the Loopii pre-treatment first, and you'll kick things into high gear.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088469">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/469/245be7a133caf093fba032650d409e32_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752842652&amp;width=680&amp;sig=ogOMaQZOkVaAyInWWwxP9eaB%2BIz8ZH4pGndQCSnn3b8%3D"/>
+</figure>
+</div>
+<p>🪄Let’s take a look at <span class="bold">Loopii’s shrink-down magic.</span></p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283568">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/283/568/a008c8e912126452ed90a5c855f55fa3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754278049&amp;width=680&amp;sig=9SCasqTzWXubwOBhzECit1BfqOjuTHQr7D1yGZPr6%2FA%3D" src="https://i.kickstarter.com/assets/050/283/568/a008c8e912126452ed90a5c855f55fa3_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754278049&amp;width=680&amp;sig=9SCasqTzWXubwOBhzECit1BfqOjuTHQr7D1yGZPr6%2FA%3D"/>
+</figure>
+</div>
+<p>Without Loopii, you're hauling out a huge, heavy trash bag daily, hoping it doesn't break... </p><p>But after Loopii reduces it by 90%, all that mess just becomes this <span class="bold">small, dry pile⬇️</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088552">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/552/4b5e956cc1301a3e41831ec235ecbe46_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752843307&amp;width=680&amp;sig=a0DEpOizDR3RlEEH8pNCnTn6ZTYASmqb%2F6yrDFFvU%2FU%3D"/>
+</figure>
+</div>
+<p>So you go from daily trash runs to just one a week. You know what all that saved time gets you? Roughly enough time for a movie night every other week🎬. </p><p>Not a bad trade-off, right?</p><div>
+<p>No more late-night <span class="bold">“ugh, I forgot the trash” </span>moments.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088579">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Big-Yet-Small">Big, Yet Small</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/579/5584681a70272c07ad603746086ab93b_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752843458&amp;width=680&amp;sig=NE2xUaEMB%2B%2F9Y0JOFJBZkvp59M%2F05e41xhn3uCBa7MU%3D"/>
+</figure>
+</div>
+<p>Typical countertop food recycler holds about 3 to 4 liters. We did some quick math, though, and this is how much food waste an average family creates in just <span class="text-italic"><span class="bold">one</span></span><span class="bold"> meal...</span> So, anything over that 4-liter limit still ends up in the regular trash can. Awkward.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283574">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/283/574/bee1413bfff3d1f9eef2d47ca5f9ecbf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754278077&amp;width=680&amp;sig=nqiMka96PWqWiyeEMaM9WvSz9qLznN1iUPYhw%2BPBwas%3D" src="https://i.kickstarter.com/assets/050/283/574/bee1413bfff3d1f9eef2d47ca5f9ecbf_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754278077&amp;width=680&amp;sig=nqiMka96PWqWiyeEMaM9WvSz9qLznN1iUPYhw%2BPBwas%3D"/>
+</figure>
+</div>
+<p><span class="bold">⬆️Redesigned from the inside out</span> — We completely reengineered Loopii’s internal structure to deliver a generous <span class="bold">5.3L capacity</span>, all while maintaining the <span class="bold">same compact</span> footprint as a traditional 3L food recycler.</p>
+<p><span class="bold">How big is 5.3L, really?</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088612">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/612/b463c5edc7dc7bf91dfeef462f8fd712_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752843614&amp;width=680&amp;sig=%2Fjf05dlqrsz48ig6kMR7spw%2FOdH3TrmTwaCw66x7CWg%3D"/>
+</figure>
+</div>
+<p>We put it to the test — Loopii can hold up to <span class="bold">10 Big Macs</span>, or <span class="bold">5 full 12-inch pizzas</span>, or <span class="bold">27 hard shell tacos</span> in a single cycle.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088624">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/624/9189243af45a747af639fa68ed8d4c77_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752843673&amp;width=680&amp;sig=Ldj25o6EE7wf0z4f6fESGMKkeB6RgSSo6vSXrcpDfTk%3D"/>
+</figure>
+</div>
+<p>We all know how bad food waste can smell—<span class="bold">especially in the summer</span>.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283577">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/283/577/9b841824672c6eedf1bbad4d3e9fc2ac_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754278083&amp;width=680&amp;sig=bRs0ZtQlh4fzc4JmmpGN6dacXWedRXcA%2FeHeMNJ9NWI%3D" src="https://i.kickstarter.com/assets/050/283/577/9b841824672c6eedf1bbad4d3e9fc2ac_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754278083&amp;width=680&amp;sig=bRs0ZtQlh4fzc4JmmpGN6dacXWedRXcA%2FeHeMNJ9NWI%3D"/>
+</figure>
+</div>
+<p>Maybe you’ve tried composting, only to give up because of the <span class="bold">unbearable</span> smell. With Loopii, even at high temperatures during operation, food waste doesn’t release any unpleasant odors.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088641">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/641/188b2bd86a8e0230b6ec54f8069696ff_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752843808&amp;width=680&amp;sig=qSTRJ%2BHNo8ycIuZVDBJeel7kKRGRC2ovjomI6K3kvos%3D"/>
+</figure>
+</div>
+<p>Loopii tackles kitchen waste odors at the source. The end result is dry, clean, and completely free of unpleasant smells.</p>
+<p>That’s why Loopii has a built-in dual-stage deodorizing system: </p>
+<ul>
+<li>The first layer — <span class="bold">activated carbon</span> — passively traps large odor molecules. </li>
+<li>The second — <span class="bold">low-concentration ozone</span> — actively breaks down the ones that remain.</li>
+</ul>
+<p><span class="bold">One defends. One attacks.</span></p>
+<p>Based on our tests — and yes, the ozone level is strictly controlled and <span class="bold">100% safe for both humans and pets.</span></p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088683">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/683/acad3725d3f6933b28327d763f5b1fe5_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752843974&amp;width=680&amp;sig=QgQMNCNRgvx%2Bsgi06CNbDJAiQx%2BRb%2Btsvv%2BlxbZTsgY%3D"/>
+</figure>
+</div>
+</div><p>Loopii’s powerful blades and non-stick coating can handle almost any kind of food — from <span class="bold">tough chicken bones</span> to <span class="bold">sticky rice</span>, no problem at all.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50283578">
+<figure class="image">
+<img alt="" class="fit js-lazy-image" data-src="https://i.kickstarter.com/assets/050/283/578/6151c45b071d3d5356189a691e2449fb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754278089&amp;width=680&amp;sig=YuA9E%2BNaViwpFgRfjNJ4eiqarTxwu31Q0HdcW8403s4%3D" src="https://i.kickstarter.com/assets/050/283/578/6151c45b071d3d5356189a691e2449fb_original.gif?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754278089&amp;width=680&amp;sig=YuA9E%2BNaViwpFgRfjNJ4eiqarTxwu31Q0HdcW8403s4%3D"/>
+</figure>
+</div>
+<p>You no longer have to wonder, <span class="bold">"Can I throw this in?"</span> — Loopii’s powerful processing system handles it all with ease, transforming waste into dry, sterile, natural fertilizer.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50195730">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:What-Can-You-Feed-Loopii-">What Can You Feed Loopii?</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/195/730/113352ed4ec774f2b0ef9c082f500b9a_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753674971&amp;width=680&amp;sig=8alrl%2Fu3%2FG64QudXrrEWgPkSHAAeXxJIkA3ie1S4aSI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088729">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/729/b978bf5426874e882cb62754aa7ffc00_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752844200&amp;width=680&amp;sig=xI%2FVqvqtkIirEwiLlLCgayEUnk5S9mytv%2F3Wtm2r9cI%3D"/>
+</figure>
+</div>
+<p>We tested many other food waste processors on the market. Most of them rely heavily on apps — as if that somehow makes them smarter. But in reality, <span class="bold">apps often increase the risk </span>of malfunction and overcomplicate something that should be <span class="bold">simple</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088740">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/740/d44dad63b51ab83636f9390756ce36fe_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752844278&amp;width=680&amp;sig=mkpkB0HiW42a%2BnHfMpiBPI%2F3eACm756MaL7%2BhHNO0bI%3D"/>
+</figure>
+</div>
+<p>We say <span class="bold">no</span> to software obsolescence.</p><p>No <span class="bold">data centers</span>. No <span class="bold">waste</span>. Just focus on what matters — using resources wisely and doing more with less electronics.</p><p>Replacing Loopii’s filter is simple — just press it gently and it pops out automatically, just like an <span class="bold">SD card</span> in a camera.</p><p>Each Loopii comes with <span class="bold">4 complimentary filters</span>. Based on using it 5 times a week, <span class="bold">a single filter</span> should last around <span class="bold">6 months</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088755">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/755/a988257149d29629580f30e588df38d4_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752844371&amp;width=680&amp;sig=0qyF28kARcT871EhJy%2BVakUwKbp8kUSoioURNMBF7u0%3D"/>
+</figure>
+</div>
+<p>Normally, you don't need to clean Loopii. But if you want to, the inner chamber is removable and dishwasher-safe for <span class="bold">easy cleaning</span>.</p><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088784">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/784/70d87cc64517d07910bc86131e452026_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752844562&amp;width=680&amp;sig=KKupskUv9FJ8njvpeq6KPsh4eUj2jsRiBo1Ec4bw%2F0w%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50088738">
+<figure class="image">
+<h3 class="invisible page-anchor" id="h:Loopii-s-Details">Loopii's Details</h3>
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/088/738/dae1e05ae34ef1e56f48b6b23c6d9c92_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1752844265&amp;width=680&amp;sig=WH0sG%2FySrTdBRlBwYhvLOtuqf7pz%2BiDRN8BV0zAjxvc%3D"/>
+</figure>
+</div>
+<div>
+<div class="ace-line old-record-id-P2GpdHCUZoX3FJx0s0OcOnj8nrf"> Every detail in Loopii is designed to make things <span class="bold">feel easier</span>, <span class="bold">more natural</span>.</div>
+<p>Watching your food waste <span class="bold">gradually</span> turn into nutrient-rich "black gold" — now that’s satisfying! </p>
+<p>Loopii’s viewing window is treated with an <span class="bold">anti-fog coating</span>, so no matter how hot it gets inside, you can clearly see the entire breakdown process.</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50192181">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/192/181/90a34c7b4aedc0a8337f2df0d5b221ca_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753644723&amp;width=680&amp;sig=KX76vOhRqWO14c7xfbPS2th4rXVT3gR5CrkeWwj5WQI%3D"/>
+</figure>
+</div>
+<p>We’ve optimized Loopii’s <span class="bold">motor</span> and <span class="bold">grinding system</span> to reduce noise — so it can work hard in your kitchen without disrupting your life. We even compared Loopii’s sound level to common kitchen appliances. Here’s how it stacks up ⬇️</p>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50192176">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/192/176/e975f9016c334d7b439e475d2717c870_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753644692&amp;width=680&amp;sig=%2FU2u8g3i60cXedQ%2FaYUJ4gZtQk3dANHtp9981oObiFk%3D"/>
+</figure>
+</div>
+</div><h3 class="page-anchor" id="h:-A-Quick-Demo-">
+<img class="image" data-id="50277055" src="https://i.kickstarter.com/assets/050/277/055/8ca9076a17eee00ec28281ea1cb848d2_original.png?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754228143&amp;width=680&amp;sig=8FT1pmSa7SkJ2WWjo2tklcXVPD1CGgjXEmp4zGxdQLc%3D"/><span class="bold">A Quick Demo</span>
+</h3>
+<h3 class="page-anchor" id="h:Specs"><span class="bold">Specs</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50417089">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/417/089/c84e13f7bb9257d1082de2c843bfaebd_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1755127481&amp;width=680&amp;sig=3trIa0ygZ1s8BXH1JT4tCouPfmjyrhdg8QPlN6jk0Dg%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Reward-Tiers"><span class="bold">Reward Tiers</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50201007">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/201/007/9c2d53a062f3bcc12210207a5600a7b3_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753712689&amp;width=680&amp;sig=fBYCJfH8s3cvWGp3ld6%2FpgTd2zzO2DFVOJfNAULXAbI%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50201008">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/201/008/a69784551ab2105590abb6b1e2698d5e_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753712691&amp;width=680&amp;sig=0PjdUFJLIDuUSgnvPqY7%2Fy8cAfdbU%2FReAUnD3XAw7aE%3D"/>
+</figure>
+</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50201009">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/201/009/53dc50a1781666dddd0cb160edd63953_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1753712697&amp;width=680&amp;sig=1XWiOM1Y%2BAOxCyuof6m9GKJKdPzxFYay%2BW%2BSQ1EHg90%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Timeline"><span class="bold">Timeline</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50196720">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/196/720/89e2350539c069e32cd6c5f5ec56cb65_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1753683919&amp;width=680&amp;sig=kOpGcocKAEVNhG%2BQgDflVZin6EobH6csdBPe0N8myc0%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:Shipping-Estimation"><span class="bold">Shipping Estimation</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50266355">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/266/355/cda6531b606d05b89a24b6f9c65e5285_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754108559&amp;width=680&amp;sig=x4c7XmXwIs9ts16rzSRHsKoeQLmp%2FfcQakqHUm88Q6I%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:New-to-Kickstarter-"><span class="bold">New to Kickstarter?</span></h3><div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50254684">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/254/684/71d3680c8d23bcd73f1bc488c1410ae5_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1754033610&amp;width=680&amp;sig=g%2BY1mU1Ye6AorHxp%2FBtQZj5Nck9mHQQi57VR84yCxjk%3D"/>
+</figure>
+</div>
+<h3 class="page-anchor" id="h:-Design-">
+<span class="bold">Design</span><img class="image" data-id="50057235" src="https://i.kickstarter.com/assets/050/057/235/4a239915cb35c9a7a23b071270fc07fa_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752646148&amp;width=1920&amp;sig=truDX%2FgLwf6lSL6Gifh7cbqOVkr%2BpOt1j2n4yON4ppM%3D"/><img class="image" data-id="50057233" src="https://i.kickstarter.com/assets/050/057/233/6d04ae230f52ee3864f23b9493f04fef_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752646131&amp;width=3000&amp;sig=9PgUS9GJEmZGtPNLlkYc4qfAljXnBxBiIQjQncZMAuk%3D"/>
+</h3><div>
+<h3 class="page-anchor" id="h:-Composting-Expertise-Backed-by-Peer-Reviewed-Research">
+<img class="image" data-id="50057236" src="https://i.kickstarter.com/assets/050/057/236/640a8355fa626569e7bb146a37b03aba_original.jpg?fit=scale-down&amp;origin=ugc&amp;q=92&amp;v=1752646157&amp;width=3000&amp;sig=l27vRyY55JnXKOvtNRps1BJNVc5F%2FKL1bNl2Hf5T5uA%3D"/>Composting Expertise Backed by Peer-Reviewed Research</h3>
+<div class="ace-line old-record-id-OvQmdk010oaWgjxg9HWcyVSdnGc">Our team has conducted extensive research on organic waste treatment and composting technologies, with results published in leading international journals.</div>
+<div class="ace-line old-record-id-AAoXdMcBwothyhxnV2kcvhHKnIe"><span class="bold">Selected Publications:</span></div>
+<div>Mo, J. et al. <span class="text-italic">Pre-biodrying enhanced lignin degradation to promote aromatic macromolecular humic acid formation.</span> <span class="bold">Waste Management</span>, 2025. [DOI: 10.1016/j.wasman.2025.114851]</div>
+<div>Mo, J. et al. <span class="text-italic">Pre-biodrying treatment enhances lignin-related pathways with phenolic hydroxyls as reactive cores to accelerate humification during composting.</span> <span class="bold">Bioresource Technology</span>, 2024. [DOI: 10.1016/j.biortech.2024.131786]</div>
+<div>Wang, H. et al. <span class="text-italic">Pilot-scale study of innovative mechanically-enhanced dynamic composting for treating kitchen waste.</span> <span class="bold">Bioresource Technology</span>, 2023. [DOI: 10.1016/j.biortech.2023.130176]</div>
+<div>Xin, L. et al. <span class="text-italic">Rapid start-up and humification of kitchen waste composting by an innovative biodrying-enhanced process.</span> <span class="bold">Chemical Engineering Journal</span>, 2022. [DOI: 10.1016/j.cej.2022.139459]</div>
+<div>Xin, L. et al. <span class="text-italic">Carbohydrate degradation contributes to the main bioheat generation during kitchen waste biodrying process: A pilot study.</span> <span class="bold">Waste Management</span>, 2021. [DOI: 10.1016/j.wasman.2021.10.021]</div>
+<div class="template asset" contenteditable="false" data-alt-text="" data-caption="" data-id="50379131">
+<figure class="image">
+<img alt="" class="fit" src="https://i.kickstarter.com/assets/050/379/131/fb66810f58bb5309647d6c76a9780870_original.png?fit=scale-down&amp;origin=ugc&amp;q=100&amp;v=1754917721&amp;width=680&amp;sig=bUM8NhYg9YQPosoI0ChoFRKy%2B9%2Bf%2FGJ4heo%2Fz4tfQs0%3D"/>
+</figure>
+</div>
+<span></span>
+</div></div></div></div></div></div></div><div><div><div class="pt8"><div class="mb3 mb10-sm mb3 js-risks" id="risks-and-challenges"><h2 class="normal mb4">Risks and challenges</h2><p class="js-risks-text text-preline">Like any innovative hardware project, launching Loopii comes with its own set of challenges — from final-stage manufacturing tweaks to potential global logistics delays. However, we’ve anticipated these risks and built a solid foundation to manage them.
+
+Loopii has already undergone extensive prototyping, lab testing, and user validation. Our manufacturing partners are engaged and ramping up production. We’ve invested in tooling, QA protocols, and logistics planning ahead of this campaign to ensure readiness.
+
+That said, unexpected events can still occur — from supply chain disruptions to certification delays. In any such case, we commit to complete transparency. You’ll receive timely, honest updates throughout the production and fulfillment process.
+
+We’re proud to bring Loopii to life through Kickstarter, and fully committed to delivering a product that meets — and hopefully exceeds — your expectations.
+
+Your trust means everything to us. Thank you for believing in Loopii.</p><span class="ksr-green-700 bold type-16">Learn about accountability on Kickstarter</span></div></div></div></div><div class="border-bottom mb4 mb9-md"><div class="mb9 type-16"><span>Questions about this project? </span><span class="bold link-blue type-16">Check out the FAQ</span></div></div><div id="report-this-project"><span class="kds-button kds-button">Report this project to Kickstarter</span></div></div>
+    </div>
+</body>
+</html>
